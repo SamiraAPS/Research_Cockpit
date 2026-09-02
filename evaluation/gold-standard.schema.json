@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://human-ai-research-radar.local/schemas/gold-standard-1.0.0.json",
+  "title": "Human–AI Research Radar Goldstandard Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "expectedRelevance", "retrieved", "reviewStatus"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "expectedRelevance": { "enum": ["relevant", "irrelevant", "unclear"] },
+    "retrieved": { "type": "boolean" },
+    "reviewStatus": { "const": "manually_verified" },
+    "reviewerNote": { "type": ["string", "null"] }
+  }
+}

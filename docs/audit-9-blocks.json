@@ -1,0 +1,406 @@
+{
+  "commit": "NOT_VERIFIABLE: no Git repository metadata present",
+  "branch": "NOT_VERIFIABLE: no Git repository metadata present",
+  "audit_date": "2026-08-31",
+  "overall_all_nine_passed": false,
+  "status_counts": {
+    "PASS": 1,
+    "PARTIAL": 7,
+    "FAIL": 1,
+    "NOT_VERIFIABLE": 0
+  },
+  "overall_judgments": {
+    "source_code_fully_implemented": false,
+    "locally_automated_verified": true,
+    "real_data_end_to_end_verified": false,
+    "productively_published_and_live_verified": false
+  },
+  "environment": {
+    "framework": [
+      "Vite 8.0.13",
+      "vinext 0.0.50",
+      "React 19.2.6",
+      "Next 16.2.6",
+      "Cloudflare Vite Plugin 1.37.1"
+    ],
+    "package_manager": "npm 11.17.0",
+    "node": "v24.19.0",
+    "database": "Cloudflare D1 logical binding DB with Drizzle D1 adapter; no target resource/project identifier",
+    "migration_files": [
+      "drizzle/0000_fancy_captain_britain.sql",
+      "drizzle/0001_young_reaper.sql",
+      "drizzle/0002_nice_zeigeist.sql",
+      "drizzle/0003_mixed_demogoblin.sql",
+      "drizzle/0004_quick_hiroim.sql",
+      "drizzle/0005_fancy_the_santerians.sql",
+      "drizzle/0006_workable_imperial_guard.sql"
+    ],
+    "scheduler": "absent",
+    "deployment_config": {
+      "path": ".openai/hosting.json",
+      "project_id_present": false,
+      "d1_binding": "DB",
+      "owned_or_editable_sites_found": 0
+    },
+    "runtime_values_present": {
+      "INGESTION_TOKEN": false,
+      "RADAR_INGESTION_URL": false,
+      "OPENALEX_API_KEY": false,
+      "CROSSREF_MAILTO": false,
+      "RADAR_INGESTION_SAFETY_LIMIT": false
+    },
+    "api_endpoints": [
+      "GET /api/radar",
+      "GET /api/works",
+      "GET /api/works/export",
+      "GET /api/shortlist",
+      "POST /api/shortlist",
+      "DELETE /api/shortlist",
+      "GET /api/audit/export",
+      "POST /api/ingest"
+    ],
+    "test_files": 11,
+    "tests_discovered": 51
+  },
+  "blocks": [
+    {
+      "number": 1,
+      "name": "Datenintegrität, Status und Aktualität",
+      "status": "PARTIAL",
+      "evidence": [
+        "dataStatusFromRuns implements live, partial and unavailable states",
+        "readRadarData separates totalFound and analyzed and exposes dashboardQueriedAt, newestPublicationDate, cache durations, analysisVersion and queryVersion",
+        "production-path scan and tests found no synthetic work, trend or call fallbacks",
+        "success, partial source outage and full source outage are covered by executed integration tests"
+      ],
+      "missing_requirements": [
+        "storage.lastIngestionAt is returned by the API but is not rendered as a separate timestamp in app/radar-dashboard.tsx"
+      ],
+      "key_paths": [
+        "lib/radar/repository.ts:dataStatusFromRuns/readRadarData",
+        "app/radar-dashboard.tsx",
+        "app/corpus-browser.tsx:PublicationCard",
+        "tests/radar-validation.test.mjs",
+        "tests/repository-hygiene.test.mjs"
+      ]
+    },
+    {
+      "number": 2,
+      "name": "D1-Datenhaltung und Versionierung",
+      "status": "PARTIAL",
+      "evidence": [
+        "Drizzle D1 adapter and Cloudflare DB binding access are implemented",
+        "seven migration files cover sources, ingestion runs, works, versions, discoveries, themes, trend snapshots, source health, calls and shortlists",
+        "local SQLite/D1-compatible integration tests pass for create, update, deduplication, immutable history and failures",
+        "protected ingestion route rejects missing runtime token before any write"
+      ],
+      "missing_requirements": [
+        "no actual target D1 resource or Sites project is configured",
+        "migrations were not applied to an actual target D1",
+        "local /api/radar and /api/works return HTTP 503 because the local D1 is not migrated",
+        "successful application reads from the target D1 are not verifiable"
+      ],
+      "key_paths": [
+        "db/index.ts:getD1/getDb",
+        "db/schema.ts",
+        "drizzle/*.sql",
+        "lib/radar/repository.ts",
+        "lib/calls/repository.ts",
+        "app/api/ingest/route.ts"
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Core-, Broad- und Frontier-Ingestion",
+      "status": "PARTIAL",
+      "evidence": [
+        "core, broad and frontier modes and versioned source/query configurations exist",
+        "OpenAlex follows next_cursor without a 75-result limit",
+        "a direct paginated arXiv Atom adapter exists",
+        "Crossref is DOI-only enrichment",
+        "CHI, CSCW/PACMHCI, IUI, HRI, DIS and HFES plus 23 core journals are configured",
+        "retry, rate-delay, source-health and layer persistence code is covered by fixture tests"
+      ],
+      "missing_requirements": [
+        "no real non-mocked full ingestion run was performed because target D1, INGESTION_TOKEN and RADAR_INGESTION_URL are absent"
+      ],
+      "key_paths": [
+        "lib/radar/config/search.v3.ts",
+        "lib/radar/config/sources.v3.ts",
+        "lib/radar/openalex.ts:paginateOpenAlex",
+        "lib/radar/arxiv.ts:paginateArxiv",
+        "lib/radar/http.ts:fetchWithRetry",
+        "tests/radar-ingestion-v3.test.mjs",
+        "tests/release-candidate.test.mjs"
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Calls und Agenda-Signale",
+      "status": "PARTIAL",
+      "evidence": [
+        "controlled official source registry with four source-specific adapters and host allowlists",
+        "call history, verification states, expiration, parser change detection and manual approval are implemented",
+        "Calls UI filters type, deadline, source and theme and includes a deadline overview",
+        "agenda signal is stored and computed separately from publication evidence",
+        "CHI, AHFE and SAGE pages were reachable during read-only audit; ScienceDirect returned HTTP 403"
+      ],
+      "missing_requirements": [
+        "the call data model has no distinct venue field",
+        "no current persisted verifiedAt/lastCheckedAt values could be read without a migrated D1",
+        "no real calls ingestion was performed"
+      ],
+      "key_paths": [
+        "lib/calls/config/sources.v1.ts",
+        "lib/calls/types.ts",
+        "db/schema.ts:calls/callVersions/callThemes",
+        "lib/calls/ingestion.ts",
+        "lib/calls/repository.ts",
+        "app/radar-dashboard.tsx Calls tab",
+        "tests/radar-calls.test.mjs"
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Themenanalyse und Forschungsfragen",
+      "status": "PASS",
+      "evidence": [
+        "versioned ontology and classifier",
+        "classification uses title, abstract, keywords and OpenAlex topics with weighted evidence",
+        "normalization, word boundaries and exclusion phrases prevent tested false positives",
+        "more than three themes can be assigned",
+        "score, versions and evidence are persisted and displayed",
+        "lens and data-derived questions are separate and derived questions require at least three concrete work records",
+        "insufficient evidence is explicitly reported",
+        "analysis is deterministic and does not use an unverified LLM path"
+      ],
+      "missing_requirements": [],
+      "key_paths": [
+        "lib/radar/config/themes.v2.ts",
+        "lib/radar/classification.ts",
+        "lib/radar/questions.ts",
+        "db/schema.ts:workThemes",
+        "app/corpus-browser.tsx:PublicationCard",
+        "app/radar-dashboard.tsx Themes tab",
+        "tests/radar-analysis-v2.test.mjs"
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Trends, Emerging Signals und Opportunities",
+      "status": "PARTIAL",
+      "evidence": [
+        "absolute counts, per-thousand rates, journal/preprint shares, short/long growth, acceleration and diversity are implemented",
+        "equal completed windows, YTD exclusion, 120-day indexing lag and minimum sample handling are implemented",
+        "Poisson change-point heuristic and four separate signal objects are implemented",
+        "opportunity score has four visible components, uncertainty and contradiction handling",
+        "theme signal snapshots are append-only in local integration tests"
+      ],
+      "missing_requirements": [
+        "no analysis from real persisted historical target data or snapshots is verifiable",
+        "local radar API returns HTTP 503 because D1 is not migrated"
+      ],
+      "key_paths": [
+        "lib/radar/config/trend-analysis.v1.ts",
+        "lib/radar/trend-analysis.ts",
+        "lib/radar/trend-repository.ts",
+        "db/schema.ts:trendSnapshots/themeSignalSnapshots",
+        "tests/radar-trend-analysis.test.mjs",
+        "tests/radar-persistence.test.mjs"
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Forschungsworkflow und UI",
+      "status": "PARTIAL",
+      "evidence": [
+        "seven workflow tabs are rendered",
+        "server-side corpus search, pagination, stored-metadata filters and sort modes are implemented",
+        "authenticated D1 and anonymous browser shortlist paths are implemented",
+        "CSV and BibTeX export, weekly shortlist and new-since-run views are implemented",
+        "publication cards include DOI, source, abstract, evidence and data status",
+        "responsive CSS, reduced motion, ARIA, loading, error and empty states exist",
+        "local root page returned HTTP 200"
+      ],
+      "missing_requirements": [
+        "data-backed UI state was not available because data APIs returned HTTP 503",
+        "practical browser, viewport, keyboard, focus and screenreader checks were not verifiable",
+        "browser-control setup failed on trusted RPC configuration",
+        "no browser-based end-to-end suite exists"
+      ],
+      "key_paths": [
+        "app/radar-dashboard.tsx",
+        "app/corpus-browser.tsx",
+        "app/use-shortlist.ts",
+        "lib/radar/corpus-repository.ts",
+        "app/api/works/route.ts",
+        "app/api/works/export/route.ts",
+        "app/globals.css",
+        "tests/radar-workflow.test.mjs",
+        "tests/ui-components.test.mjs",
+        "tests/rendered-html.test.mjs"
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Validierung, QA und Dokumentation",
+      "status": "PARTIAL",
+      "evidence": [
+        "51 tests cover the required technical areas",
+        "data-quality warnings cover zero hits, source decline, duplicates, missing abstracts, stale runs and source outages",
+        "audit CSV and empty manually reviewed gold-standard contract exist",
+        "precision and recall remain null without verified labels",
+        "versioned methodology and machine-readable manifest exist",
+        "README covers setup, migration, ingestion, scheduler, secrets and deployment",
+        "custom secret/fallback hygiene scan passes",
+        "build, tests, typecheck, lint and Drizzle check all exit 0"
+      ],
+      "missing_requirements": [
+        "no actual scientific validation with manually labeled real records exists",
+        "precision and recall have not been calculated",
+        "no external comprehensive secret/dependency scanner was run"
+      ],
+      "key_paths": [
+        "lib/radar/quality.ts",
+        "lib/radar/config/data-quality.v1.ts",
+        "app/api/audit/export/route.ts",
+        "evaluation/",
+        "lib/radar/config/gold-standard.v1.ts",
+        "lib/radar/config/methodology.v1.ts",
+        "docs/methodology-1.0.0.md",
+        "README.md",
+        "tests/repository-hygiene.test.mjs"
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Release, Deployment und Veröffentlichung",
+      "status": "FAIL",
+      "evidence": [
+        "local build, test, typecheck, lint and Drizzle checks pass",
+        "no synthetic production fallbacks were found",
+        "CHANGELOG.md and release-candidate documentation exist"
+      ],
+      "missing_requirements": [
+        "no Git repository, branch, commit SHA or PR evidence",
+        "no target D1 migration",
+        "no real successful ingestion run",
+        "no target source-health or calls freshness verification",
+        "no complete production security review",
+        "no practical accessibility review",
+        "no Sites project_id or owned/editable Site",
+        "no reachable deployment or live URL",
+        "no live page/API smoke test",
+        "no audited commit-to-deployment version match",
+        "no configured or executed automatic scheduler"
+      ],
+      "key_paths": [
+        ".openai/hosting.json",
+        "CHANGELOG.md",
+        "docs/release-candidate-0.1.0.md",
+        "README.md Scheduler/Deployment sections"
+      ]
+    }
+  ],
+  "executed_commands": [
+    {
+      "command": "git rev-parse --show-toplevel",
+      "exit_code": 128,
+      "result": "fatal: not a git repository"
+    },
+    {
+      "command": "git branch --show-current",
+      "exit_code": 128,
+      "result": "fatal: not a git repository"
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "exit_code": 128,
+      "result": "fatal: not a git repository"
+    },
+    {
+      "command": "git status --short --branch",
+      "exit_code": 128,
+      "result": "fatal: not a git repository"
+    },
+    {
+      "command": "node --version",
+      "exit_code": 0,
+      "result": "v24.19.0"
+    },
+    {
+      "command": "npm.cmd --version",
+      "exit_code": 0,
+      "result": "11.17.0"
+    },
+    {
+      "command": "npx.cmd tsc --noEmit",
+      "exit_code": 0,
+      "result": "passed"
+    },
+    {
+      "command": "npm.cmd run lint",
+      "exit_code": 0,
+      "result": "passed"
+    },
+    {
+      "command": "npx.cmd drizzle-kit check",
+      "exit_code": 0,
+      "result": "Everything's fine"
+    },
+    {
+      "command": "npm.cmd run build",
+      "exit_code": 0,
+      "result": "passed with non-blocking 557.49 kB client chunk warning"
+    },
+    {
+      "command": "npm.cmd test",
+      "exit_code": 0,
+      "result": "51 passed, 0 failed; non-blocking Vite WebSocket/cache warnings observed"
+    },
+    {
+      "command": "npm.cmd run dev (sandbox attempt)",
+      "exit_code": 1,
+      "result": "spawn EPERM; repeated outside sandbox"
+    },
+    {
+      "command": "npm.cmd run dev (outside sandbox)",
+      "exit_code": 1,
+      "result": "server became ready on localhost:5173 and was intentionally terminated after smoke tests"
+    },
+    {
+      "command": "local HTTP smoke checks",
+      "exit_code": 0,
+      "result": "GET / = 200; GET /api/radar = 503; GET /api/works = 503; works export = 503; audit export = 503; POST /api/ingest without token = 503"
+    }
+  ],
+  "non_shell_checks": [
+    {
+      "check": "in-app browser practical UI/accessibility audit",
+      "status": "NOT_VERIFIABLE",
+      "result": "browser runtime rejected browser-service.mjs because it was outside a configured trusted RPC code path"
+    },
+    {
+      "check": "Sites list_sites read-only",
+      "status": "FAIL",
+      "result": "0 owned and 0 editable sites; no deployment URL"
+    },
+    {
+      "check": "official source reachability read-only",
+      "status": "PARTIAL",
+      "result": "Crossref API, CHI 2027, AHFE 2027 and SAGE Human Relations reachable; ScienceDirect returned HTTP 403; OpenAlex and arXiv endpoint checks were rejected by the web audit surface"
+    }
+  ],
+  "critical_blockers": [
+    "Git repository metadata, branch and commit SHA are absent",
+    "target D1 resource is not configured or migrated",
+    "local data APIs return HTTP 503",
+    "runtime ingestion token and URL are absent",
+    "no real full ingestion run exists",
+    "call model lacks a distinct venue field",
+    "no real persisted historical trend snapshots are verifiable",
+    "no practical browser/accessibility verification is available",
+    "no manually labeled gold standard or scientific precision/recall validation exists",
+    "no Sites project, deployment, live URL, live smoke test or scheduler exists"
+  ]
+}
