@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.schema.json",
+  "title": "Human–AI Research Radar – shared definitions",
+  "$defs": {
+    "schemaVersion": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*-[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "datasetStatus": {
+      "enum": ["ready", "partial", "unavailable"]
+    },
+    "sourceStatus": {
+      "enum": ["not_checked", "healthy", "degraded", "stale", "unavailable"]
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "themeEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "concept", "matchedTerm", "weight"],
+      "properties": {
+        "source": { "enum": ["title", "abstract", "keyword", "external_topic"] },
+        "concept": { "$ref": "#/$defs/nonEmptyString" },
+        "conceptLabel": { "$ref": "#/$defs/nonEmptyString" },
+        "matchedTerm": { "$ref": "#/$defs/nonEmptyString" },
+        "sourceValue": { "type": ["string", "null"] },
+        "weight": { "type": "number", "minimum": 0 }
+      }
+    },
+    "themeClassification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theme", "label", "score", "classificationVersion", "ontologyVersion", "evidence"],
+      "properties": {
+        "theme": { "$ref": "#/$defs/nonEmptyString" },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "score": { "type": "number", "minimum": 0 },
+        "classificationVersion": { "$ref": "#/$defs/nonEmptyString" },
+        "ontologyVersion": { "$ref": "#/$defs/nonEmptyString" },
+        "evidence": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/themeEvidence" }
+        }
+      }
+    },
+    "author": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "orcid": { "type": ["string", "null"] },
+        "affiliations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "work": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "recordType",
+        "title",
+        "abstract",
+        "doi",
+        "externalIds",
+        "source",
+        "venue",
+        "publicationDate",
+        "topics",
+        "keywords",
+        "classifiedThemes",
+        "scores",
+        "evidenceTerms",
+        "authors",
+        "url",
+        "retrievedAt"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/nonEmptyString" },
+        "recordType": { "enum": ["publication", "preprint"] },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "abstract": { "type": ["string", "null"] },
+        "doi": {
+          "type": ["string", "null"],
+          "pattern": "^10\\.[0-9]{4,9}/\\S+$"
+        },
+        "externalIds": {
+          "type": "object",
+          "additionalProperties": { "type": "string", "minLength": 1 }
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "recordId"],
+          "properties": {
+            "name": { "$ref": "#/$defs/nonEmptyString" },
+            "recordId": { "$ref": "#/$defs/nonEmptyString" }
+          }
+        },
+        "venue": { "type": ["string", "null"] },
+        "publicationDate": {
+          "anyOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }]
+        },
+        "onlineDate": {
+          "anyOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }]
+        },
+        "topics": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        },
+        "keywords": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        },
+        "classifiedThemes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/themeClassification" }
+        },
+        "scores": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        },
+        "evidenceTerms": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        },
+        "authors": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/author" }
+        },
+        "url": { "type": ["string", "null"], "format": "uri" },
+        "openAccess": { "type": ["boolean", "null"] },
+        "citedByCount": { "type": ["integer", "null"], "minimum": 0 },
+        "retrievedAt": { "$ref": "#/$defs/timestamp" },
+        "dataStatus": { "enum": ["current", "stale"] },
+        "lastVerifiedAt": { "$ref": "#/$defs/timestamp" },
+        "preferredVersionId": { "$ref": "#/$defs/nonEmptyString" },
+        "versions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "type", "source", "externalId", "doi", "url"],
+            "properties": {
+              "id": { "$ref": "#/$defs/nonEmptyString" },
+              "type": { "enum": ["journal", "preprint", "proceedings"] },
+              "source": { "$ref": "#/$defs/nonEmptyString" },
+              "externalId": { "$ref": "#/$defs/nonEmptyString" },
+              "doi": { "type": ["string", "null"], "pattern": "^10\\.[0-9]{4,9}/\\S+$" },
+              "url": { "type": ["string", "null"], "format": "uri" }
+            }
+          }
+        },
+        "discoveredBy": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["provider", "mode", "queryVersion"],
+            "properties": {
+              "provider": { "enum": ["openalex", "arxiv"] },
+              "mode": { "enum": ["core", "broad", "frontier"] },
+              "queryVersion": { "$ref": "#/$defs/nonEmptyString" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

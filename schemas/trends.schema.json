@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "trends.schema.json",
+  "title": "Reproducible static-corpus analysis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "status", "snapshotVersion", "analysisVersion", "classificationVersion", "ontologyVersion", "inputHash", "scope", "methodology", "coverage", "publicationTrends", "emergingSignals", "agendaSignals", "opportunities", "warnings"],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "generatedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "status": { "$ref": "common.schema.json#/$defs/datasetStatus" },
+    "snapshotVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "analysisVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "classificationVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "ontologyVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "inputHash": { "$ref": "#/$defs/hash" },
+    "scope": { "const": "static-corpus" },
+    "methodology": { "$ref": "#/$defs/methodology" },
+    "coverage": { "$ref": "#/$defs/coverage" },
+    "publicationTrends": { "type": "array", "items": { "$ref": "#/$defs/publicationTrend" } },
+    "emergingSignals": { "type": "array", "items": { "$ref": "#/$defs/emergingSignal" } },
+    "agendaSignals": { "type": "array", "items": { "$ref": "#/$defs/agendaSignal" } },
+    "opportunities": { "type": "array", "items": { "$ref": "#/$defs/opportunity" } },
+    "warnings": { "type": "array", "items": { "$ref": "#/$defs/warning" } }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "nullableNumber": { "type": ["number", "null"] },
+    "stringIds": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "uniqueItems": true },
+    "warning": {
+      "type": "object", "additionalProperties": false,
+      "required": ["code", "severity", "message", "affectedRecords"],
+      "properties": { "code": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "severity": { "enum": ["info", "warning", "error"] }, "message": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "affectedRecords": { "type": "integer", "minimum": 0 } }
+    },
+    "methodology": {
+      "type": "object", "additionalProperties": false,
+      "required": ["trendMethodVersion", "opportunityMethodVersion", "shortWindowYears", "longWindowYears", "minimumTrendRecords", "normalization", "currentYearExcluded", "indexingLagDays", "opportunityRequiresAllComponents"],
+      "properties": { "trendMethodVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "opportunityMethodVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "shortWindowYears": { "type": "integer", "minimum": 1 }, "longWindowYears": { "type": "integer", "minimum": 1 }, "minimumTrendRecords": { "type": "integer", "minimum": 1 }, "normalization": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "currentYearExcluded": { "const": true }, "indexingLagDays": { "type": "integer", "minimum": 0 }, "opportunityRequiresAllComponents": { "const": true } }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["currentYear", "latestStableYear", "excludedYears", "corpusStartYear", "corpusEndYear", "totalWorks", "publications", "preprints", "journalCount", "proceedingsCount", "corpusComplete", "callsStatus"],
+      "properties": { "currentYear": { "type": "integer", "minimum": 1900 }, "latestStableYear": { "type": "integer", "minimum": 1900 }, "excludedYears": { "type": "array", "items": { "type": "integer", "minimum": 1900 }, "uniqueItems": true }, "corpusStartYear": { "type": ["integer", "null"], "minimum": 1900 }, "corpusEndYear": { "type": ["integer", "null"], "minimum": 1900 }, "totalWorks": { "type": "integer", "minimum": 0 }, "publications": { "type": "integer", "minimum": 0 }, "preprints": { "type": "integer", "minimum": 0 }, "journalCount": { "type": "integer", "minimum": 0 }, "proceedingsCount": { "type": "integer", "minimum": 0 }, "corpusComplete": { "type": "boolean" }, "callsStatus": { "$ref": "common.schema.json#/$defs/datasetStatus" } }
+    },
+    "window": {
+      "type": "object", "additionalProperties": false,
+      "required": ["startYear", "endYear", "yearCount", "absoluteCount", "eligibleCorpusCount", "normalizedRatePer1000", "journalCount", "preprintCount", "proceedingsCount", "journalShare", "preprintShare"],
+      "properties": { "startYear": { "type": "integer", "minimum": 1900 }, "endYear": { "type": "integer", "minimum": 1900 }, "yearCount": { "type": "integer", "minimum": 1 }, "absoluteCount": { "type": "integer", "minimum": 0 }, "eligibleCorpusCount": { "type": "integer", "minimum": 0 }, "normalizedRatePer1000": { "$ref": "#/$defs/nullableNumber" }, "journalCount": { "type": "integer", "minimum": 0 }, "preprintCount": { "type": "integer", "minimum": 0 }, "proceedingsCount": { "type": "integer", "minimum": 0 }, "journalShare": { "$ref": "#/$defs/nullableNumber" }, "preprintShare": { "$ref": "#/$defs/nullableNumber" } }
+    },
+    "growth": { "type": "object", "additionalProperties": false, "required": ["absolutePercent", "normalizedPercent"], "properties": { "absolutePercent": { "$ref": "#/$defs/nullableNumber" }, "normalizedPercent": { "$ref": "#/$defs/nullableNumber" } } },
+    "diversity": { "type": "object", "additionalProperties": false, "required": ["sourceCount", "venueCount", "venueDiversityPercent", "largestVenueShare"], "properties": { "sourceCount": { "type": "integer", "minimum": 0 }, "venueCount": { "type": "integer", "minimum": 0 }, "venueDiversityPercent": { "$ref": "#/$defs/nullableNumber" }, "largestVenueShare": { "$ref": "#/$defs/nullableNumber" } } },
+    "publicationTrend": {
+      "type": "object", "additionalProperties": false,
+      "required": ["theme", "label", "status", "totals", "windows", "growth", "accelerationPercentagePoints", "acceleration", "sourceDiversity", "annual", "recentEvidenceWorkIds", "dataQuality"],
+      "properties": {
+        "theme": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "label": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "status": { "enum": ["growing", "stable", "declining", "mixed", "insufficient"] },
+        "totals": { "$ref": "#/$defs/windowTotals" },
+        "windows": { "type": "object", "additionalProperties": false, "required": ["shortRecent", "shortPrevious", "shortBaseline", "longRecent", "longPrevious"], "properties": { "shortRecent": { "$ref": "#/$defs/window" }, "shortPrevious": { "$ref": "#/$defs/window" }, "shortBaseline": { "$ref": "#/$defs/window" }, "longRecent": { "$ref": "#/$defs/window" }, "longPrevious": { "$ref": "#/$defs/window" } } },
+        "growth": { "type": "object", "additionalProperties": false, "required": ["short", "long"], "properties": { "short": { "$ref": "#/$defs/growth" }, "long": { "$ref": "#/$defs/growth" } } },
+        "accelerationPercentagePoints": { "$ref": "#/$defs/nullableNumber" }, "acceleration": { "enum": ["accelerating", "steady", "slowing", "insufficient"] },
+        "sourceDiversity": { "type": "object", "additionalProperties": false, "required": ["allCorpus", "recentWindow"], "properties": { "allCorpus": { "$ref": "#/$defs/diversity" }, "recentWindow": { "$ref": "#/$defs/diversity" } } },
+        "annual": { "type": "array", "items": { "$ref": "#/$defs/annual" } }, "recentEvidenceWorkIds": { "$ref": "#/$defs/stringIds" },
+        "dataQuality": { "type": "object", "additionalProperties": false, "required": ["status", "reasons"], "properties": { "status": { "enum": ["sufficient", "insufficient"] }, "reasons": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" } } } }
+      }
+    },
+    "windowTotals": { "type": "object", "additionalProperties": false, "required": ["absoluteCount", "journalCount", "preprintCount", "proceedingsCount", "journalShare", "preprintShare"], "properties": { "absoluteCount": { "type": "integer", "minimum": 0 }, "journalCount": { "type": "integer", "minimum": 0 }, "preprintCount": { "type": "integer", "minimum": 0 }, "proceedingsCount": { "type": "integer", "minimum": 0 }, "journalShare": { "$ref": "#/$defs/nullableNumber" }, "preprintShare": { "$ref": "#/$defs/nullableNumber" } } },
+    "annual": { "type": "object", "additionalProperties": false, "required": ["year", "absoluteCount", "eligibleCorpusCount", "normalizedRatePer1000", "journalCount", "preprintCount", "proceedingsCount", "partial", "excludedFromComparisons"], "properties": { "year": { "type": "integer", "minimum": 1900 }, "absoluteCount": { "type": "integer", "minimum": 0 }, "eligibleCorpusCount": { "type": "integer", "minimum": 0 }, "normalizedRatePer1000": { "$ref": "#/$defs/nullableNumber" }, "journalCount": { "type": "integer", "minimum": 0 }, "preprintCount": { "type": "integer", "minimum": 0 }, "proceedingsCount": { "type": "integer", "minimum": 0 }, "partial": { "type": "boolean" }, "excludedFromComparisons": { "type": "boolean" } } },
+    "emergingSignal": { "type": "object", "additionalProperties": false, "required": ["theme", "label", "status", "shortGrowthPercent", "recentPreprintShare", "recentWorkCount", "evidenceWorkIds", "minimumEvidenceRecords"], "properties": { "theme": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "label": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "status": { "enum": ["emerging", "rising", "stable", "cooling", "insufficient"] }, "shortGrowthPercent": { "$ref": "#/$defs/nullableNumber" }, "recentPreprintShare": { "$ref": "#/$defs/nullableNumber" }, "recentWorkCount": { "type": "integer", "minimum": 0 }, "evidenceWorkIds": { "$ref": "#/$defs/stringIds" }, "minimumEvidenceRecords": { "type": "integer", "minimum": 1 } } },
+    "agendaSignal": { "type": "object", "additionalProperties": false, "required": ["theme", "status", "dataQuality", "activeCallCount", "closingSoonCount", "sourceCount", "evidenceCallIds", "nearestDeadlineAt"], "properties": { "theme": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "status": { "enum": ["strong", "moderate", "weak", "unavailable"] }, "dataQuality": { "enum": ["complete", "partial", "unavailable"] }, "activeCallCount": { "type": "integer", "minimum": 0 }, "closingSoonCount": { "type": "integer", "minimum": 0 }, "sourceCount": { "type": "integer", "minimum": 0 }, "evidenceCallIds": { "$ref": "#/$defs/stringIds" }, "nearestDeadlineAt": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] } } },
+    "component": { "type": "object", "additionalProperties": false, "required": ["key", "maximum", "score", "available", "inputs"], "properties": { "key": { "enum": ["publication_momentum", "frontier_share", "agenda_demand", "source_diversity"] }, "maximum": { "const": 25 }, "score": { "$ref": "#/$defs/nullableNumber" }, "available": { "type": "boolean" }, "inputs": { "type": "object" } } },
+    "opportunity": { "type": "object", "additionalProperties": false, "required": ["theme", "label", "status", "score", "maximum", "components", "uncertainty", "evidenceWorkIds", "evidenceCallIds", "methodVersion"], "properties": { "theme": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "label": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "status": { "enum": ["possible", "mixed", "low", "insufficient"] }, "score": { "$ref": "#/$defs/nullableNumber" }, "maximum": { "const": 100 }, "components": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "$ref": "#/$defs/component" } }, "uncertainty": { "type": "object", "additionalProperties": false, "required": ["level", "reasons"], "properties": { "level": { "enum": ["low", "medium", "high"] }, "reasons": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" } } } }, "evidenceWorkIds": { "$ref": "#/$defs/stringIds" }, "evidenceCallIds": { "$ref": "#/$defs/stringIds" }, "methodVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" } } }
+  }
+}

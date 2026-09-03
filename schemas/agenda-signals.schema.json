@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agenda-signals.schema.json",
+  "title": "Raw agenda observations from controlled call sources",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "status", "registryVersion", "interpretation", "items"],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "generatedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "status": { "$ref": "common.schema.json#/$defs/datasetStatus" },
+    "registryVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "interpretation": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sourceKey", "sourceName", "officialUrl", "capturedAt", "parserVersion", "sourceVersion", "sourceContentHash", "dataStatus", "signals"],
+        "properties": {
+          "sourceKey": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+          "sourceName": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+          "officialUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+          "capturedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+          "parserVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+          "sourceVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+          "sourceContentHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "dataStatus": { "enum": ["verified", "stale"] },
+          "signals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "kind", "label", "context"],
+              "properties": {
+                "id": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+                "kind": { "enum": ["track", "format", "publication-route", "deadline-policy", "submission-stage", "special-issue"] },
+                "label": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+                "context": { "type": ["string", "null"] }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

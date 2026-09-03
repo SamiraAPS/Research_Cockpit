@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "historical-snapshot.schema.json",
+  "title": "Immutable historical aggregate snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "snapshotId", "generatedAt", "corpusGeneratedAt", "inputHash", "analysisVersion", "classificationVersion", "queryVersion", "ontologyVersion", "methodVersions", "coverage", "totals", "sourceStatus", "themeCounts", "signals", "warnings"],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "snapshotId": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "generatedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "corpusGeneratedAt": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
+    "inputHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "analysisVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "classificationVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "queryVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "ontologyVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "methodVersions": { "type": "object", "required": ["trends", "questions", "opportunities", "snapshot"], "additionalProperties": { "$ref": "common.schema.json#/$defs/nonEmptyString" } },
+    "coverage": { "type": "object" },
+    "totals": { "type": "object", "additionalProperties": false, "required": ["found", "analyzed", "publications", "preprints", "calls", "lensQuestions", "dataDerivedQuestions"], "properties": { "found": { "type": "integer", "minimum": 0 }, "analyzed": { "type": "integer", "minimum": 0 }, "publications": { "type": "integer", "minimum": 0 }, "preprints": { "type": "integer", "minimum": 0 }, "calls": { "type": "integer", "minimum": 0 }, "lensQuestions": { "type": "integer", "minimum": 0 }, "dataDerivedQuestions": { "type": "integer", "minimum": 0 } } },
+    "sourceStatus": { "type": "array", "items": { "type": "object", "required": ["source", "status", "recordCount"], "properties": { "source": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "status": { "$ref": "common.schema.json#/$defs/sourceStatus" }, "recordCount": { "type": "integer", "minimum": 0 } } } },
+    "themeCounts": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["theme", "count", "journalCount", "preprintCount", "proceedingsCount"], "properties": { "theme": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "count": { "type": "integer", "minimum": 0 }, "journalCount": { "type": "integer", "minimum": 0 }, "preprintCount": { "type": "integer", "minimum": 0 }, "proceedingsCount": { "type": "integer", "minimum": 0 } } } },
+    "signals": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["theme", "publicationTrend", "emergingSignal", "agendaSignal", "opportunityStatus", "opportunityScore", "uncertainty"], "properties": { "theme": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "publicationTrend": { "enum": ["growing", "stable", "declining", "mixed", "insufficient"] }, "emergingSignal": { "enum": ["emerging", "rising", "stable", "cooling", "insufficient"] }, "agendaSignal": { "enum": ["strong", "moderate", "weak", "unavailable"] }, "opportunityStatus": { "enum": ["possible", "mixed", "low", "insufficient"] }, "opportunityScore": { "type": ["number", "null"], "minimum": 0, "maximum": 100 }, "uncertainty": { "enum": ["low", "medium", "high"] } } } },
+    "warnings": { "type": "array", "items": { "type": "object" } }
+  }
+}

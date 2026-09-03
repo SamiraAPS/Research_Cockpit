@@ -2,6 +2,11 @@
 
 Alle wesentlichen Aenderungen dieses Projekts werden in dieser Datei dokumentiert.
 
+## [Unreleased]
+
+- GitHub-Pages-Workflow mit vollständiger Validierung und manueller Auslösung ergänzt.
+- Statisches Dashboard zeigt den Zeitpunkt der letzten erfolgreichen Ingestion ausdrücklich und ohne Ersatz durch den Exportzeitpunkt.
+
 ## [0.1.0] - 2026-08-31
 
 Der detaillierte Prüfstand ist im [Release-Candidate-Bericht](docs/release-candidate-0.1.0.md) festgehalten.

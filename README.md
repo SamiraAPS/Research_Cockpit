@@ -185,6 +185,12 @@ Vor einem Deployment werden Migrationen geprüft sowie Typprüfung, Lint, Tests 
 
 Dieses Repository darf nicht mit einer leeren oder veralteten entfernten Datenbank als scheinbar vollständiges Dashboard veröffentlicht werden: Nach der Migration muss mindestens ein kontrollierter Ingestion-Lauf durchgeführt und der Quellen- und Qualitätsstatus geprüft werden. In diesem Arbeitsschritt wurde ausdrücklich nicht deployt.
 
+### GitHub Pages (statisches Dashboard)
+
+Der Workflow `.github/workflows/deploy-pages.yml` validiert die versionierten Produktionsdaten, führt sämtliche Tests sowie Lint und TypeScript-Prüfung aus und veröffentlicht danach ausschließlich den Inhalt von `site/`. Als GitHub-Pages-Quelle wird `GitHub Actions` verwendet. Der Workflow läuft bei Änderungen auf dem Default-Branch `main` und kann zusätzlich über `workflow_dispatch` manuell gestartet werden.
+
+Alle Asset-, Modul- und Datenpfade im statischen Dashboard sind relativ, damit die Veröffentlichung unter dem Repository-Unterpfad funktioniert. `.nojekyll` wird zusammen mit dem statischen Artefakt ausgeliefert. Das Repository kann privat bleiben; die Erreichbarkeit der Pages-Website richtet sich nach GitHubs Pages- und Kontoregeln.
+
 ## Datenquelle und Interpretation
 
 Die Ingestion verwendet die öffentlichen APIs von [OpenAlex](https://help.openalex.org/api/), [arXiv](https://info.arxiv.org/help/api/user-manual.html) und – nur zur Anreicherung – [Crossref](https://www.crossref.org/documentation/retrieve-metadata/rest-api/). Themencluster, Relevanzscores, datenabgeleitete Forschungsfragen sowie Emerging- und Opportunity-Signale sind transparente, regelbasierte, explorative Signale. Lens Questions sind bewusst vorgegebene theoretische Perspektiven. Keine dieser Darstellungen ersetzt ein systematisches Review oder eine validierte bibliometrische Analyse.

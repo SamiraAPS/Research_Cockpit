@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "search-index.schema.json",
+  "title": "Client-side search index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "queryVersion", "ontologyVersion", "documents"],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "generatedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "queryVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "ontologyVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "recordType", "title", "abstract", "authors", "venue", "publicationDate", "topics", "keywords", "themes", "evidenceTerms", "url"],
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+          "recordType": { "enum": ["publication", "preprint"] },
+          "title": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+          "abstract": { "type": ["string", "null"] },
+          "authors": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" } },
+          "venue": { "type": ["string", "null"] },
+          "publicationDate": { "anyOf": [{ "$ref": "common.schema.json#/$defs/date" }, { "type": "null" }] },
+          "topics": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" } },
+          "keywords": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" } },
+          "themes": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" } },
+          "evidenceTerms": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" } },
+          "url": { "type": ["string", "null"], "format": "uri" }
+        }
+      }
+    }
+  }
+}

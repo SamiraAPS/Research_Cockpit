@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Statisches Human–AI Research Radar mit Publikationen, Calls und transparenten Analysen." />
+    <title>Overview · Human–AI Research Radar</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body data-dashboard-state="loading">
+    <a class="skip-link" href="#main-content">Direkt zum Inhalt</a>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand-lockup" href="#overview" aria-label="Human–AI Research Radar – Overview">
+          <span class="radar-mark" aria-hidden="true"><span></span></span>
+          <span><span class="eyebrow">Research intelligence workspace</span><span class="brand-title">Human–AI Research Radar</span></span>
+        </a>
+        <div class="header-actions">
+          <button id="shortlist-jump" class="header-button" type="button" aria-label="Shortlist im New-Bereich öffnen">
+            Shortlist <span id="shortlist-count">0</span>
+          </button>
+          <div id="data-status-badge" class="status-badge loading" role="status" aria-live="polite">
+            <span class="status-dot" aria-hidden="true"></span><span>Daten werden geladen</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="control-deck">
+      <nav class="primary-nav" aria-label="Dashboard-Bereiche">
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-list">
+          <span>Bereiche</span><span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <ul id="primary-nav-list" class="nav-list">
+          <li><a class="nav-link" href="#overview">Overview</a></li>
+          <li><a class="nav-link" href="#new">New</a></li>
+          <li><a class="nav-link" href="#landscape">Landscape</a></li>
+          <li><a class="nav-link" href="#emerging">Emerging</a></li>
+          <li><a class="nav-link" href="#calls">Calls</a></li>
+          <li><a class="nav-link" href="#opportunities">Opportunities</a></li>
+          <li><a class="nav-link" href="#method">Method</a></li>
+        </ul>
+      </nav>
+      <p class="static-label"><span aria-hidden="true">●</span> Statisches Dashboard</p>
+    </div>
+
+    <main id="main-content" class="dashboard-shell" tabindex="-1">
+      <section class="system-status" aria-label="Lade- und Datenstatus">
+        <div id="loading-state" class="loading-state" role="status" aria-live="polite">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <div><strong>Radar-Daten werden geladen</strong><span>Publikationen, Analysen und Calls werden lokal zusammengesetzt.</span></div>
+        </div>
+        <div id="data-integrity-bar" class="data-integrity-bar" hidden>
+          <div class="integrity-copy"><p class="section-kicker">Datenintegrität</p><p id="data-status-message">Daten noch nicht verfügbar.</p></div>
+          <ul class="dataset-statuses" aria-label="Status der Datenbereiche">
+            <li data-dataset="publications"><span class="status-dot" aria-hidden="true"></span>Works <strong>ausstehend</strong></li>
+            <li data-dataset="trends"><span class="status-dot" aria-hidden="true"></span>Analysen <strong>ausstehend</strong></li>
+            <li data-dataset="calls"><span class="status-dot" aria-hidden="true"></span>Calls <strong>ausstehend</strong></li>
+            <li data-dataset="sourceHealth"><span class="status-dot" aria-hidden="true"></span>Quellen <strong>ausstehend</strong></li>
+          </ul>
+        </div>
+        <div id="error-state" class="error-state" role="alert" hidden>
+          <span class="state-symbol" aria-hidden="true">!</span>
+          <div><h2>Daten konnten nicht geladen werden</h2><p id="error-message">Die statischen JSON-Dateien sind nicht erreichbar.</p></div>
+          <button id="retry-button" class="secondary-button" type="button">Erneut versuchen</button>
+        </div>
+        <p id="status-announcer" class="visually-hidden" aria-live="polite"></p>
+      </section>
+
+      <div id="dashboard-views" class="dashboard-views" aria-busy="true" hidden>
+        <section id="view-overview" class="dashboard-view" data-view="overview" aria-labelledby="overview-title" tabindex="-1">
+          <header class="view-intro overview-intro">
+            <div><p class="section-kicker">Aktueller Radar-Lauf</p><h1 id="overview-title">Evidence before signal.</h1><p>Reale Publikationen, offizielle Calls und reproduzierbare Analysen – mit sichtbaren Lücken statt Ersatzwerten.</p></div>
+            <dl class="freshness-grid">
+              <div><dt>Letzte erfolgreiche Ingestion</dt><dd id="freshness-value">–</dd></div>
+              <div><dt>Korpus</dt><dd id="corpus-value">–</dd></div>
+              <div><dt>Quellen</dt><dd id="source-summary">–</dd></div>
+            </dl>
+          </header>
+
+          <div class="overview-signal-grid">
+            <article class="panel signal-panel">
+              <header class="panel-heading"><div><p class="section-kicker">Neu im Korpus</p><h2>Neue Arbeiten</h2></div><a href="#new" class="text-link">Alle</a></header>
+              <div id="overview-new-list" class="compact-list"><div class="empty-state"><h3>Daten noch nicht verfügbar</h3></div></div>
+            </article>
+            <article class="panel signal-panel">
+              <header class="panel-heading"><div><p class="section-kicker">Nächste Termine</p><h2>Deadlines</h2></div><a href="#calls" class="text-link">Alle</a></header>
+              <div id="overview-deadline-list" class="compact-list"><div class="empty-state"><h3>Daten noch nicht verfügbar</h3></div></div>
+            </article>
+            <article class="panel signal-panel">
+              <header class="panel-heading"><div><p class="section-kicker">Frühsignale</p><h2>Emerging</h2></div><a href="#emerging" class="text-link">Details</a></header>
+              <div id="overview-emerging-list" class="compact-list"><div class="empty-state"><h3>Daten noch nicht verfügbar</h3></div></div>
+            </article>
+          </div>
+        </section>
+
+        <section id="view-new" class="dashboard-view" data-view="new" aria-labelledby="new-title" tabindex="-1" hidden>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Statischer Forschungskorpus</p><h1 id="new-title">New & Search</h1><p id="new-since-copy">Neue Arbeiten und Preprints aus dem aktuellen Datenstand.</p></div><span class="view-number" aria-hidden="true">02</span></header>
+          <form id="work-filters" class="filter-panel" role="search">
+            <div class="search-field"><label for="work-query">Korpus durchsuchen</label><input id="work-query" name="query" type="search" placeholder="Titel, Abstract, Autor:in, Thema …" autocomplete="off" /></div>
+            <div class="filter-grid">
+              <label>Jahr<select id="filter-year" name="year"><option value="all">Alle Jahre</option></select></label>
+              <label>Quelle<select id="filter-source" name="source"><option value="all">Alle Quellen</option></select></label>
+              <label>Typ<select id="filter-type" name="type"><option value="all">Alle Typen</option><option value="journal">Journal</option><option value="proceedings">Proceedings</option><option value="preprint">Preprint</option></select></label>
+              <label>Thema<select id="filter-theme" name="theme"><option value="all">Alle Themen</option></select></label>
+              <label>Suchmodus<select id="filter-mode" name="mode"><option value="all">Alle Modi</option><option value="core">Core</option><option value="broad">Broad</option><option value="frontier">Frontier</option></select></label>
+              <label>Datenstatus<select id="filter-data-status" name="dataStatus"><option value="all">Alle Status</option><option value="current">Aktuell</option><option value="stale">Veraltet</option></select></label>
+              <label>Sortierung<select id="work-sort" name="sort"><option value="newest">Neueste zuerst</option><option value="oldest">Älteste zuerst</option><option value="relevance">Relevanz</option><option value="title">Titel A–Z</option><option value="citations">Zitationen</option></select></label>
+            </div>
+            <div class="filter-actions">
+              <label class="check-control"><input id="shortlist-only" type="checkbox" /> Nur Shortlist</label>
+              <button id="reset-filters" class="secondary-button" type="reset">Filter zurücksetzen</button>
+              <button id="export-bibtex" class="secondary-button" type="button">BibTeX</button>
+              <button id="export-csv" class="secondary-button" type="button">CSV</button>
+            </div>
+          </form>
+          <div class="result-heading"><p id="work-result-count" role="status">0 Ergebnisse</p><p id="search-scope-note">Suche über den gesamten statischen Index.</p></div>
+          <div id="work-results" class="publication-list"></div>
+          <nav id="work-pagination" class="pagination" aria-label="Publikationsseiten"></nav>
+        </section>
+
+        <section id="view-landscape" class="dashboard-view" data-view="landscape" aria-labelledby="landscape-title" tabindex="-1" hidden>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Korpusstruktur</p><h1 id="landscape-title">Landscape</h1><p>Themenhäufigkeiten, Publikationstypen und evidenzgebundene Forschungsfragen.</p></div><span class="view-number" aria-hidden="true">03</span></header>
+          <div class="two-column-grid">
+            <article class="panel content-panel"><header class="panel-heading"><div><p class="section-kicker">Mehrfachklassifikation möglich</p><h2>Themen im Korpus</h2></div></header><div id="landscape-chart" class="chart-host"></div></article>
+            <article class="panel content-panel"><header class="panel-heading"><div><p class="section-kicker">Publikationsformen</p><h2>Korpuszusammensetzung</h2></div></header><div id="composition-summary" class="composition-summary"></div></article>
+          </div>
+          <article class="panel content-panel spaced-panel"><header class="panel-heading"><div><p class="section-kicker">Fragen an die Evidenz</p><h2>Lens & data-derived Questions</h2></div></header><div id="question-list" class="question-grid"></div></article>
+        </section>
+
+        <section id="view-emerging" class="dashboard-view" data-view="emerging" aria-labelledby="emerging-title" tabindex="-1" hidden>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Beobachtung, keine Prognose</p><h1 id="emerging-title">Emerging Signals</h1><p>Normalisierte Bewegungen werden nur bei vergleichbaren abgeschlossenen Zeitfenstern ausgewiesen.</p></div><span class="view-number" aria-hidden="true">04</span></header>
+          <div id="emerging-notice" class="inline-notice"></div>
+          <div id="emerging-grid" class="analysis-grid"></div>
+        </section>
+
+        <section id="view-calls" class="dashboard-view" data-view="calls" aria-labelledby="calls-title" tabindex="-1" hidden>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Offizielle Quellen</p><h1 id="calls-title">Calls & Deadlines</h1><p>Calls for Papers, Special Issues, Konferenzen und Workshops mit Verifikationsstatus.</p></div><span class="view-number" aria-hidden="true">05</span></header>
+          <form id="call-filters" class="filter-panel compact-filters">
+            <label>Deadline<select id="deadline-filter"><option value="upcoming">Alle kommenden</option><option value="30">Nächste 30 Tage</option><option value="90">Nächste 90 Tage</option><option value="closing-soon">Closing soon</option><option value="open">Open</option><option value="expired">Abgelaufen</option><option value="all">Alle inklusive ungeprüft</option></select></label>
+            <label>Call durchsuchen<input id="call-query" type="search" placeholder="Venue, Titel oder Thema …" /></label>
+            <label>Sortierung<select id="call-sort"><option value="deadline">Nächste Deadline</option><option value="verified">Zuletzt verifiziert</option><option value="venue">Venue A–Z</option></select></label>
+          </form>
+          <div class="table-scroll" tabindex="0" aria-label="Calls-Tabelle horizontal scrollbar">
+            <table class="data-table">
+              <caption id="calls-caption">Verifizierte und erhaltene Calls aus offiziellen Quellen</caption>
+              <thead><tr><th scope="col">Call</th><th scope="col">Typ</th><th scope="col">Deadline</th><th scope="col">Status</th><th scope="col">Verifiziert</th></tr></thead>
+              <tbody id="calls-table-body"></tbody>
+            </table>
+          </div>
+          <div id="calls-empty" class="empty-state" hidden><h2>Keine Calls für diesen Filter</h2><p>Die Filterkombination liefert keine verifizierten Einträge.</p></div>
+        </section>
+
+        <section id="view-opportunities" class="dashboard-view" data-view="opportunities" aria-labelledby="opportunities-title" tabindex="-1" hidden>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Vier transparente Komponenten</p><h1 id="opportunities-title">Opportunities</h1><p>Momentum, Preprint-Anteil, Agenda-Nachfrage und Quellenvielfalt – einschließlich Unsicherheit.</p></div><span class="view-number" aria-hidden="true">06</span></header>
+          <div id="opportunity-notice" class="inline-notice"></div>
+          <div id="opportunity-grid" class="analysis-grid"></div>
+        </section>
+
+        <section id="view-method" class="dashboard-view" data-view="method" aria-labelledby="method-title" tabindex="-1" hidden>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Transparenz vor Interpretation</p><h1 id="method-title">Method</h1><p>Versionen, Zeitfenster, Mindestfallzahlen, Datenqualität und Quellenzustand des aktuellen Laufs.</p></div><span class="view-number" aria-hidden="true">07</span></header>
+          <div id="method-cards" class="method-grid"></div>
+          <div class="two-column-grid spaced-panel">
+            <article class="panel content-panel"><header class="panel-heading"><div><p class="section-kicker">Reproduzierbarkeit</p><h2>Methodenversionen</h2></div></header><dl id="version-list" class="definition-list"></dl></article>
+            <article class="panel content-panel"><header class="panel-heading"><div><p class="section-kicker">Datenqualität</p><h2>Aktuelle Warnungen</h2></div></header><ul id="warning-list" class="warning-list"></ul></article>
+          </div>
+          <article class="panel content-panel spaced-panel">
+            <header class="panel-heading"><div><p class="section-kicker">Source Health</p><h2>Abgefragte Quellen</h2></div></header>
+            <div class="table-scroll" tabindex="0" aria-label="Quellenstatus-Tabelle horizontal scrollbar">
+              <table class="data-table"><caption>Technischer und inhaltlicher Status der Datenquellen</caption><thead><tr><th scope="col">Quelle</th><th scope="col">Rolle</th><th scope="col">Status</th><th scope="col">Datensätze</th><th scope="col">Letzter Erfolg</th></tr></thead><tbody id="source-table-body"></tbody></table>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="dashboard-footer"><span>Human–AI Research Radar</span><span id="footer-version">Statisches GitHub-Pages-Dashboard</span><span id="footer-updated">Keine Daten geladen</span></footer>
+    <script type="module" src="./assets/js/app.js"></script>
+  </body>
+</html>

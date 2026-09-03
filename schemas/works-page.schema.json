@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "works-page.schema.json",
+  "title": "Paginated publications and preprints",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "page", "pageSize", "totalItems", "totalPages", "nextPage", "items"],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "generatedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "page": { "type": "integer", "minimum": 1 },
+    "pageSize": { "type": "integer", "minimum": 1, "maximum": 1000 },
+    "totalItems": { "type": "integer", "minimum": 0 },
+    "totalPages": { "type": "integer", "minimum": 0 },
+    "nextPage": { "type": ["string", "null"], "pattern": "^\\./page-[0-9]+\\.json$" },
+    "items": {
+      "type": "array",
+      "items": { "$ref": "publication.schema.json" }
+    }
+  }
+}

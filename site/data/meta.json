@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "radar-meta-1.0.0",
+  "generatedAt": "2026-09-02T12:40:16.826Z",
+  "lastSuccessfulIngestionAt": "2026-09-02T09:44:20.022Z",
+  "analysisVersion": "static-corpus-analysis-2.0.0",
+  "queryVersion": "static-search-4.0.0",
+  "ontologyVersion": "human-work-themes-3.0.0",
+  "mode": "incremental",
+  "status": "partial",
+  "totalFound": 20,
+  "totalAnalyzed": 20,
+  "message": "Ausgewählte Publikationsmodi erfolgreich aktualisiert; weitere Modi wurden nicht ausgeführt. Calls sind teilweise verfügbar; Fehler werden quellengenau ausgewiesen. Statische Analyse: 20 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
+  "sourceStatus": [
+    {
+      "source": "OpenAlex (core)",
+      "status": "healthy",
+      "recordCount": 20,
+      "checkedAt": "2026-09-02T09:44:20.022Z",
+      "message": null
+    },
+    {
+      "source": "Crossref (core)",
+      "status": "healthy",
+      "recordCount": 20,
+      "checkedAt": "2026-09-02T09:44:20.022Z",
+      "message": null
+    }
+  ],
+  "dataQualityWarnings": [
+    {
+      "code": "ingestion-modes-not-run",
+      "severity": "info",
+      "message": "Nicht ausgeführte Suchmodi: broad, frontier.",
+      "affectedRecords": 0
+    },
+    {
+      "code": "calls-source-parser_error-hfes-aspire",
+      "severity": "error",
+      "message": "HFES ASPIRE Call for Submissions: HFES-Seite nennt keine eindeutig datierte Deadline mit Jahr",
+      "affectedRecords": 0
+    },
+    {
+      "code": "calls-source-forbidden-sage-human-relations",
+      "severity": "warning",
+      "message": "Human Relations Calls for Papers: Human Relations Calls for Papers antwortete mit HTTP 403",
+      "affectedRecords": 0
+    },
+    {
+      "code": "calls-source-forbidden-elsevier-safety-science",
+      "severity": "warning",
+      "message": "Safety Science Calls for Papers: Safety Science Calls for Papers antwortete mit HTTP 403",
+      "affectedRecords": 0
+    },
+    {
+      "code": "calls-source-forbidden-elsevier-applied-ergonomics",
+      "severity": "warning",
+      "message": "Applied Ergonomics Calls for Papers: Applied Ergonomics Calls for Papers antwortete mit HTTP 403",
+      "affectedRecords": 0
+    },
+    {
+      "code": "analysis-running-or-indexing-lag-years-excluded",
+      "severity": "warning",
+      "message": "Aus Trendvergleichen ausgeschlossen: 2026.",
+      "affectedRecords": 20
+    },
+    {
+      "code": "analysis-no-stable-year-records",
+      "severity": "warning",
+      "message": "Der Korpus enthält keine Publikationen in vollständig abgeschlossenen Vergleichsjahren.",
+      "affectedRecords": 20
+    },
+    {
+      "code": "analysis-partial-publication-corpus",
+      "severity": "warning",
+      "message": "Nicht alle vorgesehenen Suchmodi liegen im statischen Korpus vor.",
+      "affectedRecords": 20
+    },
+    {
+      "code": "analysis-partial-agenda-sources",
+      "severity": "warning",
+      "message": "Agenda Signals beruhen auf einer nur teilweise verfügbaren offiziellen Calls-Registry.",
+      "affectedRecords": 10
+    },
+    {
+      "code": "analysis-missing-abstracts",
+      "severity": "info",
+      "message": "5 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
+      "affectedRecords": 5
+    }
+  ],
+  "datasets": {
+    "publications": {
+      "path": "./works/page-001.json",
+      "status": "partial",
+      "recordCount": 20
+    },
+    "preprints": {
+      "path": "./works/page-001.json",
+      "status": "partial",
+      "recordCount": 0
+    },
+    "searchIndex": {
+      "path": "./search-index.json",
+      "status": "partial",
+      "recordCount": 20
+    },
+    "calls": {
+      "path": "./calls.json",
+      "status": "partial",
+      "recordCount": 22
+    },
+    "trends": {
+      "path": "./trends.json",
+      "status": "partial",
+      "recordCount": 8
+    },
+    "questions": {
+      "path": "./questions.json",
+      "status": "partial",
+      "recordCount": 9
+    },
+    "sourceHealth": {
+      "path": "./source-health.json",
+      "status": "ready",
+      "recordCount": 2
+    },
+    "snapshots": {
+      "path": "./snapshots/index.json",
+      "status": "partial",
+      "recordCount": 1
+    },
+    "agendaSignals": {
+      "path": "./agenda-signals.json",
+      "status": "partial",
+      "recordCount": 26
+    }
+  },
+  "methodVersions": {
+    "analysis": "static-corpus-analysis-2.0.0",
+    "ontology": "human-work-themes-3.0.0",
+    "classification": "weighted-lexical-3.0.0",
+    "trends": "equal-windows-2.0.0",
+    "questions": "evidence-questions-2.0.0",
+    "opportunities": "opportunity-components-2.0.0",
+    "snapshots": "analysis-snapshot-2.0.0"
+  }
+}

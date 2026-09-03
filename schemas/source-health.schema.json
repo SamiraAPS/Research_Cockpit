@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source-health.schema.json",
+  "title": "Source availability and freshness",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "status", "sources"],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "generatedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "status": { "$ref": "common.schema.json#/$defs/datasetStatus" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "status", "checkedAt", "lastSuccessfulAt", "recordCount", "latencyMs", "message"],
+        "properties": {
+          "source": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+          "status": { "$ref": "common.schema.json#/$defs/sourceStatus" },
+          "checkedAt": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
+          "lastSuccessfulAt": { "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }] },
+          "recordCount": { "type": "integer", "minimum": 0 },
+          "latencyMs": { "type": ["integer", "null"], "minimum": 0 },
+          "message": { "type": ["string", "null"] },
+          "provider": { "enum": ["openalex", "arxiv", "crossref"] },
+          "role": { "enum": ["discovery", "enrichment"] },
+          "modes": { "type": "array", "items": { "enum": ["core", "broad", "frontier"] }, "uniqueItems": true },
+          "queryVersions": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "uniqueItems": true },
+          "requestCount": { "type": "integer", "minimum": 0 },
+          "pageCount": { "type": "integer", "minimum": 0 },
+          "attempts": { "type": "integer", "minimum": 0 },
+          "retryCount": { "type": "integer", "minimum": 0 },
+          "rateLimitEvents": { "type": "integer", "minimum": 0 },
+          "httpStatus": { "type": ["integer", "null"], "minimum": 100, "maximum": 599 },
+          "parameters": { "type": "object" }
+        }
+      }
+    }
+  }
+}

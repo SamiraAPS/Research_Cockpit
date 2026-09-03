@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "radar-meta-1.0.0",
+  "generatedAt": "2026-09-02T13:00:00.000Z",
+  "lastSuccessfulIngestionAt": "2026-08-31T11:55:00Z",
+  "analysisVersion": "static-corpus-analysis-2.0.0",
+  "queryVersion": "search-3.0.0",
+  "ontologyVersion": "human-work-themes-3.0.0",
+  "mode": "snapshot",
+  "status": "partial",
+  "totalFound": 1,
+  "totalAnalyzed": 1,
+  "message": "Testdatensatz vollständig. Statische Analyse: 1 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
+  "sourceStatus": [
+    {
+      "source": "OpenAlex",
+      "status": "healthy",
+      "recordCount": 1,
+      "checkedAt": "2026-08-31T11:55:00Z",
+      "message": null
+    }
+  ],
+  "dataQualityWarnings": [
+    {
+      "code": "analysis-running-or-indexing-lag-years-excluded",
+      "severity": "warning",
+      "message": "Aus Trendvergleichen ausgeschlossen: 2026.",
+      "affectedRecords": 1
+    },
+    {
+      "code": "analysis-no-stable-year-records",
+      "severity": "warning",
+      "message": "Der Korpus enthält keine Publikationen in vollständig abgeschlossenen Vergleichsjahren.",
+      "affectedRecords": 1
+    }
+  ],
+  "datasets": {
+    "publications": {
+      "path": "./works/page-001.json",
+      "status": "ready",
+      "recordCount": 1
+    },
+    "preprints": {
+      "path": "./works/page-001.json",
+      "status": "ready",
+      "recordCount": 0
+    },
+    "searchIndex": {
+      "path": "./search-index.json",
+      "status": "partial",
+      "recordCount": 1
+    },
+    "calls": {
+      "path": "./calls.json",
+      "status": "ready",
+      "recordCount": 1
+    },
+    "trends": {
+      "path": "./trends.json",
+      "status": "partial",
+      "recordCount": 8
+    },
+    "questions": {
+      "path": "./questions.json",
+      "status": "partial",
+      "recordCount": 9
+    },
+    "sourceHealth": {
+      "path": "./source-health.json",
+      "status": "ready",
+      "recordCount": 1
+    },
+    "snapshots": {
+      "path": "./snapshots/index.json",
+      "status": "partial",
+      "recordCount": 1
+    },
+    "agendaSignals": {
+      "path": "./agenda-signals.json",
+      "status": "ready",
+      "recordCount": 1
+    }
+  },
+  "methodVersions": {
+    "analysis": "static-corpus-analysis-2.0.0",
+    "ontology": "human-work-themes-3.0.0",
+    "classification": "weighted-lexical-3.0.0",
+    "trends": "equal-windows-2.0.0",
+    "questions": "evidence-questions-2.0.0",
+    "opportunities": "opportunity-components-2.0.0",
+    "snapshots": "analysis-snapshot-2.0.0"
+  }
+}

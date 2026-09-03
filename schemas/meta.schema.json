@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "meta.schema.json",
+  "title": "Static dataset manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "lastSuccessfulIngestionAt",
+    "analysisVersion",
+    "queryVersion",
+    "ontologyVersion",
+    "mode",
+    "status",
+    "totalFound",
+    "totalAnalyzed",
+    "message",
+    "sourceStatus",
+    "dataQualityWarnings",
+    "datasets"
+  ],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "generatedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "lastSuccessfulIngestionAt": {
+      "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }]
+    },
+    "analysisVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "queryVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "ontologyVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "methodVersions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analysis", "ontology", "classification", "trends", "questions", "opportunities", "snapshots"],
+      "properties": {
+        "analysis": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+        "ontology": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+        "classification": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+        "trends": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+        "questions": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+        "opportunities": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+        "snapshots": { "$ref": "common.schema.json#/$defs/nonEmptyString" }
+      }
+    },
+    "mode": { "enum": ["empty", "snapshot", "incremental"] },
+    "status": { "enum": ["empty", "partial", "ready"] },
+    "totalFound": { "type": "integer", "minimum": 0 },
+    "totalAnalyzed": { "type": "integer", "minimum": 0 },
+    "message": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "sourceStatus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "status", "recordCount", "checkedAt", "message"],
+        "properties": {
+          "source": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+          "status": { "$ref": "common.schema.json#/$defs/sourceStatus" },
+          "recordCount": { "type": "integer", "minimum": 0 },
+          "checkedAt": {
+            "anyOf": [{ "$ref": "common.schema.json#/$defs/timestamp" }, { "type": "null" }]
+          },
+          "message": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "dataQualityWarnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "severity", "message", "affectedRecords"],
+        "properties": {
+          "code": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+          "severity": { "enum": ["info", "warning", "error"] },
+          "message": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+          "affectedRecords": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "datasets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["publications", "preprints", "searchIndex", "calls", "trends", "questions", "sourceHealth", "snapshots"],
+      "properties": {
+        "publications": { "$ref": "#/$defs/dataset" },
+        "preprints": { "$ref": "#/$defs/dataset" },
+        "searchIndex": { "$ref": "#/$defs/dataset" },
+        "calls": { "$ref": "#/$defs/dataset" },
+        "trends": { "$ref": "#/$defs/dataset" },
+        "questions": { "$ref": "#/$defs/dataset" },
+        "sourceHealth": { "$ref": "#/$defs/dataset" },
+        "snapshots": { "$ref": "#/$defs/dataset" },
+        "agendaSignals": { "$ref": "#/$defs/dataset" }
+      }
+    }
+  },
+  "$defs": {
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "status", "recordCount"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^\\./(?!.*\\.\\.)[^\\\\]+\\.json$" },
+        "status": { "$ref": "common.schema.json#/$defs/datasetStatus" },
+        "recordCount": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}

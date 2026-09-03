@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "questions.schema.json",
+  "title": "Lens and evidence-derived research questions",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "status", "analysisVersion", "classificationVersion", "ontologyVersion", "inputHash", "methodVersion", "minimumEvidenceRecords", "lens", "dataDerived"],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "generatedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "status": { "$ref": "common.schema.json#/$defs/datasetStatus" },
+    "analysisVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "classificationVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "ontologyVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "inputHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "methodVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" },
+    "minimumEvidenceRecords": { "type": "integer", "minimum": 1 },
+    "lens": { "type": "array", "items": { "$ref": "#/$defs/lens" } },
+    "dataDerived": { "type": "array", "items": { "$ref": "#/$defs/derived" } }
+  },
+  "$defs": {
+    "evidence": { "type": "object", "additionalProperties": false, "required": ["workId", "reason"], "properties": { "workId": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "reason": { "$ref": "common.schema.json#/$defs/nonEmptyString" } } },
+    "lens": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "theme", "label", "question", "rationale", "status", "themes", "evidence"],
+      "properties": { "id": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "kind": { "const": "lens" }, "theme": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "label": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "question": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "rationale": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "status": { "const": "framework" }, "themes": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "uniqueItems": true }, "evidence": { "type": "array", "maxItems": 0 } }
+    },
+    "derived": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "pattern", "status", "themes", "label", "question", "count", "minimumEvidenceRecords", "evidence"],
+      "properties": { "id": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "kind": { "const": "data-derived" }, "pattern": { "const": "theme-cooccurrence" }, "status": { "enum": ["supported", "insufficient"] }, "themes": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "uniqueItems": true }, "label": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "question": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "count": { "type": "integer", "minimum": 0 }, "minimumEvidenceRecords": { "type": "integer", "minimum": 1 }, "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } } }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "snapshots-index.schema.json",
+  "title": "Historical snapshot index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "snapshots"],
+  "properties": {
+    "schemaVersion": { "$ref": "common.schema.json#/$defs/schemaVersion" },
+    "generatedAt": { "$ref": "common.schema.json#/$defs/timestamp" },
+    "snapshots": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["id", "generatedAt", "path", "analysisVersion", "inputHash"], "properties": { "id": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "generatedAt": { "$ref": "common.schema.json#/$defs/timestamp" }, "path": { "type": "string", "pattern": "^\\./[^\\\\]+\\.json$" }, "analysisVersion": { "$ref": "common.schema.json#/$defs/nonEmptyString" }, "inputHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" } } } }
+  }
+}
