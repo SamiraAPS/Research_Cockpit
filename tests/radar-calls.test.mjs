@@ -167,6 +167,8 @@ test("keeps prior calls as unverified history when their official source becomes
 });
 
 test("keeps agenda counts separate from publication and trend counts", async (context) => {
+  // Keep the dashboard query at the fixture's ingestion date as deadlines expire.
+  context.mock.timers.enable({ apis: ["Date"], now: new Date("2026-08-28T10:00:00.000Z") });
   const db = await createTestD1(root);
   context.after(() => db.close());
   await runCallsIngestion(db, { dataset: "calls", sourceKeys: ["acm-chi-2027"] }, {
