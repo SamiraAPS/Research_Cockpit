@@ -14,6 +14,7 @@ import {
   THEMES,
   TREND_METHOD_VERSION
 } from "./ontology.v3.mjs";
+import { RESEARCH_PROFILE } from "../../site/assets/js/research.js";
 import { buildQuestions } from "./questions.mjs";
 
 function stableStringify(value) {
@@ -35,7 +36,7 @@ async function readJson(filename) {
 async function atomicJson(filename, value) {
   await mkdir(path.dirname(filename), { recursive: true });
   const temporary = `${filename}.${process.pid}.tmp`;
-  await writeFile(temporary, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  await writeFile(temporary, `${JSON.stringify(value, null, filename.endsWith("search-index.json") ? undefined : 2)}\n`, "utf8");
   try {
     await rename(temporary, filename);
   } catch (error) {
@@ -83,6 +84,9 @@ function analysisInput(works, calls) {
 }
 
 function corpusIsComplete(meta) {
+  if (meta.comparisonMode === "core" && meta.historicalBackfill) {
+    return meta.historicalBackfill.complete === true && meta.ingestionProgress?.["openalex:core"]?.complete === true;
+  }
   const incompleteCodes = new Set([
     "ingestion-modes-not-run",
     "ingestion-source-failed",
@@ -104,6 +108,11 @@ function updateSearchIndex(searchIndex, works, generatedAt) {
       if (!work) return document;
       return {
         ...document,
+        summary: { ...work, abstract: null, topics: [], keywords: [], evidenceTerms: [], scores: {}, externalIds: {},
+          authors: work.authors.map(author => ({ ...author, affiliations: [] })),
+          versions: (work.versions ?? []).filter(version => version.id === work.preferredVersionId),
+          classifiedThemes: work.classifiedThemes.map(theme => ({ ...theme, evidence: [] })) },
+        pagePath: work.pagePath,
         themes: work.classifiedThemes.map((theme) => theme.theme),
         evidenceTerms: work.evidenceTerms
       };
@@ -177,6 +186,7 @@ function updateMeta(meta, generatedAt, metrics, questionData, snapshotCount, wor
     ontologyVersion: ONTOLOGY_VERSION,
     status,
     totalAnalyzed: workCount,
+    researchProfile: RESEARCH_PROFILE,
     message: `${baseMessage} Statische Analyse: ${workCount} reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.`,
     methodVersions: {
       analysis: ANALYSIS_VERSION,
@@ -212,14 +222,19 @@ export async function runAnalysisPipeline(options = {}) {
     readJson(path.join(dataDirectory, "search-index.json")),
     readJson(path.join(dataDirectory, "snapshots/index.json"))
   ]);
-  const originalWorks = pages.flatMap((page) => page.items);
+  const originalWorks = pages.flatMap((page, index) => page.items.map(work => ({
+    ...work, firstSeenAt: work.firstSeenAt ?? work.retrievedAt,
+    firstSeenRunId: work.firstSeenRunId ?? "legacy-import",
+    pagePath: `./works/${pageNames[index]}`
+  })));
   const inputHash = sha256(analysisInput(originalWorks, calls));
   const works = originalWorks.map(classifyWork);
   const metrics = buildStaticMetrics({
     generatedAt,
     works,
     calls,
-    corpusComplete: corpusIsComplete(meta)
+    corpusComplete: corpusIsComplete(meta),
+    comparisonMode: meta.comparisonMode
   });
   const questionData = buildQuestions(works);
   const trends = {

@@ -76,7 +76,7 @@ function sourceHealthEntry(stats, generatedAt, previousHealth, oldWorks) {
     retryCount: stats.retryCount,
     rateLimitEvents: stats.rateLimitEvents,
     httpStatus: stats.httpStatus,
-    parameters: stats.parameters
+    parameters: { ...stats.parameters, foundCount: stats.foundCount }
   };
 }
 
@@ -259,15 +259,22 @@ export async function runStaticIngestion(options = {}) {
   const dataDirectory = path.resolve(options.dataDirectory ?? "site/data");
   const generatedAt = options.now?.toISOString?.() ?? new Date().toISOString();
   const modes = selectedModes(options.mode ?? "all");
+  const runId = `ingestion-${generatedAt}`;
   const previousMeta = await readJson(path.join(dataDirectory, "meta.json"), {});
   const previousHealth = await readJson(path.join(dataDirectory, "source-health.json"), { sources: [] });
   const oldWorks = await readExistingWorks(dataDirectory);
   const freshRecords = [];
   const sourceStats = [];
 
+  function resumed(provider, mode) {
+    const previous = previousMeta.ingestionProgress?.[`${provider}:${mode}`];
+    return options.resume && previous && (previous.cursor || previous.start)
+      ? { ...options, range: previous.range, cursor: previous.cursor, start: previous.start }
+      : options;
+  }
   for (const mode of modes) {
     try {
-      const result = await ingestOpenAlex(mode, options);
+      const result = await ingestOpenAlex(mode, resumed("openalex", mode));
       freshRecords.push(...result.records);
       sourceStats.push(result.stats);
     } catch (error) {
@@ -279,7 +286,7 @@ export async function runStaticIngestion(options = {}) {
 
   if (modes.includes("frontier")) {
     try {
-      const result = await ingestArxiv(options);
+      const result = await ingestArxiv(resumed("arxiv", "frontier"));
       freshRecords.push(...result.records);
       sourceStats.push(result.stats);
     } catch (error) {
@@ -304,7 +311,7 @@ export async function runStaticIngestion(options = {}) {
     statuses.every((status) => status === "unavailable")
   ).map(([provider]) => provider));
   const existingRecords = oldWorks.map(staticWorkToRecord);
-  const deduplicated = deduplicateRecords([...crossref.records, ...existingRecords], { generatedAt, failedProviders });
+  const deduplicated = deduplicateRecords([...crossref.records, ...existingRecords], { generatedAt, failedProviders, runId });
   const sourceEntries = sourceStats.map((stats) => sourceHealthEntry(stats, generatedAt, previousHealth, oldWorks));
   const incompleteModes = ["core", "broad", "frontier"].filter((mode) => !modes.includes(mode));
   const sourceIssues = sourceEntries.some((source) => ["degraded", "unavailable", "stale"].includes(source.status));
@@ -324,6 +331,29 @@ export async function runStaticIngestion(options = {}) {
     pageSize: options.pageSize ?? OUTPUT_PAGE_SIZE
   });
 
+  const metaFile = path.join(dataDirectory, "meta.json");
+  const meta = await readJson(metaFile, {});
+  meta.lastIngestionRunId = runId;
+  meta.lastIngestionAt = generatedAt;
+  meta.comparisonMode = previousMeta.comparisonMode ?? options.comparisonMode ?? "core";
+  if (previousMeta.historicalBackfill) meta.historicalBackfill = previousMeta.historicalBackfill;
+  meta.coverageHistory = [...(previousMeta.coverageHistory ?? []), ...sourceStats.filter(s => s.role === "discovery").map(s => ({
+    provider: s.provider, mode: s.modes[0], from: s.parameters.fromDate, to: s.parameters.toDate,
+    found: s.foundCount, retrieved: s.recordCount, complete: s.status === "healthy", checkedAt: generatedAt
+  }))].slice(-120);
+  meta.ingestionProgress = { ...(previousMeta.ingestionProgress ?? {}) };
+  for (const stats of sourceStats.filter(s => s.role === "discovery")) {
+    const key = `${stats.provider}:${stats.modes[0]}`;
+    const prior = options.resume ? previousMeta.ingestionProgress?.[key] : null;
+    meta.ingestionProgress[key] = {
+      range: { from: stats.parameters.fromDate, to: stats.parameters.toDate },
+      cursor: stats.parameters.nextCursor ?? (stats.status === "unavailable" ? prior?.cursor ?? null : null),
+      start: stats.parameters.nextStart ?? (stats.status === "unavailable" ? prior?.start ?? null : null),
+      retrieved: (prior?.cursor || prior?.start ? prior.retrieved : 0) + stats.recordCount,
+      found: stats.foundCount, complete: stats.status === "healthy"
+    };
+  }
+  await writeJson(metaFile, meta);
   return {
     generatedAt,
     mode: options.mode ?? "all",
@@ -335,7 +365,7 @@ export async function runStaticIngestion(options = {}) {
       role: stats.role,
       modes: stats.modes,
       queryVersions: stats.queryVersions,
-      parameters: stats.parameters
+      parameters: { ...stats.parameters, foundCount: stats.foundCount }
     })),
     pagination: sourceStats.map((stats) => ({
       source: stats.source,

@@ -233,6 +233,8 @@ function canonicalWork(group, context) {
     url: preferred.url,
     openAccess: preferred.openAccess,
     citedByCount: variants.map((variant) => variant.citedByCount).filter(Number.isInteger).sort((a, b) => b - a)[0] ?? null,
+    firstSeenAt: variants.map(v => v.existingWork?.firstSeenAt ?? v.existingWork?.retrievedAt ?? v.retrievedAt).filter(Boolean).sort()[0] ?? context.generatedAt,
+    firstSeenRunId: variants.find(v => v.existingWork)?.existingWork.firstSeenRunId ?? (variants.some(v => v.existingWork) ? "legacy-import" : context.runId ?? context.generatedAt),
     retrievedAt: variants.map((variant) => variant.retrievedAt).filter(Boolean).sort().at(-1) ?? context.generatedAt,
     dataStatus: onlyFailedExisting ? "stale" : "current",
     lastVerifiedAt,

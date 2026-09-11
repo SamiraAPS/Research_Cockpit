@@ -1,3 +1,4 @@
+import { callTimeStatus } from "../../site/assets/js/research.js";
 import { classifyRecord } from "./classification.mjs";
 import {
   INDEXING_LAG_DAYS, LONG_WINDOW_YEARS, MINIMUM_TREND_RECORDS, OPPORTUNITY_METHOD_VERSION,
@@ -231,7 +232,7 @@ function opportunityForTheme(trend, emerging, agenda, corpusComplete) {
   if (!corpusComplete) reasons.push("Der statische Publikationskorpus ist nur teilweise vollständig.");
   if (agenda.dataQuality !== "complete") reasons.push("Die Calls-Registry ist nur teilweise verfügbar.");
   const uncertainty = missing.length || !corpusComplete ? "high" : agenda.dataQuality !== "complete" ? "medium" : "low";
-  const score = missing.length ? null : Math.round(components.reduce((sum, component) => sum + component.score, 0));
+  const score = missing.length || !corpusComplete ? null : Math.round(components.reduce((sum, component) => sum + component.score, 0));
   return {
     theme: trend.theme,
     label: trend.label,
@@ -251,8 +252,9 @@ export function buildStaticMetrics(input) {
   const now = new Date(generatedAt);
   const currentYear = now.getUTCFullYear();
   const stableYear = latestStableYear(now);
-  const records = trendRecords(input.works);
-  const calls = classifyCalls(input.calls.items ?? []);
+  const comparisonWorks = input.comparisonMode ? input.works.filter(work => work.discoveredBy?.some(d => d.mode === input.comparisonMode)) : input.works;
+  const records = trendRecords(comparisonWorks);
+  const calls = classifyCalls((input.calls.items ?? []).map(call => ({ ...call, status: callTimeStatus(call, now) })));
   const earliestWindowYear = stableYear - (LONG_WINDOW_YEARS * 2 - 1);
   const excludedYears = Array.from({ length: currentYear - stableYear }, (_, index) => stableYear + index + 1);
 
@@ -323,7 +325,7 @@ export function buildStaticMetrics(input) {
       shortWindowYears: SHORT_WINDOW_YEARS,
       longWindowYears: LONG_WINDOW_YEARS,
       minimumTrendRecords: MINIMUM_TREND_RECORDS,
-      normalization: "Themenpublikationen je 1.000 geeignete Korpusarbeiten im identischen Kalenderfenster.",
+      normalization: `Themenpublikationen je 1.000 geeignete ${input.comparisonMode ?? "gesamte"}-Korpusarbeiten im identischen Kalenderfenster; kein externes Vergleichsfeld.`,
       currentYearExcluded: true,
       indexingLagDays: INDEXING_LAG_DAYS,
       opportunityRequiresAllComponents: true
@@ -334,7 +336,9 @@ export function buildStaticMetrics(input) {
       excludedYears,
       corpusStartYear: records.length ? Math.min(...records.map((record) => record.year)) : null,
       corpusEndYear: records.length ? Math.max(...records.map((record) => record.year)) : null,
+      comparisonMode: input.comparisonMode ?? "all",
       totalWorks: records.length,
+      searchableWorks: input.works.length,
       publications: records.filter((record) => record.type !== "preprint").length,
       preprints: records.filter((record) => record.type === "preprint").length,
       journalCount: records.filter((record) => record.type === "journal").length,

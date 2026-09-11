@@ -137,7 +137,7 @@ export async function ingestArxiv(options = {}) {
     message: null
   };
   const records = [];
-  let start = 0;
+  let start = options.start ?? 0;
 
   try {
     while (stats.pageCount === 0 || start < stats.foundCount) {
@@ -161,8 +161,14 @@ export async function ingestArxiv(options = {}) {
       const feed = parseArxivFeed(await request.response.text(), { retrievedAt: options.now?.toISOString?.() ?? new Date().toISOString() });
       if (stats.pageCount === 1) stats.foundCount = feed.totalResults;
       records.push(...feed.records);
-      if (feed.records.length === 0 || records.length >= stats.foundCount) break;
+      if (feed.records.length === 0 || start + feed.records.length >= stats.foundCount) { stats.parameters.nextStart = null; break; }
       start += feed.records.length;
+      stats.parameters.nextStart = start;
+      if (stats.pageCount >= (options.maxPages ?? Infinity)) {
+        stats.status = "degraded";
+        stats.message = "Seitenbudget erreicht; Fortsetzung am gespeicherten Offset.";
+        break;
+      }
       await (options.sleep ?? ((milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds))))(ARXIV_INTER_PAGE_DELAY_MS);
     }
   } catch (error) {

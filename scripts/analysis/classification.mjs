@@ -54,7 +54,7 @@ function evidenceFor(theme, source, value) {
       concept: concept.id,
       conceptLabel: concept.label,
       matchedTerm,
-      sourceValue: String(value).slice(0, 240),
+      sourceValue: String(value).slice(Math.max(0, String(value).toLowerCase().indexOf(matchedTerm.toLowerCase()) - 80), Math.max(0, String(value).toLowerCase().indexOf(matchedTerm.toLowerCase()) - 80) + 320),
       weight: FIELD_WEIGHTS[source]
     }] : [];
   });

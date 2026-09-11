@@ -1,9 +1,9 @@
 export const ONTOLOGY_VERSION = "human-work-themes-3.0.0";
 export const CLASSIFICATION_VERSION = "weighted-lexical-3.0.0";
-export const ANALYSIS_VERSION = "static-corpus-analysis-2.0.0";
-export const TREND_METHOD_VERSION = "equal-windows-2.0.0";
-export const QUESTION_METHOD_VERSION = "evidence-questions-2.0.0";
-export const OPPORTUNITY_METHOD_VERSION = "opportunity-components-2.0.0";
+export const ANALYSIS_VERSION = "static-corpus-analysis-2.1.0";
+export const TREND_METHOD_VERSION = "equal-windows-2.1.0";
+export const QUESTION_METHOD_VERSION = "evidence-questions-2.1.0";
+export const OPPORTUNITY_METHOD_VERSION = "opportunity-components-2.1.0";
 export const SNAPSHOT_VERSION = "analysis-snapshot-2.0.0";
 
 export const FIELD_WEIGHTS = Object.freeze({

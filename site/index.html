@@ -100,6 +100,7 @@
           <form id="work-filters" class="filter-panel" role="search">
             <div class="search-field"><label for="work-query">Korpus durchsuchen</label><input id="work-query" name="query" type="search" placeholder="Titel, Abstract, Autor:in, Thema …" autocomplete="off" /></div>
             <div class="filter-grid">
+              <label>Neuheit<select id="filter-novelty"><option value="all">Gesamter Korpus</option><option value="since-visit">Seit letztem Lesestand</option><option value="latest-run">Erstfunde im letzten Lauf</option><option value="week">Erstfunde in der Laufwoche (UTC)</option><option value="published-30">In den letzten 30 Tagen publiziert</option></select></label>
               <label>Jahr<select id="filter-year" name="year"><option value="all">Alle Jahre</option></select></label>
               <label>Quelle<select id="filter-source" name="source"><option value="all">Alle Quellen</option></select></label>
               <label>Typ<select id="filter-type" name="type"><option value="all">Alle Typen</option><option value="journal">Journal</option><option value="proceedings">Proceedings</option><option value="preprint">Preprint</option></select></label>
@@ -111,6 +112,10 @@
             <div class="filter-actions">
               <label class="check-control"><input id="shortlist-only" type="checkbox" /> Nur Shortlist</label>
               <button id="reset-filters" class="secondary-button" type="reset">Filter zurücksetzen</button>
+              <button id="mark-reviewed" class="secondary-button" type="button">Datenstand gelesen</button>
+              <button id="save-search" class="secondary-button" type="button">Suche speichern</button>
+              <button id="restore-search" class="secondary-button" type="button">Suche laden</button>
+              <button id="export-audit" class="secondary-button" type="button">Audit-CSV</button>
               <button id="export-bibtex" class="secondary-button" type="button">BibTeX</button>
               <button id="export-csv" class="secondary-button" type="button">CSV</button>
             </div>
@@ -160,6 +165,7 @@
 
         <section id="view-method" class="dashboard-view" data-view="method" aria-labelledby="method-title" tabindex="-1" hidden>
           <header class="view-intro compact-intro"><div><p class="section-kicker">Transparenz vor Interpretation</p><h1 id="method-title">Method</h1><p>Versionen, Zeitfenster, Mindestfallzahlen, Datenqualität und Quellenzustand des aktuellen Laufs.</p></div><span class="view-number" aria-hidden="true">07</span></header>
+          <article class="panel content-panel"><h2>Abdeckung & fachliche Prüfung</h2><p id="research-profile"></p><div id="coverage-summary"></div><p>Studienkontext, Population, Studiendesign und Outcomes werden im Audit manuell erfasst; sie werden nicht aus Stichworten als gesicherte Fakten abgeleitet.</p></article>
           <div id="method-cards" class="method-grid"></div>
           <div class="two-column-grid spaced-panel">
             <article class="panel content-panel"><header class="panel-heading"><div><p class="section-kicker">Reproduzierbarkeit</p><h2>Methodenversionen</h2></div></header><dl id="version-list" class="definition-list"></dl></article>

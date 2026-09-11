@@ -10,6 +10,20 @@ const projectRoot = path.resolve(import.meta.dirname, "../..");
 const validFixture = path.join(projectRoot, "tests/fixtures/static-data/valid");
 const invalidFixtures = path.join(projectRoot, "tests/fixtures/static-data/invalid");
 
+test("rejects a search preview pointing to another publication page", async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), "radar-preview-"));
+  try {
+    await cp(validFixture, directory, { recursive: true });
+    const filename = path.join(directory, "search-index.json");
+    const search = JSON.parse(await readFile(filename, "utf8"));
+    search.documents[0].summary = { id: search.documents[0].id, pagePath: "./works/page-999.json" };
+    search.documents[0].pagePath = "./works/page-999.json";
+    await writeFile(filename, JSON.stringify(search));
+    const result = await validateDataDirectory(directory);
+    assert.ok(result.errors.some(error => error.code === "inconsistent-summary"));
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});
+
 async function readJson(filename) {
   return JSON.parse(await readFile(filename, "utf8"));
 }

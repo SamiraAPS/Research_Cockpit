@@ -1,3 +1,6 @@
+import { matchesNovelty, csvCell } from "./research.js";
+const prepared = new WeakMap();
+const documentMaps = new WeakMap();
 export function normalizeSearchText(value) {
   return String(value ?? "")
     .toLocaleLowerCase("de")
@@ -24,11 +27,15 @@ function searchableText(document) {
 export function scoreDocument(document, query) {
   const terms = normalizeSearchText(query).split(" ").filter(Boolean);
   if (!terms.length) return 0;
-  const title = normalizeSearchText(document.title);
-  const abstract = normalizeSearchText(document.abstract);
-  const authors = normalizeSearchText((document.authors ?? []).join(" "));
-  const facets = normalizeSearchText([document.venue, ...(document.topics ?? []), ...(document.keywords ?? []), ...(document.themes ?? []), ...(document.evidenceTerms ?? [])].join(" "));
-  const all = searchableText(document);
+  let cached = prepared.get(document);
+  if (!cached) {
+    cached = { title: normalizeSearchText(document.title), abstract: normalizeSearchText(document.abstract),
+      authors: normalizeSearchText((document.authors ?? []).map(a => typeof a === "string" ? a : a.name).join(" ")),
+      facets: normalizeSearchText([document.venue, ...(document.topics ?? []), ...(document.keywords ?? []), ...(document.themes ?? []), ...(document.evidenceTerms ?? [])].join(" ")),
+      all: searchableText(document) };
+    prepared.set(document, cached);
+  }
+  const { title, abstract, authors, facets, all } = cached;
   if (!terms.every((term) => all.includes(term))) return -1;
   return terms.reduce((score, term) => score
     + (title.includes(term) ? 8 : 0)
@@ -48,8 +55,11 @@ function matchesFilter(value, selected) {
 }
 
 export function searchAndFilterWorks(works, documents, filters = {}) {
-  const documentsById = new Map(documents.map((document) => [document.id, document]));
+  let documentsById = documentMaps.get(documents);
+  if (!documentsById) { documentsById = new Map(documents.map(document => [document.id, document])); documentMaps.set(documents, documentsById); }
   return works.flatMap((work) => {
+    if (filters.workId && work.id !== filters.workId) return [];
+    if (!matchesNovelty(work, filters.novelty, filters.noveltyContext)) return [];
     const document = documentsById.get(work.id) ?? work;
     const relevance = scoreDocument(document, filters.query);
     if (relevance < 0) return [];
@@ -70,11 +80,11 @@ export function searchAndFilterWorks(works, documents, filters = {}) {
 
 export function sortWorkResults(results, sort = "newest") {
   return [...results].sort((left, right) => {
-    if (sort === "relevance") return right.relevance - left.relevance || right.work.publicationDate.localeCompare(left.work.publicationDate);
-    if (sort === "oldest") return left.work.publicationDate.localeCompare(right.work.publicationDate) || left.work.title.localeCompare(right.work.title);
+    if (sort === "relevance") return right.relevance - left.relevance || String(right.work.publicationDate ?? "").localeCompare(String(left.work.publicationDate ?? ""));
+    if (sort === "oldest") return String(left.work.publicationDate ?? "").localeCompare(String(right.work.publicationDate ?? "")) || left.work.title.localeCompare(right.work.title);
     if (sort === "title") return left.work.title.localeCompare(right.work.title, "de");
-    if (sort === "citations") return (right.work.citedByCount ?? 0) - (left.work.citedByCount ?? 0) || right.work.publicationDate.localeCompare(left.work.publicationDate);
-    return right.work.publicationDate.localeCompare(left.work.publicationDate) || left.work.title.localeCompare(right.work.title, "de");
+    if (sort === "citations") return (right.work.citedByCount ?? 0) - (left.work.citedByCount ?? 0) || String(right.work.publicationDate ?? "").localeCompare(String(left.work.publicationDate ?? ""));
+    return String(right.work.publicationDate ?? "").localeCompare(String(left.work.publicationDate ?? "")) || left.work.title.localeCompare(right.work.title, "de");
   });
 }
 
@@ -85,12 +95,10 @@ export function paginate(items, page = 1, pageSize = 8) {
   return { items: items.slice(start, start + pageSize), currentPage, totalPages, totalItems: items.length };
 }
 
-function csvValue(value) {
-  return `"${String(value ?? "").replaceAll('"', '""')}"`;
-}
+const csvValue = csvCell;
 
 export function worksToCsv(works) {
-  const rows = [["id", "title", "authors", "venue", "publicationDate", "type", "doi", "themes", "dataStatus", "url"]];
+  const rows = [["id", "title", "authors", "venue", "publicationDate", "type", "doi", "themes", "dataStatus", "url", "abstract", "firstSeenAt", "source_modes"]];
   for (const work of works) rows.push([
     work.id,
     work.title,
@@ -101,7 +109,7 @@ export function worksToCsv(works) {
     work.doi,
     (work.classifiedThemes ?? []).map((theme) => theme.theme).join("; "),
     work.dataStatus,
-    work.url
+    work.url, work.abstract, work.firstSeenAt, (work.discoveredBy ?? []).map(d => d.mode).join("; ")
   ]);
   return rows.map((row) => row.map(csvValue).join(",")).join("\r\n");
 }

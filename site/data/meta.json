@@ -1,38 +1,32 @@
 {
   "schemaVersion": "radar-meta-1.0.0",
-  "generatedAt": "2026-09-02T12:40:16.826Z",
+  "generatedAt": "2026-09-11T10:54:01.029Z",
   "lastSuccessfulIngestionAt": "2026-09-02T09:44:20.022Z",
-  "analysisVersion": "static-corpus-analysis-2.0.0",
+  "analysisVersion": "static-corpus-analysis-2.1.0",
   "queryVersion": "static-search-4.0.0",
   "ontologyVersion": "human-work-themes-3.0.0",
   "mode": "incremental",
   "status": "partial",
-  "totalFound": 20,
-  "totalAnalyzed": 20,
-  "message": "Ausgewählte Publikationsmodi erfolgreich aktualisiert; weitere Modi wurden nicht ausgeführt. Calls sind teilweise verfügbar; Fehler werden quellengenau ausgewiesen. Statische Analyse: 20 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
+  "totalFound": 899,
+  "totalAnalyzed": 899,
+  "message": "Publikationsdaten teilweise aktualisiert; verifizierte Bestandsdaten wurden erhalten. Statische Analyse: 899 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
   "sourceStatus": [
     {
       "source": "OpenAlex (core)",
-      "status": "healthy",
-      "recordCount": 20,
-      "checkedAt": "2026-09-02T09:44:20.022Z",
-      "message": null
+      "status": "degraded",
+      "recordCount": 900,
+      "checkedAt": "2026-09-11T08:43:33.699Z",
+      "message": "OpenAlex antwortete mit HTTP 429"
     },
     {
       "source": "Crossref (core)",
-      "status": "healthy",
-      "recordCount": 20,
-      "checkedAt": "2026-09-02T09:44:20.022Z",
-      "message": null
+      "status": "not_checked",
+      "recordCount": 0,
+      "checkedAt": "2026-09-11T08:43:33.699Z",
+      "message": "Crossref-Enrichment wurde für diesen Lauf explizit deaktiviert."
     }
   ],
   "dataQualityWarnings": [
-    {
-      "code": "ingestion-modes-not-run",
-      "severity": "info",
-      "message": "Nicht ausgeführte Suchmodi: broad, frontier.",
-      "affectedRecords": 0
-    },
     {
       "code": "calls-source-parser_error-hfes-aspire",
       "severity": "error",
@@ -58,22 +52,34 @@
       "affectedRecords": 0
     },
     {
+      "code": "ingestion-source-degraded",
+      "severity": "warning",
+      "message": "OpenAlex (core): OpenAlex antwortete mit HTTP 429",
+      "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-modes-not-run",
+      "severity": "info",
+      "message": "Nicht ausgeführte Suchmodi: broad, frontier.",
+      "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-deduplicated",
+      "severity": "info",
+      "message": "21 Quellendatensätze wurden zu kanonischen Works zusammengeführt.",
+      "affectedRecords": 21
+    },
+    {
       "code": "analysis-running-or-indexing-lag-years-excluded",
       "severity": "warning",
       "message": "Aus Trendvergleichen ausgeschlossen: 2026.",
-      "affectedRecords": 20
-    },
-    {
-      "code": "analysis-no-stable-year-records",
-      "severity": "warning",
-      "message": "Der Korpus enthält keine Publikationen in vollständig abgeschlossenen Vergleichsjahren.",
-      "affectedRecords": 20
+      "affectedRecords": 512
     },
     {
       "code": "analysis-partial-publication-corpus",
       "severity": "warning",
       "message": "Nicht alle vorgesehenen Suchmodi liegen im statischen Korpus vor.",
-      "affectedRecords": 20
+      "affectedRecords": 899
     },
     {
       "code": "analysis-partial-agenda-sources",
@@ -84,15 +90,15 @@
     {
       "code": "analysis-missing-abstracts",
       "severity": "info",
-      "message": "5 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
-      "affectedRecords": 5
+      "message": "200 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
+      "affectedRecords": 200
     }
   ],
   "datasets": {
     "publications": {
       "path": "./works/page-001.json",
       "status": "partial",
-      "recordCount": 20
+      "recordCount": 899
     },
     "preprints": {
       "path": "./works/page-001.json",
@@ -102,7 +108,7 @@
     "searchIndex": {
       "path": "./search-index.json",
       "status": "partial",
-      "recordCount": 20
+      "recordCount": 899
     },
     "calls": {
       "path": "./calls.json",
@@ -117,17 +123,17 @@
     "questions": {
       "path": "./questions.json",
       "status": "partial",
-      "recordCount": 9
+      "recordCount": 12
     },
     "sourceHealth": {
       "path": "./source-health.json",
-      "status": "ready",
+      "status": "partial",
       "recordCount": 2
     },
     "snapshots": {
       "path": "./snapshots/index.json",
       "status": "partial",
-      "recordCount": 1
+      "recordCount": 3
     },
     "agendaSignals": {
       "path": "./agenda-signals.json",
@@ -135,13 +141,52 @@
       "recordCount": 26
     }
   },
+  "lastIngestionRunId": "ingestion-2026-09-11T08:43:33.699Z",
+  "lastIngestionAt": "2026-09-11T08:43:33.699Z",
+  "comparisonMode": "core",
+  "historicalBackfill": {
+    "range": {
+      "from": "2018-01-01",
+      "to": "2025-04-19"
+    },
+    "cursor": null,
+    "complete": false,
+    "coveredThrough": "2026-09-11"
+  },
+  "ingestionProgress": {
+    "openalex:core": {
+      "range": {
+        "from": "2018-01-01",
+        "to": "2026-09-11"
+      },
+      "cursor": null,
+      "start": null,
+      "retrieved": 900,
+      "found": 1699,
+      "complete": false
+    }
+  },
+  "researchProfile": {
+    "id": "psychology-human-ai-1.0.0",
+    "label": "Psychologie & Human–AI Interaction",
+    "themes": [
+      "learning",
+      "agency",
+      "cognition",
+      "motivation",
+      "trust",
+      "teaming",
+      "participation",
+      "safety"
+    ]
+  },
   "methodVersions": {
-    "analysis": "static-corpus-analysis-2.0.0",
+    "analysis": "static-corpus-analysis-2.1.0",
     "ontology": "human-work-themes-3.0.0",
     "classification": "weighted-lexical-3.0.0",
-    "trends": "equal-windows-2.0.0",
-    "questions": "evidence-questions-2.0.0",
-    "opportunities": "opportunity-components-2.0.0",
+    "trends": "equal-windows-2.1.0",
+    "questions": "evidence-questions-2.1.0",
+    "opportunities": "opportunity-components-2.1.0",
     "snapshots": "analysis-snapshot-2.0.0"
   }
 }

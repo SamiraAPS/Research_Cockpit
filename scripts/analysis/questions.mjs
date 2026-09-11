@@ -53,7 +53,7 @@ function derivedQuestion(pattern, status) {
     themes: [leftId, rightId],
     label: `${left?.shortLabel ?? leftId} × ${right?.shortLabel ?? rightId}`,
     question: status === "supported"
-      ? `Welche Mechanismen erklären das gemeinsame Auftreten von ${left?.shortLabel ?? leftId} und ${right?.shortLabel ?? rightId} im beobachteten Korpus?`
+      ? `Wie wird die beobachtete Themenverbindung zwischen ${left?.shortLabel ?? leftId} und ${right?.shortLabel ?? rightId} in diesen Arbeiten untersucht?`
       : `Lässt sich eine belastbare Verbindung zwischen ${left?.shortLabel ?? leftId} und ${right?.shortLabel ?? rightId} formulieren?`,
     count: pattern.works.length,
     minimumEvidenceRecords: MINIMUM_EVIDENCE_RECORDS,

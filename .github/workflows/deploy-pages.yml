@@ -5,6 +5,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        required: true
 
 permissions:
   contents: read
@@ -20,6 +25,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.ref || github.sha }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
@@ -35,6 +42,9 @@ jobs:
 
       - name: Run static dashboard tests
         run: npm run test:static
+
+      - name: Exercise static browser workflows
+        run: npm run test:browser
 
       - name: Run application tests and production build
         run: npm test

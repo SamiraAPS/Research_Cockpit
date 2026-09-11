@@ -848,3 +848,48 @@ body[data-dashboard-state="partial"] .empty-mark {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Research workflows share the same readable controls and panels on every view. */
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.header-button { padding: .6rem .85rem; border: 1px solid #92a99e; border-radius: .6rem; color: #fff; background: #29463d; cursor: pointer; }
+.filter-panel, .publication-card, .analysis-card, .question-card, .content-panel { padding: 1.2rem; margin-block: 1rem; border: 1px solid #ced6ce; border-radius: .8rem; background: #fffefa; min-width: 0; }
+.filter-panel label { display: flex; flex-direction: column; gap: .35rem; font-size: .85rem; font-weight: 600; }
+.filter-grid, .compact-filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: .85rem; }
+.filter-grid { margin-top: 1rem; }
+input[type="search"], select { width: 100%; min-width: 0; min-height: 44px; padding: .65rem; border: 1px solid #aab9b0; border-radius: .4rem; background: white; color: #173b32; font: inherit; }
+.filter-actions, .chip-row, .pagination { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.filter-actions .check-control { flex-direction: row; align-items: center; gap: .5rem; }
+.shortlist-button, .pagination-button { min-height: 44px; padding: .6rem .9rem; border: 1px solid #9eb2a7; background: white; border-radius: .4rem; color: #173b32; cursor: pointer; }
+.shortlist-button[aria-pressed="true"], .pagination-button[aria-current="page"] { color: white; background: #244a3e; }
+button:disabled { opacity: .55; cursor: default; }
+.publication-heading, .opportunity-heading { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
+.publication-heading > div { min-width: 0; }
+.publication-card h2 { font-size: 1.15rem; line-height: 1.5; margin-block: .35rem; }
+.publication-meta, .publication-authors, .muted-copy, .table-subline, .uncertainty-copy { color: #52665e; font-size: .85rem; line-height: 1.6; }
+.publication-details { margin-top: 1rem; border-top: 1px solid #dce3db; padding-top: .8rem; }
+summary { cursor: pointer; font-weight: 600; padding-block: .4rem; }
+.details-body { padding-top: .7rem; line-height: 1.7; overflow-wrap: anywhere; }
+.details-body h3 { margin-top: 1rem; }
+.details-body ul, .evidence-links { padding-left: 1.2rem; }
+.evidence-links li { margin-block: .7rem; }
+.table-scroll { max-width: 100%; overflow-x: auto; margin-block: 1rem; background: #fffefa; border-radius: .8rem; border: 1px solid #ced6ce; }
+.data-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 740px; }
+.data-table th, .data-table td { padding: .85rem; border-bottom: 1px solid #dce3db; vertical-align: top; }
+.data-table th { background: #e8efe9; font-size: .8rem; }
+.data-table caption { text-align: left; padding: 1rem; color: #52665e; }
+.data-table .table-subline { display: block; margin-top: .35rem; }
+.data-table time { white-space: nowrap; }
+.analysis-grid, .question-grid, .two-column-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.mini-metrics > div, .component-label { display: flex; justify-content: space-between; gap: 1rem; margin-block: .7rem; }
+.mini-metrics dd { margin: 0; text-align: right; }
+.inline-notice { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #e8efe9; border-radius: .6rem; }
+.opportunity-score { font-size: 2rem; }
+.evidence-links, .data-table a, .coverage-summary { overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid #a8670d; outline-offset: 3px; }
+@media (max-width: 700px) {
+  .analysis-grid, .question-grid, .two-column-grid, .compact-filters { grid-template-columns: minmax(0, 1fr); }
+  .publication-heading { flex-direction: column; }
+  .filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .filter-actions > button { flex: 1 1 130px; }
+  .inline-notice { align-items: flex-start; flex-direction: column; }
+}

@@ -94,7 +94,7 @@ export async function ingestOpenAlex(mode, options = {}) {
   const seenCursors = new Set();
   const stats = statsBase(mode, config.queryVersion, range, baseUrl);
   const conferenceIds = new Set(CORE_CONFERENCES.map((source) => source.id));
-  let cursor = "*";
+  let cursor = options.cursor ?? "*";
 
   try {
     while (cursor) {
@@ -133,6 +133,12 @@ export async function ingestOpenAlex(mode, options = {}) {
       }
       const nextCursor = payload.meta?.next_cursor ?? null;
       cursor = payload.results.length > 0 ? nextCursor : null;
+      stats.parameters.nextCursor = cursor;
+      if (cursor && stats.pageCount >= (options.maxPages ?? Infinity)) {
+        stats.status = "degraded";
+        stats.message = "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.";
+        break;
+      }
     }
   } catch (error) {
     stats.recordCount = records.length;

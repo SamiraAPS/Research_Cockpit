@@ -1,3 +1,4 @@
+import { callTimeStatus, deadlineLabel, freshness, matchesNovelty, auditCsv, RESEARCH_PROFILE } from "./research.js";
 import { renderComponentBar, renderHorizontalBars } from "./charts.js";
 import { normalizeSearchText, paginate, searchAndFilterWorks, sortWorkResults, worksToBibtex, worksToCsv } from "./search.js";
 
@@ -22,7 +23,7 @@ const LABELS = {
   current: "aktuell", stale: "veraltet", open: "offen", "closing-soon": "schließt bald", expired: "abgelaufen", unverified: "ungeprüft",
   growing: "wachsend", stable: "stabil", declining: "rückläufig", mixed: "gemischt", insufficient: "nicht ausreichend",
   emerging: "emerging", rising: "zunehmend", cooling: "abkühlend", strong: "stark", moderate: "moderat", weak: "schwach",
-  possible: "möglich", low: "niedrig", high: "hoch", medium: "mittel", framework: "Lens-Frage", supported: "belegt"
+  possible: "möglich", low: "niedrig", high: "hoch", medium: "mittel", framework: "Lens-Frage", supported: "Themenverbindung beobachtet"
 };
 const COMPONENT_LABELS = { publication_momentum: "Publikationsdynamik", frontier_share: "Preprint-Anteil", agenda_demand: "Agenda-Nachfrage", source_diversity: "Quellenvielfalt" };
 
@@ -31,8 +32,9 @@ const state = {
   loadErrors: new Map(),
   shortlist: loadStoredSet(STORAGE_KEYS.shortlist),
   newWorkIds: new Set(),
+  previousVisit: safeStorageGet("radar.reviewed-at.v1"),
   workPage: 1,
-  workFilters: { query: "", year: "all", source: "all", type: "all", theme: "all", mode: "all", dataStatus: "all", sort: "newest", shortlistOnly: false },
+  workFilters: { query: "", year: "all", source: "all", type: "all", theme: "all", mode: "all", dataStatus: "all", sort: "newest", shortlistOnly: false, novelty: "all" },
   callFilters: { deadline: "upcoming", query: "", sort: "deadline" }
 };
 
@@ -44,7 +46,7 @@ const elements = Object.fromEntries([
   "export-bibtex", "export-csv", "work-result-count", "search-scope-note", "work-results", "work-pagination", "new-since-copy",
   "landscape-chart", "composition-summary", "question-list", "emerging-notice", "emerging-grid", "call-filters", "deadline-filter", "call-query",
   "call-sort", "calls-table-body", "calls-caption", "calls-empty", "opportunity-notice", "opportunity-grid", "method-cards", "version-list",
-  "warning-list", "source-table-body", "footer-version", "footer-updated"
+  "warning-list", "source-table-body", "footer-version", "footer-updated", "filter-novelty", "mark-reviewed", "save-search", "restore-search", "export-audit", "coverage-summary", "research-profile"
 ].map((id) => [id.replaceAll("-", "_"), document.getElementById(id)]));
 elements.nav = document.querySelector(".primary-nav");
 elements.navLinks = [...document.querySelectorAll(".nav-link")];
@@ -102,7 +104,7 @@ async function loadWorks() {
 }
 
 function viewFromHash() {
-  const requested = window.location.hash.slice(1).toLocaleLowerCase("en");
+  const requested = window.location.hash.slice(1).split("?")[0].toLocaleLowerCase("en");
   return VIEW_IDS.includes(requested) ? requested : "overview";
 }
 
@@ -120,6 +122,11 @@ function showView(viewId, { moveFocus = false } = {}) {
   }
   document.title = `${VIEW_TITLES[active]} · Human–AI Research Radar`;
   closeNavigation();
+  const focusedId = new URLSearchParams(window.location.hash.split("?")[1] ?? "").get("work");
+  if (active === "new" && focusedId && state.data.works.length) {
+    state.workFilters = { ...state.workFilters, query: "", year: "all", source: "all", type: "all", theme: "all", mode: "all", dataStatus: "all", shortlistOnly: false, novelty: "all", workId: focusedId };
+    state.workPage = 1; renderWorkResults();
+  }
   if (moveFocus && !elements.dashboard_views.hidden) document.querySelector(`[data-view="${active}"]`)?.focus({ preventScroll: true });
 }
 
@@ -165,34 +172,62 @@ function setDashboardState(dashboardState, message) {
   if (dashboardState !== "loading") updateDatasetStatuses();
 }
 
+function noveltyContext() {
+  return { previousVisit: state.previousVisit, latestRunId: state.data.meta?.lastIngestionRunId,
+    latestRunAt: state.data.meta?.lastIngestionAt ?? state.data.meta?.lastSuccessfulIngestionAt };
+}
+
 function determineNewWorks() {
-  const inputHash = state.data.trends?.inputHash ?? state.data.meta?.generatedAt;
-  let previous = null;
-  try { previous = JSON.parse(safeStorageGet(STORAGE_KEYS.lastRun) ?? "null"); } catch { previous = null; }
-  if (previous?.inputHash && previous.inputHash !== inputHash && Array.isArray(previous.workIds)) {
-    const known = new Set(previous.workIds);
-    state.newWorkIds = new Set(state.data.works.filter((work) => !known.has(work.id)).map((work) => work.id));
-    elements.new_since_copy.textContent = `${state.newWorkIds.size} Arbeiten sind seit dem zuvor lokal gesehenen Datenlauf neu hinzugekommen.`;
-  } else if (previous?.inputHash === inputHash) {
-    state.newWorkIds = new Set();
-    elements.new_since_copy.textContent = "Seit dem zuletzt lokal gesehenen Datenstand sind keine neuen IDs hinzugekommen; angezeigt wird der aktuelle Korpus.";
-  } else {
-    state.newWorkIds = new Set(state.data.works.map((work) => work.id));
-    elements.new_since_copy.textContent = "Erster lokaler Vergleich: Die Arbeiten des aktuellen Datenlaufs gelten als neu. Künftige Läufe werden per ID verglichen.";
+  state.newWorkIds = new Set(state.data.works.filter(work => matchesNovelty(work, "latest-run", noveltyContext())).map(work => work.id));
+  elements.new_since_copy.textContent = `${state.newWorkIds.size} Erstfunde im letzten Datenlauf. ${state.previousVisit ? `Zuletzt als gelesen markiert: ${formatDate(state.previousVisit, true)}.` : "Noch kein Lesestand gespeichert; wähle den letzten Lauf oder die Laufwoche."}`;
+}
+
+function evidenceLinks(ids) {
+  const list = node("ul", "evidence-links");
+  for (const id of ids ?? []) {
+    const work = state.data.works.find(work => work.id === id);
+    const item = node("li");
+    const link = node("a", "text-link", work?.title ?? id);
+    link.href = `#new?work=${encodeURIComponent(id)}`;
+    item.append(link); list.append(item);
   }
-  safeStorageSet(STORAGE_KEYS.lastRun, JSON.stringify({ inputHash, workIds: state.data.works.map((work) => work.id), seenAt: new Date().toISOString() }));
+  return list;
+}
+
+const pageCache = new Map();
+async function fullWork(work) {
+  if (!work._summary) return work;
+  const pagePath = work.pagePath;
+  if (!/^\.\/works\/page-\d+\.json$/.test(pagePath)) throw new Error("Ungültiger Publikationspfad");
+  if (!pageCache.has(pagePath)) pageCache.set(pagePath, fetchJson(`./data/${pagePath.slice(2)}`).catch(error => { pageCache.delete(pagePath); throw error; }));
+  const page = await pageCache.get(pagePath);
+  const full = page.items.find(entry => entry.id === work.id);
+  if (!full) throw new Error("Publikation im Datenstand nicht gefunden");
+  return full;
+}
+
+async function exportWorks(format) {
+  const selected = currentWorkResults().map(result => result.work);
+  const works = [];
+  try {
+    for (let i = 0; i < selected.length; i += 4) works.push(...await Promise.all(selected.slice(i, i + 4).map(fullWork)));
+    download(`human-ai-research-radar.${format === "bib" ? "bib" : format === "audit" ? "audit.csv" : "csv"}`,
+      format === "bib" ? worksToBibtex(works) : format === "audit" ? auditCsv(works) : worksToCsv(works),
+      format === "bib" ? "application/x-bibtex;charset=utf-8" : "text/csv;charset=utf-8");
+    announce(`${works.length} Arbeiten exportiert.`);
+  } catch (error) { announce(`Export fehlgeschlagen: ${error.message}. Bitte erneut versuchen.`); }
 }
 
 function renderOverview() {
   const { meta, works, calls, trends, health } = state.data;
   elements.freshness_value.textContent = formatDate(meta?.lastSuccessfulIngestionAt, true);
   elements.corpus_value.textContent = `${works.length} Works · ${works.filter((work) => work.recordType === "preprint").length} Preprints`;
-  const healthy = health?.sources?.filter((source) => source.status === "healthy").length ?? 0;
+  const healthy = health?.sources?.filter((source) => source.status === "healthy" && freshness(source.checkedAt) === "current").length ?? 0;
   const totalSources = health?.sources?.length ?? 0;
-  elements.source_summary.textContent = totalSources ? `${healthy}/${totalSources} gesund` : "nicht geladen";
+  elements.source_summary.textContent = totalSources ? `${healthy}/${totalSources} Publikationsquellen aktuell · ${(calls?.sourceStatus ?? []).filter(s => s.status === "verified" && freshness(s.checkedAt) === "current").length}/${calls?.sourceStatus?.length ?? 0} Call-Quellen verifiziert` : "nicht geladen";
 
-  const newest = sortWorkResults(works.map((work) => ({ work, document: work, relevance: 0 }))).slice(0, 3);
-  if (!newest.length) renderEmpty(elements.overview_new_list, "Daten noch nicht verfügbar", "Es wurden keine Publikationen geladen.");
+  const newest = sortWorkResults(works.filter(work => state.newWorkIds.has(work.id)).map((work) => ({ work, document: work, relevance: 0 }))).slice(0, 3);
+  if (!newest.length) renderEmpty(elements.overview_new_list, "Daten noch nicht verfügbar", "Im letzten Lauf kamen keine neuen Arbeiten hinzu. Der bisherige Korpus bleibt in der Suche verfügbar.");
   else {
     elements.overview_new_list.replaceChildren();
     for (const { work } of newest) {
@@ -200,7 +235,7 @@ function renderOverview() {
       const metaLine = node("p", "compact-meta", `${formatDate(work.publicationDate)} · ${work.venue ?? "Venue unbekannt"}`);
       const title = node("h3");
       const link = node("a", null, work.title);
-      link.href = "#new";
+      link.href = `#new?work=${encodeURIComponent(work.id)}`;
       title.append(link);
       item.append(metaLine, title);
       elements.overview_new_list.append(item);
@@ -208,14 +243,14 @@ function renderOverview() {
   }
 
   const now = Date.now();
-  const deadlines = (calls?.items ?? []).filter((call) => ["open", "closing-soon"].includes(call.status) && call.deadlineAt && Date.parse(call.deadlineAt) >= now)
+  const deadlines = (calls?.items ?? []).map(call => ({ ...call, status: callTimeStatus(call) })).filter((call) => ["open", "closing-soon"].includes(call.status) && call.deadlineAt && Date.parse(call.deadlineAt) >= now)
     .sort((left, right) => Date.parse(left.deadlineAt) - Date.parse(right.deadlineAt)).slice(0, 3);
   if (!deadlines.length) renderEmpty(elements.overview_deadline_list, "Keine kommende Deadline", "Aktuell ist keine verifizierte zukünftige Deadline verfügbar.");
   else {
     elements.overview_deadline_list.replaceChildren();
     for (const call of deadlines) {
       const item = node("article", "compact-item deadline-item");
-      const time = node("time", "deadline-date", formatDate(call.deadlineAt));
+      const time = node("time", "deadline-date", deadlineLabel(call));
       time.dateTime = call.deadlineAt;
       const title = node("h3");
       const link = node("a", null, call.title);
@@ -273,9 +308,13 @@ function publicationCard(result) {
   const heading = node("div", "publication-heading");
   const copy = node("div");
   const meta = node("p", "publication-meta", `${formatDate(work.publicationDate)} · ${work.venue ?? "Venue unbekannt"}`);
-  const title = node("h2", null, work.title);
+  const title = node("h2");
+  const publicationLink = node("a", "text-link", work.title);
+  publicationLink.href = work.url || (work.doi ? `https://doi.org/${work.doi}` : `#new?work=${encodeURIComponent(work.id)}`);
+  publicationLink.target = "_blank"; publicationLink.rel = "noopener noreferrer";
+  title.append(publicationLink);
   const authors = node("p", "publication-authors", (work.authors ?? []).map((author) => author.name).join(", ") || "Autor:innen nicht verfügbar");
-  copy.append(meta, title, authors);
+  copy.append(meta, title, authors, node("p", "muted-copy", `Erstmals gefunden: ${formatDate(work.firstSeenAt)} · ${RESEARCH_PROFILE.label}`));
   const shortlistButton = node("button", "shortlist-button", state.shortlist.has(work.id) ? "Gemerkt" : "Merken");
   shortlistButton.type = "button";
   shortlistButton.dataset.shortlistId = work.id;
@@ -313,12 +352,24 @@ function publicationCard(result) {
     body.append(evidence);
   }
   details.append(body);
+  if (work._summary) {
+    body.replaceChildren(node("p", "muted-copy", "Details werden beim öffnen geladen."));
+    let loaded = false;
+    details.addEventListener("toggle", async () => {
+      if (!details.open || loaded) return;
+      try {
+        const full = await fullWork(work);
+        body.replaceChildren(...publicationCard({ ...result, work: full }).querySelector(".details-body").childNodes);
+        loaded = true;
+      } catch (error) { body.replaceChildren(node("p", "muted-copy", `Details nicht verfügbar: ${error.message}. Schließen und erneut öffnen zum Wiederholen.`)); }
+    });
+  }
   article.append(details);
   return article;
 }
 
 function currentWorkResults() {
-  const results = searchAndFilterWorks(state.data.works, state.data.documents, { ...state.workFilters, shortlistIds: state.shortlist });
+  const results = searchAndFilterWorks(state.data.works, state.data.documents, { ...state.workFilters, shortlistIds: state.shortlist, noveltyContext: noveltyContext() });
   return sortWorkResults(results, state.workFilters.sort);
 }
 
@@ -345,7 +396,7 @@ function renderPagination(page) {
   previous.disabled = page.currentPage === 1;
   previous.dataset.page = String(page.currentPage - 1);
   elements.work_pagination.append(previous);
-  for (let index = 1; index <= page.totalPages; index += 1) {
+  for (const index of [...new Set([1, page.currentPage - 1, page.currentPage, page.currentPage + 1, page.totalPages])].filter(n => n >= 1 && n <= page.totalPages).sort((a, b) => a - b)) {
     const button = node("button", "pagination-button", String(index));
     button.type = "button";
     button.dataset.page = String(index);
@@ -363,7 +414,7 @@ function renderPagination(page) {
 function updateShortlist(workId) {
   if (state.shortlist.has(workId)) state.shortlist.delete(workId);
   else state.shortlist.add(workId);
-  safeStorageSet(STORAGE_KEYS.shortlist, JSON.stringify([...state.shortlist]));
+  if (!safeStorageSet(STORAGE_KEYS.shortlist, JSON.stringify([...state.shortlist]))) announce("Shortlist nur in dieser Sitzung gespeichert; Browser-Speicher ist nicht verfügbar.");
   elements.shortlist_count.textContent = String(state.shortlist.size);
   renderWorkResults();
   announce(`Shortlist enthält ${state.shortlist.size} Arbeiten.`);
@@ -409,12 +460,8 @@ function renderLandscape() {
     card.append(statusChip(question.status), node("h3", null, question.question));
     card.append(node("p", "muted-copy", question.rationale ?? `${question.count ?? 0} Evidenzarbeiten; Mindestfallzahl ${question.minimumEvidenceRecords ?? state.data.questions.minimumEvidenceRecords}.`));
     if (question.evidence?.length) {
-      const list = node("ul", "evidence-links");
-      for (const evidence of question.evidence) {
-        const work = state.data.works.find((entry) => entry.id === evidence.workId);
-        list.append(node("li", null, work ? work.title : evidence.workId));
-      }
-      card.append(list);
+      card.append(evidenceLinks(question.evidence.map(evidence => evidence.workId)));
+      card.append(node("p", "muted-copy", "Gemeinsame Themenbegriffe belegen weder einen Wirkmechanismus noch eine Forschungslücke. Die verlinkten Arbeiten müssen inhaltlich geprüft werden."));
     }
     elements.question_list.append(card);
   }
@@ -452,6 +499,7 @@ function renderEmerging() {
       for (const reason of trend.dataQuality.reasons) list.append(node("li", null, reason));
       details.append(list); card.append(details);
     }
+    card.append(evidenceLinks(signal.evidenceWorkIds));
     elements.emerging_grid.append(card);
   }
 }
@@ -460,7 +508,7 @@ function filteredCalls() {
   const now = Date.now();
   const query = normalizeSearchText(state.callFilters.query);
   const limitDays = Number(state.callFilters.deadline);
-  const calls = (state.data.calls?.items ?? []).filter((call) => {
+  const calls = (state.data.calls?.items ?? []).map(call => ({ ...call, status: callTimeStatus(call) })).filter((call) => {
     const deadline = call.deadlineAt ? Date.parse(call.deadlineAt) : null;
     if (state.callFilters.deadline === "upcoming" && (!deadline || deadline < now || !["open", "closing-soon"].includes(call.status))) return false;
     if (Number.isFinite(limitDays) && (!deadline || deadline < now || deadline > now + limitDays * 86_400_000)) return false;
@@ -487,7 +535,7 @@ function renderCalls({ announceChange = false } = {}) {
     title.href = call.officialUrl; title.target = "_blank"; title.rel = "noopener noreferrer";
     callCell.append(title, node("span", "table-subline", call.venue));
     const deadlineCell = node("td");
-    if (call.deadlineAt) { const time = node("time", null, formatDate(call.deadlineAt)); time.dateTime = call.deadlineAt; deadlineCell.append(time, node("span", "table-subline", call.deadlineTimezone)); }
+    if (call.deadlineAt) { const time = node("time", null, deadlineLabel(call)); time.dateTime = call.deadlineAt; deadlineCell.append(time, node("span", "table-subline", `Schweizer Zeit: ${new Intl.DateTimeFormat("de-CH", { timeZone: "Europe/Zurich", dateStyle: "medium", timeStyle: "short" }).format(new Date(call.deadlineAt))} (Europe/Zurich)`)); }
     else deadlineCell.textContent = "Nicht angegeben";
     const statusCell = node("td"); statusCell.append(statusChip(call.status));
     row.append(callCell, node("td", null, label(call.callType)), deadlineCell, statusCell, node("td", null, formatDate(call.lastVerifiedAt)));
@@ -520,6 +568,11 @@ function renderOpportunities() {
       row.append(top); renderComponentBar(row, component.score, component.maximum, COMPONENT_LABELS[component.key] ?? component.key); components.append(row);
     }
     card.append(components, node("p", "uncertainty-copy", `Unsicherheit: ${label(opportunity.uncertainty.level)}. ${opportunity.uncertainty.reasons.join(" ") || "Keine zusätzlichen Einschränkungen."}`));
+    card.append(node("p", "muted-copy", `Fachliche Perspektive: ${RESEARCH_PROFILE.label}. Die Passung ist eine persönliche Auswahl, kein Evidenzscore.`), evidenceLinks(opportunity.evidenceWorkIds));
+    for (const id of opportunity.evidenceCallIds ?? []) {
+      const call = state.data.calls?.items.find(call => call.id === id);
+      if (call) { const link = node("a", "text-link", call.title); link.href = call.officialUrl; link.target = "_blank"; link.rel = "noopener noreferrer"; card.append(link); }
+    }
     elements.opportunity_grid.append(card);
   }
 }
@@ -546,11 +599,19 @@ function renderMethod() {
   }
   if (!(meta?.dataQualityWarnings ?? []).length) elements.warning_list.append(node("li", null, "Keine Datenqualitätswarnungen."));
 
+  elements.research_profile.textContent = `Fachlicher Schwerpunkt: ${RESEARCH_PROFILE.label}. Relevanz und Themenzuordnung sind noch nicht manuell validiert. Ein Audit-Export enthält leere Bewertungsfelder für die fachliche Prüfung.`;
+  elements.coverage_summary.replaceChildren();
+  const byYear = new Map();
+  for (const work of state.data.works) { const year = work.publicationDate?.slice(0, 4) ?? "unbekannt"; byYear.set(year, (byYear.get(year) ?? 0) + 1); }
+  elements.coverage_summary.append(node("p", null, `Vergleichskorpus: ${trends?.coverage?.comparisonMode ?? "all"}. Breite und Frontier-Treffer dienen zusätzlich der Recherche. Normalisierte Werte beschreiben Korpusanteile, keine Feldanteile.`));
+  for (const [year, count] of [...byYear].sort()) elements.coverage_summary.append(node("span", "data-chip", `${year}: ${count} Arbeiten`));
+  for (const [key, progress] of Object.entries(meta?.ingestionProgress ?? {})) elements.coverage_summary.append(node("p", "muted-copy", `${key}: ${progress.range.from} bis ${progress.range.to} · ${progress.retrieved}/${progress.found || "unbekannt"} Quellentreffer · ${progress.complete ? "Abruf abgeschlossen" : "unvollständig; Fortsetzung erforderlich"}`));
+  if (freshness(meta?.lastSuccessfulIngestionAt) === "stale") elements.warning_list.append(node("li", "warning-warning", "Letzter vollständiger erfolgreicher Publikationslauf liegt mehr als acht Tage zurück."));
   elements.source_table_body.replaceChildren();
   for (const source of health?.sources ?? []) {
     const row = node("tr");
     const sourceCell = node("td"); sourceCell.append(node("strong", null, source.source), node("span", "table-subline", (source.modes ?? []).join(", ") || "–"));
-    const statusCell = node("td"); statusCell.append(statusChip(source.status));
+    const statusCell = node("td"); statusCell.append(statusChip(freshness(source.checkedAt) === "stale" ? "stale" : source.status));
     row.append(sourceCell, node("td", null, label(source.role)), statusCell, node("td", null, String(source.recordCount)), node("td", null, formatDate(source.lastSuccessfulAt, true)));
     elements.source_table_body.append(row);
   }
@@ -581,7 +642,9 @@ async function loadDashboard() {
     elements.error_message.textContent = error instanceof Error ? error.message : "meta.json konnte nicht gelesen werden.";
     return;
   }
-  const loaders = { works: loadWorks(), documents: fetchJson(DATA_URLS.search).then((data) => data.documents ?? []), calls: fetchJson(DATA_URLS.calls), trends: fetchJson(DATA_URLS.trends), questions: fetchJson(DATA_URLS.questions), health: fetchJson(DATA_URLS.health) };
+  pageCache.clear();
+  const searchPromise = fetchJson(DATA_URLS.search).then(data => data.documents ?? []);
+  const loaders = { works: searchPromise.then(documents => documents.length && documents.every(d => d.summary && d.pagePath) ? documents.map(d => ({ ...d.summary, pagePath: d.pagePath, _summary: true })) : loadWorks()).catch(() => loadWorks()), documents: searchPromise, calls: fetchJson(DATA_URLS.calls), trends: fetchJson(DATA_URLS.trends), questions: fetchJson(DATA_URLS.questions), health: fetchJson(DATA_URLS.health) };
   const entries = Object.entries(loaders);
   const results = await Promise.allSettled(entries.map(([, promise]) => promise));
   results.forEach((result, index) => {
@@ -600,6 +663,7 @@ async function loadDashboard() {
 function syncWorkFilters() {
   state.workFilters = {
     query: elements.work_query.value,
+    novelty: elements.filter_novelty.value,
     year: elements.filter_year.value,
     source: elements.filter_source.value,
     type: elements.filter_type.value,
@@ -632,16 +696,34 @@ window.addEventListener("hashchange", () => showView(viewFromHash(), { moveFocus
 elements.retry_button.addEventListener("click", loadDashboard);
 elements.work_filters.addEventListener("input", syncWorkFilters);
 elements.work_filters.addEventListener("change", syncWorkFilters);
-elements.work_filters.addEventListener("reset", () => window.setTimeout(() => { state.workFilters = { query: "", year: "all", source: "all", type: "all", theme: "all", mode: "all", dataStatus: "all", sort: "newest", shortlistOnly: false }; state.workPage = 1; renderWorkResults({ announceChange: true }); }, 0));
+elements.work_filters.addEventListener("reset", () => window.setTimeout(() => { state.workFilters = { query: "", year: "all", source: "all", type: "all", theme: "all", mode: "all", dataStatus: "all", sort: "newest", shortlistOnly: false, novelty: "all" }; state.workPage = 1; renderWorkResults({ announceChange: true }); }, 0));
 elements.work_results.addEventListener("click", (event) => { const button = event.target.closest("[data-shortlist-id]"); if (button) updateShortlist(button.dataset.shortlistId); });
 elements.work_pagination.addEventListener("click", (event) => { const button = event.target.closest("[data-page]"); if (!button || button.disabled) return; state.workPage = Number(button.dataset.page); renderWorkResults({ announceChange: true }); elements.work_result_count.focus?.(); window.scrollTo({ top: elements.work_result_count.getBoundingClientRect().top + window.scrollY - 100, behavior: "smooth" }); });
 elements.shortlist_jump.addEventListener("click", () => { window.location.hash = "new"; elements.shortlist_only.checked = true; syncWorkFilters(); window.setTimeout(() => elements.shortlist_only.focus(), 0); });
-elements.export_csv.addEventListener("click", () => { const works = currentWorkResults().map((result) => result.work); download("human-ai-research-radar.csv", worksToCsv(works), "text/csv;charset=utf-8"); announce(`${works.length} Arbeiten als CSV exportiert.`); });
-elements.export_bibtex.addEventListener("click", () => { const works = currentWorkResults().map((result) => result.work); download("human-ai-research-radar.bib", worksToBibtex(works), "application/x-bibtex;charset=utf-8"); announce(`${works.length} Arbeiten als BibTeX exportiert.`); });
+elements.export_csv.addEventListener("click", () => exportWorks("csv"));
+elements.export_bibtex.addEventListener("click", () => exportWorks("bib"));
+elements.export_audit.addEventListener("click", () => exportWorks("audit"));
+elements.mark_reviewed.addEventListener("click", () => {
+  const at = state.data.meta.generatedAt;
+  if (!safeStorageSet("radar.reviewed-at.v1", at)) { announce("Lesestand konnte nicht dauerhaft gespeichert werden."); return; }
+  state.previousVisit = at; determineNewWorks(); renderWorkResults(); announce("Diesen Datenstand als gelesen markiert.");
+});
+elements.save_search.addEventListener("click", () => announce(safeStorageSet("radar.saved-search.v1", JSON.stringify(state.workFilters)) ? "Suche auf diesem Gerät gespeichert." : "Speichern nicht möglich."));
+elements.restore_search.addEventListener("click", () => {
+  try {
+    const filters = JSON.parse(safeStorageGet("radar.saved-search.v1") ?? "null");
+    if (!filters) { announce("Noch keine gespeicherte Suche."); return; }
+    for (const [key, element] of Object.entries({ query: elements.work_query, year: elements.filter_year, source: elements.filter_source, type: elements.filter_type, theme: elements.filter_theme, mode: elements.filter_mode, dataStatus: elements.filter_data_status, sort: elements.work_sort, novelty: elements.filter_novelty })) {
+      if (typeof filters[key] === "string") element.value = filters[key];
+      if (!element.value && element.tagName === "SELECT") element.selectedIndex = 0;
+    }
+    elements.shortlist_only.checked = Boolean(filters.shortlistOnly); syncWorkFilters();
+  } catch { announce("Gespeicherte Suche ist nicht lesbar."); }
+});
 elements.call_filters.addEventListener("input", () => { state.callFilters = { deadline: elements.deadline_filter.value, query: elements.call_query.value, sort: elements.call_sort.value }; renderCalls({ announceChange: true }); });
 elements.call_filters.addEventListener("change", () => { state.callFilters = { deadline: elements.deadline_filter.value, query: elements.call_query.value, sort: elements.call_sort.value }; renderCalls({ announceChange: true }); });
 
-if (!VIEW_IDS.includes(window.location.hash.slice(1).toLocaleLowerCase("en"))) window.history.replaceState(null, "", "#overview");
+if (!VIEW_IDS.includes(window.location.hash.slice(1).split("?")[0].toLocaleLowerCase("en"))) window.history.replaceState(null, "", "#overview");
 showView(viewFromHash());
 loadDashboard();
 document.documentElement.dataset.staticDashboard = "ready";

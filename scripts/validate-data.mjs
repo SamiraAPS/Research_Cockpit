@@ -718,6 +718,10 @@ function validateCrossFileRules(dataRoot, parsed, errors) {
   if (declaredTotal !== null && declaredTotal !== works.length) errors.push({ code: "inconsistent-total", file: "works", path: "/totalItems", message: `deklariert ${declaredTotal}, gefunden ${works.length}` });
 
   const workIds = new Set(works.map(({ work }) => work.id));
+  const workById = new Map(works.map(entry => [entry.work.id, entry]));
+  for (const { work, file, pointer } of works) {
+    if (work.firstSeenAt !== undefined && !TIMESTAMP_PATTERN.test(work.firstSeenAt)) errors.push({ code: "invalid-first-seen", file, path: `${pointer}/firstSeenAt`, message: "Erstfund muss ein Zeitstempel sein" });
+  }
   const meta = parsed.get("meta.json");
   if (meta && Number.isInteger(meta.totalFound) && meta.totalFound !== works.length) {
     errors.push({ code: "inconsistent-total", file: "meta.json", path: "/totalFound", message: `deklariert ${meta.totalFound}, Works enthalten ${works.length}` });
@@ -765,6 +769,13 @@ function validateCrossFileRules(dataRoot, parsed, errors) {
     addDuplicateErrors(errors, "search-index.json", search.documents.map((entry, index) => ({ value: entry.id, pointer: `/documents/${index}/id` })), "ID", "duplicate-id");
     search.documents.forEach((entry, index) => {
       if (typeof entry.id === "string" && !workIds.has(entry.id)) errors.push({ code: "unknown-work-id", file: "search-index.json", path: `/documents/${index}/id`, message: "verweist auf keine Works-ID" });
+      if (entry.summary) {
+        const stored = workById.get(entry.id);
+        const fields = ["id", "title", "recordType", "publicationDate", "firstSeenAt", "firstSeenRunId"];
+        if (!stored || entry.pagePath !== `./${stored.file}` || entry.summary.pagePath !== entry.pagePath || fields.some(key => entry.summary[key] !== stored.work[key])) {
+          errors.push({ code: "inconsistent-summary", file: "search-index.json", path: `/documents/${index}/summary`, message: "Suchvorschau oder Detailpfad stimmt nicht mit der Publikation überein" });
+        }
+      }
     });
   }
 

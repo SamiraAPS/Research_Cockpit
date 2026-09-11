@@ -2,6 +2,24 @@
 
 Version: `gold-standard-1.0.0`
 
+## Öffentliche Pages-Version
+
+Im Bereich „New & Search“ exportiert **Audit-CSV** den gefilterten Bestand samt
+Abstracts und vorhergesagten Themen. Die Felder `manual_label`, `manual_themes`,
+`work_context`, `population`, `study_design`, `outcomes`, `manual_note`, `reviewer`
+und `review_status` bleiben leer. Verwende nach menschlicher Prüfung
+`review_status=manually_verified` und eine nachvollziehbare Prüfperson. Für bewusst
+keine passenden Themen steht `manual_themes=none`; ein leeres Feld gilt als ungeprüft.
+
+Eine erste Stichprobe sollte Quellen, Jahre und Themen abdecken. Ein Export ist
+noch kein Goldstandard. `node scripts/evaluate-audit.mjs reviewed.csv` berechnet
+Retrieval-Precision sowie getrennte Themenmetriken aus freigegebenen Zeilen.
+Recall bleibt ohne ein unabhängig zusammengestelltes Benchmarkset leer.
+Nur dafür darf `--independent-benchmark` verwendet werden; relevante Nicht-Treffer
+müssen ebenfalls enthalten und mit `retrieved=false` gekennzeichnet sein.
+
+Die folgenden Angaben dokumentieren zusätzlich den ursprünglichen D1-Prototyp.
+
 Dieses Verzeichnis definiert nur den Vertrag für einen späteren, manuell geprüften Goldstandard. `gold-standard.csv` enthält absichtlich keine Datensätze und keine automatisch erzeugten Labels.
 
 ## Manueller Ablauf
