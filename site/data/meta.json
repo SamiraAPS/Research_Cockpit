@@ -1,32 +1,50 @@
 {
   "schemaVersion": "radar-meta-1.0.0",
-  "generatedAt": "2026-09-11T10:54:01.029Z",
+  "generatedAt": "2026-09-11T11:01:34.896Z",
   "lastSuccessfulIngestionAt": "2026-09-02T09:44:20.022Z",
   "analysisVersion": "static-corpus-analysis-2.1.0",
   "queryVersion": "static-search-4.0.0",
   "ontologyVersion": "human-work-themes-3.0.0",
   "mode": "incremental",
   "status": "partial",
-  "totalFound": 899,
-  "totalAnalyzed": 899,
-  "message": "Publikationsdaten teilweise aktualisiert; verifizierte Bestandsdaten wurden erhalten. Statische Analyse: 899 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
+  "totalFound": 1398,
+  "totalAnalyzed": 1398,
+  "message": "Publikationsdaten teilweise aktualisiert; verifizierte Bestandsdaten wurden erhalten. Calls sind teilweise verfügbar; Fehler werden quellengenau ausgewiesen. Statische Analyse: 1398 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
   "sourceStatus": [
     {
       "source": "OpenAlex (core)",
       "status": "degraded",
-      "recordCount": 900,
-      "checkedAt": "2026-09-11T08:43:33.699Z",
-      "message": "OpenAlex antwortete mit HTTP 429"
+      "recordCount": 500,
+      "checkedAt": "2026-09-11T11:01:24.625Z",
+      "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort."
     },
     {
       "source": "Crossref (core)",
       "status": "not_checked",
       "recordCount": 0,
-      "checkedAt": "2026-09-11T08:43:33.699Z",
+      "checkedAt": "2026-09-11T11:01:24.625Z",
       "message": "Crossref-Enrichment wurde für diesen Lauf explizit deaktiviert."
     }
   ],
   "dataQualityWarnings": [
+    {
+      "code": "ingestion-source-degraded",
+      "severity": "warning",
+      "message": "OpenAlex (core): Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
+      "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-modes-not-run",
+      "severity": "info",
+      "message": "Nicht ausgeführte Suchmodi: broad, frontier.",
+      "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-deduplicated",
+      "severity": "info",
+      "message": "1 Quellendatensätze wurden zu kanonischen Works zusammengeführt.",
+      "affectedRecords": 1
+    },
     {
       "code": "calls-source-parser_error-hfes-aspire",
       "severity": "error",
@@ -52,24 +70,6 @@
       "affectedRecords": 0
     },
     {
-      "code": "ingestion-source-degraded",
-      "severity": "warning",
-      "message": "OpenAlex (core): OpenAlex antwortete mit HTTP 429",
-      "affectedRecords": 0
-    },
-    {
-      "code": "ingestion-modes-not-run",
-      "severity": "info",
-      "message": "Nicht ausgeführte Suchmodi: broad, frontier.",
-      "affectedRecords": 0
-    },
-    {
-      "code": "ingestion-deduplicated",
-      "severity": "info",
-      "message": "21 Quellendatensätze wurden zu kanonischen Works zusammengeführt.",
-      "affectedRecords": 21
-    },
-    {
       "code": "analysis-running-or-indexing-lag-years-excluded",
       "severity": "warning",
       "message": "Aus Trendvergleichen ausgeschlossen: 2026.",
@@ -79,7 +79,7 @@
       "code": "analysis-partial-publication-corpus",
       "severity": "warning",
       "message": "Nicht alle vorgesehenen Suchmodi liegen im statischen Korpus vor.",
-      "affectedRecords": 899
+      "affectedRecords": 1398
     },
     {
       "code": "analysis-partial-agenda-sources",
@@ -90,15 +90,15 @@
     {
       "code": "analysis-missing-abstracts",
       "severity": "info",
-      "message": "200 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
-      "affectedRecords": 200
+      "message": "318 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
+      "affectedRecords": 318
     }
   ],
   "datasets": {
     "publications": {
       "path": "./works/page-001.json",
       "status": "partial",
-      "recordCount": 899
+      "recordCount": 1398
     },
     "preprints": {
       "path": "./works/page-001.json",
@@ -108,7 +108,7 @@
     "searchIndex": {
       "path": "./search-index.json",
       "status": "partial",
-      "recordCount": 899
+      "recordCount": 1398
     },
     "calls": {
       "path": "./calls.json",
@@ -133,7 +133,7 @@
     "snapshots": {
       "path": "./snapshots/index.json",
       "status": "partial",
-      "recordCount": 3
+      "recordCount": 4
     },
     "agendaSignals": {
       "path": "./agenda-signals.json",
@@ -141,28 +141,40 @@
       "recordCount": 26
     }
   },
-  "lastIngestionRunId": "ingestion-2026-09-11T08:43:33.699Z",
-  "lastIngestionAt": "2026-09-11T08:43:33.699Z",
+  "lastIngestionRunId": "ingestion-2026-09-11T11:01:24.625Z",
+  "lastIngestionAt": "2026-09-11T11:01:24.625Z",
   "comparisonMode": "core",
   "historicalBackfill": {
     "range": {
       "from": "2018-01-01",
       "to": "2025-04-19"
     },
-    "cursor": null,
+    "cursor": "IlsxNjY2NzQyNDAwMDAwLCA5OC4wLCA5LCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzQzMDc1NjQxNzAnXSI=",
     "complete": false,
     "coveredThrough": "2026-09-11"
   },
+  "coverageHistory": [
+    {
+      "provider": "openalex",
+      "mode": "core",
+      "from": "2018-01-01",
+      "to": "2025-04-19",
+      "found": 800,
+      "retrieved": 500,
+      "complete": false,
+      "checkedAt": "2026-09-11T11:01:24.625Z"
+    }
+  ],
   "ingestionProgress": {
     "openalex:core": {
       "range": {
         "from": "2018-01-01",
-        "to": "2026-09-11"
+        "to": "2025-04-19"
       },
-      "cursor": null,
+      "cursor": "IlsxNjY2NzQyNDAwMDAwLCA5OC4wLCA5LCAnaHR0cHM6Ly9vcGVuYWxleC5vcmcvVzQzMDc1NjQxNzAnXSI=",
       "start": null,
-      "retrieved": 900,
-      "found": 1699,
+      "retrieved": 500,
+      "found": 800,
       "complete": false
     }
   },
