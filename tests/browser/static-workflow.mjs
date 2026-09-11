@@ -27,20 +27,24 @@ const server = createServer(async (req, res) => {
 });
 await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
 const base = `http://127.0.0.1:${server.address().port}`;
-const browser = spawn(executable, ["--headless=new", "--no-sandbox", "--disable-gpu", "--disable-dev-shm-usage", "--remote-debugging-port=0", `--user-data-dir=${profile}`, "about:blank"], { windowsHide: true, stdio: "ignore" });
+const browser = spawn(executable, ["--headless=new", "--no-sandbox", "--no-first-run", "--no-default-browser-check", "--disable-gpu", "--disable-dev-shm-usage", "--remote-debugging-port=0", `--user-data-dir=${profile}`, "about:blank"], { windowsHide: true, stdio: ["ignore", "ignore", "pipe"] });
+let startupLog = "";
+browser.stderr.on("data", chunk => { startupLog = (startupLog + chunk).slice(-12000); });
 let spawnError;
 browser.on("error", error => { spawnError = error; });
 let socket;
 const errors = [];
 try {
   let port;
-  for (let attempt = 0; attempt < 100; attempt++) {
+  for (let attempt = 0; attempt < 300; attempt++) {
     if (spawnError) throw spawnError;
     const text = await readFile(path.join(profile, "DevToolsActivePort"), "utf8").catch(() => "");
-    if (text) { port = Number(text.split("\n")[0]); break; }
+    const endpointPort = startupLog.match(/DevTools listening on ws:\/\/127\.0\.0\.1:(\d+)/)?.[1];
+    if (text || endpointPort) { port = Number(text ? text.split("\n")[0] : endpointPort); break; }
+    if (browser.exitCode !== null) break;
     await delay(100);
   }
-  assert.ok(port, "Browser did not start");
+  assert.ok(port, `Browser did not start (exit ${browser.exitCode}): ${startupLog}`);
   const target = await fetch(`http://127.0.0.1:${port}/json/new?about:blank`, { method: "PUT" }).then(r => r.json());
   socket = new WebSocket(target.webSocketDebuggerUrl);
   await new Promise((resolve, reject) => { socket.onopen = resolve; socket.onerror = reject; });
