@@ -1,37 +1,76 @@
 {
   "schemaVersion": "radar-meta-1.0.0",
-  "generatedAt": "2026-09-11T11:08:09.889Z",
+  "generatedAt": "2026-09-12T09:23:58.975Z",
   "lastSuccessfulIngestionAt": "2026-09-11T11:08:00.527Z",
   "analysisVersion": "static-corpus-analysis-2.1.0",
   "queryVersion": "static-search-4.0.0",
   "ontologyVersion": "human-work-themes-3.0.0",
   "mode": "incremental",
   "status": "partial",
-  "totalFound": 1698,
-  "totalAnalyzed": 1698,
-  "message": "Ausgewählte Publikationsmodi erfolgreich aktualisiert; weitere Modi wurden nicht ausgeführt. Calls sind teilweise verfügbar; Fehler werden quellengenau ausgewiesen. Statische Analyse: 1698 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
+  "totalFound": 2953,
+  "totalAnalyzed": 2953,
+  "message": "Publikationsdaten teilweise aktualisiert; verifizierte Bestandsdaten wurden erhalten. Calls sind teilweise verfügbar; Fehler werden quellengenau ausgewiesen. Statische Analyse: 2953 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
   "sourceStatus": [
     {
       "source": "OpenAlex (core)",
       "status": "healthy",
-      "recordCount": 300,
-      "checkedAt": "2026-09-11T11:08:00.527Z",
+      "recordCount": 211,
+      "checkedAt": "2026-09-12T09:23:23.935Z",
       "message": null
     },
     {
-      "source": "Crossref (core)",
+      "source": "OpenAlex (broad)",
+      "status": "degraded",
+      "recordCount": 500,
+      "checkedAt": "2026-09-12T09:23:23.935Z",
+      "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort."
+    },
+    {
+      "source": "OpenAlex (frontier)",
+      "status": "degraded",
+      "recordCount": 500,
+      "checkedAt": "2026-09-12T09:23:23.935Z",
+      "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort."
+    },
+    {
+      "source": "arXiv (frontier)",
+      "status": "degraded",
+      "recordCount": 500,
+      "checkedAt": "2026-09-12T09:23:23.935Z",
+      "message": "Seitenbudget erreicht; Fortsetzung am gespeicherten Offset."
+    },
+    {
+      "source": "Crossref (core, broad, frontier)",
       "status": "not_checked",
       "recordCount": 0,
-      "checkedAt": "2026-09-11T11:08:00.527Z",
+      "checkedAt": "2026-09-12T09:23:23.935Z",
       "message": "Crossref-Enrichment wurde für diesen Lauf explizit deaktiviert."
     }
   ],
   "dataQualityWarnings": [
     {
-      "code": "ingestion-modes-not-run",
-      "severity": "info",
-      "message": "Nicht ausgeführte Suchmodi: broad, frontier.",
+      "code": "ingestion-source-degraded",
+      "severity": "warning",
+      "message": "OpenAlex (broad): Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
       "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-source-degraded",
+      "severity": "warning",
+      "message": "OpenAlex (frontier): Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
+      "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-source-degraded",
+      "severity": "warning",
+      "message": "arXiv (frontier): Seitenbudget erreicht; Fortsetzung am gespeicherten Offset.",
+      "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-deduplicated",
+      "severity": "info",
+      "message": "456 Quellendatensätze wurden zu kanonischen Works zusammengeführt.",
+      "affectedRecords": 456
     },
     {
       "code": "calls-source-parser_error-hfes-aspire",
@@ -61,7 +100,7 @@
       "code": "analysis-running-or-indexing-lag-years-excluded",
       "severity": "warning",
       "message": "Aus Trendvergleichen ausgeschlossen: 2026.",
-      "affectedRecords": 512
+      "affectedRecords": 516
     },
     {
       "code": "analysis-partial-agenda-sources",
@@ -72,25 +111,25 @@
     {
       "code": "analysis-missing-abstracts",
       "severity": "info",
-      "message": "425 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
-      "affectedRecords": 425
+      "message": "533 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
+      "affectedRecords": 533
     }
   ],
   "datasets": {
     "publications": {
       "path": "./works/page-001.json",
       "status": "partial",
-      "recordCount": 1698
+      "recordCount": 2200
     },
     "preprints": {
       "path": "./works/page-001.json",
       "status": "partial",
-      "recordCount": 0
+      "recordCount": 753
     },
     "searchIndex": {
       "path": "./search-index.json",
       "status": "partial",
-      "recordCount": 1698
+      "recordCount": 2953
     },
     "calls": {
       "path": "./calls.json",
@@ -109,13 +148,13 @@
     },
     "sourceHealth": {
       "path": "./source-health.json",
-      "status": "ready",
-      "recordCount": 2
+      "status": "partial",
+      "recordCount": 5
     },
     "snapshots": {
       "path": "./snapshots/index.json",
       "status": "partial",
-      "recordCount": 5
+      "recordCount": 6
     },
     "agendaSignals": {
       "path": "./agenda-signals.json",
@@ -123,8 +162,8 @@
       "recordCount": 26
     }
   },
-  "lastIngestionRunId": "ingestion-2026-09-11T11:08:00.527Z",
-  "lastIngestionAt": "2026-09-11T11:08:00.527Z",
+  "lastIngestionRunId": "ingestion-2026-09-12T09:23:23.935Z",
+  "lastIngestionAt": "2026-09-12T09:23:23.935Z",
   "comparisonMode": "core",
   "historicalBackfill": {
     "range": {
@@ -155,19 +194,92 @@
       "retrieved": 300,
       "complete": true,
       "checkedAt": "2026-09-11T11:08:00.527Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "core",
+      "from": "2026-06-14",
+      "to": "2026-09-12",
+      "found": 211,
+      "retrieved": 211,
+      "complete": true,
+      "checkedAt": "2026-09-12T09:23:23.935Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "broad",
+      "from": "2026-06-14",
+      "to": "2026-09-12",
+      "found": 35188,
+      "retrieved": 500,
+      "complete": false,
+      "checkedAt": "2026-09-12T09:23:23.935Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "frontier",
+      "from": "2026-06-14",
+      "to": "2026-09-12",
+      "found": 8385,
+      "retrieved": 500,
+      "complete": false,
+      "checkedAt": "2026-09-12T09:23:23.935Z"
+    },
+    {
+      "provider": "arxiv",
+      "mode": "frontier",
+      "from": "2026-06-14",
+      "to": "2026-09-12",
+      "found": 3516,
+      "retrieved": 500,
+      "complete": false,
+      "checkedAt": "2026-09-12T09:23:23.935Z"
     }
   ],
   "ingestionProgress": {
     "openalex:core": {
       "range": {
-        "from": "2018-01-01",
-        "to": "2025-04-19"
+        "from": "2026-06-14",
+        "to": "2026-09-12"
       },
       "cursor": null,
       "start": null,
-      "retrieved": 300,
-      "found": 800,
+      "retrieved": 211,
+      "found": 211,
       "complete": true
+    },
+    "openalex:broad": {
+      "range": {
+        "from": "2026-06-14",
+        "to": "2026-09-12"
+      },
+      "cursor": "IlsxNzg4OTEyMDAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjEyMDQ3MjU5J10i",
+      "start": null,
+      "retrieved": 500,
+      "found": 35188,
+      "complete": false
+    },
+    "openalex:frontier": {
+      "range": {
+        "from": "2026-06-14",
+        "to": "2026-09-12"
+      },
+      "cursor": "IlsxNzg4MzA3MjAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjA3ODM5NDA5J10i",
+      "start": null,
+      "retrieved": 500,
+      "found": 8385,
+      "complete": false
+    },
+    "arxiv:frontier": {
+      "range": {
+        "from": "2026-06-14",
+        "to": "2026-09-12"
+      },
+      "cursor": null,
+      "start": 500,
+      "retrieved": 500,
+      "found": 3516,
+      "complete": false
     }
   },
   "researchProfile": {

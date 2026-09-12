@@ -1,15 +1,15 @@
 {
   "schemaVersion": "source-health-1.1.0",
-  "generatedAt": "2026-09-11T11:08:00.527Z",
-  "status": "ready",
+  "generatedAt": "2026-09-12T09:23:23.935Z",
+  "status": "partial",
   "sources": [
     {
       "source": "OpenAlex (core)",
       "status": "healthy",
-      "checkedAt": "2026-09-11T11:08:00.527Z",
-      "lastSuccessfulAt": "2026-09-11T11:08:00.527Z",
-      "recordCount": 300,
-      "latencyMs": 5377,
+      "checkedAt": "2026-09-12T09:23:23.935Z",
+      "lastSuccessfulAt": "2026-09-12T09:23:23.935Z",
+      "recordCount": 211,
+      "latencyMs": 3227,
       "message": null,
       "provider": "openalex",
       "role": "discovery",
@@ -19,29 +19,133 @@
       "queryVersions": [
         "static-openalex-core-4.0.0"
       ],
-      "requestCount": 4,
-      "pageCount": 4,
-      "attempts": 4,
+      "requestCount": 3,
+      "pageCount": 3,
+      "attempts": 3,
       "retryCount": 0,
       "rateLimitEvents": 0,
       "httpStatus": 200,
       "parameters": {
         "endpoint": "https://api.openalex.org/works",
-        "filter": "primary_location.source.id:S94432539|S72159247|S83386566|S92539022|S113222589|S153474389|S4210190811|S165559636|S2476799526|S204030396|S175747132|S141527467|S3481703|S166002381|S64744539|S4210190517|S123149298|S206124708|S28882882|S61446109|S57293258|S202812398|S9954729|S4363607743|S4210183893|S4306418948|S4306418552|S4363608268|S4210176815,from_publication_date:2018-01-01,to_publication_date:2025-04-19,is_retracted:false,type:article|review|book-chapter|proceedings-article,title_and_abstract.search:(\"artificial intelligence\" OR \"human-AI\" OR \"large language model\" OR \"large language models\" OR \"LLM\" OR \"foundation model\" OR \"foundation models\" OR \"ChatGPT\" OR \"generative AI\" OR \"AI agent\" OR \"AI agents\" OR \"algorithmic decision support\" OR \"algorithmic management\" OR \"intelligent automation\" OR \"machine learning system\" OR \"machine learning systems\" OR \"cobot\" OR \"cobots\" OR \"human-machine system\" OR \"human-machine systems\") AND (\"learning\" OR \"deskilling\" OR \"skill degradation\" OR \"expertise\" OR \"cognitive engagement\" OR \"intrinsic motivation\" OR \"work engagement\" OR \"agency\" OR \"worker autonomy\" OR \"work design\" OR \"job design\" OR \"situation awareness\" OR \"cognitive load\" OR \"cognitive workload\" OR \"human oversight\" OR \"trust\" OR \"trust in AI\" OR \"reliance\" OR \"automation bias\" OR \"safety\" OR \"psychological safety\" OR \"meaningful work\" OR \"human factors\" OR \"ergonomics\" OR \"human-AI collaboration\" OR \"human-AI interaction\" OR \"human performance\" OR \"occupational health\" OR \"sociotechnical systems\" OR \"human-machine interaction\")",
+        "filter": "primary_location.source.id:S94432539|S72159247|S83386566|S92539022|S113222589|S153474389|S4210190811|S165559636|S2476799526|S204030396|S175747132|S141527467|S3481703|S166002381|S64744539|S4210190517|S123149298|S206124708|S28882882|S61446109|S57293258|S202812398|S9954729|S4363607743|S4210183893|S4306418948|S4306418552|S4363608268|S4210176815,from_publication_date:2026-06-14,to_publication_date:2026-09-12,is_retracted:false,type:article|review|book-chapter|proceedings-article,title_and_abstract.search:(\"artificial intelligence\" OR \"human-AI\" OR \"large language model\" OR \"large language models\" OR \"LLM\" OR \"foundation model\" OR \"foundation models\" OR \"ChatGPT\" OR \"generative AI\" OR \"AI agent\" OR \"AI agents\" OR \"algorithmic decision support\" OR \"algorithmic management\" OR \"intelligent automation\" OR \"machine learning system\" OR \"machine learning systems\" OR \"cobot\" OR \"cobots\" OR \"human-machine system\" OR \"human-machine systems\") AND (\"learning\" OR \"deskilling\" OR \"skill degradation\" OR \"expertise\" OR \"cognitive engagement\" OR \"intrinsic motivation\" OR \"work engagement\" OR \"agency\" OR \"worker autonomy\" OR \"work design\" OR \"job design\" OR \"situation awareness\" OR \"cognitive load\" OR \"cognitive workload\" OR \"human oversight\" OR \"trust\" OR \"trust in AI\" OR \"reliance\" OR \"automation bias\" OR \"safety\" OR \"psychological safety\" OR \"meaningful work\" OR \"human factors\" OR \"ergonomics\" OR \"human-AI collaboration\" OR \"human-AI interaction\" OR \"human performance\" OR \"occupational health\" OR \"sociotechnical systems\" OR \"human-machine interaction\")",
         "sort": "publication_date:desc",
         "perPage": 100,
         "cursorPagination": true,
         "corpus": "all",
-        "fromDate": "2018-01-01",
-        "toDate": "2025-04-19",
+        "fromDate": "2026-06-14",
+        "toDate": "2026-09-12",
         "nextCursor": null,
-        "foundCount": 800
+        "foundCount": 211
       }
     },
     {
-      "source": "Crossref (core)",
+      "source": "OpenAlex (broad)",
+      "status": "degraded",
+      "checkedAt": "2026-09-12T09:23:23.935Z",
+      "lastSuccessfulAt": "2026-09-11T11:08:00.527Z",
+      "recordCount": 500,
+      "latencyMs": 5355,
+      "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
+      "provider": "openalex",
+      "role": "discovery",
+      "modes": [
+        "broad"
+      ],
+      "queryVersions": [
+        "static-openalex-broad-4.0.0"
+      ],
+      "requestCount": 5,
+      "pageCount": 5,
+      "attempts": 5,
+      "retryCount": 0,
+      "rateLimitEvents": 0,
+      "httpStatus": 200,
+      "parameters": {
+        "endpoint": "https://api.openalex.org/works",
+        "filter": "from_publication_date:2026-06-14,to_publication_date:2026-09-12,is_retracted:false,type:article|review|book-chapter|proceedings-article,title_and_abstract.search:(\"artificial intelligence\" OR \"human-AI\" OR \"large language model\" OR \"large language models\" OR \"LLM\" OR \"foundation model\" OR \"foundation models\" OR \"ChatGPT\" OR \"generative AI\" OR \"AI agent\" OR \"AI agents\" OR \"algorithmic decision support\" OR \"algorithmic management\" OR \"intelligent automation\" OR \"machine learning system\" OR \"machine learning systems\" OR \"cobot\" OR \"cobots\" OR \"human-machine system\" OR \"human-machine systems\") AND (\"learning\" OR \"deskilling\" OR \"skill degradation\" OR \"expertise\" OR \"cognitive engagement\" OR \"intrinsic motivation\" OR \"work engagement\" OR \"agency\" OR \"worker autonomy\" OR \"work design\" OR \"job design\" OR \"situation awareness\" OR \"cognitive load\" OR \"cognitive workload\" OR \"human oversight\" OR \"trust\" OR \"trust in AI\" OR \"reliance\" OR \"automation bias\" OR \"safety\" OR \"psychological safety\" OR \"meaningful work\" OR \"human factors\" OR \"ergonomics\" OR \"human-AI collaboration\" OR \"human-AI interaction\" OR \"human performance\" OR \"occupational health\" OR \"sociotechnical systems\" OR \"human-machine interaction\")",
+        "sort": "publication_date:desc",
+        "perPage": 100,
+        "cursorPagination": true,
+        "corpus": "all",
+        "fromDate": "2026-06-14",
+        "toDate": "2026-09-12",
+        "nextCursor": "IlsxNzg4OTEyMDAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjEyMDQ3MjU5J10i",
+        "foundCount": 35188
+      }
+    },
+    {
+      "source": "OpenAlex (frontier)",
+      "status": "degraded",
+      "checkedAt": "2026-09-12T09:23:23.935Z",
+      "lastSuccessfulAt": "2026-09-11T11:08:00.527Z",
+      "recordCount": 500,
+      "latencyMs": 4144,
+      "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
+      "provider": "openalex",
+      "role": "discovery",
+      "modes": [
+        "frontier"
+      ],
+      "queryVersions": [
+        "static-openalex-arxiv-frontier-4.0.0"
+      ],
+      "requestCount": 5,
+      "pageCount": 5,
+      "attempts": 5,
+      "retryCount": 0,
+      "rateLimitEvents": 0,
+      "httpStatus": 200,
+      "parameters": {
+        "endpoint": "https://api.openalex.org/works",
+        "filter": "primary_location.source.id:S4306400194|S4306401687|S3005725775|S4306401238|S3006283864|S4306401127|S4210172589|S4306525896|S4306525895|S6309402219|S4363607743|S4210183893|S4306418948|S4306418552|S4363608268|S4210176815|S4363607762,from_publication_date:2026-06-14,to_publication_date:2026-09-12,is_retracted:false,type:preprint|article|proceedings-article,title_and_abstract.search:(\"artificial intelligence\" OR \"human-AI\" OR \"large language model\" OR \"large language models\" OR \"LLM\" OR \"foundation model\" OR \"foundation models\" OR \"ChatGPT\" OR \"generative AI\" OR \"AI agent\" OR \"AI agents\" OR \"algorithmic decision support\" OR \"algorithmic management\" OR \"intelligent automation\" OR \"machine learning system\" OR \"machine learning systems\" OR \"cobot\" OR \"cobots\" OR \"human-machine system\" OR \"human-machine systems\") AND (\"learning\" OR \"deskilling\" OR \"skill degradation\" OR \"expertise\" OR \"cognitive engagement\" OR \"intrinsic motivation\" OR \"work engagement\" OR \"agency\" OR \"worker autonomy\" OR \"work design\" OR \"job design\" OR \"situation awareness\" OR \"cognitive load\" OR \"cognitive workload\" OR \"human oversight\" OR \"trust\" OR \"trust in AI\" OR \"reliance\" OR \"automation bias\" OR \"safety\" OR \"psychological safety\" OR \"meaningful work\" OR \"human factors\" OR \"ergonomics\" OR \"human-AI collaboration\" OR \"human-AI interaction\" OR \"human performance\" OR \"occupational health\" OR \"sociotechnical systems\" OR \"human-machine interaction\")",
+        "sort": "publication_date:desc",
+        "perPage": 100,
+        "cursorPagination": true,
+        "corpus": "all",
+        "fromDate": "2026-06-14",
+        "toDate": "2026-09-12",
+        "nextCursor": "IlsxNzg4MzA3MjAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjA3ODM5NDA5J10i",
+        "foundCount": 8385
+      }
+    },
+    {
+      "source": "arXiv (frontier)",
+      "status": "degraded",
+      "checkedAt": "2026-09-12T09:23:23.935Z",
+      "lastSuccessfulAt": null,
+      "recordCount": 500,
+      "latencyMs": 4723,
+      "message": "Seitenbudget erreicht; Fortsetzung am gespeicherten Offset.",
+      "provider": "arxiv",
+      "role": "discovery",
+      "modes": [
+        "frontier"
+      ],
+      "queryVersions": [
+        "static-openalex-arxiv-frontier-4.0.0"
+      ],
+      "requestCount": 5,
+      "pageCount": 5,
+      "attempts": 5,
+      "retryCount": 0,
+      "rateLimitEvents": 0,
+      "httpStatus": 200,
+      "parameters": {
+        "endpoint": "https://export.arxiv.org/api/query",
+        "searchQuery": "(cat:cs.HC OR cat:cs.AI OR cat:cs.CY OR cat:cs.RO OR cat:cs.CL) AND ((ti:\"artificial intelligence\" OR abs:\"artificial intelligence\") OR (ti:\"human-AI\" OR abs:\"human-AI\") OR (ti:\"large language model\" OR abs:\"large language model\") OR (ti:\"large language models\" OR abs:\"large language models\") OR (ti:\"LLM\" OR abs:\"LLM\") OR (ti:\"foundation model\" OR abs:\"foundation model\") OR (ti:\"foundation models\" OR abs:\"foundation models\") OR (ti:\"ChatGPT\" OR abs:\"ChatGPT\") OR (ti:\"generative AI\" OR abs:\"generative AI\") OR (ti:\"AI agent\" OR abs:\"AI agent\") OR (ti:\"AI agents\" OR abs:\"AI agents\") OR (ti:\"algorithmic decision support\" OR abs:\"algorithmic decision support\") OR (ti:\"algorithmic management\" OR abs:\"algorithmic management\") OR (ti:\"intelligent automation\" OR abs:\"intelligent automation\") OR (ti:\"machine learning system\" OR abs:\"machine learning system\") OR (ti:\"machine learning systems\" OR abs:\"machine learning systems\") OR (ti:\"cobot\" OR abs:\"cobot\") OR (ti:\"cobots\" OR abs:\"cobots\") OR (ti:\"human-machine system\" OR abs:\"human-machine system\") OR (ti:\"human-machine systems\" OR abs:\"human-machine systems\")) AND ((ti:\"learning\" OR abs:\"learning\") OR (ti:\"deskilling\" OR abs:\"deskilling\") OR (ti:\"skill degradation\" OR abs:\"skill degradation\") OR (ti:\"expertise\" OR abs:\"expertise\") OR (ti:\"cognitive engagement\" OR abs:\"cognitive engagement\") OR (ti:\"intrinsic motivation\" OR abs:\"intrinsic motivation\") OR (ti:\"work engagement\" OR abs:\"work engagement\") OR (ti:\"agency\" OR abs:\"agency\") OR (ti:\"worker autonomy\" OR abs:\"worker autonomy\") OR (ti:\"work design\" OR abs:\"work design\") OR (ti:\"job design\" OR abs:\"job design\") OR (ti:\"situation awareness\" OR abs:\"situation awareness\") OR (ti:\"cognitive load\" OR abs:\"cognitive load\") OR (ti:\"cognitive workload\" OR abs:\"cognitive workload\") OR (ti:\"human oversight\" OR abs:\"human oversight\") OR (ti:\"trust\" OR abs:\"trust\") OR (ti:\"trust in AI\" OR abs:\"trust in AI\") OR (ti:\"reliance\" OR abs:\"reliance\") OR (ti:\"automation bias\" OR abs:\"automation bias\") OR (ti:\"safety\" OR abs:\"safety\") OR (ti:\"psychological safety\" OR abs:\"psychological safety\") OR (ti:\"meaningful work\" OR abs:\"meaningful work\") OR (ti:\"human factors\" OR abs:\"human factors\") OR (ti:\"ergonomics\" OR abs:\"ergonomics\") OR (ti:\"human-AI collaboration\" OR abs:\"human-AI collaboration\") OR (ti:\"human-AI interaction\" OR abs:\"human-AI interaction\") OR (ti:\"human performance\" OR abs:\"human performance\") OR (ti:\"occupational health\" OR abs:\"occupational health\") OR (ti:\"sociotechnical systems\" OR abs:\"sociotechnical systems\") OR (ti:\"human-machine interaction\" OR abs:\"human-machine interaction\")) AND submittedDate:[202606140000 TO 202609122359]",
+        "pageSize": 100,
+        "offsetPagination": true,
+        "interPageDelayMs": 3000,
+        "fromDate": "2026-06-14",
+        "toDate": "2026-09-12",
+        "nextStart": 500,
+        "foundCount": 3516
+      }
+    },
+    {
+      "source": "Crossref (core, broad, frontier)",
       "status": "not_checked",
-      "checkedAt": "2026-09-11T11:08:00.527Z",
+      "checkedAt": "2026-09-12T09:23:23.935Z",
       "lastSuccessfulAt": "2026-09-02T09:44:20.022Z",
       "recordCount": 0,
       "latencyMs": 0,
@@ -49,7 +153,9 @@
       "provider": "crossref",
       "role": "enrichment",
       "modes": [
-        "core"
+        "core",
+        "broad",
+        "frontier"
       ],
       "queryVersions": [
         "static-crossref-enrichment-4.0.0"
@@ -64,9 +170,9 @@
         "endpoint": "https://api.crossref.org/works/{doi}",
         "lookup": "DOI singleton only",
         "discovery": false,
-        "eligibleRecords": 299,
+        "eligibleRecords": 1192,
         "interRequestDelayMs": 100,
-        "foundCount": 299
+        "foundCount": 1192
       }
     }
   ]
