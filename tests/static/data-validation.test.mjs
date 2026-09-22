@@ -55,6 +55,45 @@ async function applyMutation(dataDirectory, mutation) {
   await writeFile(target, `${JSON.stringify(document, null, 2)}\n`, "utf8");
 }
 
+test("path detection distinguishes evidence text from absolute local paths", async (t) => {
+  const evidencePointer = "/items/0/classifiedThemes/0/evidence/0/sourceValue";
+  const cases = [
+    { name: "DOI fragment in sourceValue", value: "/doi.org/10.5281/zenodo.17596478 publication evidence", valid: true },
+    { name: "other slash-prefixed evidence", value: "/publisher.example/article/123 publication evidence", valid: true },
+    { name: "POSIX root prefix within a word", value: "/homeostasis research evidence", valid: true },
+    { name: "Windows path", value: "C:\\Users\\name\\data.json", valid: false },
+    { name: "Windows path with forward slashes", value: "C:/Users/name/data.json", valid: false },
+    { name: "UNC path", value: "\\\\server\\share\\data.json", valid: false },
+    { name: "rooted Windows path", value: "\\server\\share\\data.json", valid: false },
+    { name: "file URL", value: "file:///home/runner/data.json", valid: false },
+    { name: "case-insensitive file URL", value: "FILE:///custom-export/data.json", valid: false },
+    { name: "local path surrounded by whitespace", value: "  /home/runner/data.json\n", valid: false },
+    ...["home/runner", "workspace", "tmp", "var", "etc", "usr", "root", "mnt"].map((root) => ({
+      name: `local POSIX path /${root}`, value: `/${root}/data.json`, valid: false,
+    })),
+    { name: "bare local POSIX root", value: "/tmp", valid: false },
+    ...["outputPath", "dataDirectory", "pagePath"].flatMap((key) => [
+      { name: `absolute ${key}`, pointer: `/items/0/${key}`, value: "/custom-export/data.json", valid: false },
+      { name: `DOI fragment in ${key}`, pointer: `/items/0/${key}`, value: "/doi.org/10.1234/example", valid: false },
+      { name: `relative ${key}`, pointer: `/items/0/${key}`, value: "./custom-export/data.json", valid: true },
+    ]),
+  ];
+
+  for (const { name, value, valid, pointer = evidencePointer } of cases) {
+    await t.test(name, async (subtest) => {
+      const directory = await mkdtemp(path.join(os.tmpdir(), "radar-path-validation-"));
+      subtest.after(() => rm(directory, { recursive: true, force: true }));
+      await cp(validFixture, directory, { recursive: true });
+      await applyMutation(directory, { target: "works/page-001.json", set: { [pointer]: value } });
+
+      const result = await validateDataDirectory(directory);
+      assert.equal(result.valid, valid, JSON.stringify(result.errors));
+      assert.deepEqual(result.errors.map(({ code, file, path: errorPath }) => ({ code, file, path: errorPath })),
+        valid ? [] : [{ code: "absolute-path", file: "works/page-001.json", path: pointer }]);
+    });
+  }
+});
+
 test("der vollständige gültige Fixture-Datensatz erfüllt alle Verträge", async () => {
   const result = await validateDataDirectory(validFixture);
   assert.equal(result.valid, true, result.errors.map((error) => JSON.stringify(error)).join("\n"));

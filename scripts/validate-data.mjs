@@ -174,6 +174,17 @@ function validateDatesRecursively(ctx, value, pointer = "") {
   }
 }
 
+function looksLikeAbsoluteLocalPath(key, value) {
+  const candidate = value.trim();
+  if (/^(?:[A-Za-z]:[\\/]|\\|file:\/\/)/i.test(candidate)) return true;
+
+  // A leading slash can also occur in excerpts of URLs or scientific prose.
+  // Only path fields and recognizable local filesystem roots imply a POSIX path.
+  if (!candidate.startsWith("/")) return false;
+  if (/(?:paths?|director(?:y|ies)|dirs?)$/i.test(key)) return true;
+  return /^\/(?:home|workspace|tmp|var|etc|usr|root|mnt|opt|srv|run|dev|proc|sys|media|boot|bin|sbin|lib|lib64|Users|Volumes|private)(?:\/|$)/.test(candidate);
+}
+
 function validateSecurityRecursively(ctx, value, pointer = "") {
   if (Array.isArray(value)) {
     value.forEach((entry, index) => validateSecurityRecursively(ctx, entry, joinPointer(pointer, index)));
@@ -190,7 +201,7 @@ function validateSecurityRecursively(ctx, value, pointer = "") {
       ctx.error("synthetic-fallback", entryPointer, "synthetische oder Test-Fallbacks sind in Produktionsdaten unzulässig");
     }
     if (typeof entry === "string") {
-      if (/^(?:[A-Za-z]:[\\/]|\\\\|file:\/\/|\/(?!\/))/i.test(entry)) {
+      if (looksLikeAbsoluteLocalPath(key, entry)) {
         ctx.error("absolute-path", entryPointer, "absoluter lokaler Pfad darf nicht veröffentlicht werden");
       }
       if (entry.includes("tests/fixtures/") || entry.includes("tests\\fixtures\\")) {
