@@ -1,49 +1,49 @@
 {
   "schemaVersion": "radar-meta-1.0.0",
-  "generatedAt": "2026-09-22T08:39:41.017Z",
+  "generatedAt": "2026-09-27T14:56:59.136Z",
   "lastSuccessfulIngestionAt": "2026-09-11T11:08:00.527Z",
   "analysisVersion": "static-corpus-analysis-2.1.0",
   "queryVersion": "static-search-4.0.0",
   "ontologyVersion": "human-work-themes-3.0.0",
   "mode": "incremental",
   "status": "partial",
-  "totalFound": 4099,
-  "totalAnalyzed": 4099,
-  "message": "Publikationsdaten teilweise aktualisiert; verifizierte Bestandsdaten wurden erhalten. Calls sind teilweise verfügbar; Fehler werden quellengenau ausgewiesen. Statische Analyse: 4099 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
+  "totalFound": 5358,
+  "totalAnalyzed": 5358,
+  "message": "Publikationsdaten teilweise aktualisiert; verifizierte Bestandsdaten wurden erhalten. Calls sind teilweise verfügbar; Fehler werden quellengenau ausgewiesen. Statische Analyse: 5358 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
   "sourceStatus": [
     {
       "source": "OpenAlex (core)",
       "status": "healthy",
-      "recordCount": 208,
-      "checkedAt": "2026-09-22T08:39:04.283Z",
+      "recordCount": 227,
+      "checkedAt": "2026-09-27T14:56:23.639Z",
       "message": null
     },
     {
       "source": "OpenAlex (broad)",
       "status": "degraded",
       "recordCount": 500,
-      "checkedAt": "2026-09-22T08:39:04.283Z",
+      "checkedAt": "2026-09-27T14:56:23.639Z",
       "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort."
     },
     {
       "source": "OpenAlex (frontier)",
       "status": "degraded",
       "recordCount": 500,
-      "checkedAt": "2026-09-22T08:39:04.283Z",
+      "checkedAt": "2026-09-27T14:56:23.639Z",
       "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort."
     },
     {
       "source": "arXiv (frontier)",
       "status": "degraded",
       "recordCount": 500,
-      "checkedAt": "2026-09-22T08:39:04.283Z",
+      "checkedAt": "2026-09-27T14:56:23.639Z",
       "message": "Seitenbudget erreicht; Fortsetzung am gespeicherten Offset."
     },
     {
       "source": "Crossref (core, broad, frontier)",
       "status": "not_checked",
       "recordCount": 0,
-      "checkedAt": "2026-09-22T08:39:04.283Z",
+      "checkedAt": "2026-09-27T14:56:23.639Z",
       "message": "Crossref-Enrichment wurde für diesen Lauf explizit deaktiviert."
     }
   ],
@@ -69,8 +69,8 @@
     {
       "code": "ingestion-deduplicated",
       "severity": "info",
-      "message": "562 Quellendatensätze wurden zu kanonischen Works zusammengeführt.",
-      "affectedRecords": 562
+      "message": "468 Quellendatensätze wurden zu kanonischen Works zusammengeführt.",
+      "affectedRecords": 468
     },
     {
       "code": "calls-source-parser_error-hfes-aspire",
@@ -100,7 +100,7 @@
       "code": "analysis-running-or-indexing-lag-years-excluded",
       "severity": "warning",
       "message": "Aus Trendvergleichen ausgeschlossen: 2026.",
-      "affectedRecords": 526
+      "affectedRecords": 557
     },
     {
       "code": "analysis-partial-agenda-sources",
@@ -111,25 +111,25 @@
     {
       "code": "analysis-missing-abstracts",
       "severity": "info",
-      "message": "644 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
-      "affectedRecords": 644
+      "message": "770 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
+      "affectedRecords": 770
     }
   ],
   "datasets": {
     "publications": {
       "path": "./works/page-001.json",
       "status": "partial",
-      "recordCount": 2707
+      "recordCount": 3229
     },
     "preprints": {
       "path": "./works/page-001.json",
       "status": "partial",
-      "recordCount": 1392
+      "recordCount": 2129
     },
     "searchIndex": {
       "path": "./search-index.json",
       "status": "partial",
-      "recordCount": 4099
+      "recordCount": 5358
     },
     "calls": {
       "path": "./calls.json",
@@ -154,7 +154,7 @@
     "snapshots": {
       "path": "./snapshots/index.json",
       "status": "partial",
-      "recordCount": 7
+      "recordCount": 8
     },
     "agendaSignals": {
       "path": "./agenda-signals.json",
@@ -162,8 +162,8 @@
       "recordCount": 26
     }
   },
-  "lastIngestionRunId": "ingestion-2026-09-22T08:39:04.283Z",
-  "lastIngestionAt": "2026-09-22T08:39:04.283Z",
+  "lastIngestionRunId": "ingestion-2026-09-27T14:56:23.639Z",
+  "lastIngestionAt": "2026-09-27T14:56:23.639Z",
   "comparisonMode": "core",
   "historicalBackfill": {
     "range": {
@@ -274,18 +274,58 @@
       "retrieved": 500,
       "complete": false,
       "checkedAt": "2026-09-22T08:39:04.283Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "core",
+      "from": "2026-06-29",
+      "to": "2026-09-27",
+      "found": 227,
+      "retrieved": 227,
+      "complete": true,
+      "checkedAt": "2026-09-27T14:56:23.639Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "broad",
+      "from": "2026-06-14",
+      "to": "2026-09-12",
+      "found": 37490,
+      "retrieved": 500,
+      "complete": false,
+      "checkedAt": "2026-09-27T14:56:23.639Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "frontier",
+      "from": "2026-06-14",
+      "to": "2026-09-12",
+      "found": 6144,
+      "retrieved": 500,
+      "complete": false,
+      "checkedAt": "2026-09-27T14:56:23.639Z"
+    },
+    {
+      "provider": "arxiv",
+      "mode": "frontier",
+      "from": "2026-06-14",
+      "to": "2026-09-12",
+      "found": 3689,
+      "retrieved": 500,
+      "complete": false,
+      "checkedAt": "2026-09-27T14:56:23.639Z"
     }
   ],
   "ingestionProgress": {
     "openalex:core": {
       "range": {
-        "from": "2026-06-24",
-        "to": "2026-09-22"
+        "from": "2026-06-29",
+        "to": "2026-09-27"
       },
       "cursor": null,
       "start": null,
-      "retrieved": 208,
-      "found": 208,
+      "retrieved": 227,
+      "found": 227,
       "complete": true
     },
     "openalex:broad": {
@@ -293,10 +333,10 @@
         "from": "2026-06-14",
         "to": "2026-09-12"
       },
-      "cursor": "IlsxNzg4NzM5MjAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c0NDA1MDMwMTk4J10i",
+      "cursor": "IlsxNzg4NTY2NDAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjA4ODA5ODI3J10i",
       "start": null,
-      "retrieved": 1000,
-      "found": 36920,
+      "retrieved": 1500,
+      "found": 37490,
       "complete": false
     },
     "openalex:frontier": {
@@ -304,10 +344,10 @@
         "from": "2026-06-14",
         "to": "2026-09-12"
       },
-      "cursor": "IlsxNzg3NzAyNDAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjA0NDU2MjA4J10i",
+      "cursor": "IlsxNzg3MDExMjAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjAzNzE0MzcxJ10i",
       "start": null,
-      "retrieved": 1000,
-      "found": 8592,
+      "retrieved": 1500,
+      "found": 6144,
       "complete": false
     },
     "arxiv:frontier": {
@@ -316,9 +356,9 @@
         "to": "2026-09-12"
       },
       "cursor": null,
-      "start": 1000,
-      "retrieved": 1000,
-      "found": 3656,
+      "start": 1500,
+      "retrieved": 1500,
+      "found": 3689,
       "complete": false
     }
   },
