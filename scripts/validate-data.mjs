@@ -38,6 +38,10 @@ const SECRET_VALUE_PATTERNS = [
   /-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/,
   /\b(?:postgres(?:ql)?|mysql|mongodb(?:\+srv)?):\/\/[^\s:/]+:[^\s@/]+@/i,
 ];
+const PATH_FIELD_WORDS = new Set([
+  "path", "paths", "file", "files", "filename", "filenames",
+  "directory", "directories", "dir", "dirs", "folder", "folders", "root", "roots",
+]);
 
 async function findJsonFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -174,15 +178,22 @@ function validateDatesRecursively(ctx, value, pointer = "") {
   }
 }
 
+function isPathField(key) {
+  const words = String(key)
+    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+    .split(/[^A-Za-z0-9]+/)
+    .filter(Boolean);
+  return PATH_FIELD_WORDS.has(String(words.at(-1) ?? "").toLowerCase());
+}
+
 function looksLikeAbsoluteLocalPath(key, value) {
   const candidate = value.trim();
-  if (/^(?:[A-Za-z]:[\\/]|\\|file:\/\/)/i.test(candidate)) return true;
+  if (/^[A-Za-z]:[\\/]/.test(candidate) || /^file:\/\//i.test(candidate)) return true;
+  if (/^\\\\[A-Za-z0-9._$-]+[\\/][^\\/\r\n]+/.test(candidate)) return true;
 
-  // A leading slash can also occur in excerpts of URLs or scientific prose.
-  // Only path fields and recognizable local filesystem roots imply a POSIX path.
-  if (!candidate.startsWith("/")) return false;
-  if (/(?:paths?|director(?:y|ies)|dirs?)$/i.test(key)) return true;
-  return /^\/(?:home|workspace|tmp|var|etc|usr|root|mnt|opt|srv|run|dev|proc|sys|media|boot|bin|sbin|lib|lib64|Users|Volumes|private)(?:\/|$)/.test(candidate);
+  // Leading slashes and backslashes are common in URLs, formulas, LaTeX and
+  // scientific excerpts. Treat them as local paths only in path-bearing fields.
+  return isPathField(key) && /^(?:\/|\\)/.test(candidate);
 }
 
 function validateSecurityRecursively(ctx, value, pointer = "") {

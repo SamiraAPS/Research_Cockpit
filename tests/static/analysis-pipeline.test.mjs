@@ -75,6 +75,19 @@ test("Normalisierung und Wortgrenzen vermeiden Teilwort- und Machine-Learning-Fe
   assert.deepEqual([...new Set(allFields.flatMap((entry) => entry.evidence.map((evidence) => evidence.source)))].sort(), ["abstract", "external_topic", "keyword"]);
 });
 
+test("gekürzte Evidenzausschnitte markieren ausgelassenen Text", () => {
+  const classified = classifyRecord({
+    title: "Human-AI work",
+    abstract: `${"x".repeat(100)}\\\\ $0.0104$), together with motivation and engagement in work${"y".repeat(400)}`,
+    keywords: [],
+    topics: []
+  });
+  const evidence = classified.flatMap((theme) => theme.evidence).find((item) => item.source === "abstract");
+  assert.ok(evidence);
+  assert.match(evidence.sourceValue, /^…/);
+  assert.match(evidence.sourceValue, /…$/);
+});
+
 test("kontrollierte Zeitreihe berechnet gleiche Fenster, Raten, Wachstum und Beschleunigung", () => {
   assert.equal(latestStableYear(new Date("2026-09-02T12:00:00Z")), 2025);
   const result = buildStaticMetrics({ generatedAt: "2026-09-02T12:00:00Z", works: controlledSeries(), calls: calls(), corpusComplete: true });

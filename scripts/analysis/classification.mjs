@@ -45,18 +45,24 @@ function removeExcluded(values, phrases = []) {
 }
 
 function evidenceFor(theme, source, value) {
+  const sourceText = String(value);
   const valueTokens = removeExcluded(tokens(value), theme.excludedPhrases);
   if (!valueTokens.length) return [];
   return theme.concepts.flatMap((concept) => {
     const matchedTerm = concept.terms.find((term) => containsSequence(valueTokens, tokens(term)));
-    return matchedTerm ? [{
+    if (!matchedTerm) return [];
+    const matchIndex = sourceText.toLowerCase().indexOf(matchedTerm.toLowerCase());
+    const excerptStart = Math.max(0, matchIndex - 80);
+    const excerptEnd = Math.min(sourceText.length, excerptStart + 320);
+    const sourceValue = `${excerptStart > 0 ? "…" : ""}${sourceText.slice(excerptStart, excerptEnd)}${excerptEnd < sourceText.length ? "…" : ""}`;
+    return [{
       source,
       concept: concept.id,
       conceptLabel: concept.label,
       matchedTerm,
-      sourceValue: String(value).slice(Math.max(0, String(value).toLowerCase().indexOf(matchedTerm.toLowerCase()) - 80), Math.max(0, String(value).toLowerCase().indexOf(matchedTerm.toLowerCase()) - 80) + 320),
+      sourceValue,
       weight: FIELD_WEIGHTS[source]
-    }] : [];
+    }];
   });
 }
 
