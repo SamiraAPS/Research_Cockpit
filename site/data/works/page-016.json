@@ -1,12 +1,237 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-09-27T14:56:59.136Z",
+  "generatedAt": "2026-09-28T11:43:48.295Z",
   "page": 16,
   "pageSize": 100,
-  "totalItems": 5358,
-  "totalPages": 54,
+  "totalItems": 6588,
+  "totalPages": 66,
   "nextPage": "./page-017.json",
   "items": [
+    {
+      "id": "doi:10.20944/preprints202609.0440.v1",
+      "recordType": "preprint",
+      "title": "Moving Explanations Closer to Humans: A Systematic Review of Comparisons of Explainable AI Implementations",
+      "abstract": "As AI increasingly supports human decision-making, designing clear and usable explanations has become a key challenge. Explainable Artificial Intelligence (XAI) aims to address this challenge, yet it remains unclear which explanation characteristics contribute to effective human-AI interaction. Following PRISMA guidelines, this systematic review synthesizes evidence from 161 empirical studies that directly compared multiple XAI implementations using human-centered evaluation metrics. Studies were analyzed across four explanation aspects: method, content, format, and interaction. Results were highly heterogeneous and often showed limited or non-significant differences between explanation implementations. Variations in explanation methods and content rarely produced consistent effects on user outcomes. In contrast, user-facing design choices, particularly explanation format and interaction, showed more consistent effects on user-related outcomes. Overall, the findings suggest that explanation effectiveness depends less on the underlying algorithm and more on how explanations are presented and experienced, highlighting the importance of a user-centered design perspective for XAI research and practice.",
+      "doi": "10.20944/preprints202609.0440.v1",
+      "externalIds": {
+        "openalex": "W7211963042"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7211963042"
+      },
+      "venue": "Preprints.org",
+      "publicationDate": "2026-09-07",
+      "onlineDate": null,
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "Implementation",
+        "Perspective (graphical)",
+        "USable",
+        "Key (lock)",
+        "Systematic review",
+        "Empirical evidence"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 4,
+          "classificationVersion": "weighted-lexical-3.0.0",
+          "ontologyVersion": "human-work-themes-3.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "explainability",
+              "conceptLabel": "Erklärbarkeit",
+              "matchedTerm": "explainable ai",
+              "sourceValue": "Moving Explanations Closer to Humans: A Systematic Review of Comparisons of Explainable AI Implementations",
+              "weight": 4
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:trust": 4,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "human-AI",
+        "human-AI interaction",
+        "explainable ai"
+      ],
+      "authors": [
+        {
+          "id": "A5054506119",
+          "name": "Mieke Ronckers",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5087839132",
+          "name": "Rianne Conijn",
+          "orcid": "https://orcid.org/0000-0002-6316-4892",
+          "affiliations": []
+        },
+        {
+          "id": "A5069451287",
+          "name": "Chris Snijders",
+          "orcid": "https://orcid.org/0000-0001-6165-7645",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.20944/preprints202609.0440.v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:36.153Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:36.153Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:36.153Z",
+      "preferredVersionId": "openalex:W7211963042",
+      "versions": [
+        {
+          "id": "openalex:W7211963042",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7211963042",
+          "doi": "10.20944/preprints202609.0440.v1",
+          "url": "https://doi.org/10.20944/preprints202609.0440.v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-016.json"
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.07666",
+      "recordType": "preprint",
+      "title": "MpSub: A Momentum $p$-Dimensional Subspace Trust-Region Method for Derivative-Free Fine-Tuning of Large Language Models",
+      "abstract": "Full-parameter fine-tuning of large language models has substantial memory costs because backpropagation stores activations and gradients. Zeroth-order optimization avoids this by estimating update directions from loss evaluations, but existing methods require tuning a sensitive learning rate for each model and task. We propose the momentum $p$-dimensional subspace trust-region method (MpSub). At each iteration, MpSub searches within a $p$-dimensional subspace: one direction preserves historical momentum from the most recent accepted step, while the remaining directions explore via fresh random sampling. The subspace gradient is estimated by central differences, a trial step is computed from a linear trust-region model, and the trust-region radius adapts according to the agreement between predicted and observed loss reduction, eliminating the learning rate. For LLM fine-tuning, evaluations within an iteration share a minibatch, and directions are regenerated in place from seeds, using forward passes alone. For smooth deterministic objectives under unorthogonalized Gaussian directions, we bound the finite-difference error, quantify gradient energy captured by the subspace, and prove that $\\lim_{k\\to\\infty} \\|\\nabla f(x_k)\\|_2 = 0$ almost surely under a safeguarded radius update. Under a matched budget of 8,400 training-objective forward passes, we fine-tune OPT-125M and OPT-350M on CommitmentBank. With the same preset parameters at both model sizes, MpSub attains mean test accuracies of 0.673 and 0.690 over three seeds, matching tuned MeZO (0.685) without any learning-rate search.",
+      "doi": "10.48550/arxiv.2609.07666",
+      "externalIds": {
+        "openalex": "W7212043092"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7212043092"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-07",
+      "onlineDate": null,
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Stochastic Gradient Optimization Techniques"
+      ],
+      "keywords": [
+        "Subspace topology",
+        "Momentum (technical analysis)",
+        "Gradient descent",
+        "Gaussian",
+        "Matching (statistics)",
+        "Energy (signal processing)",
+        "Backpropagation",
+        "Gaussian process"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 5,
+          "classificationVersion": "weighted-lexical-3.0.0",
+          "ontologyVersion": "human-work-themes-3.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trust",
+              "sourceValue": "MpSub: A Momentum $p$-Dimensional Subspace Trust-Region Method for Derivative-Free Fine-Tuning of Large Language Models",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trust",
+              "sourceValue": "… rate for each model and task. We propose the momentum $p$-dimensional subspace trust-region method (MpSub). At each iteration, MpSub searches within a $p$-dimensional subspace: one direction preserves historical momentum from the most recent accepted step, while the remaining directions explore via fresh random sampli…",
+              "weight": 1
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 5,
+        "topic:trust": 5,
+        "classificationMaximum": 5
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "learning",
+        "trust"
+      ],
+      "authors": [
+        {
+          "id": "A5151012845",
+          "name": "Yuyang Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5141058755",
+          "name": "Haoyu Yao",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150910776",
+          "name": "Pengcheng Xie",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.07666",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:36.153Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:36.153Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:36.153Z",
+      "preferredVersionId": "openalex:W7212043092",
+      "versions": [
+        {
+          "id": "openalex:W7212043092",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7212043092",
+          "doi": "10.48550/arxiv.2609.07666",
+          "url": "https://doi.org/10.48550/arxiv.2609.07666"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-016.json"
+    },
     {
       "id": "doi:10.1631/jzus.a2500629",
       "recordType": "publication",
@@ -10640,9 +10865,9 @@
       "citedByCount": 0,
       "firstSeenAt": "2026-09-11T08:43:37.320Z",
       "firstSeenRunId": "ingestion-2026-09-11T08:43:33.699Z",
-      "retrievedAt": "2026-09-27T14:56:29.513Z",
+      "retrievedAt": "2026-09-28T11:43:07.301Z",
       "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:29.513Z",
+      "lastVerifiedAt": "2026-09-28T11:43:07.301Z",
       "preferredVersionId": "openalex:W7211887839",
       "versions": [
         {
@@ -11833,233 +12058,6 @@
           "externalId": "W7211919655",
           "doi": "10.3390/jcm15176915",
           "url": "https://doi.org/10.3390/jcm15176915"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-016.json"
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.07731",
-      "recordType": "preprint",
-      "title": "The Profit Alignment Problem: How Profit Mandates Induce Alignment Failures in LLMs",
-      "abstract": "We show that ordinary business language --- \"maximize profitability\" --- induces profit-oriented ambiguity resolution: LLMs systematically dismiss ambiguous signals of potential safety violations to serve business objectives. In 3,600 controlled trials across eight reasoning-capable LLMs, adding a profit mandate to otherwise identical prompts increases risk-dismissing judgments by 6.8 percentage points (p < 0.0001), suppresses board escalation recommendations by 13.9pp (p < 0.0001), and shifts severity assessments downward (p < 0.0001). The mandate never instructs models to downplay risks; instead, chain-of-thought traces reveal motivated reasoning: models acknowledge concerns, then invoke profit logic to justify dismissing them. We characterize these findings as the Profit Alignment Problem: when AI systems are given ordinary business objectives, they develop systematic strategies for suppressing inconvenient information that no designer intended or specified.",
-      "doi": "10.48550/arxiv.2609.07731",
-      "externalIds": {
-        "openalex": "W7212068396",
-        "arxiv": "2609.07731"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2609.07731"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-07",
-      "onlineDate": null,
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Explainable Artificial Intelligence (XAI)",
-        "Artificial Intelligence in Healthcare and Education",
-        "cs.AI",
-        "econ.GN"
-      ],
-      "keywords": [
-        "Mandate",
-        "Ambiguity",
-        "Profit (economics)",
-        "For profit",
-        "Non profit",
-        "Not for profit"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 6,
-          "classificationVersion": "weighted-lexical-3.0.0",
-          "ontologyVersion": "human-work-themes-3.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "failure",
-              "conceptLabel": "Fehler",
-              "matchedTerm": "failures",
-              "sourceValue": "The Profit Alignment Problem: How Profit Mandates Induce Alignment Failures in LLMs",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…mbiguity resolution: LLMs systematically dismiss ambiguous signals of potential safety violations to serve business objectives. In 3,600 controlled trials across eight reasoning-capable LLMs, adding a profit mandate to otherwise identical prompts increases risk-dismissing judgments by 6.8 percentage points (p < 0.0001)…",
-              "weight": 1
-            },
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…-capable LLMs, adding a profit mandate to otherwise identical prompts increases risk-dismissing judgments by 6.8 percentage points (p < 0.0001), suppresses board escalation recommendations by 13.9pp (p < 0.0001), and shifts severity assessments downward (p < 0.0001). The mandate never instructs models to downplay risks…",
-              "weight": 1
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:safety": 6,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "LLM",
-        "safety",
-        "failures",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": "A5082247932",
-          "name": "E. So",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.07731",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-12T09:23:36.153Z",
-      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
-      "retrievedAt": "2026-09-12T09:23:44.518Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-12T09:23:44.518Z",
-      "preferredVersionId": "arxiv:2609.07731",
-      "versions": [
-        {
-          "id": "openalex:W7212068396",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7212068396",
-          "doi": "10.48550/arxiv.2609.07731",
-          "url": "https://doi.org/10.48550/arxiv.2609.07731"
-        },
-        {
-          "id": "arxiv:2609.07731",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2609.07731",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2609.07731v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-016.json"
-    },
-    {
-      "id": "openalex:W7213481938",
-      "recordType": "publication",
-      "title": "The questioning human in an AI world",
-      "abstract": "As generative AI becomes part of everyday learning, how can we make sure human thinking doesn’t get lost? Explore how students and educators can use AI critically and constructively, while keeping questioning, reflection and authentic learning at the heart of education.",
-      "doi": null,
-      "externalIds": {
-        "openalex": "W7213481938"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7213481938"
-      },
-      "venue": "Open Research Online (The Open University)",
-      "publicationDate": "2026-09-07",
-      "onlineDate": null,
-      "topics": [
-        "AI in Service Interactions",
-        "Intelligent Tutoring Systems and Adaptive Learning",
-        "Social Robot Interaction and HRI"
-      ],
-      "keywords": [
-        "Reflection (computer programming)",
-        "Everyday life",
-        "Generative grammar",
-        "Human life"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 3,
-          "classificationVersion": "weighted-lexical-3.0.0",
-          "ontologyVersion": "human-work-themes-3.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "As generative AI becomes part of everyday learning, how can we make sure human thinking doesn’t get lost? Explore how students and educators can use AI critically and constructively, while keeping questioning, reflection and authentic learning at the heart of education.",
-              "weight": 1
-            },
-            {
-              "source": "external_topic",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "Intelligent Tutoring Systems and Adaptive Learning",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 2,
-        "topic:learning": 3,
-        "classificationMaximum": 3
-      },
-      "evidenceTerms": [
-        "generative AI",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5093330838",
-          "name": "James Roy",
-          "orcid": "https://orcid.org/0009-0002-2811-2429",
-          "affiliations": []
-        }
-      ],
-      "url": "https://oro.open.ac.uk/view/person/jwr79.html%3E",
-      "openAccess": false,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:32.235Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:32.235Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:32.235Z",
-      "preferredVersionId": "openalex:W7213481938",
-      "versions": [
-        {
-          "id": "openalex:W7213481938",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7213481938",
-          "doi": null,
-          "url": "https://oro.open.ac.uk/view/person/jwr79.html%3E"
         }
       ],
       "discoveredBy": [
