@@ -1,49 +1,105 @@
 {
   "schemaVersion": "radar-meta-1.0.0",
-  "generatedAt": "2026-09-28T11:43:48.295Z",
+  "generatedAt": "2026-09-29T08:11:34.781Z",
   "lastSuccessfulIngestionAt": "2026-09-11T11:08:00.527Z",
-  "analysisVersion": "static-corpus-analysis-2.1.0",
-  "queryVersion": "static-search-4.0.0",
-  "ontologyVersion": "human-work-themes-3.0.0",
+  "analysisVersion": "static-corpus-analysis-3.0.0",
+  "queryVersion": "static-search-5.0.0",
+  "ontologyVersion": "human-work-themes-4.0.0",
   "mode": "incremental",
   "status": "partial",
-  "totalFound": 6588,
-  "totalAnalyzed": 6588,
-  "message": "Publikationsdaten teilweise aktualisiert; verifizierte Bestandsdaten wurden erhalten. Calls sind teilweise verfügbar; Fehler werden quellengenau ausgewiesen. Statische Analyse: 6588 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
+  "totalFound": 8626,
+  "totalAnalyzed": 8626,
+  "message": "Publikationsdaten teilweise aktualisiert; verifizierte Bestandsdaten wurden erhalten. Calls sind teilweise verfügbar; Fehler werden quellengenau ausgewiesen. Statische Analyse: 8626 reale Arbeiten klassifiziert; Trendvergleiche werden nur bei ausreichenden abgeschlossenen Zeitfenstern ausgewiesen.",
   "sourceStatus": [
     {
-      "source": "OpenAlex (core)",
+      "source": "OpenAlex (core · human-ai · fresh)",
       "status": "healthy",
-      "recordCount": 217,
-      "checkedAt": "2026-09-28T11:43:03.895Z",
+      "recordCount": 77,
+      "checkedAt": "2026-09-29T08:11:06.124Z",
       "message": null
     },
     {
-      "source": "OpenAlex (broad)",
+      "source": "OpenAlex (core · human-factors · fresh)",
+      "status": "healthy",
+      "recordCount": 338,
+      "checkedAt": "2026-09-29T08:11:06.124Z",
+      "message": null
+    },
+    {
+      "source": "OpenAlex (broad · human-ai · fresh)",
       "status": "degraded",
       "recordCount": 500,
-      "checkedAt": "2026-09-28T11:43:03.895Z",
+      "checkedAt": "2026-09-29T08:11:06.124Z",
       "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort."
     },
     {
-      "source": "OpenAlex (frontier)",
+      "source": "OpenAlex (broad · human-factors · fresh)",
       "status": "degraded",
       "recordCount": 500,
-      "checkedAt": "2026-09-28T11:43:03.895Z",
+      "checkedAt": "2026-09-29T08:11:06.124Z",
       "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort."
     },
     {
-      "source": "arXiv (frontier)",
+      "source": "OpenAlex (frontier · human-ai · fresh)",
       "status": "degraded",
       "recordCount": 500,
-      "checkedAt": "2026-09-28T11:43:03.895Z",
-      "message": "Seitenbudget erreicht; Fortsetzung am gespeicherten Offset."
+      "checkedAt": "2026-09-29T08:11:06.124Z",
+      "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort."
+    },
+    {
+      "source": "arXiv (frontier · human-ai · fresh)",
+      "status": "stale",
+      "recordCount": 0,
+      "checkedAt": "2026-09-29T08:11:06.124Z",
+      "message": "arXiv antwortete mit HTTP 400"
+    },
+    {
+      "source": "arXiv (frontier · human-ai · backfill)",
+      "status": "stale",
+      "recordCount": 0,
+      "checkedAt": "2026-09-29T08:11:06.124Z",
+      "message": "arXiv antwortete mit HTTP 400"
+    },
+    {
+      "source": "arXiv (frontier · human-ai · recheck)",
+      "status": "stale",
+      "recordCount": 0,
+      "checkedAt": "2026-09-29T08:11:06.124Z",
+      "message": "arXiv antwortete mit HTTP 400"
+    },
+    {
+      "source": "OpenAlex (frontier · human-factors · fresh)",
+      "status": "healthy",
+      "recordCount": 102,
+      "checkedAt": "2026-09-29T08:11:06.124Z",
+      "message": null
+    },
+    {
+      "source": "OpenAlex (frontier · human-factors · backfill)",
+      "status": "degraded",
+      "recordCount": 200,
+      "checkedAt": "2026-09-29T08:11:06.124Z",
+      "message": "Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort."
+    },
+    {
+      "source": "OpenAlex (frontier · human-factors · recheck)",
+      "status": "healthy",
+      "recordCount": 64,
+      "checkedAt": "2026-09-29T08:11:06.124Z",
+      "message": null
+    },
+    {
+      "source": "arXiv (frontier · human-factors · fresh)",
+      "status": "healthy",
+      "recordCount": 27,
+      "checkedAt": "2026-09-29T08:11:06.124Z",
+      "message": null
     },
     {
       "source": "Crossref (core, broad, frontier)",
       "status": "not_checked",
       "recordCount": 0,
-      "checkedAt": "2026-09-28T11:43:03.895Z",
+      "checkedAt": "2026-09-29T08:11:06.124Z",
       "message": "Crossref-Enrichment wurde für diesen Lauf explizit deaktiviert."
     }
   ],
@@ -51,26 +107,50 @@
     {
       "code": "ingestion-source-degraded",
       "severity": "warning",
-      "message": "OpenAlex (broad): Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
+      "message": "OpenAlex (broad · human-ai · fresh): Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
       "affectedRecords": 0
     },
     {
       "code": "ingestion-source-degraded",
       "severity": "warning",
-      "message": "OpenAlex (frontier): Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
+      "message": "OpenAlex (broad · human-factors · fresh): Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
       "affectedRecords": 0
     },
     {
       "code": "ingestion-source-degraded",
       "severity": "warning",
-      "message": "arXiv (frontier): Seitenbudget erreicht; Fortsetzung am gespeicherten Offset.",
+      "message": "OpenAlex (frontier · human-ai · fresh): Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
+      "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-source-stale",
+      "severity": "warning",
+      "message": "arXiv (frontier · human-ai · fresh): arXiv antwortete mit HTTP 400",
+      "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-source-stale",
+      "severity": "warning",
+      "message": "arXiv (frontier · human-ai · backfill): arXiv antwortete mit HTTP 400",
+      "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-source-stale",
+      "severity": "warning",
+      "message": "arXiv (frontier · human-ai · recheck): arXiv antwortete mit HTTP 400",
+      "affectedRecords": 0
+    },
+    {
+      "code": "ingestion-source-degraded",
+      "severity": "warning",
+      "message": "OpenAlex (frontier · human-factors · backfill): Seitenbudget erreicht; der nächste Lauf setzt diesen Zeitraum am gespeicherten Cursor fort.",
       "affectedRecords": 0
     },
     {
       "code": "ingestion-deduplicated",
       "severity": "info",
-      "message": "487 Quellendatensätze wurden zu kanonischen Works zusammengeführt.",
-      "affectedRecords": 487
+      "message": "270 Quellendatensätze wurden zu kanonischen Works zusammengeführt.",
+      "affectedRecords": 270
     },
     {
       "code": "calls-source-parser_error-hfes-aspire",
@@ -100,36 +180,42 @@
       "code": "analysis-running-or-indexing-lag-years-excluded",
       "severity": "warning",
       "message": "Aus Trendvergleichen ausgeschlossen: 2026.",
-      "affectedRecords": 559
+      "affectedRecords": 858
+    },
+    {
+      "code": "analysis-partial-publication-corpus",
+      "severity": "warning",
+      "message": "Nicht alle vorgesehenen Suchmodi liegen im statischen Korpus vor.",
+      "affectedRecords": 2044
     },
     {
       "code": "analysis-partial-agenda-sources",
       "severity": "warning",
       "message": "Agenda Signals beruhen auf einer nur teilweise verfügbaren offiziellen Calls-Registry.",
-      "affectedRecords": 9
+      "affectedRecords": 7
     },
     {
       "code": "analysis-missing-abstracts",
       "severity": "info",
-      "message": "904 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
-      "affectedRecords": 904
+      "message": "1232 Arbeiten besitzen kein Abstract; ihre Klassifikation nutzt die übrigen Felder.",
+      "affectedRecords": 1232
     }
   ],
   "datasets": {
     "publications": {
       "path": "./works/page-001.json",
       "status": "partial",
-      "recordCount": 3721
+      "recordCount": 5015
     },
     "preprints": {
       "path": "./works/page-001.json",
       "status": "partial",
-      "recordCount": 2867
+      "recordCount": 3611
     },
     "searchIndex": {
       "path": "./search-index.json",
       "status": "partial",
-      "recordCount": 6588
+      "recordCount": 8626
     },
     "calls": {
       "path": "./calls.json",
@@ -149,12 +235,12 @@
     "sourceHealth": {
       "path": "./source-health.json",
       "status": "partial",
-      "recordCount": 5
+      "recordCount": 13
     },
     "snapshots": {
       "path": "./snapshots/index.json",
       "status": "partial",
-      "recordCount": 9
+      "recordCount": 10
     },
     "agendaSignals": {
       "path": "./agenda-signals.json",
@@ -162,8 +248,435 @@
       "recordCount": 26
     }
   },
-  "lastIngestionRunId": "ingestion-2026-09-28T11:43:03.895Z",
-  "lastIngestionAt": "2026-09-28T11:43:03.895Z",
+  "lastIngestionRunId": "ingestion-2026-09-29T08:11:06.124Z",
+  "lastIngestionAt": "2026-09-29T08:11:06.124Z",
+  "retrievalState": {
+    "queryVersion": "static-search-5.0.0",
+    "streams": {
+      "openalex:core:human-ai:fresh": {
+        "provider": "openalex",
+        "mode": "core",
+        "researchArea": "human-ai",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 77,
+        "found": 77,
+        "complete": true,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": "2026-09-29T08:11:06.124Z"
+      },
+      "openalex:core:human-factors:fresh": {
+        "provider": "openalex",
+        "mode": "core",
+        "researchArea": "human-factors",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 338,
+        "found": 338,
+        "complete": true,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": "2026-09-29T08:11:06.124Z"
+      },
+      "openalex:broad:human-ai:fresh": {
+        "provider": "openalex",
+        "mode": "broad",
+        "researchArea": "human-ai",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": "IlsxNzkwMzgwODAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjE0NDk4MDcxJ10i",
+        "start": null,
+        "retrieved": 500,
+        "found": 6345,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null
+      },
+      "openalex:broad:human-factors:fresh": {
+        "provider": "openalex",
+        "mode": "broad",
+        "researchArea": "human-factors",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": "IlsxNzg5ODYyNDAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjEzNzQ2MzkwJ10i",
+        "start": null,
+        "retrieved": 500,
+        "found": 907,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null
+      },
+      "openalex:frontier:human-ai:fresh": {
+        "provider": "openalex",
+        "mode": "frontier",
+        "researchArea": "human-ai",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": "IlsxNzg5OTQ4ODAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjEzOTU2NzI4J10i",
+        "start": null,
+        "retrieved": 500,
+        "found": 1262,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null
+      },
+      "arxiv:frontier:human-ai:fresh": {
+        "provider": "arxiv",
+        "mode": "frontier",
+        "researchArea": "human-ai",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 0,
+        "found": 0,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null
+      },
+      "arxiv:frontier:human-ai:backfill": {
+        "provider": "arxiv",
+        "mode": "frontier",
+        "researchArea": "human-ai",
+        "lane": "backfill",
+        "range": {
+          "from": "2024-01-01",
+          "to": "2024-01-30"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 0,
+        "found": 0,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null
+      },
+      "arxiv:frontier:human-ai:recheck": {
+        "provider": "arxiv",
+        "mode": "frontier",
+        "researchArea": "human-ai",
+        "lane": "recheck",
+        "range": {
+          "from": "2026-04-02",
+          "to": "2026-04-08"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 0,
+        "found": 0,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null
+      },
+      "openalex:frontier:human-factors:fresh": {
+        "provider": "openalex",
+        "mode": "frontier",
+        "researchArea": "human-factors",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 102,
+        "found": 102,
+        "complete": true,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": "2026-09-29T08:11:06.124Z"
+      },
+      "openalex:frontier:human-factors:backfill": {
+        "provider": "openalex",
+        "mode": "frontier",
+        "researchArea": "human-factors",
+        "lane": "backfill",
+        "range": {
+          "from": "2024-01-01",
+          "to": "2024-01-30"
+        },
+        "cursor": "IlsxNzA0MDY3MjAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c0MzkxMzY0Nzk3J10i",
+        "start": null,
+        "retrieved": 200,
+        "found": 600,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null
+      },
+      "openalex:frontier:human-factors:recheck": {
+        "provider": "openalex",
+        "mode": "frontier",
+        "researchArea": "human-factors",
+        "lane": "recheck",
+        "range": {
+          "from": "2026-04-02",
+          "to": "2026-04-08"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 64,
+        "found": 64,
+        "complete": true,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": "2026-09-29T08:11:06.124Z"
+      },
+      "arxiv:frontier:human-factors:fresh": {
+        "provider": "arxiv",
+        "mode": "frontier",
+        "researchArea": "human-factors",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 27,
+        "found": 27,
+        "complete": true,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": "2026-09-29T08:11:06.124Z"
+      }
+    },
+    "history": [
+      {
+        "provider": "openalex",
+        "mode": "core",
+        "researchArea": "human-ai",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 77,
+        "found": 77,
+        "complete": true,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": "2026-09-29T08:11:06.124Z",
+        "key": "openalex:core:human-ai:fresh"
+      },
+      {
+        "provider": "openalex",
+        "mode": "core",
+        "researchArea": "human-factors",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 338,
+        "found": 338,
+        "complete": true,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": "2026-09-29T08:11:06.124Z",
+        "key": "openalex:core:human-factors:fresh"
+      },
+      {
+        "provider": "openalex",
+        "mode": "broad",
+        "researchArea": "human-ai",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 500,
+        "found": 6345,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null,
+        "key": "openalex:broad:human-ai:fresh"
+      },
+      {
+        "provider": "openalex",
+        "mode": "broad",
+        "researchArea": "human-factors",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 500,
+        "found": 907,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null,
+        "key": "openalex:broad:human-factors:fresh"
+      },
+      {
+        "provider": "openalex",
+        "mode": "frontier",
+        "researchArea": "human-ai",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 500,
+        "found": 1262,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null,
+        "key": "openalex:frontier:human-ai:fresh"
+      },
+      {
+        "provider": "arxiv",
+        "mode": "frontier",
+        "researchArea": "human-ai",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 0,
+        "found": 0,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null,
+        "key": "arxiv:frontier:human-ai:fresh"
+      },
+      {
+        "provider": "arxiv",
+        "mode": "frontier",
+        "researchArea": "human-ai",
+        "lane": "backfill",
+        "range": {
+          "from": "2024-01-01",
+          "to": "2024-01-30"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 0,
+        "found": 0,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null,
+        "key": "arxiv:frontier:human-ai:backfill"
+      },
+      {
+        "provider": "arxiv",
+        "mode": "frontier",
+        "researchArea": "human-ai",
+        "lane": "recheck",
+        "range": {
+          "from": "2026-04-02",
+          "to": "2026-04-08"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 0,
+        "found": 0,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null,
+        "key": "arxiv:frontier:human-ai:recheck"
+      },
+      {
+        "provider": "openalex",
+        "mode": "frontier",
+        "researchArea": "human-factors",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 102,
+        "found": 102,
+        "complete": true,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": "2026-09-29T08:11:06.124Z",
+        "key": "openalex:frontier:human-factors:fresh"
+      },
+      {
+        "provider": "openalex",
+        "mode": "frontier",
+        "researchArea": "human-factors",
+        "lane": "backfill",
+        "range": {
+          "from": "2024-01-01",
+          "to": "2024-01-30"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 200,
+        "found": 600,
+        "complete": false,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": null,
+        "key": "openalex:frontier:human-factors:backfill"
+      },
+      {
+        "provider": "openalex",
+        "mode": "frontier",
+        "researchArea": "human-factors",
+        "lane": "recheck",
+        "range": {
+          "from": "2026-04-02",
+          "to": "2026-04-08"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 64,
+        "found": 64,
+        "complete": true,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": "2026-09-29T08:11:06.124Z",
+        "key": "openalex:frontier:human-factors:recheck"
+      },
+      {
+        "provider": "arxiv",
+        "mode": "frontier",
+        "researchArea": "human-factors",
+        "lane": "fresh",
+        "range": {
+          "from": "2026-09-15",
+          "to": "2026-09-29"
+        },
+        "cursor": null,
+        "start": null,
+        "retrieved": 27,
+        "found": 27,
+        "complete": true,
+        "checkedAt": "2026-09-29T08:11:06.124Z",
+        "lastSuccessfulAt": "2026-09-29T08:11:06.124Z",
+        "key": "arxiv:frontier:human-factors:fresh"
+      }
+    ]
+  },
   "comparisonMode": "core",
   "historicalBackfill": {
     "range": {
@@ -354,53 +867,624 @@
       "retrieved": 500,
       "complete": false,
       "checkedAt": "2026-09-28T11:43:03.895Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "core",
+      "from": "2026-09-15",
+      "to": "2026-09-29",
+      "found": 77,
+      "retrieved": 77,
+      "complete": true,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "core",
+      "from": "2026-09-15",
+      "to": "2026-09-29",
+      "found": 338,
+      "retrieved": 338,
+      "complete": true,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "broad",
+      "from": "2026-09-15",
+      "to": "2026-09-29",
+      "found": 6345,
+      "retrieved": 500,
+      "complete": false,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "broad",
+      "from": "2026-09-15",
+      "to": "2026-09-29",
+      "found": 907,
+      "retrieved": 500,
+      "complete": false,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "frontier",
+      "from": "2026-09-15",
+      "to": "2026-09-29",
+      "found": 1262,
+      "retrieved": 500,
+      "complete": false,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "arxiv",
+      "mode": "frontier",
+      "from": "2026-09-15",
+      "to": "2026-09-29",
+      "found": 0,
+      "retrieved": 0,
+      "complete": false,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "arxiv",
+      "mode": "frontier",
+      "from": "2024-01-01",
+      "to": "2024-01-30",
+      "found": 0,
+      "retrieved": 0,
+      "complete": false,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "arxiv",
+      "mode": "frontier",
+      "from": "2026-04-02",
+      "to": "2026-04-08",
+      "found": 0,
+      "retrieved": 0,
+      "complete": false,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "frontier",
+      "from": "2026-09-15",
+      "to": "2026-09-29",
+      "found": 102,
+      "retrieved": 102,
+      "complete": true,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "frontier",
+      "from": "2024-01-01",
+      "to": "2024-01-30",
+      "found": 600,
+      "retrieved": 200,
+      "complete": false,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "openalex",
+      "mode": "frontier",
+      "from": "2026-04-02",
+      "to": "2026-04-08",
+      "found": 64,
+      "retrieved": 64,
+      "complete": true,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
+    },
+    {
+      "provider": "arxiv",
+      "mode": "frontier",
+      "from": "2026-09-15",
+      "to": "2026-09-29",
+      "found": 27,
+      "retrieved": 27,
+      "complete": true,
+      "checkedAt": "2026-09-29T08:11:06.124Z"
     }
   ],
   "ingestionProgress": {
     "openalex:core": {
       "range": {
-        "from": "2026-06-30",
-        "to": "2026-09-28"
+        "from": "2026-09-15",
+        "to": "2026-09-29"
       },
       "cursor": null,
       "start": null,
-      "retrieved": 217,
-      "found": 217,
+      "retrieved": 77,
+      "found": 77,
       "complete": true
     },
     "openalex:broad": {
       "range": {
-        "from": "2026-06-14",
-        "to": "2026-09-12"
+        "from": "2026-09-15",
+        "to": "2026-09-29"
       },
-      "cursor": "IlsxNzg4NDgwMDAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjEzOTg1NDE0J10i",
+      "cursor": "IlsxNzkwMzgwODAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjE0NDk4MDcxJ10i",
       "start": null,
-      "retrieved": 2000,
-      "found": 37512,
+      "retrieved": 500,
+      "found": 6345,
       "complete": false
     },
     "openalex:frontier": {
       "range": {
-        "from": "2026-06-14",
-        "to": "2026-09-12"
+        "from": "2026-09-15",
+        "to": "2026-09-29"
       },
-      "cursor": "IlsxNzg2MzIwMDAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjAyMTU5MzE2J10i",
+      "cursor": "IlsxNzg5OTQ4ODAwMDAwLCAnLUluZmluaXR5JywgMCwgJ2h0dHBzOi8vb3BlbmFsZXgub3JnL1c3MjEzOTU2NzI4J10i",
       "start": null,
-      "retrieved": 2000,
-      "found": 6041,
+      "retrieved": 500,
+      "found": 1262,
       "complete": false
     },
     "arxiv:frontier": {
       "range": {
-        "from": "2026-06-14",
-        "to": "2026-09-12"
+        "from": "2026-09-15",
+        "to": "2026-09-29"
       },
       "cursor": null,
-      "start": 2000,
-      "retrieved": 2000,
-      "found": 3691,
+      "start": null,
+      "retrieved": 0,
+      "found": 0,
       "complete": false
     }
+  },
+  "conferenceRegistry": {
+    "checkedAt": "2026-09-29T08:11:03.907Z",
+    "method": "name-matched source families; not a guarantee of proceedings completeness",
+    "sources": [
+      {
+        "id": "S4210183893",
+        "name": "Proceedings of the ACM on Human-Computer Interaction",
+        "family": "CSCW/PACMHCI",
+        "years": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021,
+          2020,
+          2019,
+          2018,
+          2017
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      },
+      {
+        "id": "S4210193251",
+        "name": "ACM Transactions on Human-Robot Interaction",
+        "family": "HRI",
+        "years": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021,
+          2020,
+          2019,
+          2018
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      },
+      {
+        "id": "S4210176815",
+        "name": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting",
+        "family": "HFES",
+        "years": [
+          2026,
+          2025,
+          2024,
+          2023,
+          2022,
+          2021,
+          2020,
+          2019,
+          2018,
+          2017,
+          2016,
+          2015,
+          2014,
+          2013,
+          2012,
+          2011,
+          2010,
+          2009,
+          2008,
+          2007,
+          2006,
+          2005,
+          2004,
+          2003,
+          2002,
+          2001,
+          2000,
+          1999,
+          1998,
+          1997,
+          1996,
+          1995,
+          1994,
+          1993,
+          1992,
+          1991,
+          1990,
+          1989,
+          1988,
+          1987,
+          1986,
+          1985,
+          1984,
+          1983,
+          1982,
+          1981,
+          1980,
+          1979,
+          1978,
+          1977,
+          1976,
+          1975,
+          1974
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      },
+      {
+        "id": "S4306418552",
+        "name": "Human-Robot Interaction",
+        "family": "HRI",
+        "years": [
+          2024,
+          2021,
+          2020,
+          2019,
+          2018,
+          2017,
+          2016,
+          2015,
+          2014,
+          2013,
+          2012,
+          2011,
+          2010,
+          2009,
+          2008,
+          2007,
+          2006,
+          2004
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      },
+      {
+        "id": "S4363608268",
+        "name": "Designing Interactive Systems Conference",
+        "family": "DIS",
+        "years": [
+          2024,
+          2023,
+          2022
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      },
+      {
+        "id": "S4363607743",
+        "name": "CHI Conference on Human Factors in Computing Systems",
+        "family": "CHI",
+        "years": [
+          2022
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      },
+      {
+        "id": "S4363607762",
+        "name": "CHI Conference on Human Factors in Computing Systems Extended Abstracts",
+        "family": "CHI",
+        "years": [
+          2022
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      },
+      {
+        "id": "S4306418948",
+        "name": "Intelligent User Interfaces",
+        "family": "IUI",
+        "years": [
+          2021,
+          2020,
+          2019,
+          2017,
+          2015,
+          2014,
+          2012,
+          2011,
+          2010,
+          2009,
+          2007,
+          2006,
+          2005,
+          2000,
+          1998,
+          1997,
+          1991,
+          1978
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      },
+      {
+        "id": "S4210172338",
+        "name": "Journal of Human-Robot Interaction",
+        "family": "HRI",
+        "years": [
+          2017,
+          2016,
+          2015,
+          2014,
+          2013,
+          2012
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      },
+      {
+        "id": "S4363608246",
+        "name": "2013 8th ACM/IEEE International Conference on Human-Robot Interaction (HRI)",
+        "family": "HRI",
+        "years": [
+          2013
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      },
+      {
+        "id": "S4306417564",
+        "name": "ACM Intelligent User Interfaces",
+        "family": "IUI",
+        "years": [
+          2005
+        ],
+        "checkedAt": "2026-09-29T08:11:03.907Z"
+      }
+    ],
+    "checks": [
+      {
+        "family": "CHI",
+        "status": "matched",
+        "matches": 2
+      },
+      {
+        "family": "CSCW/PACMHCI",
+        "status": "matched",
+        "matches": 1
+      },
+      {
+        "family": "IUI",
+        "status": "matched",
+        "matches": 2
+      },
+      {
+        "family": "HRI",
+        "status": "matched",
+        "matches": 4
+      },
+      {
+        "family": "DIS",
+        "status": "matched",
+        "matches": 1
+      },
+      {
+        "family": "HFES",
+        "status": "matched",
+        "matches": 1
+      }
+    ]
+  },
+  "fieldCounts": {
+    "queryVersion": "static-search-5.0.0",
+    "generatedAt": "2026-09-29T08:11:32.338Z",
+    "status": "ready",
+    "interpretation": "Counts of OpenAlex query matches including preprints, not validated worldwide psychology-and-AI totals. Separate from the downloaded corpus; independent of page budgets.",
+    "series": [
+      {
+        "area": "human-ai",
+        "status": "ready",
+        "generatedAt": "2026-09-29T08:11:32.338Z",
+        "queryUrl": "https://api.openalex.org/works?filter=from_publication_date%3A2018-01-01%2Cto_publication_date%3A2026-09-29%2Cis_retracted%3Afalse%2Ctype%3Aarticle%7Creview%7Cbook-chapter%7Cproceedings-article%7Cpreprint%2Ctitle_and_abstract.search%3A%28%22artificial+intelligence%22+OR+%22human-AI%22+OR+%22large+language+model%22+OR+%22large+language+models%22+OR+%22LLM%22+OR+%22foundation+model%22+OR+%22foundation+models%22+OR+%22ChatGPT%22+OR+%22generative+AI%22+OR+%22AI+agent%22+OR+%22AI+agents%22+OR+%22algorithmic+decision+support%22+OR+%22algorithmic+management%22+OR+%22intelligent+automation%22+OR+%22machine+learning+system%22+OR+%22machine+learning+systems%22+OR+%22cobot%22+OR+%22cobots%22+OR+%22human-machine+system%22+OR+%22human-machine+systems%22%29+AND+%28%22learning%22+OR+%22deskilling%22+OR+%22skill+degradation%22+OR+%22expertise%22+OR+%22cognitive+engagement%22+OR+%22intrinsic+motivation%22+OR+%22work+engagement%22+OR+%22agency%22+OR+%22worker+autonomy%22+OR+%22work+design%22+OR+%22job+design%22+OR+%22situation+awareness%22+OR+%22cognitive+load%22+OR+%22cognitive+workload%22+OR+%22human+oversight%22+OR+%22trust%22+OR+%22trust+in+AI%22+OR+%22reliance%22+OR+%22automation+bias%22+OR+%22safety%22+OR+%22psychological+safety%22+OR+%22meaningful+work%22+OR+%22human+factors%22+OR+%22ergonomics%22+OR+%22human-AI+collaboration%22+OR+%22human-AI+interaction%22+OR+%22human+performance%22+OR+%22occupational+health%22+OR+%22sociotechnical+systems%22+OR+%22human-machine+interaction%22+OR+%22human%22+OR+%22humans%22+OR+%22worker%22+OR+%22workers%22+OR+%22employee%22+OR+%22employees%22+OR+%22participant%22+OR+%22participants%22+OR+%22user%22+OR+%22users%22+OR+%22student%22+OR+%22students%22+OR+%22clinician%22+OR+%22nurse%22+OR+%22operator%22+OR+%22teamwork%22+OR+%22workplace%22+OR+%22psychological%22+OR+%22cognitive+engagement%22+OR+%22intrinsic+motivation%22+OR+%22human+factors%22+OR+%22ergonomics%22%29&per_page=200&corpus=all&group_by=publication_year",
+        "annual": [
+          {
+            "period": "2018",
+            "count": 6690,
+            "preprints": 962,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2019",
+            "count": 11040,
+            "preprints": 1496,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2020",
+            "count": 20596,
+            "preprints": 4897,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2021",
+            "count": 25146,
+            "preprints": 3307,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2022",
+            "count": 32636,
+            "preprints": 4454,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2023",
+            "count": 58476,
+            "preprints": 13176,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2024",
+            "count": 109150,
+            "preprints": 25503,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2025",
+            "count": 210953,
+            "preprints": 51813,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2026",
+            "count": 245704,
+            "preprints": 76152,
+            "partialPeriod": true,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          }
+        ]
+      },
+      {
+        "area": "human-factors",
+        "status": "ready",
+        "generatedAt": "2026-09-29T08:11:32.338Z",
+        "queryUrl": "https://api.openalex.org/works?filter=from_publication_date%3A2018-01-01%2Cto_publication_date%3A2026-09-29%2Cis_retracted%3Afalse%2Ctype%3Aarticle%7Creview%7Cbook-chapter%7Cproceedings-article%7Cpreprint%2Ctitle_and_abstract.search%3A%28%22human+factors%22+OR+%22ergonomics%22+OR+%22ergonomic%22+OR+%22work+design%22+OR+%22job+design%22+OR+%22occupational+health%22+OR+%22workplace+learning%22+OR+%22worker+wellbeing%22+OR+%22cognitive+workload%22+OR+%22situation+awareness%22+OR+%22human+performance%22+OR+%22sociotechnical%22+OR+%22intrinsic+motivation%22+OR+%22cognitive+engagement%22%29&per_page=200&corpus=all&group_by=publication_year",
+        "annual": [
+          {
+            "period": "2018",
+            "count": 11382,
+            "preprints": 392,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2019",
+            "count": 13046,
+            "preprints": 603,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2020",
+            "count": 14701,
+            "preprints": 970,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2021",
+            "count": 15113,
+            "preprints": 975,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2022",
+            "count": 15910,
+            "preprints": 1100,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2023",
+            "count": 17269,
+            "preprints": 1410,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2024",
+            "count": 20830,
+            "preprints": 1893,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2025",
+            "count": 32464,
+            "preprints": 3528,
+            "partialPeriod": false,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          },
+          {
+            "period": "2026",
+            "count": 32412,
+            "preprints": 4666,
+            "partialPeriod": true,
+            "coverage": {
+              "complete": true,
+              "reason": "Aggregate query counted; relevance and database coverage not validated"
+            }
+          }
+        ]
+      }
+    ]
   },
   "researchProfile": {
     "id": "psychology-human-ai-1.0.0",
@@ -417,9 +1501,9 @@
     ]
   },
   "methodVersions": {
-    "analysis": "static-corpus-analysis-2.1.0",
-    "ontology": "human-work-themes-3.0.0",
-    "classification": "weighted-lexical-3.0.0",
+    "analysis": "static-corpus-analysis-3.0.0",
+    "ontology": "human-work-themes-4.0.0",
+    "classification": "text-supported-lexical-4.0.0",
     "trends": "equal-windows-2.1.0",
     "questions": "evidence-questions-2.1.0",
     "opportunities": "opportunity-components-2.1.0",
