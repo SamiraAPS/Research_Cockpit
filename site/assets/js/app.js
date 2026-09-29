@@ -467,25 +467,27 @@ function download(filename, content, type) {
 }
 
 function renderLandscape() {
-  const trends = state.data.trends;
-  if (!trends) {
-    renderEmpty(elements.landscape_chart, "Analyse nicht verfügbar", "trends.json konnte nicht geladen werden.");
-    return;
+  const relevant = state.data.works.filter(work => work.research?.relevance.status === "included");
+  const themes = new Map();
+  for (const work of relevant) for (const theme of work.classifiedThemes ?? []) {
+    const entry = themes.get(theme.theme) ?? { label: theme.label, value: 0 };
+    entry.value += 1; themes.set(theme.theme, entry);
   }
-  renderHorizontalBars(elements.landscape_chart, trends.publicationTrends.map((trend) => ({ label: trend.label, value: trend.totals.absoluteCount })), {
-    caption: "Absolute Themenhäufigkeit im aktuellen Korpus",
+  renderHorizontalBars(elements.landscape_chart, [...themes.values()].sort((a, b) => b.value - a.value), {
+    caption: "Themenhäufigkeit in automatisch als relevant eingestuften Arbeiten aller Suchmodi",
     formatValue: (value) => `${value} ${value === 1 ? "Arbeit" : "Arbeiten"}`
   });
   elements.composition_summary.replaceChildren();
+  const kinds = relevant.map(work => work.versions?.find(version => version.id === work.preferredVersionId)?.type ?? (work.recordType === "preprint" ? "preprint" : "journal"));
   const composition = [
-    ["Journal", trends.coverage.journalCount], ["Proceedings", trends.coverage.proceedingsCount], ["Preprints", trends.coverage.preprints], ["Venues", new Set(state.data.works.map((work) => work.venue).filter(Boolean)).size]
+    ["Journal / weitere Publikationen", kinds.filter(kind => kind === "journal").length], ["Proceedings", kinds.filter(kind => kind === "proceedings").length], ["Preprints", kinds.filter(kind => kind === "preprint").length], ["Venues", new Set(relevant.map(work => work.venue).filter(Boolean)).size]
   ];
   for (const [name, value] of composition) {
     const item = node("div", "composition-card");
     item.append(node("strong", null, String(value)), node("span", null, name));
     elements.composition_summary.append(item);
   }
-  elements.composition_summary.append(node("p", "muted-copy span-all", "Themen können mehrfach vergeben werden. Quellen- und Venue-Vielfalt werden getrennt ausgewiesen."));
+  elements.composition_summary.append(node("p", "muted-copy span-all", "Automatisch als relevant eingestufte Arbeiten beider Forschungsbereiche, einschließlich Broad und Frontier. Themen können mehrfach vergeben werden; die Relevanz ist noch nicht manuell validiert."));
 
   elements.question_list.replaceChildren();
   const questions = [...(state.data.questions?.dataDerived ?? []), ...(state.data.questions?.lens ?? [])];
@@ -550,15 +552,14 @@ function renderCalls({ announceChange = false } = {}) {
 }
 
 function renderMethod() {
-  const { meta, trends, health } = state.data;
+  const { meta, health } = state.data;
   elements.method_cards.replaceChildren();
-  const methodology = trends?.methodology;
-  const cards = methodology ? [
-    ["Gleiche Fenster", `${methodology.shortWindowYears} Jahre kurz, ${methodology.longWindowYears} Jahre lang; nur angrenzende gleich lange Zeiträume.`],
-    ["Mindestfallzahl", `Mindestens ${methodology.minimumTrendRecords} Themenarbeiten in jedem Vergleichsfenster.`],
-    ["Indexierungsverzug", `Laufendes Jahr ausgeschlossen; ${methodology.indexingLagDays} Tage zusätzliche Reserve zu Jahresbeginn.`],
+  const cards = [
+    ["Vergleichbare Zeiträume", "Jahres- und Monatsreihen enthalten Preprints und markieren laufende Zeiträume. Themenvergleiche verwenden zwei abgeschlossene Quartale."],
+    ["Fallzahl und Abdeckung", "Mindestens fünf Themenarbeiten je Quartal und vollständige Abrufnachweise beider Zeiträume sind Voraussetzung für einen interpretierbaren Vergleich. Korpusanteile sind keine weltweiten Feldanteile."],
+    ["Neue und verspätete Treffer", "Frische 14-Tage-Abrufe, historische Abrufe und Nachprüfungen der letzten sechs Monate besitzen eigene Budgets und Fortschrittsstände. Datenbankzählungen werden separat abgefragt."],
     ["Projektideen", "Beobachtung, Textbelege und Studienvorschlag getrennt; kein Gesamtscore und kein Neuheitsnachweis."]
-  ] : [["Methodik nicht verfügbar", "trends.json konnte nicht geladen werden."]];
+  ];
   cards.forEach(([title, copy], index) => { const card = node("article", "panel method-card"); card.append(node("span", "method-step", String(index + 1).padStart(2, "0")), node("h2", null, title), node("p", null, copy)); elements.method_cards.append(card); });
 
   elements.version_list.replaceChildren();
@@ -575,9 +576,9 @@ function renderMethod() {
   elements.coverage_summary.replaceChildren();
   const byYear = new Map();
   for (const work of state.data.works) { const year = work.publicationDate?.slice(0, 4) ?? "unbekannt"; byYear.set(year, (byYear.get(year) ?? 0) + 1); }
-  elements.coverage_summary.append(node("p", null, `Vergleichskorpus: ${trends?.coverage?.comparisonMode ?? "all"}. Breite und Frontier-Treffer dienen zusätzlich der Recherche. Normalisierte Werte beschreiben Korpusanteile, keine Feldanteile.`));
+  elements.coverage_summary.append(node("p", null, "Die Forschungsanalysen berücksichtigen relevante Core-, Broad- und Frontier-Treffer einschließlich Preprints. Beide Forschungsbereiche werden getrennt ausgewertet. Die folgenden Jahreszahlen beschreiben den gesamten abgerufenen Bestand inklusive unsicherer und ausgeschlossener Treffer."));
   for (const [year, count] of [...byYear].sort()) elements.coverage_summary.append(node("span", "data-chip", `${year}: ${count} Arbeiten`));
-  for (const [key, progress] of Object.entries(meta?.ingestionProgress ?? {})) elements.coverage_summary.append(node("p", "muted-copy", `${key}: ${progress.range.from} bis ${progress.range.to} · ${progress.retrieved}/${progress.found || "unbekannt"} Quellentreffer · ${progress.complete ? "Abruf abgeschlossen" : "unvollständig; Fortsetzung erforderlich"}`));
+  for (const [key, progress] of Object.entries(meta?.retrievalState?.streams ?? meta?.ingestionProgress ?? {})) elements.coverage_summary.append(node("p", "muted-copy", `${key}: ${progress.range.from} bis ${progress.range.to} · ${progress.retrieved}/${progress.found ?? "unbekannt"} Quellentreffer · ${progress.complete ? "Abruf abgeschlossen" : "unvollständig; Fortsetzung erforderlich"}`));
   if (freshness(meta?.lastSuccessfulIngestionAt) === "stale") elements.warning_list.append(node("li", "warning-warning", "Letzter vollständiger erfolgreicher Publikationslauf liegt mehr als acht Tage zurück."));
   elements.source_table_body.replaceChildren();
   for (const source of health?.sources ?? []) {
