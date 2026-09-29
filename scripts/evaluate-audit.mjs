@@ -39,6 +39,7 @@ export function evaluateAudit(rows, { independentBenchmark = false } = {}) {
   return {
     reviewed: reviewed.length,
     precision: retrieved.length ? truePositives / retrieved.length : null,
+    precisionScope: "Unweighted reviewed sample; a stratified pilot is not representative corpus precision.",
     recall: independentBenchmark && relevant.length ? truePositives / relevant.length : null,
     recallReason: independentBenchmark ? "Independent benchmark declared by reviewer" : "Retrieved-only audits cannot estimate recall; an independently assembled benchmark is required.",
     perTheme: Object.fromEntries(Object.entries(perTheme).map(([theme, c]) => [theme, { ...c,
@@ -51,7 +52,9 @@ export function evaluateAudit(rows, { independentBenchmark = false } = {}) {
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const file = process.argv[2];
   if (!file) throw new Error("Usage: node scripts/evaluate-audit.mjs reviewed.csv [--independent-benchmark]");
-  const result = evaluateAudit(parseCsv(await readFile(file, "utf8")), { independentBenchmark: process.argv.includes("--independent-benchmark") });
+  const rows = parseCsv(await readFile(file, "utf8"));
+  const result = { ...evaluateAudit(rows, { independentBenchmark: process.argv.includes("--independent-benchmark") }),
+    heldOut: evaluateAudit(rows.filter(row => row.split === "held-out")), development: evaluateAudit(rows.filter(row => row.split === "development")) };
   await writeFile("evaluation/latest-audit.json", JSON.stringify(result, null, 2) + "\n");
   console.log(JSON.stringify(result, null, 2));
 }

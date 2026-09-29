@@ -1,6 +1,13 @@
 name: Refresh research data
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/ingestion/**'
+      - 'scripts/calls/**'
+      - 'scripts/update-data.mjs'
+      - 'config/manual-calls.json'
   schedule:
     - cron: '17 5 * * *'
   workflow_dispatch:

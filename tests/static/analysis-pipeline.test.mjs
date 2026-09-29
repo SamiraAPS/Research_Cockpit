@@ -71,8 +71,8 @@ test("Normalisierung und Wortgrenzen vermeiden Teilwort- und Machine-Learning-Fe
     keywords: ["job autonomy"],
     topics: ["Occupational safety"]
   });
-  assert.deepEqual(allFields.map((entry) => entry.theme).sort(), ["agency", "safety", "trust"]);
-  assert.deepEqual([...new Set(allFields.flatMap((entry) => entry.evidence.map((evidence) => evidence.source)))].sort(), ["abstract", "external_topic", "keyword"]);
+  assert.deepEqual(allFields.map((entry) => entry.theme).sort(), ["trust"]);
+  assert.deepEqual([...new Set(allFields.flatMap((entry) => entry.evidence.map((evidence) => evidence.source)))].sort(), ["abstract"]);
 });
 
 test("gekürzte Evidenzausschnitte markieren ausgelassenen Text", () => {

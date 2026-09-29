@@ -2,6 +2,12 @@
 
 Version: `gold-standard-1.0.0`
 
+## Vorbereitete Pilotprüfung
+
+`pilot-review.csv` enthält 250 nach Publikationstyp, Jahr, Relevanzstatus und Abstract-Verfügbarkeit geschichtete Arbeiten. Die menschlichen Labels sind leer. Die deterministische Aufteilung in `development` und `held-out` verhindert, dass die gesamte Stichprobe zur Anpassung der Regeln verwendet wird. Erst Entwicklungsfälle annotieren und Regeln verbessern; die zurückgehaltenen Fälle erst danach unabhängig auswerten.
+
+`node scripts/prepare-review.mjs site/data evaluation/another-review.csv` erstellt eine neue Stichprobe und überschreibt niemals eine vorhandene Prüfdatei. `node scripts/evaluate-audit.mjs evaluation/reviewed.csv` wertet manuell freigegebene Zeilen und beide Teilmengen getrennt aus. Die Pilotmetriken sind ungewichtet und nicht repräsentativ für den Gesamtkorpus. Für Recall fehlt weiterhin ein unabhängiges Set mit relevanten Nicht-Treffern.
+
 ## Öffentliche Pages-Version
 
 Im Bereich „New & Search“ exportiert **Audit-CSV** den gefilterten Bestand samt

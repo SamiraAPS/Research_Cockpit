@@ -2,6 +2,9 @@ import {
   AI_TERMS,
   CORE_CONFERENCES,
   HUMAN_WORK_TERMS,
+  HUMAN_FACTORS_TERMS,
+  HUMAN_CONTEXT_TERMS,
+  STATIC_SEARCH_CONFIG_VERSION,
   OPENALEX_PAGE_SIZE,
   SEARCH_MODES
 } from "./config.mjs";
@@ -43,9 +46,11 @@ export function buildOpenAlexUrl(mode, options = {}) {
     `to_publication_date:${range.to}`,
     "is_retracted:false",
     `type:${config.workTypes.join("|")}`,
-    `title_and_abstract.search:${booleanTerms(AI_TERMS)} AND ${booleanTerms(HUMAN_WORK_TERMS)}`
+    `title_and_abstract.search:${options.researchArea === "human-factors" ? booleanTerms(HUMAN_FACTORS_TERMS) : `${booleanTerms(AI_TERMS)} AND ${booleanTerms([...HUMAN_WORK_TERMS, ...HUMAN_CONTEXT_TERMS])}`}`
   ];
-  if (config.sourceIds.length > 0) filters.unshift(`primary_location.source.id:${[...new Set(config.sourceIds)].join("|")}`);
+  if (mode === "core" && options.researchArea === "human-factors") filters.pop();
+  const sourceIds = [...new Set([...config.sourceIds, ...(mode === "broad" ? [] : options.conferenceSourceIds ?? [])])];
+  if (sourceIds.length > 0) filters.unshift(`locations.source.id:${sourceIds.join("|")}`);
 
   const url = new URL("https://api.openalex.org/works");
   url.searchParams.set("filter", filters.join(","));
@@ -54,7 +59,7 @@ export function buildOpenAlexUrl(mode, options = {}) {
   url.searchParams.set("cursor", "*");
   url.searchParams.set("corpus", "all");
   url.searchParams.set("select", "id,doi,display_name,publication_date,type,cited_by_count,abstract_inverted_index,authorships,primary_location,best_oa_location,open_access,topics,keywords");
-  return { url, range, config };
+  return { url, range, config: { ...config, queryVersion: `${STATIC_SEARCH_CONFIG_VERSION}:${mode}:${options.researchArea ?? "human-ai"}` } };
 }
 
 function statsBase(mode, queryVersion, range, url) {
@@ -93,7 +98,7 @@ export async function ingestOpenAlex(mode, options = {}) {
   const records = [];
   const seenCursors = new Set();
   const stats = statsBase(mode, config.queryVersion, range, baseUrl);
-  const conferenceIds = new Set(CORE_CONFERENCES.map((source) => source.id));
+  const conferenceIds = new Set([...CORE_CONFERENCES.map((source) => source.id), ...(options.conferenceSourceIds ?? [])]);
   let cursor = options.cursor ?? "*";
 
   try {

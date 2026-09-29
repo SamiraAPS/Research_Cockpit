@@ -127,8 +127,9 @@ export function mergeCalls(previousItems, freshCandidates, sourceResults, genera
       contentHash,
       createdAt: old?.createdAt ?? generatedAt,
       lastCheckedAt: generatedAt,
-      lastVerifiedAt: generatedAt,
-      status: calculateCallStatus(candidate, generatedAt, true),
+      lastVerifiedAt: candidate.verificationEvidence?.checkedAt ?? generatedAt,
+      ...(candidate.verificationEvidence ? { verificationEvidence: candidate.verificationEvidence } : {}),
+      status: calculateCallStatus(candidate, generatedAt, candidate.verificationEvidence?.fresh !== false),
       versions
     };
   });

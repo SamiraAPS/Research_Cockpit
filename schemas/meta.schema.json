@@ -422,6 +422,232 @@
           }
         }
       }
+    },
+    "retrievalState": {
+      "type": "object",
+      "required": [
+        "queryVersion",
+        "streams",
+        "history"
+      ],
+      "properties": {
+        "queryVersion": {
+          "type": "string"
+        },
+        "streams": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "provider",
+              "mode",
+              "researchArea",
+              "lane",
+              "range",
+              "complete",
+              "retrieved",
+              "checkedAt"
+            ],
+            "properties": {
+              "provider": {
+                "enum": [
+                  "openalex",
+                  "arxiv"
+                ]
+              },
+              "mode": {
+                "enum": [
+                  "core",
+                  "broad",
+                  "frontier"
+                ]
+              },
+              "researchArea": {
+                "enum": [
+                  "human-ai",
+                  "human-factors"
+                ]
+              },
+              "lane": {
+                "enum": [
+                  "fresh",
+                  "backfill",
+                  "recheck"
+                ]
+              },
+              "range": {
+                "type": "object",
+                "required": [
+                  "from",
+                  "to"
+                ],
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "to": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              },
+              "complete": {
+                "type": "boolean"
+              },
+              "retrieved": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "checkedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              }
+            }
+          }
+        },
+        "history": {
+          "type": "array",
+          "maxItems": 2000,
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "conferenceRegistry": {
+      "type": "object",
+      "required": [
+        "checkedAt",
+        "sources",
+        "checks"
+      ],
+      "properties": {
+        "checkedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "family",
+              "years"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^S[0-9]+$"
+              },
+              "name": {
+                "type": "string"
+              },
+              "family": {
+                "type": "string"
+              },
+              "years": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "fieldCounts": {
+      "type": "object",
+      "required": [
+        "queryVersion",
+        "generatedAt",
+        "status",
+        "interpretation",
+        "series"
+      ],
+      "properties": {
+        "queryVersion": {
+          "type": "string"
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "enum": [
+            "ready",
+            "partial"
+          ]
+        },
+        "interpretation": {
+          "type": "string"
+        },
+        "series": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "area",
+              "status",
+              "annual"
+            ],
+            "properties": {
+              "area": {
+                "enum": [
+                  "human-ai",
+                  "human-factors"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "ready",
+                  "stale",
+                  "unavailable"
+                ]
+              },
+              "annual": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "period",
+                    "count",
+                    "preprints"
+                  ],
+                  "properties": {
+                    "period": {
+                      "type": "string"
+                    },
+                    "count": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "preprints": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "$defs": {

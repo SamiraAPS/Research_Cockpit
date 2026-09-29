@@ -1,113 +1,156 @@
 # Human–AI Research Radar
 
-Öffentliches Forschungsdashboard für **Psychologie und Human–AI Interaction**:
-Publikationen finden, Themenverbindungen prüfen und offizielle Deadlines verfolgen.
+Öffentliches Dashboard für Human Factors, Ergonomie, Work Design und Psychologie/Human–AI.
+Persönliche Perspektive: Co-Learning, intrinsische Motivation, kognitives Engagement,
+Lernen/Deskilling und hochqualifizierte Arbeit.
 
 Live: https://samiraaps.github.io/Research_Cockpit/
 
-## Verbindliche Architektur
+## Architektur und lokaler Start
 
-Die veröffentlichte Anwendung ist `site/`. `npm run dev` startet diese Oberfläche.
-Die Node-Pipelines in `scripts/ingestion/`, `scripts/calls/` und `scripts/analysis/`
-erzeugen versionierte JSON-Daten. Die Oberfläche berechnet keine eigenen Trend-
-oder Opportunity-Scores. Plattformunabhängige Regeln werden über
-`site/assets/js/research.js` zwischen Pipeline und Browser geteilt.
+Die veröffentlichte HTML/CSS/JavaScript-Anwendung liegt in site/.
+Die Node-Pipelines unter scripts/ erzeugen versionierte JSON-Dateien in site/data.
+app/, lib/, db/, worker/ und drizzle/ gehören zum getrennten, nicht veröffentlichten
+D1-Prototyp. Archiv: [docs/legacy-d1.md](docs/legacy-d1.md).
 
-`app/`, `lib/`, `db/`, `worker/` und `drizzle/` gehören zum getrennten D1-Prototyp.
-Sie werden nicht auf Pages veröffentlicht. Dessen Authentifizierung und serverseitige
-Shortlists sind hier nicht aktiv. `npm run dev:legacy` startet den Prototyp.
-Die ursprüngliche Dokumentation steht als Archiv in `docs/legacy-d1.md`.
-Neue Produktfunktionen werden ausschließlich in der statischen Anwendung entwickelt.
+Voraussetzung: Node.js 24.
 
-## Aktualisierung und historische Abdeckung
+    npm ci
+    npm run dev
 
-Voraussetzung: Node.js 24 und `npm ci`.
+## Aktualisierung
 
-```sh
-npm run update:data
-```
+    npm run update:data
 
-Der Ablauf lädt Publikationen und Calls, analysiert und validiert eine separate
-Datengeneration und ersetzt erst danach den bisherigen Bestand. Quellenausfälle
-erhalten gespeicherte Werke und werden als Einschränkung sichtbar ausgewiesen.
+Eine vollständige Generation wird in einem separaten Verzeichnis aufgebaut,
+analysiert und validiert. Erst danach ersetzt sie den bisherigen Bestand.
+Quellenausfälle erhalten Bestandsdaten und werden als Einschränkung ausgewiesen.
 
-`Refresh research data` läuft täglich um 05:17 UTC und kann manuell gestartet werden.
-Die Action committet ausschließlich validierte Daten und veröffentlicht exakt diesen
-Commit über den Deploymentworkflow. Technischer Erfolg bedeutet keine vollständige
-fachliche Abdeckung.
+GitHub Actions aktualisiert täglich um 05:17 UTC und bei Änderungen an der
+Abruflogik. Deployment regeneriert die Analyse passend zur veröffentlichten
+Codeversion. OPENALEX_API_KEY gehört in Actions-Secrets bzw. die Prozessumgebung.
+CROSSREF_MAILTO ist optional; Crossref dient ausschließlich DOI-Enrichment.
 
-`OPENALEX_API_KEY` gehört in die GitHub-Actions-Secrets oder lokale Prozessumgebung.
-Ohne Schlüssel ist nur ein kleines anonymes Tagesbudget verfügbar. Optional:
-`CROSSREF_MAILTO`. Crossref ist ausschließlich DOI-Enrichment, keine Discovery-Quelle;
-der regelmäßige Ablauf lässt das zusätzliche Enrichment standardmäßig aus.
+Zwei Forschungsbereiche werden getrennt abgefragt: Human Factors ohne KI-Pflicht
+und menschbezogene KI-Forschung. Die persönliche Perspektive priorisiert Treffer;
+sie beschränkt den Abruf nicht. Core/Human-Factors erfasst die Fachvenues ohne
+KI-Suchbedingung. Broad und Frontier verwenden fachbezogene Suchbegriffe;
+Frontier enthält einen direkten arXiv-Abruf und weitere Repositorien über OpenAlex.
 
-Ein unterbrochener historischer Core-Abruf ab 2018 wird zuerst fortgesetzt.
-`meta.historicalBackfill` hält diesen Zustand fest. Danach werden Core, Broad und
-Frontier einschließlich arXiv über 90 Tage aktualisiert. Pro Quelle werden fünf
-Seiten verarbeitet; Cursor/Offset und Datumsfenster bleiben für die Fortsetzung in
-`meta.ingestionProgress` erhalten. Begrenzte oder fehlgeschlagene Abrufe sind `partial`.
+Jeder Lauf beginnt mit einem neuen 14-Tage-Fenster. Historische Abrufe (Core ab 2018,
+Broad/Frontier ab 2024) und Nachprüfungen der letzten sechs Monate besitzen eigene
+Cursor und Budgets. Täglich rotieren zwei Hintergrundspuren. Fünf Seiten je frischem
+Abruf und zwei je Hintergrundspur sind Budgets, keine Vollständigkeitsgarantie.
+meta.retrievalState dokumentiert die aktuelle Suchversion und Zeitfenster.
+Alte Cursor werden nach einer Suchänderung nicht übernommen.
 
-```sh
-node scripts/update-data.mjs --mode=core --from=2018-01-01 --to=2025-12-31 --max-pages=20
-```
+Konferenzfamilien werden monatlich anhand ihrer OpenAlex-Namen ergänzt.
+Die Oberfläche zeigt beobachtete Venue-Jahr-Abdeckung; Namensmatches beweisen
+keine vollständige Erfassung einer Konferenz.
 
-Die Methodikansicht zeigt tatsächliche Jahresabdeckung, Quellenzustand und offene
-Fortsetzungen. Eine erneute Analyse ersetzt keinen fehlenden historischen Abruf.
+Eine separate wöchentliche OpenAlex-Jahresaggregation zählt Suchtreffer inklusive
+Preprints unabhängig vom Downloadbudget. Diese Zahlen sind **keine validierten
+weltweiten Gesamtzahlen aller Psychologie-KI-Publikationen**.
 
-## Interpretation und Forschungsworkflow
+## Trends und Projektideen
 
-Trends vergleichen angrenzende Zwei- und Vier-Jahresfenster im **Core-Korpus**.
-Das laufende Jahr bleibt ausgeschlossen; zu Jahresbeginn gilt die Indexierungsreserve.
-Mindestens fünf Themenarbeiten müssen in jedem Vergleichsfenster liegen.
-Die Rate beschreibt Themenarbeiten je 1.000 Core-Arbeiten, keinen Anteil am gesamten
-Forschungsfeld. Broad/Frontier erweitern die Recherche, werden aber nicht mit einer
-anders erhobenen historischen Core-Basis vermischt. Bei unvollständigem
-Vergleichskorpus wird kein Opportunity-Gesamtscore ausgegeben.
+Landscape zeigt Jahres- und Monatszahlen einschließlich des laufenden Zeitraums
+und Preprints. Absolute Veränderung und relativer Korpusanteil werden getrennt
+ausgewiesen. Verglichen werden abgeschlossene Quartale. Ohne Abrufnachweise für
+beide Fenster oder bei weniger als fünf Themenarbeiten je Fenster wird keine
+belastbare Trendrichtung behauptet. Historische Abdeckung mit der neuen Suchversion
+muss erst aufgebaut werden.
 
-Die persönliche Perspektive „Psychologie & Human–AI Interaction“ ist eine
-Interessenfestlegung, kein Evidenzmaß. Automatische Fragen beschreiben beobachtete
-Themenverbindungen; sie belegen weder Mechanismen noch Forschungslücken. Die
-zugehörigen Arbeiten sind zur Inhaltsprüfung direkt verlinkt.
+Emerging gruppiert Texte und Kontextmerkmale aus allen relevanten Suchmodi.
+Ohne Modell nutzt es TF-IDF und Kontextbegriffe; mit optionalen lokalen Embeddings
+entstehen getrennt gekennzeichnete semantische Cluster. Gemeinsame Autorenschaften
+werden zu Gruppen verbunden. Das ist keine Garantie institutioneller Unabhängigkeit.
+Mögliche Titel-/Autorendubletten werden zur Prüfung markiert und nicht ungeprüft gelöscht.
 
-„Letzter Lauf“ verwendet Erstfund-Run-IDs. „Seit letztem Lesestand“ verwendet den
-explizit gespeicherten Lesestand; Aufrufen markiert nichts automatisch als gelesen.
-Die Laufwoche ist eine feste UTC-Kalenderwoche. Publikationsaktualität ist ein eigener
-30-Tage-Filter. Shortlist, Suche und Lesestand werden nur auf dem eigenen Gerät gespeichert.
-CSV/BibTeX exportieren den vollständigen gefilterten Bestand. Der Suchindex lädt zuerst;
-vollständige Publikationsdetails werden erst beim Öffnen abgerufen.
+Projektideen trennen Beobachtung, Belege, Fragestellung, Studiendesign,
+Gegenargumente und persönliche Passung. Es sind prüfbare, teils vorformulierte
+Hypothesen, keine bestätigten Forschungslücken oder Zukunftsprognosen.
+Der frühere Opportunity-Gesamtscore ist zurückgezogen. Alte Zwei-/Vierjahresaggregate
+bleiben nur zur Kompatibilität historischer Datenverträge erhalten.
 
-Call-Deadlines zeigen Originaldatum, Uhrzeit und Quellzeitzone sowie Schweizer Ortszeit.
-Der aktuelle Zeitstatus bleibt vom Zeitpunkt der letzten Quellenprüfung getrennt.
+## Persönlicher Arbeitsbereich und Ladeverhalten
 
-## Fachliche Prüfung
+Shortlist, Lesestand, gespeicherte Suche, Notizen und Projektboard bleiben auf
+dem eigenen Gerät. Projektdateien lassen sich als JSON exportieren und importieren.
+CSV/BibTeX enthalten den vollständigen gefilterten Bestand.
 
-Der Audit-Export enthält leere Felder für Relevanz, Themen, Arbeitskontext, Population,
-Studiendesign, Outcomes und menschliche Freigabe. Es werden keine Labels erfunden.
+Ein kompakter Katalog lädt zuerst. Abstract-Shards folgen bei Texteingabe,
+Originaldetails beim Öffnen. Datenabrufzeit, letzter vollständig erfolgreicher
+Abruf und Analysezeit werden getrennt angezeigt. Ein Seitenaufruf markiert
+Literatur nicht automatisch als gelesen.
 
-```sh
-node scripts/evaluate-audit.mjs reviewed.csv
-# Nur mit unabhängig zusammengestelltem Benchmarkset:
-node scripts/evaluate-audit.mjs benchmark.csv --independent-benchmark
-```
+## Calls
 
-Eine Stichprobe aus Suchtreffern liefert keine Recall-Schätzung. Details stehen in
-`evaluation/README.md`.
+Deadlines zeigen Originaldatum, Quellzeitzone und Schweizer Zeit.
+Mehrere Tracks derselben Quelle und desselben Veranstaltungsjahres bilden eine
+Agenda-Gruppe. Allgemeine Konferenzaufrufe und nahe Deadlines erzeugen keinen
+Neuheitsscore. Thematische Calls ergänzen die Literaturbeobachtung.
 
-## Prüfung und Veröffentlichung
+config/manual-calls.json ist zunächst leer. Menschlich geprüfte Nachträge bei
+blockierten offiziellen Quellen benötigen sourceKey, title, description,
+officialUrl, callType, deadlineAt, checkedAt, reviewer und deadlineQuote.
+Die Quelle muss in scripts/calls/config.mjs registriert sein; die URL muss auf
+einem erlaubten offiziellen Host liegen. Nach acht Tagen gilt der manuelle
+Nachweis als veraltet. Eine technische Quellenstörung bleibt sichtbar.
 
-```sh
-npm run validate:data
-npm run test:static
-npm run test:browser
-npm test
-npx tsc --noEmit
-npm run lint
-```
+## Optionale lokale KI-Inhaltsanalyse
 
-Die Browsertests verwenden vorhandenes Chromium/Edge mit isoliertem Testprofil
-(`BROWSER_BIN` bei Bedarf). Sie prüfen Suche, Shortlist, Wiederladen, gespeicherte
-Suche, Details, Export, Lesestand, Direktlinks, Deadlines und mobile Darstellung.
+Die Standardpipeline funktioniert ohne Modell, Kosten oder neue Secrets.
+Textregeln speichern exakte Belege und Positionen. Erkannte Studienmerkmale
+gelten als Erwähnungen; unbekannte Ergebnisse bleiben leer.
 
-`Deploy GitHub Pages` veröffentlicht nur `site/`. Berechtigungen: `contents: read`,
-`pages: read` beim Konfigurieren, `pages: write` und `id-token: write` beim Deployment.
-Das Repository ist öffentlich. Der D1-Build bleibt als Regressionstest erhalten.
+scripts/enrich-semantic.mjs unterstützt einen bereits eingerichteten lokalen
+Ollama-Server. RESEARCH_MODEL benennt ein installiertes Chatmodell.
+RESEARCH_EMBED_MODEL aktiviert optional Embeddings. Kein Modell wird
+automatisch installiert; externe Modellserver werden nicht angesprochen.
+
+    node scripts/enrich-semantic.mjs --limit=20
+    node scripts/analyze.mjs
+
+analysis-cache/semantic.json speichert Modellversion, Textfingerprint, Datum und
+Originalzitate. Veränderte Texte verwerfen alte Extraktionen; unbelegte Zitate
+werden abgelehnt. Ein korrektes Zitat garantiert keine richtige Interpretation.
+Ohne eingerichtetes Modell zeigt das Dashboard KI-Abdeckung 0.
+Für die Veröffentlichung muss ein geprüfter Cache in den GitHub-Ablauf übernommen
+werden. GitHub Pages führt selbst kein Modell aus.
+
+API-Verträge: https://docs.ollama.com/api/chat und https://docs.ollama.com/api/embed
+
+## Wissenschaftliche Prüfung
+
+    node scripts/prepare-review.mjs
+    node scripts/evaluate-audit.mjs evaluation/pilot-review.csv
+    node scripts/backtest-trends.mjs
+
+Das Pilotset enthält 250 geschichtet ausgewählte Arbeiten mit leeren menschlichen
+Bewertungsfeldern. Ein Teil bleibt als held-out-Prüfmenge getrennt. Bestehende
+Dateien werden nicht überschrieben. Die ungewichtete Pilot-Precision ist keine
+repräsentative Korpus-Precision. Recall benötigt einen unabhängig zusammengestellten
+Benchmark mit relevanten Nicht-Treffern; nur dafür gilt --independent-benchmark.
+
+Historische Forecast-Prüfungen benötigen tatsächlich gespeicherte, vergleichbar
+abgedeckte Snapshots im Abstand von 90–97 Tagen. Das Werkzeug prüft eine einfache
+Persistenzbaseline. Ohne solche Daten bleiben Gütemaße leer. Es erfindet keinen
+rückwirkenden damaligen Wissensstand.
+
+## Technische Prüfung
+
+    npm run validate:data
+    npm run test:static
+    npm run test:browser
+    npm test
+    npx tsc --noEmit
+    npm run lint
+
+Browserprüfungen benötigen Chromium/Chrome/Edge (gegebenenfalls BROWSER_BIN).
+Sie prüfen Bedienwege, Mobilansicht und den Accessibility-Baum; sie ersetzen
+keinen praktischen Screenreader-Test.
+
+Technisch funktionierende Pipelines sind keine wissenschaftliche Validierung.
+Relevanz, Recall, extrahierte Ergebnisse, Neuheit und Prognosegüte benötigen
+weiterhin menschliche Prüfung und geeignete historische Daten.

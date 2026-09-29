@@ -1,6 +1,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { validateResearchData } from "./analysis/validate-radar.mjs";
 
 const REQUIRED_FILES = [
   "meta.json",
@@ -794,7 +795,8 @@ function validateCrossFileRules(dataRoot, parsed, errors) {
       if (entry.summary) {
         const stored = workById.get(entry.id);
         const fields = ["id", "title", "recordType", "publicationDate", "firstSeenAt", "firstSeenRunId"];
-        if (!stored || entry.pagePath !== `./${stored.file}` || entry.summary.pagePath !== entry.pagePath || fields.some(key => entry.summary[key] !== stored.work[key])) {
+        const summary = entry.summary.kind ? { ...entry, ...entry.summary } : entry.summary;
+        if (!stored || entry.pagePath !== `./${stored.file}` || (!entry.summary.kind && entry.summary.pagePath !== entry.pagePath) || fields.some(key => summary[key] !== stored.work[key])) {
           errors.push({ code: "inconsistent-summary", file: "search-index.json", path: `/documents/${index}/summary`, message: "Suchvorschau oder Detailpfad stimmt nicht mit der Publikation überein" });
         }
       }
@@ -881,6 +883,7 @@ export async function validateDataDirectory(directory) {
     if (file === "meta.json") validateMeta(ctx, data);
     else if (/^works\/page-\d+\.json$/.test(file)) validateWorksPage(ctx, data);
     else if (file === "search-index.json") validateSearchIndex(ctx, data);
+    else if (file === "research-radar.json" || /^search\/shard-\d+\.json$/.test(file)) validateVersion(ctx, data.schemaVersion, "/schemaVersion");
     else if (file === "calls.json") validateCalls(ctx, data);
     else if (file === "agenda-signals.json") validateAgendaSignals(ctx, data);
     else if (file === "trends.json") validateTrends(ctx, data);
@@ -892,6 +895,7 @@ export async function validateDataDirectory(directory) {
   }
 
   validateCrossFileRules(dataRoot, parsed, errors);
+  errors.push(...validateResearchData(parsed));
   return { valid: errors.length === 0, errors, files: [...parsed.keys()] };
 }
 

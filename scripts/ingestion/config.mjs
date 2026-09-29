@@ -1,4 +1,4 @@
-export const STATIC_SEARCH_CONFIG_VERSION = "static-search-4.0.0";
+export const STATIC_SEARCH_CONFIG_VERSION = "static-search-5.0.0";
 export const INGESTION_ANALYSIS_VERSION = "ingestion-relevance-1.0.0";
 export const ONTOLOGY_VERSION = "human-work-themes-2.0.0";
 export const WORKS_SCHEMA_VERSION = "works-page-1.1.0";
@@ -70,6 +70,11 @@ export const HUMAN_WORK_TERMS = [
   "sociotechnical systems",
   "human-machine interaction"
 ];
+
+// Two retrieval areas; the personal lens ranks results without restricting retrieval.
+export const HUMAN_FACTORS_TERMS = ["human factors", "ergonomics", "ergonomic", "work design", "job design", "occupational health", "workplace learning", "worker wellbeing", "cognitive workload", "situation awareness", "human performance", "sociotechnical", "intrinsic motivation", "cognitive engagement"];
+export const HUMAN_CONTEXT_TERMS = ["human", "humans", "worker", "workers", "employee", "employees", "participant", "participants", "user", "users", "student", "students", "clinician", "nurse", "operator", "teamwork", "workplace", "psychological", "cognitive engagement", "intrinsic motivation", "human factors", "ergonomics"];
+export const RESEARCH_AREAS = ["human-ai", "human-factors"];
 
 export const ARXIV_CATEGORIES = ["cs.HC", "cs.AI", "cs.CY", "cs.RO", "cs.CL"];
 

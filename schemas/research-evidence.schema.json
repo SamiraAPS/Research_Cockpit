@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-evidence.schema.json",
+  "type": "object",
+  "required": [
+    "methodVersion",
+    "method",
+    "validation",
+    "relevance",
+    "learner",
+    "fields",
+    "personalFit",
+    "finding",
+    "findingStatus",
+    "abstractAvailable"
+  ],
+  "properties": {
+    "methodVersion": {
+      "const": "research-evidence-1.0.0"
+    },
+    "method": {
+      "const": "rules-with-exact-text-spans"
+    },
+    "validation": {
+      "const": "not-human-validated"
+    },
+    "relevance": {
+      "type": "object",
+      "required": [
+        "status",
+        "areas",
+        "reason",
+        "human",
+        "ai",
+        "domain",
+        "venueEvidence"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "included",
+            "uncertain",
+            "excluded"
+          ]
+        },
+        "areas": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "human-ai",
+              "human-factors"
+            ]
+          }
+        },
+        "reason": {
+          "type": "string"
+        },
+        "human": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "ai": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "domain": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "venueEvidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "learner": {
+      "enum": [
+        "both-mentioned",
+        "human-mentioned",
+        "machine-mentioned",
+        "unknown"
+      ]
+    },
+    "fields": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "value",
+            "evidence",
+            "interpretation"
+          ],
+          "properties": {
+            "value": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/span"
+              }
+            },
+            "interpretation": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "personalFit": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "topic",
+          "evidence"
+        ],
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/span"
+            }
+          }
+        }
+      }
+    },
+    "finding": {
+      "type": "null"
+    },
+    "findingStatus": {
+      "const": "requires-reading"
+    },
+    "abstractAvailable": {
+      "type": "boolean"
+    },
+    "semantic": {
+      "type": "object",
+      "required": [
+        "workId",
+        "claims",
+        "model",
+        "generatedAt",
+        "validation"
+      ],
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "field",
+              "value",
+              "source",
+              "quote"
+            ],
+            "properties": {
+              "source": {
+                "enum": [
+                  "title",
+                  "abstract"
+                ]
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 10
+              },
+              "field": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "span": {
+      "type": "object",
+      "required": [
+        "field",
+        "term",
+        "quote",
+        "start",
+        "end"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "enum": [
+            "title",
+            "abstract"
+          ]
+        },
+        "term": {
+          "type": "string"
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

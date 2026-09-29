@@ -5,7 +5,7 @@ import path from "node:path";
 import test from "node:test";
 
 import { ingestArxiv, parseArxivFeed } from "../../scripts/ingestion/arxiv.mjs";
-import { CORE_CONFERENCES } from "../../scripts/ingestion/config.mjs";
+import { CORE_CONFERENCES, STATIC_SEARCH_CONFIG_VERSION } from "../../scripts/ingestion/config.mjs";
 import { deduplicateRecords } from "../../scripts/ingestion/deduplicate.mjs";
 import { fetchWithRetry, SourceRequestError } from "../../scripts/ingestion/http.mjs";
 import { buildOpenAlexUrl, ingestOpenAlex } from "../../scripts/ingestion/openalex.mjs";
@@ -181,7 +181,7 @@ test("Pipeline schreibt valide statische Dateien und nutzt Crossref nur per DOI-
   const validation = await validateDataDirectory(temporaryData);
   assert.equal(validation.valid, true, validation.errors.map((error) => JSON.stringify(error)).join("\n"));
   const metadata = JSON.parse(await readFile(path.join(temporaryData, "meta.json"), "utf8"));
-  assert.equal(metadata.queryVersion, "static-search-4.0.0");
+  assert.equal(metadata.queryVersion, STATIC_SEARCH_CONFIG_VERSION);
   assert.equal(metadata.mode, "snapshot");
 });
 

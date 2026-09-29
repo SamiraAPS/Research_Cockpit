@@ -127,7 +127,8 @@ test("alle JSON-Schemas sind parsebar, versioniert und referenzieren vorhandene 
   const schemaDirectory = path.join(projectRoot, "schemas");
   const schemaNames = (await readdir(schemaDirectory)).filter((name) => name.endsWith(".schema.json")).sort();
   const schemas = new Map();
-  assert.equal(schemaNames.length, 12);
+  assert.ok(schemaNames.length >= 15);
+  for (const required of ["research-evidence.schema.json", "research-radar.schema.json", "search-shard.schema.json"]) assert.ok(schemaNames.includes(required));
 
   for (const schemaName of schemaNames) {
     const schema = await readJson(path.join(schemaDirectory, schemaName));

@@ -16,6 +16,7 @@ import {
 import { enrichWithCrossref } from "./crossref.mjs";
 import { deduplicateRecords, staticWorkToRecord } from "./deduplicate.mjs";
 import { SourcePaginationError, ingestOpenAlex } from "./openalex.mjs";
+import { planDiscoveryRuns, advanceRetrievalState } from "./schedule.mjs";
 
 async function readJson(filename, fallback) {
   try {
@@ -47,8 +48,9 @@ function oldRecordsForProvider(works, provider) {
   return works.filter((work) => providerOfStaticWork(work) === provider).length;
 }
 
-function existingHealthFor(previousHealth, source, modes) {
+function existingHealthFor(previousHealth, source, modes, parameters = {}) {
   const normalizedModes = [...modes].sort().join(",");
+  if (parameters.streamKey) return previousHealth.sources?.find(entry => entry.parameters?.streamKey === parameters.streamKey) ?? null;
   return previousHealth.sources?.find((entry) =>
     entry.provider === source.toLowerCase() && [...(entry.modes ?? [])].sort().join(",") === normalizedModes
   ) ?? previousHealth.sources?.find((entry) => entry.provider === source.toLowerCase()) ?? null;
@@ -57,9 +59,9 @@ function existingHealthFor(previousHealth, source, modes) {
 function sourceHealthEntry(stats, generatedAt, previousHealth, oldWorks) {
   let status = stats.status;
   if (status === "unavailable" && oldRecordsForProvider(oldWorks, stats.provider) > 0) status = "stale";
-  const previous = existingHealthFor(previousHealth, stats.source, stats.modes);
+  const previous = existingHealthFor(previousHealth, stats.source, stats.modes, stats.parameters);
   return {
-    source: `${stats.source}${stats.modes.length ? ` (${stats.modes.join(", ")})` : ""}`,
+    source: `${stats.source}${stats.modes.length ? ` (${stats.modes.join(", ")}${stats.parameters.researchArea ? ` · ${stats.parameters.researchArea} · ${stats.parameters.lane}` : ""})` : ""}`,
     status,
     checkedAt: generatedAt,
     lastSuccessfulAt: status === "healthy" ? generatedAt : previous?.lastSuccessfulAt ?? null,
@@ -230,7 +232,7 @@ async function writeStaticOutputs(input) {
   }));
   const previousWarnings = (previousMeta.dataQualityWarnings ?? []).filter((warning) => !String(warning.code).startsWith("ingestion-"));
   const message = overallStatus === "ready"
-    ? "Statische Publikationsdaten vollständig aktualisiert."
+    ? "Alle für diesen Lauf geplanten Publikationsabrufe abgeschlossen; dies bestätigt keine vollständige historische oder fachliche Abdeckung."
     : requestedRunSuccessful
       ? "Ausgewählte Publikationsmodi erfolgreich aktualisiert; weitere Modi wurden nicht ausgeführt."
     : works.length > 0
@@ -272,28 +274,24 @@ export async function runStaticIngestion(options = {}) {
       ? { ...options, range: previous.range, cursor: previous.cursor, start: previous.start }
       : options;
   }
-  for (const mode of modes) {
+  const jobs = options.splitLanes ? planDiscoveryRuns(previousMeta, options, modes) : [
+    ...modes.map(mode => ({ ...resumed("openalex", mode), provider: "openalex", mode })),
+    ...(modes.includes("frontier") ? [{ ...resumed("arxiv", "frontier"), provider: "arxiv", mode: "frontier" }] : [])
+  ];
+  for (const job of jobs) {
+    let result;
     try {
-      const result = await ingestOpenAlex(mode, resumed("openalex", mode));
-      freshRecords.push(...result.records);
-      sourceStats.push(result.stats);
+      const args = { ...options, ...job };
+      result = job.provider === "arxiv" ? await ingestArxiv(args) : await ingestOpenAlex(job.mode, args);
     } catch (error) {
       if (!(error instanceof SourcePaginationError)) throw error;
-      freshRecords.push(...error.partialRecords);
-      sourceStats.push(error.stats);
+      result = { records: error.partialRecords, stats: error.stats };
     }
-  }
-
-  if (modes.includes("frontier")) {
-    try {
-      const result = await ingestArxiv(resumed("arxiv", "frontier"));
-      freshRecords.push(...result.records);
-      sourceStats.push(result.stats);
-    } catch (error) {
-      if (!(error instanceof SourcePaginationError)) throw error;
-      freshRecords.push(...error.partialRecords);
-      sourceStats.push(error.stats);
+    if (options.splitLanes) {
+      Object.assign(result.stats.parameters, { streamKey: job.key, lane: job.lane, researchArea: job.researchArea });
     }
+    freshRecords.push(...result.records);
+    sourceStats.push(result.stats);
   }
 
   const crossref = await enrichWithCrossref(freshRecords, {
@@ -335,6 +333,8 @@ export async function runStaticIngestion(options = {}) {
   const meta = await readJson(metaFile, {});
   meta.lastIngestionRunId = runId;
   meta.lastIngestionAt = generatedAt;
+  if (options.splitLanes) meta.retrievalState = advanceRetrievalState(previousMeta.retrievalState, sourceStats.filter(s => s.role === "discovery"), generatedAt);
+  else if (previousMeta.retrievalState) meta.retrievalState = previousMeta.retrievalState;
   meta.comparisonMode = previousMeta.comparisonMode ?? options.comparisonMode ?? "core";
   if (previousMeta.historicalBackfill) meta.historicalBackfill = previousMeta.historicalBackfill;
   meta.coverageHistory = [...(previousMeta.coverageHistory ?? []), ...sourceStats.filter(s => s.role === "discovery").map(s => ({
@@ -343,8 +343,9 @@ export async function runStaticIngestion(options = {}) {
   }))].slice(-120);
   meta.ingestionProgress = { ...(previousMeta.ingestionProgress ?? {}) };
   for (const stats of sourceStats.filter(s => s.role === "discovery")) {
+    if (stats.parameters.lane && (stats.parameters.lane !== "fresh" || stats.parameters.researchArea !== "human-ai")) continue;
     const key = `${stats.provider}:${stats.modes[0]}`;
-    const prior = options.resume ? previousMeta.ingestionProgress?.[key] : null;
+    const prior = options.resume && !options.splitLanes ? previousMeta.ingestionProgress?.[key] : null;
     meta.ingestionProgress[key] = {
       range: { from: stats.parameters.fromDate, to: stats.parameters.toDate },
       cursor: stats.parameters.nextCursor ?? (stats.status === "unavailable" ? prior?.cursor ?? null : null),

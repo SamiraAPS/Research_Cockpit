@@ -5,6 +5,8 @@ import { runStaticIngestion } from "./ingestion/pipeline.mjs";
 import { runCallsIngestion } from "./calls/pipeline.mjs";
 import { runAnalysisPipeline } from "./analysis/pipeline.mjs";
 import { validateDataDirectory } from "./validate-data.mjs";
+import { resolveConferences } from "./ingestion/conferences.mjs";
+import { fetchFieldCounts } from "./ingestion/field-counts.mjs";
 
 // Stage a whole generation; never replace the last usable dataset with half-written files.
 export async function updateData(options = {}) {
@@ -17,21 +19,19 @@ export async function updateData(options = {}) {
   let published = false;
   try {
     const baseMeta = JSON.parse(await readFile(path.join(stage, "meta.json"), "utf8"));
-    const pendingBackfill = baseMeta.historicalBackfill && !baseMeta.historicalBackfill.complete;
+    const conferenceRegistry = await resolveConferences(baseMeta.conferenceRegistry, { apiKey: process.env.OPENALEX_API_KEY, now: options.now, fetchImpl: options.fetchImpl });
     const publications = await runStaticIngestion({
       ...options, mode: options.mode ?? "all", days: options.days ?? 90,
-      dataDirectory: stage, maxPages: options.maxPages ?? 5, resume: options.resume !== false,
+      dataDirectory: stage, maxPages: options.maxPages ?? 5, splitLanes: !options.range, resume: false,
       timeoutMs: options.timeoutMs ?? 20000, maxAttempts: 3,
       apiKey: process.env.OPENALEX_API_KEY, mailto: process.env.CROSSREF_MAILTO,
       crossref: options.crossref ?? false,
-      ...(pendingBackfill ? { mode: "core", range: baseMeta.historicalBackfill.range, cursor: baseMeta.historicalBackfill.cursor, resume: false } : {})
+      conferenceSourceIds: conferenceRegistry.sources.map(source => source.id)
     });
-    if (pendingBackfill) {
-      const meta = JSON.parse(await readFile(path.join(stage, "meta.json"), "utf8"));
-      const progress = meta.ingestionProgress["openalex:core"];
-      meta.historicalBackfill = { ...baseMeta.historicalBackfill, cursor: progress.complete ? null : progress.cursor ?? baseMeta.historicalBackfill.cursor, complete: progress.complete };
-      await writeFile(path.join(stage, "meta.json"), JSON.stringify(meta, null, 2));
-    }
+    const refreshedMeta = JSON.parse(await readFile(path.join(stage, "meta.json"), "utf8"));
+    refreshedMeta.conferenceRegistry = conferenceRegistry;
+    refreshedMeta.fieldCounts = await fetchFieldCounts(baseMeta.fieldCounts, { apiKey: process.env.OPENALEX_API_KEY, now: options.now, fetchImpl: options.fetchImpl });
+    await writeFile(path.join(stage, "meta.json"), JSON.stringify(refreshedMeta, null, 2));
     const calls = await runCallsIngestion({ dataDirectory: stage, timeoutMs: 12000, maxAttempts: 2 });
     await runAnalysisPipeline({ dataDirectory: stage });
     const validation = await validateDataDirectory(stage);

@@ -1,6 +1,7 @@
 import {
   CLASSIFICATION_THRESHOLD, CLASSIFICATION_VERSION, FIELD_WEIGHTS, ONTOLOGY_VERSION, THEMES
 } from "./ontology.v3.mjs";
+import { extractEvidence } from "./evidence.mjs";
 
 export function normalizeAnalysisText(value) {
   return String(value ?? "")
@@ -85,7 +86,8 @@ export function classifyRecord(input) {
       ...(input.topics ?? []).flatMap((value) => evidenceFor(theme, "external_topic", value))
     ]);
     const score = evidence.reduce((sum, item) => sum + item.weight, 0);
-    return score >= CLASSIFICATION_THRESHOLD ? [{
+    const textSupported = evidence.some(item => item.source === "title" || item.source === "abstract");
+    return textSupported && score >= CLASSIFICATION_THRESHOLD ? [{
       theme: theme.id,
       label: theme.label,
       score,
@@ -97,13 +99,15 @@ export function classifyRecord(input) {
 }
 
 export function classifyWork(work) {
-  const classifiedThemes = classifyRecord(work);
+  const research = extractEvidence(work);
+  const classifiedThemes = research.relevance.status === "excluded" ? [] : classifyRecord(work);
   const matchedTerms = classifiedThemes.flatMap((classification) => classification.evidence.map((evidence) => evidence.matchedTerm));
   const scores = Object.fromEntries(Object.entries(work.scores ?? {}).filter(([key]) => key !== "classificationMaximum" && !key.startsWith("topic:")));
   for (const classification of classifiedThemes) scores[`topic:${classification.theme}`] = classification.score;
   scores.classificationMaximum = classifiedThemes.length ? Math.max(...classifiedThemes.map((classification) => classification.score)) : 0;
   return {
     ...work,
+    research,
     classifiedThemes,
     scores,
     evidenceTerms: [...new Set([...(work.evidenceTerms ?? []), ...matchedTerms])]

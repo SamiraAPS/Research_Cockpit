@@ -40,6 +40,12 @@ jobs:
       - name: Validate production data
         run: npm run validate:data
 
+      - name: Regenerate analysis and compact indexes for this code version
+        run: node scripts/analyze.mjs
+
+      - name: Validate generated analysis
+        run: npm run validate:data
+
       - name: Run static dashboard tests
         run: npm run test:static
 

@@ -4,6 +4,9 @@ import {
   ARXIV_INTER_PAGE_DELAY_MS,
   ARXIV_PAGE_SIZE,
   HUMAN_WORK_TERMS,
+  HUMAN_FACTORS_TERMS,
+  HUMAN_CONTEXT_TERMS,
+  STATIC_SEARCH_CONFIG_VERSION,
   SEARCH_MODES
 } from "./config.mjs";
 import { fetchWithRetry } from "./http.mjs";
@@ -52,10 +55,11 @@ export function buildArxivUrl(options = {}) {
   const range = options.range ?? dateRange(options.days ?? 90, options.now);
   const categories = `(${ARXIV_CATEGORIES.map((category) => `cat:${category}`).join(" OR ")})`;
   const ai = `(${AI_TERMS.map(arxivTerm).join(" OR ")})`;
-  const human = `(${HUMAN_WORK_TERMS.map(arxivTerm).join(" OR ")})`;
+  const human = `(${[...HUMAN_WORK_TERMS, ...HUMAN_CONTEXT_TERMS].map(arxivTerm).join(" OR ")})`;
+  const domain = `(${HUMAN_FACTORS_TERMS.map(arxivTerm).join(" OR ")})`;
   const submitted = `submittedDate:[${arxivDate(range.from)} TO ${arxivDate(range.to, true)}]`;
   const url = new URL("https://export.arxiv.org/api/query");
-  url.searchParams.set("search_query", `${categories} AND ${ai} AND ${human} AND ${submitted}`);
+  url.searchParams.set("search_query", `${categories} AND ${options.researchArea === "human-factors" ? domain : `${ai} AND ${human}`} AND ${submitted}`);
   url.searchParams.set("start", String(options.start ?? 0));
   url.searchParams.set("max_results", String(options.maxResults ?? ARXIV_PAGE_SIZE));
   url.searchParams.set("sortBy", "submittedDate");
@@ -78,7 +82,7 @@ export function parseArxivFeed(xml, context) {
     const record = {
       provider: "arxiv",
       mode: "frontier",
-      queryVersion: SEARCH_MODES.frontier.queryVersion,
+      queryVersion: context.queryVersion ?? SEARCH_MODES.frontier.queryVersion,
       sourceRecordId: arxivId,
       externalIds: { arxiv: arxivId },
       doi,
@@ -114,7 +118,7 @@ export async function ingestArxiv(options = {}) {
     provider: "arxiv",
     role: "discovery",
     modes: ["frontier"],
-    queryVersions: [SEARCH_MODES.frontier.queryVersion],
+    queryVersions: [`${STATIC_SEARCH_CONFIG_VERSION}:frontier:${options.researchArea ?? "human-ai"}`],
     parameters: {
       endpoint: `${initial.url.origin}${initial.url.pathname}`,
       searchQuery: initial.url.searchParams.get("search_query"),
@@ -158,7 +162,7 @@ export async function ingestArxiv(options = {}) {
       stats.rateLimitEvents += request.rateLimitEvents;
       stats.latencyMs += request.latencyMs;
       stats.httpStatus = request.response.status;
-      const feed = parseArxivFeed(await request.response.text(), { retrievedAt: options.now?.toISOString?.() ?? new Date().toISOString() });
+      const feed = parseArxivFeed(await request.response.text(), { retrievedAt: options.now?.toISOString?.() ?? new Date().toISOString(), queryVersion: stats.queryVersions[0] });
       if (stats.pageCount === 1) stats.foundCount = feed.totalResults;
       records.push(...feed.records);
       if (feed.records.length === 0 || start + feed.records.length >= stats.foundCount) { stats.parameters.nextStart = null; break; }

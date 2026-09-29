@@ -73,7 +73,8 @@
           <header class="view-intro overview-intro">
             <div><p class="section-kicker">Aktueller Radar-Lauf</p><h1 id="overview-title">Evidence before signal.</h1><p>Reale Publikationen, offizielle Calls und reproduzierbare Analysen – mit sichtbaren Lücken statt Ersatzwerten.</p></div>
             <dl class="freshness-grid">
-              <div><dt>Letzte erfolgreiche Ingestion</dt><dd id="freshness-value">–</dd></div>
+              <div><dt>Letzter Datenabruf (auch teilweise)</dt><dd id="freshness-value">–</dd></div>
+              <div><dt>Letzter vollständig erfolgreicher Abruf</dt><dd id="complete-refresh-value">–</dd></div>
               <div><dt>Korpus</dt><dd id="corpus-value">–</dd></div>
               <div><dt>Quellen</dt><dd id="source-summary">–</dd></div>
             </dl>
@@ -93,6 +94,7 @@
               <div id="overview-emerging-list" class="compact-list"><div class="empty-state"><h3>Daten noch nicht verfügbar</h3></div></div>
             </article>
           </div>
+          <p id="radar-error" class="inline-notice" hidden>Die erweiterte Forschungsanalyse konnte nicht geladen werden. Verfügbare Literatur und Calls bleiben nutzbar.</p>
         </section>
 
         <section id="view-new" class="dashboard-view" data-view="new" aria-labelledby="new-title" tabindex="-1" hidden>
@@ -100,6 +102,8 @@
           <form id="work-filters" class="filter-panel" role="search">
             <div class="search-field"><label for="work-query">Korpus durchsuchen</label><input id="work-query" name="query" type="search" placeholder="Titel, Abstract, Autor:in, Thema …" autocomplete="off" /></div>
             <div class="filter-grid">
+              <label>Forschungsbereich<select id="filter-area"><option value="all">Alle Bereiche</option><option value="human-factors">Human Factors / Ergonomie / Work Design</option><option value="human-ai">Psychologie &amp; Human–AI</option><option value="personal">Mein Schwerpunkt: Co-Learning &amp; Engagement</option></select></label>
+              <label>Fachbezug<select id="filter-relevance"><option value="all">Alle inkl. unklarer Treffer</option><option value="included">Aufgenommen</option><option value="uncertain">Unklar – prüfen</option><option value="excluded">Technisch / fachfremd markiert</option></select></label>
               <label>Neuheit<select id="filter-novelty"><option value="all">Gesamter Korpus</option><option value="since-visit">Seit letztem Lesestand</option><option value="latest-run">Erstfunde im letzten Lauf</option><option value="week">Erstfunde in der Laufwoche (UTC)</option><option value="published-30">In den letzten 30 Tagen publiziert</option></select></label>
               <label>Jahr<select id="filter-year" name="year"><option value="all">Alle Jahre</option></select></label>
               <label>Quelle<select id="filter-source" name="source"><option value="all">Alle Quellen</option></select></label>
@@ -107,7 +111,7 @@
               <label>Thema<select id="filter-theme" name="theme"><option value="all">Alle Themen</option></select></label>
               <label>Suchmodus<select id="filter-mode" name="mode"><option value="all">Alle Modi</option><option value="core">Core</option><option value="broad">Broad</option><option value="frontier">Frontier</option></select></label>
               <label>Datenstatus<select id="filter-data-status" name="dataStatus"><option value="all">Alle Status</option><option value="current">Aktuell</option><option value="stale">Veraltet</option></select></label>
-              <label>Sortierung<select id="work-sort" name="sort"><option value="newest">Neueste zuerst</option><option value="oldest">Älteste zuerst</option><option value="relevance">Relevanz</option><option value="title">Titel A–Z</option><option value="citations">Zitationen</option></select></label>
+              <label>Sortierung<select id="work-sort" name="sort"><option value="newest">Neueste zuerst</option><option value="personal">Persönliche Passung</option><option value="oldest">Älteste zuerst</option><option value="relevance">Suchrelevanz</option><option value="title">Titel A–Z</option><option value="citations">Zitationen</option></select></label>
             </div>
             <div class="filter-actions">
               <label class="check-control"><input id="shortlist-only" type="checkbox" /> Nur Shortlist</label>
@@ -127,6 +131,7 @@
 
         <section id="view-landscape" class="dashboard-view" data-view="landscape" aria-labelledby="landscape-title" tabindex="-1" hidden>
           <header class="view-intro compact-intro"><div><p class="section-kicker">Korpusstruktur</p><h1 id="landscape-title">Landscape</h1><p>Themenhäufigkeiten, Publikationstypen und evidenzgebundene Forschungsfragen.</p></div><span class="view-number" aria-hidden="true">03</span></header>
+          <article class="panel content-panel spaced-panel"><h2>Publikationsentwicklung</h2><label>Forschungsbereich<select id="trend-area"><option value="human-ai">Psychologie, Arbeit &amp; Human–AI</option><option value="human-factors">Human Factors, Ergonomie &amp; Work Design</option></select></label><p>Auch Preprints werden berücksichtigt. Neue Suchbereiche werden erst aufgebaut; Größenänderungen können aus der Erfassung entstehen.</p><h3>Breite Datenbankabfrage</h3><p>Anzahl der OpenAlex-Suchtreffer unabhängig vom Downloadbudget. Die fachliche Suchgenauigkeit ist noch nicht validiert.</p><div id="field-series"></div><h3>Langfristige Entwicklung im heruntergeladenen Korpus</h3><div id="annual-series"></div><h3>Aktuelle Entwicklung im Korpus</h3><div id="monthly-series"></div><h3>Themenvergleich abgeschlossener Quartale</h3><div id="quarter-comparison" class="question-grid"></div></article>
           <div class="two-column-grid">
             <article class="panel content-panel"><header class="panel-heading"><div><p class="section-kicker">Mehrfachklassifikation möglich</p><h2>Themen im Korpus</h2></div></header><div id="landscape-chart" class="chart-host"></div></article>
             <article class="panel content-panel"><header class="panel-heading"><div><p class="section-kicker">Publikationsformen</p><h2>Korpuszusammensetzung</h2></div></header><div id="composition-summary" class="composition-summary"></div></article>
@@ -135,7 +140,7 @@
         </section>
 
         <section id="view-emerging" class="dashboard-view" data-view="emerging" aria-labelledby="emerging-title" tabindex="-1" hidden>
-          <header class="view-intro compact-intro"><div><p class="section-kicker">Beobachtung, keine Prognose</p><h1 id="emerging-title">Emerging Signals</h1><p>Normalisierte Bewegungen werden nur bei vergleichbaren abgeschlossenen Zeitfenstern ausgewiesen.</p></div><span class="view-number" aria-hidden="true">04</span></header>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Kandidaten für künftige Projekte</p><h1 id="emerging-title">Emerging Signals</h1><p>Offene Themencluster aus Publikationen und Preprints, ergänzt durch thematische Calls.</p></div><span class="view-number" aria-hidden="true">04</span></header>
           <div id="emerging-notice" class="inline-notice"></div>
           <div id="emerging-grid" class="analysis-grid"></div>
         </section>
@@ -155,10 +160,12 @@
             </table>
           </div>
           <div id="calls-empty" class="empty-state" hidden><h2>Keine Calls für diesen Filter</h2><p>Die Filterkombination liefert keine verifizierten Einträge.</p></div>
+          <article class="panel content-panel spaced-panel"><h2>Calls als Forschungssignale</h2><div id="agenda-summary"></div></article>
         </section>
 
         <section id="view-opportunities" class="dashboard-view" data-view="opportunities" aria-labelledby="opportunities-title" tabindex="-1" hidden>
-          <header class="view-intro compact-intro"><div><p class="section-kicker">Vier transparente Komponenten</p><h1 id="opportunities-title">Opportunities</h1><p>Momentum, Preprint-Anteil, Agenda-Nachfrage und Quellenvielfalt – einschließlich Unsicherheit.</p></div><span class="view-number" aria-hidden="true">06</span></header>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Von Literatur zu Studienideen</p><h1 id="opportunities-title">Projektideen</h1><p>Beobachtungen, Belege und konkrete Studienvorschläge. Neuheit bleibt zu prüfen.</p></div><span class="view-number" aria-hidden="true">06</span></header>
+          <article class="panel content-panel spaced-panel"><h2>Mein Projektboard</h2><p>Notizen und Projekte bleiben auf diesem Gerät. Mit Export und Import kannst du sie sichern oder auf ein anderes Gerät übertragen.</p><button id="export-workspace" class="secondary-button" type="button">Projekte &amp; Notizen exportieren</button><label class="import-control">Projektdatei importieren<input id="import-workspace" type="file" accept="application/json,.json" /></label><div id="project-board" class="question-grid"></div></article>
           <div id="opportunity-notice" class="inline-notice"></div>
           <div id="opportunity-grid" class="analysis-grid"></div>
         </section>
@@ -166,6 +173,7 @@
         <section id="view-method" class="dashboard-view" data-view="method" aria-labelledby="method-title" tabindex="-1" hidden>
           <header class="view-intro compact-intro"><div><p class="section-kicker">Transparenz vor Interpretation</p><h1 id="method-title">Method</h1><p>Versionen, Zeitfenster, Mindestfallzahlen, Datenqualität und Quellenzustand des aktuellen Laufs.</p></div><span class="view-number" aria-hidden="true">07</span></header>
           <article class="panel content-panel"><h2>Abdeckung & fachliche Prüfung</h2><p id="research-profile"></p><div id="coverage-summary"></div><p>Studienkontext, Population, Studiendesign und Outcomes werden im Audit manuell erfasst; sie werden nicht aus Stichworten als gesicherte Fakten abgeleitet.</p></article>
+          <article class="panel content-panel spaced-panel"><h2>Qualität des Forschungsradars</h2><div id="radar-coverage"></div><p>Precision, Recall, Neuheit und Prognosegüte sind noch nicht wissenschaftlich validiert. Ein geschichtetes Pilotset und getrennte Prüfdatensätze sind im Repository vorbereitet.</p></article>
           <div id="method-cards" class="method-grid"></div>
           <div class="two-column-grid spaced-panel">
             <article class="panel content-panel"><header class="panel-heading"><div><p class="section-kicker">Reproduzierbarkeit</p><h2>Methodenversionen</h2></div></header><dl id="version-list" class="definition-list"></dl></article>

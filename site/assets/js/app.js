@@ -1,6 +1,8 @@
 import { callTimeStatus, deadlineLabel, freshness, matchesNovelty, auditCsv, RESEARCH_PROFILE } from "./research.js";
-import { renderComponentBar, renderHorizontalBars } from "./charts.js";
+import { renderHorizontalBars } from "./charts.js";
 import { normalizeSearchText, paginate, searchAndFilterWorks, sortWorkResults, worksToBibtex, worksToCsv } from "./search.js";
+import { catalogWork } from "./catalog.js";
+import { renderRadarViews, noteEditor } from "./radar-ui.js";
 
 const DATA_URLS = {
   meta: "./data/meta.json",
@@ -10,6 +12,7 @@ const DATA_URLS = {
   trends: "./data/trends.json",
   questions: "./data/questions.json",
   health: "./data/source-health.json"
+  , radar: "./data/research-radar.json"
 };
 const VIEW_IDS = ["overview", "new", "landscape", "emerging", "calls", "opportunities", "method"];
 const VIEW_TITLES = { overview: "Overview", new: "New & Search", landscape: "Landscape", emerging: "Emerging Signals", calls: "Calls", opportunities: "Opportunities", method: "Method" };
@@ -25,10 +28,10 @@ const LABELS = {
   emerging: "emerging", rising: "zunehmend", cooling: "abkühlend", strong: "stark", moderate: "moderat", weak: "schwach",
   possible: "möglich", low: "niedrig", high: "hoch", medium: "mittel", framework: "Lens-Frage", supported: "Themenverbindung beobachtet"
 };
-const COMPONENT_LABELS = { publication_momentum: "Publikationsdynamik", frontier_share: "Preprint-Anteil", agenda_demand: "Agenda-Nachfrage", source_diversity: "Quellenvielfalt" };
 
 const state = {
-  data: { meta: null, works: [], documents: [], calls: null, trends: null, questions: null, health: null },
+  data: { meta: null, works: [], documents: [], calls: null, trends: null, questions: null, health: null, radar: null },
+  searchShards: [], fullSearchLoaded: false, fullSearchPromise: null,
   loadErrors: new Map(),
   shortlist: loadStoredSet(STORAGE_KEYS.shortlist),
   newWorkIds: new Set(),
@@ -84,9 +87,30 @@ function loadStoredSet(key) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url, { cache: "no-store" });
+  const versioned = state.data.meta && url !== DATA_URLS.meta ? `${url}?v=${encodeURIComponent(state.data.meta.generatedAt)}` : url;
+  const response = await fetch(versioned, { cache: url === DATA_URLS.meta ? "no-cache" : "default" });
   if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
   return response.json();
+}
+
+async function ensureFullSearch() {
+  if (state.fullSearchLoaded || !state.searchShards.length) return;
+  if (!state.fullSearchPromise) state.fullSearchPromise = (async () => {
+    const documents = [];
+    for (let offset = 0; offset < state.searchShards.length; offset += 4) {
+      const pages = await Promise.all(state.searchShards.slice(offset, offset + 4).map(async shard => {
+        if (!/^\.\/search\/shard-\d+\.json$/.test(shard.path)) throw new Error("Ungültiger Suchpfad");
+        const data = await fetchJson(`./data/${shard.path.slice(2)}`);
+        if (data.generatedAt !== state.data.meta.generatedAt) throw new Error("Datenstand geändert; Dashboard neu laden.");
+        return data;
+      }));
+      pages.forEach(page => documents.push(...page.documents));
+    }
+    const byId = new Map(documents.map(document => [document.id, document]));
+    state.data.documents = state.data.documents.map(document => ({ ...document, ...byId.get(document.id) }));
+    state.fullSearchLoaded = true;
+  })().catch(error => { state.fullSearchPromise = null; throw error; });
+  return state.fullSearchPromise;
 }
 
 async function loadWorks() {
@@ -124,7 +148,10 @@ function showView(viewId, { moveFocus = false } = {}) {
   closeNavigation();
   const focusedId = new URLSearchParams(window.location.hash.split("?")[1] ?? "").get("work");
   if (active === "new" && focusedId && state.data.works.length) {
-    state.workFilters = { ...state.workFilters, query: "", year: "all", source: "all", type: "all", theme: "all", mode: "all", dataStatus: "all", shortlistOnly: false, novelty: "all", workId: focusedId };
+    elements.work_query.value = "";
+    for (const select of elements.work_filters.querySelectorAll("select")) select.value = select.id === "work-sort" ? "newest" : "all";
+    elements.shortlist_only.checked = false;
+    state.workFilters = { query: "", year: "all", source: "all", type: "all", theme: "all", mode: "all", dataStatus: "all", area: "all", relevanceStatus: "all", sort: "newest", shortlistOnly: false, novelty: "all", workId: focusedId };
     state.workPage = 1; renderWorkResults();
   }
   if (moveFocus && !elements.dashboard_views.hidden) document.querySelector(`[data-view="${active}"]`)?.focus({ preventScroll: true });
@@ -219,14 +246,15 @@ async function exportWorks(format) {
 }
 
 function renderOverview() {
-  const { meta, works, calls, trends, health } = state.data;
-  elements.freshness_value.textContent = formatDate(meta?.lastSuccessfulIngestionAt, true);
+  const { meta, works, calls, radar, health } = state.data;
+  elements.freshness_value.textContent = formatDate(meta?.lastIngestionAt, true);
+  document.getElementById("complete-refresh-value").textContent = formatDate(meta?.lastSuccessfulIngestionAt, true);
   elements.corpus_value.textContent = `${works.length} Works · ${works.filter((work) => work.recordType === "preprint").length} Preprints`;
   const healthy = health?.sources?.filter((source) => source.status === "healthy" && freshness(source.checkedAt) === "current").length ?? 0;
   const totalSources = health?.sources?.length ?? 0;
   elements.source_summary.textContent = totalSources ? `${healthy}/${totalSources} Publikationsquellen aktuell · ${(calls?.sourceStatus ?? []).filter(s => s.status === "verified" && freshness(s.checkedAt) === "current").length}/${calls?.sourceStatus?.length ?? 0} Call-Quellen verifiziert` : "nicht geladen";
 
-  const newest = sortWorkResults(works.filter(work => state.newWorkIds.has(work.id)).map((work) => ({ work, document: work, relevance: 0 }))).slice(0, 3);
+  const newest = sortWorkResults(works.filter(work => state.newWorkIds.has(work.id)).map((work) => ({ work, document: work, relevance: 0 })), "personal").slice(0, 3);
   if (!newest.length) renderEmpty(elements.overview_new_list, "Daten noch nicht verfügbar", "Im letzten Lauf kamen keine neuen Arbeiten hinzu. Der bisherige Korpus bleibt in der Suche verfügbar.");
   else {
     elements.overview_new_list.replaceChildren();
@@ -237,7 +265,7 @@ function renderOverview() {
       const link = node("a", null, work.title);
       link.href = `#new?work=${encodeURIComponent(work.id)}`;
       title.append(link);
-      item.append(metaLine, title);
+      item.append(metaLine, title, node("p", "muted-copy", work.research?.personalFit.length ? `Passend zu: ${work.research.personalFit.map(f => f.topic).join(", ")}` : "Neu im Korpus; persönliche Passung nicht festgestellt."));
       elements.overview_new_list.append(item);
     }
   }
@@ -263,19 +291,15 @@ function renderOverview() {
     }
   }
 
-  const trendByTheme = new Map((trends?.publicationTrends ?? []).map((entry) => [entry.theme, entry]));
-  const emerging = [...(trends?.emergingSignals ?? [])].sort((left, right) => {
-    const rank = { emerging: 4, rising: 3, stable: 2, cooling: 1, insufficient: 0 };
-    return (rank[right.status] - rank[left.status]) || ((trendByTheme.get(right.theme)?.totals.absoluteCount ?? 0) - (trendByTheme.get(left.theme)?.totals.absoluteCount ?? 0));
-  }).slice(0, 3);
-  if (!emerging.length) renderEmpty(elements.overview_emerging_list, "Noch nicht berechnet", "Keine Emerging-Signale verfügbar.");
+  const emerging = (radar?.clusters ?? []).slice(0, 3);
+  if (!emerging.length) renderEmpty(elements.overview_emerging_list, "Noch keine Themencluster", "Für explorative Hinweise fehlen ausreichende Textbelege.");
   else {
     elements.overview_emerging_list.replaceChildren();
     for (const signal of emerging) {
       const item = node("article", "compact-item signal-item");
-      item.append(statusChip(signal.status), node("h3", null, signal.label));
-      const count = trendByTheme.get(signal.theme)?.totals.absoluteCount ?? 0;
-      item.append(node("p", "compact-meta", `${count} Korpusbelege · Wachstum ${signal.shortGrowthPercent === null ? "nicht berechenbar" : `${signal.shortGrowthPercent}%`}`));
+      item.append(node("span", "data-chip", "Explorativer Hinweis"), node("h3", null, signal.label));
+      item.append(node("p", "compact-meta", `${signal.workCount} Korpusbelege · ${signal.preprintCount} Preprints · ${signal.authorGroups} Autorengruppen`));
+      item.append(node("p", "muted-copy", "Neuheit und zukünftiges Wachstum sind nicht bestätigt."));
       elements.overview_emerging_list.append(item);
     }
   }
@@ -314,7 +338,8 @@ function publicationCard(result) {
   publicationLink.target = "_blank"; publicationLink.rel = "noopener noreferrer";
   title.append(publicationLink);
   const authors = node("p", "publication-authors", (work.authors ?? []).map((author) => author.name).join(", ") || "Autor:innen nicht verfügbar");
-  copy.append(meta, title, authors, node("p", "muted-copy", `Erstmals gefunden: ${formatDate(work.firstSeenAt)} · ${RESEARCH_PROFILE.label}`));
+  copy.append(meta, title, authors, node("p", "muted-copy", `Erstmals gefunden: ${formatDate(work.firstSeenAt)} · Fachbezug: ${work.research?.relevance.status ?? "ungeprüft"}`));
+  if (work.research?.personalFit.length) copy.append(node("p", "muted-copy", `Warum passend: ${work.research.personalFit.map(f => f.topic).join(", ")}`));
   const shortlistButton = node("button", "shortlist-button", state.shortlist.has(work.id) ? "Gemerkt" : "Merken");
   shortlistButton.type = "button";
   shortlistButton.dataset.shortlistId = work.id;
@@ -341,6 +366,16 @@ function publicationCard(result) {
     body.append(doiLine);
   } else body.append(node("p", "muted-copy", "DOI nicht verfügbar."));
   body.append(node("h3", null, "Abstract"), node("p", "abstract-copy", work.abstract ?? "Abstract nicht verfügbar."));
+  if (work.research?.fields) {
+    body.append(node("h3", null, "Inhaltsmerkmale mit Textbelegen"), node("p", "muted-copy", "Automatisch erkannte Erwähnungen; keine bestätigten Studienmerkmale oder Wirkungsnachweise."));
+    const names = { context: "Kontext", population: "Population", aiFunction: "KI-Funktion", outcomes: "Outcomes", studyDesign: "Studiendesign" };
+    for (const [field, entries] of Object.entries(work.research.fields)) {
+      body.append(node("h4", null, `${names[field] ?? field}: ${entries.map(entry => entry.value).join(", ") || "nicht bestimmt"}`));
+      entries.forEach(entry => entry.evidence.forEach(evidence => body.append(node("blockquote", null, evidence.quote))));
+    }
+    body.append(node("p", "muted-copy", `Lernen: ${work.research.learner}. Zentrale Ergebnisse: ${work.research.semantic ? "KI-Extraktion vorhanden; Interpretation prüfen." : "Volltext-/Abstractprüfung erforderlich."}`));
+    for (const claim of work.research.semantic?.claims ?? []) body.append(node("p", null, `${claim.field}: ${claim.value}`), node("blockquote", null, claim.quote));
+  }
   body.append(node("h3", null, "Themen-Evidenz"));
   if (!(work.classifiedThemes ?? []).length) body.append(node("p", "muted-copy", "Keine Klassifikation oberhalb der methodischen Schwelle."));
   for (const theme of work.classifiedThemes ?? []) {
@@ -364,7 +399,7 @@ function publicationCard(result) {
       } catch (error) { body.replaceChildren(node("p", "muted-copy", `Details nicht verfügbar: ${error.message}. Schließen und erneut öffnen zum Wiederholen.`)); }
     });
   }
-  article.append(details);
+  article.append(details, noteEditor(work.id, announce));
   return article;
 }
 
@@ -467,43 +502,6 @@ function renderLandscape() {
   }
 }
 
-function renderEmerging() {
-  const trends = state.data.trends;
-  if (!trends) {
-    renderEmpty(elements.emerging_grid, "Emerging Signals nicht verfügbar", "Die Analysedatei konnte nicht geladen werden.");
-    return;
-  }
-  elements.emerging_notice.replaceChildren(statusChip(trends.status), node("p", null, `Vergleich bis ${trends.coverage.latestStableYear}; ausgeschlossen: ${trends.coverage.excludedYears.join(", ") || "keine Jahre"}. Mindestfallzahl: ${trends.methodology.minimumTrendRecords} pro Fenster.`));
-  elements.emerging_grid.replaceChildren();
-  const trendByTheme = new Map(trends.publicationTrends.map((trend) => [trend.theme, trend]));
-  for (const signal of trends.emergingSignals) {
-    const trend = trendByTheme.get(signal.theme);
-    const card = node("article", "analysis-card");
-    const heading = node("header");
-    heading.append(statusChip(signal.status), node("h2", null, signal.label));
-    card.append(heading);
-    const metrics = node("dl", "mini-metrics");
-    for (const [name, value] of [
-      ["Korpusbelege", trend?.totals.absoluteCount ?? 0],
-      ["Kurzfristiges Wachstum", signal.shortGrowthPercent === null ? "nicht berechenbar" : `${signal.shortGrowthPercent}%`],
-      ["Preprint-Anteil", signal.recentPreprintShare === null ? "nicht berechenbar" : `${signal.recentPreprintShare}%`],
-      ["Beschleunigung", trend?.accelerationPercentagePoints === null ? "nicht berechenbar" : `${trend.accelerationPercentagePoints} Pp.`]
-    ]) {
-      const row = node("div"); row.append(node("dt", null, name), node("dd", null, String(value))); metrics.append(row);
-    }
-    card.append(metrics);
-    if (trend?.dataQuality.reasons?.length) {
-      const details = node("details", "quality-details");
-      details.append(node("summary", null, "Warum nicht belastbar?"));
-      const list = node("ul");
-      for (const reason of trend.dataQuality.reasons) list.append(node("li", null, reason));
-      details.append(list); card.append(details);
-    }
-    card.append(evidenceLinks(signal.evidenceWorkIds));
-    elements.emerging_grid.append(card);
-  }
-}
-
 function filteredCalls() {
   const now = Date.now();
   const query = normalizeSearchText(state.callFilters.query);
@@ -534,6 +532,13 @@ function renderCalls({ announceChange = false } = {}) {
     const title = node("a", "table-title", call.title);
     title.href = call.officialUrl; title.target = "_blank"; title.rel = "noopener noreferrer";
     callCell.append(title, node("span", "table-subline", call.venue));
+    if (call.verificationEvidence) {
+      const proof = node("details", "quality-details");
+      proof.append(node("summary", null, call.verificationEvidence.method === "human-reviewed" ? "Manuell geprüft – Nachweis" : "Automatische Quellenprüfung – Nachweis"));
+      proof.append(node("p", "muted-copy", `Prüfung: ${formatDate(call.verificationEvidence.checkedAt, true)}. ${call.verificationEvidence.reviewer ?? "Quellenspezifischer Parser; keine menschliche Bestätigung."}`));
+      proof.append(node("blockquote", null, call.verificationEvidence.deadlineQuote ?? "Kein isolierter Deadline-Text gespeichert; offizielle Quelle prüfen."));
+      callCell.append(proof);
+    }
     const deadlineCell = node("td");
     if (call.deadlineAt) { const time = node("time", null, deadlineLabel(call)); time.dateTime = call.deadlineAt; deadlineCell.append(time, node("span", "table-subline", `Schweizer Zeit: ${new Intl.DateTimeFormat("de-CH", { timeZone: "Europe/Zurich", dateStyle: "medium", timeStyle: "short" }).format(new Date(call.deadlineAt))} (Europe/Zurich)`)); }
     else deadlineCell.textContent = "Nicht angegeben";
@@ -544,39 +549,6 @@ function renderCalls({ announceChange = false } = {}) {
   if (announceChange) announce(`${calls.length} Calls entsprechen dem Filter.`);
 }
 
-function renderOpportunities() {
-  const trends = state.data.trends;
-  if (!trends) {
-    renderEmpty(elements.opportunity_grid, "Opportunities nicht verfügbar", "Die Analysedatei konnte nicht geladen werden.");
-    return;
-  }
-  const calculated = trends.opportunities.filter((opportunity) => opportunity.score !== null).length;
-  elements.opportunity_notice.replaceChildren(statusChip(trends.status), node("p", null, `${calculated} von ${trends.opportunities.length} Gesamtscores sind mit allen vier Komponenten berechenbar. Fehlende Komponenten bleiben leer.`));
-  elements.opportunity_grid.replaceChildren();
-  for (const opportunity of trends.opportunities) {
-    const card = node("article", "analysis-card opportunity-card");
-    const heading = node("header", "opportunity-heading");
-    const score = node("strong", "opportunity-score", opportunity.score === null ? "–" : String(opportunity.score));
-    score.setAttribute("aria-label", opportunity.score === null ? "Gesamtscore nicht berechenbar" : `Gesamtscore ${opportunity.score} von ${opportunity.maximum}`);
-    const copy = node("div"); copy.append(statusChip(opportunity.status), node("h2", null, opportunity.label));
-    heading.append(copy, score); card.append(heading);
-    const components = node("div", "component-list");
-    for (const component of opportunity.components) {
-      const row = node("div", "component-row");
-      const top = node("div", "component-label");
-      top.append(node("span", null, COMPONENT_LABELS[component.key] ?? component.key), node("strong", null, component.score === null ? "nicht verfügbar" : `${component.score}/${component.maximum}`));
-      row.append(top); renderComponentBar(row, component.score, component.maximum, COMPONENT_LABELS[component.key] ?? component.key); components.append(row);
-    }
-    card.append(components, node("p", "uncertainty-copy", `Unsicherheit: ${label(opportunity.uncertainty.level)}. ${opportunity.uncertainty.reasons.join(" ") || "Keine zusätzlichen Einschränkungen."}`));
-    card.append(node("p", "muted-copy", `Fachliche Perspektive: ${RESEARCH_PROFILE.label}. Die Passung ist eine persönliche Auswahl, kein Evidenzscore.`), evidenceLinks(opportunity.evidenceWorkIds));
-    for (const id of opportunity.evidenceCallIds ?? []) {
-      const call = state.data.calls?.items.find(call => call.id === id);
-      if (call) { const link = node("a", "text-link", call.title); link.href = call.officialUrl; link.target = "_blank"; link.rel = "noopener noreferrer"; card.append(link); }
-    }
-    elements.opportunity_grid.append(card);
-  }
-}
-
 function renderMethod() {
   const { meta, trends, health } = state.data;
   elements.method_cards.replaceChildren();
@@ -585,7 +557,7 @@ function renderMethod() {
     ["Gleiche Fenster", `${methodology.shortWindowYears} Jahre kurz, ${methodology.longWindowYears} Jahre lang; nur angrenzende gleich lange Zeiträume.`],
     ["Mindestfallzahl", `Mindestens ${methodology.minimumTrendRecords} Themenarbeiten in jedem Vergleichsfenster.`],
     ["Indexierungsverzug", `Laufendes Jahr ausgeschlossen; ${methodology.indexingLagDays} Tage zusätzliche Reserve zu Jahresbeginn.`],
-    ["Keine Ersatzscores", "Opportunity-Gesamtscore nur, wenn alle vier Komponenten verfügbar sind."]
+    ["Projektideen", "Beobachtung, Textbelege und Studienvorschlag getrennt; kein Gesamtscore und kein Neuheitsnachweis."]
   ] : [["Methodik nicht verfügbar", "trends.json konnte nicht geladen werden."]];
   cards.forEach(([title, copy], index) => { const card = node("article", "panel method-card"); card.append(node("span", "method-step", String(index + 1).padStart(2, "0")), node("h2", null, title), node("p", null, copy)); elements.method_cards.append(card); });
 
@@ -624,12 +596,11 @@ function renderAll() {
   renderOverview();
   renderWorkResults();
   renderLandscape();
-  renderEmerging();
   renderCalls();
-  renderOpportunities();
   renderMethod();
+  renderRadarViews({ radar: state.data.radar, works: state.data.works, calls: state.data.calls, meta: state.data.meta, evidenceLinks, announce, download });
   elements.footer_version.textContent = state.data.meta?.analysisVersion ?? "Statisches GitHub-Pages-Dashboard";
-  elements.footer_updated.textContent = `Letzte erfolgreiche Ingestion ${formatDate(state.data.meta?.lastSuccessfulIngestionAt, true)}`;
+  elements.footer_updated.textContent = `Letzter Abruf ${formatDate(state.data.meta?.lastIngestionAt, true)} · Analyse ${formatDate(state.data.meta?.generatedAt, true)}`;
 }
 
 async function loadDashboard() {
@@ -643,8 +614,9 @@ async function loadDashboard() {
     return;
   }
   pageCache.clear();
-  const searchPromise = fetchJson(DATA_URLS.search).then(data => data.documents ?? []);
-  const loaders = { works: searchPromise.then(documents => documents.length && documents.every(d => d.summary && d.pagePath) ? documents.map(d => ({ ...d.summary, pagePath: d.pagePath, _summary: true })) : loadWorks()).catch(() => loadWorks()), documents: searchPromise, calls: fetchJson(DATA_URLS.calls), trends: fetchJson(DATA_URLS.trends), questions: fetchJson(DATA_URLS.questions), health: fetchJson(DATA_URLS.health) };
+  state.fullSearchPromise = null; state.fullSearchLoaded = false;
+  const searchPromise = fetchJson(DATA_URLS.search).then(data => { state.searchShards = data.shards ?? []; state.themeLabels = data.themeLabels ?? {}; return data.documents ?? []; });
+  const loaders = { works: searchPromise.then(documents => documents.length && documents.every(d => d.summary && d.pagePath) ? documents.map(d => catalogWork(d, state.themeLabels)) : loadWorks()).catch(() => loadWorks()), documents: searchPromise, calls: fetchJson(DATA_URLS.calls), trends: fetchJson(DATA_URLS.trends), questions: fetchJson(DATA_URLS.questions), health: fetchJson(DATA_URLS.health), radar: fetchJson(DATA_URLS.radar) };
   const entries = Object.entries(loaders);
   const results = await Promise.allSettled(entries.map(([, promise]) => promise));
   results.forEach((result, index) => {
@@ -660,7 +632,7 @@ async function loadDashboard() {
   announce(`Dashboard geladen: ${state.data.works.length} Arbeiten und ${state.data.calls?.items?.length ?? 0} Calls.`);
 }
 
-function syncWorkFilters() {
+async function syncWorkFilters() {
   state.workFilters = {
     query: elements.work_query.value,
     novelty: elements.filter_novelty.value,
@@ -672,8 +644,14 @@ function syncWorkFilters() {
     dataStatus: elements.filter_data_status.value,
     sort: elements.work_sort.value,
     shortlistOnly: elements.shortlist_only.checked
+    , area: document.getElementById("filter-area").value, relevanceStatus: document.getElementById("filter-relevance").value
   };
   state.workPage = 1;
+  if (state.workFilters.query && !state.fullSearchLoaded && state.searchShards.length) {
+    elements.search_scope_note.textContent = "Vollständige Abstractsuche wird geladen …";
+    try { await ensureFullSearch(); }
+    catch (error) { elements.work_result_count.textContent = "Suche unvollständig"; renderEmpty(elements.work_results, "Abstractsuche nicht verfügbar", `${error.message} Suche erneut eingeben zum Wiederholen.`); return; }
+  }
   renderWorkResults({ announceChange: true });
 }
 
@@ -713,7 +691,7 @@ elements.restore_search.addEventListener("click", () => {
   try {
     const filters = JSON.parse(safeStorageGet("radar.saved-search.v1") ?? "null");
     if (!filters) { announce("Noch keine gespeicherte Suche."); return; }
-    for (const [key, element] of Object.entries({ query: elements.work_query, year: elements.filter_year, source: elements.filter_source, type: elements.filter_type, theme: elements.filter_theme, mode: elements.filter_mode, dataStatus: elements.filter_data_status, sort: elements.work_sort, novelty: elements.filter_novelty })) {
+    for (const [key, element] of Object.entries({ query: elements.work_query, year: elements.filter_year, source: elements.filter_source, type: elements.filter_type, theme: elements.filter_theme, mode: elements.filter_mode, dataStatus: elements.filter_data_status, sort: elements.work_sort, novelty: elements.filter_novelty, area: document.getElementById("filter-area"), relevanceStatus: document.getElementById("filter-relevance") })) {
       if (typeof filters[key] === "string") element.value = filters[key];
       if (!element.value && element.tagName === "SELECT") element.selectedIndex = 0;
     }

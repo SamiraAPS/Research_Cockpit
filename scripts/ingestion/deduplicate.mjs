@@ -160,6 +160,7 @@ function versionFromRecord(record) {
     source: record.provider === "arxiv" ? "arXiv" : "OpenAlex",
     externalId: record.sourceRecordId,
     doi: record.doi,
+    publicationDate: record.publicationDate,
     url: record.url
   };
 }
@@ -223,6 +224,7 @@ function canonicalWork(group, context) {
     },
     venue: preferred.venue,
     publicationDate: preferred.publicationDate,
+    firstPublicDate: [...variants.map(v => v.publicationDate), ...allExistingVersions.map(v => v.publicationDate), ...variants.map(v => v.existingWork?.firstPublicDate)].filter(Boolean).sort()[0] ?? null,
     onlineDate: preferred.onlineDate,
     topics,
     keywords,

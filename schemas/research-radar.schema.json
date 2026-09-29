@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-radar.schema.json",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "series",
+    "clusters",
+    "ideas",
+    "agenda",
+    "sourceCoverage",
+    "duplicateCandidates",
+    "validation"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "research-radar-1.0.0"
+    },
+    "generatedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "series": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "area",
+          "annual",
+          "monthly",
+          "comparison"
+        ],
+        "properties": {
+          "area": {
+            "enum": [
+              "human-ai",
+              "human-factors"
+            ]
+          },
+          "annual": {
+            "type": "array"
+          },
+          "monthly": {
+            "type": "array"
+          },
+          "comparison": {
+            "type": "object",
+            "required": [
+              "comparable",
+              "themes"
+            ]
+          }
+        }
+      }
+    },
+    "clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "evidenceWorkIds",
+          "workCount",
+          "authorGroups",
+          "preprintCount"
+        ]
+      }
+    },
+    "ideas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "question",
+          "evidence",
+          "noveltyVerified"
+        ],
+        "properties": {
+          "noveltyVerified": {
+            "const": false
+          }
+        }
+      }
+    },
+    "agenda": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "sourceKey",
+          "calls",
+          "themes",
+          "signalKind"
+        ]
+      }
+    },
+    "sourceCoverage": {
+      "type": "array"
+    },
+    "duplicateCandidates": {
+      "type": "array"
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "manuallyValidated",
+        "precision",
+        "recall"
+      ],
+      "properties": {
+        "manuallyValidated": {
+          "const": false
+        },
+        "precision": {
+          "type": "null"
+        },
+        "recall": {
+          "type": "null"
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
-export const ONTOLOGY_VERSION = "human-work-themes-3.0.0";
-export const CLASSIFICATION_VERSION = "weighted-lexical-3.0.0";
-export const ANALYSIS_VERSION = "static-corpus-analysis-2.1.0";
+export const ONTOLOGY_VERSION = "human-work-themes-4.0.0";
+export const CLASSIFICATION_VERSION = "text-supported-lexical-4.0.0";
+export const ANALYSIS_VERSION = "static-corpus-analysis-3.0.0";
 export const TREND_METHOD_VERSION = "equal-windows-2.1.0";
 export const QUESTION_METHOD_VERSION = "evidence-questions-2.1.0";
 export const OPPORTUNITY_METHOD_VERSION = "opportunity-components-2.1.0";
@@ -8,9 +8,9 @@ export const SNAPSHOT_VERSION = "analysis-snapshot-2.0.0";
 
 export const FIELD_WEIGHTS = Object.freeze({
   title: 4,
-  abstract: 1,
-  keyword: 3,
-  external_topic: 2
+  abstract: 2,
+  keyword: 0,
+  external_topic: 0
 });
 
 export const CLASSIFICATION_THRESHOLD = 2;
@@ -29,6 +29,7 @@ export const THEMES = Object.freeze([
     lensQuestion: "Wie kann KI menschliche Lernschleifen und Expertiseerhalt unterstützen, ohne schleichendes Deskilling zu fördern?",
     excludedPhrases: ["machine learning", "deep learning", "reinforcement learning", "representation learning", "federated learning"],
     concepts: [
+      { id: "reflection", label: "Reflexion & Metakognition", terms: ["reflection", "reflective", "metacognition", "metacognitive", "learning transfer", "co-learning", "co learning", "mutual learning"] },
       { id: "learning", label: "Lernen", terms: ["learning", "learner", "learners", "workplace learning", "learning process", "learning outcome"] },
       { id: "deskilling", label: "Deskilling", terms: ["deskilling", "de-skilling", "skill degradation", "skill loss", "skill erosion"] },
       { id: "expertise", label: "Expertise", terms: ["expertise", "expert performance", "skill retention", "knowledge retention"] },

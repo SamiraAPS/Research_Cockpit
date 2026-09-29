@@ -58,6 +58,8 @@ export function searchAndFilterWorks(works, documents, filters = {}) {
   let documentsById = documentMaps.get(documents);
   if (!documentsById) { documentsById = new Map(documents.map(document => [document.id, document])); documentMaps.set(documents, documentsById); }
   return works.flatMap((work) => {
+    if (filters.area && filters.area !== "all" && (filters.area === "personal" ? !work.research?.personalFit?.length : !work.research?.relevance.areas.includes(filters.area))) return [];
+    if (filters.relevanceStatus && filters.relevanceStatus !== "all" && work.research?.relevance.status !== filters.relevanceStatus) return [];
     if (filters.workId && work.id !== filters.workId) return [];
     if (!matchesNovelty(work, filters.novelty, filters.noveltyContext)) return [];
     const document = documentsById.get(work.id) ?? work;
@@ -80,6 +82,7 @@ export function searchAndFilterWorks(works, documents, filters = {}) {
 
 export function sortWorkResults(results, sort = "newest") {
   return [...results].sort((left, right) => {
+    if (sort === "personal") return (right.work.research?.personalFit?.length ?? 0) - (left.work.research?.personalFit?.length ?? 0) || String(right.work.publicationDate ?? "").localeCompare(String(left.work.publicationDate ?? ""));
     if (sort === "relevance") return right.relevance - left.relevance || String(right.work.publicationDate ?? "").localeCompare(String(left.work.publicationDate ?? ""));
     if (sort === "oldest") return String(left.work.publicationDate ?? "").localeCompare(String(right.work.publicationDate ?? "")) || left.work.title.localeCompare(right.work.title);
     if (sort === "title") return left.work.title.localeCompare(right.work.title, "de");

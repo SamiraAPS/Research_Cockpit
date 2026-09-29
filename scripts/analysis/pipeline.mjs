@@ -16,6 +16,9 @@ import {
 } from "./ontology.v3.mjs";
 import { RESEARCH_PROFILE } from "../../site/assets/js/research.js";
 import { buildQuestions } from "./questions.mjs";
+import { buildResearchRadar, coverageFor } from "./radar.mjs";
+import { catalogDocument } from "../../site/assets/js/catalog.js";
+import { acceptedSemanticEntry } from "./semantic.mjs";
 
 function stableStringify(value) {
   if (Array.isArray(value)) return `[${value.map(stableStringify).join(",")}]`;
@@ -63,6 +66,8 @@ function analysisInput(works, calls) {
       title: work.title,
       abstract: work.abstract,
       publicationDate: work.publicationDate,
+      firstPublicDate: work.firstPublicDate,
+      authors: work.authors,
       venue: work.venue,
       topics: work.topics,
       keywords: work.keywords,
@@ -84,6 +89,9 @@ function analysisInput(works, calls) {
 }
 
 function corpusIsComplete(meta) {
+  // Completed requests are not scientific field coverage; changed queries break
+  // comparability with historical generations. The new radar has window ledgers.
+  if (meta.retrievalState) return false;
   if (meta.comparisonMode === "core" && meta.historicalBackfill) {
     return meta.historicalBackfill.complete === true && meta.ingestionProgress?.["openalex:core"]?.complete === true;
   }
@@ -98,25 +106,13 @@ function corpusIsComplete(meta) {
 }
 
 function updateSearchIndex(searchIndex, works, generatedAt) {
-  const byId = new Map(works.map((work) => [work.id, work]));
   return {
     ...searchIndex,
+    schemaVersion: "search-index-2.0.0",
     generatedAt,
     ontologyVersion: ONTOLOGY_VERSION,
-    documents: searchIndex.documents.map((document) => {
-      const work = byId.get(document.id);
-      if (!work) return document;
-      return {
-        ...document,
-        summary: { ...work, abstract: null, topics: [], keywords: [], evidenceTerms: [], scores: {}, externalIds: {},
-          authors: work.authors.map(author => ({ ...author, affiliations: [] })),
-          versions: (work.versions ?? []).filter(version => version.id === work.preferredVersionId),
-          classifiedThemes: work.classifiedThemes.map(theme => ({ ...theme, evidence: [] })) },
-        pagePath: work.pagePath,
-        themes: work.classifiedThemes.map((theme) => theme.theme),
-        evidenceTerms: work.evidenceTerms
-      };
-    })
+    documents: works.map(catalogDocument),
+    themeLabels: Object.fromEntries(THEMES.map(theme => [theme.id, theme.label]))
   };
 }
 
@@ -227,8 +223,15 @@ export async function runAnalysisPipeline(options = {}) {
     firstSeenRunId: work.firstSeenRunId ?? "legacy-import",
     pagePath: `./works/${pageNames[index]}`
   })));
-  const inputHash = sha256(analysisInput(originalWorks, calls));
+  let inputHash = sha256(analysisInput(originalWorks, calls));
   const works = originalWorks.map(classifyWork);
+  const semanticCache = await readJson(options.semanticCache ?? "analysis-cache/semantic.json").catch(error => { if (error.code === "ENOENT") return { entries: {} }; throw error; });
+  const semanticEntries = {};
+  for (const work of works) {
+    const entry = acceptedSemanticEntry(work, semanticCache.entries?.[work.id]);
+    if (entry) { semanticEntries[work.id] = entry; work.research.semantic = { model: entry.model, generatedAt: entry.generatedAt, ...entry.extraction }; }
+  }
+  inputHash = sha256({ corpus: inputHash, semanticEntries, retrievalState: meta.retrievalState ?? null, analysisVersion: ANALYSIS_VERSION });
   const metrics = buildStaticMetrics({
     generatedAt,
     works,
@@ -236,7 +239,18 @@ export async function runAnalysisPipeline(options = {}) {
     corpusComplete: corpusIsComplete(meta),
     comparisonMode: meta.comparisonMode
   });
-  const questionData = buildQuestions(works);
+  const questionData = buildQuestions(works.filter(work => work.research.relevance.status === "included"));
+  const radar = buildResearchRadar(works, calls, meta, generatedAt, semanticEntries);
+  // Retain old data contracts for historical snapshots, but retire unvalidated
+  // combined scores and do not label incomplete comparisons as growing/cooling.
+  for (const opportunity of metrics.opportunities) {
+    opportunity.score = null; opportunity.status = "insufficient";
+    opportunity.uncertainty = { level: "high", reasons: ["Gesamtscore zurückgezogen: keine validierte Gewichtung oder Prognosegüte. Siehe evidenzgebundene Projektideen."] };
+  }
+  if (!corpusIsComplete(meta)) {
+    metrics.publicationTrends.forEach(trend => { trend.status = "insufficient"; });
+    metrics.emergingSignals.forEach(signal => { signal.status = "insufficient"; });
+  }
   const trends = {
     schemaVersion: "trends-2.0.0",
     generatedAt,
@@ -260,6 +274,10 @@ export async function runAnalysisPipeline(options = {}) {
     ...questionData
   };
   const snapshot = buildSnapshot({ generatedAt, inputHash, meta, metrics, questions, works, calls });
+  const observationEnd = generatedAt.slice(0, 10);
+  const observationStart = new Date(Date.parse(generatedAt) - 90 * 86400000).toISOString().slice(0, 10);
+  snapshot.researchEvaluation = { queryVersion: meta.queryVersion, methodVersion: ANALYSIS_VERSION, coverageComplete: coverageFor(meta, "human-ai", observationStart, observationEnd).complete,
+    themeCounts90: Object.fromEntries(THEMES.map(theme => [theme.id, works.filter(work => work.research.relevance.areas.includes("human-ai") && (work.firstPublicDate ?? work.publicationDate) >= observationStart && (work.firstPublicDate ?? work.publicationDate) <= observationEnd && work.classifiedThemes.some(t => t.theme === theme.id)).length])) };
   const snapshotName = `${snapshot.snapshotId}.json`;
   const snapshotEntry = {
     id: snapshot.snapshotId,
@@ -276,6 +294,18 @@ export async function runAnalysisPipeline(options = {}) {
   };
   const updatedMeta = updateMeta(meta, generatedAt, metrics, questions, snapshotIndex.snapshots.length, works.length);
   const updatedSearchIndex = updateSearchIndex(searchIndex, works, generatedAt);
+  const shards = [];
+  await mkdir(path.join(dataDirectory, "search"), { recursive: true });
+  for (let offset = 0; offset < works.length; offset += 200) {
+    const shardPath = `./search/shard-${String(shards.length + 1).padStart(3, "0")}.json`;
+    const documents = works.slice(offset, offset + 200).map(work => ({ id: work.id, abstract: work.abstract, topics: work.topics, keywords: work.keywords }));
+    await atomicJson(path.join(dataDirectory, shardPath), { schemaVersion: "search-shard-1.0.0", generatedAt, documents });
+    shards.push({ path: shardPath, count: documents.length });
+  }
+  for (const name of await readdir(path.join(dataDirectory, "search"))) {
+    if (/^shard-\d+\.json$/.test(name) && !shards.some(shard => shard.path === `./search/${name}`)) await unlink(path.join(dataDirectory, "search", name));
+  }
+  updatedSearchIndex.shards = shards;
 
   let workOffset = 0;
   const classifiedPages = pages.map((page) => {
@@ -289,6 +319,7 @@ export async function runAnalysisPipeline(options = {}) {
     ...classifiedPages.map((page, index) => atomicJson(path.join(worksDirectory, pageNames[index]), page)),
     atomicJson(path.join(dataDirectory, "search-index.json"), updatedSearchIndex),
     atomicJson(path.join(dataDirectory, "trends.json"), trends),
+    atomicJson(path.join(dataDirectory, "research-radar.json"), radar),
     atomicJson(path.join(dataDirectory, "questions.json"), questions),
     atomicJson(path.join(dataDirectory, "snapshots/index.json"), snapshotIndex),
     atomicJson(path.join(dataDirectory, "meta.json"), updatedMeta)

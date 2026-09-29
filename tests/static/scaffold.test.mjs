@@ -58,11 +58,13 @@ test("exposes semantic navigation and transparent UI states", async () => {
   }
 });
 
-test("shows the last successful ingestion instead of substituting the export time", async () => {
+test("shows partial/latest and fully successful ingestion separately from analysis time", async () => {
   const html = await readFile(path.join(site, "index.html"), "utf8");
   const app = await readFile(path.join(site, "assets/js/app.js"), "utf8");
 
-  assert.match(html, /Letzte erfolgreiche Ingestion/);
+  assert.match(html, /Letzter Datenabruf/);
+  assert.match(html, /Letzter vollständig erfolgreicher Abruf/);
+  assert.match(app, /meta\?\.lastIngestionAt/);
   assert.match(app, /meta\?\.lastSuccessfulIngestionAt/);
   assert.doesNotMatch(app, /freshness_value\.textContent\s*=\s*formatDate\(meta\?\.generatedAt/);
 });

@@ -3,7 +3,8 @@ import path from "node:path";
 
 import { fetchWithRetry, SourceRequestError } from "../ingestion/http.mjs";
 import { parseOfficialCallSource, ParserContractError } from "./adapters/index.mjs";
-import { sha256 } from "./adapters/shared.mjs";
+import { sha256, plainText, elementBlocks, parseDate } from "./adapters/shared.mjs";
+import { manualCandidates } from "./manual.mjs";
 import {
   AGENDA_SIGNALS_SCHEMA_VERSION, CALLS_REGISTRY_VERSION, CALLS_SCHEMA_VERSION, OFFICIAL_CALL_SOURCES,
   selectOfficialCallSources
@@ -101,6 +102,8 @@ async function ingestSource(source, options, generatedAt, previousStatus) {
       sourceContentHash,
       calls: parsed.calls.map((call) => ({
         ...call,
+        verificationEvidence: { method: "automated-parser", checkedAt: generatedAt, sourceUrl: source.officialUrl, contentHash: sourceContentHash,
+          deadlineQuote: elementBlocks(html, ["li", "tr", "p"]).map(plainText).find(text => call.deadlineAt && parseDate(text) === call.deadlineAt.slice(0, 10))?.slice(0, 500) ?? null },
         parserVersion: source.parserVersion,
         sourceVersion: source.sourceVersion,
         sourceKey: source.key,
@@ -267,6 +270,8 @@ export async function runCallsIngestion(options = {}) {
     };
   });
   const freshCalls = results.flatMap((result) => result.calls);
+  const manual = await readJson(options.manualCallsFile ?? "config/manual-calls.json", { schemaVersion: "manual-calls-1.0.0", items: [] });
+  freshCalls.push(...manualCandidates(manual, generatedAt).filter(call => resultByKey.get(call.sourceKey)?.status !== "verified"));
   const merged = mergeCalls(previousCalls.items ?? [], freshCalls, resultByKey, generatedAt);
   const allSourcesSelected = selectedKeys.size === OFFICIAL_CALL_SOURCES.length;
   const callsStatus = datasetStatus(results, merged.items.length, allSourcesSelected);

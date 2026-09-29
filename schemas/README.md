@@ -7,6 +7,9 @@ Alle Vertr채ge verwenden JSON Schema Draft 2020-12. Jede ausgelieferte Datei tr�
 | `meta.json` | `meta.schema.json` | Einstiegspunkt, Versionen, Z채hlwerte, Quellen- und Qualit채tsstatus |
 | `works/page-*.json` | `works-page.schema.json` + `publication.schema.json` | Paginierte Publikationen und Preprints |
 | `search-index.json` | `search-index.schema.json` | Reduzierter, clientseitig durchsuchbarer Index |
+| `search/shard-*.json` | `search-shard.schema.json` | Bei Suchanfragen nachgeladene Abstracts und Suchbegriffe |
+| `research-radar.json` | `research-radar.schema.json` | Zeitreihen, explorative Cluster, Agenda und belegte Projektideen |
+| `works/page-*.json`: `research` | `research-evidence.schema.json` | Relevanzentscheidung und 체berpr체fbare Textbelege |
 | `calls.json` | `calls.schema.json` | Verifizierte Calls und Fristen |
 | `trends.json` | `trends.schema.json` | Zeitreihen und belegte Themensignale |
 | `questions.json` | `questions.schema.json` | Forschungsfragen mit Evidenzstatus |

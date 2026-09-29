@@ -116,10 +116,128 @@
             "format": "uri"
           },
           "summary": {
-            "$ref": "common.schema.json#/$defs/work"
+            "oneOf": [
+              {
+                "$ref": "common.schema.json#/$defs/work"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "firstSeenAt",
+                  "firstSeenRunId",
+                  "modes",
+                  "providers",
+                  "areas",
+                  "relevance",
+                  "personalFit"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "journal",
+                      "preprint",
+                      "proceedings"
+                    ]
+                  },
+                  "doi": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "sourceName": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "firstSeenAt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date-time"
+                  },
+                  "firstSeenRunId": {
+                    "type": "string"
+                  },
+                  "citedByCount": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "dataStatus": {
+                    "type": "string"
+                  },
+                  "modes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "providers": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "areas": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "human-ai",
+                        "human-factors"
+                      ]
+                    }
+                  },
+                  "relevance": {
+                    "enum": [
+                      "included",
+                      "uncertain",
+                      "excluded"
+                    ]
+                  },
+                  "personalFit": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            ]
           },
           "pagePath": {
             "type": "string"
+          }
+        }
+      }
+    },
+    "themeLabels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "shards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "count"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^\\./search/shard-[0-9]+\\.json$"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
           }
         }
       }
