@@ -1,7 +1,152 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-06T12:03:50.749Z",
+  "generatedAt": "2026-10-07T11:49:04.786Z",
   "documents": [
+    {
+      "id": "doi:10.2196/99807",
+      "abstract": "Background Electronic medical charts within Workplace Safety and Insurance Board (WSIB) specialty programs contain rich but unstructured clinical and sociodemographic data essential for injury classification, treatment planning, and compensation decisions. Manual chart review is time-consuming, inconsistent, and susceptible to reviewer bias. Large language models (LLMs) extract complex information from unstructured clinical text, yet their application to workplace injury rehabilitation remains unexplored. Objective This study will evaluate the accuracy, fairness, and methodological implications of using LLMs to extract clinical and rehabilitative information from WSIB medical charts at Trillium Health Partners (THP), Canada. We will assess model performance, examine algorithmic bias across demographic subgroups, and explore ethical implications for clinical decision-making and workplace compensation. Methods We will conduct a retrospective review of 50 medical charts from the WSIB Back and Neck specialty program at THP, spanning January 2018 to December 2024. General-purpose models (Qwen3-VL-8B and InternVL3.5-8B) and domain-specific biomedical models (MedGemma-27B and LLaMA-3-Meditron-8B) will be evaluated off the shelf using zero-shot and few-shot prompting; the biomedical models will also be fine-tuned. Charts will be partitioned at the chart level into development, training, and held-out test sets, preventing leakage across purposes. Ground truth will be established by independent human annotation of all 50 charts, with interannotator agreement quantified using Cohen κ. The primary outcome is the macroaveraged F1-score across categorical variables on the held-out test set; secondary outcomes are the per variable F1-score, mean absolute error and root mean squared error for continuous variables, and span-level F1-score. Progression to the larger study requires a macroaveraged F1-score of at least 0.80, a pragmatic feasibility criterion; fairness and continuous-variable results are supporting outcomes. Algorithmic fairness will be examined using demographic parity and equalized odds across subgroups. A secure hybrid architecture will keep all identifiable personal health information within the THP infrastructure, with cloud compute restricted to transient processing. Results This study was funded by the Data Sciences Institute at the University of Toronto in April 2025; the award supported protocol development and ended on April 30, 2026. As of August 12, 2026, neither had a research ethics application been submitted nor had any chart been accessed. Applications to the THP and University of Toronto research ethics boards are anticipated in late 2026, and no data will be retrieved or processed before approval from both boards. Contingent on approval and further funding, data collection is anticipated through 2027, analysis in late 2027 to early 2028, and results submitted for publication in 2028. Conclusions This protocol describes the first systematic evaluation of LLM-based data extraction applied to workplace injury medical charts. Findings will inform best practices for the responsible, reproducible, and equitable integration of these tools into occupational health and workers’ compensation decision-making. International Registered Report Identifier (IRRID) PRR1-10.2196/99807",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Advanced Causal Inference Techniques",
+        "Occupational Health and Safety Research"
+      ],
+      "keywords": [
+        "Categorical variable",
+        "Data extraction",
+        "Protocol (science)",
+        "Specialty",
+        "Chart",
+        "Test (biology)",
+        "Workers' compensation",
+        "Medical record",
+        "Patient safety"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.26384",
+      "abstract": "Medical image interpretation is high-volume and time-consuming, and while AI interpretation can reduce workload, fully autonomous deployment carries potential safety concerns and low specificity may in practice lead to increased clinician workload. Learning to Defer (L2D) addresses this by selectively routing cases between autonomous prediction and human experts by learning from input features and AI model and human performance. While theoretical guarantees have been proven for L2D, its performance has not been validated on real-world medical datasets with human reader annotations. We evaluate the predictor-rejector formulation of two-stage L2D, where the AI predictor model is fixed and separate from the trainable routing or rejector model, on Collab-CXR, a multilabel chest X-ray dataset with multiple human annotations per case. This is the first work to look at L2D in the context of real-world medical imaging data with human annotations. We further introduce a new setup, L2D with Guidance, where the decision space is extended to three choices: predict autonomously, defer to a human expert, or defer to a human expert and provide AI guidance. We compare multiple rejector architectures and loss functions, and different input feature availabilities. This is reproduced on two larger datasets, VinDr-CXR and CheXpert. Our results show that two-stage L2D with Guidance outperforms classic two-stage learning to defer, as well as human-alone, AI-alone and AI-guided human baselines. Notably, this performance is achieved with simpler loss functions compared to formally defined L2D surrogate loss functions in current literature.",
+      "topics": [
+        "COVID-19 diagnosis using AI",
+        "Artificial Intelligence in Healthcare and Education",
+        "Advanced Neural Network Applications"
+      ],
+      "keywords": [
+        "learning to defer",
+        "human-AI collaboration",
+        "chest X-ray interpretation",
+        "medical image interpretation",
+        "surrogate loss functions",
+        "clinician workload",
+        "Context (archaeology)",
+        "Software deployment",
+        "Feature (linguistics)",
+        "Routing (electronic design automation)",
+        "Interpretation (philosophy)",
+        "Deep learning",
+        "Training set",
+        "Medical imaging"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.26290",
+      "abstract": "Causal tabular foundation models amortize effect estimation across synthetic mechanisms, but latent-effect supervision rewards posterior shrinkage rather than encoding the repeated-sample response needed in a fixed deployment population. We introduce fluctuation-supervised pretraining (FSP): each synthetic table is labeled by its average treatment effect plus its efficient influence-function fluctuation; deployment remains a frozen forward pass. Along the path $T_{λ,P}=θ(P)+λP_nψ_P$, we prove an endpoint transition: every fixed $λ<1$ retains label ambiguity of order $(1-λ)^2/n$, whereas full fluctuation makes the Gaussian label observable and reduces optimal finite-stratum causal label-prediction risk to order $n^{-2}$. A finite-pretraining bound combines label, network, episode-sampling, and optimization errors; its sampling defect controls fixed-mechanism bias, mean squared error, variance, Gaussian approximation, and, with variance-head accuracy, studentized coverage. Complementary lower bounds separate local $n^{-1}$ ATE risk from the $\\log N/M$ excess risk of generic finite-dictionary episode learning. Experiments trace the learned sampling response. Across 24 nonlinear continuous-covariate cells at trained context lengths, continuous-row FSP lowers checkpoint-mean macro RMSE by 7.0% versus S-learner and wins all 12 weak-overlap cells; validation-selected Summary FSP deploys $11.6\\times$ faster per table in our warm one-thread benchmark. Under effect shift, matched Raw FSP lowers mean-checkpoint RMSE by 54.2% and teacher defect by 99.0% versus latent-effect supervision, and RMSE by 10.2% versus the released CausalPFN-S checkpoint. Known-effect semisynthesis tests coverage; two randomized-study evaluations show that lower RMSE can coexist with residual attenuation.",
+      "topics": [
+        "Advanced Causal Inference Techniques",
+        "Bayesian Modeling and Causal Inference",
+        "Gaussian Processes and Bayesian Inference"
+      ],
+      "keywords": [
+        "Ambiguity",
+        "Sampling (signal processing)",
+        "Encoding (memory)",
+        "Path (computing)",
+        "Gaussian",
+        "Point (geometry)",
+        "Table (database)",
+        "TRACE (psycholinguistics)",
+        "Gaussian process"
+      ]
+    },
+    {
+      "id": "doi:10.1093/bjr/tqag233",
+      "abstract": "Bismi Rahman, BSc; Letter to Editor re: Beyond Radiation Exposure: Occupational Health Challenges Across the Modern Radiology Workforce, British Journal of",
+      "topics": [
+        "Radiation Dose and Imaging",
+        "Radiology practices and education",
+        "Advances in Oncology and Radiotherapy"
+      ],
+      "keywords": [
+        "Workforce",
+        "Letter to the editor",
+        "Occupational safety and health",
+        "Occupational medicine",
+        "MEDLINE",
+        "Radiation exposure"
+      ]
+    },
+    {
+      "id": "doi:10.47119/ijrp1002051920269779",
+      "abstract": "This study examined the relationship between the level of conformity to Department of Education (DepEd) policies and the motivation and performance of Project Development Officer I (PDO I). Grounded in Self-Determination Theory and Maslow's Hierarchy of Needs, the study investigated how adherence to organizational policies was associated with employees' intrinsic and extrinsic motivation and their overall job performance. The study recognized the critical role of PDO I personnel in their respective school division offices. The study addressed the limited studies focusing on non-teaching personnel, especially Project Development Officer I within the Department of Education. This study employed a quantitative research design , specifically a descriptive-correlational approach , to examine the conformity to Department of Education (DepEd) policies of Project Development Officers and their motivation and performance. Results revealed that the respondents exhibited a high level of conformity to DepEd policies, high levels of intrinsic and extrinsic motivation, and high job performance. Educational attainment was found to have a significant positive relationship with conformity to DepEd policies, while length of service showed a significant negative relationship with intrinsic motivation. No significant relationships were found between the respondents' profile variables and job performance. Furthermore, conformity to DepEd policies was positively associated with both motivation and performance, indicating that adherence to organizational policies contributes to improved employee engagement and work outcomes. It is recommended that DepEd continue strengthening policy implementation while promoting professional development opportunities, supportive leadership, and workplace practices that foster autonomy, competence, and relatedness among Project Development Officers. The findings contribute to the growing body of knowledge on organizational behavior in the public education sector and provide evidence-based insights for improving human resource and organizational development initiatives within DepEd.",
+      "topics": [
+        "Human Resource Development and Performance Evaluation",
+        "Competency Development and Evaluation",
+        "Motivation and Self-Concept in Sports"
+      ],
+      "keywords": [
+        "Conformity",
+        "Officer",
+        "Job performance",
+        "Career development",
+        "Socialization",
+        "Contingency theory",
+        "Goal orientation",
+        "Hierarchy"
+      ]
+    },
+    {
+      "id": "doi:10.4018/979-8-3373-9599-9.ch012",
+      "abstract": "This chapter discusses the impact of gamification strategies on HR technology platforms on employee engagement and retention. Based on correlation analysis, hierarchical logistic regression, and machine learning classification of the IBM HR Analytics dataset (N = 1,470), on the Kaggle, it is found that engagement variables add 5.2% incremental Pseudo R-squared to predict attrition. Job involvement was the most effective protector (OR = 0.61, p < .001), decreasing chances of attrition by 39 per unit, then job satisfaction (OR = 0.74), and environment satisfaction (OR = 0.76). XGBoost had an accuracy of 92.8 percent and AUC-ROC of 0.979 with SHAP analysis showing variables of engagement within the top five predictive variables. These results give evidence-based principles to develop gamified HR interventions that address intrinsic motivation to decrease voluntary turnover.",
+      "topics": [
+        "AI and HR Technologies",
+        "Employer Branding and e-HRM",
+        "Personality Traits and Psychology"
+      ],
+      "keywords": [
+        "Job satisfaction",
+        "IBM",
+        "Attrition",
+        "Psychological intervention",
+        "Human resource management",
+        "Analytics",
+        "Human resources",
+        "Logistic regression"
+      ]
+    },
+    {
+      "id": "doi:10.1016/j.epsr.2026.114242",
+      "abstract": "Undetected transmission line outages degrade operator situational awareness and can increase the risk of incorrect control actions and escalating system stress. To improve transmission observability for outage detection under limited monitoring, this paper introduces the Line Outage Impact Factor (LOIF), a new sensitivity indicator that quantifies the relative change in power flow experienced by an observed line following an outage elsewhere. Unlike the conventional Line Outage Distribution Factor (LODF), which normalizes by the pre-outage flow on the disconnected line, LOIF normalizes by the pre-outage flow on the observed line, offering a better indicator for the sensitivity of the observed line to another line’s outage and, thus, facilitating the selection of monitored lines that enhance system observability. Building on LOIF, we propose two observed transmission line (OTL) selection strategies to maximize outage coverage with a small number of monitoring locations. With OTLs selected in the IEEE 30-bus, 118-bus, and the Wisconsin 1664-bus systems, we performed outage detection using different machine learning classifiers. Results show that, for the same number of OTLs, LOIF-based selections generally achieve higher F 1 -scores than LODF-based selections, with the most consistent gains observed in the large 1664-bus system, demonstrating LOIF’s potential for scalable transmission monitoring.",
+      "topics": [
+        "Power Systems Fault Detection",
+        "Power System Optimization and Stability",
+        "Islanding Detection in Power Systems"
+      ],
+      "keywords": [
+        "line outage distribution factors",
+        "transmission line outages",
+        "outage detection",
+        "transmission monitoring",
+        "operator situational awareness",
+        "machine learning classifiers",
+        "Blackout",
+        "Observability",
+        "Sensitivity (control systems)",
+        "Electric power transmission",
+        "Transmission line",
+        "Transmission (telecommunications)",
+        "Line (geometry)",
+        "Power (physics)"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2609.25715",
       "abstract": "Though artificial intelligence (AI) increasingly transforms modern medicine, its integration into Traditional Chinese Medicine (TCM) has been relatively slow, primarily due to TCM's reliance on holistic, subjective diagnostic methods---namely Inspection, Auscultation and Olfaction, Inquiry, and Palpation(I-AOI-P)---which are difficult to align with quantitative, standardized medical systems. In this work, we introduce a Unification Framework for Multimodal Data (UFMD), which automatically processes tongue and pulse images into structured, clinically standard descriptions, integrating multi-source diagnostic information into a unified digital record of I-AOI-P process. Building on this structured data, we create LingLan-14B, a TCM-specific large language model fine-tuned via supervised learning to emulate the diagnostic logic and workflow of I-AOI-P process. Experimental results show that our method significantly enhances diagnostic accuracy, achieving a relative improvement of 103.5% over the baseline (62.72% vs. 30.82%) and reaching an F1-score of up to 82%.",
@@ -3759,136 +3904,6 @@
         "Resource (disambiguation)",
         "Organizational behavior",
         "Relation (database)"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22879165",
-      "abstract": "Job satisfaction and organizational commitment are associated with employee performance, yet these relationships do not explain how favorable attitudes become effective contributions. This article develops a conceptual model of that transition through an integrative reading of research on work attitudes, meaningful work, social exchange, motivation, and work design. The model proposes that employees interpret satisfying work experiences in relation to organizational purposes, develop affective commitment, form intentions to reciprocate valued treatment, and direct available resources toward specific work activities. Organizational justice is proposed to condition selected attitudinal transitions, while the design of digital work may facilitate or obstruct the conversion of resource allocation into performance. The synthesis identifies three central problems in existing explanations: insufficient separation of adjacent constructs, limited evidence for temporal ordering, and the treatment of resources as available without examining their deployment. Eight propositions address these problems while retaining direct, reverse, and competing explanations. The article also specifies measurement boundaries, disconfirming observations, and a staged research agenda. Its contribution is a conditional account of how work attitudes may influence task, contextual, and other role contributions without treating commitment as sufficient for performance or additional effort as inherently beneficial. The model remains untested. Its value depends on whether the proposed mechanisms can be distinguished empirically and explain behavior beyond established constructs such as meaningful work, perceived support, and engagement.",
-      "topics": [
-        "Job Satisfaction and Organizational Behavior",
-        "Cyberloafing and Workplace Behavior",
-        "Workplace Spirituality and Leadership"
-      ],
-      "keywords": [
-        "Organizational commitment",
-        "Job satisfaction",
-        "Organizational justice",
-        "Work (physics)",
-        "Affective events theory",
-        "Job performance",
-        "Resource (disambiguation)",
-        "Organizational behavior",
-        "Relation (database)"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202609.1768.v1",
-      "abstract": "Large language models have transformed the landscape of natural language processing, but their practical impact fades rapidly at the edges of under-resourced languages. Many linguistic communities lack the substantial digital footprint needed to effectively leverage standard foundation models. In this paper, we present a systematic review of recent adaptation literature to explore the strategies by which under-resourced languages can benefit from pretrained architectures, avoiding the need to train from zero. With a PRISMA-guided protocol, this study tracks multilingual backbones, localized LLMs, engineering practice, and evaluation metrics. The field’s trajectory is clear: research has largely moved away from generic multilingual representation learning towards language-specific fine-tuning, instruction alignment, parameter-efficient adaptations, vocabulary adaptation, and cross-lingual transfers. However, progress is uneven, with scarce data, poorly tuned benchmarks, and inconsistent access to computational resource challenging downstream usefulness. As demonstrated by our synthesis, architecture updates alone are insufficient; instead, technical adaptation and local resource cultivation must be seen as a single community-anchored ecosystem.",
-      "topics": [
-        "ICT in Developing Communities",
-        "Natural Language Processing Techniques",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "Vocabulary",
-        "Adaptation (eye)",
-        "Leverage (statistics)",
-        "Resource (disambiguation)",
-        "Sketch",
-        "Natural language"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10724796/v1",
-      "abstract": null,
-      "topics": [
-        "Sepsis Diagnosis and Treatment",
-        "Artificial Intelligence in Healthcare and Education",
-        "Machine Learning in Healthcare"
-      ],
-      "keywords": [
-        "Guideline",
-        "Rigour",
-        "Ranking (information retrieval)",
-        "Inference",
-        "Triage",
-        "Quality (philosophy)",
-        "Sepsis",
-        "Clinical Practice",
-        "Workflow"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22873601",
-      "abstract": "Presented at the 17th Conference of the European Academy of Occupational Health Psychology (EAOHP), Helsinki, Finland, June 15–17, 2026.",
-      "topics": [
-        "Flow Experience in Various Fields",
-        "Job Satisfaction and Organizational Behavior",
-        "Mind wandering and attention"
-      ],
-      "keywords": [
-        "Work (physics)",
-        "Job performance",
-        "Intervention (counseling)",
-        "Work performance",
-        "Flow (mathematics)",
-        "Job analysis"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22873600",
-      "abstract": "Presented at the 17th Conference of the European Academy of Occupational Health Psychology (EAOHP), Helsinki, Finland, June 15–17, 2026.",
-      "topics": [
-        "Flow Experience in Various Fields",
-        "Job Satisfaction and Organizational Behavior",
-        "Mind wandering and attention"
-      ],
-      "keywords": [
-        "Work (physics)",
-        "Job performance",
-        "Intervention (counseling)",
-        "Work performance",
-        "Flow (mathematics)",
-        "Job analysis"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10754540/v1",
-      "abstract": null,
-      "topics": [
-        "Synthetic Aperture Radar (SAR) Applications and Techniques",
-        "Groundwater and Watershed Analysis",
-        "Karst Systems and Hydrogeology"
-      ],
-      "keywords": [
-        "Fuzzy logic",
-        "Groundwater",
-        "Weighting",
-        "Artificial neural network",
-        "Interferometric synthetic aperture radar",
-        "Support vector machine",
-        "Aquifer",
-        "Synthetic aperture radar"
-      ]
-    },
-    {
-      "id": "doi:10.9734/arjass/2026/v24i10947",
-      "abstract": "Sikad drivers provide short-distance, pedal-powered transport in many Philippine communities, yet their working lives remain underrepresented in qualitative scholarship. This phenomenological study explored the lived experiences of ten long-term male sikad drivers in Ozamiz City, Misamis Occidental, Philippines. Participants were purposively selected from drivers who were married, had at least two children, and had more than 15 years of experience. In-depth interviews examined sources of motivation, everyday hardships, coping practices, and hopes for the future. The accounts were synthesised into four overarching themes: (1) family as the central source of purpose and dignity; (2) poverty, restricted opportunity, and social vulnerability; (3) faith and everyday coping; and (4) hope, perseverance, and resourcefulness. Participants described unstable earnings, difficulty meeting food and health needs, limited alternatives to informal work, road-safety concerns, competition from motorised transport, housing insecurity, and experiences of disrespect. At the same time, they emphasised responsibility to family, children's education, honesty, religious faith, gratitude, and persistent effort. The findings show that resilience among these drivers is relational and practical rather than simply individual: it is sustained by family obligations, spiritual meaning, everyday routines, and adaptive livelihood strategies while remaining constrained by informal employment and material insecurity. Because the sample was small, homogeneous, and context-specific, the findings are not intended to serve as population estimates. They nevertheless provide locally grounded evidence that can inform more inclusive discussions of informal transport, occupational health, road safety, social protection, and livelihood support.",
-      "topics": [
-        "Urban Transport and Accessibility",
-        "Older Adults Driving Studies",
-        "Traffic and Road Safety"
-      ],
-      "keywords": [
-        "Livelihood",
-        "Lived experience",
-        "Qualitative research",
-        "Coping (psychology)",
-        "Interpretative phenomenological analysis",
-        "Psychological resilience",
-        "Grounded theory",
-        "Population",
-        "Faith"
       ]
     }
   ]

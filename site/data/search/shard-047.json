@@ -1,7 +1,133 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-06T12:03:50.749Z",
+  "generatedAt": "2026-10-07T11:49:04.786Z",
   "documents": [
+    {
+      "id": "doi:10.20944/preprints202608.2288.v1",
+      "abstract": "Object detection has evolved dramatically over three decades, transitioning from handcrafted features to deep learning, transformers, and now large language models. This paper provides a comprehensive systematic review of this evolution, covering traditional methods (SIFT, HOG, Viola-Jones), CNN-based single- and two-stage detectors (R-CNN family, YOLO v1–v12, SSD), transformer-based architectures (DETR, ViT, Swin), and emerging LLM-driven approaches (GPT-4V, Grounding DINO, YOLO-World). We benchmark and compare these methods using key metrics—mAP, IoU, FPS—and analyze over 50 datasets across generic, autonomous driving, medical, remote sensing, and agricultural domains. Our critical synthesis identifies persistent research gaps: lightweight edge deployment, sensor fusion for real-time systems, bias and fairness in AI, and multimodal vision-language integration. By consolidating three decades of progress and outlining future challenges, this survey serves as a valuable resource for researchers and practitioners developing accurate, efficient, and reliable object detection systems.",
+      "topics": [
+        "Advanced Neural Network Applications",
+        "COVID-19 diagnosis using AI",
+        "Artificial Intelligence Applications"
+      ],
+      "keywords": [
+        "Object detection",
+        "Key (lock)",
+        "Benchmark (surveying)",
+        "Resource (disambiguation)",
+        "Object (grammar)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.30311",
+      "abstract": "Social media platforms increasingly use AI-based credibility indicators to help users judge misinformation. Unlike individual human-AI decision-making, these indicators are embedded in information spread: users see both an AI prediction and earlier judgments shaped by the same AI, and their own judgments may then enter the public history. Yet how to analytically characterize this process remains under-explored. We therefore introduce a social-learning lens for this setting by extending the classical Bayesian cascade model with the AI indicator as a shared public signal. The resulting Gateway condition compares the evidence from the AI prediction with users' private impressions. Through this view, we show that AI changes what public history means. Crowd agreement may reflect accumulated independent human evidence, or repeated dependence on the same AI prediction. This creates a preservation-correction trade-off: stronger reliance on AI can preserve correct predictions, but can also lock in incorrect ones by blocking corrective private impressions. We calibrate the model using human-subject data on news veracity judgments. Although the AI outperforms human users, the average user weights it below her own impression but above several peer judgments, while individual users vary from discounting the AI to relying on it enough to cascade. Simulations show that over-reliance on a weak AI is especially harmful, and that diversifying AI signals across users can better keep the crowd informative. We conclude with implications for understanding human-AI interaction in information spread and designing misinformation interventions.",
+      "topics": [
+        "cs.HC",
+        "cs.AI",
+        "cs.SI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.31137",
+      "abstract": "Ontology alignment (OA) has evolved through several methodological paradigms, ranging from lexical and structural aligners to knowledge graph embedding (KGE) models and, more recently, Large Language Model (LLM)-based approaches. Although modern OA frameworks provide unified ecosystems for deploying these heterogeneous aligners, mechanisms for systematically reconciling their complementary and sometimes conflicting predictions remain relatively underexplored. We present OntoAligner-Ensemble, a modular and aligner-agnostic framework that combines candidate correspondences through a configurable two-stage process comprising voting-based fusion strategies followed by post-fusion selection policies. The framework supports any aligner implemented within OntoAligner that produces candidate correspondences, enabling diverse alignment paradigms to be integrated through a unified decision process. To demonstrate its effectiveness, we instantiate the framework using representative lightweight string-aligner, KGE-based, and Retrieval-Augmented Generation aligners powered by both open-weight and API-based LLMs. We evaluate individual aligners and ensemble configurations across eight benchmark tasks from five OAEI tracks spanning biomedical to beyond-equivalence. The results show that ensemble fusion consistently improves the balance between precision and recall and frequently outperforms standalone aligners across diverse domains. Furthermore, our analysis reveals that ensemble composition directly affects the precision-recall trade-off: heterogeneous cross-paradigm ensembles generally improve precision, whereas homogeneous LLM ensembles more often achieve higher overall F1-scores. These findings demonstrate that systematic ensemble learning offers a robust and reproducible strategy for OA while providing practical guidance for selecting ensemble compositions under different alignment scenarios.",
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Biomedical Text Mining and Ontologies",
+        "Bioinformatics and Genomic Networks",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Ensemble learning",
+        "Benchmark (surveying)",
+        "Modular design",
+        "Ontology alignment",
+        "Embedding",
+        "Graph",
+        "Selection (genetic algorithm)",
+        "Homogeneous"
+      ]
+    },
+    {
+      "id": "arxiv:2608.30179",
+      "abstract": "Open-source autonomous driving systems provide an inspectable software foundation for intelligent vehicle research. Under real-vehicle deployment conditions, the recording and review of experimental conditions are important for interpreting system behavior and reusing experimental results. However, in a shared real-vehicle environment involving multiple vehicles, task processes, code modifications, and hardware testing feedback are often distributed across different teams and experimental stages, making it challenging to maintain continuous and reviewable experimental records. To address this limitation, this paper examines an Apollo-on-Hongqi EV environment and proposes a real-vehicle experimental framework. The framework connects multi-vehicle experiments, repository-based code reuse and software-hardware testing feedback within a unified review process. Large language models and RL-based testing serve as auxiliary components for record organization, anomaly summarization, and simulation-based candidate scenario generation. Based on this setting, this paper analyzes preliminary evidence from multi-vehicle collaborative experimentation, code and experimental-skill sharing, and software-hardware collaborative testing. The analysis shows that experimental records can be examined together with their operating conditions, providing a reviewable basis for Apollo-on-Hongqi EV research.",
+      "topics": [
+        "Autonomous Vehicle Technology and Safety",
+        "Traffic control and management",
+        "Human-Automation Interaction and Safety",
+        "cs.SE",
+        "cs.RO"
+      ],
+      "keywords": [
+        "Reuse",
+        "Software deployment",
+        "Code reuse",
+        "Software",
+        "Code (set theory)",
+        "Task (project management)",
+        "Software system",
+        "Software testing",
+        "Static program analysis"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.30528",
+      "abstract": "Reinforcement learning (RL) is used to improve the reasoning abilities of LLMs, while training data span heterogeneous tasks. However, most RL post-training pipelines rely on fixed or manually designed task mixtures, even though task usefulness changes as training progresses. Online curriculum methods often define learnability by update magnitude, ignoring whether the update translates into reward gains, which can misallocate rollout budget toward tasks with large but ineffective updates. We propose PAC, a Progress-Augmented Advantage Curriculum for multi-task RL of LLMs that combines two task-level signals: advantage-derived learnability, which measures the magnitude of the policy update a task can induce, and recent reward gains, which show whether those updates have improved task performance. A Bayesian Thompson Sampling controller uses these signals to allocate rollouts across tasks during GRPO training. We evaluate PAC under two settings: a multi-level reasoning setting and a multi-domain reasoning setting. PAC improves sample efficiency and final performance: it reaches comparable validation scores with fewer rollout steps and achieves higher final averages than random sampling and advantage-based curriculum baselines in both settings. These results show that jointly tracking advantage signals and actual reward gains yields an effective online curriculum for LLM post-training.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Robot Manipulation and Learning",
+        "Advanced Bandit Algorithms Research"
+      ],
+      "keywords": [
+        "Reinforcement learning",
+        "Task (project management)",
+        "Curriculum",
+        "Learnability",
+        "Bayesian probability",
+        "Tracking (education)",
+        "Variety (cybernetics)",
+        "Task analysis"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10399485/v1",
+      "abstract": null,
+      "topics": [
+        "Visual and Cognitive Learning Processes",
+        "Emotion and Mood Recognition",
+        "Virtual Reality Applications and Impacts"
+      ],
+      "keywords": [
+        "Bayesian probability",
+        "Cognition",
+        "Bivariate analysis",
+        "Residual",
+        "Bayesian inference",
+        "Cognitive load",
+        "Association (psychology)",
+        "Multilevel model",
+        "Generalization"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10753939/v1",
+      "abstract": null,
+      "topics": [
+        "Drilling and Well Engineering",
+        "Hydraulic Fracturing and Reservoir Analysis",
+        "Reservoir Engineering and Simulation Methods"
+      ],
+      "keywords": [
+        "Monte Carlo method",
+        "Particle filter",
+        "Backup",
+        "Probabilistic logic",
+        "Support vector machine",
+        "Interpretability",
+        "Field (mathematics)",
+        "Artificial neural network"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.30572",
       "abstract": "In recent years, autonomous AI agents such as GitHub Copilot and Claude Code have been rapidly gaining popularity. This study reports on the practical implementation of Spec-Driven Development, a software development methodology premised on AI agents, within a Software Development Project-Based Learning (SDPBL) course for third-year undergraduate students. We defined a workflow consisting of four phases, namely investigation, planning, implementation, and review. We also established an environment tailored for the SDPBL course where AI agents generate documentation and code during each phase. We analyzed the results from three perspectives, namely students' subjective AI usage, implementation throughput, and code comprehension. The analysis reveals that AI usage patterns varied across development phases and teams. Moreover, while AI agent utilization increased implementation throughput, it also tended to encourage students to proceed with development without fully understanding the code. This study demonstrates that regular verification of code comprehension by instructors and appropriate feedback are essential for maintaining educational effectiveness when introducing SDD into SDPBL.",
@@ -3502,142 +3628,6 @@
         "Computation",
         "Hidden Markov model",
         "Cache"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202608.2057.v1",
-      "abstract": "Large language model (LLM) agents are evolving from single-turn text generators into long-running systems capable of multi-step reasoning, tool use, persistent memory, and reusable skill development. Reinforcement learning from verifiable rewards (RLVR) can improve agent reliability, but existing approaches commonly treat verification as a fixed component of the reward structure, creating challenges related to sparse credit assignment, verifier reliability, reward hacking, path compliance, and verification cost. We introduce Budgeted Adaptive Verification with Asymmetric Rewards (BAVAR), a framework that formulates verification as a sequential, resource-constrained decision problem. BAVAR selectively determines what to verify, when verification is valuable, which verifier to invoke, and how verified evidence should influence learning based on uncertainty, action criticality, verifier reliability, expected verification value, and remaining computational budget. It combines reliability-gated positive process rewards with persistent penalties for path violations and extends verification to persistent memories and reusable skills. In an illustrative evaluation under matched verification budgets, BAVAR achieved 72.6% safe verified success, compared with 67.1% for uniform dense verification and 58.4% for outcome-only RLVR. Relative to dense verification, BAVAR reduced verification cost per safe success by 45.5% while using 47.8% fewer verifier tokens. It also reduced verified path violations to 7.2 per 100 trajectories, compared with 20.4 for outcome-only RLVR, and reduced successful verifier exploitation to 4.8%, compared with 15.9% for a single-judge baseline and 18.6% for outcome-only RLVR. For persistent artifacts, BAVAR achieved 88.7% held-out reuse success, compared with 81.3% for dense verification. These simulated findings suggest that adaptive allocation of verification resources can improve safe agent performance while reducing computational and verification overhead, providing a principled foundation for scalable verification of long-running autonomous agents.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Explainable Artificial Intelligence (XAI)",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "Runtime verification",
-        "Reuse",
-        "Functional verification",
-        "Reinforcement learning",
-        "Software verification",
-        "Intelligent verification",
-        "Verifiable secret sharing",
-        "Formal verification"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.28408",
-      "abstract": "Tabular data, as a core data format in machine learning, often lacks the discriminative power needed for high-performance modeling due to insufficient feature informativeness. Automated Feature Engineering (AutoFE) overcomes this by automating feature generation and selection, ensuring both model performance and operational efficiency. However, traditional AutoFE often yield features with poor interpretability because they rely on blind mathematical transformations, while large language models (LLM)-based AutoFE faces challenges in requiring costly multi-round iterations to generate high-utility features to effectively enhance model performance, compounded by inherent risks of bias and hallucination. In this paper, we combine symbolic regression with LLMs for feature engineering (SymboLLM-FE) to solve these challenges. We extract mathematically expressive formulas strongly correlated with the target via symbolic regression, which can enhance model performance, then refine them by LLMs with rich prior knowledge to ensure interpretability. Empirical results on six real-world datasets and four Kaggle competitions demonstrate that SymboLLM-FE outperforms existing AutoFE. SymboLLM-FE also addresses the dual challenges of poor interpretability and numerous iterations by employing a statistical prior-grounded LLM refinement mechanism and single-digit LLM calls.",
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Machine Learning and Data Classification",
-        "Computational and Text Analysis Methods"
-      ],
-      "keywords": [
-        "Interpretability",
-        "Discriminative model",
-        "Feature engineering",
-        "Feature (linguistics)",
-        "Symbolic regression",
-        "Statistical model",
-        "Feature model",
-        "Expressive power",
-        "Relevance (law)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.27843",
-      "abstract": "Contemporary language models can converse fluently and influence human decisions, yet their exchanges do not enter a continuing, vulnerable life of their own. Linguistic-agency theory identifies this missing connection as linguistic agency and characterizes it through embodiment, linguistic participation, and precariousness: a body that acts and bears consequences, interaction that changes both agent and partner, and a future that can be sustained or lost. Two coordinated studies examine how this organization can appear in artificial systems. First, we translate these relations into inspectable criteria for Synthetic Linguistic Agency (SLA) and identify several existing SLA systems. Second, building on Homeostatically Regulated Reinforcement Learning, we develop a mortality-grounded linguistic-reinforcement-learning model and instantiate it in an Embodied Mortal Agent (EMA). The EMA learns how ways of speaking change a partner's willingness to protect it and chooses expressions by considering what those responses mean for its remaining life. Controlled experiments show that linguistic choices depend on the EMA's body and social history, change partner behavior, and adapt through experience with particular partners. When bodily consequences persist, linguistic choices alter the future of the same life; when the body is reset, their social effects remain but no longer shape continued viability. The resulting EMA exhibits SLA under our operational definition. This work motivates further research on synthetic empathy and strategic human-AI interaction: how artificial agents with persistent bodies, histories, and futures might develop and express empathy, and how people might care for, negotiate with, or govern them.",
-      "topics": [
-        "Language and cultural evolution",
-        "Action Observation and Synchronization",
-        "Neurobiology of Language and Bilingualism",
-        "cs.CL",
-        "cs.MA"
-      ],
-      "keywords": [
-        "Embodied cognition",
-        "Converse",
-        "Affordance",
-        "Agency (philosophy)",
-        "Negotiation",
-        "Deep linguistic processing",
-        "Redress",
-        "Imitation"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202608.2126.v1",
-      "abstract": "Abstract Autonomous, goal-directed AI agents are increasingly deployed on consumer edge devices — smart-home hubs, wearables, and ambient environments — where they observe context, reason over objectives, plan multi-step actions, and invoke tools with reduced human involvement. This shift exposes assurance gaps that periodic, organization-level governance frameworks were not designed to close: goal misgeneralization, unsafe or irreversible actuation, prompt injection via untrusted content, unauthorized tool invocation, inferential privacy exposure, and insufficient runtime human oversight. We present TOAIAF, a runtime AI Assurance Control Plane comprising seven components — a Policy Enforcement Engine, an Agent Runtime Governance Layer, a Trust Evaluation Engine, an Explainability Engine, a Privacy and Security Assurance Layer, a Human Oversight Boundary, and a Continuous Learning Assurance Loop — that mediates every proposed agent action through a formally specified, three-stage decision procedure (Algorithm 1): a hard capability/scope check, a non-compensatory safety gate, and a risk-weighted composite trust score. We operationalize six trust metrics (Agent Reliability, Goal Alignment, Privacy Risk, Explainability Confidence, Safety Compliance, and a newly introduced Human Oversight Effectiveness Score). We evaluate the control plane's decision logic through a synthetic, template-generated benchmark of 100 scenarios spanning smart-home, wearable, and ambient-intelligence contexts across six risk categories (benign, unsafe-policy, privacy-risk, goal-misaligned, prompt-injection, tool-misuse), against an ungoverned baseline and a keyword-based guardrail baseline, in seven experiments. TOAIAF's decision procedure achieved 100% flagging on safety-policy-violation, prompt-injection, and tool-authorization scenarios and 92.3% on privacy-risk and goal-misalignment scenarios, versus 100%/0%/75%/27.3% and 0%/0%/0%/0% for the guardrail and ungoverned baselines, respectively, with zero false restrictions across 40 benign scenarios. We report two ablation results transparently rather than selectively: removing the safety gate produced no measurable change in this dataset (23/24 flagged either way), traced to a confound in the experimental design rather than a finding about the gate's value; and including the Human Oversight Effectiveness term produced a small, mathematically-traceable negative effect on sensitivity (47/49 vs. 48/49 flagged), a concrete metric-calibration finding reported transparently. A companion reference-implementation prototype further surfaced a genuine design gap: the WARN verdict currently allows an action to execute, which for physically irreversible actions is a disclosed, unresolved limitation. We map each control-plane component to NIST AI RMF, ISO/IEC 42001, IEEE 7001–7003, and the EU AI Act, and provide a forward mapping to five external agent-safety benchmarks (AgentHarm, AgentDojo, R-Judge, SmartBench, SMH-Bench) for the real-agent evaluation this package does not yet perform. The benchmark, source code, simulation artifacts, and supplementary materials will be made publicly available through a permanent repository upon publication.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Adversarial Robustness in Machine Learning",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "Operationalization",
-        "Corporate governance",
-        "Control (management)",
-        "Enforcement",
-        "Human intelligence",
-        "Benchmark (surveying)",
-        "Trustworthiness",
-        "Access control",
-        "Safety assurance"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.28050",
-      "abstract": "Learning to Defer (LtD) extends supervised learning by allowing a Machine Learning (ML) model to defer harder or less confident decisions to a human expert. Despite being geared for human-AI collaboration, LtD strategies neglect the potential negative interference of human cognitive biases. Our contribution is twofold. First, we demonstrate that standard LtD strategies show class-dependent sampling bias in classification tasks in practice, and thus may disproportionately defer the minority classes when applied to imbalanced datasets. Second, we show that such asymmetries in task delegation may trigger human biases, ultimately leading to poorer downstream decision making. Specifically, we conduct a user study ($N=226$) where participants complete a classification task on a set of deferred items, with conditions presenting different levels of class imbalance. Our results show that participants exposed to a highly imbalanced rejection set achieved lower classification accuracy in the majority class compared to those exposed to a more balanced set, regardless of which class constituted the majority. Exploratory analyses suggest that this may be an instance of the Test-taker's effect, which stems from a mismatch between the actual distribution of classes and the participants' expectations about that distribution. Finally, we discuss the implications of these findings for the deployment of LtD algorithms.",
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Ethics and Social Impacts of AI",
-        "Artificial Intelligence in Healthcare and Education",
-        "cs.HC"
-      ],
-      "keywords": [
-        "Task (project management)",
-        "Set (abstract data type)",
-        "Class (philosophy)",
-        "Neglect",
-        "Delegation",
-        "Task analysis"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.28800",
-      "abstract": "UML class diagrams are a crucial tool for defining the structure of software systems, but designing accurate and comprehensive class diagrams is a challenging task. Traditionally, creating UML models relies on the expertise and experience of professionals. However, with the development of AI technologies, particularly LLMs, new opportunities for software modeling have emerged. Despite this, there has been limited research on the application of LLMs in software modeling, especially in UML class diagram modeling. This study conducts experiments on several typical software system cases. Combining SDMetrics with expert manual review, this paper comprehensively evaluates the practical performance of mainstream LLMs in UML class diagram modeling from multiple dimensions, including size and completeness, relationship correctness, inheritance hierarchy, and design rule compliance. Focusing on typical defects in LLM-generated UML class diagrams, this study reveals that LLMs exhibit uncertainties analogous to human memory. Accordingly, three targeted repair strategies are proposed, including memory reinforcement, external knowledge injection, and detection-guided automated targeted repair. Experimental results obtained from the case studies indicate that (1) compared to expert-crafted class diagrams, LLM-generated UML class diagrams exhibit several issues, such as incomplete identification of key classes, confusion or omissions in relationships, insufficient or absent inheritance relationships, unused classes, and circular dependencies, and (2) after applying the repair methods, all the LLMs show varying degrees of improvement in addressing these issues. The average repair rate for key class identification reaches 85%, the coupling relationship repair rate is 46%, the inheritance relationship repair rate is 69%, while repair rates for unused classes and circular dependencies both reach 100%.",
-      "topics": [
-        "Model-Driven Software Engineering Techniques",
-        "Software Engineering Research",
-        "Software System Performance and Reliability"
-      ],
-      "keywords": [
-        "Class diagram",
-        "Unified Modeling Language",
-        "Inheritance (genetic algorithm)",
-        "Class (philosophy)",
-        "UML tool",
-        "Story-driven modeling",
-        "Software development",
-        "Identification (biology)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.28100",
-      "abstract": "Foundation machine learning interatomic potentials (MLIPs) deliver near-ab-initio accuracy at a fraction of the computational cost, yet their promise for Metal-organic Frameworks (MOFs) remains largely unrealized as large unit cells make first-principles training data expensive to generate, fine-tuned models are scarce, and experimentally grounded benchmarks are scarcer still. We introduce uMOF, a three-part contribution addressing this gap. First, we release the largest and most accurate density functional theory dataset for MOFs to date, computed at the r$^2$SCAN-D4 level of theory across 85524 configurations spanning 19950 unique frameworks and 79 elements, covering empty and gas-loaded structures, geometry optimizations, equations of state, and finite-temperature molecular dynamics. Second, we release a literature-mined benchmark of 3986 verified property values (3146 experimental) extracted from 626 papers by a seven-stage, checkpointed multi-pass large language model pipeline, linked to more than 650 crystallographic information files. Third, we release two universal MLIPs for MOFs, uMOF-MH and uMOF-POLAR, fine-tuned from two architecturally distinct MACE foundation models on the uMOF dataset. On near-equilibrium, ``Tier-1'' properties (bulk modulus, phonon-derived heat capacity) the uMOF models perform comparably to existing foundation and fine-tuned baselines. On harder, dynamics-sensitive properties like gas adsorption enthalpies via Widom insertion and adsorption isotherms, the uMOF models outperform every baseline we test, including MOF-specialized gas-capture models trained on datasets up to three orders of magnitude larger, cutting error by more than 80% to within experimental uncertainty. We trace this advantage to the physical diversity of the training data and to level of theory where a small (1.7%) fraction of MD simulations is decisive for MLIP stability.",
-      "topics": [
-        "Metal-Organic Frameworks: Synthesis and Applications",
-        "Machine Learning in Materials Science",
-        "Magnetism in coordination complexes"
-      ],
-      "keywords": [
-        "Density functional theory",
-        "Benchmark (surveying)",
-        "Foundation (evidence)",
-        "Fraction (chemistry)",
-        "Baseline (sea)",
-        "TRACE (psycholinguistics)",
-        "Computational learning theory",
-        "Mathematical model"
       ]
     }
   ]

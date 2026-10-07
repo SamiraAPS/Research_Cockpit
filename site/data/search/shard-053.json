@@ -1,7 +1,130 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-06T12:03:50.749Z",
+  "generatedAt": "2026-10-07T11:49:04.786Z",
   "documents": [
+    {
+      "id": "arxiv:2608.12679",
+      "abstract": "Large Language Models (LLMs) are increasingly deployed in discovery domains such as math and science. The usual approach is to present the problem to the model and use its answer as the proposed solution. However, beyond this best guess, discovery can be enhanced by increasing test-time compute. In a process called pass@k, the model is allowed to explore the solution space and generate diverse candidate solutions. Unfortunately, the standard approach to post-training LLMs through Reinforcement Learning (RL) may limit pass@k: the model's output distribution narrows around high-reward outputs, causing the solution coverage to collapse. The alternative is to use Evolution Strategies (ES), a population-based, gradient-free post-training method that optimizes directly in weight space through random perturbations. As this paper shows, ES achieves consistently higher pass@k than RL and produces a broader output distribution with greater solution coverage. This coverage in turn makes it possible to achieve better results in e.g. standard math benchmarks. Thus, ES provides a better foundation for post-training in discovery problems and other domains where diverse solution coverage is critical.",
+      "topics": [
+        "Topic Modeling",
+        "Machine Learning in Materials Science",
+        "Natural Language Processing Techniques",
+        "cs.AI",
+        "cs.NE"
+      ],
+      "keywords": [
+        "Reinforcement learning",
+        "Limit (mathematics)",
+        "Process (computing)",
+        "Space (punctuation)",
+        "Distribution (mathematics)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.13240",
+      "abstract": "Formal specifications offer strong guarantees, but remain costly to write manually. Recent LLM-based approaches automate this by inferring specifications from source code, yet their reliance on white-box access poses barriers to industrial adoption due to intellectual property risks and deployment costs. Our approach uses LLMs to infer candidate specifications solely from test code and dynamic execution traces: the LLM observes only the program interface, selected inputs, and corresponding outputs or state changes, while the implementation internals remain hidden. Candidate specifications are validated locally using bounded model checking, with feedback guiding iterative refinement. Initial results on the SpecGenBench benchmark suggest that tests can guide LLMs towards meaningful Java Modeling Language specifications, while also highlighting checker compatibility and diagnostic feedback as key challenges for reliable refinement.",
+      "topics": [
+        "Software Testing and Debugging Techniques",
+        "Formal Methods in Verification",
+        "Model-Driven Software Engineering Techniques"
+      ],
+      "keywords": [
+        "Compatibility (geochemistry)",
+        "Formal specification",
+        "Benchmark (surveying)",
+        "Key (lock)",
+        "Java",
+        "Implementation",
+        "Software deployment",
+        "Formal methods",
+        "Formal verification",
+        "Source code"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.12944",
+      "abstract": "Electrocardiography (ECG), photoplethysmography (PPG), and phonocardiography (PCG) provide complementary views of the same cardiac cycle, yet existing cardiac foundation models are trained for a single sensing modality, leaving the shared physiology across sensors unexploited. We introduce CardioState-JEPA, a cardiac foundation model to learn a single shared representation jointly across ECG, PPG, and PCG, built on a physiology-aware joint-embedding predictive architecture. The model maps heterogeneous waveforms into a common token space, processes them with a single shared Transformer encoder, and learns by predicting masked latent cardiac states, placing the pretraining target on shared physiology rather than sensor-specific waveform appearance. To handle the temporal offsets between electrical, mechanical, and hemodynamic events, cross-modal prediction uses a learned delay aligner that matches signals at the corresponding cardiac time. Because synchronized multi-sensor recordings are scarce, CardioState-JEPA first learns within-modality structure from abundant unimodal data and then uses paired data to align modalities in latent cardiac time. Evaluated as a frozen encoder across 25 downstream tasks spanning ECG, PPG, and PCG, our encoder improves average PPG classification by 8.2 AUROC points, PCG murmur detection by 18.8 AUROC points, and ECG classification by 15.5 AUROC points over the best self-supervised signal baseline and matches or exceeds cardiac models trained with privileged clinical text or supervised labels on several ECG benchmarks. These results establish that heterogeneous cardiac signals can mutually supervise a single foundation model of cardiac physiology.",
+      "topics": [
+        "ECG Monitoring and Analysis",
+        "Phonocardiography and Auscultation Techniques",
+        "Non-Invasive Vital Sign Monitoring"
+      ],
+      "keywords": [
+        "Modality (human–computer interaction)",
+        "Encoder",
+        "Security token",
+        "Representation (politics)",
+        "Photoplethysmogram",
+        "Waveform",
+        "Electrocardiography",
+        "Foundation (evidence)",
+        "Transformer"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.13751",
+      "abstract": "Large pre-trained models have become foundational components of modern machine learning systems. Yet adapting these models to novel categories typically requires examples from the target distribution. In many domains, however, such data are unavailable. Zero-shot learning (ZSL) permits recognition under these limitations through relying on auxiliary semantic information such as textual descriptions. We introduce CAST (Closed-form Analytic Semantic Transfer), a training-free, image-free framework for extending a pre-trained classifier to previously unseen classes through weight injection. We provide a theoretical foundation for CAST and derive a finite-sample error decomposition that identifies the \\emph{semantic extrapolation residual} $ρ_u$. The residual is a computable, model-agnostic measure and provides a principled criterion for dataset curation and benchmark design. Experiments on standard zero-shot learning benchmarks demonstrate that CAST matches or exceeds existing image-free approaches and approaches the performance of few-shot adaptation methods, while requiring neither iterative optimization nor examples from the target distribution.",
+      "topics": [
+        "Domain Adaptation and Few-Shot Learning",
+        "Face recognition and analysis",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "Classifier (UML)",
+        "Extrapolation",
+        "Residual",
+        "Domain adaptation",
+        "Benchmark (surveying)",
+        "Transfer of learning",
+        "Iterative learning control",
+        "Extension (predicate logic)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.13216",
+      "abstract": "LLM-based chat systems have become valuable tools for design practice, enabling rapid ideation and flexible task support. Yet these systems process designer utterances as generic sequences, maintaining context through recency rather than through any model of how the speaker organizes knowledge. In design conversation, this gap compounds as relational context decays between turns, identical words go unresolved across designers, and the conversation loops or restarts rather than deepens. We present CogChat, a real-time chat framework that grounds conversational AI in a personal heterogeneous knowledge graph constructed from each designer's input. The system extracts typed entities and relations into a heterogeneous graph, then applies a HGT (Heterogeneous Graph Transformer) to select structurally relevant nodes for response generation and to generate both intentional and exploratory probing questions. Technical evaluation shows that HGT-based entity selection outperforms both ungrounded LLM interaction and naive KG augmentation, which introduces noise that degrades response quality. A within-subjects study with nine professional designers indicates that grounding conversation in a relationally structured, designer-specific semantic context improves context retention, personalized intent interpretation, and conversational depth while reducing cognitive load. These findings suggest that structuring a designer's expressed concepts and relations as a dynamic knowledge graph can preserve relational context that fades across turns, pointing toward a graph-grounded approach to long-term context management in LLM-based interaction.",
+      "topics": [
+        "AI in Service Interactions",
+        "Innovative Human-Technology Interaction",
+        "Speech and dialogue systems"
+      ],
+      "keywords": [
+        "Conversation",
+        "Transformer",
+        "Structuring",
+        "Graph",
+        "Selection (genetic algorithm)",
+        "Cognition",
+        "Ideation",
+        "Dialog system"
+      ]
+    },
+    {
+      "id": "doi:10.1145/3830398.3830724",
+      "abstract": "LLM-based chat systems have become valuable tools for design practice, enabling rapid ideation and flexible task support. Yet these systems process designer utterances as generic sequences, maintaining context through recency rather than through any model of how the speaker organizes knowledge. In design conversation, this gap compounds as relational context decays between turns, identical words go unresolved across designers, and the conversation loops or restarts rather than deepens. We present CogChat, a real-time chat framework that grounds conversational AI in a personal heterogeneous knowledge graph constructed from each designer's input. The system extracts typed entities and relations into a heterogeneous graph, then applies a HGT (Heterogeneous Graph Transformer) to select structurally relevant nodes for response generation and to generate both intentional and exploratory probing questions. Technical evaluation shows that HGT-based entity selection outperforms both ungrounded LLM interaction and naive KG augmentation, which introduces noise that degrades response quality. A within-subjects study with nine professional designers indicates that grounding conversation in a relationally structured, designer-specific semantic context improves context retention, personalized intent interpretation, and conversational depth while reducing cognitive load. These findings suggest that structuring a designer's expressed concepts and relations as a dynamic knowledge graph can preserve relational context that fades across turns, pointing toward a graph-grounded approach to long-term context management in LLM-based interaction.",
+      "topics": [
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.12805",
+      "abstract": "Access to clinical data is essential for developing reliable healthcare machine learning systems, but direct use of electronic health records is constrained by privacy regulation, institutional review, data-use agreements, and the risk of re-identification. Synthetic data promises a practical alternative: it can preserve useful statistical and clinical structure while reducing exposure of sensitive patient records. Prior studies often evaluate a single generator, one dataset, or a narrow downstream task, making it difficult to know when synthetic data can support model development and when it fails to preserve task-critical signal. We introduce CoMedBench, a reproducible benchmark that evaluates a family of generators under a common clinical-validity framework and one shared training and evaluation engine, spanning static tabular and temporal downstream tasks on established critical-care datasets. In total the benchmark spans 37 dataset-task pairs across two modalities consists of 20 static tabular and 17 temporal ICU time-series-drawn from seven public data sources: three intensive-care databases (MIMIC-III, MIMIC-IV, and eICU) together with the UCI Machine Learning Repository, the CDC BRFSS diabetes cohort (2015), NHANES (1999-2014), and the pycox survival datasets (GBSG and METABRIC). The benchmark evaluates both statistical fidelity and task utility by comparing models trained and tested across real and synthetic data. In these settings, synthetic training data preserves most of the downstream signal: on tabular tasks the reference generator CoMed-CTGAN retains a mean AUROC utility (the synthetic-to-real performance ratio) of 90.6%, rising to 97.3% for the strongest generator, CoMed-TVAE. Temporal ICU tasks are harder and more generator-sensitive: CoMed-CTGAN retains 81.6% (AUROC) and only 64.0% under the imbalance-sensitive AUPRC, whereas CoMed-TVAE still retains ~95% (AUROC).",
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Artificial Intelligence in Healthcare and Education",
+        "Electronic Health Records Systems"
+      ],
+      "keywords": [
+        "Benchmark (surveying)",
+        "Synthetic data",
+        "Downstream (manufacturing)",
+        "Fidelity",
+        "Task (project management)",
+        "Modalities",
+        "Generator (circuit theory)"
+      ]
+    },
     {
       "id": "arxiv:2608.12779",
       "abstract": "Understanding the temporal progression of symptoms in clinical narratives is critical for disease monitoring, safety surveillance, and causality assessment. Clinical narratives, however, rarely provide explicit temporal anchors. Current approaches to temporal information reasoning focus predominantly on pairwise relation classification across multi-visit and timestamp-rich records, leaving the reconstruction of structured symptom trajectories from individual anchor-sparse reports largely unaddressed. We propose CRAFT, an LLM framework that pairs a generator with a constraint-based verifier to iteratively produce and refine stage-wise symptom timelines through targeted feedback. We conduct evaluation on MedTempo, a new benchmark of 5,347 vaccine adverse-event narratives spanning three COVID-19 vaccine types, with expert-validated temporal stage annotations for 3,166 reports. Experiments across four LLM backbones demonstrate that CRAFT consistently improves temporal ordering accuracy, with ablation analysis isolating the contribution of generator and verifier components across model capability levels.",
@@ -3635,140 +3758,6 @@
         "Sequence (biology)",
         "Prefix",
         "Probabilistic risk assessment"
-      ]
-    },
-    {
-      "id": "arxiv:2608.10669",
-      "abstract": "Large language model (LLM) agents combine language-based reasoning with external tools to perform complex tasks. Adversarial inputs can exploit interactions between the agent and its environment, causing the agent to violate safety policies during execution. Yet existing evaluations often reduce agent safety to a single attack success rate (ASR), collapsing exposure, execution, observation, and adjudication and potentially conflating actual violations with evidence visibility. We introduce REDAgentBench, an executable framework for autonomous red-teaming and faithful measurement. It derives attacks from explicit safety constraints and associated agent-system vulnerabilities, runs them in isolated service sandboxes, and verifies harmful effects from service receipts and final-state changes. The benchmark contains 1,661 cases across five service surfaces. Across six models and three agent harnesses, macro-average ASR is 65.69%; reported ASR varies with harness and evidence view, while evaluation-context disclosure changes execution behavior. In a state-grounded diagnostic cohort, almost one in five confirmed violations with resolved action anchors occurs after the agent states the relevant constraint or risk, revealing a Recognition--Execution Gap. Finally, a training-free policy reminder reduces confirmed violations by more than 70 percentage points in matched replay. These findings show that executable evaluation can improve safety measurement and identify actionable intervention points.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Artificial Intelligence in Healthcare and Education",
-        "Ethics and Social Impacts of AI",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Executable",
-        "Adversarial system",
-        "Benchmark (surveying)",
-        "Exploit",
-        "Adjudication",
-        "Multi-agent system",
-        "Service (business)",
-        "Action (physics)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.10812",
-      "abstract": "We study reference-free post-training for multilingual machine translation with open large language models. Starting from the supervised-finetuned MiLMMT-46-v0.1 models, we apply Group Relative Policy Optimization (GRPO) with a reward that averages two reference-free quality estimation models and is gated by language identification. We then linearly interpolate the supervised fine-tuning (SFT) and reinforcement learning (RL) model checkpoints to obtain MiLMMT-46-v1.0. Across 46 languages, the resulting models consistently improve translation quality over their SFT counterparts, outperform strong recent open baselines, including Seed-X, HY-MT2, and TranslateGemma, and achieve leading reference-free scores against evaluated proprietary systems such as Google Translate, Gemini 3 Pro, and GPT-5. We further investigate on-policy distillation (OPD) and find that it reaches, but does not surpass, the quality frontier achieved by RL with checkpoint interpolation. We release the models and code to facilitate future research.",
-      "topics": [
-        "Natural Language Processing Techniques",
-        "Topic Modeling",
-        "Artificial Intelligence in Healthcare and Education",
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Machine translation",
-        "Language model",
-        "Quality (philosophy)",
-        "Reinforcement learning",
-        "Code (set theory)",
-        "Translation (biology)",
-        "Training set"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10630810/v1",
-      "abstract": null,
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Electronic Health Records Systems",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "Sociotechnical system",
-        "Documentation",
-        "Agency (philosophy)",
-        "Health care",
-        "Generative grammar",
-        "Generative model",
-        "Public service",
-        "Content analysis",
-        "Service (business)",
-        "Health informatics"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.10725",
-      "abstract": "Large language models (LLMs) often rely on shortcuts rather than systematic reasoning, raising safety concerns in medical applications. Allowing models to abstain when uncertain improves reliability but introduces a coverage accuracy tradeoff. We propose a two-stage framework for medical hypothesis verification in multiple-choice settings that manages this tradeoff through targeted ontology grounding, applied only when the model abstains. We show that abstention is not random but reflects genuine uncertainty, with abstained predictions associated with lower confidence. Across two frontier models (GPT-5.5, accessed via the Azure OpenAI API, and DeepSeek-R1), the proposed framework improves question-level accuracy by 9.6 percentage points (82.9% to 92.5%) and hypothesis-level accuracy by 4.2 percentage points (92.0% to 96.2%). Our experiments conducted on MedReason and MedQA show that abstention can be repurposed as a control signal for selective reasoning refinement, achieving knowledge-graph-level performance without explicit knowledge graph construction.",
-      "topics": [
-        "Machine Learning in Healthcare",
-        "Artificial Intelligence in Healthcare and Education",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "Reliability (semiconductor)",
-        "Control (management)",
-        "Ontology",
-        "Graph",
-        "Reliability theory",
-        "Key (lock)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.10513",
-      "abstract": "Large vision-language models (LVLMs) remain vulnerable to jailbreak attacks that exploit visual inputs to bypass safety alignment inherited from their language backbones. We propose SafeCap, a reinforcement-learning framework that aligns LVLMs through learned self-captioning. SafeCap trains a policy model to first generate a safety-relevant image caption and then produce a final answer; the caption is further optimized by whether it enables a frozen LLM to reach a safety-aligned decision. This caption-mediated objective encourages the policy to expose visual cues relevant to safe response generation rather than relying solely on direct refusal supervision. Across five multimodal safety benchmarks and six vision-utility benchmarks, SafeCap substantially improves aggregate safety performance under its intended DirectCap protocol, with gains of 3.7-19.0 points in safety average across four model settings while maintaining comparable or improved vision utility. Under controlled comparisons on matched backbones and data, SafeCap outperforms safety SFT, DPO, and SafeGRPO, demonstrating the effectiveness of caption-mediated reinforcement learning for multimodal safety alignment.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Multimodal Machine Learning Applications",
-        "Domain Adaptation and Few-Shot Learning",
-        "cs.CV",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Closed captioning",
-        "Exploit",
-        "Reinforcement learning",
-        "Train",
-        "Aggregate (composite)",
-        "Image (mathematics)",
-        "Sensory cue"
-      ]
-    },
-    {
-      "id": "openalex:W7202416260",
-      "abstract": "Agricultural monitoring faces unique challenges, arising from the landscape's complex temporal, phenological, and climate dynamics, yet monitoring them is critical for ensuring food security. Synthetic Aperture Radar (SAR) satellites offer all-weather day-night imaging capability supporting key monitoring tasks including crop type mapping, yield prediction and phenological event detection. Existing multimodal remote sensing foundation models including TerraMind and CopernicusFM learn SAR representations by grounding them in optical imagery using joint encoding and contrastive learning techniques, while SAR-specific foundation models such as SAR-JEPA, SARMAE, and SAR-W-MixMAE primarily focus on target detection, flood mapping, and land cover classification applications. Recent work has introduced phenology inspired temporal pretext tasks with optical imagery which has shown strong performance on agricultural downstream tasks. In this work, we propose the first self-supervised learning pipeline focused on using only SAR intensity imagery for agricultural applications. We improve the temporal pretext tasks through masking and curriculum learning to enhance the pretraining pipeline's ability to capture phenological features from SAR. On the SICKLE benchmark, our final model achieves 84.9% IoU on crop type mapping, outperforming optical baselines (by 15.3 pt) and existing SAR baselines (by 2.2 pt), demonstrating the effectiveness of our proposed pipeline for pretraining SAR intensity encoders for agricultural monitoring.",
-      "topics": [
-        "Remote Sensing in Agriculture",
-        "Synthetic Aperture Radar (SAR) Applications and Techniques",
-        "Soil Moisture and Remote Sensing"
-      ],
-      "keywords": [
-        "Synthetic aperture radar",
-        "Event (particle physics)",
-        "Land cover",
-        "Encoding (memory)",
-        "Pipeline (software)",
-        "Phenology",
-        "Feature learning"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.11152",
-      "abstract": "Modern reinforcement learning (RL) post-training pipelines for large language models (LLMs) increasingly combine rollout workloads across multiple domains and feedback paradigms. Prefix-aware routing improves inference efficiency through cache reuse and load balancing, but it does not control how heterogeneous rollout sessions compete for KV-cache capacity. When reinforcement learning with verifiable rewards (RLVR), reinforcement learning from human feedback (RLHF), and agentic rollouts share an asynchronous inference service, their distinct sequence structures, interaction patterns, and KV-residency times create substantially different serving demands. Rollout scheduling must account for this heterogeneity without distorting the workload mixture specified by the trainer. We present MISA-T, a routing-layer admission policy for mixed rollout serving. MISA-T combines adaptive session admission, workload-aware KV-capacity allocation, and residency-time-aware KV accounting. In rollout-only ablations on Step3.7 and Qwen3.6-35B-A3B, MISA-T improves rollout throughput over a sweep-tuned cache-aware vLLM Router by 53.3% and 43.6%, respectively, while maintaining high prefix-cache hit rates. In a matched 50-iteration Step3.7 experiment, it increases rollout throughput by 35.6% and reduces mean iteration time by 22.8%, while keeping the consumed workload mixture close to the trainer target and achieving comparable task scores.",
-      "topics": [
-        "IoT and Edge/Fog Computing",
-        "Advanced Neural Network Applications",
-        "Multimodal Machine Learning Applications"
-      ],
-      "keywords": [
-        "Scheduling (production processes)",
-        "Reinforcement learning",
-        "Asynchronous communication",
-        "Workload",
-        "Cache",
-        "Inference",
-        "Reuse"
       ]
     }
   ]

@@ -1,7 +1,139 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-06T12:03:50.749Z",
+  "generatedAt": "2026-10-07T11:49:04.786Z",
   "documents": [
+    {
+      "id": "arxiv:2608.16837",
+      "abstract": "Humanoid robots hold great promise as general-purpose agents in human-centered environments, yet generalist vision-language-action (VLA) foundation models are not readily applicable to humanoid whole-body loco-manipulation. The high dimensionality and interdependence of humanoid motions make it challenging for conventional single-stage VLA architectures to coordinate locomotion, waist posture, and dual-arm manipulation effectively. Moreover, policies trained through offline behavior cloning can remain suboptimal during real-world deployment. Although online reinforcement learning can refine policies through real-world interaction, directly tuning large VLA backbones demands excessive computation and may introduce safety risks during real-robot exploration. To address these bottlenecks, we introduce HAF (Humanoid Adaptation Framework), a two-part framework consisting of HAF-VLA and HAF-Steer that transfers off-the-shelf generalist VLA foundation models to humanoid whole-body loco-manipulation. HAF-VLA is a hierarchical action-flow generator built on a pretrained flow-matching VLA. It splits full-body action denoising into three sequential stages with stage embeddings and cross-stage KV caches that retain kinematic dependencies, avoiding incoherent whole-body actions from one-shot generation. On top of the frozen HAF-VLA, HAF-Steer is a latent offline-to-online RL pipeline that leverages flow-matching invertibility and DCT-based dimensionality reduction to restrict RL optimization to a compact noise subspace and train a regularized SAC policy. This avoids updating the large VLA backbone and enables efficient real-world policy refinement. Evaluated on seven real-world humanoid loco-manipulation tasks, HAF surpasses vanilla single-stage VLA baselines and improves whole-body coordination and task performance. Project website: https://grange007.github.io/HAF .",
+      "topics": [
+        "Robotic Locomotion and Control",
+        "Reinforcement Learning in Robotics",
+        "Human Pose and Action Recognition",
+        "cs.RO",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Humanoid robot",
+        "Reinforcement learning",
+        "Action (physics)",
+        "Noise (video)",
+        "Dimensionality reduction",
+        "Observability",
+        "Robotics",
+        "Adaptation (eye)"
+      ]
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2707721",
+      "abstract": "In response to the challenges of result precision, output traceability, and interaction efficiency in intellectual property (IP) case retrieval for judicial decision-making, this study develops a hybrid retrieval framework. Rather than pursuing algorithmic performance alone, the framework incorporates legal-domain structure into model design. Accordingly, a Specialized Generalist Model (SGM) for IP case retrieval is designed. Methodologically: (1) Based on common elements in IP adjudication, a “Right Basis – Infringing Act – Damages Basis” triadic feature extraction mechanism is constructed to support structured semantic parsing of legal texts; (2) A dynamic threshold-based gated scheduling module coordinates a domain-specialized model and a general reasoning model through a dual-threshold verification strategy; (3) To address the long-text characteristics of IP cases, a paragraph–sentence dual-layer encoding domain-specialized model is built; (4) A chain-of-thought guiding mechanism is used to organize structured feature extraction and result verification in the general reasoning model. Experimentally, we construct IP-CaRD v1.0, a benchmark dataset for IP case retrieval covering 240 query cases across 53 fourth-level causes of action with expert annotations. Results show that SGM achieves an F1@3 score of 0.9149, outperforming the best baseline SAILER by 11.6%, and the domain-specialized model reaches a positive/negative discrimination rate of 90.41%. Human evaluation suggests that SGM receives higher perceived result usability, interaction usability, and explanation quality scores than the compared baselines. These findings suggest that SGM provides a design reference for human-centered interaction and human-AI collaboration in specialized legal retrieval, while broader workflow validation remains necessary before deployment.",
+      "topics": [
+        "Artificial Intelligence in Law",
+        "Intellectual Property and Patents",
+        "Law, AI, and Intellectual Property"
+      ],
+      "keywords": [
+        "Baseline (sea)",
+        "Benchmark (surveying)",
+        "Feature (linguistics)",
+        "Construct (python library)",
+        "Workflow",
+        "Intellectual property",
+        "Action (physics)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.17051",
+      "abstract": "Secondary use of electronic health records requires de-identification, yet existing systems miss \\emph{institutionally situated} protected health information (PHI) such as hospital abbreviations, building names, and internal codes whose status is locally determined. We ask whether large language models (LLMs) with in-context learning (ICL) can close this gap and control the precision--recall trade-off. On 100 annotated pediatric oncology notes (5,322 PHI spans) from Texas Children's Hospital, we benchmarked eight LLMs against two purpose-built systems (Stanford TiDE, OpenMed PII) and two pattern-based baselines. Each LLM ran under three prompts of increasing specificity: (1) a HIPAA-aligned baseline, (2) baseline plus the institutional PHI categories it missed, and (3) prompt 2 plus instructions against over-redacting clinical content. We then compared 14~multi-agent and ensemble configurations against the best single prompt, with recall the primary safety metric. LLMs outperformed the purpose-built systems (best F1=0.918$\\pm$0.001 vs.\\ TiDE 0.779), with advantages concentrated in contextual categories. Naming the missed categories recovered 79\\% (48/61) of them, and discouraging over-redaction restored precision. No agentic architecture beat calibrated single-pass prompting (F1 0.906--0.907), but LLM outputs surfaced 414~candidate annotation gaps; re-annotation confirmed 227~PHI spans, against which the final prompt reached recall=0.981 (F1=0.907$\\pm$0.002). Well-calibrated ICL resolves both the institutional PHI gap and the precision--recall trade-off in one LLM call per note. LLMs cost more to run than traditional methods, but that cost buys a way to audit the reference standard. LLMs are a legitimate, adaptable alternative to purpose-built de-identification systems; institution-specific prompt development should be the primary adaptation strategy.",
+      "topics": [
+        "Topic Modeling",
+        "Electronic Health Records Systems",
+        "Machine Learning in Healthcare",
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Audit",
+        "Adaptation (eye)",
+        "Electronic health record",
+        "Recall",
+        "Ask price",
+        "Annotation",
+        "Baseline (sea)",
+        "Corporate governance"
+      ]
+    },
+    {
+      "id": "arxiv:2608.17063",
+      "abstract": "Large language models can be fine-tuned into specialized classifiers that perform well across diverse text tasks and make complex judgments, but they typically expose only final labels, leaving the decision knowledge acquired through fine-tuning implicit within the model. We study how to mine this internal decision knowledge from a fine-tuned classifier and encode it in an executable representation that can be inspected, validated, and reused beyond the source classifier. We introduce J-Miner, which mines text-level named concepts by aggregating vocabulary-aligned internal signals across layers and token positions, and uses the classifier's own predictions to learn executable decision rules over them. This process distills local internal readouts into an explicit classifier-level knowledge representation. Across multiple classification tasks, J-Miner rules reproduce up to 98.3\\% of source-classifier decisions and achieve 6.0--29.5 percentage points higher behavioral fidelity than equally compact rules learned from input words. Further analysis shows that the named concepts reflect internal semantic evidence associated with task decisions, while the learned rules consolidate these distributed signals into inspectable decision structures. The resulting decision knowledge also transfers to lightweight standalone students: using about 1/24 as many parameters as the source classifiers, they reconstruct and execute the representation from raw text while retaining 99.8\\% of the source classifiers' mean task accuracy. These findings show that task-specific decision knowledge can be faithfully represented in an explicit, executable form and reused beyond the classifier in which it was learned.",
+      "topics": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.17150",
+      "abstract": "To effectively collaborate with users on knowledge-intensive tasks, Large Language Models (LLMs) must perform information calibration: matching content to a user's evolving understanding and cognitive capacity. Yet user simulators used to evaluate and train LLMs do not explicitly model user knowledge so they neither produce realistic interactions across knowledge levels nor reflect how interactions unfold as that knowledge evolves. To close this gap, we introduce KNOWSIM, an evaluation framework built around a user simulator that maintains explicit knowledge states, represented as a graph of Information Units with prerequisite relationships, that evolve under update rules grounded in learning theory. KNOWSIM computes three metrics (Knowledge Gain, Delivery Calibration, Cognitive Overload) directly from the knowledge state trajectory, reflecting key mechanistic aspects of information calibration. We validate KNOWSIM against 705 human-AI sessions across two domains, stratified by knowledge level: its rankings align significantly with human judgments (73-74% sign agreement), outperforming three baseline simulators. Applied to 9 LLMs, KNOWSIM reveals that the best model shifts by user knowledge level, revealing aptitude-treatment interactions invisible to standard evaluation.",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Text Readability and Simplification",
+        "Topic Modeling",
+        "cs.AI",
+        "cs.CL",
+        "cs.HC"
+      ],
+      "keywords": [
+        "Key (lock)",
+        "Matching (statistics)",
+        "User modeling",
+        "Baseline (sea)",
+        "Cognition",
+        "Knowledge graph",
+        "Cognitive load",
+        "Graph"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.16174",
+      "abstract": "As Space-Based Information Networks (SBINs) evolve toward high-capacity, intelligence-centric paradigms, integrating sub-Terahertz (sub-THz) communication into Low Earth Orbit (LEO) satellite constellations has emerged as a critical enabler for ultra-broadband and resilient global connectivity. By exploiting the ultra-wide bandwidth of sub-THz links to reduce transmission delays, resource-constrained ground devices can seamlessly offload compute-intensive tasks to LEO edge servers. However, satellite motion, short visibility windows, and limited onboard resources make offloading decisions highly time-varying. Existing distributed offloading schemes typically require repeated inter-device state exchange and poorly adapt to time-varying LEO topology or traffic conditions. To address these limitations, a decentralized game-theoretic offloading framework empowered by large language models (LLMs) and counterfactual inference is proposed in this paper. First, a realistic offloading system is established by integrating time-varying 3D-Walker topology. Second, a game-theoretic scheme using counterfactual inference is introduced to deduce unobserved states from local histories, eliminating global information reliance. Finally, an LLM-empowered semantic fusion algorithm is integrated into the counterfactual inference to enhance adaptability through zero-shot reasoning and self-reflection. Numerical results show that L-COIN reduces offloading cost by 10.9% to 27.7% relative to state-of-the-art baselines.",
+      "topics": [
+        "Satellite Communication Systems",
+        "IoT and Edge/Fog Computing",
+        "Opportunistic and Delay-Tolerant Networks"
+      ],
+      "keywords": [
+        "Counterfactual thinking",
+        "Inference",
+        "Throughput",
+        "Bandwidth (computing)",
+        "Adaptability",
+        "Network topology",
+        "Computation",
+        "Satellite",
+        "Information exchange"
+      ]
+    },
+    {
+      "id": "arxiv:2608.16507",
+      "abstract": "Due to the limited amount of information, modeling longitudinal rare-disease data can benefit from integrating clinical knowledge. Yet, elicitation of expert knowledge and formalization for model fitting is challenging, in particular due to limited time of clinical experts. To nevertheless make domain knowledge accessible during model fitting, we use large language models (LLMs) as synthetic clinical experts to supervise a variational-autoencoder-based approach that learns low-dimensional latent summaries of visit-level observations. Specifically, LLMs are queried offline on textual descriptions of patient observations to obtain judgments, e.g., the suspected clinical category. To improve the variational autoencoder fit, we train a differentiable surrogate model on these judgments and augment the loss function to encourage reconstructions that preserve the clinical-label distribution of their corresponding input profile. In an application to longitudinal motor-function assessments from children with spinal muscular atrophy, we map visit-level clinical profiles to low-dimensional representations that are linked by a multivariate mixed-effects model. The synthetic expert loss discourages reconstructions that remain numerically close in data space but alter the clinical interpretation of the reconstructed motor function profile, such as by crossing a disease-type boundary. We thus reduced disagreement between original and reconstructed SMA type labels from about 11 to 7 percent. Furthermore, informing the latent representation by the synthetic expert improved prediction of motor function milestones compared with unsupervised latent representations and a data-level baseline. These results suggest that incorporating LLMs into model fitting can make clinical knowledge available to representation learning and improve clinical faithfulness for longitudinal rare-disease data.",
+      "topics": [
+        "Neurogenetic and Muscular Disorders Research",
+        "Genomics and Rare Diseases",
+        "Cerebral Palsy and Movement Disorders",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Autoencoder",
+        "Representation (politics)",
+        "Function (biology)",
+        "Subject-matter expert",
+        "Domain knowledge",
+        "Language model",
+        "Presentation (obstetrics)",
+        "Interpretation (philosophy)",
+        "Domain (mathematical analysis)"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.16739",
       "abstract": "Reinforcement learning algorithms for Large Language Models (LLMs) are largely distinguished by their variance reduction strategy. Group-relative methods like GRPO reduce gradient variance by sampling multiple rollouts per prompt, but provide only sequence-level credit. Training is also blocked by straggler rollouts, reducing throughput and increasing off-policyness. Learned value functions theoretically address both problems, providing token-level advantages without requiring large groups. However, additional infrastructure engineering challenges combined with the practical success of critic-free methods have made it difficult to justify their inclusion in RL pipelines. We propose two complementary strategies to improve the performance of value function RL: 1) Privileged Value Functions (PVF) which provide an elegant mechanism to inject additional task-relevant token-level signal without biasing the policy objective; 2) TETHER, a baseline that adaptively interpolates between group-relative and value baselines depending on the value function accuracy. Across several reasoning tasks, both strategies consistently improve over the standard value function baseline, and are competitive with or outperform mean-baseline GRPO.",
@@ -3541,129 +3673,6 @@
         "Motion (physics)",
         "Domain (mathematical analysis)",
         "Wearable technology"
-      ]
-    },
-    {
-      "id": "arxiv:2608.12679",
-      "abstract": "Large Language Models (LLMs) are increasingly deployed in discovery domains such as math and science. The usual approach is to present the problem to the model and use its answer as the proposed solution. However, beyond this best guess, discovery can be enhanced by increasing test-time compute. In a process called pass@k, the model is allowed to explore the solution space and generate diverse candidate solutions. Unfortunately, the standard approach to post-training LLMs through Reinforcement Learning (RL) may limit pass@k: the model's output distribution narrows around high-reward outputs, causing the solution coverage to collapse. The alternative is to use Evolution Strategies (ES), a population-based, gradient-free post-training method that optimizes directly in weight space through random perturbations. As this paper shows, ES achieves consistently higher pass@k than RL and produces a broader output distribution with greater solution coverage. This coverage in turn makes it possible to achieve better results in e.g. standard math benchmarks. Thus, ES provides a better foundation for post-training in discovery problems and other domains where diverse solution coverage is critical.",
-      "topics": [
-        "Topic Modeling",
-        "Machine Learning in Materials Science",
-        "Natural Language Processing Techniques",
-        "cs.AI",
-        "cs.NE"
-      ],
-      "keywords": [
-        "Reinforcement learning",
-        "Limit (mathematics)",
-        "Process (computing)",
-        "Space (punctuation)",
-        "Distribution (mathematics)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.13240",
-      "abstract": "Formal specifications offer strong guarantees, but remain costly to write manually. Recent LLM-based approaches automate this by inferring specifications from source code, yet their reliance on white-box access poses barriers to industrial adoption due to intellectual property risks and deployment costs. Our approach uses LLMs to infer candidate specifications solely from test code and dynamic execution traces: the LLM observes only the program interface, selected inputs, and corresponding outputs or state changes, while the implementation internals remain hidden. Candidate specifications are validated locally using bounded model checking, with feedback guiding iterative refinement. Initial results on the SpecGenBench benchmark suggest that tests can guide LLMs towards meaningful Java Modeling Language specifications, while also highlighting checker compatibility and diagnostic feedback as key challenges for reliable refinement.",
-      "topics": [
-        "Software Testing and Debugging Techniques",
-        "Formal Methods in Verification",
-        "Model-Driven Software Engineering Techniques"
-      ],
-      "keywords": [
-        "Compatibility (geochemistry)",
-        "Formal specification",
-        "Benchmark (surveying)",
-        "Key (lock)",
-        "Java",
-        "Implementation",
-        "Software deployment",
-        "Formal methods",
-        "Formal verification",
-        "Source code"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.12944",
-      "abstract": "Electrocardiography (ECG), photoplethysmography (PPG), and phonocardiography (PCG) provide complementary views of the same cardiac cycle, yet existing cardiac foundation models are trained for a single sensing modality, leaving the shared physiology across sensors unexploited. We introduce CardioState-JEPA, a cardiac foundation model to learn a single shared representation jointly across ECG, PPG, and PCG, built on a physiology-aware joint-embedding predictive architecture. The model maps heterogeneous waveforms into a common token space, processes them with a single shared Transformer encoder, and learns by predicting masked latent cardiac states, placing the pretraining target on shared physiology rather than sensor-specific waveform appearance. To handle the temporal offsets between electrical, mechanical, and hemodynamic events, cross-modal prediction uses a learned delay aligner that matches signals at the corresponding cardiac time. Because synchronized multi-sensor recordings are scarce, CardioState-JEPA first learns within-modality structure from abundant unimodal data and then uses paired data to align modalities in latent cardiac time. Evaluated as a frozen encoder across 25 downstream tasks spanning ECG, PPG, and PCG, our encoder improves average PPG classification by 8.2 AUROC points, PCG murmur detection by 18.8 AUROC points, and ECG classification by 15.5 AUROC points over the best self-supervised signal baseline and matches or exceeds cardiac models trained with privileged clinical text or supervised labels on several ECG benchmarks. These results establish that heterogeneous cardiac signals can mutually supervise a single foundation model of cardiac physiology.",
-      "topics": [
-        "ECG Monitoring and Analysis",
-        "Phonocardiography and Auscultation Techniques",
-        "Non-Invasive Vital Sign Monitoring"
-      ],
-      "keywords": [
-        "Modality (human–computer interaction)",
-        "Encoder",
-        "Security token",
-        "Representation (politics)",
-        "Photoplethysmogram",
-        "Waveform",
-        "Electrocardiography",
-        "Foundation (evidence)",
-        "Transformer"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.13751",
-      "abstract": "Large pre-trained models have become foundational components of modern machine learning systems. Yet adapting these models to novel categories typically requires examples from the target distribution. In many domains, however, such data are unavailable. Zero-shot learning (ZSL) permits recognition under these limitations through relying on auxiliary semantic information such as textual descriptions. We introduce CAST (Closed-form Analytic Semantic Transfer), a training-free, image-free framework for extending a pre-trained classifier to previously unseen classes through weight injection. We provide a theoretical foundation for CAST and derive a finite-sample error decomposition that identifies the \\emph{semantic extrapolation residual} $ρ_u$. The residual is a computable, model-agnostic measure and provides a principled criterion for dataset curation and benchmark design. Experiments on standard zero-shot learning benchmarks demonstrate that CAST matches or exceeds existing image-free approaches and approaches the performance of few-shot adaptation methods, while requiring neither iterative optimization nor examples from the target distribution.",
-      "topics": [
-        "Domain Adaptation and Few-Shot Learning",
-        "Face recognition and analysis",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "Classifier (UML)",
-        "Extrapolation",
-        "Residual",
-        "Domain adaptation",
-        "Benchmark (surveying)",
-        "Transfer of learning",
-        "Iterative learning control",
-        "Extension (predicate logic)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.13216",
-      "abstract": "LLM-based chat systems have become valuable tools for design practice, enabling rapid ideation and flexible task support. Yet these systems process designer utterances as generic sequences, maintaining context through recency rather than through any model of how the speaker organizes knowledge. In design conversation, this gap compounds as relational context decays between turns, identical words go unresolved across designers, and the conversation loops or restarts rather than deepens. We present CogChat, a real-time chat framework that grounds conversational AI in a personal heterogeneous knowledge graph constructed from each designer's input. The system extracts typed entities and relations into a heterogeneous graph, then applies a HGT (Heterogeneous Graph Transformer) to select structurally relevant nodes for response generation and to generate both intentional and exploratory probing questions. Technical evaluation shows that HGT-based entity selection outperforms both ungrounded LLM interaction and naive KG augmentation, which introduces noise that degrades response quality. A within-subjects study with nine professional designers indicates that grounding conversation in a relationally structured, designer-specific semantic context improves context retention, personalized intent interpretation, and conversational depth while reducing cognitive load. These findings suggest that structuring a designer's expressed concepts and relations as a dynamic knowledge graph can preserve relational context that fades across turns, pointing toward a graph-grounded approach to long-term context management in LLM-based interaction.",
-      "topics": [
-        "AI in Service Interactions",
-        "Innovative Human-Technology Interaction",
-        "Speech and dialogue systems"
-      ],
-      "keywords": [
-        "Conversation",
-        "Transformer",
-        "Structuring",
-        "Graph",
-        "Selection (genetic algorithm)",
-        "Cognition",
-        "Ideation",
-        "Dialog system"
-      ]
-    },
-    {
-      "id": "doi:10.1145/3830398.3830724",
-      "abstract": "LLM-based chat systems have become valuable tools for design practice, enabling rapid ideation and flexible task support. Yet these systems process designer utterances as generic sequences, maintaining context through recency rather than through any model of how the speaker organizes knowledge. In design conversation, this gap compounds as relational context decays between turns, identical words go unresolved across designers, and the conversation loops or restarts rather than deepens. We present CogChat, a real-time chat framework that grounds conversational AI in a personal heterogeneous knowledge graph constructed from each designer's input. The system extracts typed entities and relations into a heterogeneous graph, then applies a HGT (Heterogeneous Graph Transformer) to select structurally relevant nodes for response generation and to generate both intentional and exploratory probing questions. Technical evaluation shows that HGT-based entity selection outperforms both ungrounded LLM interaction and naive KG augmentation, which introduces noise that degrades response quality. A within-subjects study with nine professional designers indicates that grounding conversation in a relationally structured, designer-specific semantic context improves context retention, personalized intent interpretation, and conversational depth while reducing cognitive load. These findings suggest that structuring a designer's expressed concepts and relations as a dynamic knowledge graph can preserve relational context that fades across turns, pointing toward a graph-grounded approach to long-term context management in LLM-based interaction.",
-      "topics": [
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.12805",
-      "abstract": "Access to clinical data is essential for developing reliable healthcare machine learning systems, but direct use of electronic health records is constrained by privacy regulation, institutional review, data-use agreements, and the risk of re-identification. Synthetic data promises a practical alternative: it can preserve useful statistical and clinical structure while reducing exposure of sensitive patient records. Prior studies often evaluate a single generator, one dataset, or a narrow downstream task, making it difficult to know when synthetic data can support model development and when it fails to preserve task-critical signal. We introduce CoMedBench, a reproducible benchmark that evaluates a family of generators under a common clinical-validity framework and one shared training and evaluation engine, spanning static tabular and temporal downstream tasks on established critical-care datasets. In total the benchmark spans 37 dataset-task pairs across two modalities consists of 20 static tabular and 17 temporal ICU time-series-drawn from seven public data sources: three intensive-care databases (MIMIC-III, MIMIC-IV, and eICU) together with the UCI Machine Learning Repository, the CDC BRFSS diabetes cohort (2015), NHANES (1999-2014), and the pycox survival datasets (GBSG and METABRIC). The benchmark evaluates both statistical fidelity and task utility by comparing models trained and tested across real and synthetic data. In these settings, synthetic training data preserves most of the downstream signal: on tabular tasks the reference generator CoMed-CTGAN retains a mean AUROC utility (the synthetic-to-real performance ratio) of 90.6%, rising to 97.3% for the strongest generator, CoMed-TVAE. Temporal ICU tasks are harder and more generator-sensitive: CoMed-CTGAN retains 81.6% (AUROC) and only 64.0% under the imbalance-sensitive AUPRC, whereas CoMed-TVAE still retains ~95% (AUROC).",
-      "topics": [
-        "Machine Learning in Healthcare",
-        "Artificial Intelligence in Healthcare and Education",
-        "Electronic Health Records Systems"
-      ],
-      "keywords": [
-        "Benchmark (surveying)",
-        "Synthetic data",
-        "Downstream (manufacturing)",
-        "Fidelity",
-        "Task (project management)",
-        "Modalities",
-        "Generator (circuit theory)"
       ]
     }
   ]

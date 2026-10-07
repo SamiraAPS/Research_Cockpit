@@ -1,12 +1,1853 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-10-06T12:03:50.749Z",
+  "generatedAt": "2026-10-07T11:49:04.786Z",
   "page": 85,
   "pageSize": 100,
-  "totalItems": 16380,
-  "totalPages": 164,
+  "totalItems": 16529,
+  "totalPages": 166,
   "nextPage": "./page-086.json",
   "items": [
+    {
+      "id": "doi:10.5281/zenodo.22296636",
+      "recordType": "publication",
+      "title": "6G, 3GPP and Europe's Next Security Frontier: Who Has Final Authority in AI-Native Networks?",
+      "abstract": "6G changes the security question 6G will not simply be a faster 5G. It is expected to bring artificial intelligence, sensing, cloud, robotics and communications much more deeply together. The European Commission itself describes 6G as expanding integrated sensing and communication as well as artificial intelligence, while emphasising security, resilience, interoperability and European technological sovereignty as strategic objectives. 3GPP's technical programme is already moving in this direction. Release 20 includes work on AI/ML for NG-RAN, AI/ML management, enhanced core-network support for AI/ML, and security for core-network AI/ML support. Most strikingly, 3GPP created TR 29.832, “Study on the Protocol for Artificial Intelligence in 6G,” under CT3 in June 2026. This means the important question is no longer simply whether AI will participate in future communication infrastructure. It will. The harder question is: When an AI system generates a network operation, what makes that operation authoritative enough to become a real network consequence? An AI system may calculate a beam change. It may recommend a handover. It may select a routing modification. It may initiate a network API operation. It may determine that telemetry should be exported. It may propose admission to a network slice. But none of those computations necessarily answers a different question: Should this exact operation, with these exact parameters, be allowed to become effective now? That distinction can be expressed simply: Computation is not authority. Where the world stands today Much of the international competition around AI-native communications is understandably centred on three areas: AI capability, semiconductor and infrastructure capability, and standards influence. Europe is also investing substantially in this race. The EU's Smart Networks and Services Joint Undertaking has a mission to foster European technological sovereignty in 6G, and in 2026 Europe announced another €116 million for twenty 6G research and innovation projects as part of a much larger portfolio. Those investments are important. But there is another dimension of sovereignty that deserves equal attention. Current security architecture is extremely good at answering questions such as: Who is the user? Which network function is authenticated? Which workload is permitted to communicate? What API may it call? What policy applies? What network state exists? What should be logged? What should be denied? AI-native infrastructure introduces an additional question: Who controls the transition from a machine-generated decision into an actual network consequence? That is not identical to authentication. It is not identical to authorization. It is not identical to AI safety. And it is not identical to logging or audit. It concerns execution authority itself. What is still unresolved Consider a future AI-assisted or AI-native RAN. An AI system determines that a beam should be redirected. The AI model may be authenticated. The workload running it may be authorized. The relevant network function may possess valid credentials. Applicable policies may have been evaluated. The recommendation may even be technically correct. But what happens between: “the AI produced the instruction” and “the physical beam changed”? That transition is the critical point. The same question arises elsewhere: AI recommendation → telemetry export AI-generated tool call → network configuration change AI optimization → slice admission AI security response → subscriber disconnection AI-derived decision → cross-border metadata transfer AI-generated radio instruction → RF emission. Existing mechanisms can participate in securing these operations, but the unresolved architectural question is whether the specific consequential act itself remains technically non-effective until authority applicable to that exact act is verified at the point where the consequence can still be withheld. This is the execution-finality problem. Where Europe can lead Europe does not necessarily need to build every foundation model, manufacture every accelerator or control every AI supplier in order to lead this part of 6G security. There is another opportunity. Europe can make network authority itself a sovereign security layer. Instead of requiring European infrastructure to place unconditional trust in every AI system that may eventually interact with it, the infrastructure can establish a common rule: Any AI system may calculate, recommend or propose an operation, but the operation becomes a real network consequence only through an infrastructure-controlled, machine-verifiable execution-finality process. This changes the sovereignty problem. Instead of asking only: “Can this AI provider be trusted?” Europe can additionally ask: “Even if this AI provider fails, is compromised, behaves unexpectedly or comes from another jurisdiction, does European infrastructure still retain technical control over the final consequence?” That is a fundamentally different security posture. An American AI model could participate. A European model could participate. A Chinese model could participate where permitted. An open-source model could participate. A specialised telecom model could participate. Different models could even compete to produce better network decisions. But none would acquire unrestricted network authority simply because it generated the winning computation. Europe would retain control over effectuation. This could transform technological sovereignty from being only a question of who supplies the intelligence into also being a question of who controls the consequence boundary. The proposed architecture: Execution Finality The proposed approach introduces an execution-finality architecture between machine intelligence and consequential effectuation. Every consequential AI-generated network operation begins as a: Candidate Act A Candidate Act is a fully generated, computed or parameterised operation that has not yet been permitted to become externally effective. For example: AI/ML system ↓ proposes beam change ↓ Candidate Radio Act ↓ protected validation and authority formation ↓ scoped machine-verifiable authority ↓ Finality Sink ↓ beam change becomes physically effective. The Candidate Act can therefore exist without possessing execution authority. This distinction is critical. The AI is allowed to compute freely. The infrastructure retains control over consequence. What is a Finality Sink? A Finality Sink is the logical or physical point at which a Candidate Act crosses from a non-effective condition into an externally effective consequence. It is not necessarily another server. It is not necessarily another network hop. And it does not necessarily require creation of a new 3GPP network function. Depending on the operation, the Finality Sink may be associated with an existing: RAN control component; radio unit; baseband controller; RF-chain interface; beamforming controller; User Plane Function; network gateway; API gateway; SmartNIC; Data Processing Unit; telemetry-export gateway; protected accelerator interface; network-function interface; or another component capable of withholding the consequence. Validation and finality may even reside within the same physical component. The architectural requirement is not physical separation. The requirement is: Before the operation becomes consequential, the infrastructure must still possess the technical ability to withhold it. Example: AI-controlled radio operation Consider an AI-native RAN optimizer. The AI determines that a beam configuration should change. The traditional conceptual sequence might be: AI calculation → control instruction → radio system → beam changes. Execution finality inserts a protected distinction between the calculation and the physical consequence: AI calculation ↓ Candidate beam-change act ↓ machine-verifiable act description ↓ validation of applicable conditions such as: permitted spectrum; geographic or jurisdictional conditions; permitted transmit-power envelope; network policy; infrastructure state; emergency-priority conditions; beam-safety conditions; hardware state; policy epoch. ↓ scoped authority applicable to that Candidate Act ↓ RF/baseband Finality Sink ↓ beam change becomes effective. A compromised AI process might still be able to calculate a malicious beam instruction. It might even be able to place that instruction into an ordinary software queue. But computation and possession of an instruction would not by themselves constitute permission to produce the physical RF consequence. Why authentication and authorization remain necessary — but answer a different question This architecture is not intended to replace existing 3GPP security. Authentication remains essential. Authorization remains essential. Policy control remains essential. Network analytics remain essential. CAPIF, OAuth-based mechanisms, workload identity, network-function security and other existing controls continue to perform their respective functions. Execution finality addresses the last transition: Is the operation that is actually about to become effective still the operation for which valid authority exists? This distinction becomes particularly important for AI. An AI agent may begin with authority to perform a legitimate task but generate parameters dynamically. For example: authorized objective: optimise coverage. But the actual generated Candidate Act may contain: beam = B17power = Pfrequency = Flocation = Lduration = Tnetwork slice = S. The execution-finality question concerns those actual consequential parameters. Authority therefore follows the specific act, ra",
+      "doi": "10.5281/zenodo.22296636",
+      "externalIds": {
+        "openalex": "W7208775938"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7208775938"
+      },
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "publicationDate": "2026-09-04",
+      "firstPublicDate": "2026-09-04",
+      "onlineDate": null,
+      "topics": [
+        "Advanced Wireless Communication Technologies",
+        "Internet of Things and AI",
+        "Big Data and Digital Economy"
+      ],
+      "keywords": [
+        "Interoperability",
+        "Competition (biology)",
+        "Protocol (science)",
+        "Telecommunications network",
+        "Sovereignty",
+        "European commission",
+        "Key (lock)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "load",
+              "conceptLabel": "Kognitive Belastung",
+              "matchedTerm": "workload",
+              "sourceValue": "…stions such as: Who is the user? Which network function is authenticated? Which workload is permitted to communicate? What API may it call? What policy applies? What network state exists? What should be logged? What should be denied? AI-native infrastructure introduces an additional question: Who controls the transitio…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "attention",
+              "conceptLabel": "Aufmerksamkeit",
+              "matchedTerm": "attention",
+              "sourceValue": "…re important. But there is another dimension of sovereignty that deserves equal attention. Current security architecture is extremely good at answering questions such as: Who is the user? Which network function is authenticated? Which workload is permitted to communicate? What API may it call? What policy applies? What…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…authentication. It is not identical to authorization. It is not identical to AI safety. And it is not identical to logging or audit. It concerns execution authority itself. What is still unresolved Consider a future AI-assisted or AI-native RAN. An AI system determines that a beam should be redirected. The AI model may…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "resilience",
+              "conceptLabel": "Resilienz",
+              "matchedTerm": "resilience",
+              "sourceValue": "…d communication as well as artificial intelligence, while emphasising security, resilience, interoperability and European technological sovereignty as strategic objectives. 3GPP's technical programme is already moving in this direction. Release 20 includes work on AI/ML for NG-RAN, AI/ML management, enhanced core-netwo…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trust",
+              "sourceValue": "…rity layer. Instead of requiring European infrastructure to place unconditional trust in every AI system that may eventually interact with it, the infrastructure can establish a common rule: Any AI system may calculate, recommend or propose an operation, but the operation becomes a real network consequence only through…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 5,
+        "topic:cognition": 4,
+        "topic:safety": 4,
+        "topic:trust": 2,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "foundation model",
+        "AI agent",
+        "trust",
+        "safety",
+        "workload",
+        "attention",
+        "resilience"
+      ],
+      "authors": [
+        {
+          "id": "A5123721973",
+          "name": "Sangam Das",
+          "orcid": "https://orcid.org/0009-0001-4056-9213",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.5281/zenodo.22296636",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:18.670Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:18.670Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:18.670Z",
+      "preferredVersionId": "openalex:W7208775938",
+      "versions": [
+        {
+          "id": "openalex:W7208775938",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7208775938",
+          "doi": "10.5281/zenodo.22296636",
+          "url": "https://doi.org/10.5281/zenodo.22296636"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-openalex-broad-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-085.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "user",
+              "quote": "urity architecture is extremely good at answering questions such as: Who is the user? Which network function is authenticated? Which workload is permitted to communicate? What API may ",
+              "start": 2206,
+              "end": 2390
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "AI",
+              "quote": "6G, 3GPP and Europe's Next Security Frontier: Who Has Final Authority in AI-Native Networks?",
+              "start": 0,
+              "end": 92
+            },
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "he security question 6G will not simply be a faster 5G. It is expected to bring artificial intelligence, sensing, cloud, robotics and communications much more deeply together. The European Commission its",
+              "start": 12,
+              "end": 215
+            },
+            {
+              "field": "abstract",
+              "term": "foundation model",
+              "quote": " problem. Where Europe can lead Europe does not necessarily need to build every foundation model, manufacture every accelerator or control every AI supplier in order to lead this part of 6G securi",
+              "start": 3992,
+              "end": 4188
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "controller",
+                  "quote": "may be associated with an existing: RAN control component; radio unit; baseband controller; RF-chain interface; beamforming controller; User Plane Function; network gateway; API gateway; Sma",
+                  "start": 6856,
+                  "end": 7046
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "decisionSupport",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "recommendation",
+                  "quote": "may possess valid credentials. Applicable policies may have been evaluated. The recommendation may even be technically correct. But what happens between: “the AI produced the instruction” and “t",
+                  "start": 3088,
+                  "end": 3282
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "workload",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "workload",
+                  "quote": "stions such as: Who is the user? Which network function is authenticated? Which workload is permitted to communicate? What API may it call? What policy applies? What network state exists? ",
+                  "start": 2259,
+                  "end": 2447
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "ould be denied? AI-native infrastructure introduces an additional question: Who controls the transition from a machine-generated decision into an actual network consequence? That is not id",
+                  "start": 2477,
+                  "end": 2665
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.17116/otorino20269104178",
+      "recordType": "publication",
+      "title": "A cloud-based system for automatic diagnostics of dysphonia via acoustic parameters using artificial intelligence models",
+      "abstract": "The diagnosis of voice disorders remains a persistent challenge in otorhinolaryngology, as the analysis of complex data demands specialized clinical expertise. A promising approach involves the implementation of artificial intelligence (AI) and machine learning methods, which can automate the analysis of acoustic voice parameters, objectively differentiating between norm and pathology. The creation of user-friendly, secure and accessible cloud-based platforms utilizing environments like Google Drive and Colaboratory reduces the need for expensive infrastructure. This is a critical prerequisite for the successful integration of AI into clinical practice.",
+      "doi": "10.17116/otorino20269104178",
+      "externalIds": {
+        "openalex": "W7208753993"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7208753993"
+      },
+      "venue": "Russian Bulletin of Otorhinolaryngology",
+      "publicationDate": "2026-09-04",
+      "firstPublicDate": "2026-09-04",
+      "onlineDate": null,
+      "topics": [
+        "Voice and Speech Disorders",
+        "Phonocardiography and Auscultation Techniques",
+        "AI in cancer detection"
+      ],
+      "keywords": [
+        "Voice analysis",
+        "Artificial neural network",
+        "Applications of artificial intelligence",
+        "Identification (biology)",
+        "Deep learning"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "…orhinolaryngology, as the analysis of complex data demands specialized clinical expertise. A promising approach involves the implementation of artificial intelligence (AI) and machine learning methods, which can automate the analysis of acoustic voice parameters, objectively differentiating between norm and pathology. …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "learning",
+        "expertise"
+      ],
+      "authors": [
+        {
+          "id": "A5082741602",
+          "name": "Курбанова Диана Игоревна",
+          "orcid": "https://orcid.org/0000-0002-3571-8851",
+          "affiliations": []
+        },
+        {
+          "id": "A5079679117",
+          "name": "С Г Романенко",
+          "orcid": "https://orcid.org/0000-0002-8202-5505",
+          "affiliations": []
+        },
+        {
+          "id": "A5004351534",
+          "name": "О Г Павлихин",
+          "orcid": "https://orcid.org/0000-0003-3876-093X",
+          "affiliations": []
+        },
+        {
+          "id": "A5005384095",
+          "name": "E.V. Lesogorova",
+          "orcid": "https://orcid.org/0000-0003-1753-5960",
+          "affiliations": []
+        },
+        {
+          "id": "A5048176037",
+          "name": "O.V. Eliseev",
+          "orcid": "https://orcid.org/0000-0002-3969-1617",
+          "affiliations": []
+        },
+        {
+          "id": "A5093606181",
+          "name": "E.N. Krasilnikova",
+          "orcid": "https://orcid.org/0000-0002-8675-078X",
+          "affiliations": []
+        },
+        {
+          "id": "A5120333754",
+          "name": "V. A. Zemlyanov",
+          "orcid": "https://orcid.org/0009-0000-8554-9462",
+          "affiliations": []
+        },
+        {
+          "id": "A5059697673",
+          "name": "Elena A. Teplykh",
+          "orcid": "https://orcid.org/0000-0002-8610-2459",
+          "affiliations": []
+        },
+        {
+          "id": "A5149986450",
+          "name": "Kh.Z. Khaybulaev",
+          "orcid": "https://orcid.org/0009-0005-5535-9867",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.17116/otorino20269104178",
+      "openAccess": false,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:17.051Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:17.051Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:17.051Z",
+      "preferredVersionId": "openalex:W7208753993",
+      "versions": [
+        {
+          "id": "openalex:W7208753993",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7208753993",
+          "doi": "10.17116/otorino20269104178",
+          "url": "https://doi.org/10.17116/otorino20269104178"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-openalex-broad-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-085.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "user",
+              "quote": "meters, objectively differentiating between norm and pathology. The creation of user-friendly, secure and accessible cloud-based platforms utilizing environments like Google Drive and ",
+              "start": 325,
+              "end": 509
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "artificial intelligence",
+              "quote": "sed system for automatic diagnostics of dysphonia via acoustic parameters using artificial intelligence models",
+              "start": 10,
+              "end": 120
+            },
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "ialized clinical expertise. A promising approach involves the implementation of artificial intelligence (AI) and machine learning methods, which can automate the analysis of acoustic voice parameters, ob",
+              "start": 132,
+              "end": 335
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "e. A promising approach involves the implementation of artificial intelligence (AI) and machine learning methods, which can automate the analysis of acoustic voice parameters, object",
+              "start": 157,
+              "end": 339
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "clinical",
+                  "quote": "nge in otorhinolaryngology, as the analysis of complex data demands specialized clinical expertise. A promising approach involves the implementation of artificial intelligence (AI) and mac",
+                  "start": 60,
+                  "end": 248
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [
+          {
+            "topic": "high-skill-operations",
+            "evidence": [
+              {
+                "field": "abstract",
+                "term": "expertise",
+                "quote": "orhinolaryngology, as the analysis of complex data demands specialized clinical expertise. A promising approach involves the implementation of artificial intelligence (AI) and machine learn",
+                "start": 69,
+                "end": 258
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1016/j.tra.2026.105236",
+      "recordType": "publication",
+      "title": "A community-driven recommender system for speed safety camera policy using large language models and knowledge graphs",
+      "abstract": "Speeding is a persistent contributor to roadway fatalities, accounting for over 30% of traffic deaths in the U.S., prompting the widespread use of Speed Safety Cameras (SSCs) as a proven countermeasure. However, despite their effectiveness, public skepticism, which is driven by concerns over fairness, transparency, and revenue motives, has limited the scalability and sustainability of SSC programs. Existing research lacks systematic integration of public perception into policy frameworks and fails to fully leverage advancements in artificial intelligence for context-aware recommendation. Addressing this gap, this study develops a scalable policy recommender system for SSC deployment in Oregon by fusing public sentiment with authoritative guidance using a novel hybrid framework that integrates Large Language Models (LLMs), Knowledge Graphs (KGs), and Retrieval-Augmented Generation (RAG). A statewide survey of 1,000 residents captured public opinion across six policy dimensions, which, along with state legislation (HB4109), FHWA guidelines, and best practices, formed a multi-source knowledge base stored in a Neo4j graph. The system retrieves both structured and unstructured context to support LLM-based generation of interpretable policy recommendations. Through Monte Carlo simulations, sentence similarity benchmarking, and RAGAS metrics, the proposed framework achieved the highest performance in accuracy, faithfulness, and context recall compared to baseline LLM and RAG pipelines. The results underscore the effectiveness of combining symbolic reasoning with semantic retrieval for generating transparent and community-aligned SSC policy guidance, offering a transferable blueprint for jurisdictions aiming to align traffic safety interventions with public trust and domain expertise.",
+      "doi": "10.1016/j.tra.2026.105236",
+      "externalIds": {
+        "openalex": "W7124930241"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7124930241"
+      },
+      "venue": "Transportation Research Part A Policy and Practice",
+      "publicationDate": "2026-09-04",
+      "firstPublicDate": "2026-09-04",
+      "onlineDate": null,
+      "topics": [
+        "Traffic and Road Safety",
+        "Advanced Graph Neural Networks",
+        "Multimodal Machine Learning Applications"
+      ],
+      "keywords": [
+        "Leverage (statistics)",
+        "Scalability",
+        "Recommender system",
+        "Language model",
+        "Context (archaeology)",
+        "Blueprint",
+        "Credibility",
+        "Knowledge base",
+        "Semantics (computer science)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "A community-driven recommender system for speed safety camera policy using large language models and knowledge graphs",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…r over 30% of traffic deaths in the U.S., prompting the widespread use of Speed Safety Cameras (SSCs) as a proven countermeasure. However, despite their effectiveness, public skepticism, which is driven by concerns over fairness, transparency, and revenue motives, has limited the scalability and sustainability of SSC p…",
+              "weight": 2
+            },
+            {
+              "source": "external_topic",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Traffic and Road Safety",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trust",
+              "sourceValue": "…rint for jurisdictions aiming to align traffic safety interventions with public trust and domain expertise.",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "explainability",
+              "conceptLabel": "Erklärbarkeit",
+              "matchedTerm": "transparency",
+              "sourceValue": "…ir effectiveness, public skepticism, which is driven by concerns over fairness, transparency, and revenue motives, has limited the scalability and sustainability of SSC programs. Existing research lacks systematic integration of public perception into policy frameworks and fails to fully leverage advancements in artifi…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "…tions aiming to align traffic safety interventions with public trust and domain expertise.",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "participation",
+          "label": "Partizipation & Fairness",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "fairness",
+              "conceptLabel": "Fairness",
+              "matchedTerm": "fairness",
+              "sourceValue": "…espite their effectiveness, public skepticism, which is driven by concerns over fairness, transparency, and revenue motives, has limited the scalability and sustainability of SSC programs. Existing research lacks systematic integration of public perception into policy frameworks and fails to fully leverage advancements…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 8,
+        "topic:safety": 6,
+        "topic:trust": 4,
+        "topic:learning": 2,
+        "topic:participation": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "large language model",
+        "large language models",
+        "LLM",
+        "learning",
+        "expertise",
+        "trust",
+        "safety",
+        "transparency",
+        "fairness"
+      ],
+      "authors": [
+        {
+          "id": "A5106548908",
+          "name": "Farhad Sedighi",
+          "orcid": "https://orcid.org/0009-0008-4673-679X",
+          "affiliations": []
+        },
+        {
+          "id": "A5031900540",
+          "name": "Brian M. Staes",
+          "orcid": "https://orcid.org/0000-0002-3219-4386",
+          "affiliations": []
+        },
+        {
+          "id": "A5008208301",
+          "name": "Benyamin Ghoreishi",
+          "orcid": "https://orcid.org/0000-0001-6773-5325",
+          "affiliations": []
+        },
+        {
+          "id": "A5123376175",
+          "name": "Xuehan Jing",
+          "orcid": "https://orcid.org/0009-0002-0870-3766",
+          "affiliations": []
+        },
+        {
+          "id": "A5008575896",
+          "name": "Haizhong Wang",
+          "orcid": "https://orcid.org/0000-0002-0028-3755",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1016/j.tra.2026.105236",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:14.283Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:14.283Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:14.283Z",
+      "preferredVersionId": "openalex:W7124930241",
+      "versions": [
+        {
+          "id": "openalex:W7124930241",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7124930241",
+          "doi": "10.1016/j.tra.2026.105236",
+          "url": "https://doi.org/10.1016/j.tra.2026.105236"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-openalex-broad-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-085.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "large language model",
+              "quote": "A community-driven recommender system for speed safety camera policy using large language models and knowledge graphs",
+              "start": 0,
+              "end": 117
+            },
+            {
+              "field": "title",
+              "term": "large language models",
+              "quote": "A community-driven recommender system for speed safety camera policy using large language models and knowledge graphs",
+              "start": 0,
+              "end": 117
+            },
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "c perception into policy frameworks and fails to fully leverage advancements in artificial intelligence for context-aware recommendation. Addressing this gap, this study develops a scalable policy recomm",
+              "start": 457,
+              "end": 660
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "decisionSupport",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "recommendation",
+                  "quote": "ils to fully leverage advancements in artificial intelligence for context-aware recommendation. Addressing this gap, this study develops a scalable policy recommender system for SSC deployment i",
+                  "start": 499,
+                  "end": 693
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "large language model",
+                  "quote": "A community-driven recommender system for speed safety camera policy using large language models and knowledge graphs",
+                  "start": 0,
+                  "end": 117
+                },
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "ment with authoritative guidance using a novel hybrid framework that integrates Large Language Models (LLMs), Knowledge Graphs (KGs), and Retrieval-Augmented Generation (RAG). A statewide survey of 1,0",
+                  "start": 724,
+                  "end": 925
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": ", and RAGAS metrics, the proposed framework achieved the highest performance in accuracy, faithfulness, and context recall compared to baseline LLM and RAG pipelines. The results underscor",
+                  "start": 1337,
+                  "end": 1525
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": [
+            {
+              "value": "survey",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "survey",
+                  "quote": ", Knowledge Graphs (KGs), and Retrieval-Augmented Generation (RAG). A statewide survey of 1,000 residents captured public opinion across six policy dimensions, which, along with state le",
+                  "start": 832,
+                  "end": 1018
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [
+          {
+            "topic": "high-skill-operations",
+            "evidence": [
+              {
+                "field": "abstract",
+                "term": "expertise",
+                "quote": "tions aiming to align traffic safety interventions with public trust and domain expertise.",
+                "start": 1717,
+                "end": 1807
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1097/md.0000000000050512",
+      "recordType": "publication",
+      "title": "A comparative evaluation of ChatGPT-assisted and traditional methods of teaching diagnostic assessments to medical students",
+      "abstract": "The rapid development of artificial intelligence (AI) technology has brought new opportunities and challenges to the ever-evolving field of medical education. However, the specific impact of AI on the teaching of diagnostic assessments to medical students requires further investigation. The purpose of this study was to evaluate the effectiveness of ChatGPT-assisted teaching of diagnoses. Eighty medical students were randomly divided into 2 groups; 1 group received ChatGPT-assisted training, and the other group received conventional instruction. We evaluated the effectiveness of both teaching methods using a theoretical examination and the Mini-Clinical Evaluation Exercise (Mini-CEX). We also assessed satisfaction with the ChatGPT-assisted teaching method using a structured survey. The ChatGPT-assisted students scored significantly higher on the theoretical knowledge examination compared to the traditional teaching group (t = 6.34, P < .001). The ChatGPT-assisted group showed significant improvement on the Mini-CEX examination, particularly on medical history taking (Χ2 = 5.115, P = .024), doctor-patient communication (Χ2 = 5.051, P = .025), professionalism (Χ2 = 4.073, P = .044), clinical judgment (Χ2 = 4.503, P = .034), and overall capabilities (Χ2 = 7.218, P = .007). The majority of participants rated the ChatGPT teaching method highly and provided positive feedback, highlighting the benefits of interactive learning and skill acquisition. ChatGPT-assisted teaching not only improved the students' scores on the theoretical knowledge of diagnostic assessments, but also enhanced the clinical knowledge of the medical students. The positive feedback of the ChatGPT-assisted group shows that this method has the potential to supplement and enhance conventional teaching methods in medical education. These results support further expansion and the application of AI in medical education.",
+      "doi": "10.1097/md.0000000000050512",
+      "externalIds": {
+        "openalex": "W7208805734"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7208805734"
+      },
+      "venue": "Medicine",
+      "publicationDate": "2026-09-04",
+      "firstPublicDate": "2026-09-04",
+      "onlineDate": null,
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Simulation-Based Education in Healthcare",
+        "Clinical Reasoning and Diagnostic Skills"
+      ],
+      "keywords": [
+        "Teaching method",
+        "Objective structured clinical examination",
+        "Medical knowledge",
+        "Educational measurement",
+        "Medical history",
+        "Physical examination",
+        "MEDLINE"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…highly and provided positive feedback, highlighting the benefits of interactive learning and skill acquisition. ChatGPT-assisted teaching not only improved the students' scores on the theoretical knowledge of diagnostic assessments, but also enhanced the clinical knowledge of the medical students. The positive feedback…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "ChatGPT",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5150152299",
+          "name": "Hua Xu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150261021",
+          "name": "Yu Sun",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150077720",
+          "name": "Zhi-Wen Mo",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5114068538",
+          "name": "Yu-Nan Man",
+          "orcid": "https://orcid.org/0009-0000-2214-1646",
+          "affiliations": []
+        },
+        {
+          "id": "A5150427575",
+          "name": "San-Mao Liu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150133461",
+          "name": "Yu-Ning Wei",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5100753924",
+          "name": "Maolin He",
+          "orcid": "https://orcid.org/0000-0002-3563-763X",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1097/md.0000000000050512",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:18.670Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:18.670Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:18.670Z",
+      "preferredVersionId": "openalex:W7208805734",
+      "versions": [
+        {
+          "id": "openalex:W7208805734",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7208805734",
+          "doi": "10.1097/md.0000000000050512",
+          "url": "https://doi.org/10.1097/md.0000000000050512"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-openalex-broad-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-085.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "title",
+              "term": "student",
+              "quote": "-assisted and traditional methods of teaching diagnostic assessments to medical students",
+              "start": 35,
+              "end": 123
+            },
+            {
+              "field": "title",
+              "term": "students",
+              "quote": "-assisted and traditional methods of teaching diagnostic assessments to medical students",
+              "start": 35,
+              "end": 123
+            },
+            {
+              "field": "abstract",
+              "term": "participant",
+              "quote": "03, P = .034), and overall capabilities (Χ2 = 7.218, P = .007). The majority of participants rated the ChatGPT teaching method highly and provided positive feedback, highlighting the benefits ",
+              "start": 1226,
+              "end": 1418
+            },
+            {
+              "field": "abstract",
+              "term": "participants",
+              "quote": "03, P = .034), and overall capabilities (Χ2 = 7.218, P = .007). The majority of participants rated the ChatGPT teaching method highly and provided positive feedback, highlighting the benefits ",
+              "start": 1226,
+              "end": 1418
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "ChatGPT",
+              "quote": "A comparative evaluation of ChatGPT-assisted and traditional methods of teaching diagnostic assessments to medical students",
+              "start": 0,
+              "end": 123
+            },
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "The rapid development of artificial intelligence (AI) technology has brought new opportunities and challenges to the ever-evolving field of medical ",
+              "start": 0,
+              "end": 148
+            },
+            {
+              "field": "abstract",
+              "term": "ChatGPT",
+              "quote": "r investigation. The purpose of this study was to evaluate the effectiveness of ChatGPT-assisted teaching of diagnoses. Eighty medical students were randomly divided into 2 groups; 1 grou",
+              "start": 271,
+              "end": 458
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "clinical",
+                  "quote": "ctiveness of both teaching methods using a theoretical examination and the Mini-Clinical Evaluation Exercise (Mini-CEX). We also assessed satisfaction with the ChatGPT-assisted teaching me",
+                  "start": 572,
+                  "end": 760
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "student",
+                  "quote": "-assisted and traditional methods of teaching diagnostic assessments to medical students",
+                  "start": 35,
+                  "end": 123
+                },
+                {
+                  "field": "abstract",
+                  "term": "education",
+                  "quote": " brought new opportunities and challenges to the ever-evolving field of medical education. However, the specific impact of AI on the teaching of diagnostic assessments to medical students r",
+                  "start": 68,
+                  "end": 257
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "students",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "student",
+                  "quote": "-assisted and traditional methods of teaching diagnostic assessments to medical students",
+                  "start": 35,
+                  "end": 123
+                },
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": " the specific impact of AI on the teaching of diagnostic assessments to medical students requires further investigation. The purpose of this study was to evaluate the effectiveness of Chat",
+                  "start": 167,
+                  "end": 355
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "participants",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "participant",
+                  "quote": "03, P = .034), and overall capabilities (Χ2 = 7.218, P = .007). The majority of participants rated the ChatGPT teaching method highly and provided positive feedback, highlighting the benefits ",
+                  "start": 1226,
+                  "end": 1418
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "tutoring",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "feedback",
+                  "quote": " of participants rated the ChatGPT teaching method highly and provided positive feedback, highlighting the benefits of interactive learning and skill acquisition. ChatGPT-assisted teaching",
+                  "start": 1302,
+                  "end": 1490
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "ChatGPT",
+                  "quote": "A comparative evaluation of ChatGPT-assisted and traditional methods of teaching diagnostic assessments to medical students",
+                  "start": 0,
+                  "end": 123
+                },
+                {
+                  "field": "abstract",
+                  "term": "ChatGPT",
+                  "quote": "r investigation. The purpose of this study was to evaluate the effectiveness of ChatGPT-assisted teaching of diagnoses. Eighty medical students were randomly divided into 2 groups; 1 grou",
+                  "start": 271,
+                  "end": 458
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "survey",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "survey",
+                  "quote": "essed satisfaction with the ChatGPT-assisted teaching method using a structured survey. The ChatGPT-assisted students scored significantly higher on the theoretical knowledge examination",
+                  "start": 704,
+                  "end": 890
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.5281/zenodo.22637740",
+      "recordType": "publication",
+      "title": "A Comprehensive Review of Predictive Analytics in Audit Risk Assessment for Advancing Data-Driven Decision-Making and Financial Transparency",
+      "abstract": "Abstract : Audit risk assessment remains a foundational element of the financial statement audit, yet traditional approaches that rely primarily on professional judgment and sampling face growing limitations. Rising volumes of transactional data, increasing complexity in financial reporting, and more sophisticated forms of fraud and misstatement have reduced the effectiveness of conventional risk assessment methods. Although predictive analytics, including machine learning, anomaly detection, deep learning, and generative artificial intelligence, has been proposed as a means of addressing these challenges, existing research remains fragmented across techniques, applications, and institutional contexts. As a result, it is difficult to determine how predictive analytics advances audit risk assessment, under what conditions its benefits are realized, and where important constraints persist. This review addresses the problem by systematically synthesizing the relevant literature. It examines the predictive techniques employed, the audit activities in which they are applied, the conditions that shape their effectiveness, and the barriers that limit implementation. Building on this synthesis, the review develops the Integrated Predictive Analytics–Audit Risk Assessment Framework, which organizes technical capabilities, operating mechanisms, moderating conditions, and outcomes related to audit quality and financial transparency. By clarifying the current state of knowledge and providing an integrative structure, the review offers a foundation for more coherent research and practice in data-driven audit risk assessment.",
+      "doi": "10.5281/zenodo.22637740",
+      "externalIds": {
+        "openalex": "W7211868670"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7211868670"
+      },
+      "venue": "Journal of Economic Finance Research and Review",
+      "publicationDate": "2026-09-04",
+      "firstPublicDate": "2026-09-04",
+      "onlineDate": null,
+      "topics": [
+        "Auditing, Earnings Management, Governance",
+        "Financial Distress and Bankruptcy Prediction",
+        "Financial Reporting and XBRL"
+      ],
+      "keywords": [
+        "Audit",
+        "Financial statement",
+        "Audit plan",
+        "Audit risk",
+        "Information technology audit",
+        "Risk assessment",
+        "Predictive analytics",
+        "Audit evidence",
+        "Transparency (behavior)",
+        "Joint audit"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 8,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "explainability",
+              "conceptLabel": "Erklärbarkeit",
+              "matchedTerm": "transparency",
+              "sourceValue": "…n Audit Risk Assessment for Advancing Data-Driven Decision-Making and Financial Transparency",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "…ional element of the financial statement audit, yet traditional approaches that rely primarily on professional judgment and sampling face growing limitations. Rising volumes of transactional data, increasing complexity in financial reporting, and more sophisticated forms of fraud and misstatement have reduced the effec…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "explainability",
+              "conceptLabel": "Erklärbarkeit",
+              "matchedTerm": "transparency",
+              "sourceValue": "…sms, moderating conditions, and outcomes related to audit quality and financial transparency. By clarifying the current state of knowledge and providing an integrative structure, the review offers a foundation for more coherent research and practice in data-driven audit risk assessment.",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "explainability",
+              "conceptLabel": "Erklärbarkeit",
+              "matchedTerm": "transparency",
+              "sourceValue": "Transparency (behavior)",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "A Comprehensive Review of Predictive Analytics in Audit Risk Assessment for Advancing Data-Driven Decision-Making and Financial Transparency",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "Abstract : Audit risk assessment remains a foundational element of the financial statement audit, yet traditional approaches that rely primarily on professional judgment and sampling face growing limitations. Rising volumes of transactional data, increasing complexity in financial reporting, and more sophisticated form…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "Audit risk",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "decision",
+              "conceptLabel": "Entscheiden",
+              "matchedTerm": "decision making",
+              "sourceValue": "A Comprehensive Review of Predictive Analytics in Audit Risk Assessment for Advancing Data-Driven Decision-Making and Financial Transparency",
+              "weight": 4
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:trust": 8,
+        "topic:safety": 6,
+        "topic:cognition": 4,
+        "classificationMaximum": 8
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "learning",
+        "transparency",
+        "rely",
+        "risk",
+        "decision making",
+        "governance"
+      ],
+      "authors": [
+        {
+          "id": "A5136791863",
+          "name": "Solomon Doe Adjaottor",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150637238",
+          "name": "Emmanuel Okyem Afriyie",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5140478442",
+          "name": "Godson Teye Apaflo",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.5281/zenodo.22637740",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:18.670Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:18.670Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:18.670Z",
+      "preferredVersionId": "openalex:W7211868670",
+      "versions": [
+        {
+          "id": "openalex:W7211868670",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7211868670",
+          "doi": "10.5281/zenodo.22637740",
+          "url": "https://doi.org/10.5281/zenodo.22637740"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-openalex-broad-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-085.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "professional",
+              "quote": "he financial statement audit, yet traditional approaches that rely primarily on professional judgment and sampling face growing limitations. Rising volumes of transactional data, increasing co",
+              "start": 68,
+              "end": 260
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "s, including machine learning, anomaly detection, deep learning, and generative artificial intelligence, has been proposed as a means of addressing these challenges, existing research remains fragmented ",
+              "start": 448,
+              "end": 651
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "professional",
+                  "quote": "he financial statement audit, yet traditional approaches that rely primarily on professional judgment and sampling face growing limitations. Rising volumes of transactional data, increasing co",
+                  "start": 68,
+                  "end": 260
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "generative",
+                  "quote": "ve analytics, including machine learning, anomaly detection, deep learning, and generative artificial intelligence, has been proposed as a means of addressing these challenges, existing rese",
+                  "start": 437,
+                  "end": 627
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.5281/zenodo.22637739",
+      "recordType": "publication",
+      "title": "A Comprehensive Review of Predictive Analytics in Audit Risk Assessment for Advancing Data-Driven Decision-Making and Financial Transparency",
+      "abstract": "Abstract : Audit risk assessment remains a foundational element of the financial statement audit, yet traditional approaches that rely primarily on professional judgment and sampling face growing limitations. Rising volumes of transactional data, increasing complexity in financial reporting, and more sophisticated forms of fraud and misstatement have reduced the effectiveness of conventional risk assessment methods. Although predictive analytics, including machine learning, anomaly detection, deep learning, and generative artificial intelligence, has been proposed as a means of addressing these challenges, existing research remains fragmented across techniques, applications, and institutional contexts. As a result, it is difficult to determine how predictive analytics advances audit risk assessment, under what conditions its benefits are realized, and where important constraints persist. This review addresses the problem by systematically synthesizing the relevant literature. It examines the predictive techniques employed, the audit activities in which they are applied, the conditions that shape their effectiveness, and the barriers that limit implementation. Building on this synthesis, the review develops the Integrated Predictive Analytics–Audit Risk Assessment Framework, which organizes technical capabilities, operating mechanisms, moderating conditions, and outcomes related to audit quality and financial transparency. By clarifying the current state of knowledge and providing an integrative structure, the review offers a foundation for more coherent research and practice in data-driven audit risk assessment.",
+      "doi": "10.5281/zenodo.22637739",
+      "externalIds": {
+        "openalex": "W7211869392"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7211869392"
+      },
+      "venue": "Journal of Economic Finance Research and Review",
+      "publicationDate": "2026-09-04",
+      "firstPublicDate": "2026-09-04",
+      "onlineDate": null,
+      "topics": [
+        "Auditing, Earnings Management, Governance",
+        "Financial Distress and Bankruptcy Prediction",
+        "Financial Reporting and XBRL"
+      ],
+      "keywords": [
+        "Audit",
+        "Financial statement",
+        "Audit plan",
+        "Audit risk",
+        "Information technology audit",
+        "Risk assessment",
+        "Predictive analytics",
+        "Audit evidence",
+        "Transparency (behavior)",
+        "Joint audit"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 8,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "explainability",
+              "conceptLabel": "Erklärbarkeit",
+              "matchedTerm": "transparency",
+              "sourceValue": "…n Audit Risk Assessment for Advancing Data-Driven Decision-Making and Financial Transparency",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "…ional element of the financial statement audit, yet traditional approaches that rely primarily on professional judgment and sampling face growing limitations. Rising volumes of transactional data, increasing complexity in financial reporting, and more sophisticated forms of fraud and misstatement have reduced the effec…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "explainability",
+              "conceptLabel": "Erklärbarkeit",
+              "matchedTerm": "transparency",
+              "sourceValue": "…sms, moderating conditions, and outcomes related to audit quality and financial transparency. By clarifying the current state of knowledge and providing an integrative structure, the review offers a foundation for more coherent research and practice in data-driven audit risk assessment.",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "explainability",
+              "conceptLabel": "Erklärbarkeit",
+              "matchedTerm": "transparency",
+              "sourceValue": "Transparency (behavior)",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "A Comprehensive Review of Predictive Analytics in Audit Risk Assessment for Advancing Data-Driven Decision-Making and Financial Transparency",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "Abstract : Audit risk assessment remains a foundational element of the financial statement audit, yet traditional approaches that rely primarily on professional judgment and sampling face growing limitations. Rising volumes of transactional data, increasing complexity in financial reporting, and more sophisticated form…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "Audit risk",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "decision",
+              "conceptLabel": "Entscheiden",
+              "matchedTerm": "decision making",
+              "sourceValue": "A Comprehensive Review of Predictive Analytics in Audit Risk Assessment for Advancing Data-Driven Decision-Making and Financial Transparency",
+              "weight": 4
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:trust": 8,
+        "topic:safety": 6,
+        "topic:cognition": 4,
+        "classificationMaximum": 8
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "learning",
+        "transparency",
+        "rely",
+        "risk",
+        "decision making",
+        "governance"
+      ],
+      "authors": [
+        {
+          "id": "A5136791863",
+          "name": "Solomon Doe Adjaottor",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150637238",
+          "name": "Emmanuel Okyem Afriyie",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5140478442",
+          "name": "Godson Teye Apaflo",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.5281/zenodo.22637739",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:18.670Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:18.670Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:18.670Z",
+      "preferredVersionId": "openalex:W7211869392",
+      "versions": [
+        {
+          "id": "openalex:W7211869392",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7211869392",
+          "doi": "10.5281/zenodo.22637739",
+          "url": "https://doi.org/10.5281/zenodo.22637739"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-openalex-broad-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-085.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "professional",
+              "quote": "he financial statement audit, yet traditional approaches that rely primarily on professional judgment and sampling face growing limitations. Rising volumes of transactional data, increasing co",
+              "start": 68,
+              "end": 260
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "s, including machine learning, anomaly detection, deep learning, and generative artificial intelligence, has been proposed as a means of addressing these challenges, existing research remains fragmented ",
+              "start": 448,
+              "end": 651
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "professional",
+                  "quote": "he financial statement audit, yet traditional approaches that rely primarily on professional judgment and sampling face growing limitations. Rising volumes of transactional data, increasing co",
+                  "start": 68,
+                  "end": 260
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "generative",
+                  "quote": "ve analytics, including machine learning, anomaly detection, deep learning, and generative artificial intelligence, has been proposed as a means of addressing these challenges, existing rese",
+                  "start": 437,
+                  "end": 627
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.3390/rs18173017",
+      "recordType": "publication",
+      "title": "A Cost-Effective Approach to Estimate Quinoa Aboveground Biomass Volume Combining UAV RGB Data with Sentinel-1 and Sentinel-2 Satellite Imagery",
+      "abstract": "This study assessed the integration of Unmanned Aerial Vehicles (UAVs) and satellite images (Sentinel-1 and Sentinel-2) in advanced machine-learning techniques to monitor the ABV of quinoa crops (Jacha Grano variety) across the Bolivian Altiplano. The proposed method follows a two-step procedure. First, UAV RGB images were used in photogrammetric and deep-learning (Convolutional Neural Networks-CNN) models to estimate reference quinoa ABVs at a 10 m spatial resolution from the crop canopy 3D model and classification, respectively. Secondly, several spectral and polarization/texture indices derived from Sentinel-2 and -1 images were integrated into three decision-tree-based machine-learning models (Random Forest-RF, Gradient Boosting-GB, eXtreme Gradient Boosting-XGB), and one CNN-based machine-learning model to estimate ABV. Additionally, a Stacking Model (STM) build on top of the three decision-tree-based models was considered for comparison. Model evaluation was also performed in a two-step approach. First, a 10-fold cross-validation strategy was used to highlight ABV sensitivity to Sentinel-2 and Sentinel-1 alone and in combination. Secondly, a Leave-One-Plot-Out Cross-Validation (LOPOCV) strategy was used to avoid autocorrelation between the training and evaluation dataset and therefore provided more insight into ABV mapping potential. The results showed that the combination of Sentinel-1 and Sentinel-2 features in the CNN model achieved the best predictive performance with R2 and RMSE values of 0.64 and 0.39 m3 ∙ 100 m−2, respectively. These findings highlight the potential of integrating multi-source information in advanced artificial intelligence algorithms for quinoa ABV monitoring, offering new insights toward the identification of sustainable practices across remote regions with complex socio-economic contexts.",
+      "doi": "10.3390/rs18173017",
+      "externalIds": {
+        "openalex": "W7208792477"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7208792477"
+      },
+      "venue": "Remote Sensing",
+      "publicationDate": "2026-09-04",
+      "firstPublicDate": "2026-09-04",
+      "onlineDate": null,
+      "topics": [
+        "Remote Sensing in Agriculture",
+        "Remote Sensing and LiDAR Applications",
+        "3D Surveying and Cultural Heritage"
+      ],
+      "keywords": [
+        "RGB color model",
+        "Artificial neural network",
+        "Satellite",
+        "Satellite imagery",
+        "Photogrammetry",
+        "Volume (thermodynamics)",
+        "Identification (biology)",
+        "Mean squared error"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 2,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5107326480",
+          "name": "Diego Tola",
+          "orcid": "https://orcid.org/0009-0000-7148-4565",
+          "affiliations": []
+        },
+        {
+          "id": "A5118602808",
+          "name": "Lautaro Bustillos",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5063878364",
+          "name": "Fanny Bertha Arragan Tancara",
+          "orcid": "https://orcid.org/0000-0001-8092-6951",
+          "affiliations": []
+        },
+        {
+          "id": "A5150024685",
+          "name": "Marco Patiño",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5110605604",
+          "name": "Reinaldo Quispe",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5013693769",
+          "name": "Tati de Almeida",
+          "orcid": "https://orcid.org/0000-0002-6387-8254",
+          "affiliations": []
+        },
+        {
+          "id": "A5022728950",
+          "name": "Henrique Llacer Roig",
+          "orcid": "https://orcid.org/0000-0002-9180-3081",
+          "affiliations": []
+        },
+        {
+          "id": "A5085637536",
+          "name": "Raúl Espinoza",
+          "orcid": "https://orcid.org/0000-0002-1355-9060",
+          "affiliations": []
+        },
+        {
+          "id": "A5049558646",
+          "name": "Ramiro Pillco Zolá",
+          "orcid": "https://orcid.org/0000-0002-4025-6444",
+          "affiliations": []
+        },
+        {
+          "id": "A5057485152",
+          "name": "Frédéric Satgé",
+          "orcid": "https://orcid.org/0000-0003-3662-6876",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.3390/rs18173017",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:18.670Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:18.670Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:18.670Z",
+      "preferredVersionId": "openalex:W7208792477",
+      "versions": [
+        {
+          "id": "openalex:W7208792477",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7208792477",
+          "doi": "10.3390/rs18173017",
+          "url": "https://doi.org/10.3390/rs18173017"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-openalex-broad-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-085.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "ngs highlight the potential of integrating multi-source information in advanced artificial intelligence algorithms for quinoa ABV monitoring, offering new insights toward the identification of sustainabl",
+              "start": 1578,
+              "end": 1781
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.1111/wej.70092",
       "recordType": "publication",
@@ -20112,1531 +21953,6 @@
                   "quote": "ht analyze directly the effect of using XAI techniques on the level of trust in experiments among various professions.",
                   "start": 2059,
                   "end": 2177
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.66104/4hndmk68",
-      "recordType": "publication",
-      "title": "Artificial Intelligence Tools for Productivity Enhancement: A Systematic Literature Review",
-      "abstract": "Artificial Intelligence (AI), particularly generative AI based on Large Language Models (LLMs), has rapidly transformed the execution of knowledge-intensive activities across multiple domains. AI-powered tools such as ChatGPT, GitHub Copilot, Microsoft Copilot, Google Gemini, Claude, and Notion AI have increasingly been adopted to automate repetitive tasks, support decision-making, accelerate software development, and improve content production. However, despite the rapid expansion of these technologies, scientific evidence regarding their effectiveness as productivity enhancers remains distributed across different research areas. This study presents a systematic literature review aimed at synthesizing current evidence on the role of AI tools in improving productivity in business, education, software engineering, and scientific research. A structured literature search was conducted across major academic databases, including Google Scholar, IEEE Xplore, ACM Digital Library, ScienceDirect, SpringerLink, and Scopus. Studies published between 2020 and 2026 were analyzed according to predefined inclusion and exclusion criteria. The reviewed literature indicates that AI tools can improve productivity by reducing task completion time, assisting knowledge creation, supporting programming activities, and enhancing information processing. Nevertheless, significant challenges remain, including inaccurate outputs, algorithmic bias, privacy concerns, ethical risks, and excessive reliance on automated systems. The findings suggest that AI achieves the greatest productivity benefits when used as a collaborative technology that augments human capabilities rather than replacing human expertise. Future research should investigate long-term productivity impacts, organizational adaptation strategies, responsible AI governance, and the integration of advanced multimodal AI systems into professional workflows.",
-      "doi": "10.66104/4hndmk68",
-      "externalIds": {
-        "openalex": "W7208824083"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7208824083"
-      },
-      "venue": "Nexus Science Review",
-      "publicationDate": "2026-09-04",
-      "firstPublicDate": "2026-09-04",
-      "onlineDate": null,
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Ethics and Social Impacts of AI",
-        "Digital Transformation in Industry"
-      ],
-      "keywords": [
-        "Productivity",
-        "Systematic review",
-        "Applications of artificial intelligence",
-        "Software",
-        "Adaptation (eye)",
-        "Scientific literature",
-        "Task (project management)"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "participation",
-          "label": "Partizipation & Fairness",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "inclusion",
-              "conceptLabel": "Inklusion",
-              "matchedTerm": "inclusion",
-              "sourceValue": "…. Studies published between 2020 and 2026 were analyzed according to predefined inclusion and exclusion criteria. The reviewed literature indicates that AI tools can improve productivity by reducing task completion time, assisting knowledge creation, supporting programming activities, and enhancing information processi…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "governance",
-              "conceptLabel": "Governance",
-              "matchedTerm": "governance",
-              "sourceValue": "…term productivity impacts, organizational adaptation strategies, responsible AI governance, and the integration of advanced multimodal AI systems into professional workflows.",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision making",
-              "sourceValue": "Artificial Intelligence (AI), particularly generative AI based on Large Language Models (LLMs), has rapidly transformed the execution of knowledge-intensive activities across multiple domains. AI-powered tools such as ChatGPT, GitHub Copilot, Microsoft Copilot, Google Gemini, Claude, and Notion AI have increasingly bee…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "expertise",
-              "conceptLabel": "Expertise",
-              "matchedTerm": "expertise",
-              "sourceValue": "…orative technology that augments human capabilities rather than replacing human expertise. Future research should investigate long-term productivity impacts, organizational adaptation strategies, responsible AI governance, and the integration of advanced multimodal AI systems into professional workflows.",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risks",
-              "sourceValue": "…main, including inaccurate outputs, algorithmic bias, privacy concerns, ethical risks, and excessive reliance on automated systems. The findings suggest that AI achieves the greatest productivity benefits when used as a collaborative technology that augments human capabilities rather than replacing human expertise. Fut…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "reliance",
-              "conceptLabel": "Reliance",
-              "matchedTerm": "reliance",
-              "sourceValue": "…urate outputs, algorithmic bias, privacy concerns, ethical risks, and excessive reliance on automated systems. The findings suggest that AI achieves the greatest productivity benefits when used as a collaborative technology that augments human capabilities rather than replacing human expertise. Future research should i…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 8,
-        "topic:participation": 4,
-        "topic:cognition": 2,
-        "topic:learning": 2,
-        "topic:safety": 2,
-        "topic:trust": 2,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "large language model",
-        "large language models",
-        "LLM",
-        "ChatGPT",
-        "generative AI",
-        "expertise",
-        "reliance",
-        "inclusion",
-        "governance",
-        "decision making",
-        "risks"
-      ],
-      "authors": [
-        {
-          "id": "A5150104804",
-          "name": "Marcelo Almeida Pereira Guedes",
-          "orcid": "https://orcid.org/0009-0005-9196-8723",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.66104/4hndmk68",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:18.670Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:18.670Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:18.670Z",
-      "preferredVersionId": "openalex:W7208824083",
-      "versions": [
-        {
-          "id": "openalex:W7208824083",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7208824083",
-          "doi": "10.66104/4hndmk68",
-          "url": "https://doi.org/10.66104/4hndmk68"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-085.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "est productivity benefits when used as a collaborative technology that augments human capabilities rather than replacing human expertise. Future research should investigate long-term pr",
-              "start": 1569,
-              "end": 1754
-            },
-            {
-              "field": "abstract",
-              "term": "professional",
-              "quote": "sible AI governance, and the integration of advanced multimodal AI systems into professional workflows.",
-              "start": 1818,
-              "end": 1921
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "Artificial Intelligence Tools for Productivity Enhancement: A Systematic Literature Review",
-              "start": 0,
-              "end": 90
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "Artificial Intelligence (AI), particularly generative AI based on Large Language Models (LLMs), has rapidly transformed the",
-              "start": 0,
-              "end": 123
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Artificial Intelligence (AI), particularly generative AI based on Large Language Models (LLMs), has rapidly transformed the execution of knowledge-intensive activities across multiple dom",
-              "start": 0,
-              "end": 187
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "education",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "education",
-                  "quote": "current evidence on the role of AI tools in improving productivity in business, education, software engineering, and scientific research. A structured literature search was conducted across",
-                  "start": 712,
-                  "end": 901
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "workplace",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "organizational",
-                  "quote": "n expertise. Future research should investigate long-term productivity impacts, organizational adaptation strategies, responsible AI governance, and the integration of advanced multimodal AI sys",
-                  "start": 1694,
-                  "end": 1888
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "workers",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "professional",
-                  "quote": "sible AI governance, and the integration of advanced multimodal AI systems into professional workflows.",
-                  "start": 1818,
-                  "end": 1921
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "generative",
-                  "quote": "Artificial Intelligence (AI), particularly generative AI based on Large Language Models (LLMs), has rapidly transformed the execution of knowledge-intens",
-                  "start": 0,
-                  "end": 153
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Artificial Intelligence (AI), particularly generative AI based on Large Language Models (LLMs), has rapidly transformed the execution of knowledge-intensive activities across multiple dom",
-                  "start": 0,
-                  "end": 187
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "automation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "automated",
-                  "quote": "s, algorithmic bias, privacy concerns, ethical risks, and excessive reliance on automated systems. The findings suggest that AI achieves the greatest productivity benefits when used as a co",
-                  "start": 1423,
-                  "end": 1612
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [
-          {
-            "topic": "high-skill-operations",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "expertise",
-                "quote": "orative technology that augments human capabilities rather than replacing human expertise. Future research should investigate long-term productivity impacts, organizational adaptation strat",
-                "start": 1616,
-                "end": 1805
-              }
-            ]
-          }
-        ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.64751/19fnvp27",
-      "recordType": "publication",
-      "title": "Artificial Intelligence-Based Credit Risk Assessment In Banking And Financial Institutions",
-      "abstract": "Artificial Intelligence (AI) has emerged as a transformative technology in the banking and financial sector, enabling institutions to improve the accuracy, speed, and reliability of credit risk assessment. Traditional credit evaluation methods often rely on limited financial indicators and manual decision-making processes, which may result in delayed approvals and inaccurate risk predictions. This study examines the application of AI-based techniques, including Machine Learning (ML), Deep Learning (DL), and predictive analytics, in assessing the creditworthiness of borrowers. AI models analyze large volumes of structured and unstructured data, such as credit history, transaction patterns, income details, repayment behavior, and alternative financial indicators, to identify potential default risks with greater precision. The research highlights how AI-driven credit risk assessment enhances loan approval decisions, minimizes non-performing assets (NPAs), reduces operational costs, and supports financial institutions in maintaining regulatory compliance. Furthermore, the study discusses the challenges associated with AI adoption, including data privacy, algorithmic bias, model interpretability, and cybersecurity concerns. By integrating intelligent risk assessment frameworks into lending operations, banks can strengthen financial stability, improve customer experience through faster loan processing, and achieve more effective risk management. The findings indicate that AI-based credit risk assessment represents a significant advancement over conventional credit evaluation methods and has the potential to reshape the future of banking by promoting efficient, transparent, and data-driven lending decisions. Keywords: Artificial Intelligence (AI), Credit Risk Assessment, Machine Learning, Banking, Financial Institutions, Loan Default Prediction, Predictive Analytics, Credit Scoring, Risk Management, Deep Learning.",
-      "doi": "10.64751/19fnvp27",
-      "externalIds": {
-        "openalex": "W7208708102"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7208708102"
-      },
-      "venue": "International Journal of AI Electrical Civil and Mechanical engineering",
-      "publicationDate": "2026-09-04",
-      "firstPublicDate": "2026-09-04",
-      "onlineDate": null,
-      "topics": [
-        "Financial Distress and Bankruptcy Prediction",
-        "FinTech, Crowdfunding, Digital Finance",
-        "Impact of AI and Big Data on Business and Society"
-      ],
-      "keywords": [
-        "Credit risk",
-        "Loan",
-        "Credit reference",
-        "Credit history",
-        "Credit rating",
-        "Financial risk",
-        "Credit enhancement",
-        "Risk assessment"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 2,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "learning",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": "A5150030986",
-          "name": "Saifanaaz",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5150047874",
-          "name": "M. Hari Prasad",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5150012033",
-          "name": "Tota Meghana",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.64751/19fnvp27",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:15.608Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:15.608Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:15.608Z",
-      "preferredVersionId": "openalex:W7208708102",
-      "versions": [
-        {
-          "id": "openalex:W7208708102",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7208708102",
-          "doi": "10.64751/19fnvp27",
-          "url": "https://doi.org/10.64751/19fnvp27"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-085.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "Artificial Intelligence-Based Credit Risk Assessment In Banking And Financial Institutions",
-              "start": 0,
-              "end": 90
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "Artificial Intelligence (AI) has emerged as a transformative technology in the banking and financial sector, enabling insti",
-              "start": 0,
-              "end": 123
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "Artificial Intelligence (AI) has emerged as a transformative technology in the banking and financial sector, enabling instituti",
-              "start": 0,
-              "end": 127
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": "ology in the banking and financial sector, enabling institutions to improve the accuracy, speed, and reliability of credit risk assessment. Traditional credit evaluation methods often rely",
-                  "start": 66,
-                  "end": 254
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.21015/vtse.v14i3.2566",
-      "recordType": "publication",
-      "title": "Artificial Intelligence-Based Data-Driven Approach for Classifying AI-Generated Text from Human-Generated Text",
-      "abstract": "The rapid advancement of artificial intelligence (AI) language models, such as ChatGPT, has raised growing concerns about distinguishing AI-generated text from human-written content. Accurately identifying the origin of textual content has become a challenging research problem because AI-generated and human-written texts often exhibit high linguistic and contextual similarity. This challenge has important implications for content authenticity, spam detection, misinformation prevention, and the security of online information systems. Although conventional machine learning (ML) and natural language processing (NLP) techniques have been applied to this task, they often struggle to capture complex semantic and contextual relationships. To address this issue, this study proposes a Hierarchical Deep Ensemble Learning Approach for Distinguishing AI-Generated Text from Human-Generated Text (HDEL-AITHG) using contextual representations. Initially, DeBERTa is employed to extract rich contextual embeddings from the input text. These representations are then processed through a weighted soft-voting ensemble comprising Kolmogorov-Arnold Networks, a Hierarchical Attention Network, and a Temporal Convolutional Network, which capture complementary nonlinear, hierarchical, and sequential characteristics of textual data. Furthermore, the Lookahead optimizer is employed to improve training stability and convergence, while SHAP analysis enhances the interpretability of the framework. Extensive experiments conducted on the benchmark ChatGPT Classification Dataset demonstrate the effectiveness and reliability of HDEL-AITHG in distinguishing AI-generated from human-written text. The proposed approach can support applications in content authenticity verification and automated text analysis.",
-      "doi": "10.21015/vtse.v14i3.2566",
-      "externalIds": {
-        "openalex": "W7208730494"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7208730494"
-      },
-      "venue": "VFAST Transactions on Software Engineering",
-      "publicationDate": "2026-09-04",
-      "firstPublicDate": "2026-09-04",
-      "onlineDate": null,
-      "topics": [
-        "Misinformation and Its Impacts",
-        "Topic Modeling",
-        "Authorship Attribution and Profiling"
-      ],
-      "keywords": [
-        "Interpretability",
-        "Misinformation",
-        "Benchmark (surveying)",
-        "Natural language understanding",
-        "Reliability (semiconductor)",
-        "Deep learning",
-        "Semantics (computer science)",
-        "Natural language",
-        "Computational linguistics"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "…hted soft-voting ensemble comprising Kolmogorov-Arnold Networks, a Hierarchical Attention Network, and a Temporal Convolutional Network, which capture complementary nonlinear, hierarchical, and sequential characteristics of textual data. Furthermore, the Lookahead optimizer is employed to improve training stability and…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…, and the security of online information systems. Although conventional machine learning (ML) and natural language processing (NLP) techniques have been applied to this task, they often struggle to capture complex semantic and contextual relationships. To address this issue, this study proposes a Hierarchical Deep Ense…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:cognition": 2,
-        "topic:learning": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "ChatGPT",
-        "learning",
-        "attention"
-      ],
-      "authors": [
-        {
-          "id": "A5109201723",
-          "name": "Pravati Panda",
-          "orcid": "https://orcid.org/0009-0001-0389-9141",
-          "affiliations": []
-        },
-        {
-          "id": "A5074312246",
-          "name": "Julius Irudayasamy",
-          "orcid": "https://orcid.org/0000-0002-0043-172X",
-          "affiliations": []
-        },
-        {
-          "id": "A5147842155",
-          "name": "S. Rajeswari",
-          "orcid": "https://orcid.org/0009-0000-2952-800X",
-          "affiliations": []
-        },
-        {
-          "id": "A5103076822",
-          "name": "Vignesh Arunachalam",
-          "orcid": "https://orcid.org/0000-0003-1228-7064",
-          "affiliations": []
-        },
-        {
-          "id": "A5149979958",
-          "name": "Narmada devi Maruthamuthu",
-          "orcid": "https://orcid.org/0009-0007-8702-7626",
-          "affiliations": []
-        },
-        {
-          "id": "A5119831001",
-          "name": "V. Latha Jothi",
-          "orcid": "https://orcid.org/0000-0003-1212-5129",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.21015/vtse.v14i3.2566",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:15.608Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:15.608Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:15.608Z",
-      "preferredVersionId": "openalex:W7208730494",
-      "versions": [
-        {
-          "id": "openalex:W7208730494",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7208730494",
-          "doi": "10.21015/vtse.v14i3.2566",
-          "url": "https://doi.org/10.21015/vtse.v14i3.2566"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-085.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "title",
-              "term": "human",
-              "quote": " Intelligence-Based Data-Driven Approach for Classifying AI-Generated Text from Human-Generated Text",
-              "start": 10,
-              "end": 110
-            },
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "hatGPT, has raised growing concerns about distinguishing AI-generated text from human-written content. Accurately identifying the origin of textual content has become a challenging rese",
-              "start": 80,
-              "end": 265
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "Artificial Intelligence-Based Data-Driven Approach for Classifying AI-Generated Text from Human-Generated Text",
-              "start": 0,
-              "end": 110
-            },
-            {
-              "field": "title",
-              "term": "AI",
-              "quote": "Artificial Intelligence-Based Data-Driven Approach for Classifying AI-Generated Text from Human-Generated Text",
-              "start": 0,
-              "end": 110
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "The rapid advancement of artificial intelligence (AI) language models, such as ChatGPT, has raised growing concerns about distinguishing AI-generate",
-              "start": 0,
-              "end": 148
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "ChatGPT",
-                  "quote": "The rapid advancement of artificial intelligence (AI) language models, such as ChatGPT, has raised growing concerns about distinguishing AI-generated text from human-written content. Acc",
-                  "start": 0,
-                  "end": 186
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "automation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "automated",
-                  "quote": "osed approach can support applications in content authenticity verification and automated text analysis.",
-                  "start": 1693,
-                  "end": 1797
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": ", while SHAP analysis enhances the interpretability of the framework. Extensive experiments conducted on the benchmark ChatGPT Classification Dataset demonstrate the effectiveness and reliabi",
-                  "start": 1419,
-                  "end": 1610
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.1016/j.est.2026.124445",
-      "recordType": "publication",
-      "title": "Artificial intelligence-driven energy storage optimization of renewable energy systems: From standalone to multi-energy systems",
-      "abstract": null,
-      "doi": "10.1016/j.est.2026.124445",
-      "externalIds": {
-        "openalex": "W7208725131"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7208725131"
-      },
-      "venue": "Journal of Energy Storage",
-      "publicationDate": "2026-09-04",
-      "firstPublicDate": "2026-09-04",
-      "onlineDate": null,
-      "topics": [
-        "Microgrid Control and Optimization",
-        "Hybrid Renewable Energy Systems",
-        "Integrated Energy Systems Optimization"
-      ],
-      "keywords": [
-        "Renewable energy",
-        "Energy storage",
-        "Photovoltaic system",
-        "Intermittent energy source",
-        "Wind power",
-        "Electricity",
-        "Grid",
-        "Electric power system",
-        "Intermittency"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 1,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "artificial intelligence"
-      ],
-      "authors": [
-        {
-          "id": "A5150016440",
-          "name": "Xiaoqi Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5150044757",
-          "name": "Wenfeng Zheng",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5000683189",
-          "name": "Bo Yang",
-          "orcid": "https://orcid.org/0000-0002-1108-4006",
-          "affiliations": []
-        },
-        {
-          "id": "A5121212209",
-          "name": "Junmin Lyu",
-          "orcid": "https://orcid.org/0009-0005-9100-0560",
-          "affiliations": []
-        },
-        {
-          "id": "A5134680517",
-          "name": "Feng Bao",
-          "orcid": "https://orcid.org/0000-0002-1302-8120",
-          "affiliations": []
-        },
-        {
-          "id": "A5150001775",
-          "name": "Zhixin Liu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5023971713",
-          "name": "Lirong Yin",
-          "orcid": "https://orcid.org/0000-0002-5022-610X",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.1016/j.est.2026.124445",
-      "openAccess": false,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:15.608Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:15.608Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:15.608Z",
-      "preferredVersionId": "openalex:W7208725131",
-      "versions": [
-        {
-          "id": "openalex:W7208725131",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7208725131",
-          "doi": "10.1016/j.est.2026.124445",
-          "url": "https://doi.org/10.1016/j.est.2026.124445"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-085.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "Artificial intelligence-driven energy storage optimization of renewable energy systems: From standalone to multi-energy sys",
-              "start": 0,
-              "end": 123
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": false
-      }
-    },
-    {
-      "id": "doi:10.7498/aps.76.20260436",
-      "recordType": "publication",
-      "title": "Artificial Intelligence-Enabled Cross-Scale Thermal Design: A Machine-Learning-Centered Review from Atoms to Devices",
-      "abstract": "随着高功率电子器件、宽禁带半导体、异质集成与先进封装技术的快速发展，热输运研究正由单一热物性表征转向贯穿材料、界面、结构与器件的跨尺度协同热设计。本文以人工智能赋能的跨尺度热设计为核心，系统综述机器学习在从原子到器件热传导研究中的应用进展。首先，介绍机器学习辅助的热物性预测与目标导向材料设计，重点讨论热物性数据生成、模型构建、高通量筛选、反向搜索及约束验证；其次，阐述基于机器学习势函数与通用预训练原子势的界面热输运原子级设计，分析异质固固界面、二维范德华界面和固液界面中的热输运机制、适用边界及界面热边界参数桥接；进一步总结机器学习代理模型、多目标优化和拓扑优化在先进封装、热点抑制、冷板/微通道散热器及器件可靠性设计中的应用。最后，讨论该领域在数据质量、物理约束、模型泛化、跨尺度参数传递与实验闭环验证等方面面临的挑战，并展望其在高功率电子、先进封装和智能热管理器件中的发展前景。",
-      "doi": "10.7498/aps.76.20260436",
-      "externalIds": {
-        "openalex": "W7208752018"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7208752018"
-      },
-      "venue": "Acta Physica Sinica",
-      "publicationDate": "2026-09-04",
-      "firstPublicDate": "2026-09-04",
-      "onlineDate": null,
-      "topics": [
-        "Machine Learning in Materials Science",
-        "Thermal properties of materials",
-        "Heat Transfer and Boiling Studies"
-      ],
-      "keywords": [
-        "Thermal",
-        "Work (physics)",
-        "Thermal conductivity"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 2,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5033865768",
-          "name": "Qikun Tian",
-          "orcid": "https://orcid.org/0000-0002-6353-0805",
-          "affiliations": []
-        },
-        {
-          "id": "A5016774424",
-          "name": "Enbo Zhang",
-          "orcid": "https://orcid.org/0000-0002-1114-6270",
-          "affiliations": []
-        },
-        {
-          "id": "A5149990507",
-          "name": "JIANG Yuting",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5132243183",
-          "name": "Qin Zhenzhen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5103932531",
-          "name": "Wang Huimin",
-          "orcid": "https://orcid.org/0009-0004-6414-1803",
-          "affiliations": []
-        },
-        {
-          "id": "A5108642025",
-          "name": "Qin Guangzhao",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.7498/aps.76.20260436",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:17.051Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:17.051Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:17.051Z",
-      "preferredVersionId": "openalex:W7208752018",
-      "versions": [
-        {
-          "id": "openalex:W7208752018",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7208752018",
-          "doi": "10.7498/aps.76.20260436",
-          "url": "https://doi.org/10.7498/aps.76.20260436"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-085.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "Artificial Intelligence-Enabled Cross-Scale Thermal Design: A Machine-Learning-Centered Review from Atoms to Devices",
-              "start": 0,
-              "end": 116
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.5543/tkda.2026.25442",
-      "recordType": "publication",
-      "title": "Artificial Intelligence-Enhanced Risk Stratification in Non-ST-Segment Elevation Myocardial Infarction: The Incremental Prognostic Value of the Modified Glasgow Prognostic Score in Predicting 36-Month Mortality-Uncorrected Proof",
-      "abstract": "OBJECTIVE: Current clinical guidelines for non-ST-segment elevation myocardial infarction (NSTEMI) emphasize the duration of dual antiplatelet therapy (DAPT) based on scores such as the Predicting Bleeding Complications in Patients Undergoing Stent Implantation and Subsequent Dual Antiplatelet Therapy (PRECISE-DAPT) score and the Dual Antiplatelet Therapy (DAPT) score. However, these anatomical and clinical models often overlook the \"inflammatory gap,' namely the contribution of systemic inflammation to both thrombotic and hemorrhagic risk. Although traditional models focus primarily on anatomical complexity, systemic inflammation may serve as a silent driver of adverse outcomes. We aimed to evaluate, using an artificial intelligence (AI)-enhanced approach, the incremental prognostic value of the inflammation-based Modified Glasgow Prognostic Score (mGPS) over a 36-month follow-up period, with particular emphasis on capturing non-linear interactions between biological markers and long-term outcomes. METHOD: This study included 456 NSTEMI patients who underwent percutaneous coronary intervention (PCI). mGPS, DAPT, and PRECISE-DAPT scores were calculated for all patients. Prognostic performance was assessed using a Gradient Boosting Machine (GBM)-based machine learning (ML) framework. Analyses focused on improvements in the concordance index (C-index), Net Reclassification Index (NRI), and Integrated Discrimination Improvement (IDI), as well as three-year mortality assessed using Cox proportional hazards modeling to identify residual inflammatory risk. Model calibration was evaluated using the Brier score. RESULTS: At 36 months, mGPS emerged as the strongest independent predictor of mortality. Compared with patients with mGPS 0, those with mGPS 2 demonstrated a 6.18-fold higher risk of mortality (hazard ratio 6.18; 95% confidence interval 2.95-12.94; P < 0.001). Observed mortality rates increased markedly from 3.2% in the mGPS 0 group to 57.1% in the mGPS 2 group (P < 0.001). While mGPS was not significantly associated with the ischemic DAPT score (P = 0.349), it was strongly associated with high bleeding risk (PRECISE-DAPT ≥ 25), with all patients in the mGPS 2 category classified as high bleeding risk (P < 0.001). Incorporation of mGPS into the baseline AI model significantly improved discriminative performance, increasing the C-index from 0.72 to 0.81 (P = 0.008). Additionally, the model correctly reclassified 46% of patients (NRI 0.46, P < 0.001) and demonstrated significant predictive improvement (IDI 0.08, P = 0.004) compared with traditional scoring systems. CONCLUSION: Systemic inflammation, as quantified by mGPS, is a critical biological modifier of cardiovascular risk that may help bridge the \"inflammatory gap\" in current scoring systems. AI-driven integration of mGPS into conventional clinical scores significantly improves 36-month prognostic reclassification. mGPS appears to function as a biological recalibrator, identifying high-risk individuals who may be misclassified by conventional scoring systems. These findings suggest that mGPS-guided personalized antiplatelet strategies-particularly early DAPT de-escalation in patients with elevated mGPS-may help reduce the high mortality and bleeding risk observed in this vulnerable population by addressing biological fragility in addition to anatomical risk.",
-      "doi": "10.5543/tkda.2026.25442",
-      "externalIds": {
-        "openalex": "W7208753226"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7208753226"
-      },
-      "venue": "Turk Kardiyoloji Dernegi Arsivi-Archives of the Turkish Society of Cardiology",
-      "publicationDate": "2026-09-04",
-      "firstPublicDate": "2026-09-04",
-      "onlineDate": null,
-      "topics": [
-        "Inflammatory Biomarkers in Disease Prognosis",
-        "Adipokines, Inflammation, and Metabolic Diseases",
-        "Inflammation biomarkers and pathways"
-      ],
-      "keywords": [
-        "Percutaneous coronary intervention",
-        "Confidence interval",
-        "Framingham Risk Score",
-        "Myocardial infarction",
-        "Concordance",
-        "Proportional hazards model",
-        "Hazard ratio",
-        "Conventional PCI",
-        "Risk stratification",
-        "Brier score"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 8,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "Artificial Intelligence-Enhanced Risk Stratification in Non-ST-Segment Elevation Myocardial Infarction: The Incremental Prognostic Value of the Modified Glasgow Prognostic Score in Predicting 36-Month Mortality-Uncorrected Proof",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "critical",
-              "conceptLabel": "Sicherheitskritisch",
-              "matchedTerm": "high risk",
-              "sourceValue": "OBJECTIVE: Current clinical guidelines for non-ST-segment elevation myocardial infarction (NSTEMI) emphasize the duration of dual antiplatelet therapy (DAPT) based on scores such as the Predicting Bleeding Complications in Patients Undergoing Stent Implantation and Subsequent Dual Antiplatelet Therapy (PRECISE-DAPT) sc…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…ly the contribution of systemic inflammation to both thrombotic and hemorrhagic risk. Although traditional models focus primarily on anatomical complexity, systemic inflammation may serve as a silent driver of adverse outcomes. We aimed to evaluate, using an artificial intelligence (AI)-enhanced approach, the increment…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "Framingham Risk Score",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "calibration",
-              "conceptLabel": "Kalibrierung",
-              "matchedTerm": "calibration",
-              "sourceValue": "…Cox proportional hazards modeling to identify residual inflammatory risk. Model calibration was evaluated using the Brier score. RESULTS: At 36 months, mGPS emerged as the strongest independent predictor of mortality. Compared with patients with mGPS 0, those with mGPS 2 demonstrated a 6.18-fold higher risk of mortalit…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 2,
-        "topic:safety": 8,
-        "topic:trust": 2,
-        "classificationMaximum": 8
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "learning",
-        "risk",
-        "high risk",
-        "calibration"
-      ],
-      "authors": [
-        {
-          "id": "A5072337757",
-          "name": "Ertan Aydın",
-          "orcid": "https://orcid.org/0000-0002-7280-5137",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.5543/tkda.2026.25442",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:17.051Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:17.051Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:17.051Z",
-      "preferredVersionId": "openalex:W7208753226",
-      "versions": [
-        {
-          "id": "openalex:W7208753226",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7208753226",
-          "doi": "10.5543/tkda.2026.25442",
-          "url": "https://doi.org/10.5543/tkda.2026.25442"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-085.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "patient",
-              "quote": "therapy (DAPT) based on scores such as the Predicting Bleeding Complications in Patients Undergoing Stent Implantation and Subsequent Dual Antiplatelet Therapy (PRECISE-DAPT) score and the",
-              "start": 143,
-              "end": 331
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "Artificial Intelligence-Enhanced Risk Stratification in Non-ST-Segment Elevation Myocardial Infarction: The Incremental Pro",
-              "start": 0,
-              "end": 123
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "ay serve as a silent driver of adverse outcomes. We aimed to evaluate, using an artificial intelligence (AI)-enhanced approach, the incremental prognostic value of the inflammation-based Modified Glasgow",
-              "start": 640,
-              "end": 843
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "er of adverse outcomes. We aimed to evaluate, using an artificial intelligence (AI)-enhanced approach, the incremental prognostic value of the inflammation-based Modified Glasgow Pro",
-              "start": 665,
-              "end": 847
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [
-            {
-              "value": "healthcare",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "clinical",
-                  "quote": "OBJECTIVE: Current clinical guidelines for non-ST-segment elevation myocardial infarction (NSTEMI) emphasize the duration of du",
-                  "start": 0,
-                  "end": 127
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "longitudinal",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "follow up",
-                  "quote": "the inflammation-based Modified Glasgow Prognostic Score (mGPS) over a 36-month follow-up period, with particular emphasis on capturing non-linear interactions between biological markers an",
-                  "start": 804,
-                  "end": 993
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.71317/jgst.2.9.2026.537",
-      "recordType": "publication",
-      "title": "Artificial Intelligence-Supported Education, Student Stress, and Academic Performance: Examining the Moderating Role of Coping Self-Efficacy",
-      "abstract": "Artificial Intelligence (AI) is increasingly transforming higher education by providing students with personalized learning support, rapid access to information, and assistance with academic tasks, while simultaneously creating new academic and psychological demands. The present study examined Artificial Intelligence-Supported Education, student stress, and academic performance, with particular emphasis on the moderating role of coping self-efficacy among university students in Punjab and Sindh, Pakistan. A quantitative, cross-sectional research design was used, and data were collected from 423 university students through a structured, adopted questionnaire administered online using Google Forms. The questionnaire measured Artificial Intelligence-Supported Education, student stress, academic performance, and coping self-efficacy using established measurement scales. The collected responses were initially organized in Microsoft Excel and subsequently analyzed using IBM SPSS Statistics. Descriptive statistics, Cronbach’s alpha reliability analysis, Pearson correlation, regression analysis, and moderation analysis were conducted to examine the proposed relationships among the study variables. The findings demonstrated that Artificial Intelligence-Supported Education was significantly associated with student stress and positively predicted academic performance. The moderation findings further showed that coping self-efficacy significantly influenced these relationships by weakening the association between AI-supported education and student stress while strengthening the positive association between AI-supported education and academic performance. The study is significant because it provides an integrated understanding of the educational and psychological consequences of AI-supported learning and highlights the importance of students’ coping resources in determining how they respond to AI-enabled educational environments. The findings suggest that higher education institutions should combine AI integration with responsible-use guidance, psychological support, and coping-skills development to maximize educational benefits while reducing potential student stress.",
-      "doi": "10.71317/jgst.2.9.2026.537",
-      "externalIds": {
-        "openalex": "W7208737705"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7208737705"
-      },
-      "venue": "Journal of Global Social Transformation",
-      "publicationDate": "2026-09-04",
-      "firstPublicDate": "2026-09-04",
-      "onlineDate": null,
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Technology-Enhanced Education Studies",
-        "AI in Service Interactions"
-      ],
-      "keywords": [
-        "Moderation",
-        "Coping (psychology)",
-        "Higher education",
-        "Academic achievement",
-        "Descriptive statistics",
-        "Regression analysis",
-        "Stress management",
-        "Microsoft excel"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…reasingly transforming higher education by providing students with personalized learning support, rapid access to information, and assistance with academic tasks, while simultaneously creating new academic and psychological demands. The present study examined Artificial Intelligence-Supported Education, student stress,…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 2,
-        "topic:learning": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5150029615",
-          "name": "Halah Rasheed Ali Abdullgabar Al Shaibani",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5134064724",
-          "name": "Dr. Muhammad Awais",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5018592289",
-          "name": "Amber Sarwar Hashmi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5150027711",
-          "name": "Sidra Hussain",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.71317/jgst.2.9.2026.537",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:15.608Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:15.608Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:15.608Z",
-      "preferredVersionId": "openalex:W7208737705",
-      "versions": [
-        {
-          "id": "openalex:W7208737705",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7208737705",
-          "doi": "10.71317/jgst.2.9.2026.537",
-          "url": "https://doi.org/10.71317/jgst.2.9.2026.537"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-085.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "title",
-              "term": "student",
-              "quote": "Artificial Intelligence-Supported Education, Student Stress, and Academic Performance: Examining the Moderating Role of Coping Self-Efficacy",
-              "start": 0,
-              "end": 140
-            },
-            {
-              "field": "abstract",
-              "term": "student",
-              "quote": "al Intelligence (AI) is increasingly transforming higher education by providing students with personalized learning support, rapid access to information, and assistance with academic tasks",
-              "start": 8,
-              "end": 196
-            },
-            {
-              "field": "abstract",
-              "term": "students",
-              "quote": "al Intelligence (AI) is increasingly transforming higher education by providing students with personalized learning support, rapid access to information, and assistance with academic tasks",
-              "start": 8,
-              "end": 196
-            },
-            {
-              "field": "abstract",
-              "term": "psychological",
-              "quote": " assistance with academic tasks, while simultaneously creating new academic and psychological demands. The present study examined Artificial Intelligence-Supported Education, student stress, an",
-              "start": 165,
-              "end": 358
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "Artificial Intelligence-Supported Education, Student Stress, and Academic Performance: Examining the Moderating Role of Cop",
-              "start": 0,
-              "end": 123
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "Artificial Intelligence (AI) is increasingly transforming higher education by providing students with personalized learning",
-              "start": 0,
-              "end": 123
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "Artificial Intelligence (AI) is increasingly transforming higher education by providing students with personalized learning sup",
-              "start": 0,
-              "end": 127
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "education",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "education",
-                  "quote": "Artificial Intelligence-Supported Education, Student Stress, and Academic Performance: Examining the Moderating Role of Coping Self-Efficacy",
-                  "start": 0,
-                  "end": 140
-                },
-                {
-                  "field": "title",
-                  "term": "student",
-                  "quote": "Artificial Intelligence-Supported Education, Student Stress, and Academic Performance: Examining the Moderating Role of Coping Self-Efficacy",
-                  "start": 0,
-                  "end": 140
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "students",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "student",
-                  "quote": "Artificial Intelligence-Supported Education, Student Stress, and Academic Performance: Examining the Moderating Role of Coping Self-Efficacy",
-                  "start": 0,
-                  "end": 140
-                },
-                {
-                  "field": "abstract",
-                  "term": "student",
-                  "quote": "al Intelligence (AI) is increasingly transforming higher education by providing students with personalized learning support, rapid access to information, and assistance with academic tasks",
-                  "start": 8,
-                  "end": 196
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "wellbeing",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "stress",
-                  "quote": "Artificial Intelligence-Supported Education, Student Stress, and Academic Performance: Examining the Moderating Role of Coping Self-Efficacy",
-                  "start": 0,
-                  "end": 140
-                },
-                {
-                  "field": "abstract",
-                  "term": "stress",
-                  "quote": "The present study examined Artificial Intelligence-Supported Education, student stress, and academic performance, with particular emphasis on the moderating role of coping self-efficacy ",
-                  "start": 268,
-                  "end": 454
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "questionnaire",
-                  "quote": " data were collected from 423 university students through a structured, adopted questionnaire administered online using Google Forms. The questionnaire measured Artificial Intelligence-Supporte",
-                  "start": 572,
-                  "end": 765
                 }
               ],
               "interpretation": "mentioned; role/outcome not confirmed"

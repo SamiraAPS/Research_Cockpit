@@ -1,12 +1,1548 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-10-06T12:03:50.749Z",
+  "generatedAt": "2026-10-07T11:49:04.786Z",
   "page": 46,
   "pageSize": 100,
-  "totalItems": 16380,
-  "totalPages": 164,
+  "totalItems": 16529,
+  "totalPages": 166,
   "nextPage": "./page-047.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2609.34007",
+      "recordType": "preprint",
+      "title": "EHRAdapt: Adapting Pretrained Language Models to Electronic Health Records with Semantic Priors for Rare Clinical Events",
+      "abstract": "Electronic health records (EHRs) encode clinical histories as (time, modality, code) tuples, whereas pretrained language models expect text tokens. Serializing them as text inflates sequence length and redundantly encodes structure. We introduce EHRAdapt, an adapter that maps tuples directly into a frozen language model's embedding space. Modality receives a learned embedding, time gaps enter through learned attention biases, and event codes receive dedicated vectors. Learning event vectors is the central challenge: clinical vocabularies are long-tailed, leaving rare events too few observations for reliable estimates. EHRAdapt therefore represents each event vector as the sum of a semantic prior and an evidence residual. The prior is a frozen embedding of the event's clinical description from a biomedical language model trained on clinical ontologies, mapped into the model's input space by a shared learned projection, so it supplies clinical meaning even when observations are scarce. The residual, a learned low-rank event-specific correction, refines it as evidence accumulates. We run continued pretraining on about 4 million patients' records with three frozen LLM backbones (OLMo2 1B, Llama3.2 1B, and OLMo2 7B), training only the adapter (0.1--0.6% of all parameters). The full adapter outperforms all ablations in held-out next-event prediction on every backbone. Removing the semantic pathway hurts rare events over ten times more than the most frequent ones, whereas removing the residual hurts overall prediction but improves it for the rarest events. On reportable infectious-disease and syndromic downstream classification tasks, EHRAdapt outperforms text-based LLM and count-based baselines, and both pathways improve rare-disease discrimination. The two pathways therefore play complementary roles, visible only when results are broken down by event frequency rather than averaged.",
+      "doi": "10.48550/arxiv.2609.34007",
+      "externalIds": {
+        "openalex": "W7214750285"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214750285"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-27",
+      "firstPublicDate": "2026-09-27",
+      "onlineDate": null,
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Topic Modeling",
+        "Genomics and Rare Diseases"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "attention",
+              "conceptLabel": "Aufmerksamkeit",
+              "matchedTerm": "attention",
+              "sourceValue": "…g space. Modality receives a learned embedding, time gaps enter through learned attention biases, and event codes receive dedicated vectors. Learning event vectors is the central challenge: clinical vocabularies are long-tailed, leaving rare events too few observations for reliable estimates. EHRAdapt therefore represe…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…er through learned attention biases, and event codes receive dedicated vectors. Learning event vectors is the central challenge: clinical vocabularies are long-tailed, leaving rare events too few observations for reliable estimates. EHRAdapt therefore represents each event vector as the sum of a semantic prior and an e…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:cognition": 2,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning",
+        "attention"
+      ],
+      "authors": [
+        {
+          "id": "A5001741874",
+          "name": "André Ricardo Gonçalves",
+          "orcid": "https://orcid.org/0000-0002-0320-280X",
+          "affiliations": []
+        },
+        {
+          "id": "A5101890152",
+          "name": "Vincent B. Liu",
+          "orcid": "https://orcid.org/0000-0001-7683-208X",
+          "affiliations": []
+        },
+        {
+          "id": "A5008494368",
+          "name": "Priyadip Ray",
+          "orcid": "https://orcid.org/0000-0002-5964-5474",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.34007",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:37.993Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-09-30T11:11:37.993Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-30T11:11:37.993Z",
+      "preferredVersionId": "openalex:W7214750285",
+      "versions": [
+        {
+          "id": "openalex:W7214750285",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7214750285",
+          "doi": "10.48550/arxiv.2609.34007",
+          "publicationDate": "2026-09-27",
+          "url": "https://doi.org/10.48550/arxiv.2609.34007"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-046.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "patient",
+              "quote": "nes it as evidence accumulates. We run continued pretraining on about 4 million patients' records with three frozen LLM backbones (OLMo2 1B, Llama3.2 1B, and OLMo2 7B), training only the a",
+              "start": 1063,
+              "end": 1251
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "un continued pretraining on about 4 million patients' records with three frozen LLM backbones (OLMo2 1B, Llama3.2 1B, and OLMo2 7B), training only the adapter (0.1--0.6% of all parame",
+              "start": 1099,
+              "end": 1282
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "clinical",
+                  "quote": "ined Language Models to Electronic Health Records with Semantic Priors for Rare Clinical Events",
+                  "start": 25,
+                  "end": 120
+                },
+                {
+                  "field": "abstract",
+                  "term": "clinical",
+                  "quote": "Electronic health records (EHRs) encode clinical histories as (time, modality, code) tuples, whereas pretrained language models expect text tokens. ",
+                  "start": 0,
+                  "end": 148
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1080/14787210.2026.2740114",
+      "recordType": "publication",
+      "title": "Emerging therapies for candidozyma auris ( Candida auris) : current landscape and future directions",
+      "abstract": "Introduction The multidrug-resistant fungal pathogen Candidozyma auris (Candida auris) has spread rapidly across healthcare systems worldwide, emerging as a critical threat to patient safety. With a limited antifungal armamentarium increasingly compromised by rising resistance, the development of novel therapeutic strategies is urgently needed.Areas covered This review examines emerging therapies for C. auris, organized by clinical maturity and molecular target, evaluates their discovery pipelines, and outlines the limitations. We also discuss combination therapies and decolonization strategies as approaches for preventing and treating C. auris infections.Expert opinion C. auris continues to outpace the currently available therapeutic arsenal. The greatest near-term advances are likely to come from agents with novel mechanisms of action and from rational combination strategies. However, major translational barriers remain, including limited fungal-specific targets, pharmacokinetic challenges, and the gap between preclinical findings and clinical application. Progress will depend on integrating artificial intelligence–driven drug discovery, rational target selection, and optimized pharmacokinetic modeling to accelerate therapeutic development. Equally important is the development of effective decolonization strategies to interrupt healthcare transmission. Together, these advances could redefine C. auris treatment and address one of the most pressing challenges in contemporary medical mycology.",
+      "doi": "10.1080/14787210.2026.2740114",
+      "externalIds": {
+        "openalex": "W7214525397"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214525397"
+      },
+      "venue": "Expert Review of Anti-infective Therapy",
+      "publicationDate": "2026-09-27",
+      "firstPublicDate": "2026-09-27",
+      "onlineDate": null,
+      "topics": [
+        "Antifungal resistance and susceptibility",
+        "vaccines and immunoinformatics approaches",
+        "Microbial Natural Products and Biosynthesis"
+      ],
+      "keywords": [
+        "Candida auris",
+        "Antifungal",
+        "Health care",
+        "Translational research",
+        "Healthcare system",
+        "Drug development"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…y across healthcare systems worldwide, emerging as a critical threat to patient safety. With a limited antifungal armamentarium increasingly compromised by rising resistance, the development of novel therapeutic strategies is urgently needed.Areas covered This review examines emerging therapies for C. auris, organized …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:safety": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "safety"
+      ],
+      "authors": [
+        {
+          "id": "A5100412776",
+          "name": "Liyang Zhang",
+          "orcid": "https://orcid.org/0000-0002-4054-1667",
+          "affiliations": []
+        },
+        {
+          "id": "A5111324449",
+          "name": "Lewis Oscar Felix",
+          "orcid": "https://orcid.org/0000-0003-2170-3162",
+          "affiliations": []
+        },
+        {
+          "id": "A5011903299",
+          "name": "Eleftherios E Mylonakis",
+          "orcid": "https://orcid.org/0000-0002-4624-0777",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1080/14787210.2026.2740114",
+      "openAccess": false,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-29T08:11:11.709Z",
+      "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
+      "retrievedAt": "2026-09-29T11:23:33.314Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-29T11:23:33.314Z",
+      "preferredVersionId": "openalex:W7214525397",
+      "versions": [
+        {
+          "id": "openalex:W7214525397",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7214525397",
+          "doi": "10.1080/14787210.2026.2740114",
+          "publicationDate": "2026-09-27",
+          "url": "https://doi.org/10.1080/14787210.2026.2740114"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-046.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "patient",
+              "quote": "d rapidly across healthcare systems worldwide, emerging as a critical threat to patient safety. With a limited antifungal armamentarium increasingly compromised by rising resistance, the ",
+              "start": 96,
+              "end": 283
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "clinical findings and clinical application. Progress will depend on integrating artificial intelligence–driven drug discovery, rational target selection, and optimized pharmacokinetic modeling to acceler",
+              "start": 1031,
+              "end": 1234
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "healthcare",
+                  "quote": "ant fungal pathogen Candidozyma auris (Candida auris) has spread rapidly across healthcare systems worldwide, emerging as a critical threat to patient safety. With a limited antifungal armam",
+                  "start": 33,
+                  "end": 223
+                },
+                {
+                  "field": "abstract",
+                  "term": "clinical",
+                  "quote": "reas covered This review examines emerging therapies for C. auris, organized by clinical maturity and molecular target, evaluates their discovery pipelines, and outlines the limitations. W",
+                  "start": 347,
+                  "end": 535
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1016/j.ipm.2026.105203",
+      "recordType": "publication",
+      "title": "Enhancing Large Language Models for document-level relation triple extraction via structural awareness and contrastive learning",
+      "abstract": "In recent years, Large Language Models (LLMs) have demonstrated superior performance in information extraction tasks. Leveraging these models for Document-Level Relation Extraction (DocRE) can benefit from their powerful generative capabilities. However, we observe that LLMs still face challenges in DocRE tasks: Document Structure Parsing Error, Relation Definition Ambiguity, and Entity Boundary Recognition Error. To address these issues, we propose SDB-DRE, an LLM-based DocRE model that does not rely on pre-labeled entities during inference. To tackle the Document Structure Parsing Error, we introduce a novel Structure-Aware QA training approach, enabling LLMs to learn coreference relationships and entity types within the document. To address relation definition ambiguity and entity boundary recognition errors, we introduce relation definition learning and mention boundary learning in the second stage of relation extraction training. These components improve the internal document representation of the LLM, ensuring the output triples are consistent with the relation definitions and have more accurate entity boundaries. Experimental results demonstrate that SDB-DRE surpasses LLM-based methods employing multi-stage reasoning in terms of performance under a single-stage reasoning setup, while also achieving higher inference efficiency. The code will be made publicly available upon acceptance.",
+      "doi": "10.1016/j.ipm.2026.105203",
+      "externalIds": {
+        "openalex": "W7214532415"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214532415"
+      },
+      "venue": "Information Processing & Management",
+      "publicationDate": "2026-09-27",
+      "firstPublicDate": "2026-09-27",
+      "onlineDate": null,
+      "topics": [
+        "Topic Modeling",
+        "Text Readability and Simplification",
+        "Natural Language Processing Techniques"
+      ],
+      "keywords": [
+        "Relationship extraction",
+        "Relation (database)",
+        "Coreference",
+        "Parsing",
+        "Ambiguity",
+        "Inference",
+        "Representation (politics)",
+        "Information extraction"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…ument-level relation triple extraction via structural awareness and contrastive learning",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…iguity and entity boundary recognition errors, we introduce relation definition learning and mention boundary learning in the second stage of relation extraction training. These components improve the internal document representation of the LLM, ensuring the output triples are consistent with the relation definitions a…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "…ddress these issues, we propose SDB-DRE, an LLM-based DocRE model that does not rely on pre-labeled entities during inference. To tackle the Document Structure Parsing Error, we introduce a novel Structure-Aware QA training approach, enabling LLMs to learn coreference relationships and entity types within the document.…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 5,
+        "topic:learning": 6,
+        "topic:trust": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "learning",
+        "rely"
+      ],
+      "authors": [
+        {
+          "id": "A5011669334",
+          "name": "Dinghao Pan",
+          "orcid": "https://orcid.org/0009-0004-6774-2647",
+          "affiliations": []
+        },
+        {
+          "id": "A5101472979",
+          "name": "Yuanyuan Sun",
+          "orcid": "https://orcid.org/0000-0002-6515-134X",
+          "affiliations": []
+        },
+        {
+          "id": "A5000155122",
+          "name": "Jiru Li",
+          "orcid": "https://orcid.org/0009-0001-8093-9784",
+          "affiliations": []
+        },
+        {
+          "id": "A5124173863",
+          "name": "Ling Luo",
+          "orcid": "https://orcid.org/0000-0002-5141-0259",
+          "affiliations": []
+        },
+        {
+          "id": "A5100370452",
+          "name": "Jian Wang",
+          "orcid": "https://orcid.org/0000-0002-4656-7446",
+          "affiliations": []
+        },
+        {
+          "id": "A5023931221",
+          "name": "Hongfei Lin",
+          "orcid": "https://orcid.org/0000-0003-0872-7688",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1016/j.ipm.2026.105203",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-29T08:11:12.732Z",
+      "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
+      "retrievedAt": "2026-09-29T11:23:35.707Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-29T11:23:35.707Z",
+      "preferredVersionId": "openalex:W7214532415",
+      "versions": [
+        {
+          "id": "openalex:W7214532415",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7214532415",
+          "doi": "10.1016/j.ipm.2026.105203",
+          "publicationDate": "2026-09-27",
+          "url": "https://doi.org/10.1016/j.ipm.2026.105203"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-046.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "large language model",
+              "quote": "Enhancing Large Language Models for document-level relation triple extraction via structural awareness and contrastive learning",
+              "start": 0,
+              "end": 127
+            },
+            {
+              "field": "title",
+              "term": "large language models",
+              "quote": "Enhancing Large Language Models for document-level relation triple extraction via structural awareness and contrastive learning",
+              "start": 0,
+              "end": 127
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "In recent years, Large Language Models (LLMs) have demonstrated superior performance in information extraction tasks. Leveraging these mod",
+              "start": 0,
+              "end": 138
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "large language model",
+                  "quote": "Enhancing Large Language Models for document-level relation triple extraction via structural awareness and contrastive learning",
+                  "start": 0,
+                  "end": 127
+                },
+                {
+                  "field": "abstract",
+                  "term": "generative",
+                  "quote": " for Document-Level Relation Extraction (DocRE) can benefit from their powerful generative capabilities. However, we observe that LLMs still face challenges in DocRE tasks: Document Structur",
+                  "start": 141,
+                  "end": 331
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1111/ntwe.70047",
+      "recordType": "publication",
+      "title": "Epistemological Friction: Embodied Expertise and the ‘Last Mile’ of Agricultural Automation in the US Tree‐Fruit Industry",
+      "abstract": "ABSTRACT Autonomous and AI‐driven agricultural technology is often framed as a panacea for labour dependency. While proponents envision autonomous technologies seamlessly optimising farming, this rationalised model misunderstands the reality of on‐farm integration. Based on an ethnographic and comparative study of 16 operations in the US West Coast Tree Fruit Industry (California and Washington), this article examines the ‘last mile’ of agricultural automation. The study reveals that integrating AI and robotics is a contested negotiation shaped by epistemological friction—the tension between the algorithmic logic of developers and the embodied, site‐specific expertise of farmers and farm workers. Rather than resulting in seamless labour replacement, we find that agricultural automation reconfigures work, creating an invisible reliance on ‘human middleware’ to navigate the biological recalcitrance of the orchard. Demonstrating how regional contexts and participatory implementation shape technological trajectories, this study extends Labour Process Theory. We argue for the need for a relational approach recognising the essential cognitive labour of farmers and farm workers that is demanded by digital agriculture. Ultimately, this study shows the ‘farm of the future’ depends on reconciling rigid systems with the situated expertise of the farm workforce.",
+      "doi": "10.1111/ntwe.70047",
+      "externalIds": {
+        "openalex": "W7214618881"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214618881"
+      },
+      "venue": "New Technology Work and Employment",
+      "publicationDate": "2026-09-27",
+      "firstPublicDate": "2026-09-27",
+      "onlineDate": null,
+      "topics": [
+        "Smart Agriculture and AI",
+        "Agriculture and Rural Development Research",
+        "Information Systems Theories and Implementation",
+        "Agriculture, Land Use, Rural Development",
+        "Geographies of human-animal interactions"
+      ],
+      "keywords": [
+        "agricultural automation",
+        "embodied expertise",
+        "farm workers",
+        "cognitive work",
+        "labour process theory",
+        "agricultural robotics",
+        "artificial intelligence in agriculture",
+        "orchard management",
+        "California",
+        "Washington"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "Epistemological Friction: Embodied Expertise and the ‘Last Mile’ of Agricultural Automation in the US Tree‐Fruit Industry",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "…ion between the algorithmic logic of developers and the embodied, site‐specific expertise of farmers and farm workers. Rather than resulting in seamless labour replacement, we find that agricultural automation reconfigures work, creating an invisible reliance on ‘human middleware’ to navigate the biological recalcitran…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "embodied expertise",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "participation",
+          "label": "Partizipation & Fairness",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "participation",
+              "conceptLabel": "Partizipation",
+              "matchedTerm": "participatory",
+              "sourceValue": "…iological recalcitrance of the orchard. Demonstrating how regional contexts and participatory implementation shape technological trajectories, this study extends Labour Process Theory. We argue for the need for a relational approach recognising the essential cognitive labour of farmers and farm workers that is demanded…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "reliance",
+              "sourceValue": "…, we find that agricultural automation reconfigures work, creating an invisible reliance on ‘human middleware’ to navigate the biological recalcitrance of the orchard. Demonstrating how regional contexts and participatory implementation shape technological trajectories, this study extends Labour Process Theory. We argu…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:learning": 6,
+        "topic:participation": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "expertise",
+        "reliance",
+        "participatory"
+      ],
+      "authors": [
+        {
+          "id": "A5003519194",
+          "name": "M. Anne Visser",
+          "orcid": "https://orcid.org/0000-0001-5047-7702",
+          "affiliations": []
+        },
+        {
+          "id": "A5153216046",
+          "name": "Alex Bladimir Hernandez",
+          "orcid": "https://orcid.org/0009-0001-5320-7203",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1111/ntwe.70047",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:17.815Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-10-07T11:48:45.783Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-10-07T11:48:45.783Z",
+      "preferredVersionId": "openalex:W7214618881",
+      "versions": [
+        {
+          "id": "openalex:W7214618881",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7214618881",
+          "doi": "10.1111/ntwe.70047",
+          "publicationDate": "2026-09-27",
+          "url": "https://doi.org/10.1111/ntwe.70047"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "core",
+          "queryVersion": "static-search-5.0.0:core:human-factors"
+        }
+      ],
+      "pagePath": "./works/page-046.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "t agricultural automation reconfigures work, creating an invisible reliance on ‘human middleware’ to navigate the biological recalcitrance of the orchard. Demonstrating how regional con",
+              "start": 771,
+              "end": 956
+            },
+            {
+              "field": "abstract",
+              "term": "worker",
+              "quote": "gic of developers and the embodied, site‐specific expertise of farmers and farm workers. Rather than resulting in seamless labour replacement, we find that agricultural automation reconfi",
+              "start": 617,
+              "end": 804
+            },
+            {
+              "field": "abstract",
+              "term": "workers",
+              "quote": "gic of developers and the embodied, site‐specific expertise of farmers and farm workers. Rather than resulting in seamless labour replacement, we find that agricultural automation reconfi",
+              "start": 617,
+              "end": 804
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "automation",
+              "quote": "pistemological Friction: Embodied Expertise and the ‘Last Mile’ of Agricultural Automation in the US Tree‐Fruit Industry",
+              "start": 1,
+              "end": 121
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "ABSTRACT Autonomous and AI‐driven agricultural technology is often framed as a panacea for labour dependency. While proponents",
+              "start": 0,
+              "end": 126
+            },
+            {
+              "field": "abstract",
+              "term": "algorithmic",
+              "quote": "ontested negotiation shaped by epistemological friction—the tension between the algorithmic logic of developers and the embodied, site‐specific expertise of farmers and farm workers. Rather t",
+              "start": 523,
+              "end": 714
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "worker",
+                  "quote": "gic of developers and the embodied, site‐specific expertise of farmers and farm workers. Rather than resulting in seamless labour replacement, we find that agricultural automation reconfi",
+                  "start": 617,
+                  "end": 804
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "automation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "automation",
+                  "quote": "pistemological Friction: Embodied Expertise and the ‘Last Mile’ of Agricultural Automation in the US Tree‐Fruit Industry",
+                  "start": 1,
+                  "end": 121
+                },
+                {
+                  "field": "abstract",
+                  "term": "automation",
+                  "quote": "lifornia and Washington), this article examines the ‘last mile’ of agricultural automation. The study reveals that integrating AI and robotics is a contested negotiation shaped by epistemolo",
+                  "start": 374,
+                  "end": 564
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "qualitative",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "ethnographic",
+                  "quote": "tionalised model misunderstands the reality of on‐farm integration. Based on an ethnographic and comparative study of 16 operations in the US West Coast Tree Fruit Industry (California and Was",
+                  "start": 198,
+                  "end": 390
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [
+          {
+            "topic": "high-skill-operations",
+            "evidence": [
+              {
+                "field": "title",
+                "term": "expertise",
+                "quote": "Epistemological Friction: Embodied Expertise and the ‘Last Mile’ of Agricultural Automation in the US Tree‐Fruit Industry",
+                "start": 0,
+                "end": 121
+              },
+              {
+                "field": "abstract",
+                "term": "expertise",
+                "quote": "ion between the algorithmic logic of developers and the embodied, site‐specific expertise of farmers and farm workers. Rather than resulting in seamless labour replacement, we find that agr",
+                "start": 587,
+                "end": 776
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.5281/zenodo.17860397",
+      "recordType": "publication",
+      "title": "Étude de Faisabilité : Production Frugale du Au@C60 (Fullerène Endohédrique à l'Or)",
+      "abstract": "Résumé FRCe document, produit avec l’assistance de ChatGPT 5.2 Thinking + Gemini 3 Raisonnement, est publié sous licence Apache 2.0. Il constitue une publication défensive (antériorité) et entre de ce fait dans l’état de la technique au sens des législations applicables : art. 54(2) CBE (Convention sur le brevet européen), art. L 611-11 CPI (Code de la propriété intellectuelle français), 35 U.S.C. §102(a) (loi américaine sur les brevets), Loi chinoise sur les brevets art. 22(5) (中华人民共和国专利法) et Loi japonaise sur les brevets art. 29(1) (特許法). Cette publication divulgue des voies frugales et industrialisables pour synthétiser, purifier, caractériser, formuler et déployer Au@C60 (arc électrique sous hélium, anodes composites, contrôle d’arc, recirculation de gaz, quench/collecte de suie, extraction solvants, formation colloïdale par anti-solvant, gradients de densité, ultracentrifugation batch/continue, recyclage solvants, récupération d’or). Elle divulgue aussi des usages théranostiques (contraste CT, posologie guidée par imagerie), dispositifs (capteurs redox/ROS, pansements photo-activables, coatings d’implants), et briques data/IA (interopérabilité, apprentissage fédéré, MLOps sécurisé, boucle fermée biomarqueurs). Abstract ENThis document, produced with the assistance of ChatGPT 5.2 Thinking and Gemini 3 Raisonnement, is released under the Apache 2.0 licence. It is a voluntary defensive publication (prior art) and therefore enters the prior art upon release under the applicable patent statutes : EPC Art. 54(2) (European Patent Convention), French PC Art. L 611-11 (French Intellectual Property Code), 35 U.S.C. §102(a) (United States Patent Act), Chinese Patent Law Art. 22(5)(中华人民共和国专利法), and Japanese Patent Act Art. 29(1)(特許法). It discloses frugal, industrializable routes to synthesize, purify, characterize, formulate, and deploy Au@C60 (helium arc discharge, composite anodes, arc control, gas recirculation, quench/soot collection, solvent extraction, antisolvent-driven colloid formation, density gradients, batch/continuous ultracentrifugation, solvent recycling, gold recovery). It further discloses theranostic uses (CT contrast, imaging-guided dosing), devices (redox/ROS sensors, photoactivable wound dressings, implant coatings), and data/AI building blocks (interoperability, federated learning, secure MLOps, biomarker closed-loop control). Timestamp: 4ef4283953ef9dac943e0965799c0099ec42acc591d12b5b10ced5e32f0e7fa3SHA-256: 2026-01-01T13:05:21Z Liste des innovations & classification (IPC ; CPC)1. Au-graphite composite anode — IPC C01B 31/02 ; CPC C01B 31/022. Catalytic Ni/Cu co-doping — IPC C01B 31/02 ; CPC C01B 31/023. Assisted He-pressure mapping — IPC G01N 27/62 ; CPC G01N 27/624. Stable-current arc control — IPC H05H 1/24 ; CPC H05H 1/245. Automated feed-through anode — IPC C01B 31/02 ; CPC C01B 31/026. He recirculation with purity — IPC F17C 5/02 ; CPC F17C 5/027. Green extraction via limonene — IPC C07C 29/00 ; CPC C07C 29/008. Antisolvent colloid separation — IPC B01D 21/00 ; CPC B01D 21/009. Density-gradient ultracentrifuge — IPC B01D 21/00 ; CPC B01D 21/0010. Continuous-flow ultracentrifuge — IPC B01D 21/00 ; CPC B01D 21/0011. Temperature-controlled centrifugation — IPC B01D 21/00 ; CPC B01D 21/0012. Solvent recycling with QC — IPC B01D 3/00 ; CPC B01D 3/0013. Gold recovery from residues — IPC C22B 11/00 ; CPC C22B 11/0014. Inline MS+ICP batch release — IPC G01N 27/62 ; CPC G01N 27/6215. TEM Z-contrast validation — IPC G01N 23/00 ; CPC G01N 23/0016. Injectable liposome formulation — IPC A61K 9/127 ; CPC A61K 9/12717. Oral lipid emulsion dosing — IPC A61K 31/00 ; CPC A61K 31/0018. Calibrated CT contrast agent — IPC A61K 49/04 ; CPC A61K 49/0419. Imaging-guided personalized dosing — IPC G16H 20/20 ; CPC G16H 20/2020. Radiosensitization with ROS buffering — IPC A61N 5/10 ; CPC A61N 5/1021. Mitochondria uptake qualification assay — IPC C12Q 1/68 ; CPC C12Q 1/6822. Cationic mitochondrial functionalization — IPC A61K 31/00 ; CPC A61K 31/0023. Redox bioelectronic interface — IPC G01N 27/327 ; CPC G01N 27/32724. Anti-inflammatory CT-visible implant coating — IPC A61L 31/10 ; CPC A61L 31/1025. Photo-activable antimicrobial dressing — IPC A61L 15/00 ; CPC A61L 15/0026. Vitamin E co-formulation — IPC A61K 31/00 ; CPC A61K 31/0027. CoQ10/melatonin synergy stack — IPC A61K 31/00 ; CPC A61K 31/0028. Porphyrin–Au@C60 PDT theranostics — IPC A61K 49/00 ; CPC A61K 49/0029. Gold core with Au@C60 shell — IPC A61K 49/04 ; CPC A61K 49/0430. Au@C60 CT phantom standard — IPC G01T 1/00 ; CPC G01T 1/0031. Pre-analytical soot extraction kit — IPC C12Q 1/68 ; CPC C12Q 1/6832. Au@C60 API purity specification — IPC G01N 27/62 ; CPC G01N 27/6233. Lot–imaging–PK interoperability ontology — IPC G16H 10/60 ; CPC G16H 10/6034. Federated learning across sites — IPC G06N 20/00 ; CPC G06N 20/0035. Secure MLOps dosing pipeline — IPC G16H 20/20 ; CPC G16H 20/2036. ROS biomarker closed-loop infusion — IPC A61M 5/168 ; CPC A61M 5/16837. Inert traceable packaging — IPC B65D 81/32 ; CPC B65D 81/3238. CT calibration-as-a-service — IPC G01T 1/00 ; CPC G01T 1/0039. Safety interlocked arc reactor — IPC H05H 1/46 ; CPC H05H 1/4640. C60 co-product valorization — IPC C01B 31/02 ; CPC C01B 31/0241. Multiobjective yield/purity DOE — IPC G01N 27/62 ; CPC G01N 27/6242. Colloid stability QC index — IPC G01N 15/14 ; CPC G01N 15/1443. Soot pre-treatment by sieving — IPC B01D 35/00 ; CPC B01D 35/0044. Ultrasound-assisted extraction — IPC B01D 11/02 ; CPC B01D 11/0245. Gentle inert vacuum concentration — IPC B01D 3/14 ; CPC B01D 3/1446. C60 fraction crystallization — IPC C01B 31/02 ; CPC C01B 31/0247. Two-stage centrifuge + polishing — IPC B01D 21/00 ; CPC B01D 21/0048. UV-Vis enrichment monitoring — IPC G01N 21/31 ; CPC G01N 21/3149. Recycled-gold KPI tracking — IPC G06Q 10/083 ; CPC G06Q 10/08350. Free-gold maximum specification — IPC G01N 27/62 ; CPC G01N 27/6251. CT–ICP correlated biodistribution — IPC A61B 6/03 ; CPC A61B 6/0352. Organ-threshold dosing rules — IPC A61K 31/00 ; CPC A61K 31/0053. Low-dose CT for Au@C60 — IPC A61B 6/03 ; CPC A61B 6/0354. AI reconstruction for Au quantification — IPC G06N 20/00 ; CPC G06T 11/0055. Automated tumor uptake detection — IPC G16H 30/40 ; CPC G16H 30/4056. Liposome size/charge window — IPC A61K 9/127 ; CPC A61K 9/12757. Sterile filtration compatibility — IPC A61K 9/127 ; CPC A61K 9/12758. Emulsion droplet-size QA — IPC A61K 9/107 ; CPC A61K 9/10759. Safe LED dosimetry for dressings — IPC A61N 5/06 ; CPC A61N 5/0660. Multi-method implant deposition — IPC A61L 31/10 ; CPC A61L 31/1061. Portable ROS QC sensor — IPC G01N 27/327 ; CPC G01N 27/32762. Transdermal antioxidant patch — IPC A61K 9/70 ; CPC A61K 9/70663. Implantable closed-loop pump — IPC A61M 5/168 ; CPC A61M 5/16864. End-to-end lot-to-patient traceability — IPC G16H 10/60 ; CPC G06F 21/6265. Privacy secure HU aggregation — IPC G06F 21/62 ; CPC G06F 21/6266. Optimal RT window scheduling — IPC A61N 5/10 ; CPC A61N 5/1067. Inter-lab proficiency QC sample — IPC G01N 27/62 ; CPC G01N 27/6268. Reuse-grade solvent logistics — IPC B65D 81/32 ; CPC B65D 81/3269. Anti-aggregation API conditioning — IPC A61K 31/00 ; CPC A61K 31/0070. Parametric techno-economic simulator — IPC G06Q 10/06 ; CPC G06Q 10/0671. Sacrificial cathode Au capture — IPC C22B 11/00 ; CPC C22B 11/0072. Tuned quench reactor geometry — IPC C01B 31/02 ; CPC C01B 31/0273. Cold cyclone soot collector — IPC B01D 45/12 ; CPC B01D 45/1274. Free-Au selective membrane filtration — IPC B01D 61/00 ; CPC B01D 61/0275. Free-Au stripping voltammetry QC — IPC G01N 27/26 ; CPC G01N 27/2676. Oxygen exclusion passivation step — IPC G01N 27/62 ; CPC G01N 27/6277. Au@C60 spike recovery QA — IPC G01N 27/62 ; CPC G01N 27/6278. Micro-HPLC analytical polishing — IPC B01D 15/08 ; CPC B01D 15/0879. HU-preserving AI denoising — IPC G06T 5/50 ; CPC G06T 5/5080. Phantom-based drift detection — IPC G01T 1/00 ; CPC G01T 1/0081. Composite response score uptake+ROS — IPC G16H 50/20 ; CPC G16H 50/2082. Mito fraction + TEM proof — IPC C12Q 1/68 ; CPC C12Q 1/6883. LNP lipid nanoparticle carrier — IPC A61K 9/127 ; CPC A61K 9/12784. Gradient-release implant coating — IPC A61L 31/10 ; CPC A61L 31/1085. Dressing with sensor+LED — IPC A61B 5/145 ; CPC A61B 5/14586. PDT patch thermal safety lockout — IPC A61N 5/06 ; CPC A61N 5/0687. Microneedle Au@C60 delivery — IPC A61K 9/70 ; CPC A61K 9/70788. NADH electrochemical sensor — IPC G01N 27/327 ; CPC G01N 27/32789. Inert transport cartridge — IPC B65D 81/32 ; CPC B65D 81/3290. SOP stress-testing for shelf-life — IPC G01N 21/31 ; CPC G01N 21/3191. Smartphone turbidity aggregation QC — IPC G01N 21/88 ; CPC G01N 21/8892. Multi-stream product split planning — IPC G06Q 10/06 ; CPC G06Q 10/0693. Process-to-effect database — IPC G16H 10/60 ; CPC G16H 10/6094. Dynamic consent for CT data — IPC G06F 21/62 ; CPC G16H 10/6095. Conditional release with rework rules — IPC G01N 27/62 ; CPC G01N 27/6296. Low-adsorption sterile filter SOP — IPC A61K 9/127 ; CPC A61K 9/12797. Auto-calibrated CO interlock module — IPC G01N 33/00 ; CPC G01N 33/0098. Bayesian minimal-effective dosing — IPC G16H 20/20 ; CPC G16H 50/2099. Field mode without CT — IPC A61K 31/00 ; CPC A61K 31/00100. Micronized Au supplier qualification — IPC G01N 1/28 ; CPC G01N 1/28101. Xylene high-power extraction — IPC B01D 11/02 ; CPC B01D 11/02102. MeTHF miscible green route — IPC B01D 11/02 ; CPC B01D 3/14103. p-Cymene bio-based solvent — IPC B01D 11/02 ; CPC B01D 11/02104. Multi-stage organic gradients — IPC B01D 21/00 ; CPC B01D 21/00105. Inline density/refraction sensing — IPC G01N 7/06 ; CPC G01N 7/06106. Turbidity cutoff auto-switching — IPC B01D 21/00 ; CPC B01D 21/00107. Low-adsorption centrifuge consumables — IPC B01D 21/00 ; CPC B01D 21/00108. Raman quick ID for Au@C60 — IPC G01N 21/65 ; CPC G01N 21/65109. Isotopic Au ICP calibration — IPC G01N 27/62 ; CPC G01N 27/62110. UV-Vis reference spectrum library — IPC G01N 21/31 ; CPC G01N 2",
+      "doi": "10.5281/zenodo.17860397",
+      "externalIds": {
+        "openalex": "W7115025824"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7115025824"
+      },
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "publicationDate": "2026-09-27",
+      "firstPublicDate": "2026-09-27",
+      "onlineDate": null,
+      "topics": [
+        "Fullerene Chemistry and Applications",
+        "Graphene and Nanomaterials Applications",
+        "Chemical Reactions and Isotopes"
+      ],
+      "keywords": [
+        "Statute",
+        "Intellectual property",
+        "Patent law",
+        "Industrial property"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…PC B65D 81/3238. CT calibration-as-a-service — IPC G01T 1/00 ; CPC G01T 1/0039. Safety interlocked arc reactor — IPC H05H 1/46 ; CPC H05H 1/4640. C60 co-product valorization — IPC C01B 31/02 ; CPC C01B 31/0241. Multiobjective yield/purity DOE — IPC G01N 27/62 ; CPC G01N 27/6242. Colloid stability QC index — IPC G01N 15…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "calibration",
+              "conceptLabel": "Kalibrierung",
+              "matchedTerm": "calibration",
+              "sourceValue": "…A61M 5/16837. Inert traceable packaging — IPC B65D 81/32 ; CPC B65D 81/3238. CT calibration-as-a-service — IPC G01T 1/00 ; CPC G01T 1/0039. Safety interlocked arc reactor — IPC H05H 1/46 ; CPC H05H 1/4640. C60 co-product valorization — IPC C01B 31/02 ; CPC C01B 31/0241. Multiobjective yield/purity DOE — IPC G01N 27/62 …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:safety": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "ChatGPT",
+        "learning",
+        "safety",
+        "calibration"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Pillet, Xavier",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.5281/zenodo.17860397",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-29T08:11:11.709Z",
+      "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
+      "retrievedAt": "2026-09-29T11:23:33.314Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-29T11:23:33.314Z",
+      "preferredVersionId": "openalex:W7115025824",
+      "versions": [
+        {
+          "id": "openalex:W7115025824",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7115025824",
+          "doi": "10.5281/zenodo.17860397",
+          "publicationDate": "2026-09-27",
+          "url": "https://doi.org/10.5281/zenodo.17860397"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-046.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "patient",
+              "quote": "antable closed-loop pump — IPC A61M 5/168 ; CPC A61M 5/16864. End-to-end lot-to-patient traceability — IPC G16H 10/60 ; CPC G06F 21/6265. Privacy secure HU aggregation — IPC G06F 21/62 ; ",
+              "start": 6735,
+              "end": 6922
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "ChatGPT",
+              "quote": "Résumé FRCe document, produit avec l’assistance de ChatGPT 5.2 Thinking + Gemini 3 Raisonnement, est publié sous licence Apache 2.0. Il constitue une publicat",
+              "start": 0,
+              "end": 158
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "(redox/ROS sensors, photoactivable wound dressings, implant coatings), and data/AI building blocks (interoperability, federated learning, secure MLOps, biomarker closed-loop control)",
+              "start": 2200,
+              "end": 2382
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "ChatGPT",
+                  "quote": "Résumé FRCe document, produit avec l’assistance de ChatGPT 5.2 Thinking + Gemini 3 Raisonnement, est publié sous licence Apache 2.0. Il constitue une publicat",
+                  "start": 0,
+                  "end": 158
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "automation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "automated",
+                  "quote": "; CPC G01N 27/624. Stable-current arc control — IPC H05H 1/24 ; CPC H05H 1/245. Automated feed-through anode — IPC C01B 31/02 ; CPC C01B 31/026. He recirculation with purity — IPC F17C 5/02",
+                  "start": 2714,
+                  "end": 2903
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "rize, formulate, and deploy Au@C60 (helium arc discharge, composite anodes, arc control, gas recirculation, quench/soot collection, solvent extraction, antisolvent-driven colloid formatio",
+                  "start": 1834,
+                  "end": 2021
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "wellbeing",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "stress",
+                  "quote": "1N 27/32789. Inert transport cartridge — IPC B65D 81/32 ; CPC B65D 81/3290. SOP stress-testing for shelf-life — IPC G01N 21/31 ; CPC G01N 21/3191. Smartphone turbidity aggregation QC — I",
+                  "start": 8479,
+                  "end": 8665
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": [
+            {
+              "value": "simulation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "simulator",
+                  "quote": "PI conditioning — IPC A61K 31/00 ; CPC A61K 31/0070. Parametric techno-economic simulator — IPC G06Q 10/06 ; CPC G06Q 10/0671. Sacrificial cathode Au capture — IPC C22B 11/00 ; CPC C22B 11/",
+                  "start": 7158,
+                  "end": 7347
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.5281/zenodo.23001940",
+      "recordType": "publication",
+      "title": "Étude de Faisabilité : Production Frugale du Au@C60 (Fullerène Endohédrique à l'Or)",
+      "abstract": "Résumé FRCe document, produit avec l’assistance de ChatGPT 5.2 Thinking + Gemini 3 Raisonnement, est publié sous licence Apache 2.0. Il constitue une publication défensive (antériorité) et entre de ce fait dans l’état de la technique au sens des législations applicables : art. 54(2) CBE (Convention sur le brevet européen), art. L 611-11 CPI (Code de la propriété intellectuelle français), 35 U.S.C. §102(a) (loi américaine sur les brevets), Loi chinoise sur les brevets art. 22(5) (中华人民共和国专利法) et Loi japonaise sur les brevets art. 29(1) (特許法). Cette publication divulgue des voies frugales et industrialisables pour synthétiser, purifier, caractériser, formuler et déployer Au@C60 (arc électrique sous hélium, anodes composites, contrôle d’arc, recirculation de gaz, quench/collecte de suie, extraction solvants, formation colloïdale par anti-solvant, gradients de densité, ultracentrifugation batch/continue, recyclage solvants, récupération d’or). Elle divulgue aussi des usages théranostiques (contraste CT, posologie guidée par imagerie), dispositifs (capteurs redox/ROS, pansements photo-activables, coatings d’implants), et briques data/IA (interopérabilité, apprentissage fédéré, MLOps sécurisé, boucle fermée biomarqueurs). Abstract ENThis document, produced with the assistance of ChatGPT 5.2 Thinking and Gemini 3 Raisonnement, is released under the Apache 2.0 licence. It is a voluntary defensive publication (prior art) and therefore enters the prior art upon release under the applicable patent statutes : EPC Art. 54(2) (European Patent Convention), French PC Art. L 611-11 (French Intellectual Property Code), 35 U.S.C. §102(a) (United States Patent Act), Chinese Patent Law Art. 22(5)(中华人民共和国专利法), and Japanese Patent Act Art. 29(1)(特許法). It discloses frugal, industrializable routes to synthesize, purify, characterize, formulate, and deploy Au@C60 (helium arc discharge, composite anodes, arc control, gas recirculation, quench/soot collection, solvent extraction, antisolvent-driven colloid formation, density gradients, batch/continuous ultracentrifugation, solvent recycling, gold recovery). It further discloses theranostic uses (CT contrast, imaging-guided dosing), devices (redox/ROS sensors, photoactivable wound dressings, implant coatings), and data/AI building blocks (interoperability, federated learning, secure MLOps, biomarker closed-loop control). Timestamp: 4ef4283953ef9dac943e0965799c0099ec42acc591d12b5b10ced5e32f0e7fa3SHA-256: 2026-01-01T13:05:21Z Liste des innovations & classification (IPC ; CPC)1. Au-graphite composite anode — IPC C01B 31/02 ; CPC C01B 31/022. Catalytic Ni/Cu co-doping — IPC C01B 31/02 ; CPC C01B 31/023. Assisted He-pressure mapping — IPC G01N 27/62 ; CPC G01N 27/624. Stable-current arc control — IPC H05H 1/24 ; CPC H05H 1/245. Automated feed-through anode — IPC C01B 31/02 ; CPC C01B 31/026. He recirculation with purity — IPC F17C 5/02 ; CPC F17C 5/027. Green extraction via limonene — IPC C07C 29/00 ; CPC C07C 29/008. Antisolvent colloid separation — IPC B01D 21/00 ; CPC B01D 21/009. Density-gradient ultracentrifuge — IPC B01D 21/00 ; CPC B01D 21/0010. Continuous-flow ultracentrifuge — IPC B01D 21/00 ; CPC B01D 21/0011. Temperature-controlled centrifugation — IPC B01D 21/00 ; CPC B01D 21/0012. Solvent recycling with QC — IPC B01D 3/00 ; CPC B01D 3/0013. Gold recovery from residues — IPC C22B 11/00 ; CPC C22B 11/0014. Inline MS+ICP batch release — IPC G01N 27/62 ; CPC G01N 27/6215. TEM Z-contrast validation — IPC G01N 23/00 ; CPC G01N 23/0016. Injectable liposome formulation — IPC A61K 9/127 ; CPC A61K 9/12717. Oral lipid emulsion dosing — IPC A61K 31/00 ; CPC A61K 31/0018. Calibrated CT contrast agent — IPC A61K 49/04 ; CPC A61K 49/0419. Imaging-guided personalized dosing — IPC G16H 20/20 ; CPC G16H 20/2020. Radiosensitization with ROS buffering — IPC A61N 5/10 ; CPC A61N 5/1021. Mitochondria uptake qualification assay — IPC C12Q 1/68 ; CPC C12Q 1/6822. Cationic mitochondrial functionalization — IPC A61K 31/00 ; CPC A61K 31/0023. Redox bioelectronic interface — IPC G01N 27/327 ; CPC G01N 27/32724. Anti-inflammatory CT-visible implant coating — IPC A61L 31/10 ; CPC A61L 31/1025. Photo-activable antimicrobial dressing — IPC A61L 15/00 ; CPC A61L 15/0026. Vitamin E co-formulation — IPC A61K 31/00 ; CPC A61K 31/0027. CoQ10/melatonin synergy stack — IPC A61K 31/00 ; CPC A61K 31/0028. Porphyrin–Au@C60 PDT theranostics — IPC A61K 49/00 ; CPC A61K 49/0029. Gold core with Au@C60 shell — IPC A61K 49/04 ; CPC A61K 49/0430. Au@C60 CT phantom standard — IPC G01T 1/00 ; CPC G01T 1/0031. Pre-analytical soot extraction kit — IPC C12Q 1/68 ; CPC C12Q 1/6832. Au@C60 API purity specification — IPC G01N 27/62 ; CPC G01N 27/6233. Lot–imaging–PK interoperability ontology — IPC G16H 10/60 ; CPC G16H 10/6034. Federated learning across sites — IPC G06N 20/00 ; CPC G06N 20/0035. Secure MLOps dosing pipeline — IPC G16H 20/20 ; CPC G16H 20/2036. ROS biomarker closed-loop infusion — IPC A61M 5/168 ; CPC A61M 5/16837. Inert traceable packaging — IPC B65D 81/32 ; CPC B65D 81/3238. CT calibration-as-a-service — IPC G01T 1/00 ; CPC G01T 1/0039. Safety interlocked arc reactor — IPC H05H 1/46 ; CPC H05H 1/4640. C60 co-product valorization — IPC C01B 31/02 ; CPC C01B 31/0241. Multiobjective yield/purity DOE — IPC G01N 27/62 ; CPC G01N 27/6242. Colloid stability QC index — IPC G01N 15/14 ; CPC G01N 15/1443. Soot pre-treatment by sieving — IPC B01D 35/00 ; CPC B01D 35/0044. Ultrasound-assisted extraction — IPC B01D 11/02 ; CPC B01D 11/0245. Gentle inert vacuum concentration — IPC B01D 3/14 ; CPC B01D 3/1446. C60 fraction crystallization — IPC C01B 31/02 ; CPC C01B 31/0247. Two-stage centrifuge + polishing — IPC B01D 21/00 ; CPC B01D 21/0048. UV-Vis enrichment monitoring — IPC G01N 21/31 ; CPC G01N 21/3149. Recycled-gold KPI tracking — IPC G06Q 10/083 ; CPC G06Q 10/08350. Free-gold maximum specification — IPC G01N 27/62 ; CPC G01N 27/6251. CT–ICP correlated biodistribution — IPC A61B 6/03 ; CPC A61B 6/0352. Organ-threshold dosing rules — IPC A61K 31/00 ; CPC A61K 31/0053. Low-dose CT for Au@C60 — IPC A61B 6/03 ; CPC A61B 6/0354. AI reconstruction for Au quantification — IPC G06N 20/00 ; CPC G06T 11/0055. Automated tumor uptake detection — IPC G16H 30/40 ; CPC G16H 30/4056. Liposome size/charge window — IPC A61K 9/127 ; CPC A61K 9/12757. Sterile filtration compatibility — IPC A61K 9/127 ; CPC A61K 9/12758. Emulsion droplet-size QA — IPC A61K 9/107 ; CPC A61K 9/10759. Safe LED dosimetry for dressings — IPC A61N 5/06 ; CPC A61N 5/0660. Multi-method implant deposition — IPC A61L 31/10 ; CPC A61L 31/1061. Portable ROS QC sensor — IPC G01N 27/327 ; CPC G01N 27/32762. Transdermal antioxidant patch — IPC A61K 9/70 ; CPC A61K 9/70663. Implantable closed-loop pump — IPC A61M 5/168 ; CPC A61M 5/16864. End-to-end lot-to-patient traceability — IPC G16H 10/60 ; CPC G06F 21/6265. Privacy secure HU aggregation — IPC G06F 21/62 ; CPC G06F 21/6266. Optimal RT window scheduling — IPC A61N 5/10 ; CPC A61N 5/1067. Inter-lab proficiency QC sample — IPC G01N 27/62 ; CPC G01N 27/6268. Reuse-grade solvent logistics — IPC B65D 81/32 ; CPC B65D 81/3269. Anti-aggregation API conditioning — IPC A61K 31/00 ; CPC A61K 31/0070. Parametric techno-economic simulator — IPC G06Q 10/06 ; CPC G06Q 10/0671. Sacrificial cathode Au capture — IPC C22B 11/00 ; CPC C22B 11/0072. Tuned quench reactor geometry — IPC C01B 31/02 ; CPC C01B 31/0273. Cold cyclone soot collector — IPC B01D 45/12 ; CPC B01D 45/1274. Free-Au selective membrane filtration — IPC B01D 61/00 ; CPC B01D 61/0275. Free-Au stripping voltammetry QC — IPC G01N 27/26 ; CPC G01N 27/2676. Oxygen exclusion passivation step — IPC G01N 27/62 ; CPC G01N 27/6277. Au@C60 spike recovery QA — IPC G01N 27/62 ; CPC G01N 27/6278. Micro-HPLC analytical polishing — IPC B01D 15/08 ; CPC B01D 15/0879. HU-preserving AI denoising — IPC G06T 5/50 ; CPC G06T 5/5080. Phantom-based drift detection — IPC G01T 1/00 ; CPC G01T 1/0081. Composite response score uptake+ROS — IPC G16H 50/20 ; CPC G16H 50/2082. Mito fraction + TEM proof — IPC C12Q 1/68 ; CPC C12Q 1/6883. LNP lipid nanoparticle carrier — IPC A61K 9/127 ; CPC A61K 9/12784. Gradient-release implant coating — IPC A61L 31/10 ; CPC A61L 31/1085. Dressing with sensor+LED — IPC A61B 5/145 ; CPC A61B 5/14586. PDT patch thermal safety lockout — IPC A61N 5/06 ; CPC A61N 5/0687. Microneedle Au@C60 delivery — IPC A61K 9/70 ; CPC A61K 9/70788. NADH electrochemical sensor — IPC G01N 27/327 ; CPC G01N 27/32789. Inert transport cartridge — IPC B65D 81/32 ; CPC B65D 81/3290. SOP stress-testing for shelf-life — IPC G01N 21/31 ; CPC G01N 21/3191. Smartphone turbidity aggregation QC — IPC G01N 21/88 ; CPC G01N 21/8892. Multi-stream product split planning — IPC G06Q 10/06 ; CPC G06Q 10/0693. Process-to-effect database — IPC G16H 10/60 ; CPC G16H 10/6094. Dynamic consent for CT data — IPC G06F 21/62 ; CPC G16H 10/6095. Conditional release with rework rules — IPC G01N 27/62 ; CPC G01N 27/6296. Low-adsorption sterile filter SOP — IPC A61K 9/127 ; CPC A61K 9/12797. Auto-calibrated CO interlock module — IPC G01N 33/00 ; CPC G01N 33/0098. Bayesian minimal-effective dosing — IPC G16H 20/20 ; CPC G16H 50/2099. Field mode without CT — IPC A61K 31/00 ; CPC A61K 31/00100. Micronized Au supplier qualification — IPC G01N 1/28 ; CPC G01N 1/28101. Xylene high-power extraction — IPC B01D 11/02 ; CPC B01D 11/02102. MeTHF miscible green route — IPC B01D 11/02 ; CPC B01D 3/14103. p-Cymene bio-based solvent — IPC B01D 11/02 ; CPC B01D 11/02104. Multi-stage organic gradients — IPC B01D 21/00 ; CPC B01D 21/00105. Inline density/refraction sensing — IPC G01N 7/06 ; CPC G01N 7/06106. Turbidity cutoff auto-switching — IPC B01D 21/00 ; CPC B01D 21/00107. Low-adsorption centrifuge consumables — IPC B01D 21/00 ; CPC B01D 21/00108. Raman quick ID for Au@C60 — IPC G01N 21/65 ; CPC G01N 21/65109. Isotopic Au ICP calibration — IPC G01N 27/62 ; CPC G01N 27/62110. UV-Vis reference spectrum library — IPC G01N 21/31 ; CPC G01N 2",
+      "doi": "10.5281/zenodo.23001940",
+      "externalIds": {
+        "openalex": "W7214551756"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214551756"
+      },
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "publicationDate": "2026-09-27",
+      "firstPublicDate": "2026-09-27",
+      "onlineDate": null,
+      "topics": [
+        "Laser-Ablation Synthesis of Nanoparticles",
+        "Copper-based nanomaterials and applications",
+        "Extraction and Separation Processes"
+      ],
+      "keywords": [
+        "Statute",
+        "Intellectual property",
+        "Patent law",
+        "Industrial property"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…PC B65D 81/3238. CT calibration-as-a-service — IPC G01T 1/00 ; CPC G01T 1/0039. Safety interlocked arc reactor — IPC H05H 1/46 ; CPC H05H 1/4640. C60 co-product valorization — IPC C01B 31/02 ; CPC C01B 31/0241. Multiobjective yield/purity DOE — IPC G01N 27/62 ; CPC G01N 27/6242. Colloid stability QC index — IPC G01N 15…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "calibration",
+              "conceptLabel": "Kalibrierung",
+              "matchedTerm": "calibration",
+              "sourceValue": "…A61M 5/16837. Inert traceable packaging — IPC B65D 81/32 ; CPC B65D 81/3238. CT calibration-as-a-service — IPC G01T 1/00 ; CPC G01T 1/0039. Safety interlocked arc reactor — IPC H05H 1/46 ; CPC H05H 1/4640. C60 co-product valorization — IPC C01B 31/02 ; CPC C01B 31/0241. Multiobjective yield/purity DOE — IPC G01N 27/62 …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:safety": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "ChatGPT",
+        "learning",
+        "safety",
+        "calibration"
+      ],
+      "authors": [
+        {
+          "id": "A5121784850",
+          "name": "Xavier Pillet",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.5281/zenodo.23001940",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-29T08:11:12.732Z",
+      "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
+      "retrievedAt": "2026-09-29T11:23:35.707Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-29T11:23:35.707Z",
+      "preferredVersionId": "openalex:W7214551756",
+      "versions": [
+        {
+          "id": "openalex:W7214551756",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7214551756",
+          "doi": "10.5281/zenodo.23001940",
+          "publicationDate": "2026-09-27",
+          "url": "https://doi.org/10.5281/zenodo.23001940"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-046.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "patient",
+              "quote": "antable closed-loop pump — IPC A61M 5/168 ; CPC A61M 5/16864. End-to-end lot-to-patient traceability — IPC G16H 10/60 ; CPC G06F 21/6265. Privacy secure HU aggregation — IPC G06F 21/62 ; ",
+              "start": 6735,
+              "end": 6922
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "ChatGPT",
+              "quote": "Résumé FRCe document, produit avec l’assistance de ChatGPT 5.2 Thinking + Gemini 3 Raisonnement, est publié sous licence Apache 2.0. Il constitue une publicat",
+              "start": 0,
+              "end": 158
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "(redox/ROS sensors, photoactivable wound dressings, implant coatings), and data/AI building blocks (interoperability, federated learning, secure MLOps, biomarker closed-loop control)",
+              "start": 2200,
+              "end": 2382
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "ChatGPT",
+                  "quote": "Résumé FRCe document, produit avec l’assistance de ChatGPT 5.2 Thinking + Gemini 3 Raisonnement, est publié sous licence Apache 2.0. Il constitue une publicat",
+                  "start": 0,
+                  "end": 158
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "automation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "automated",
+                  "quote": "; CPC G01N 27/624. Stable-current arc control — IPC H05H 1/24 ; CPC H05H 1/245. Automated feed-through anode — IPC C01B 31/02 ; CPC C01B 31/026. He recirculation with purity — IPC F17C 5/02",
+                  "start": 2714,
+                  "end": 2903
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "rize, formulate, and deploy Au@C60 (helium arc discharge, composite anodes, arc control, gas recirculation, quench/soot collection, solvent extraction, antisolvent-driven colloid formatio",
+                  "start": 1834,
+                  "end": 2021
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "wellbeing",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "stress",
+                  "quote": "1N 27/32789. Inert transport cartridge — IPC B65D 81/32 ; CPC B65D 81/3290. SOP stress-testing for shelf-life — IPC G01N 21/31 ; CPC G01N 21/3191. Smartphone turbidity aggregation QC — I",
+                  "start": 8479,
+                  "end": 8665
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": [
+            {
+              "value": "simulation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "simulator",
+                  "quote": "PI conditioning — IPC A61K 31/00 ; CPC A61K 31/0070. Parametric techno-economic simulator — IPC G06Q 10/06 ; CPC G06Q 10/0671. Sacrificial cathode Au capture — IPC C22B 11/00 ; CPC C22B 11/",
+                  "start": 7158,
+                  "end": 7347
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.5281/zenodo.17728752",
+      "recordType": "publication",
+      "title": "Étude de Faisabilité Technique – Plateforme Symbiotique de Bio-Fonderie pour Complexes Organométalliques",
+      "abstract": "Abstract ENCe document, produit avec l’assistance de ChatGPT o3 et GPT-5 Thinking, est publié sous la licence Apache 2.0. Il constitue une publication défensive (antériorité) et entre de ce fait dans l’état de la technique au sens des textes applicables : art. 54(2) CBE / CBE (Convention sur le brevet européen), art. L 611-11 CPI (Code de la propriété intellectuelle français), cf. 35 U.S.C. §102(a) (loi américaine sur les brevets), ainsi que les dispositions correspondantes du droit chinois (Loi sur les brevets, art. 22(5)) et japonais (特許法, art. 29(1)). Le rapport décrit une plateforme lichenique extrêmophile modulaire (Cage, Antenne, DRM biologique) pour extraire, confiner et libérer à la demande des complexes organométalliques monoatomiques. Trente-deux innovations sont présentées de manière enabling, chacune classée avec des codes IPC et CPC, et associée à une preuve d’horodatage (RFC 3161 / FreeTSA). Résumé FRThis document, produced with the assistance of ChatGPT o3 and GPT-5 Thinking, is released under the Apache 2.0 licence. It is a voluntary defensive publication (prior art) and therefore enters the prior art upon release under the applicable patent statutes: EPC Art. 54(2) (European Patent Convention), French IPC Art. L 611-11 CPI (French Intellectual Property Code), 35 U.S.C. §102(a) (United States Patent Act), together with the corresponding provisions of Chinese Patent Law Art. 22(5) (中华人民共和国专利法) and Japanese Patent Act Art. 29(1) (特許法). The report discloses an extremophile lichen-based, modular bio-foundry platform (“Cage”, “Antenna”, “biological DRM”) to extract, confine and on-demand release monoatomic organometallic complexes. Thirty-two innovations are described in an enabling manner, each assigned IPC and CPC classifications and associated with timestamp proof (RFC 3161 / FreeTSA). Timestamp: 2025-11-26T21:00:00+01:00SHA-256: b98a449d81a75453e5f2bd4a0bc00818a4becb5158446280e37851591561fb4c List of innovations and classifications Ferritin single-atom gold cage — IPC C12N 1/20; CPC C12N 1/205 Encapsulin-directed noble clusters — IPC C12N 1/20; CPC C12N 1/38 In vivo DNA/peptide cages — IPC C12N 15/10; CPC C12N 15/90 MT/PC shuttle to nano-cages — IPC C12N 1/20; CPC C12N 1/38 Controlled acidic bioleaching — IPC C12P 7/00; CPC C12P 7/18 Fluorescence loading sensor — IPC G01N 33/50; CPC G01N 33/569 Auxin phyllotaxis controller — IPC C12N 15/82; CPC C12N 15/90 Spiral mycelial branching network — IPC C12N 1/20; CPC C12N 1/38 Optogenetic spiral growth guidance — IPC C12N 15/82; CPC C12N 15/901 Binary product/destructor vacuoles — IPC C12N 15/82; CPC C12N 15/907 Acoustic vacuolar lock — IPC C12N 15/82; CPC C12N 15/907 Dual acoustic/optical key logic — IPC C12N 15/82; CPC C12N 15/907 Harvest basin bio-reactor — IPC C12M 1/34; CPC C12M 1/34 Tri-partite chimeric chassis — IPC C12N 1/20; CPC C12N 1/38 Symbiotic-dependency containment — IPC C12N 15/82; CPC C12N 15/90 Remediation and co-production process — IPC C22B 3/18; CPC C22B 3/26 Cloud-based bio-foundry control — IPC G06Q 50/02; CPC G06Q 50/26 Functional module-validation kit — IPC G01N 33/50; CPC G01N 33/569 Lyophilised lichen bio-seeds — IPC A01C 1/00; CPC A01C 1/06 Magnetogenetic TRPV-ferritin key — IPC C12N 15/82; CPC C12N 15/907 Artificial hydathodes with guard cells — IPC C12N 15/82; CPC C12N 15/901 Active pulvinus squeezing module — IPC C12N 15/82; CPC C12N 15/907 Multi-metal/alloy-specific cages — IPC C12N 1/20; CPC C12N 1/38 Four-symbiont N-fixing C4 chassis — IPC C12N 1/20; CPC C12N 1/38 Safe ultrasound-key calibration method — IPC G01N 33/50; CPC G01N 33/569 Orbital/space bio-foundry panels — IPC B64G 1/00; CPC B64G 1/24 Secondary valorisation of spent biomass — IPC C12P 19/04; CPC C12P 19/04 Selective P/D DRM membranes — IPC C12N 15/82; CPC C12N 15/907 Extended binary enzyme/substrate system — IPC C12N 15/82; CPC C12N 15/907 Upstream EPS-based metal capture — IPC C12N 1/12; CPC C12N 1/12 Industry 4.0 physical-key management — IPC G06Q 50/02; CPC G06Q 50/26 Standard anti-tamper crash-test protocol — IPC G01N 33/50; CPC G01N 33/569 Keywordsferritin nanocage, gold single-atom, engineered lichen, encapsulin compartment, metal nanocluster, mycobiont chassis, DNA origami cage, peptide polyhedron, metal confinement, metallothionein shuttle, phytochelatin transport, metal uptake, bioleaching module, citric acid secretion, gold solubilisation, fluorescence sensor, gold cluster assay, in vivo QC, auxin circuit, golden angle growth, phyllotaxis control, spiral mycelium, branching control, metal transport network, optogenetic guidance, spiral morphology, light-driven patterning, binary vacuole, biological DRM, product self-destruction, mechanosensitive channel, ultrasound key, controlled exudation, optogenetic lock, dual stimulus, biological authentication, biofoundry reactor, acoustic harvesting, lichen panels, lichen chassis, tri-partite symbiosis, organometallic biofoundry, genetic containment, symbiotic dependency, biosafety design, bioremediation process, monoatomic catalyst, tailings treatment, digital twin, biofoundry control, cloud orchestration, functional assay kit, DRM validation, multi-module test, lyophilised inoculum, field deployment, bioreactor tiles, magnetogenetic key, TRPV-ferritin, EM-triggered release, artificial hydathode, guard cells, clean exudation, active squeezing, pulvinus module, harvest amplification, multi-metal cages, alloy-specific templates, optical fingerprint, nitrogen-fixing partner, C4 photobiont, quadripartite symbiosis, ultrasound key window, safety calibration, QA protocol, space biofoundry, orbital lichen panels, in-situ resource use, usnic acid recovery, spent biomass upcycling, secondary value chain, membrane tuning, ergosterol doping, selective DRM, binary bomb, oxidative enzyme, motif peroxide, EPS capture, photobiont chelation, metal preconcentration, key management, DRM as-a-service, license profiles, anti-tamper assay, crash test, DRM validation protocol",
+      "doi": "10.5281/zenodo.17728752",
+      "externalIds": {
+        "openalex": "W7106827772"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7106827772"
+      },
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "publicationDate": "2026-09-27",
+      "firstPublicDate": "2026-09-27",
+      "onlineDate": null,
+      "topics": [
+        "Contact Dermatitis and Allergies",
+        "Chemistry and Stereochemistry Studies",
+        "biodegradable polymer synthesis and properties"
+      ],
+      "keywords": [
+        "Intellectual property",
+        "Industrial property",
+        "Treaty",
+        "Patent law",
+        "International trade law"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…iosis, organometallic biofoundry, genetic containment, symbiotic dependency, biosafety design, bioremediation process, monoatomic catalyst, tailings treatment, digital twin, biofoundry control, cloud orchestration, functional assay kit, DRM validation, multi-module test, lyophilised inoculum, field deployment, bioreact…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "calibration",
+              "conceptLabel": "Kalibrierung",
+              "matchedTerm": "calibration",
+              "sourceValue": "…symbiont N-fixing C4 chassis — IPC C12N 1/20; CPC C12N 1/38 Safe ultrasound-key calibration method — IPC G01N 33/50; CPC G01N 33/569 Orbital/space bio-foundry panels — IPC B64G 1/00; CPC B64G 1/24 Secondary valorisation of spent biomass — IPC C12P 19/04; CPC C12P 19/04 Selective P/D DRM membranes — IPC C12N 15/82; CPC …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:safety": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "ChatGPT",
+        "safety",
+        "calibration"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Pillet, Xavier",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.5281/zenodo.17728752",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-29T08:11:11.709Z",
+      "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
+      "retrievedAt": "2026-09-29T11:23:33.314Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-29T11:23:33.314Z",
+      "preferredVersionId": "openalex:W7106827772",
+      "versions": [
+        {
+          "id": "openalex:W7106827772",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7106827772",
+          "doi": "10.5281/zenodo.17728752",
+          "publicationDate": "2026-09-27",
+          "url": "https://doi.org/10.5281/zenodo.17728752"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-046.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "ChatGPT",
+              "quote": "Abstract ENCe document, produit avec l’assistance de ChatGPT o3 et GPT-5 Thinking, est publié sous la licence Apache 2.0. Il constitue une publication défensive",
+              "start": 0,
+              "end": 160
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "controller",
+                  "quote": "Fluorescence loading sensor — IPC G01N 33/50; CPC G01N 33/569 Auxin phyllotaxis controller — IPC C12N 15/82; CPC C12N 15/90 Spiral mycelial branching network — IPC C12N 1/20; CPC C12N 1/38 O",
+                  "start": 2289,
+                  "end": 2479
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "ChatGPT",
+                  "quote": "Abstract ENCe document, produit avec l’assistance de ChatGPT o3 et GPT-5 Thinking, est publié sous la licence Apache 2.0. Il constitue une publication défensive",
+                  "start": 0,
+                  "end": 160
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "nd co-production process — IPC C22B 3/18; CPC C22B 3/26 Cloud-based bio-foundry control — IPC G06Q 50/02; CPC G06Q 50/26 Functional module-validation kit — IPC G01N 33/50; CPC G01N 33/569",
+                  "start": 2935,
+                  "end": 3122
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.5281/zenodo.23002362",
       "recordType": "publication",
@@ -2180,6 +3716,8 @@
       "onlineDate": null,
       "topics": [
         "Cognitive Abilities and Testing",
+        "Educational Games and Gamification",
+        "Digital Games and Media",
         "Cognitive Functions and Memory",
         "Neural and Behavioral Psychology Studies"
       ],
@@ -2256,9 +3794,9 @@
       "citedByCount": 0,
       "firstSeenAt": "2026-09-29T08:11:08.105Z",
       "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
-      "retrievedAt": "2026-10-06T12:03:42.887Z",
+      "retrievedAt": "2026-10-07T11:48:58.434Z",
       "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-06T12:03:42.887Z",
+      "lastVerifiedAt": "2026-10-07T11:48:58.434Z",
       "preferredVersionId": "openalex:W7214560423",
       "versions": [
         {
@@ -16427,10 +17965,13 @@
       "firstPublicDate": "2026-09-27",
       "onlineDate": null,
       "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Software Testing and Debugging Techniques",
+        "Artificial Intelligence Applications",
+        "cs.AI",
         "Logic, programming, and type systems",
         "Logic, Reasoning, and Knowledge",
-        "Scientific Computing and Data Management",
-        "cs.AI"
+        "Scientific Computing and Data Management"
       ],
       "keywords": [
         "failure mode analysis",
@@ -16522,7 +18063,7 @@
         }
       ],
       "scores": {
-        "ingestionEvidence": 7,
+        "ingestionEvidence": 8,
         "topic:learning": 4,
         "topic:agency": 2,
         "topic:safety": 2,
@@ -16530,6 +18071,7 @@
         "classificationMaximum": 4
       },
       "evidenceTerms": [
+        "artificial intelligence",
         "AI agent",
         "AI agents",
         "learning",
@@ -16569,9 +18111,9 @@
       "citedByCount": 0,
       "firstSeenAt": "2026-09-29T08:11:31.224Z",
       "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
-      "retrievedAt": "2026-10-06T12:03:43.255Z",
+      "retrievedAt": "2026-10-07T11:49:00.151Z",
       "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-06T12:03:43.255Z",
+      "lastVerifiedAt": "2026-10-07T11:49:00.151Z",
       "preferredVersionId": "openalex:W7214791812",
       "versions": [
         {
@@ -21152,1608 +22694,6 @@
               "interpretation": "mentioned; role/outcome not confirmed"
             }
           ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.6084/m9.figshare.34005439",
-      "recordType": "publication",
-      "title": "Occupational Safety and Prevention Strategies for Threshers and Chaff Cutters: A Systematic Review of Global Trends",
-      "abstract": "Tractors and their associated implements are indispensable to crop production agriculture but remain major contributors to machinery-related injuries and fatalities worldwide. Within this context, agricultural threshers and chaff cutters represent particularly high-risk machines in smallholder and resource-constrained crop production systems. This systematic literature review synthesized global evidence on the epidemiology of occupational injuries, causal determinants, and prevention strategies associated with these machines. Peer-reviewed studies published between 2000 and 2025 were retrieved from major scientific databases using predefined eligibility criteria. Included in the synthesis were 171 documents authored by 252 researchers from 211 organizations across 33 countries and published in 97 sources. The findings indicate severe injuries, particularly amputations, entanglements, and crush injuries, are primarily associated with exposed moving components, unsafe feeding practices, inadequate guarding, and limited operator training. Evidence consistently shows that most injuries related to threshers and chaff cutters are preventable through context-appropriate engineering and behavioral interventions. Effective prevention strategies include improved guarding of feeding and transmission systems, safer feeding chute designs, emergency stop mechanisms, ergonomic improvements to operator–machine interfaces, and targeted safety training to address unsafe work practices and risk perception. User-centered design approaches further enhance the usability and acceptance of safety devices, particularly for legacy machines widely used in low-resource settings. Overall, the review highlights that injury prevention should prioritize low-cost, robust, and easily maintainable engineering solutions, supported by standards enforcement, machine retrofitting programs, and machine-specific safety training to reduce the occupational injury burden in crop agriculture.",
-      "doi": "10.6084/m9.figshare.34005439",
-      "externalIds": {
-        "openalex": "W7214519940"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214519940"
-      },
-      "venue": "Figshare",
-      "publicationDate": "2026-09-27",
-      "firstPublicDate": "2026-09-27",
-      "onlineDate": null,
-      "topics": [
-        "Agriculture and Farm Safety",
-        "Occupational Health and Safety Research",
-        "Soil Mechanics and Vehicle Dynamics"
-      ],
-      "keywords": [
-        "agricultural machinery injuries",
-        "occupational safety",
-        "injury prevention",
-        "amputation",
-        "entanglement",
-        "crush injury",
-        "machine guarding",
-        "operator training",
-        "user-centered design",
-        "machine retrofitting",
-        "smallholder farming",
-        "resource-limited settings",
-        "Occupational safety and health",
-        "SAFER",
-        "Work (physics)",
-        "Chaff",
-        "Production (economics)",
-        "Agriculture",
-        "Poison control",
-        "Human factors and ergonomics",
-        "Usability"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 10,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Occupational Safety and Prevention Strategies for Threshers and Chaff Cutters: A Systematic Review of Global Trends",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…mechanisms, ergonomic improvements to operator–machine interfaces, and targeted safety training to address unsafe work practices and risk perception. User-centered design approaches further enhance the usability and acceptance of safety devices, particularly for legacy machines widely used in low-resource settings. Ove…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "critical",
-              "conceptLabel": "Sicherheitskritisch",
-              "matchedTerm": "high risk",
-              "sourceValue": "Tractors and their associated implements are indispensable to crop production agriculture but remain major contributors to machinery-related injuries and fatalities worldwide. Within this context, agricultural threshers and chaff cutters represent particularly high-risk machines in smallholder and resource-constrained …",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…s context, agricultural threshers and chaff cutters represent particularly high-risk machines in smallholder and resource-constrained crop production systems. This systematic literature review synthesized global evidence on the epidemiology of occupational injuries, causal determinants, and prevention strategies associ…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "occupational safety",
-              "weight": 0
-            },
-            {
-              "source": "external_topic",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Agriculture and Farm Safety",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 6,
-        "topic:safety": 10,
-        "classificationMaximum": 10
-      },
-      "evidenceTerms": [
-        "safety",
-        "occupational health",
-        "human factors",
-        "ergonomics",
-        "high risk",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": "A5068953656",
-          "name": "Shiv Kumar Lohan",
-          "orcid": "https://orcid.org/0000-0002-5886-3306",
-          "affiliations": []
-        },
-        {
-          "id": "A5153082503",
-          "name": "Santosh Kumar",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5073945432",
-          "name": "Mahesh Kumar Narang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153085689",
-          "name": "Baldev Dogra",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5138339574",
-          "name": "Sukhbir Singh (9523652)",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.6084/m9.figshare.34005439",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-29T08:11:17.275Z",
-      "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
-      "retrievedAt": "2026-10-03T10:26:03.250Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-03T10:26:03.250Z",
-      "preferredVersionId": "openalex:W7214519940",
-      "versions": [
-        {
-          "id": "openalex:W7214519940",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7214519940",
-          "doi": "10.6084/m9.figshare.34005439",
-          "publicationDate": "2026-09-27",
-          "url": "https://doi.org/10.6084/m9.figshare.34005439"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-046.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-factors"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": " targeted safety training to address unsafe work practices and risk perception. User-centered design approaches further enhance the usability and acceptance of safety devices, particul",
-              "start": 1433,
-              "end": 1617
-            },
-            {
-              "field": "abstract",
-              "term": "operator",
-              "quote": "d moving components, unsafe feeding practices, inadequate guarding, and limited operator training. Evidence consistently shows that most injuries related to threshers and chaff cutters are",
-              "start": 953,
-              "end": 1141
-            }
-          ],
-          "ai": [],
-          "domain": [
-            {
-              "field": "abstract",
-              "term": "ergonomic",
-              "quote": "d transmission systems, safer feeding chute designs, emergency stop mechanisms, ergonomic improvements to operator–machine interfaces, and targeted safety training to address unsafe work pr",
-              "start": 1295,
-              "end": 1484
-            }
-          ],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [
-            {
-              "value": "operators",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "operator",
-                  "quote": "d moving components, unsafe feeding practices, inadequate guarding, and limited operator training. Evidence consistently shows that most injuries related to threshers and chaff cutters are",
-                  "start": 953,
-                  "end": 1141
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "review",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "systematic review",
-                  "quote": "ccupational Safety and Prevention Strategies for Threshers and Chaff Cutters: A Systematic Review of Global Trends",
-                  "start": 1,
-                  "end": 115
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.1080/1059924x.2026.2733443",
-      "recordType": "publication",
-      "title": "Occupational Safety and Prevention Strategies for Threshers and Chaff Cutters: A Systematic Review of Global Trends",
-      "abstract": "OBJECTIVE: Tractors and their associated implements are indispensable to crop production agriculture but remain major contributors to machinery-related injuries and fatalities worldwide. Within this context, agricultural threshers and chaff cutters represent particularly high-risk machines in smallholder and resource-constrained crop production systems. METHODS: This systematic literature review synthesized global evidence on the epidemiology of occupational injuries, causal determinants, and prevention strategies associated with these machines. Peer-reviewed studies published between 2000 and 2025 were retrieved from major scientific databases using predefined eligibility criteria. RESULTS: Included in the synthesis were 171 documents authored by 252 researchers from 211 organizations across 33 countries and published in 97 sources. The findings indicate severe injuries, particularly amputations, entanglements, and crush injuries, are primarily associated with exposed moving components, unsafe feeding practices, inadequate guarding, and limited operator training. Evidence consistently shows that most injuries related to threshers and chaff cutters are preventable through context-appropriate engineering and behavioral interventions. Effective prevention strategies include improved guarding of feeding and transmission systems, safer feeding chute designs, emergency stop mechanisms, ergonomic improvements to operator-machine interfaces, and targeted safety training to address unsafe work practices and risk perception. User-centered design approaches further enhance the usability and acceptance of safety devices, particularly for legacy machines widely used in low-resource settings. CONCLUSION: Overall, the review highlights that injury prevention should prioritize low-cost, robust, and easily maintainable engineering solutions, supported by standards enforcement, machine retrofitting programs, and machine-specific safety training to reduce the occupational injury burden in crop agriculture.",
-      "doi": "10.1080/1059924x.2026.2733443",
-      "externalIds": {
-        "openalex": "W7214538526"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214538526"
-      },
-      "venue": "Journal of Agromedicine",
-      "publicationDate": "2026-09-27",
-      "firstPublicDate": "2026-09-27",
-      "onlineDate": null,
-      "topics": [
-        "Occupational health in dentistry",
-        "Dental Erosion and Treatment",
-        "Agriculture and Farm Safety"
-      ],
-      "keywords": [
-        "agricultural machinery injuries",
-        "occupational safety",
-        "injury prevention",
-        "amputation",
-        "entanglement",
-        "crush injury",
-        "machine guarding",
-        "operator training",
-        "user-centered design",
-        "machine retrofitting",
-        "smallholder farming",
-        "resource-limited settings"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 10,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Occupational Safety and Prevention Strategies for Threshers and Chaff Cutters: A Systematic Review of Global Trends",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…mechanisms, ergonomic improvements to operator-machine interfaces, and targeted safety training to address unsafe work practices and risk perception. User-centered design approaches further enhance the usability and acceptance of safety devices, particularly for legacy machines widely used in low-resource settings. CON…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "critical",
-              "conceptLabel": "Sicherheitskritisch",
-              "matchedTerm": "high risk",
-              "sourceValue": "OBJECTIVE: Tractors and their associated implements are indispensable to crop production agriculture but remain major contributors to machinery-related injuries and fatalities worldwide. Within this context, agricultural threshers and chaff cutters represent particularly high-risk machines in smallholder and resource-c…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…s context, agricultural threshers and chaff cutters represent particularly high-risk machines in smallholder and resource-constrained crop production systems. METHODS: This systematic literature review synthesized global evidence on the epidemiology of occupational injuries, causal determinants, and prevention strategi…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "occupational safety",
-              "weight": 0
-            },
-            {
-              "source": "external_topic",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Agriculture and Farm Safety",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:safety": 10,
-        "classificationMaximum": 10
-      },
-      "evidenceTerms": [
-        "safety",
-        "occupational health",
-        "high risk",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": "A5068953656",
-          "name": "Shiv Kumar Lohan",
-          "orcid": "https://orcid.org/0000-0002-5886-3306",
-          "affiliations": []
-        },
-        {
-          "id": "A5115410040",
-          "name": "Santosh Kumar",
-          "orcid": "https://orcid.org/0000-0003-3835-9994",
-          "affiliations": []
-        },
-        {
-          "id": "A5073945432",
-          "name": "Mahesh Kumar Narang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153132320",
-          "name": "Baldev Dogra",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153121629",
-          "name": "Sukhbir Singh",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.1080/1059924x.2026.2733443",
-      "openAccess": false,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:29.843Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-10-03T10:26:03.250Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-03T10:26:03.250Z",
-      "preferredVersionId": "openalex:W7214538526",
-      "versions": [
-        {
-          "id": "openalex:W7214538526",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7214538526",
-          "doi": "10.1080/1059924x.2026.2733443",
-          "publicationDate": "2026-09-27",
-          "url": "https://doi.org/10.1080/1059924x.2026.2733443"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-046.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-factors"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": " targeted safety training to address unsafe work practices and risk perception. User-centered design approaches further enhance the usability and acceptance of safety devices, particul",
-              "start": 1462,
-              "end": 1646
-            },
-            {
-              "field": "abstract",
-              "term": "operator",
-              "quote": "d moving components, unsafe feeding practices, inadequate guarding, and limited operator training. Evidence consistently shows that most injuries related to threshers and chaff cutters are",
-              "start": 982,
-              "end": 1170
-            }
-          ],
-          "ai": [],
-          "domain": [
-            {
-              "field": "abstract",
-              "term": "ergonomic",
-              "quote": "d transmission systems, safer feeding chute designs, emergency stop mechanisms, ergonomic improvements to operator-machine interfaces, and targeted safety training to address unsafe work pr",
-              "start": 1324,
-              "end": 1513
-            }
-          ],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [
-            {
-              "value": "operators",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "operator",
-                  "quote": "d moving components, unsafe feeding practices, inadequate guarding, and limited operator training. Evidence consistently shows that most injuries related to threshers and chaff cutters are",
-                  "start": 982,
-                  "end": 1170
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "review",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "systematic review",
-                  "quote": "ccupational Safety and Prevention Strategies for Threshers and Chaff Cutters: A Systematic Review of Global Trends",
-                  "start": 1,
-                  "end": 115
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.6084/m9.figshare.34005439.v1",
-      "recordType": "publication",
-      "title": "Occupational Safety and Prevention Strategies for Threshers and Chaff Cutters: A Systematic Review of Global Trends",
-      "abstract": "Tractors and their associated implements are indispensable to crop production agriculture but remain major contributors to machinery-related injuries and fatalities worldwide. Within this context, agricultural threshers and chaff cutters represent particularly high-risk machines in smallholder and resource-constrained crop production systems. This systematic literature review synthesized global evidence on the epidemiology of occupational injuries, causal determinants, and prevention strategies associated with these machines. Peer-reviewed studies published between 2000 and 2025 were retrieved from major scientific databases using predefined eligibility criteria. Included in the synthesis were 171 documents authored by 252 researchers from 211 organizations across 33 countries and published in 97 sources. The findings indicate severe injuries, particularly amputations, entanglements, and crush injuries, are primarily associated with exposed moving components, unsafe feeding practices, inadequate guarding, and limited operator training. Evidence consistently shows that most injuries related to threshers and chaff cutters are preventable through context-appropriate engineering and behavioral interventions. Effective prevention strategies include improved guarding of feeding and transmission systems, safer feeding chute designs, emergency stop mechanisms, ergonomic improvements to operator–machine interfaces, and targeted safety training to address unsafe work practices and risk perception. User-centered design approaches further enhance the usability and acceptance of safety devices, particularly for legacy machines widely used in low-resource settings. Overall, the review highlights that injury prevention should prioritize low-cost, robust, and easily maintainable engineering solutions, supported by standards enforcement, machine retrofitting programs, and machine-specific safety training to reduce the occupational injury burden in crop agriculture.",
-      "doi": "10.6084/m9.figshare.34005439.v1",
-      "externalIds": {
-        "openalex": "W7214554648"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214554648"
-      },
-      "venue": "Figshare",
-      "publicationDate": "2026-09-27",
-      "firstPublicDate": "2026-09-27",
-      "onlineDate": null,
-      "topics": [
-        "Agriculture and Farm Safety",
-        "Occupational Health and Safety Research",
-        "Soil Mechanics and Vehicle Dynamics"
-      ],
-      "keywords": [
-        "agricultural machinery injuries",
-        "occupational safety",
-        "injury prevention",
-        "amputation",
-        "entanglement",
-        "crush injury",
-        "machine guarding",
-        "operator training",
-        "user-centered design",
-        "machine retrofitting",
-        "smallholder farming",
-        "resource-limited settings",
-        "Occupational safety and health",
-        "SAFER",
-        "Work (physics)",
-        "Chaff",
-        "Production (economics)",
-        "Agriculture",
-        "Poison control",
-        "Human factors and ergonomics",
-        "Usability"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 10,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Occupational Safety and Prevention Strategies for Threshers and Chaff Cutters: A Systematic Review of Global Trends",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…mechanisms, ergonomic improvements to operator–machine interfaces, and targeted safety training to address unsafe work practices and risk perception. User-centered design approaches further enhance the usability and acceptance of safety devices, particularly for legacy machines widely used in low-resource settings. Ove…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "critical",
-              "conceptLabel": "Sicherheitskritisch",
-              "matchedTerm": "high risk",
-              "sourceValue": "Tractors and their associated implements are indispensable to crop production agriculture but remain major contributors to machinery-related injuries and fatalities worldwide. Within this context, agricultural threshers and chaff cutters represent particularly high-risk machines in smallholder and resource-constrained …",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…s context, agricultural threshers and chaff cutters represent particularly high-risk machines in smallholder and resource-constrained crop production systems. This systematic literature review synthesized global evidence on the epidemiology of occupational injuries, causal determinants, and prevention strategies associ…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "occupational safety",
-              "weight": 0
-            },
-            {
-              "source": "external_topic",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Agriculture and Farm Safety",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 6,
-        "topic:safety": 10,
-        "classificationMaximum": 10
-      },
-      "evidenceTerms": [
-        "safety",
-        "occupational health",
-        "human factors",
-        "ergonomics",
-        "high risk",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": "A5068953656",
-          "name": "Shiv Kumar Lohan",
-          "orcid": "https://orcid.org/0000-0002-5886-3306",
-          "affiliations": []
-        },
-        {
-          "id": "A5153082503",
-          "name": "Santosh Kumar",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5073945432",
-          "name": "Mahesh Kumar Narang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153085689",
-          "name": "Baldev Dogra",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5138339574",
-          "name": "Sukhbir Singh (9523652)",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.6084/m9.figshare.34005439.v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-29T08:11:17.275Z",
-      "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
-      "retrievedAt": "2026-10-03T10:26:03.250Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-03T10:26:03.250Z",
-      "preferredVersionId": "openalex:W7214554648",
-      "versions": [
-        {
-          "id": "openalex:W7214554648",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7214554648",
-          "doi": "10.6084/m9.figshare.34005439.v1",
-          "publicationDate": "2026-09-27",
-          "url": "https://doi.org/10.6084/m9.figshare.34005439.v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-046.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-factors"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": " targeted safety training to address unsafe work practices and risk perception. User-centered design approaches further enhance the usability and acceptance of safety devices, particul",
-              "start": 1433,
-              "end": 1617
-            },
-            {
-              "field": "abstract",
-              "term": "operator",
-              "quote": "d moving components, unsafe feeding practices, inadequate guarding, and limited operator training. Evidence consistently shows that most injuries related to threshers and chaff cutters are",
-              "start": 953,
-              "end": 1141
-            }
-          ],
-          "ai": [],
-          "domain": [
-            {
-              "field": "abstract",
-              "term": "ergonomic",
-              "quote": "d transmission systems, safer feeding chute designs, emergency stop mechanisms, ergonomic improvements to operator–machine interfaces, and targeted safety training to address unsafe work pr",
-              "start": 1295,
-              "end": 1484
-            }
-          ],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [
-            {
-              "value": "operators",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "operator",
-                  "quote": "d moving components, unsafe feeding practices, inadequate guarding, and limited operator training. Evidence consistently shows that most injuries related to threshers and chaff cutters are",
-                  "start": 953,
-                  "end": 1141
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "review",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "systematic review",
-                  "quote": "ccupational Safety and Prevention Strategies for Threshers and Chaff Cutters: A Systematic Review of Global Trends",
-                  "start": 1,
-                  "end": 115
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.64784/343",
-      "recordType": "publication",
-      "title": "Occupational Skin Disease Associated With Chemical Exposure: Causal Assessment, Prevention, and Medico-Legal Documentation",
-      "abstract": "Occupational dermatoses associated with chemical exposure represent an important clinical and occupational health problem due to their frequency, recurrent nature, functional consequences, and medico-legal implications. This study analyzed the relationship between workplace exposure and the development or aggravation of occupational skin disease through an integrated framework combining dermatological diagnosis, occupational exposure assessment, preventive strategies, and causal documentation. Particular attention was given to irritant and allergic contact dermatitis, wet work, individual susceptibility, occupational allergens, patch testing, and the Mathias criteria. The reviewed evidence showed that atopic dermatitis and wet work are relevant risk factors for occupational irritant contact dermatitis, while the profile of occupational allergens varies according to professional activity and includes epoxy resins, rubber accelerators, formaldehyde, metals, preservatives, and other chemical agents. Patch testing was identified as a fundamental diagnostic tool; however, positive reactions required correlation with actual workplace exposure, clinical distribution, temporal relationship, and occupational relevance. Preventive interventions, including moisturizers, barrier preparations, educational programs, personal protective equipment, and exposure reduction, showed potential to decrease occupational hand dermatitis, although the effectiveness of individual measures varied across studies. The evaluation of occupational causality was strengthened when clinical findings, exposure history, improvement away from work, re-exposure, and diagnostic testing were considered together. The Mathias criteria provided a structured framework for supporting causal assessment and medico-legal documentation. Overall, the findings support a multidisciplinary approach in which dermatology, occupational medicine, prevention, and medico-legal evaluation are integrated to improve recognition of occupational dermatoses, reduce recurrent exposure, and provide consistent documentation for clinical and occupational decision-making.",
-      "doi": "10.64784/343",
-      "externalIds": {
-        "openalex": "W7214604077"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214604077"
-      },
-      "venue": "IECCMEXICO",
-      "publicationDate": "2026-09-27",
-      "firstPublicDate": "2026-09-27",
-      "onlineDate": null,
-      "topics": [
-        "Contact Dermatitis and Allergies",
-        "Occupational exposure and asthma",
-        "Advancements in Transdermal Drug Delivery"
-      ],
-      "keywords": [
-        "occupational skin disease",
-        "irritant contact dermatitis",
-        "allergic contact dermatitis",
-        "occupational hand dermatitis",
-        "wet work",
-        "atopic dermatitis",
-        "occupational allergens",
-        "epoxy resin",
-        "rubber accelerators",
-        "formaldehyde",
-        "patch testing",
-        "medico-legal documentation",
-        "personal protective equipment",
-        "occupational exposure assessment"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "…xposure assessment, preventive strategies, and causal documentation. Particular attention was given to irritant and allergic contact dermatitis, wet work, individual susceptibility, occupational allergens, patch testing, and the Mathias criteria. The reviewed evidence showed that atopic dermatitis and wet work are rele…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision making",
-              "sourceValue": "Occupational dermatoses associated with chemical exposure represent an important clinical and occupational health problem due to their frequency, recurrent nature, functional consequences, and medico-legal implications. This study analyzed the relationship between workplace exposure and the development or aggravation o…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…. The reviewed evidence showed that atopic dermatitis and wet work are relevant risk factors for occupational irritant contact dermatitis, while the profile of occupational allergens varies according to professional activity and includes epoxy resins, rubber accelerators, formaldehyde, metals, preservatives, and other …",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:cognition": 4,
-        "topic:safety": 2,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "occupational health",
-        "attention",
-        "decision making",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": "A5153195717",
-          "name": "Paola Marisol Santa Cruz González",
-          "orcid": "https://orcid.org/0009-0002-0444-0540",
-          "affiliations": []
-        },
-        {
-          "id": "A5081806542",
-          "name": "Mauricio Quijano",
-          "orcid": "https://orcid.org/0009-0003-2255-3028",
-          "affiliations": []
-        },
-        {
-          "id": "A5143987733",
-          "name": "Luis Felipe Espinal Pérez",
-          "orcid": "https://orcid.org/0009-0000-6607-2128",
-          "affiliations": []
-        },
-        {
-          "id": "A5153006484",
-          "name": "Mauro Andres Calle Palacios",
-          "orcid": "https://orcid.org/0009-0005-0987-9335",
-          "affiliations": []
-        },
-        {
-          "id": "A5148577927",
-          "name": "Saimart Trinidad Contreras Ponce",
-          "orcid": "https://orcid.org/0009-0008-3431-7221",
-          "affiliations": []
-        },
-        {
-          "id": "A5153237992",
-          "name": "Ignacio Arturo Salazar Garcia",
-          "orcid": "https://orcid.org/0009-0004-2059-1378",
-          "affiliations": []
-        },
-        {
-          "id": "A5153388978",
-          "name": "María José Peñafiel Aguirre",
-          "orcid": "https://orcid.org/0009-0008-1843-5340",
-          "affiliations": []
-        },
-        {
-          "id": "A5119815025",
-          "name": "Stalin Omar Toapanta Usuay",
-          "orcid": "https://orcid.org/0009-0001-6953-5498",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.64784/343",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:29.843Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-10-03T10:26:03.250Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-03T10:26:03.250Z",
-      "preferredVersionId": "openalex:W7214604077",
-      "versions": [
-        {
-          "id": "openalex:W7214604077",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7214604077",
-          "doi": "10.64784/343",
-          "publicationDate": "2026-09-27",
-          "url": "https://doi.org/10.64784/343"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-046.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-factors"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "workplace",
-              "quote": "es, and medico-legal implications. This study analyzed the relationship between workplace exposure and the development or aggravation of occupational skin disease through an integrated fram",
-              "start": 185,
-              "end": 374
-            },
-            {
-              "field": "abstract",
-              "term": "professional",
-              "quote": "act dermatitis, while the profile of occupational allergens varies according to professional activity and includes epoxy resins, rubber accelerators, formaldehyde, metals, preservatives, and o",
-              "start": 798,
-              "end": 990
-            }
-          ],
-          "ai": [],
-          "domain": [
-            {
-              "field": "abstract",
-              "term": "occupational health",
-              "quote": "ermatoses associated with chemical exposure represent an important clinical and occupational health problem due to their frequency, recurrent nature, functional consequences, and medico-legal implica",
-              "start": 14,
-              "end": 213
-            }
-          ],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "healthcare",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "clinical",
-                  "quote": "ccupational dermatoses associated with chemical exposure represent an important clinical and occupational health problem due to their frequency, recurrent nature, functional consequences, ",
-                  "start": 1,
-                  "end": 189
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "workplace",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "workplace",
-                  "quote": "es, and medico-legal implications. This study analyzed the relationship between workplace exposure and the development or aggravation of occupational skin disease through an integrated fram",
-                  "start": 185,
-                  "end": 374
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "workers",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "professional",
-                  "quote": "act dermatitis, while the profile of occupational allergens varies according to professional activity and includes epoxy resins, rubber accelerators, formaldehyde, metals, preservatives, and o",
-                  "start": 798,
-                  "end": 990
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33141",
-      "recordType": "preprint",
-      "title": "On Device Agentic Operation Caches -- Classifier-Centric NL-to-Action Generation",
-      "abstract": "Agentic AI is increasingly being embedded in software applications to provide natural language interfaces to features and functionality. In most cases these agents are powered by enterprise (100+ billion parameter) or frontier class large language models that require substantial computational resources run and depend on cloud hosted inference to handle the task of transforming natural language inputs into actionable software operations. This reliance on cloud-hosted inference introduces substantial network latency on top of LLM inference times, creates data privacy concerns, and, given the costs of running these models, can rapidly escalate expenses associated with supporting agentic features. This paper introduces a novel means of converting the NL-to-Action problem from a generative one into a classification-centric formulation via on-device operation caches. These caches allow an agentic system to handle frequently occurring classes of actions completely on-device -- reducing latency, enhancing privacy, and lowering operational costs. We show that for a classic NL-to-Formula task, generating Excel Formula in response to user requests, this approach reduces total inference cost by 56% when compared to cloud-only model-routing based inference and, on cache hits, reduces the latency to response latency by 5x.",
-      "doi": "10.48550/arxiv.2609.33141",
-      "externalIds": {
-        "openalex": "W7214734404"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214734404"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-27",
-      "firstPublicDate": "2026-09-27",
-      "onlineDate": null,
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Explainable Artificial Intelligence (XAI)",
-        "Big Data and Digital Economy"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "agency",
-          "label": "Work Design & Agency",
-          "score": 6,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "agency",
-              "conceptLabel": "Agency",
-              "matchedTerm": "agentic",
-              "sourceValue": "On Device Agentic Operation Caches -- Classifier-Centric NL-to-Action Generation",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "agency",
-              "conceptLabel": "Agency",
-              "matchedTerm": "agentic",
-              "sourceValue": "Agentic AI is increasingly being embedded in software applications to provide natural language interfaces to features and functionality. In most cases these agents are powered by enterprise (100+ billion parameter) or frontier class large language models that require substantial computational resources run and depend o…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "reliance",
-              "conceptLabel": "Reliance",
-              "matchedTerm": "reliance",
-              "sourceValue": "… transforming natural language inputs into actionable software operations. This reliance on cloud-hosted inference introduces substantial network latency on top of LLM inference times, creates data privacy concerns, and, given the costs of running these models, can rapidly escalate expenses associated with supporting a…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 6,
-        "topic:agency": 6,
-        "topic:trust": 2,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "reliance",
-        "agentic"
-      ],
-      "authors": [
-        {
-          "id": "A5055390010",
-          "name": "Moghis Fereidouni",
-          "orcid": "https://orcid.org/0000-0002-1182-1379",
-          "affiliations": []
-        },
-        {
-          "id": "A5016758004",
-          "name": "Anthony Arnold",
-          "orcid": "https://orcid.org/0000-0002-4450-1216",
-          "affiliations": []
-        },
-        {
-          "id": "A5011543162",
-          "name": "Sumit Gulwani",
-          "orcid": "https://orcid.org/0000-0002-9226-9634",
-          "affiliations": []
-        },
-        {
-          "id": "A5024427812",
-          "name": "Mark Marron",
-          "orcid": "https://orcid.org/0000-0003-3589-4860",
-          "affiliations": []
-        },
-        {
-          "id": "A5020410191",
-          "name": "Abu Bakker Siddique",
-          "orcid": "https://orcid.org/0000-0002-3587-7289",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.33141",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:37.993Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-09-30T11:11:37.993Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-30T11:11:37.993Z",
-      "preferredVersionId": "openalex:W7214734404",
-      "versions": [
-        {
-          "id": "openalex:W7214734404",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214734404",
-          "doi": "10.48550/arxiv.2609.33141",
-          "publicationDate": "2026-09-27",
-          "url": "https://doi.org/10.48550/arxiv.2609.33141"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-046.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": " that for a classic NL-to-Formula task, generating Excel Formula in response to user requests, this approach reduces total inference cost by 56% when compared to cloud-only model-routi",
-              "start": 1061,
-              "end": 1245
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "ese agents are powered by enterprise (100+ billion parameter) or frontier class large language models that require substantial computational resources run and depend on cloud hosted inference to handle",
-              "start": 153,
-              "end": 354
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "ese agents are powered by enterprise (100+ billion parameter) or frontier class large language models that require substantial computational resources run and depend on cloud hosted inference to handle",
-              "start": 153,
-              "end": 354
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "ance on cloud-hosted inference introduces substantial network latency on top of LLM inference times, creates data privacy concerns, and, given the costs of running these models, can r",
-              "start": 450,
-              "end": 633
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "generative",
-                  "quote": "is paper introduces a novel means of converting the NL-to-Action problem from a generative one into a classification-centric formulation via on-device operation caches. These caches allow an",
-                  "start": 705,
-                  "end": 895
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "ese agents are powered by enterprise (100+ billion parameter) or frontier class large language models that require substantial computational resources run and depend on cloud hosted inference to handle",
-                  "start": 153,
-                  "end": 354
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33833",
-      "recordType": "preprint",
-      "title": "One Attack to Fool Them All: Highly Transferable Black-Box Adversarial Attacks on Frontier MLLMs",
-      "abstract": "Adversarial attacks have long posed a fundamental threat to machine learning systems. As multimodal large language models (MLLMs) rapidly evolve and become widely deployed, assessing their vulnerability to such attacks is essential for their safe use. In this work, we investigate whether a single adversarial image can consistently mislead diverse frontier MLLMs in black-box settings. We propose O-Attack, a highly transferable black-box attack framework. This framework builds on our insight that surrogate models contain a broad, high-level, cross-modally aligned semantic space. This space extends beyond final-layer outputs and provides multiple semantically consistent representations that remain underexploited by existing attacks. Within this space, O-Attack anchors aligned representations, progressively broadens semantic conditions, and optimizes perturbations through semantic consensus to promote consistent target alignment. By fully exploiting this space with the same surrogate models as M-Attack, O-Attack raises attack success rates on GPT-5.4 (29.1% to 77.2%), Claude-4.6 (42.8% to 81.6%), and Gemini-3.1 (38.2% to 80.9%). Extensive experiments across 24 MLLMs show that O-Attack outperforms six state-of-the-art methods in black-box transferability, with consistent effectiveness across prompts and improved efficiency and imperceptibility. This work exposes the practical safety risks posed by black-box adversarial attacks against frontier MLLMs, underscoring the need for more rigorous robustness evaluation and more effective defenses.",
-      "doi": "10.48550/arxiv.2609.33833",
-      "externalIds": {
-        "openalex": "W7214743566"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214743566"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-27",
-      "firstPublicDate": "2026-09-27",
-      "onlineDate": null,
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Topic Modeling",
-        "Generative Adversarial Networks and Image Synthesis"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 7,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "machine learning system",
-        "machine learning systems",
-        "learning",
-        "safety"
-      ],
-      "authors": [
-        {
-          "id": "A5109305232",
-          "name": "Sen Nie",
-          "orcid": "https://orcid.org/0000-0003-4154-2941",
-          "affiliations": []
-        },
-        {
-          "id": "A5153408181",
-          "name": "Jie Zhang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153464785",
-          "name": "Zhongqi Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5050297728",
-          "name": "Shiguang Shan",
-          "orcid": "https://orcid.org/0000-0002-8348-392X",
-          "affiliations": []
-        },
-        {
-          "id": "A5153455601",
-          "name": "Xilin Chen",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.33833",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:37.993Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-09-30T11:11:37.993Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-30T11:11:37.993Z",
-      "preferredVersionId": "openalex:W7214743566",
-      "versions": [
-        {
-          "id": "openalex:W7214743566",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214743566",
-          "doi": "10.48550/arxiv.2609.33833",
-          "publicationDate": "2026-09-27",
-          "url": "https://doi.org/10.48550/arxiv.2609.33833"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-046.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "have long posed a fundamental threat to machine learning systems. As multimodal large language models (MLLMs) rapidly evolve and become widely deployed, assessing their vulnerability to such attacks is",
-              "start": 20,
-              "end": 221
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "have long posed a fundamental threat to machine learning systems. As multimodal large language models (MLLMs) rapidly evolve and become widely deployed, assessing their vulnerability to such attacks is",
-              "start": 20,
-              "end": 221
-            },
-            {
-              "field": "abstract",
-              "term": "machine learning system",
-              "quote": "Adversarial attacks have long posed a fundamental threat to machine learning systems. As multimodal large language models (MLLMs) rapidly evolve and become widely deployed, assessing t",
-              "start": 0,
-              "end": 184
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "have long posed a fundamental threat to machine learning systems. As multimodal large language models (MLLMs) rapidly evolve and become widely deployed, assessing their vulnerability to such attacks is",
-                  "start": 20,
-                  "end": 221
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "77.2%), Claude-4.6 (42.8% to 81.6%), and Gemini-3.1 (38.2% to 80.9%). Extensive experiments across 24 MLLMs show that O-Attack outperforms six state-of-the-art methods in black-box transferab",
-                  "start": 1073,
-                  "end": 1264
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33666",
-      "recordType": "preprint",
-      "title": "One Model Is Not a Crowd: Multi-LLM and Aspect-Conditioned Diverse Comment Generation",
-      "abstract": "Human communication on the internet is shaped by diverse perspectives, most visibly expressed in online comment spaces. As large language model (LLM)based AI agents begin to inhabit these spaces, a key question arises: whether synthetic comment threads can capture the diversity inherent in human discourse. This concern is increasingly important, as the growing presence of homogenized AI-generated content risks reducing diversity over time, potentially leading to model collapse and degrading the richness of digital communication. Inspired by the plurality of human crowds and the aspect-driven nature of discourse, we hypothesize that comment diversity is better approximated by combining multiple LLMs with aspect-conditioned generation. We formalize and evaluate this approach using models from different providers and introduce a framework that characterizes diversity across semantic, linguistic, and socio-pragmatic features along three axes: dispersion, coverage, and alignment. Using this framework, we conduct a large-scale study on over 2 million YouTube comments across multiple domains. Our results reveal that multi-LLM and aspect-conditioned generation better align with human comment distributions and such data remains viable under pretraining style curation and is effective for downstream tasks. Yet, human diversity remains unmatched. Overall, our findings provide a practical foundation for generating more diverse and socially grounded discourse in AI-mediated environments.",
-      "doi": "10.48550/arxiv.2609.33666",
-      "externalIds": {
-        "openalex": "W7214723205"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214723205"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-27",
-      "firstPublicDate": "2026-09-27",
-      "onlineDate": null,
-      "topics": [
-        "Hate Speech and Cyberbullying Detection",
-        "Topic Modeling",
-        "Authorship Attribution and Profiling"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risks",
-              "sourceValue": "…easingly important, as the growing presence of homogenized AI-generated content risks reducing diversity over time, potentially leading to model collapse and degrading the richness of digital communication. Inspired by the plurality of human crowds and the aspect-driven nature of discourse, we hypothesize that comment …",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "LLM",
-        "AI agent",
-        "AI agents",
-        "risks"
-      ],
-      "authors": [
-        {
-          "id": "A5018359241",
-          "name": "Nafis Irtiza Tripto",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153424912",
-          "name": "Delvin Ce Zhang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5074830714",
-          "name": "Mahjabin Nahar",
-          "orcid": "https://orcid.org/0009-0007-8628-5615",
-          "affiliations": []
-        },
-        {
-          "id": "A5153507111",
-          "name": "Dongwon Lee",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.33666",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:36.788Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-09-30T11:11:36.788Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-30T11:11:36.788Z",
-      "preferredVersionId": "openalex:W7214723205",
-      "versions": [
-        {
-          "id": "openalex:W7214723205",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214723205",
-          "doi": "10.48550/arxiv.2609.33666",
-          "publicationDate": "2026-09-27",
-          "url": "https://doi.org/10.48550/arxiv.2609.33666"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-046.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "Human communication on the internet is shaped by diverse perspectives, most visibly expressed in online c",
-              "start": 0,
-              "end": 105
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "One Model Is Not a Crowd: Multi-LLM and Aspect-Conditioned Diverse Comment Generation",
-              "start": 0,
-              "end": 85
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "ed by diverse perspectives, most visibly expressed in online comment spaces. As large language model (LLM)based AI agents begin to inhabit these spaces, a key question arises: whether synthetic commen",
-              "start": 43,
-              "end": 243
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "ives, most visibly expressed in online comment spaces. As large language model (LLM)based AI agents begin to inhabit these spaces, a key question arises: whether synthetic comment thr",
-              "start": 65,
-              "end": 248
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "ed by diverse perspectives, most visibly expressed in online comment spaces. As large language model (LLM)based AI agents begin to inhabit these spaces, a key question arises: whether synthetic commen",
-                  "start": 43,
-                  "end": 243
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
         },
         "personalFit": [],
         "finding": null,

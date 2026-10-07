@@ -1,7 +1,72 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-06T12:03:50.749Z",
+  "generatedAt": "2026-10-07T11:49:04.786Z",
   "documents": [
+    {
+      "id": "arxiv:2608.06778",
+      "abstract": "Mapping cyber threat intelligence (CTI) text to MITRE ATT&CK techniques is essential for structured threat analysis, yet manual annotation is costly and does not scale. The ATT&CK taxonomy comprises several hundred attack techniques, and a single CTI passage may describe multiple techniques, making accurate and complete extraction challenging. Existing automated approaches fall short in different ways: multi-label classifiers struggle with severe class imbalance and the large label space, while LLM-based methods--retrieval pipelines and fine-tuned generators--optimize token-level objectives that treat technique annotation as sequence generation rather than set prediction, lacking direct supervision on whether the predicted technique set is correct and complete. We propose TTP-R1, a two-stage framework that combines retrieval-augmented supervised fine-tuning (SFT) with reinforcement learning using verifiable rewards (RLVR). A hybrid retriever first narrows the large label space to a candidate set, and a fine-tuned LLM learns to select the correct techniques. We then apply Group Relative Policy Optimization with a decomposed reward that directly supervises the precision, recall, and output format of the predicted technique set. Across four CTI benchmarks, TTP-R1 achieves the best average F1, improving sub-technique-level F1 by 7.4 percentage points over Claude Sonnet 4.5 with retrieval augmentation, while running 28x faster when served as an 8B-parameter model on a single GPU.",
+      "topics": [
+        "cs.CR",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.07639",
+      "abstract": "Agent Skills provide reusable capabilities to LLM agents. Agent Skill inconsistencies can expose undisclosed dangerous behavior or cause wrong Skill selection. Recent Agent Skill research has increasingly examined Agent Skill consistency detection. Existing methods evaluate behaviors or security-property graphs against predefined categories or declared scopes. More recently, PL-HCL uses an LLM-based model to learn consistency across metadata, instructions, and resources. However, declaration and implementation behavior can be mixed across text and code, and a concise declaration can correspond to multiple connected implementation steps. We present SkillConsist to address both challenges. An LLM separates declaration and implementation content into behavior records on the implementation and declaration sides, while static analysis supplements implementation records. These records form declaration and implementation behavior graphs, respectively. Starting from a behavior record on either side, bidirectional graph alignment searches the other graph for a candidate subgraph and expands it along behavior relations until it completely expresses the source-side behavior. Graph differencing identifies conflicts between aligned subgraphs and outputs the detection results. We construct a 633-Skill benchmark from ClawHub's 500 most-downloaded public Skills and 133 Skill-Inject packages. The benchmark contains 319 inconsistent and 314 consistent Skills and 442 localized inconsistency annotations. On this benchmark, SkillConsist achieves 86.85% precision, 89.03% recall, and 87.93% F1 for package-level detection, improving F1 over the best baseline by 20.43 percentage points. For localization, it achieves 67.60% precision, 58.14% recall, and 62.52% F1.",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2609.26131",
+      "abstract": "Large language models and vision-language models are increasingly used as high-level planners in robotic systems, using task goals and sensor summaries to select navigation or manipulation actions. This creates a new backdoor surface: a compromised planner can behave normally in most runs, yet change its target selection when a hidden trigger is present. Prior attacks on LLM-powered or embodied agents mainly rely on triggers that appear in language, camera-visible objects, scene semantics, or specific sequences of past actions. This paper presents StepTrigger, a contact-state-triggered backdoor attack for VLM-powered legged robots. The trigger is not a prompt token or a visible marker. It is produced by pressure and foot-ground contact patterns that arise when a Unitree Go1 quadruped walks across a dense terrain patch. Unlike conventional visual or textual triggers, contact signals are inherently noisy and may also arise during benign locomotion. To avoid treating every pressure anomaly as a trigger, StepTrigger learns a selective backdoor policy from multimodal robot state, using incidental pressure events as benign examples and dense-patch contacts as poisoned examples. In a stratified offline evaluation, the trained planner achieved 98.75% clean behavior preservation, 92.50% false-trigger rejection, 76.25% true-trigger activation, and 89.17% overall parsed behavior accuracy. These results reveal a backdoor surface in proprioceptive and contact channels that is not captured by defenses focused only on language, vision, or action history.",
+      "topics": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.06672",
+      "abstract": "Retrieval-Augmented Generation (RAG) has become a robust architecture for grounding large language models (LLMs) in trusted knowledge. However, standard RAG systems exhibit a structural limitation: retrieved documents carry their own communication styles-professional jargon, formal tone, or academic writings-that shape the behavior of a RAG system before any tone instructions are processed, often causing the system to ignore user requests for a specific tone. We term this phenomenon contextual decoupling, in which a system optimises for factual accuracy while remaining decoupled from the social or operational context of the recipient. Building on prior research in public health peer-support communities, we identify three communicative misalignment-linguistic, cognitive, and relational-that can persist even when retrieval is relevant and the generated response is factually accurate. We conceptualise these as failures of communicative transformation, which remain largely invisible to accuracy-centred RAG evaluation metrics. To address this gap, we propose Tone-Aware RAG (TA-RAG), a conceptual architectural framework that positions communicative alignment alongside factual accuracy as a core design objective. TA-RAG operationalises four constraints-stigma-free language, readability alignment, recipient-sensitive adaptation, and empathetic framing-across the retrieval, context construction, generation, and constraint validation phases in the proposed RAG pipeline. We further highlight an evaluation agenda for jointly assessing factual fidelity and communicative alignment, and identify open challenges. We argue that tone awareness should be treated not as an optional refinement, but as a present design imperative for RAG systems operating in socially sensitive and high-stakes contexts.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.07446",
+      "abstract": "Rapid adoption of large language models (LLMs) in enterprise settings has introduced operational, security, and governance risks. As generative AI applications move from pilot to production, manual harm identification and mitigation are becoming difficult to scale. Although many tools support model evaluation, adversarial testing, runtime guardrails, and observability, the tooling landscape remains fragmented. Tools are typically designed for specific engineering tasks and described in technical terms that do not align with governance frameworks or risk taxonomies, making it difficult to determine which tools address which risks and where critical gaps remain. This paper proposes a structured protocol to automate AI risk mitigation through a taxonomy-driven analysis of open-source LLM evaluation and security tools. We map the capabilities of 21 prominent open-source tools to the 32 subcategories of the extended MIT AI Risk Mitigation and Response Taxonomy. An LLM-assisted retrieval-augmented generation pipeline analyzes source code and documentation to extract capabilities for each taxonomy category. Reliability assessment yielded moderate agreement (Fleiss' Kappa = 0.509) among three independent reviewers. The analysis reveals a highly skewed landscape in which tools cluster around technical and operational controls, while governance, legal and regulatory, and financial and market controls remain largely unaddressed. This motivates a layered risk-mitigation architecture combining tool-based controls with organizational and regulatory processes. The mapping protocol achieved an F1 score of 75.5% after majority voting. Overall, the study provides a practical mapping between enterprise AI risk categories and open-source mitigation capabilities, identifies where human oversight remains necessary, and presents a taxonomy-driven framework applicable to open-source and proprietary solutions.",
+      "topics": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.06663",
+      "abstract": "Frontier language models solve reasoning problems in a single forward pass that would have been research contributions years ago, yet fail at multi-hour tasks: losing track of earlier decisions, declaring half-finished work done, or drifting from goals. We call this the horizon gap and survey 1,547 arXiv papers (2024-2026) collected via systematic seed harvest with a disclosed 26.8% bleed filter, extended by targeted supplementation. We disambiguate three routinely conflated properties: long-horizon (task property: required steps), long-context (model property: token capacity), and long-term memory (system property: persistence across steps/sessions). We organize the corpus into six categories tracking a long-horizon task's lifecycle -- planning, memory, execution, training, evaluation, and foundations/safety -- crossed with an axis capturing where horizons are carried (within-context, within-task-beyond-context, or cross-task-persistent). Across all categories, we find the same pattern: outcome-only signals grow uninformative as horizons lengthen, and the field's response -- whether process reward models, credit assignment, or trajectory-level diagnostics -- manufactures denser step-level signals. We treat critical and diagnostic literature as first-class threads throughout, arguing that segregating critique from method would routinely split single papers across chapters. We close by naming open measurement problems: decomposing model versus harness capability, managing correlated bias in process-level signals used for both training and evaluation, and whether long-horizon reliability admits general predictive theory.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1007/s10489-026-07208-y",
+      "abstract": "Artificial Intelligence (AI) and Machine Learning (ML) have become powerful tools for supporting and automating complex human tasks. Despite their benefits, growing attention has been directed toward their environmental implications, primarily due to their high energy demands and associated carbon emissions. This concern is particularly relevant in light of the increasing deployment of large-scale models, especially Deep Learning (DL) architectures, which provide advanced predictive capabilities but require substantial computational resources. This paper presents a systematic review of research on Green AI, Green DL, and optimization techniques aimed at reducing the environmental impact of AI models. In addition, we examine and compare several carbon measurement tools for estimating emissions generated by AI algorithms. To complement the review, we conducted an empirical evaluation using a CPU-based experimental setup, in which six DL models were implemented for a multi-label classification task. The objective was to quantify and compare their overall carbon emissions and to determine which stages of the DL lifecycle contribute most significantly to the total footprint. The results show that the training phase is the primary source of emissions. Moreover, the findings reveal that increased architectural complexity does not systematically translate into proportional accuracy gains, highlighting the importance of carefully balancing predictive performance and environmental cost. These results reinforce the need to integrate sustainability considerations into model selection and AI system design.",
+      "topics": [
+        "cs.AI",
+        "cs.CY",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.07053",
       "abstract": "Pretrained partial differential equation (PDE) foundation models can generalize across different equations, but adapting them to unseen PDE systems typically requires dense solution data, which is often expensive or unavailable. To address this limitation, we propose an unsupervised PDE-based finetuning framework that eliminates the need for ground-truth solutions. We first pretrain a neighborhood attention Transformer on diverse time-dependent PDEs spanning varying spatial scales, yielding transferable representations across heterogeneous equations. In the adaptation stage, we construct a physics-based objective using the PDE residual and boundary conditions, and finetune the model on unseen equations via low-rank adaptation (LoRA). To address the uneven learning across physical quantities in standard LoRA, we introduce NSLoRA, a Newton-Schulz orthogonalized variant that rebalances adaptation. Our method achieves performance comparable to supervised LoRA finetuning without requiring any ground-truth solutions, while consistently outperforming competitive neural operator baselines and recent PDE foundation models across heterogeneous PDE benchmarks spanning multiple spatial dimensions.",
@@ -1811,67 +1876,6 @@
       "abstract": "How do you verify a long-horizon agent when its own state and self-reports are exactly what you cannot trust? We present an agent instrument built so that verification is structural rather than post-hoc. A deterministic Executive owns all belief; a language model may only file typed proposals, and a claim is admitted only when a prediction pre-registered before acting is matched against observation by code. Two properties make the instrument a verifier of its own science, not just of the agent: every run invalidates itself when per-organ write-error, render-size, or salted-canary-echo floors are breached (four of the first eight architecture runs were invalidated, each localizing a real defect); and a render-invisible shadow reference compiles the plan the full system would have committed in every ablation cell, so drift metrics are defined even where the mechanism under test has been removed. Using this instrument we report a clean, single-variable result on a failure every long-horizon agent suffers: ablating the commitment mechanism flips goal-abandonment from 0.00 to 1.00 while binding error stays flat at 0.00 (three seeds per cell, up to 394 reference beats per run, every run gated valid). The binding channel, by contrast, does not reappear as per-beat drift when its repair is ablated -- because binding is code-owned, the failure class is structurally absorbed, its only residue appearing one layer upstream as a collapse in hypothesis formation. We report these under full disclosure that task efficacy is null (zero level completions across 52 gated runs on ARC-AGI-3), pre-registered as a structural defeater. The contribution is a verification methodology for agent development and the drift decomposition it makes measurable.",
       "topics": [
         "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04285",
-      "abstract": "Neurosymbolic AI systems that integrate machine learning and symbolic reasoning are rapidly gaining attention. They complement the data-intensive statistical approaches of neural networks and language models with symbolic reasoning algorithms to function in high-stakes domains or in low-data regimes that characterize many real-world applications. We argue that the neurosymbolic combination of machine learning and formal reasoning is not a niche approach within AI, but rather includes many already successful techniques that are of crucial importance to the development of reliable, efficient and, ultimately, trustworthy systems. This perspective prompts a re-examination of the design of current AI systems. We show that many leading AI systems, including some that are not traditionally considered as neurosymbolic, can be analysed from the perspective of four principles of neurosymbolic AI design: Reasoning, Assurances, Interfacing and Learning (RAIL). Applying the RAIL framework offers a unified view of seemingly disparate AI systems, ranging from physics-aware machine learning to neuro-guided search (such as Google DeepMind's Alpha-* suite), causal learning and tool-augmented Large Language Models. Importantly, the RAIL principles will enable engineers to make better-informed and more principled decisions about the design and deployment of production-level AI systems. In this article, we introduce the RAIL principles, examine how they can be applied across major areas of AI, and illustrate how they may guide practitioners to integrate neurosymbolic methods into next-generation AI technologies.",
-      "topics": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.03468",
-      "abstract": "Historical tool-use trajectories provide valuable experience for large language model (LLM) agents to plan and coordinate tool usage. Existing approaches directly construct tool-level graphs from these trajectories, but the resulting graphs remain tied to specific tools and are hard to generalize across tool sets. To tackle this challenge, we find that despite differences in the tools involved, analogous tasks often share a common function-level workflow structure, which serves as a potentially more transferable abstraction for tool planning. Based on this insight, we propose ToolLIFT, a framework that lifts tool-specific trajectories into a function-level workflow graph (FWG) for generalizable tool planning. Specifically, we first propose a trajectory-lifting mechanism that encodes workflow structures in the FWG and shares collaboration experience across tools. Then, building on the global structure of the FWG, we introduce decoupled workflow planning and tool selection to align individual tool choices with the overall workflow. Lastly, to ensure reliable tool dataflow, we adopt Reinforcement Learning (RL) and propose source-gated and skill-specific rewards to maintain source-traceable information flow across tool calls. Experiments on two in-distribution (ID) and three out-of-distribution (OOD) benchmarks show that ToolLIFT consistently outperforms state-of-the-art baselines, demonstrating strong generalization to unseen tool sets.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.03527",
-      "abstract": "Retrieval systems help deep research agents generate high-quality answers by providing relevant documents. However, existing retrievers typically select documents through relevance matching, while individually well-matched top-$k$ documents may not form a \\textit{set} that satisfies the complex information needs of an agent query (\\eg, diverse, concise and authoritative documents). In this paper, we propose search-oriented rubrics that \\textit{explicitly} define the requirements that high-quality document sets should satisfy for each agent query. Our search rubrics are organized into a hierarchical structure and synthesized using a powerful LLM. Based on these search rubrics, we further train a document reranker \\textbf{RubricRanker} to select a high-quality subset from retrieved documents. We design a two-stage training framework that consists of rubrics-guided supervised fine-tuning and rubric-based reinforcement learning. Extensive experiments demonstrate that RubricRanker outperforms the strongest baseline by 2.6 points on four deep research benchmarks and generalizes well to five RAG benchmarks.",
-      "topics": [
-        "cs.IR",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04007",
-      "abstract": "Tool-Integrated Reasoning (TIR) enables LLMs to solve complex tasks through iterative tool interactions. However, existing reinforcement learning methods often rely on trajectory-level supervision, limiting fine-grained credit assignment in long-horizon TIR scenarios. On-policy self-distillation offers denser signals through teacher branches with privileged context, but existing approaches typically derive such context from ground-truth answers or retrieved skills, which may not reflect the states actually visited by the agent. Moreover, token-level supervision fails to capture the turn-level structure of tool interactions. To address this, we propose TurnSight, a turn-level hindsight self-distillation framework that derives supervision directly from execution-conditioned hindsight. It then constructs multiple hindsight views with different lookahead horizons and selects reliable supervision through cross-horizon directional agreement. Finally, the selected hindsight signal is normalized across sibling rollouts and used to adaptively modulate RL advantages while preserving their original optimization direction. Extensive experiments on three benchmarks demonstrate the effectiveness of TurnSight. Our codes are available at https://github.com/quchangle1/TurnSight.",
-      "topics": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.03137",
-      "abstract": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlier evidence during long-horizon interaction. Existing methods commonly optimize long-term memory (LTM) and short-term memory (STM) separately, while unified policies are often trained primarily with trajectory-level feedback, which provides weak credit for individual memory decisions. We present Verifiable Memory (VerMem), a framework that represents LTM, active context, and episodic history as distinct states and controls them with one memory operation policy. Seven atomic operations let the policy add, revise, or soft-delete LTM entries; retrieve LTM into the active context; filter or summarize the active context; and restore selected episodic fragments. VerMem is initialized by supervised fine-tuning and trained with a three-stage reinforcement-learning curriculum. The local verifier scores executable memory transitions, and a global verifier assesses evidence coherence and terminal-memory consistency after task completion. These scores are combined with programmatically computed task, evidence-recall, efficiency, and constraint signals through hierarchical credit assignment. The verifiers are used only during training. Across five benchmarks and two LLM backbones, VerMem achieves the best result on the vast majority of reported metrics and consistently outperforms strong memory baselines. Under controlled online-token budgets on three interactive benchmarks, it also achieves the strongest efficiency--performance frontier among the compared methods. Code is available at https://github.com/Sun-SYSU-24/VerMem.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.03979",
-      "abstract": "We introduce Video-DeepResearch (Video-DR), extending multimodal agents from static images to continuous video streams, a setting that demands dense spatiotemporal grounding coupled with open-web exploration. Preliminary evaluations reveal two critical bottlenecks in current models: (1) modality bias, where agents bypass visual tools in favor of textual search, and (2) parametric knowledge leakage, where models rely on internal memory rather than genuine tool-augmented execution. To address these challenges, we propose Video-DR, featuring a decoupled perception-exploration pipeline with stage-wise tool unlocking that compels exhaustive cross-frame visual grounding prior to web retrieval. Our framework adopts a two-stage training recipe: supervised fine-tuning followed by Group Relative Policy Optimization (GRPO), enabling autonomous exploration that breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstrate that our Video-DeepResearch-35B-A3B establishes a new state-of-the-art of 64.0% average accuracy, surpassing proprietary Claude-4.5-Sonnet (59.0%) by 5.0 points and significantly outperforming GPT-5 (52.5%) and Gemini 2.5 Pro (57.5%). The 30B-A3B variant achieves 59.3%, competitive with Claude-4.5-Sonnet and demonstrating the effectiveness of our training paradigm even at compact scale. Code: https://github.com/Osilly/Vision-DeepResearch.",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1177/07439156251328237",
-      "abstract": "Generative Artificial Intelligence (GAI) is increasingly being integrated into marketing education and is reshaping the skillsets required in marketing careers. While research has highlighted the promise and perils of incorporating GAI into education, there remains a need for a comprehensive framework to guide its effective use. In this research, we conduct a multipronged analysis, including a review of marketing course syllabi, a survey of marketing educators, and follow-up qualitative interviews. Building on Role Theory and the Community of Inquiry (CoI) model, we propose that GAI can assume three roles in marketing education: tutor, teammate, and tool. Each role influences teaching, social, and cognitive presence differently, shaping the learning experience and preparing workplace-ready marketing graduates. For instance, as a tutor, GAI can aid students in grasping theoretical concepts, while as a teammate, it can foster collaboration by supporting brainstorming and problem-solving activities. However, ethical considerations such as data privacy, plagiarism, dependency on AI, and fairness in assessment must be addressed to ensure its responsible adoption in marketing education. We provide concrete examples for GAI's careful integration in marketing courses, and its implications for marketing educators, learners, and policymakers.",
-      "topics": [
-        "cs.CY"
       ],
       "keywords": []
     }

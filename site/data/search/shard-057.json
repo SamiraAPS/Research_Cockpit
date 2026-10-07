@@ -1,7 +1,80 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-06T12:03:50.749Z",
+  "generatedAt": "2026-10-07T11:49:04.786Z",
   "documents": [
+    {
+      "id": "arxiv:2607.27697",
+      "abstract": "Immersive environments, e.g., virtual reality (VR), offer a unique approach to exploring complex 3D datasets, where data is often heavily occluded and exploration incurs a high cognitive load. We propose DP-LENS, a density-aware polyfocal fisheye lens equipped with topology-driven auto-routing. While preserving peripheral context through geometric deformation and 3D perspective techniques, it enables users to explore 3D data with a lower cognitive load. To facilitate hands-free macro-navigation, we integrate a Large Language Model (LLM) to serve as a supplementary voice-based target selection tool that initiates the auto-routing algorithm. Two user studies with 34 participants investigate the potential benefits of this system. Our first study (N=18) compared the manual DP-LENS against two industry-standard baselines (i.e., World-in-Miniature and volumetric slicing) in heavily occluded 3D datasets. The results show that DP-LENS significantly reduced cognitive load, decreased completion time, and improved user preference. The second study (N=16) compared the topology-driven auto-routing system (initiated via voice commands) with a fully manual DP-LENS. The results show that the auto-routing system improved task efficiency, further reduced cognitive load, and garnered higher user preference. Furthermore, the auto-routing partially decoupled exploration efficiency from the physical dimensions of the data and mitigated physical fatigue to some extent. Based on the findings, we proposed design implications to inform the development of more spatially scalable and low-fatigue interactions for future 3D visual analytics systems.",
+      "topics": [
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.28229",
+      "abstract": "The web is increasingly accessed by AI agents rather than humans. Every agent needs knowledge, especially in the life-sciences, where agentic pipelines are growing fast. Access to the literature is a crucial part of that need, and resources such as Europe PMC, with over 40M indexed records, are widely used to meet it. Yet these resources were not built for AI agents: they take keywords and complex syntax and return whole papers, so every agent must learn the syntax, issue several searches, and read full papers to find the evidence it needs. We introduce EMBL AI Librarian, a knowledge layer that upgrades the Europe PMC interface for AI agents: an agent asks in natural language and receives evidence that answers it. A single LLM orchestrates the whole knowledge retrieval process: it plans complementary subqueries executed by the live Europe PMC search engine, then reads the selected papers and locates the relevant evidence. We evaluate Librarian across four benchmarks: literature synthesis, claim verification, open-domain question answering, and downstream biology tasks such as protocol questions and sequence manipulation. On ScholarQABench, Librarian improves Citation F1 by more than $16$ points over strong recently published baselines. Used as the retrieval layer of an existing claim-verification pipeline, it increases agreement with expert consensus; and on the open-form LitQA2 benchmark, a GPT-5.4 agent scores about $8$ points higher when grounded in Librarian than with web search. Overall, our results show that equipping life-science agents with the Librarian knowledge layer improves performance across a range of tasks. We release our code publicly at https://github.com/petroni-lab/librarian",
+      "topics": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2702730",
+      "abstract": "The application of AIGC in cross-modal visual generation creates a novel HCI paradigm, yet mapping human emotional intent to AI visuals often causes semantic disconnects. This study contrasts AI portraits and human artworks on emotion delivery, visual attention and subjective perception. Thirty participants viewed eight works covering four emotional categories, with eye-tracking metrics and subjective scores collected and analyzed via RM-ANOVA and LMM. Results uncover a cognitive compensation mechanism in human-AI interaction: participants were satisfied with AI images but faced heavy visual processing costs. AI portraits’ rigid imitation and partial structural defects triggered scattered visual scanning, shown by elevated saccade rates for information synthesis. AI rivaled human art in expressing intense emotions with prominent features, but shallow symbolic rendering weakened authenticity for mild or negative feelings, unlike human paintings that express emotions naturally via organic details and integrated metaphor layouts. The tested AI only conveys rudimentary emotions with heavy cognitive burden, offering concrete HCI design references to boost human-AI emotional alignment for future generative tools.",
+      "topics": [
+        "Aesthetic Perception and Analysis",
+        "Digital Media and Visual Art",
+        "Visual Attention and Saliency Detection"
+      ],
+      "keywords": [
+        "Cognition",
+        "Imitation",
+        "Emotional expression",
+        "Expression (computer science)",
+        "Metaphor",
+        "Rendering (computer graphics)",
+        "Generative grammar"
+      ]
+    },
+    {
+      "id": "arxiv:2607.28196",
+      "abstract": "Practitioners accept a compressed language model once it clears a stack of data-cheap quality guards: perplexity within a small factor of the original, downstream accuracy (for example MMLU) inside a confidence interval, and data-free output-fidelity signals that compare the compressed and original network's internal representations under random probe inputs. This stack has a blind spot. Across three model families, gently-compressed models clear every guard and then invent procedure steps that were never in the instructions when they run a standard operating procedure (SOP) as an agent. The effect is operator-specific: coherent low-rank (SVD) truncation induces it, and magnitude pruning matched to the same perplexity does not. One dissociation isolates the cause. The same compressed weights that CI-win a paired output-fidelity test CI-fail the invented-step canary. The governing axis is the coherence of the compression error times its rate; the magnitude of the damage does not predict it. The data-free fidelity probe is a fidelity oracle by construction, so it cannot see this axis. We characterize the blindspot and dissociation with paired confidence intervals on a pre-registered, powered canary across three architectures. Operator-specificity replicates on all three, and the perplexity-guard evasion appears where the model admits in-guard low-rank headroom. We then give a data-free screen: a two-axis statistic of the compression error (coherent-fraction and error-rate) that flags the failing builds with fixed thresholds across architectures and matches the coherence-times-rate mechanism. Perplexity, MMLU, and fidelity acceptance do not certify agent safety. Screen gently-compressed low-rank builds before agentic deployment",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.28127",
+      "abstract": "Recent advances in Generative AI have substantially improved financial sentiment analysis through post-trained financial large language models (LLMs). However, existing approaches remain confined to a market-agnostic, supervised learning paradigm that relies on limited, static and human-annotated datasets, and thus are incapable of adapting to evolving market conditions. To address this limitation, we introduce FinSMART, the first market-aligned reinforcement learning framework for financial sentiment analysis, which directly optimizes sentiment signals using realized market outcomes. To deal with the noisy, non-stationary, and multifactorial nature of financial markets, FinSMART incorporates a signal extraction pipeline that combines market-aware data filtering with a discrete asymmetric trading reward, enabling stable reinforcement learning from economically meaningful market feedback. Experimental results demonstrate that FinSMART significantly outperforms existing state-of-the-art methods in profitability, risk-adjusted performance, and sentiment signal quality, improving cumulative trading returns by 220% over the strongest baseline. Uniquely, the FinSMART framework naturally supports market-aware retraining, at any point in time, by replacing costly manual annotation with newly observed financial articles and their realized market outcomes. Such a retraining strategy enables the model to continuously adapt to changing market dynamics, resulting in consistent performance gains over its static counterpart. These findings demonstrate the practical applicability of market-aligned reinforcement learning and highlight its potential as a next-generation paradigm for developing adaptive financial LLMs.",
+      "topics": [
+        "cs.CL",
+        "cs.LG",
+        "q-fin.ST",
+        "q-fin.TR"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.28869",
+      "abstract": "Lawyers and self-represented litigants are already using artificial intelligence (AI) to draft legal documents, and courts are responding with rules. After more than 1,500 cases involving AI hallucinations, lawyers have been instructed to perform careful, independent review of AI-assisted filings. Discharging these duties requires what the human-computer interaction (HCI) literature calls ``appropriate reliance,'' which cannot be calibrated without evidence on how often, how badly, and how detectably these tools fail at legal work. Existing research barely describes any of the three. We analyze the official record of the New York court system. The documents repeatedly call for evidence that does not exist (e.g., error rates, do-not-use lists). In its place they invoke procedure, including training mandates, checklists, and uncalibrated human review. The burden falls hardest on those least equipped to bear it: legal aid programs are told to track their own error rates, and judges are left to improvise their own tests. The paper makes four contributions: (1) a mapping from the legal duties to concepts in HCI; (2) a set of requirements elicited from the official record; (3) an analysis of how the legal system substitutes process for evidence; and (4) a research agenda for computing, including task taxonomies, shared error metrics, maintained benchmarks, and test harnesses for evaluations on private data. The computing community must supply what the justice system lacks; in doing so, it can help close, rather than widen, the justice gap.",
+      "topics": [
+        "cs.CY",
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.27937",
+      "abstract": "Recent work on LLM agents is shifting from external capability elicitation to capability internalization, enabling agents to retain useful skills without retrieval at inference time. On-policy self-distillation (OPSD) offers a promising direction, but many existing methods typically supervise students by scoring actions along student-generated trajectories. Such supervision has two limitations: teacher preferences are not validated by environment outcomes, and action-level scores underuse information from student rollouts, teacher rollouts, and their behavioral relationship. We therefore advocate outcome-verified teacher supervision and comparative learning over teacher-student trajectories. Based on this view, we propose Outcome-Verified Comparative Self-Distillation (OVCSD). OVCSD organizes failed student rollouts into a prefix tree, adaptively invokes a skill-conditioned teacher from student-reached states, and retains only outcome-verified successful continuations. It then applies localized comparative learning at the first state-aligned divergence and distills the post-divergence teacher suffix to transfer completion behavior. Experiments on ALFWorld and WebShop across three model scales show that OVCSD consistently outperforms skill-free RL and existing self-distillation baselines, achieving up to 29.7 and 5.4 absolute success-rate gains over the strongest baselines on ALFWorld and WebShop, respectively, while adding less than 3% privileged interaction during training.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.1075/jerpp.00035.ugw",
       "abstract": "The rise of generative artificial intelligence (GenAI) in academic writing and publishing (AWP) raises questions about linguistic inclusivity and the legitimacy of diverse Englishes in global scholarly communication. This article responds to these questions through a structured scholarly dialogue involving five sociolinguists from World Englishes and adjacent fields. Organised around five guiding questions, the dialogue interrogates how GenAI tools influence writing practices, reinforce or disrupt dominant language norms, and raise ethical challenges. Contributors reflect on the potential of GenAI to democratise writing processes while also raising concerns about GenAI's tendency to marginalise minoritised varieties and flatten nuance in scholarly writing. Across the dialogue, themes of linguistic (in)justice, researcher agency, and institutional responsibility emerge, with contributors calling for equity-informed policies, critical AI literacy, and inclusive co-design in GenAI development. The article shows the value of dialogic reflection in understanding GenAI's role in AWP. It concludes that while GenAI may reinforce existing hierarchies, it can also serve as a site of resistance, depending on how it is designed, governed and used within scholarly communities committed to linguistic diversity.",
@@ -2174,129 +2247,6 @@
         "Bounded function",
         "Enhanced Data Rates for GSM Evolution",
         "Spatial cognition"
-      ]
-    },
-    {
-      "id": "doi:10.1080/00140139.2026.2694572",
-      "abstract": "Generative AI Teaching Assistants (GAITAs) offer transformative potential for education, yet their effective integration remains under-explored. This study employed a Wizard-of-Oz-based online between-subjects experiment (N = 136) to investigate how instructor type (human vs. AI), support type (instrumental vs. both instrumental and emotional), and course type (social vs. natural sciences) influence student perceptions. Results from a three-factor analysis of variance revealed that GAITAs elicited significantly higher perceived adaptability and more positive attitudes when assisting human instructors rather than AI counterparts. In social science contexts, human-GAITA collaboration further enhanced trust and hedonic motivation. Additionally, emotional support significantly boosted hedonic motivation, perceived adaptability, and attitudes towards GAITAs in social science courses, whereas no such effect occurred in natural science courses. Overall, this study highlights the importance of collaboration between human instructors and GAITAs, and provides useful insights into the application of emotional support provided by GAITAs.",
-      "topics": [
-        "Intelligent Tutoring Systems and Adaptive Learning",
-        "Online Learning and Analytics",
-        "Educational Games and Gamification"
-      ],
-      "keywords": [
-        "Affect (linguistics)",
-        "Perception",
-        "Type (biology)",
-        "Generative model"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2690095",
-      "abstract": "The incorporation of large language models (LLMs) into clinical decision support systems (CDSS) offers potential for enhancing the quality of healthcare. Nevertheless, there is a dearth of comprehensive standards and understanding about the application of explainable and responsible AI practices in this context. The objective of this study is to present an overview of the literature on the utilization of LLMs in CDSSs, with an emphasis on Explainable AI (XAI) techniques and responsible AI principles. The present study was conducted through a systematic literature review analyzed of 36 studies on the application of LLMs in CDSS, with a focus on XAI and responsible AI. Human-centered AI is essential to design CDSSs that not only provide accurate recommendations but also align with clinicians’ trust and workflow realities. The results suggest that while LLM-based CDSSs demonstrate potential in enhancing clinical decision-making, concerns regarding model interpretation into healthcare workflows persist as challenges.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Explainable Artificial Intelligence (XAI)",
-        "Machine Learning in Healthcare"
-      ],
-      "keywords": [
-        "Workflow",
-        "Systematic review",
-        "Clinical decision support system",
-        "Decision support system",
-        "Quality (philosophy)",
-        "Health care",
-        "Focus (optics)"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2689527",
-      "abstract": "In safety-critical domains such as air traffic control (ATC), appropriate trust in AI is essential for operational effectiveness and safety. This study proposes a phase-specific framework for recognizing automation trust using behavioral and eye-tracking features across monitoring, decision-making, and whole-task phases. Data were collected through a trust-probe experiment and analyzed using linear mixed models to identify phase-specific effects of trust. Significant features were then used to train machine-learning classifiers. Results showed that trust was manifested differently across phases, with decision-making producing the most informative eye-tracking indicators, including fixation duration and saccade velocity. Models trained on multi-phase data outperformed single-phase models, and Gradient Boosting achieved the highest accuracy of 86.76%. SHapley Additive exPlanations were further used to identify influential features and their directional effects. The framework supports transparent trust recognition and informs human-centered automation, safety management, and policy development in high-stakes environments.",
-      "topics": [
-        "Human-Automation Interaction and Safety",
-        "Air Traffic Management and Optimization",
-        "Gaze Tracking and Assistive Technology"
-      ],
-      "keywords": [
-        "Automation",
-        "SAFER",
-        "Air traffic control",
-        "Interpretation (philosophy)",
-        "Boosting (machine learning)",
-        "Control (management)",
-        "Air traffic controller"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2688925",
-      "abstract": "With the growth of micro-learning on short-form video platforms, instructional videos are increasingly produced using AI-generated voices and avatars. This study examined how voice type (human vs. AI-generated) and avatar type (human vs. AI-generated) influence immediate learning, visual attention, physiological responses, and subjective evaluations in 60-second instructional videos. Thirty participants completed a 2 × 2 within-subject experiment while learning performance, AOI dwell time, blink rate, CFF change, and post-task ratings were recorded. Human-avatar conditions produced higher objective learning performance than AI-avatar conditions, whereas human voices improved perceived comprehension without significantly improving objective scores. The AI voice–human avatar condition showed reduced blink rate and relatively low dwell time on instructional content, suggesting possible increases in attentional control or processing demand. No detectable CFF change was observed. These findings indicate that subjective preference alone is insufficient for evaluating AI-mediated micro-learning and that visual instructor authenticity warrants particular design attention.",
-      "topics": [
-        "Visual and Cognitive Learning Processes",
-        "Virtual Reality Applications and Impacts",
-        "AI in Service Interactions"
-      ],
-      "keywords": [
-        "Avatar",
-        "Comprehension",
-        "Preference",
-        "Control (management)",
-        "Eye tracking",
-        "Dwell time",
-        "Attentional blink",
-        "Visual feedback"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03189-1",
-      "abstract": "Generative artificial intelligence is transforming how creativity is organised, attributed, and governed across cultural and creative industries. This study examines how generative systems redistribute creative functions within human-led workflows by comparing AI-generated outputs with live human performances across visual (VNAI) and performative (PEAI) domains. Focusing on systems such as Stable Diffusion and OpenAI’s Sora, the analysis adopts a mixed-methods approach combining semantic alignment, latent feature analysis, reverse image similarity, and motion tracking to investigate how originality, authorship, and embodied expressiveness are structured in practice. The findings show that while generative models achieve high semantic fidelity and stylistic coherence, their outputs remain constrained by training data patterns and probabilistic recombination. In contrast, live human performance exhibits greater variability, responsiveness, and affective nuance. Across both modalities, meaningful differentiation emerges through iterative prompting, selection, and contextual framing, indicating that creative value is shaped through distributed workflows in which human judgement, evaluation, and embodied interpretation play a constitutive role. These results demonstrate that generative AI systems function as augmentative components rather than autonomous creative agents. By empirically analysing how creative agency is organised across human and algorithmic processes, the study provides an analytical framework for examining authorship, labour, and value formation in AI-mediated cultural production.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Law, AI, and Intellectual Property",
-        "Freedom of Expression and Defamation"
-      ],
-      "keywords": [
-        "Generative grammar",
-        "Corporate governance",
-        "Performing arts",
-        "Habitus",
-        "Cultural diversity"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03180-w",
-      "abstract": null,
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Machine Learning in Healthcare",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "Delegation",
-        "Agency (philosophy)",
-        "Autonomy",
-        "Health care",
-        "Normative",
-        "Set (abstract data type)",
-        "Human systems engineering"
-      ]
-    },
-    {
-      "id": "doi:10.1145/3816419",
-      "abstract": "Virtual Reality (VR) environments challenge users with varied input devices, interaction methods, and interface designs, resulting in a steep learning curve. Feedforward \"informs the user about what the result of his action will be\", and it allows to ease the process of learning of the end user by providing ways to represent the required action to perform, using contextualised previews that show how to complete a given interaction. Yet, creating effective direct feedforward without specialised tools remains a tedious process. We present BeatriXR, a flexible and adaptive toolkit that simplifies the creation of direct-feedforward configurations in VR. It enables users to build, visualise, and customise direct feedforward using virtual avatars, offering both in-world representations and on-screen comparisons of interaction options. Mapped to the recognised design-space by Muresan et al. (including Triggering, Previewing, and Exiting phases), BeatriXR streamlines development and helps ensure effective feedforward integration in VR environments. As additional support for the feedforward design task, BeatriXR features an LLM-powered decision-support layer that suggests possible configuration options. This guidance helps designers select optimal settings during development for adapting the presentation to user needs and the expected configuration of the interaction context. We conducted an exploratory review with XR domain experts who rated the UI for modifying feedforward settings, and assessed four LLM models in the task of suggesting possible configuration options. The participants’ feedback was positive and provided valuable insights for improving both the user interface, which was generally perceived positively, and the quality of the LLM-generated responses.",
-      "topics": [
-        "Virtual Reality Applications and Impacts",
-        "Interactive and Immersive Displays",
-        "Usability and User Interface Design"
-      ],
-      "keywords": [
-        "Feed forward",
-        "Process (computing)",
-        "Action (physics)",
-        "Task (project management)",
-        "User interface",
-        "Interface (matter)",
-        "Virtual reality",
-        "Control (management)"
       ]
     }
   ]

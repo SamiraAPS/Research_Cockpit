@@ -1,12 +1,1322 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-10-06T12:03:50.749Z",
+  "generatedAt": "2026-10-07T11:49:04.786Z",
   "page": 109,
   "pageSize": 100,
-  "totalItems": 16380,
-  "totalPages": 164,
+  "totalItems": 16529,
+  "totalPages": 166,
   "nextPage": "./page-110.json",
   "items": [
+    {
+      "id": "arxiv:2608.06778",
+      "recordType": "preprint",
+      "title": "Retrieval-Constrained Policy Optimization for Attack Technique Extraction from Cyber Threat Intelligence",
+      "abstract": "Mapping cyber threat intelligence (CTI) text to MITRE ATT&CK techniques is essential for structured threat analysis, yet manual annotation is costly and does not scale. The ATT&CK taxonomy comprises several hundred attack techniques, and a single CTI passage may describe multiple techniques, making accurate and complete extraction challenging. Existing automated approaches fall short in different ways: multi-label classifiers struggle with severe class imbalance and the large label space, while LLM-based methods--retrieval pipelines and fine-tuned generators--optimize token-level objectives that treat technique annotation as sequence generation rather than set prediction, lacking direct supervision on whether the predicted technique set is correct and complete. We propose TTP-R1, a two-stage framework that combines retrieval-augmented supervised fine-tuning (SFT) with reinforcement learning using verifiable rewards (RLVR). A hybrid retriever first narrows the large label space to a candidate set, and a fine-tuned LLM learns to select the correct techniques. We then apply Group Relative Policy Optimization with a decomposed reward that directly supervises the precision, recall, and output format of the predicted technique set. Across four CTI benchmarks, TTP-R1 achieves the best average F1, improving sub-technique-level F1 by 7.4 percentage points over Claude Sonnet 4.5 with retrieval augmentation, while running 28x faster when served as an 8B-parameter model on a single GPU.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.06778"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.06778"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-07",
+      "firstPublicDate": "2026-08-07",
+      "onlineDate": "2026-08-07",
+      "topics": [
+        "cs.CR",
+        "cs.CL"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 2,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Jiayun Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Junshen Xu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Zejun Xie",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yi Fan",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.06778v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:56.204Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:56.204Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:56.204Z",
+      "preferredVersionId": "arxiv:2608.06778",
+      "versions": [
+        {
+          "id": "arxiv:2608.06778",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.06778",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.06778v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-109.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "assifiers struggle with severe class imbalance and the large label space, while LLM-based methods--retrieval pipelines and fine-tuned generators--optimize token-level objectives that ",
+              "start": 420,
+              "end": 603
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "automation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "automated",
+                  "quote": "tiple techniques, making accurate and complete extraction challenging. Existing automated approaches fall short in different ways: multi-label classifiers struggle with severe class imbalan",
+                  "start": 275,
+                  "end": 464
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.07639",
+      "recordType": "preprint",
+      "title": "SkillConsist: Detecting Inconsistencies in Agent Skills via Bidirectional Graph Alignment",
+      "abstract": "Agent Skills provide reusable capabilities to LLM agents. Agent Skill inconsistencies can expose undisclosed dangerous behavior or cause wrong Skill selection. Recent Agent Skill research has increasingly examined Agent Skill consistency detection. Existing methods evaluate behaviors or security-property graphs against predefined categories or declared scopes. More recently, PL-HCL uses an LLM-based model to learn consistency across metadata, instructions, and resources. However, declaration and implementation behavior can be mixed across text and code, and a concise declaration can correspond to multiple connected implementation steps. We present SkillConsist to address both challenges. An LLM separates declaration and implementation content into behavior records on the implementation and declaration sides, while static analysis supplements implementation records. These records form declaration and implementation behavior graphs, respectively. Starting from a behavior record on either side, bidirectional graph alignment searches the other graph for a candidate subgraph and expands it along behavior relations until it completely expresses the source-side behavior. Graph differencing identifies conflicts between aligned subgraphs and outputs the detection results. We construct a 633-Skill benchmark from ClawHub's 500 most-downloaded public Skills and 133 Skill-Inject packages. The benchmark contains 319 inconsistent and 314 consistent Skills and 442 localized inconsistency annotations. On this benchmark, SkillConsist achieves 86.85% precision, 89.03% recall, and 87.93% F1 for package-level detection, improving F1 over the best baseline by 20.43 percentage points. For localization, it achieves 67.60% precision, 58.14% recall, and 62.52% F1.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.07639"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.07639"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-07",
+      "firstPublicDate": "2026-08-07",
+      "onlineDate": "2026-08-07",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 1,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "LLM"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Chaofan Meng",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yuhang Zheng",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yingnan Zhou",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Sihan Xu",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.07639v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:56.204Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:56.204Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:56.204Z",
+      "preferredVersionId": "arxiv:2608.07639",
+      "versions": [
+        {
+          "id": "arxiv:2608.07639",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.07639",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.07639v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-109.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "Agent Skills provide reusable capabilities to LLM agents. Agent Skill inconsistencies can expose undisclosed dangerous behavior or cause wrong Skill ",
+              "start": 0,
+              "end": 149
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2609.26131",
+      "recordType": "preprint",
+      "title": "StepTrigger: Contact-State-Triggered Backdoor Attacks on VLM-Powered Legged Robots",
+      "abstract": "Large language models and vision-language models are increasingly used as high-level planners in robotic systems, using task goals and sensor summaries to select navigation or manipulation actions. This creates a new backdoor surface: a compromised planner can behave normally in most runs, yet change its target selection when a hidden trigger is present. Prior attacks on LLM-powered or embodied agents mainly rely on triggers that appear in language, camera-visible objects, scene semantics, or specific sequences of past actions. This paper presents StepTrigger, a contact-state-triggered backdoor attack for VLM-powered legged robots. The trigger is not a prompt token or a visible marker. It is produced by pressure and foot-ground contact patterns that arise when a Unitree Go1 quadruped walks across a dense terrain patch. Unlike conventional visual or textual triggers, contact signals are inherently noisy and may also arise during benign locomotion. To avoid treating every pressure anomaly as a trigger, StepTrigger learns a selective backdoor policy from multimodal robot state, using incidental pressure events as benign examples and dense-patch contacts as poisoned examples. In a stratified offline evaluation, the trained planner achieved 98.75% clean behavior preservation, 92.50% false-trigger rejection, 76.25% true-trigger activation, and 89.17% overall parsed behavior accuracy. These results reveal a backdoor surface in proprioceptive and contact channels that is not captured by defenses focused only on language, vision, or action history.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2609.26131"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2609.26131"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-07",
+      "firstPublicDate": "2026-08-07",
+      "onlineDate": "2026-08-07",
+      "topics": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "…dden trigger is present. Prior attacks on LLM-powered or embodied agents mainly rely on triggers that appear in language, camera-visible objects, scene semantics, or specific sequences of past actions. This paper presents StepTrigger, a contact-state-triggered backdoor attack for VLM-powered legged robots. The trigger …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "rely"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Jiageng Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Doniyorkhon Obidov",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Kaichen Yang",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2609.26131v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:56.204Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:56.204Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:56.204Z",
+      "preferredVersionId": "arxiv:2609.26131",
+      "versions": [
+        {
+          "id": "arxiv:2609.26131",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2609.26131",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2609.26131v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-109.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Large language models and vision-language models are increasingly used as high-level planners in robotic systems, using t",
+              "start": 0,
+              "end": 121
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "Large language models and vision-language models are increasingly used as high-level planners in robotic systems, using t",
+              "start": 0,
+              "end": 121
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": " change its target selection when a hidden trigger is present. Prior attacks on LLM-powered or embodied agents mainly rely on triggers that appear in language, camera-visible objects,",
+              "start": 294,
+              "end": 477
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Large language models and vision-language models are increasingly used as high-level planners in robotic systems, using t",
+                  "start": 0,
+                  "end": 121
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "automation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "robot",
+                  "quote": "StepTrigger: Contact-State-Triggered Backdoor Attacks on VLM-Powered Legged Robots",
+                  "start": 0,
+                  "end": 82
+                },
+                {
+                  "field": "abstract",
+                  "term": "robot",
+                  "quote": "s StepTrigger, a contact-state-triggered backdoor attack for VLM-powered legged robots. The trigger is not a prompt token or a visible marker. It is produced by pressure and foot-ground ",
+                  "start": 552,
+                  "end": 738
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "r rejection, 76.25% true-trigger activation, and 89.17% overall parsed behavior accuracy. These results reveal a backdoor surface in proprioceptive and contact channels that is not capture",
+                  "start": 1311,
+                  "end": 1499
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.06672",
+      "recordType": "preprint",
+      "title": "TA-RAG: Tone Awareness as a Design Imperative for Retrieval-Augmented Generation",
+      "abstract": "Retrieval-Augmented Generation (RAG) has become a robust architecture for grounding large language models (LLMs) in trusted knowledge. However, standard RAG systems exhibit a structural limitation: retrieved documents carry their own communication styles-professional jargon, formal tone, or academic writings-that shape the behavior of a RAG system before any tone instructions are processed, often causing the system to ignore user requests for a specific tone. We term this phenomenon contextual decoupling, in which a system optimises for factual accuracy while remaining decoupled from the social or operational context of the recipient. Building on prior research in public health peer-support communities, we identify three communicative misalignment-linguistic, cognitive, and relational-that can persist even when retrieval is relevant and the generated response is factually accurate. We conceptualise these as failures of communicative transformation, which remain largely invisible to accuracy-centred RAG evaluation metrics. To address this gap, we propose Tone-Aware RAG (TA-RAG), a conceptual architectural framework that positions communicative alignment alongside factual accuracy as a core design objective. TA-RAG operationalises four constraints-stigma-free language, readability alignment, recipient-sensitive adaptation, and empathetic framing-across the retrieval, context construction, generation, and constraint validation phases in the proposed RAG pipeline. We further highlight an evaluation agenda for jointly assessing factual fidelity and communicative alignment, and identify open challenges. We argue that tone awareness should be treated not as an optional refinement, but as a present design imperative for RAG systems operating in socially sensitive and high-stakes contexts.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.06672"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.06672"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-07",
+      "firstPublicDate": "2026-08-07",
+      "onlineDate": "2026-08-07",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "failure",
+              "conceptLabel": "Fehler",
+              "matchedTerm": "failures",
+              "sourceValue": "…ant and the generated response is factually accurate. We conceptualise these as failures of communicative transformation, which remain largely invisible to accuracy-centred RAG evaluation metrics. To address this gap, we propose Tone-Aware RAG (TA-RAG), a conceptual architectural framework that positions communicative …",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trusted",
+              "sourceValue": "… has become a robust architecture for grounding large language models (LLMs) in trusted knowledge. However, standard RAG systems exhibit a structural limitation: retrieved documents carry their own communication styles-professional jargon, formal tone, or academic writings-that shape the behavior of a RAG system before…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:safety": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "trust",
+        "failures",
+        "trusted"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Yong-Bin Kang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Anthony McCosker",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.06672v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:56.204Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:56.204Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:56.204Z",
+      "preferredVersionId": "arxiv:2608.06672",
+      "versions": [
+        {
+          "id": "arxiv:2608.06672",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.06672",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.06672v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-109.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "user",
+              "quote": " before any tone instructions are processed, often causing the system to ignore user requests for a specific tone. We term this phenomenon contextual decoupling, in which a system opti",
+              "start": 349,
+              "end": 533
+            },
+            {
+              "field": "abstract",
+              "term": "professional",
+              "quote": "structural limitation: retrieved documents carry their own communication styles-professional jargon, formal tone, or academic writings-that shape the behavior of a RAG system before any tone i",
+              "start": 175,
+              "end": 367
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "ieval-Augmented Generation (RAG) has become a robust architecture for grounding large language models (LLMs) in trusted knowledge. However, standard RAG systems exhibit a structural limitation: retriev",
+              "start": 4,
+              "end": 205
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "ieval-Augmented Generation (RAG) has become a robust architecture for grounding large language models (LLMs) in trusted knowledge. However, standard RAG systems exhibit a structural limitation: retriev",
+              "start": 4,
+              "end": 205
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "ion (RAG) has become a robust architecture for grounding large language models (LLMs) in trusted knowledge. However, standard RAG systems exhibit a structural limitation: retrieved doc",
+              "start": 27,
+              "end": 211
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "operations",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "high stakes",
+                  "quote": "a present design imperative for RAG systems operating in socially sensitive and high-stakes contexts.",
+                  "start": 1710,
+                  "end": 1811
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "professional",
+                  "quote": "structural limitation: retrieved documents carry their own communication styles-professional jargon, formal tone, or academic writings-that shape the behavior of a RAG system before any tone i",
+                  "start": 175,
+                  "end": 367
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "ieval-Augmented Generation (RAG) has become a robust architecture for grounding large language models (LLMs) in trusted knowledge. However, standard RAG systems exhibit a structural limitation: retriev",
+                  "start": 4,
+                  "end": 205
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": " this phenomenon contextual decoupling, in which a system optimises for factual accuracy while remaining decoupled from the social or operational context of the recipient. Building on prio",
+                  "start": 471,
+                  "end": 659
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [
+          {
+            "topic": "high-skill-operations",
+            "evidence": [
+              {
+                "field": "abstract",
+                "term": "high stakes",
+                "quote": "a present design imperative for RAG systems operating in socially sensitive and high-stakes contexts.",
+                "start": 1710,
+                "end": 1811
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.07446",
+      "recordType": "preprint",
+      "title": "Taxonomy-Driven Analysis of Open-Source AI Risk Mitigation Tools",
+      "abstract": "Rapid adoption of large language models (LLMs) in enterprise settings has introduced operational, security, and governance risks. As generative AI applications move from pilot to production, manual harm identification and mitigation are becoming difficult to scale. Although many tools support model evaluation, adversarial testing, runtime guardrails, and observability, the tooling landscape remains fragmented. Tools are typically designed for specific engineering tasks and described in technical terms that do not align with governance frameworks or risk taxonomies, making it difficult to determine which tools address which risks and where critical gaps remain. This paper proposes a structured protocol to automate AI risk mitigation through a taxonomy-driven analysis of open-source LLM evaluation and security tools. We map the capabilities of 21 prominent open-source tools to the 32 subcategories of the extended MIT AI Risk Mitigation and Response Taxonomy. An LLM-assisted retrieval-augmented generation pipeline analyzes source code and documentation to extract capabilities for each taxonomy category. Reliability assessment yielded moderate agreement (Fleiss' Kappa = 0.509) among three independent reviewers. The analysis reveals a highly skewed landscape in which tools cluster around technical and operational controls, while governance, legal and regulatory, and financial and market controls remain largely unaddressed. This motivates a layered risk-mitigation architecture combining tool-based controls with organizational and regulatory processes. The mapping protocol achieved an F1 score of 75.5% after majority voting. Overall, the study provides a practical mapping between enterprise AI risk categories and open-source mitigation capabilities, identifies where human oversight remains necessary, and presents a taxonomy-driven framework applicable to open-source and proprietary solutions.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.07446"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.07446"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-07",
+      "firstPublicDate": "2026-08-07",
+      "onlineDate": "2026-08-07",
+      "topics": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 8,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "Taxonomy-Driven Analysis of Open-Source AI Risk Mitigation Tools",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "…Ms) in enterprise settings has introduced operational, security, and governance risks. As generative AI applications move from pilot to production, manual harm identification and mitigation are becoming difficult to scale. Although many tools support model evaluation, adversarial testing, runtime guardrails, and observ…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "oversight",
+              "conceptLabel": "Menschliche Aufsicht",
+              "matchedTerm": "human oversight",
+              "sourceValue": "…se AI risk categories and open-source mitigation capabilities, identifies where human oversight remains necessary, and presents a taxonomy-driven framework applicable to open-source and proprietary solutions.",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "participation",
+          "label": "Partizipation & Fairness",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "governance",
+              "conceptLabel": "Governance",
+              "matchedTerm": "governance",
+              "sourceValue": "… models (LLMs) in enterprise settings has introduced operational, security, and governance risks. As generative AI applications move from pilot to production, manual harm identification and mitigation are becoming difficult to scale. Although many tools support model evaluation, adversarial testing, runtime guardrails,…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 5,
+        "topic:safety": 8,
+        "topic:participation": 2,
+        "classificationMaximum": 8
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "generative AI",
+        "human oversight",
+        "risk",
+        "governance"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Afreen Alam",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Evgenija Popchanovska",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Ana Gjorgjevikj",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Maryan Rizinski",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Lubomir T. Chitkushev",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Irena Vodenska",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Dimitar Trajanov",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.07446v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:56.204Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:56.204Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:56.204Z",
+      "preferredVersionId": "arxiv:2608.07446",
+      "versions": [
+        {
+          "id": "arxiv:2608.07446",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.07446",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.07446v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-109.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "se AI risk categories and open-source mitigation capabilities, identifies where human oversight remains necessary, and presents a taxonomy-driven framework applicable to open-source and",
+              "start": 1710,
+              "end": 1895
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "AI",
+              "quote": "Taxonomy-Driven Analysis of Open-Source AI Risk Mitigation Tools",
+              "start": 0,
+              "end": 64
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Rapid adoption of large language models (LLMs) in enterprise settings has introduced operational, security, and governance risks. As genera",
+              "start": 0,
+              "end": 139
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "Rapid adoption of large language models (LLMs) in enterprise settings has introduced operational, security, and governance risks. As genera",
+              "start": 0,
+              "end": 139
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "workplace",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "organizational",
+                  "quote": "vates a layered risk-mitigation architecture combining tool-based controls with organizational and regulatory processes. The mapping protocol achieved an F1 score of 75.5% after majority voting.",
+                  "start": 1451,
+                  "end": 1645
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "pilot",
+                  "quote": "tional, security, and governance risks. As generative AI applications move from pilot to production, manual harm identification and mitigation are becoming difficult to scale. Although ",
+                  "start": 90,
+                  "end": 275
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "generative",
+                  "quote": "erprise settings has introduced operational, security, and governance risks. As generative AI applications move from pilot to production, manual harm identification and mitigation are becomi",
+                  "start": 53,
+                  "end": 243
+                },
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Rapid adoption of large language models (LLMs) in enterprise settings has introduced operational, security, and governance risks. As genera",
+                  "start": 0,
+                  "end": 139
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "highly skewed landscape in which tools cluster around technical and operational controls, while governance, legal and regulatory, and financial and market controls remain largely unaddress",
+                  "start": 1250,
+                  "end": 1438
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.06663",
+      "recordType": "preprint",
+      "title": "The Horizon Gap: Planning, Memory, Execution, Training, and Evaluation for Long-Horizon LLM Agents",
+      "abstract": "Frontier language models solve reasoning problems in a single forward pass that would have been research contributions years ago, yet fail at multi-hour tasks: losing track of earlier decisions, declaring half-finished work done, or drifting from goals. We call this the horizon gap and survey 1,547 arXiv papers (2024-2026) collected via systematic seed harvest with a disclosed 26.8% bleed filter, extended by targeted supplementation. We disambiguate three routinely conflated properties: long-horizon (task property: required steps), long-context (model property: token capacity), and long-term memory (system property: persistence across steps/sessions). We organize the corpus into six categories tracking a long-horizon task's lifecycle -- planning, memory, execution, training, evaluation, and foundations/safety -- crossed with an axis capturing where horizons are carried (within-context, within-task-beyond-context, or cross-task-persistent). Across all categories, we find the same pattern: outcome-only signals grow uninformative as horizons lengthen, and the field's response -- whether process reward models, credit assignment, or trajectory-level diagnostics -- manufactures denser step-level signals. We treat critical and diagnostic literature as first-class threads throughout, arguing that segregating critique from method would routinely split single papers across chapters. We close by naming open measurement problems: decomposing model versus harness capability, managing correlated bias in process-level signals used for both training and evaluation, and whether long-horizon reliability admits general predictive theory.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.06663"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.06663"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-07",
+      "firstPublicDate": "2026-08-07",
+      "onlineDate": "2026-08-07",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…lifecycle -- planning, memory, execution, training, evaluation, and foundations/safety -- crossed with an axis capturing where horizons are carried (within-context, within-task-beyond-context, or cross-task-persistent). Across all categories, we find the same pattern: outcome-only signals grow uninformative as horizons…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:safety": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "LLM",
+        "safety"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Mingguang Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Licheng Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Bo Qu",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.06663v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:56.204Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:56.204Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:56.204Z",
+      "preferredVersionId": "arxiv:2608.06663",
+      "versions": [
+        {
+          "id": "arxiv:2608.06663",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.06663",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.06663v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-109.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "zon Gap: Planning, Memory, Execution, Training, and Evaluation for Long-Horizon LLM Agents",
+              "start": 8,
+              "end": 98
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "survey",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "survey",
+                  "quote": "lf-finished work done, or drifting from goals. We call this the horizon gap and survey 1,547 arXiv papers (2024-2026) collected via systematic seed harvest with a disclosed 26.8% bleed f",
+                  "start": 207,
+                  "end": 393
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1007/s10489-026-07208-y",
+      "recordType": "preprint",
+      "title": "Towards Sustainable Artificial Intelligence: A Comprehensive Review and Comparative Analysis of Deep Learning Models' Carbon Footprint",
+      "abstract": "Artificial Intelligence (AI) and Machine Learning (ML) have become powerful tools for supporting and automating complex human tasks. Despite their benefits, growing attention has been directed toward their environmental implications, primarily due to their high energy demands and associated carbon emissions. This concern is particularly relevant in light of the increasing deployment of large-scale models, especially Deep Learning (DL) architectures, which provide advanced predictive capabilities but require substantial computational resources. This paper presents a systematic review of research on Green AI, Green DL, and optimization techniques aimed at reducing the environmental impact of AI models. In addition, we examine and compare several carbon measurement tools for estimating emissions generated by AI algorithms. To complement the review, we conducted an empirical evaluation using a CPU-based experimental setup, in which six DL models were implemented for a multi-label classification task. The objective was to quantify and compare their overall carbon emissions and to determine which stages of the DL lifecycle contribute most significantly to the total footprint. The results show that the training phase is the primary source of emissions. Moreover, the findings reveal that increased architectural complexity does not systematically translate into proportional accuracy gains, highlighting the importance of carefully balancing predictive performance and environmental cost. These results reinforce the need to integrate sustainability considerations into model selection and AI system design.",
+      "doi": "10.1007/s10489-026-07208-y",
+      "externalIds": {
+        "arxiv": "2608.09998"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.09998"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-07",
+      "firstPublicDate": "2026-08-07",
+      "onlineDate": "2026-08-07",
+      "topics": [
+        "cs.AI",
+        "cs.CY",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "attention",
+              "conceptLabel": "Aufmerksamkeit",
+              "matchedTerm": "attention",
+              "sourceValue": "… supporting and automating complex human tasks. Despite their benefits, growing attention has been directed toward their environmental implications, primarily due to their high energy demands and associated carbon emissions. This concern is particularly relevant in light of the increasing deployment of large-scale mode…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:cognition": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "learning",
+        "attention"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Samar Garrab",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Sarra Boughriou",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Manel BenSassi",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.09998v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:56.204Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:56.204Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:56.204Z",
+      "preferredVersionId": "arxiv:2608.09998",
+      "versions": [
+        {
+          "id": "arxiv:2608.09998",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.09998",
+          "doi": "10.1007/s10489-026-07208-y",
+          "url": "https://arxiv.org/abs/2608.09998v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-109.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": " Learning (ML) have become powerful tools for supporting and automating complex human tasks. Despite their benefits, growing attention has been directed toward their environmental impli",
+              "start": 40,
+              "end": 225
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "artificial intelligence",
+              "quote": "Towards Sustainable Artificial Intelligence: A Comprehensive Review and Comparative Analysis of Deep Learning Models' Carbon Footprint",
+              "start": 0,
+              "end": 134
+            },
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "Artificial Intelligence (AI) and Machine Learning (ML) have become powerful tools for supporting and automating complex hum",
+              "start": 0,
+              "end": 123
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "Artificial Intelligence (AI) and Machine Learning (ML) have become powerful tools for supporting and automating complex human t",
+              "start": 0,
+              "end": 127
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "ed architectural complexity does not systematically translate into proportional accuracy gains, highlighting the importance of carefully balancing predictive performance and environmental ",
+                  "start": 1308,
+                  "end": 1496
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": [
+            {
+              "value": "review",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "systematic review",
+                  "quote": "bilities but require substantial computational resources. This paper presents a systematic review of research on Green AI, Green DL, and optimization techniques aimed at reducing the environmental ",
+                  "start": 492,
+                  "end": 689
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "arxiv:2608.07053",
       "recordType": "preprint",
@@ -20501,1724 +21811,6 @@
           "population": [],
           "aiFunction": [],
           "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.04505",
-      "recordType": "preprint",
-      "title": "K-EXAONE 2.0 Technical Report",
-      "abstract": "This technical report presents K-EXAONE 2.0, an open-weight multilingual foundation model developed by LG AI Research as a step in our effort toward global frontier-scale foundation models. Rather than training from scratch, we upcycle K-EXAONE and expand its architecture, yielding a Mixture-of-Experts (MoE) model with 750B total parameters and approximately 37B activated per token---more than three times the capacity of its predecessor. K-EXAONE 2.0 supports context lengths of up to 256K tokens and expands multilingual coverage from six to ten languages. Its training pipeline combines continual pre-training, difficulty-focused mid-training, and post-training to strengthen reasoning, agentic coding, multilingual capability, and safety grounded in Korean sociocultural contexts. Across nine evaluation categories selected to reflect the conditions of practical use, K-EXAONE 2.0 improves over K-EXAONE and remains competitive with open-weight models, showing its largest gains in agentic coding and long-context understanding and its clearest strengths in long-context retrieval and safety. Released under the Apache 2.0 license, K-EXAONE 2.0 enables the wider AI ecosystem to evaluate, deploy, adapt, and build upon it, while marking the beginning---rather than the endpoint---of our challenge toward the global frontier.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.04505"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.04505"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-05",
-      "firstPublicDate": "2026-08-05",
-      "onlineDate": "2026-08-05",
-      "topics": [
-        "cs.CL"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "agency",
-          "label": "Work Design & Agency",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "agency",
-              "conceptLabel": "Agency",
-              "matchedTerm": "agentic",
-              "sourceValue": "…ng, difficulty-focused mid-training, and post-training to strengthen reasoning, agentic coding, multilingual capability, and safety grounded in Korean sociocultural contexts. Across nine evaluation categories selected to reflect the conditions of practical use, K-EXAONE 2.0 improves over K-EXAONE and remains competitiv…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…-training to strengthen reasoning, agentic coding, multilingual capability, and safety grounded in Korean sociocultural contexts. Across nine evaluation categories selected to reflect the conditions of practical use, K-EXAONE 2.0 improves over K-EXAONE and remains competitive with open-weight models, showing its larges…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:agency": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "foundation models",
-        "safety",
-        "agentic"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Eunbi Choi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Kibong Choi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Sehyun Chun",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Seokhee Hong",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Junwon Hwang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Hyojin Jeon",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Ahra Jo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Hyunjik Jo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yeonsik Jo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Minhyeok Jung",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Doyoung Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Heegyu Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Joonkee Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Seonghwan Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Soyeon Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Sunkyoung Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yireun Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yongil Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Byungoh Ko",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Changhun Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Dohaeng Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Haeju Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Jinsik Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Kyungmin Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Minwoo Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Wonkee Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Sangha Park",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Sungjune Park",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Kwangrok Ryoo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Kijung Seo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Minju Seo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yongwoo Song",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Sejong Yang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Heuiyeen Yeen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Stanley Jungkyu Choi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yemuk Choi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yongchan Chun",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Jiwon Ham",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Dasol Hong",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Sujeong Im",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Kijeong Jeon",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Gerrard Jeongwon Jo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Hyeongjun Jo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yujin Jo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Jiyeon Jung",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Naeun Kang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Daeseong Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Euisoon Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Hayeon Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Hyosang Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Myoungshin Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Unsol Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Youchul Kim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Chaeeun Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "ChaeYoon Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Edward Hwayoung Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Honglak Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Hwansoo Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Minkyung Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Sangeun Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Solji Lim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Woohyung Lim",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Chanwoo Moon",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Jueun Mun",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Jimin Park",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Seojeong Park",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yongmin Park",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Hyerin Seo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Donghyeon Shin",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Donghyun Son",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Eunyong Son",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Kaehyun Um",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Sihoon Yang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Chang En Yea",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Sihyuk Yi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Kyungjae Yoo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Chansik Yoon",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.04505v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:29.380Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:29.380Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
-      "preferredVersionId": "arxiv:2608.04505",
-      "versions": [
-        {
-          "id": "arxiv:2608.04505",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.04505",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.04505v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-109.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "This technical report presents K-EXAONE 2.0, an open-weight multilingual foundation model developed by LG AI Research as a step in our effort toward global frontier-scale foundation models.",
-              "start": 0,
-              "end": 189
-            },
-            {
-              "field": "abstract",
-              "term": "foundation models",
-              "quote": "eveloped by LG AI Research as a step in our effort toward global frontier-scale foundation models. Rather than training from scratch, we upcycle K-EXAONE and expand its architecture, yielding a Mix",
-              "start": 91,
-              "end": 288
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "ents K-EXAONE 2.0, an open-weight multilingual foundation model developed by LG AI Research as a step in our effort toward global frontier-scale foundation models. Rather than traini",
-              "start": 26,
-              "end": 208
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.05054",
-      "recordType": "preprint",
-      "title": "MarsCast: Transfer Learning of AI Weather Foundation Models to Planetary Atmospheres",
-      "abstract": "We investigate the transferability of Earth weather foundation models to planetary atmospheres by adapting the GraphCast graph neural weather forecasting model to Mars. While GraphCast achieves state-of-the-art performance for terrestrial forecasting, its applicability to non-Earth environments remains unexplored. Using the Mars Climate Database (MCD), which provides global atmospheric fields across vertical altitude levels (similar to Earth pressure levels), we evaluate zero-shot and fine-tuned GraphCast predictions of Martian temperature and wind fields. Zero-shot forecasts produce a surprisingly accurate depiction of current conditions but fail to reproduce diurnal variability and rapidly decay toward climatological mean states. To address this limitation, we fine-tune GraphCast using MCD variables and top-of-atmosphere solar radiation forcing while holding humidity constant. Fine-tuning enables rapid learning of Martian thermal variability. Within as few as 10 training epochs, the model begins to capture the diurnal cycle and forecasts up to 10 days reproduce seasonal and vertical temperature structure. Prediction quality improves with training sample size and exhibits sensitivity to seasonal initialization. These results demonstrate that Earth-trained AI weather models can be adapted to simulate Martian atmospheric dynamics, providing a pathway toward rapid planetary weather prediction to support mission operations, dust storm risk mitigation, and future human exploration.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.05054"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.05054"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-05",
-      "firstPublicDate": "2026-08-05",
-      "onlineDate": "2026-08-05",
-      "topics": [
-        "astro-ph.EP",
-        "cs.AI",
-        "cs.CV",
-        "cs.LG"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 6,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "MarsCast: Transfer Learning of AI Weather Foundation Models to Planetary Atmospheres",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…ar radiation forcing while holding humidity constant. Fine-tuning enables rapid learning of Martian thermal variability. Within as few as 10 training epochs, the model begins to capture the diurnal cycle and forecasts up to 10 days reproduce seasonal and vertical temperature structure. Prediction quality improves with …",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…rd rapid planetary weather prediction to support mission operations, dust storm risk mitigation, and future human exploration.",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:learning": 6,
-        "topic:safety": 2,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "foundation models",
-        "learning",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "M. L. Carroll",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "J. Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "S. D. Guzewich",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "G. Villanueva",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "J. A. Caraballo-Vega",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "M. J. Frost",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.05054v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:29.380Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:29.380Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
-      "preferredVersionId": "arxiv:2608.05054",
-      "versions": [
-        {
-          "id": "arxiv:2608.05054",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.05054",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.05054v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-109.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "rediction to support mission operations, dust storm risk mitigation, and future human exploration.",
-              "start": 1404,
-              "end": 1502
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "foundation model",
-              "quote": "MarsCast: Transfer Learning of AI Weather Foundation Models to Planetary Atmospheres",
-              "start": 0,
-              "end": 84
-            },
-            {
-              "field": "title",
-              "term": "foundation models",
-              "quote": "MarsCast: Transfer Learning of AI Weather Foundation Models to Planetary Atmospheres",
-              "start": 0,
-              "end": 84
-            },
-            {
-              "field": "title",
-              "term": "AI",
-              "quote": "MarsCast: Transfer Learning of AI Weather Foundation Models to Planetary Atmospheres",
-              "start": 0,
-              "end": 84
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.04307",
-      "recordType": "preprint",
-      "title": "MIDAS: Multi-LLM Iterative Data-Adaptive Summarization",
-      "abstract": "Text summarization is deceptively difficult. While condensing information seems straightforward, real-world enterprise summarization of support tickets, legal documents, incident reports, and more, demands strict adherence to domain-specific guidelines, output formats, and organizational conventions. Crafting prompts that reliably satisfy these constraints is labor-intensive, requiring significant human expertise and continuous maintenance as requirements evolve. Existing automated prompt optimization methods reduce this burden through Large Language Model (LLM) critique-driven refinement, yet remain limited by static prompts that cannot adapt to the diversity of summary applications. We propose Multi-LLM Iterative Data-Adaptive Summarization (MIDAS), a multi-LLM framework that extends this paradigm with data-driven pattern learning and use-case-specific personalization, enabling automatic adaptation to different summarization requirements without manual prompt engineering. Applied to enterprise customer ticket summarization across five output formats, MIDAS achieves the strongest overall performance against state-of-the-art critique-driven optimization frameworks such as CriSPO and ZERA, improving ROUGE-1 by up to 11.0%, ROUGE-2 by up to 18.2%, and ROUGE-L by up to 8.0%, while consistently improving BERTScore F1 across all formats and output types. We additionally demonstrate cross-model and cross-domain generalization through multi-LLM configurations and finance-domain summarization benchmarks.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.04307"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.04307"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-05",
-      "firstPublicDate": "2026-08-05",
-      "onlineDate": "2026-08-05",
-      "topics": [
-        "cs.CL",
-        "cs.AI",
-        "cs.MA"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…DAS), a multi-LLM framework that extends this paradigm with data-driven pattern learning and use-case-specific personalization, enabling automatic adaptation to different summarization requirements without manual prompt engineering. Applied to enterprise customer ticket summarization across five output formats, MIDAS a…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "expertise",
-              "conceptLabel": "Expertise",
-              "matchedTerm": "expertise",
-              "sourceValue": "…iably satisfy these constraints is labor-intensive, requiring significant human expertise and continuous maintenance as requirements evolve. Existing automated prompt optimization methods reduce this burden through Large Language Model (LLM) critique-driven refinement, yet remain limited by static prompts that cannot a…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:learning": 4,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "large language model",
-        "LLM",
-        "learning",
-        "expertise"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Karen Lee",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Dhanashree Balaram",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Seojun Shon",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Umair Rasheed",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.04307v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:29.380Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:29.380Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
-      "preferredVersionId": "arxiv:2608.04307",
-      "versions": [
-        {
-          "id": "arxiv:2608.04307",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.04307",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.04307v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-109.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "at reliably satisfy these constraints is labor-intensive, requiring significant human expertise and continuous maintenance as requirements evolve. Existing automated prompt optimization",
-              "start": 321,
-              "end": 506
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "MIDAS: Multi-LLM Iterative Data-Adaptive Summarization",
-              "start": 0,
-              "end": 54
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "olve. Existing automated prompt optimization methods reduce this burden through Large Language Model (LLM) critique-driven refinement, yet remain limited by static prompts that cannot adapt to the div",
-              "start": 462,
-              "end": 662
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "ed prompt optimization methods reduce this burden through Large Language Model (LLM) critique-driven refinement, yet remain limited by static prompts that cannot adapt to the diversit",
-              "start": 484,
-              "end": 667
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "workplace",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "organizational",
-                  "quote": "re, demands strict adherence to domain-specific guidelines, output formats, and organizational conventions. Crafting prompts that reliably satisfy these constraints is labor-intensive, requiring",
-                  "start": 194,
-                  "end": 388
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "olve. Existing automated prompt optimization methods reduce this burden through Large Language Model (LLM) critique-driven refinement, yet remain limited by static prompts that cannot adapt to the div",
-                  "start": 462,
-                  "end": 662
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "automation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "automated",
-                  "quote": "ant human expertise and continuous maintenance as requirements evolve. Existing automated prompt optimization methods reduce this burden through Large Language Model (LLM) critique-driven r",
-                  "start": 397,
-                  "end": 586
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [
-          {
-            "topic": "high-skill-operations",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "expertise",
-                "quote": "iably satisfy these constraints is labor-intensive, requiring significant human expertise and continuous maintenance as requirements evolve. Existing automated prompt optimization methods r",
-                "start": 327,
-                "end": 516
-              }
-            ]
-          }
-        ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.14684",
-      "recordType": "preprint",
-      "title": "Mitigating Rubric Interference in LLM Judges via On-Policy Self-Distillation",
-      "abstract": "LLM judges increasingly evaluate responses against fine-grained rubric checklists. When a sample requires multiple rubrics, current methods typically assess each in a separate inference call. Evaluating all rubrics in a single pass is a natural alternative with greater efficiency, but we find that it introduces rubric interference: the verdict on one rubric shifts depending on which other rubrics are co-present. In a preliminary study, only one-third of samples receive fully consistent verdicts when evaluated under rubric sets of varying composition. We develop a measurement framework that probes interference through four controlled operations: rubric set expansion, subsetting, reordering, and noise injection. To mitigate interference without external supervision, we propose Self-Anchored Rubric Alignment (SARA). SARA uses a model's own single-rubric judgments as stable anchors and aligns multi-rubric reasoning with these anchors through on-policy self-distillation. We validate SARA on three datasets (HealthBench, FLASK, ResearchQA) and two model families (Qwen3, Llama-3.1). SARA consistently improves evaluation consistency while maintaining agreement with both base models and GPT-4.1 as a reference judge. Furthermore, the learned consistency transfers across datasets, confirming that SARA teaches a general capability rather than fitting dataset-specific patterns.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.14684"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.14684"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-05",
-      "firstPublicDate": "2026-08-05",
-      "onlineDate": "2026-08-05",
-      "topics": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 1,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "LLM"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Dingyao Yu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Tong Zhang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yutao Mou",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yunxiao Zhang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Wei Ye",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Shikun Zhang",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.14684v2",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:29.380Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:29.380Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
-      "preferredVersionId": "arxiv:2608.14684",
-      "versions": [
-        {
-          "id": "arxiv:2608.14684",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.14684",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.14684v2"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-109.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "Mitigating Rubric Interference in LLM Judges via On-Policy Self-Distillation",
-              "start": 0,
-              "end": 76
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "LLM judges increasingly evaluate responses against fine-grained rubric checklists. When a sample requir",
-              "start": 0,
-              "end": 103
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.05409",
-      "recordType": "preprint",
-      "title": "Mood Matters: How Syntactic Sensitivity Undermines Safety Alignment",
-      "abstract": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticated jailbreaks that sidestep established safeguards. For instance, prior work by Andriushchenko et al. (2025) has found that changing the grammatical tense from present to past can be enough to elicit harmful responses. In this work, we uncover a more general failure of non-imperative syntactic forms. We demonstrate that this syntactic vulnerability exists in 16 models up to 70B parameters, using behavioral evaluation. To investigate the root cause, we apply causal mediation analysis, finding that refusal is partially conditioned on upstream syntactic features. By steering these purely syntactic features we are able to trigger and suppress refusal. Finally, we trace this ill-conditioning to linguistically biased post-training data of open-source models and show that increasing syntactic diversity can mitigate the issue. Our findings suggest that current alignment approaches introduce confounders that prevent a pure semantic grounding of the refusal decision.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.05409"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.05409"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-05",
-      "firstPublicDate": "2026-08-05",
-      "onlineDate": "2026-08-05",
-      "topics": [
-        "cs.CL"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 8,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Mood Matters: How Syntactic Sensitivity Undermines Safety Alignment",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticated jailbreaks that sidestep established safeguards. For instance, prior work by Andriushchenko et al. (2025) has found that changing the grammatical tense from present to past can be enough to elicit…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "failure",
-              "conceptLabel": "Fehler",
-              "matchedTerm": "failure",
-              "sourceValue": "… be enough to elicit harmful responses. In this work, we uncover a more general failure of non-imperative syntactic forms. We demonstrate that this syntactic vulnerability exists in 16 models up to 70B parameters, using behavioral evaluation. To investigate the root cause, we apply causal mediation analysis, finding th…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:safety": 8,
-        "classificationMaximum": 8
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "safety",
-        "failure"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Alina Klerings",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Jannik Brinkmann",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Heiner Stuckenschmidt",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Simone Paolo Ponzetto",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.05409v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:29.380Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:29.380Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
-      "preferredVersionId": "arxiv:2608.05409",
-      "versions": [
-        {
-          "id": "arxiv:2608.05409",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.05409",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.05409v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-109.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticat",
-              "start": 0,
-              "end": 121
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticat",
-              "start": 0,
-              "end": 121
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticat",
-                  "start": 0,
-                  "end": 121
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.07581",
-      "recordType": "preprint",
-      "title": "Multi-Branch Policy Optimization for Multimodal Large Language Models",
-      "abstract": "Group-based reinforcement learning methods for multimodal large language models typically rely on trajectory-level credit assignment that applies a single advantage to all tokens in a response. However, multimodal reasoning involves substantially higher perceptual uncertainty than text-only settings, where the model must repeatedly re-examine visual information to verify intermediate interpretations, and different visual groundings can lead to divergent reasoning paths, making such uniform credit assignment particularly inadequate and causing relative advantages to progressively degenerate toward zero. To address these challenges, we propose Multi-Branch Policy Optimization (MBPO), a tree-based framework that constructs reasoning trees at vision-language decision boundaries, enabling sibling branches to explore diverse visual hypotheses and assigning segment-level credit through branch-relative advantages. We further introduce a temporal replay buffer to reuse informative segments while controlling policy staleness. Experiments on several multimodal reasoning benchmarks show that MBPO outperforms representative baselines, improving both learning signal quality and optimization efficiency. The code is publicly available at https://github.com/ShuaiLyu0110/MBPO.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.07581"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.07581"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-05",
-      "firstPublicDate": "2026-08-05",
-      "onlineDate": "2026-08-05",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 3,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Shuai Lyu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yuning Gong",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Ruiling Gao",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Xiaoran Shang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Zhonghong Ou",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Ping Zong",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yifan Zhu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yuan Sun",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yang Qin",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Peng Hu",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.07581v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:29.380Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:29.380Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
-      "preferredVersionId": "arxiv:2608.07581",
-      "versions": [
-        {
-          "id": "arxiv:2608.07581",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.07581",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.07581v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-109.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "large language model",
-              "quote": "Multi-Branch Policy Optimization for Multimodal Large Language Models",
-              "start": 0,
-              "end": 69
-            },
-            {
-              "field": "title",
-              "term": "large language models",
-              "quote": "Multi-Branch Policy Optimization for Multimodal Large Language Models",
-              "start": 0,
-              "end": 69
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Group-based reinforcement learning methods for multimodal large language models typically rely on trajectory-level credit assignment that applies a single advantage to all tokens ",
-              "start": 0,
-              "end": 179
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "large language model",
-                  "quote": "Multi-Branch Policy Optimization for Multimodal Large Language Models",
-                  "start": 0,
-                  "end": 69
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Group-based reinforcement learning methods for multimodal large language models typically rely on trajectory-level credit assignment that applies a single advantage to all tokens ",
-                  "start": 0,
-                  "end": 179
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "replay buffer to reuse informative segments while controlling policy staleness. Experiments on several multimodal reasoning benchmarks show that MBPO outperforms representative baselines, imp",
-                  "start": 952,
-                  "end": 1143
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.05076",
-      "recordType": "preprint",
-      "title": "MultiPathFormer: Towards a Foundation Model for Multipath Wireless Propagation",
-      "abstract": "Recent advances in machine learning have enabled training of wireless foundation models, which aim to support tasks such as channel estimation, beam prediction, and localization based on wireless signals. Existing wireless foundation models typically pretrain on channel tensors using masked reconstruction over subcarriers, antennas, or time but ignore the physical characteristics of wireless propagation. In this work, we propose to instead use multipath propagation as the fundamental pretraining object. We present MultiPathFormer, an autoregressive foundation model that represents each transmitter-receiver link as an ordered sequence of continuous-valued path tokens and pretrains with next-path prediction. We introduce an Environmental RAG (retrieval-augmented generation) mechanism and a first-path codebook on top of the transformer backbone, leveraging environment knowledge to improve path statistics estimation like delay and power by up to 59%. MultiPathFormer pretrained on 27 environments transfers to unseen users and, after scenario-specific fine-tuning, outperforms training the corresponding models from scratch in new environments. Across downstream tasks, it outperforms SOTA channel-based foundation models, achieving 5.57 m mean localization error, 0.914 top-3 beam accuracy, 0.994 line-of-sight classification accuracy, and 0.561 channel estimation NMSE. These results show that path-level pretraining can learn reusable representations of wireless propagation.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.05076"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.05076"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-05",
-      "firstPublicDate": "2026-08-05",
-      "onlineDate": "2026-08-05",
-      "topics": [
-        "cs.LG",
-        "cs.AI",
-        "eess.SP"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 3,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "foundation models",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Blessed Guda",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Kayley Sze",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Carlee Joe-Wong",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.05076v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:29.380Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:29.380Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
-      "preferredVersionId": "arxiv:2608.05076",
-      "versions": [
-        {
-          "id": "arxiv:2608.05076",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.05076",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.05076v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-109.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "by up to 59%. MultiPathFormer pretrained on 27 environments transfers to unseen users and, after scenario-specific fine-tuning, outperforms training the corresponding models from scratc",
-              "start": 947,
-              "end": 1132
-            },
-            {
-              "field": "abstract",
-              "term": "users",
-              "quote": "by up to 59%. MultiPathFormer pretrained on 27 environments transfers to unseen users and, after scenario-specific fine-tuning, outperforms training the corresponding models from scratc",
-              "start": 947,
-              "end": 1132
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "foundation model",
-              "quote": "MultiPathFormer: Towards a Foundation Model for Multipath Wireless Propagation",
-              "start": 0,
-              "end": 78
-            },
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "Recent advances in machine learning have enabled training of wireless foundation models, which aim to support tasks such as channel estimation, beam prediction, and localization based on ",
-              "start": 0,
-              "end": 187
-            },
-            {
-              "field": "abstract",
-              "term": "foundation models",
-              "quote": "Recent advances in machine learning have enabled training of wireless foundation models, which aim to support tasks such as channel estimation, beam prediction, and localization based on ",
-              "start": 0,
-              "end": 187
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": "d foundation models, achieving 5.57 m mean localization error, 0.914 top-3 beam accuracy, 0.994 line-of-sight classification accuracy, and 0.561 channel estimation NMSE. These results show",
-                  "start": 1212,
-                  "end": 1400
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
           "studyDesign": []
         },
         "personalFit": [],

@@ -1,7 +1,68 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-06T12:03:50.749Z",
+  "generatedAt": "2026-10-07T11:49:04.786Z",
   "documents": [
+    {
+      "id": "arxiv:2608.04285",
+      "abstract": "Neurosymbolic AI systems that integrate machine learning and symbolic reasoning are rapidly gaining attention. They complement the data-intensive statistical approaches of neural networks and language models with symbolic reasoning algorithms to function in high-stakes domains or in low-data regimes that characterize many real-world applications. We argue that the neurosymbolic combination of machine learning and formal reasoning is not a niche approach within AI, but rather includes many already successful techniques that are of crucial importance to the development of reliable, efficient and, ultimately, trustworthy systems. This perspective prompts a re-examination of the design of current AI systems. We show that many leading AI systems, including some that are not traditionally considered as neurosymbolic, can be analysed from the perspective of four principles of neurosymbolic AI design: Reasoning, Assurances, Interfacing and Learning (RAIL). Applying the RAIL framework offers a unified view of seemingly disparate AI systems, ranging from physics-aware machine learning to neuro-guided search (such as Google DeepMind's Alpha-* suite), causal learning and tool-augmented Large Language Models. Importantly, the RAIL principles will enable engineers to make better-informed and more principled decisions about the design and deployment of production-level AI systems. In this article, we introduce the RAIL principles, examine how they can be applied across major areas of AI, and illustrate how they may guide practitioners to integrate neurosymbolic methods into next-generation AI technologies.",
+      "topics": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.03468",
+      "abstract": "Historical tool-use trajectories provide valuable experience for large language model (LLM) agents to plan and coordinate tool usage. Existing approaches directly construct tool-level graphs from these trajectories, but the resulting graphs remain tied to specific tools and are hard to generalize across tool sets. To tackle this challenge, we find that despite differences in the tools involved, analogous tasks often share a common function-level workflow structure, which serves as a potentially more transferable abstraction for tool planning. Based on this insight, we propose ToolLIFT, a framework that lifts tool-specific trajectories into a function-level workflow graph (FWG) for generalizable tool planning. Specifically, we first propose a trajectory-lifting mechanism that encodes workflow structures in the FWG and shares collaboration experience across tools. Then, building on the global structure of the FWG, we introduce decoupled workflow planning and tool selection to align individual tool choices with the overall workflow. Lastly, to ensure reliable tool dataflow, we adopt Reinforcement Learning (RL) and propose source-gated and skill-specific rewards to maintain source-traceable information flow across tool calls. Experiments on two in-distribution (ID) and three out-of-distribution (OOD) benchmarks show that ToolLIFT consistently outperforms state-of-the-art baselines, demonstrating strong generalization to unseen tool sets.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.03527",
+      "abstract": "Retrieval systems help deep research agents generate high-quality answers by providing relevant documents. However, existing retrievers typically select documents through relevance matching, while individually well-matched top-$k$ documents may not form a \\textit{set} that satisfies the complex information needs of an agent query (\\eg, diverse, concise and authoritative documents). In this paper, we propose search-oriented rubrics that \\textit{explicitly} define the requirements that high-quality document sets should satisfy for each agent query. Our search rubrics are organized into a hierarchical structure and synthesized using a powerful LLM. Based on these search rubrics, we further train a document reranker \\textbf{RubricRanker} to select a high-quality subset from retrieved documents. We design a two-stage training framework that consists of rubrics-guided supervised fine-tuning and rubric-based reinforcement learning. Extensive experiments demonstrate that RubricRanker outperforms the strongest baseline by 2.6 points on four deep research benchmarks and generalizes well to five RAG benchmarks.",
+      "topics": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.04007",
+      "abstract": "Tool-Integrated Reasoning (TIR) enables LLMs to solve complex tasks through iterative tool interactions. However, existing reinforcement learning methods often rely on trajectory-level supervision, limiting fine-grained credit assignment in long-horizon TIR scenarios. On-policy self-distillation offers denser signals through teacher branches with privileged context, but existing approaches typically derive such context from ground-truth answers or retrieved skills, which may not reflect the states actually visited by the agent. Moreover, token-level supervision fails to capture the turn-level structure of tool interactions. To address this, we propose TurnSight, a turn-level hindsight self-distillation framework that derives supervision directly from execution-conditioned hindsight. It then constructs multiple hindsight views with different lookahead horizons and selects reliable supervision through cross-horizon directional agreement. Finally, the selected hindsight signal is normalized across sibling rollouts and used to adaptively modulate RL advantages while preserving their original optimization direction. Extensive experiments on three benchmarks demonstrate the effectiveness of TurnSight. Our codes are available at https://github.com/quchangle1/TurnSight.",
+      "topics": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.03137",
+      "abstract": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlier evidence during long-horizon interaction. Existing methods commonly optimize long-term memory (LTM) and short-term memory (STM) separately, while unified policies are often trained primarily with trajectory-level feedback, which provides weak credit for individual memory decisions. We present Verifiable Memory (VerMem), a framework that represents LTM, active context, and episodic history as distinct states and controls them with one memory operation policy. Seven atomic operations let the policy add, revise, or soft-delete LTM entries; retrieve LTM into the active context; filter or summarize the active context; and restore selected episodic fragments. VerMem is initialized by supervised fine-tuning and trained with a three-stage reinforcement-learning curriculum. The local verifier scores executable memory transitions, and a global verifier assesses evidence coherence and terminal-memory consistency after task completion. These scores are combined with programmatically computed task, evidence-recall, efficiency, and constraint signals through hierarchical credit assignment. The verifiers are used only during training. Across five benchmarks and two LLM backbones, VerMem achieves the best result on the vast majority of reported metrics and consistently outperforms strong memory baselines. Under controlled online-token budgets on three interactive benchmarks, it also achieves the strongest efficiency--performance frontier among the compared methods. Code is available at https://github.com/Sun-SYSU-24/VerMem.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.03979",
+      "abstract": "We introduce Video-DeepResearch (Video-DR), extending multimodal agents from static images to continuous video streams, a setting that demands dense spatiotemporal grounding coupled with open-web exploration. Preliminary evaluations reveal two critical bottlenecks in current models: (1) modality bias, where agents bypass visual tools in favor of textual search, and (2) parametric knowledge leakage, where models rely on internal memory rather than genuine tool-augmented execution. To address these challenges, we propose Video-DR, featuring a decoupled perception-exploration pipeline with stage-wise tool unlocking that compels exhaustive cross-frame visual grounding prior to web retrieval. Our framework adopts a two-stage training recipe: supervised fine-tuning followed by Group Relative Policy Optimization (GRPO), enabling autonomous exploration that breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstrate that our Video-DeepResearch-35B-A3B establishes a new state-of-the-art of 64.0% average accuracy, surpassing proprietary Claude-4.5-Sonnet (59.0%) by 5.0 points and significantly outperforming GPT-5 (52.5%) and Gemini 2.5 Pro (57.5%). The 30B-A3B variant achieves 59.3%, competitive with Claude-4.5-Sonnet and demonstrating the effectiveness of our training paradigm even at compact scale. Code: https://github.com/Osilly/Vision-DeepResearch.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1177/07439156251328237",
+      "abstract": "Generative Artificial Intelligence (GAI) is increasingly being integrated into marketing education and is reshaping the skillsets required in marketing careers. While research has highlighted the promise and perils of incorporating GAI into education, there remains a need for a comprehensive framework to guide its effective use. In this research, we conduct a multipronged analysis, including a review of marketing course syllabi, a survey of marketing educators, and follow-up qualitative interviews. Building on Role Theory and the Community of Inquiry (CoI) model, we propose that GAI can assume three roles in marketing education: tutor, teammate, and tool. Each role influences teaching, social, and cognitive presence differently, shaping the learning experience and preparing workplace-ready marketing graduates. For instance, as a tutor, GAI can aid students in grasping theoretical concepts, while as a teammate, it can foster collaboration by supporting brainstorming and problem-solving activities. However, ethical considerations such as data privacy, plagiarism, dependency on AI, and fairness in assessment must be addressed to ensure its responsible adoption in marketing education. We provide concrete examples for GAI's careful integration in marketing courses, and its implications for marketing educators, learners, and policymakers.",
+      "topics": [
+        "cs.CY"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.16924",
       "abstract": "This work-in-progress (WIP) innovative practice category paper presents LLM Odyssey, an open source, browser-based serious gaming platform comprising 13 interactive games for teaching Large Language Model (LLM) engineering concepts. Topics such as tokenization, transformer architecture, prompt engineering, retrieval augmented generation (RAG), and production deployment are underrepresented in computer science curricula. Existing interactive tools address individual concepts but lack pedagogical scaffolding or structured learning pathways. LLM Odyssey addresses this gap through three learning tiers aligned with Bloom's revised taxonomy: Cognitive Core (7 foundational games), Systems Forge (5 production engineering games), and Foundry Arena (capstone challenges). Each game incorporates five pedagogical strategies drawn from the literature: immediate formative feedback, scaffolded hints grounded in the Zone of Proximal Development, progressive difficulty informed by flow theory, worked examples to manage cognitive load, and authentic scenarios drawn from production practice. The platform was deployed in Winter 2026 semester at a Canadian college for an initial review. Feedback confirmed functional requirements and identified adaptive difficulty as a priority for future development. A formal mixed methods evaluation protocol (N=50) has been designed, comprising pre and post knowledge tests, validated surveys, engagement analytics, and interviews, and is documented here to enable future evaluation studies with the publicly available platform.",
@@ -1796,79 +1857,6 @@
     {
       "id": "arxiv:2607.27562",
       "abstract": "The DeepResearch Agent System is a large language model system engineered for deep information retrieval, multi-step reasoning, and autonomous research tasks. Built upon a sparse activation architecture with 30 billion total parameters of which only 3 billion are activated per token, the system achieves state-of-the-art performance on multiple agent search benchmarks while delivering 3.2 times faster inference compared to dense counterparts of equivalent scale. The system supports a 128K-token context window with hierarchical attention mechanisms that yield 18.7% accuracy and 23.4% recall improvements over standard long-context approaches. A dual-mode reasoning engine provides both a ReAct paradigm for basic multi-step problem solving and an IterResearch mode for high-performance iterative research with up to 20 reasoning steps, collectively delivering a 31.2% accuracy improvement over single-pass baselines. Multi-tool coordination integrates retrieval, computation, web search, and file parsing modules to achieve 92.1% tool-use accuracy. A reinforcement learning optimization framework based on the GRPO algorithm provides token-level policy gradients that improve training stability by 35% and accelerate convergence by 42%. An automated data synthesis pipeline with seed-based expansion achieves a 92.5% usability rate. Benchmark results include 87.3% on Humanity's Last Exam, 85.3% on BrowserComp Chinese, and 91.2% on WebWalkerQA. The system is fully open-sourced, including data synthesis, training, and inference code, and supports applications in academic research, business analysis, R&D support, and education.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27697",
-      "abstract": "Immersive environments, e.g., virtual reality (VR), offer a unique approach to exploring complex 3D datasets, where data is often heavily occluded and exploration incurs a high cognitive load. We propose DP-LENS, a density-aware polyfocal fisheye lens equipped with topology-driven auto-routing. While preserving peripheral context through geometric deformation and 3D perspective techniques, it enables users to explore 3D data with a lower cognitive load. To facilitate hands-free macro-navigation, we integrate a Large Language Model (LLM) to serve as a supplementary voice-based target selection tool that initiates the auto-routing algorithm. Two user studies with 34 participants investigate the potential benefits of this system. Our first study (N=18) compared the manual DP-LENS against two industry-standard baselines (i.e., World-in-Miniature and volumetric slicing) in heavily occluded 3D datasets. The results show that DP-LENS significantly reduced cognitive load, decreased completion time, and improved user preference. The second study (N=16) compared the topology-driven auto-routing system (initiated via voice commands) with a fully manual DP-LENS. The results show that the auto-routing system improved task efficiency, further reduced cognitive load, and garnered higher user preference. Furthermore, the auto-routing partially decoupled exploration efficiency from the physical dimensions of the data and mitigated physical fatigue to some extent. Based on the findings, we proposed design implications to inform the development of more spatially scalable and low-fatigue interactions for future 3D visual analytics systems.",
-      "topics": [
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.28229",
-      "abstract": "The web is increasingly accessed by AI agents rather than humans. Every agent needs knowledge, especially in the life-sciences, where agentic pipelines are growing fast. Access to the literature is a crucial part of that need, and resources such as Europe PMC, with over 40M indexed records, are widely used to meet it. Yet these resources were not built for AI agents: they take keywords and complex syntax and return whole papers, so every agent must learn the syntax, issue several searches, and read full papers to find the evidence it needs. We introduce EMBL AI Librarian, a knowledge layer that upgrades the Europe PMC interface for AI agents: an agent asks in natural language and receives evidence that answers it. A single LLM orchestrates the whole knowledge retrieval process: it plans complementary subqueries executed by the live Europe PMC search engine, then reads the selected papers and locates the relevant evidence. We evaluate Librarian across four benchmarks: literature synthesis, claim verification, open-domain question answering, and downstream biology tasks such as protocol questions and sequence manipulation. On ScholarQABench, Librarian improves Citation F1 by more than $16$ points over strong recently published baselines. Used as the retrieval layer of an existing claim-verification pipeline, it increases agreement with expert consensus; and on the open-form LitQA2 benchmark, a GPT-5.4 agent scores about $8$ points higher when grounded in Librarian than with web search. Overall, our results show that equipping life-science agents with the Librarian knowledge layer improves performance across a range of tasks. We release our code publicly at https://github.com/petroni-lab/librarian",
-      "topics": [
-        "cs.CL",
-        "cs.AI",
-        "cs.IR",
-        "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2702730",
-      "abstract": "The application of AIGC in cross-modal visual generation creates a novel HCI paradigm, yet mapping human emotional intent to AI visuals often causes semantic disconnects. This study contrasts AI portraits and human artworks on emotion delivery, visual attention and subjective perception. Thirty participants viewed eight works covering four emotional categories, with eye-tracking metrics and subjective scores collected and analyzed via RM-ANOVA and LMM. Results uncover a cognitive compensation mechanism in human-AI interaction: participants were satisfied with AI images but faced heavy visual processing costs. AI portraits’ rigid imitation and partial structural defects triggered scattered visual scanning, shown by elevated saccade rates for information synthesis. AI rivaled human art in expressing intense emotions with prominent features, but shallow symbolic rendering weakened authenticity for mild or negative feelings, unlike human paintings that express emotions naturally via organic details and integrated metaphor layouts. The tested AI only conveys rudimentary emotions with heavy cognitive burden, offering concrete HCI design references to boost human-AI emotional alignment for future generative tools.",
-      "topics": [
-        "Aesthetic Perception and Analysis",
-        "Digital Media and Visual Art",
-        "Visual Attention and Saliency Detection"
-      ],
-      "keywords": [
-        "Cognition",
-        "Imitation",
-        "Emotional expression",
-        "Expression (computer science)",
-        "Metaphor",
-        "Rendering (computer graphics)",
-        "Generative grammar"
-      ]
-    },
-    {
-      "id": "arxiv:2607.28196",
-      "abstract": "Practitioners accept a compressed language model once it clears a stack of data-cheap quality guards: perplexity within a small factor of the original, downstream accuracy (for example MMLU) inside a confidence interval, and data-free output-fidelity signals that compare the compressed and original network's internal representations under random probe inputs. This stack has a blind spot. Across three model families, gently-compressed models clear every guard and then invent procedure steps that were never in the instructions when they run a standard operating procedure (SOP) as an agent. The effect is operator-specific: coherent low-rank (SVD) truncation induces it, and magnitude pruning matched to the same perplexity does not. One dissociation isolates the cause. The same compressed weights that CI-win a paired output-fidelity test CI-fail the invented-step canary. The governing axis is the coherence of the compression error times its rate; the magnitude of the damage does not predict it. The data-free fidelity probe is a fidelity oracle by construction, so it cannot see this axis. We characterize the blindspot and dissociation with paired confidence intervals on a pre-registered, powered canary across three architectures. Operator-specificity replicates on all three, and the perplexity-guard evasion appears where the model admits in-guard low-rank headroom. We then give a data-free screen: a two-axis statistic of the compression error (coherent-fraction and error-rate) that flags the failing builds with fixed thresholds across architectures and matches the coherence-times-rate mechanism. Perplexity, MMLU, and fidelity acceptance do not certify agent safety. Screen gently-compressed low-rank builds before agentic deployment",
-      "topics": [
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.28127",
-      "abstract": "Recent advances in Generative AI have substantially improved financial sentiment analysis through post-trained financial large language models (LLMs). However, existing approaches remain confined to a market-agnostic, supervised learning paradigm that relies on limited, static and human-annotated datasets, and thus are incapable of adapting to evolving market conditions. To address this limitation, we introduce FinSMART, the first market-aligned reinforcement learning framework for financial sentiment analysis, which directly optimizes sentiment signals using realized market outcomes. To deal with the noisy, non-stationary, and multifactorial nature of financial markets, FinSMART incorporates a signal extraction pipeline that combines market-aware data filtering with a discrete asymmetric trading reward, enabling stable reinforcement learning from economically meaningful market feedback. Experimental results demonstrate that FinSMART significantly outperforms existing state-of-the-art methods in profitability, risk-adjusted performance, and sentiment signal quality, improving cumulative trading returns by 220% over the strongest baseline. Uniquely, the FinSMART framework naturally supports market-aware retraining, at any point in time, by replacing costly manual annotation with newly observed financial articles and their realized market outcomes. Such a retraining strategy enables the model to continuously adapt to changing market dynamics, resulting in consistent performance gains over its static counterpart. These findings demonstrate the practical applicability of market-aligned reinforcement learning and highlight its potential as a next-generation paradigm for developing adaptive financial LLMs.",
-      "topics": [
-        "cs.CL",
-        "cs.LG",
-        "q-fin.ST",
-        "q-fin.TR"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.28869",
-      "abstract": "Lawyers and self-represented litigants are already using artificial intelligence (AI) to draft legal documents, and courts are responding with rules. After more than 1,500 cases involving AI hallucinations, lawyers have been instructed to perform careful, independent review of AI-assisted filings. Discharging these duties requires what the human-computer interaction (HCI) literature calls ``appropriate reliance,'' which cannot be calibrated without evidence on how often, how badly, and how detectably these tools fail at legal work. Existing research barely describes any of the three. We analyze the official record of the New York court system. The documents repeatedly call for evidence that does not exist (e.g., error rates, do-not-use lists). In its place they invoke procedure, including training mandates, checklists, and uncalibrated human review. The burden falls hardest on those least equipped to bear it: legal aid programs are told to track their own error rates, and judges are left to improvise their own tests. The paper makes four contributions: (1) a mapping from the legal duties to concepts in HCI; (2) a set of requirements elicited from the official record; (3) an analysis of how the legal system substitutes process for evidence; and (4) a research agenda for computing, including task taxonomies, shared error metrics, maintained benchmarks, and test harnesses for evaluations on private data. The computing community must supply what the justice system lacks; in doing so, it can help close, rather than widen, the justice gap.",
-      "topics": [
-        "cs.CY",
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27937",
-      "abstract": "Recent work on LLM agents is shifting from external capability elicitation to capability internalization, enabling agents to retain useful skills without retrieval at inference time. On-policy self-distillation (OPSD) offers a promising direction, but many existing methods typically supervise students by scoring actions along student-generated trajectories. Such supervision has two limitations: teacher preferences are not validated by environment outcomes, and action-level scores underuse information from student rollouts, teacher rollouts, and their behavioral relationship. We therefore advocate outcome-verified teacher supervision and comparative learning over teacher-student trajectories. Based on this view, we propose Outcome-Verified Comparative Self-Distillation (OVCSD). OVCSD organizes failed student rollouts into a prefix tree, adaptively invokes a skill-conditioned teacher from student-reached states, and retains only outcome-verified successful continuations. It then applies localized comparative learning at the first state-aligned divergence and distills the post-divergence teacher suffix to transfer completion behavior. Experiments on ALFWorld and WebShop across three model scales show that OVCSD consistently outperforms skill-free RL and existing self-distillation baselines, achieving up to 29.7 and 5.4 absolute success-rate gains over the strongest baselines on ALFWorld and WebShop, respectively, while adding less than 3% privileged interaction during training.",
       "topics": [
         "cs.AI"
       ],
