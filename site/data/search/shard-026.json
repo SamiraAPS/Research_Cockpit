@@ -1,7 +1,407 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-11T11:26:30.005Z",
+  "generatedAt": "2026-10-12T13:13:04.841Z",
   "documents": [
+    {
+      "id": "doi:10.1145/3832124",
+      "abstract": "Code snippets commonly appear in online developer communities, documentation, and LLM-assisted workflows to communicate ideas and algorithms. However, contextual information, like dependencies and the exact types , are often missing in code snippets, which makes their reuse difficult. Some of the most successful automated techniques use logical constraints to infer the types and dependencies, but they do not work in practice because they require an exact knowledge base that contains all possible dependencies and exact types. However, such a knowledge base is both computationally expensive for constraint solving and impossible to achieve in the presence of missing types ( e.g. , user-defined types) in code snippets. To this end, this paper proposes a novel, scalable technique named Scitix. Our insight is two-fold. First, inspired by gradual typing’s use of an unknown type, we represent certain missing types as Any , ignoring such types during constraint solving, improving performance and scalability. Second, our novel, iterative constraint-solving approach saves on computation and skips constraints involving missing types. Our extensive evaluations show that our insights improve both performance and scalability compared to SnR (the state of the art). Specifically, Scitix achieves F1-scores of 94.8% and 86.8% on Stack Overflow and generated code snippets, respectively, using a large knowledge base of over 3,000 jars. In contrast, SnR consistently times out, yielding near 0% F1. Even with the smallest knowledge base, where SnR does not time out, Scitix reduces the number of errors by 77% and 45% compared to SnR. Compared to state-of-the-art large language models (LLMs) like GPT-4o and the LLM-based ZS4C, Scitix improves F1-score by 76.8% and 35.4%, respectively. Scitix’s strong performance highlights its potential as a practical technique for type inference in real-world code snippets.",
+      "topics": [
+        "Software Engineering Research",
+        "Scientific Computing and Data Management",
+        "Software Testing and Debugging Techniques"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1145/3832131",
+      "abstract": "Large language models (LLMs) have achieved impressive performance on text-based programming tasks, yet they remain unreliable for block-based languages such as Scratch. Scratch programs feature deeply nested, nonlinear structures, event-driven concurrency across multiple sprites, and tight coupling between code and multimedia assets---properties that differ fundamentally from textual code. Consequently, LLMs frequently misinterpret Scratch semantics and propose large, invasive edits that are syntactically valid but semantically misaligned when repairing buggy programs. We introduce ScratchNet, the first executable benchmark designed to systematically evaluate and advance LLM-based repair for Scratch programs. The benchmark comprises 100 carefully curated projects from the public Scratch repository, each selected for high structural and semantic complexity. Every project is paired with an executable test suite, a bug description and corresponding fix, block-level edit constraints that define a minimal semantically correct repair, and the multimedia assets required for faithful execution. We construct the benchmark through a human-in-the-loop pipeline that combines automated project mining with expert validation of trigger--mechanism--outcome semantics and representative bug patterns, with particular emphasis on event ordering, concurrency, and state management. To enable rigorous and reproducible evaluation, we propose a three-layer executable protocol that measures functional correctness through VM-level execution, repair quality through block-level edit distance and behavioral trajectory comparisons, and explanation quality through structured rubrics. Using this benchmark, we study project and bug understanding, trigger and mechanism identification, functional repair, and the effect of lightweight domain adaptation. ScratchNet establishes a reproducible foundation and a closed-loop framework for evaluating and post-training LLMs on block-based programming tasks.",
+      "topics": [
+        "Software Engineering Research",
+        "Scientific Computing and Data Management",
+        "Software System Performance and Reliability"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.17615/1gn9-0850",
+      "abstract": "Coastal spaces are important settings for recreation, public health, tourism, and human–environment interaction. However, their spatial attractiveness often changes substantially across seasons, especially in regions with strong climatic variability. This study examines the seasonal drivers of coastal spatial popularity in China’s temperate monsoon region using 440,857 geotagged Weibo posts across 13 coastal cities, aggregated into 2733 5 km grid cells. We integrate perception-related cultural ecosystem service (CES) indicators extracted through large language models with built-environment, natural-environment, and socio-economic variables at the 5 km grid level. Fixed-effects models are employed to identify overall and seasonal associations between environmental conditions and spatial popularity. The primary full model explains a substantial proportion of the variation in coastal spatial popularity (R2 = 0.6330). The results show that coastal spatial popularity differs from conventional urban activity patterns. High building density and POI diversity are negatively associated with popularity, while accessibility, attractions, water-related environments, and economic conditions are positively associated with activity intensity. At the same time, substantial seasonal variation is observed. Visual perception remains important throughout the year, while the influence of other factors changes across seasons. For example, aquatic environmental conditions become particularly important in summer, whereas taste-related experiences become more relevant in autumn and recreational services in winter. These findings suggest that the drivers of coastal spatial popularity are not uniform over time but vary under different seasonal contexts. The study provides empirical evidence for seasonally adaptive coastal planning and demonstrates the potential of combining large language models with social media data to analyze perception-related spatial dynamics.",
+      "topics": [
+        "Diverse Aspects of Tourism Research",
+        "Coastal and Marine Management",
+        "Place Attachment and Urban Studies"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1145/3832140",
+      "abstract": "Mobile apps frequently embed sensitive secrets, such as API keys, access tokens, client secrets, and private keys that support internal functionality or enable integration with external systems and third-party services. Developers frequently embed these secrets into Android apps, which allows attackers to extract them through reverse engineering. Once exposed, attackers can exploit them to access sensitive data, manipulate resources, or abuse APIs, resulting in severe security and potential financial risks. In this paper, we present the first large-scale empirical evidence that off-the-shelf large language models (LLMs) can automatically identify secrets in Android apps without any domain-specific prior knowledge, thereby substantially lowering the barrier for attackers. On a benchmark of 5135 Android apps from prior work, LLMs rediscovered 93% of previously known secrets and identified 4361 additional valid credentials (+195%). Extending our analysis to 50 000 Google Play apps collected between August and October 2025, we conducted the largest-scale study to date on secret detection in Android apps, identifying secrets in 17 590 apps (35%). Among the 18 908 detected secrets, 1802 remained active at discovery, including, among others, critical credentials such as Stripe payment keys, OpenAI API keys, and GitHub personal access tokens. We responsibly contacted all the affected developers, of whom 170 confirmed the issues and updated their apps accordingly. Our findings empirically demonstrate the reality of vibe hacking: anyone can now leverage publicly accessible AI models to perform complex offensive security tasks with minimal expertise.",
+      "topics": [
+        "Advanced Malware Detection Techniques",
+        "Digital and Cyber Forensics",
+        "User Authentication and Security Systems"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.02361",
+      "abstract": "Large language model (LLM)-driven evolutionary search is a powerful paradigm for automated program and algorithm discovery, yet existing systems are largely memoryless: each run explores from scratch, so agents repeatedly rediscover the same improvements and re-encounter the same dead ends. We introduce SEDIMA, a persistent hierarchical insight memory for evolutionary search agents. SEDIMA distills raw traces into natural-language insights, clusters them by semantic similarity using attention-weighted centroids, and retrieves relevant guidance to condition future mutations, accumulating transferable knowledge across runs and problems rather than within a single trajectory. As a drop-in module that leaves the search operators unmodified, SEDIMA improves average final performance by 5.5% on AlgoTune and 6.6% on ALE-Bench LITE under a fixed budget of 100 evaluated candidates. Under OpenEvolve, SEDIMA requires 32.3% fewer iterations on average to reach baseline-best performance across the five evaluated backbones.",
+      "topics": [
+        "Evolutionary Algorithms and Applications",
+        "Software Engineering Research",
+        "Metaheuristic Optimization Algorithms Research"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.58399/pccr3848",
+      "abstract": "The increasing complexity and dynamic nature of modern manufacturing systems, driven by the Industry 4.0 and emerging Industry 5.0 paradigms, require intelligent, adaptive, and decentralized control frameworks. This paper proposes a novel Self-Optimizing Multi-Agent Manufacturing System (SOMAMS) that integrates multi-agent systems (MAS), hybrid optimization techniques, and intelligent control strategies into a unified architecture. The proposed framework adopts a layered design that combines supervisory coordination, hybrid Genetic Algorithm-Particle Swarm Optimization (GA-PSO), and reinforcement learning-based control to enable real-time, autonomous decision-making in distributed manufacturing environments. The system is formulated as a multi-objective optimization problem aiming to minimize makespan, energy consumption, tardiness, and operational cost under practical manufacturing constraints. The hybrid GA-PSO algorithm enhances the speed of convergence and the quality of the solution by effectively balancing exploration and exploitation, while reinforcement learning enables agents to dynamically adapt to environmental changes. The decentralized agent-based structure supports scalable coordination among product, machine, and resource agents, facilitating self-organization and resilience. Simulation results demonstrate the effectiveness of the proposed framework in achieving rapid convergence, generating Pareto-like trade-offs between conflicting objectives, and maintaining balanced machine utilization. Additional analyzes, including scheduling visualization, learning performance, and agent interaction patterns, validate the system’s ability to optimize production efficiency while ensuring adaptability and robustness. The integration of cyber-physical systems and digital twin concepts further enables real-time monitoring and continuous self-optimization. In general, the proposed approach provides a comprehensive solution for next-generation smart manufacturing systems, offering significant improvements in flexibility, efficiency, and sustainability. The framework also establishes a foundation for future advancements in deep reinforcement learning and agentic artificial intelligence for fully autonomous industrial systems.",
+      "topics": [
+        "Digital Transformation in Industry",
+        "Scheduling and Optimization Algorithms",
+        "Flexible and Reconfigurable Manufacturing Systems"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1287/ited.2025.0179",
+      "abstract": "This paper introduces a serious-play card deck designed to teach artificial intelligence (AI) use case applications in manufacturing. The deck comprises 42 cards, each presenting a real-world problem paired with a corresponding AI use case. Instructors can use these cards to facilitate structured and engaging group discussions. The paper describes the design of the cards and their implementations across four executive education classes in both classroom and metaverse settings. For the most recent intervention, we conducted a structured evaluation using an anonymous, theory-anchored survey instrument. The results indicate that the cards are perceived as engaging and valuable, particularly for supporting application-oriented learning and peer-based discussion while contributing less strongly to perceived knowledge acquisition. These findings suggest that serious-play cards are most effective as a complement to conventional teaching methods, enabling learners to translate abstract AI concepts into context-specific managerial reasoning. The paper provides full instructions and card details that support reuse by instructors.",
+      "topics": [
+        "Teaching and Learning Programming",
+        "Educational Games and Gamification",
+        "Innovative Teaching Methodologies in Social Sciences"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.01160",
+      "abstract": "LLM agents revise running tasks when users change instructions, tools fail, or new information changes a plan. Today's servers express a revision as aborting old requests and submitting replacements. Yet the old execution's buffered output and outstanding work must stop affecting the application, while completed KV state may still be useful to its replacement. Handling these obligations separately can leave obsolete effects publishable and force the successor to rebuild valid state. We present \\retire, a serving control-plane redesign around \\emph{versioned execution}. Requests own scheduling and memory resources; execution versions own \\emph{authority}, the permission to publish output or install state for the current execution. \\retire first revokes obsolete work, then bounds its remaining execution and certifies the completed prefix its successor can inherit. The successor runs from that state while isolated old resources are reclaimed asynchronously. This unifies fast invalidation and selective preservation in one version transition. We implement \\retire in vLLM across output publication, GPU execution, KV handoff, tiered recovery, and distributed and multi-tenant serving. Correctness experiments verify current-version output and valid state inheritance across these paths. Combining invalidation with inheritance reduces revision-to-successor time-to-first-token by a median 17.1\\% in controlled paired experiments. A replay of recorded coding-agent interruption arrivals emits no obsolete output and keeps every final version progressing through repeated revisions. \\retire turns abort-and-restart into a coordinated handoff that stops obsolete work quickly and preserves useful work for its successor.",
+      "topics": [
+        "Distributed systems and fault tolerance",
+        "Software System Performance and Reliability",
+        "Cloud Computing and Resource Management",
+        "Security and Verification in Computing",
+        "Mobile Agent-Based Network Management"
+      ],
+      "keywords": [
+        "LLM agents",
+        "execution authority",
+        "invalidation",
+        "resource isolation",
+        "vLLM",
+        "coding agents"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.01509",
+      "abstract": "An emerging hypothesis about reinforcement learning (RL) post-training of large language models (LLMs) is that it merely sharpens existing behaviors of a base model, improving single-shot accuracy at the cost of solution coverage. Although this trade-off has been observed in math and coding tasks, it need not extend to agentic tasks, where multi-turn tool use and interaction may require capabilities newly acquired during post-training. Our surprising finding is that pre-trained LLMs, equipped with a light inference harness, can serve as capable agents. Despite far lower accuracy (pass@1), they often surpass their post-trained counterparts in solution coverage (pass@K) given a sufficient test-time budget. We further analyze the underlying mechanism and show that post-training pushes tasks toward two extremes, always solved or never solved, and thereby improves sampling efficiency and consistency at the cost of solution coverage. To measure this cost, we propose Sharpening Tax, a diagnostic metric that quantifies the loss in test-time scalability after post-training. Across 14 base/post-trained model pairs from four families and three agentic benchmarks (42 cases in total), the tax is prevalent in most settings, can be estimated from a few rollouts, and correlates well with other metrics. Finally, we present posterior-tempered group sampling (PTGS), a simple plug-and-play Bayesian sampler that adapts the sampling temperature per prompt to its estimated difficulty. Applied during RL training in two agentic environments, PTGS pays a smaller tax than the fixed-temperature baseline, solving more tasks under repeated sampling while also improving single-shot accuracy.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "large language models",
+        "reinforcement learning post-training",
+        "LLM agents"
+      ]
+    },
+    {
+      "id": "arxiv:2610.00936",
+      "abstract": "With the global population rapidly aging, maintaining independence in Activities of Daily Living (ADLs), particularly bathing or showering, has become a critical challenge. Older adults who sit while showering currently have limited options, often relying on rigid overhead showerheads or flexible hand-held hoses that require continuous gripping and precarious user maneuvers, increasing the risk of falls. To address this need, this paper introduces a highly articulated, pseudo-static balanced continuum mechanism designed specifically for accessible bathing assistance. The proposed mechanism features a modular continuum architecture composed of friction-locked ball-and-socket joints (loc-line), seamlessly integrated with a retractable spring-loaded reel for effective gravity compensation. This hybrid design achieves an intuitive \"Push-and-Stay\" interaction logic, maintaining an approximate static equilibrium with ergonomically low actuation force, without any external electronic power, while significantly minimizing the force needed for repositioning. Theoretically, we established a recursive forward kinematics framework to construct the geometric model of the structure, coupled with a comprehensive static equilibrium analysis to evaluate the system's holding capacity across its 51-DOF structure. Numerical simulations utilizing Monte Carlo methods validate the system's morphological adaptability and stability at various extreme positions within a standard bath space. Physical experiments further validate the prototype's real-world performance, confirming its intrinsic static stability against gravity and ensuring that the actuation force remains well within the ergonomic capabilities of older adults. Ultimately, this research provides a low-cost, intrinsically safe showerhead design that reduces physical strain, restoring dignity and autonomy in personal hygiene.",
+      "topics": [
+        "Soft Robotics and Applications",
+        "Robotic Mechanisms and Dynamics",
+        "Prosthetics and Rehabilitation Robotics",
+        "cs.RO",
+        "Balance, Gait, and Falls Prevention",
+        "Stroke Rehabilitation and Recovery"
+      ],
+      "keywords": [
+        "static equilibrium",
+        "older adults",
+        "activities of daily living",
+        "ball-and-socket joint",
+        "gravity compensation",
+        "static stability",
+        "assistive robotics",
+        "fall prevention"
+      ]
+    },
+    {
+      "id": "doi:10.1145/3832299",
+      "abstract": "The vulnerability commit message serves as crucial metadata for maintaining software within version control systems. Nonetheless, manually crafted vulnerability commit messages often lack detail or exhibit inconsistent formatting. Recently, the growing use of Large Language Models (LLMs) for code and natural language comprehension has opened avenues to automate the crafting of these messages. This paper systematically and thoroughly explores the generation of security patch commit messages in the context of LLMs, delving into topics such as dataset construction, evaluation method design, and the relationship between vulnerability types and submission structure. First, we explore the elements of commit messages using LLMs and integrate a questionnaire survey to pinpoint four essential types of information: summary, background, impact, and fix, which are essential for developers. This aims to establish a structured dataset of bug submissions and assess its quality. Next, we examine general automated evaluation techniques for assessing LLM-generated commit messages and find that GPT-3.5's evaluation methods align more closely with human judgment. Then, we conduct an organized investigation into how LLM generation effects vary across three principal vulnerability types, uncovering that LLMs' adaptability differs across vulnerabilities. Furthermore, we perform an exhaustive examination of generation quality across various components and find that LLMs excel at generating summaries but struggle to produce impact details. In particular, the smallest DeepSeek-Coder shows a semantic retention advantage in crafting backgrounds, whereas DeepSeek-V3 struggles with impact aspects. Lastly, we investigate the effects of different prompting strategies (e.g., zero-shot, few-shot prompts) and parameter settings (e.g., temperature and top_p) on the quality of commit message generation, finding that prompt and parameter configurations critically influence output quality, with model sensitivity varying.",
+      "topics": [
+        "Software Engineering Research",
+        "Information and Cyber Security",
+        "Web Application Security Vulnerabilities"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.17034/32640711",
+      "abstract": "Background & Purpose The critical nature of emergencies requires general practice teams to provide a prompt patient-centred collaborative approach. Paediatric emergencies are challenging, and General Practitioners (GPs) report they often feel unprepared to manage these scenarios. However, given their critical nature and benefits that timely interventions can confer it is important that general practice teams are prepared for such eventualities. In-situ simulation (ISS) is well placed to train for high acuity, low opportunity events such as medical emergencies. ISS training is documented in literature as an acceptable and feasible way of developing interprofessional skills in a primary care setting, yet more needs to be known its impact and how it achieves its effects(1). Existing research has evaluated the emerging potential of ISS but has been limited by outcome measures such as improved confidence of participants. There is a lack of research exploring a theoretical approach to learning from ISS(2). Cultural Historical Activity Theory (CHAT) is a useful methodological framework to study practice-based learning in complex learning environments such as clinical practice(3). This social cultural research aimed to bring to the surface many of the nuances and contextualised factors in the complex world of general practice to guide us in the best direction of providing team-based response to managing paediatric emergencies. Methodology Change Laboratory (CL) is “a formative intervention method developed for studying workplaces in transition and generating improved, shared patterns of activity”(4). A smaller scale adaptation of a CL, ‘SimLab’ was developed by our research team for the busy general practice workplace. This longitudinal programme of ISS consisted of four workshops and scaffolded the process of Transformative agency by Double Stimulation (TADS) by introducing CHAT to participants as a potential mediating artefact for problem solving to issues raised in the ISS. In workshop 1, participants engaged in an ISS (paediatric anaphylaxis), afterwards they reviewed the ISS video footage and mapped workplace activity to CHAT framework. In workshop 3 they participated in a different ISS (meningitis) followed by a discussion to explore if the changes had enhanced their emergency response. Workshop 2 and 4 involved in depth CHAT guided discussions. The lens of CHAT was applied to the case study to gain a deeper understanding of organisational change brought about by the ISS training model of emergencies. The TADS model was used to demonstrate and explain participants’ development of agency in the context of ISS paediatric emergency care. The expressions of transformative agency were mapped as they emerged from the SimLab and evolved over time. Results CHAT enabled participants to take a systemic perspective of workplace learning exploring the complexity of clinical practice through the use of theory guided ISS(5, 6). Collaboratively participants identified accumulated historical tensions in their activity system, these becamepotential levers for effective organisational change and devised a future orientated model to resolve contradictions. . Learners exhibited six types of expressions of transformative agency; resisting, criticising, explicating, envisioning and committing to actions which evolved through collective activity(7). Discussion & Conclusions This research used simulation as a mirroring tool to lead to organisational change at systems level. The use of ISS provided real life contextuality, identified latent threats and has the potential to transfer well into practice enhancing the degree of preparedness for such time-critical, low-frequency, and high-morbidity events. Simulation and theory were used to narrow the gap between constructed reality and the real reality. This research demonstrates how CHAT can provide a theoretical lens and approach to guide ISS in healthcare(2) to bring about organisational transformation for emergency care. This research offers rich insights into the emerging potential of ISS to stimulate individual and organisational change in response to highly complex, contextualised patient safety problems. Thesis is embargoed until 31 July 2027.",
+      "topics": [
+        "Simulation-Based Education in Healthcare",
+        "Innovations in Medical Education",
+        "Innovative Education and Learning Practices",
+        "Interprofessional Education and Collaboration",
+        "Innovative Teaching Methodologies in Social Sciences"
+      ],
+      "keywords": [
+        "in situ simulation",
+        "emergency care",
+        "general practice",
+        "transformative agency",
+        "organizational change",
+        "formative intervention",
+        "primary care"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.02324",
+      "abstract": "Foundation multimodal large language models are designed to support a broad spectrum of capabilities across diverse domains. Multi-teacher on-policy distillation (MOPD) provides an effective framework for consolidating domain-specific expertise into a single student model. However, MOPD training gradually drives the student away from its initialization model, and general capabilities decline as the displacement grows, resulting in capability interference. A direct remedy is constraining the student toward its initialization, but this suppresses the acquisition of domain expertise as well. We propose Slow-Fast Multi-Teacher On-Policy Distillation (SF-MOPD), which couples a fast model, the current student updated directly by each teacher, with a slow model, an exponential moving average of the student. The slow model absorbs the learning signal gradually, serving as a moving capability reference that fuses the general foundation with confirmed domain expertise. For each teacher, SF-MOPD computes the teacher-induced update in log-probability space and removes only the component that pushes the fast model further away from the slow model, while retaining aligned and orthogonal components. Experiments across multiple model scales demonstrate that SF-MOPD effectively mitigates capability interference, enhances specialized multimodal capabilities, and reduces the average degradation on general-capability benchmarks, consistently outperforming vanilla MOPD.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Domain Adaptation and Few-Shot Learning",
+        "Topic Modeling"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.3390/rs18193369",
+      "abstract": "Pixel-level slum mapping remains constrained by limited cross-city generalisation, the lack of continuous estimates of intra-pixel slum coverage, and weak comparability across geographic contexts. AlphaEarth Foundations (AEF), which provides globally consistent 64-dimensional annual surface embeddings at 10 m resolution, offers an analysis-ready representation for scalable and lightweight slum monitoring. However, its applicability to slum mapping remains unclear because slum conditions are only indirectly observable from Earth observation data and are jointly shaped by built-form and socioeconomic processes. We systematically evaluate AEF for binary slum classification and sub-pixel slum cover fraction estimation across 12 cities and 69 city–year pairs from 2017 to 2024, using high-resolution GRAM-derived pseudo-masks as supervisory labels. The evaluation spans four training strategies, two protocols (random split and 3 × 3 spatial block cross-validation), six auxiliary feature configurations, and five baseline models, complemented by representation-level analyses (PCA, SHAP) and full-AOI mapping. Five findings emerge. (1) Same-city cross-year training is optimal under both protocols (median spatial F1 = 0.616, R2 = 0.466); temporal expansion outperforms cross-city transfer, indicating city-scale representational drift. (2) Regression R2 is driven primarily by zero/non-zero boundary discrimination: positive-pixel R2 is consistently negative across all cities, revealing limited capacity to model intra-pixel variation in sub-pixel slum cover fraction at 10 m. (3) PC36 is consistently top-ranked across tasks; classification saturates at k = 32 while regression remains unsaturated at k = 64. (4) POI features yield the largest density gain (ΔR2 = +0.064). (5) For six cities meeting dual-task usability thresholds, full-AOI inference across 2017–2024 preserves slum cluster structure (mean SSIM = 0.926). The study delineates the capabilities and complementarity needs of foundation-model embeddings for slum monitoring.",
+      "topics": [
+        "Remote-Sensing Image Classification",
+        "Land Use and Ecosystem Services",
+        "Impact of Light on Environment and Health"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.3390/vehicles8100242",
+      "abstract": "Smart mobility is a core component of the smart city; it comprises various intelligent systems that make the city more safe, livable, efficient and sustainable. One of these system is the smart parking system (SPS). A smart parking system is known as the application of advanced information and communication technologies to the traditional parking system. It is a technology-driven approach that plays a crucial role in smart cities, particularly in improving traffic management. The smart parking system is a multi-faceted concept that integrates parking reservation, automatic payment, parking space detection, outside/inside guidance, data analytics, and user interaction interfaces. While various advanced technologies, such as Wireless Sensors Networks (WSNs), Internet of Things (IoT), Cloud Computing (CC), FoG computing, and Artificial Intelligence (AI), are involved in engineering and implementing these functional facets, Vehicular Ad Hoc Network (VANET) and its derivatives have received relatively limited interest in the literature of smart parking systems. Moreover, much of the literature primarily focuses on reducing parking search time outside parking facilities. However, drivers in practice often waste a significant amount of time inside the parking facility navigating for a free parking spot. In this work, we address two main functions in smart parking: a parking spot allocation mechanism and on-site parking real-time guidance. We developed an automatic parking spot allocation and in-parking guidance approach where the communication layer is modelled using IEEE 802.11p DRSC as the reference infrastructure. The simulation assumes a reliable channel and excludes lower-layer performance evaluation such as packet loss, congestion, latency, interferences, or coverage sensitivity. The reported improvements therefore characterize the application-layer benefit of pre-assignment reservation and spatial guidance, independent of the specific communication technology employed. The designed system, called in this paper VANET-guided, aims to significantly decrease the parking spot search time inside the parking facility. This paper presents a comparative evaluation study of a VANET-guided smart parking framework against a fully unguided baseline using NS-3.36.1, evaluating their performance across four key operational dimensions: lot occupancy, number of vehicles within facility, inter-arrival gap, and driver decision delay, with R = 30 statistically validated replications per experimental cell, using a series of Monte Carlo simulations under diverse traffic and mobility conditions. The guided system combines atomic server-side spot reservation, spatial allocation strategies, and a Kalman-filtered RSSI-based in-lot positioning pipeline, while the unguided baseline models realistic driver behavior, including cognitive decision delays, spot rejection, and concurrent spot competition. To address the structural asymmetry between the two systems, two intermediate baselines are evaluated: (i) an information-only configuration and (ii) a reservation-only configuration, providing an exploratory comparison of the respective roles of availability information, reservation, and spatial targeting. The findings indicate that the fully guided system (called in this paper VANET or VANET-guided) reduces mean parking search time by 28% to 71% relative to the fully unguided baseline across all tested occupancy levels, with statistical validation through 95% confidence interval analysis, paired t-test and Wilcoxon signed-rank test, practical effect sizes reported through Cohen’s d, and distributional statistics including standard deviation, coefficient of variation, and 90th–95th percentile search times.",
+      "topics": [
+        "Smart Parking Systems Research",
+        "IoT Networks and Protocols",
+        "Vehicular Ad Hoc Networks (VANETs)"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1145/3832257",
+      "abstract": "Understanding EVM bytecode is critical for smart contract security analysis. Existing decompilers typically rely on heuristic rules or leverage large language models (LLMs) to generate source code after bytecode analysis. However, heuristic-based approaches often produce pseudocode that is difficult for humans to interpret, while LLM-based methods also face several problems. LLMs have little experience with low-level bytecode, which weakens their reasoning and causes inaccurate results. Additionally, their tendency to auto-correct code breaks faithfulness to the original program. A general lack of clarity in these approaches also hinders effective auditing and interpretation. In this paper, we propose SmartDecompiler-R1, an end-to-end decompilation framework that translates Three-Address Code (TAC), a register-based representation of EVM bytecode, into source code using reinforcement learning. SmartDecompiler-R1 significantly improves both the accuracy and consistency of decompiled code, while additionally providing human-readable explanations for the bytecode-to-source generation process. To the best of our knowledge, we are the first to design a benchmark equipped with well-defined test cases and a systematic evaluation framework for smart contract decompilation. Experimental results on this benchmark demonstrate that SmartDecompiler-R1 substantially outperforms existing decompilers on execution consistency by 46.23%. In particular, compared with LLM-based approaches, SmartDecompiler-R1 achieves a significant improvement in preserving vulnerability consistency between the original and decompiled contracts. Furthermore, we conduct extensive ablation studies to validate the effectiveness of individual components of SmartDecompiler-R1, and design targeted experiments to demonstrate the interpretability and readability of the generated explanations.",
+      "topics": [
+        "Security and Verification in Computing",
+        "Advanced Malware Detection Techniques",
+        "Web Application Security Vulnerabilities"
+      ],
+      "keywords": [
+        "source code recovery",
+        "reinforcement learning",
+        "Solidity",
+        "Ethereum smart contracts"
+      ]
+    },
+    {
+      "id": "doi:10.1007/978-3-032-41284-3_10",
+      "abstract": "The use of artificial intelligence (AI) by police forces remains a contentious topic. While citizens expect police forces to have the knowledge and resources to fight crimes effectively, the usage of AI by police forces raises legitimate concerns about biases, chilling effects and accountability in case of errors. This chapter provides insights into the level of societal acceptance and trust in the police use of AI, based on a national citizen consultation of 10,114 citizens in the United Kingdom. The consultation demonstrates a considerable level of public acceptance and trust but also identifies demographic and personal factors that impact acceptance and trust levels. The consultation further highlights a considerable gap between the level of desired versus perceived accountability. The extensive consultation offers important insights into the complexity of public perceptions about AI use by the police, providing evidence-based recommendations for police forces and policy makers to support higher public acceptance and trust in the use of AI.",
+      "topics": [
+        "Policing Practices and Perceptions",
+        "Ethics and Social Impacts of AI",
+        "Deception detection and forensic psychology"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1007/978-3-032-41284-3_9",
+      "abstract": "Accountability for artificial intelligence (AI) in security and policing depends on coordinated decisions, evidence and review across organisational roles and throughout the AI lifecycle. This chapter examines the AI Accountability in Policing and Security (AIPAS) tool, an access-controlled workspace for assessing and evidencing accountability for a specific AI capability and use context. AIPAS organises questions around twelve accountability principles and eight practical themes, links answers and rationales to evidence and change records and supports role-based collaboration. The ‘Knowledge Base’ retrieves passages from AIPAS guidance, the ‘Check Assistant’ flags incomplete or inconsistent free text and the ‘Template Editor’ manages approved changes to the question set. Project spaces and reports help authorised teams review progress and evidence. The chapter also defines responsibilities that remain with operational, technical, legal, oversight, security and communications functions. AIPAS is available through controlled access for security and policing organisations; it does not determine lawfulness, proportionality or deployment decisions and cannot transfer human or organisational accountability to software.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1016/j.ast.2026.114002",
+      "abstract": null,
+      "topics": [
+        "3D Shape Modeling and Analysis",
+        "Computer Graphics and Visualization Techniques",
+        "Advanced Vision and Imaging"
+      ],
+      "keywords": [
+        "3D reconstruction",
+        "non-cooperative space targets",
+        "2D Gaussian Splatting",
+        "solar illumination",
+        "active debris removal",
+        "on-orbit servicing",
+        "space situational awareness",
+        "physically based rendering",
+        "relighting",
+        "novel view synthesis",
+        "occlusion modeling"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.02521",
+      "abstract": "Long-video generation and world models have shown strong potential for interactive entertainment and embodied simulation by predicting future observations conditioned on user actions and historical memory. However, as memory sequences grow longer and their structures become increasingly complex, managing long-range spatial context becomes increasingly challenging, calling for a more intelligent and systematic memory-management strategy. Building on the advancing spatial reasoning capabilities of multimodal large language models (MLLMs) and the broader vision of unified models, we propose Spatial Memory Intelligence (SMI), the first framework to systematically employ an understanding model for spatial-memory management in long-video world models. SMI introduces four coordinated atomic operations: spatial clustering, within-cluster sparsification, action-aware retrieval, and reliability-aware filtering. Extensive experiments across multiple baselines, benchmarks, and world-model backbones demonstrate the effectiveness and generalizability of SMI, achieving comprehensive improvements in memory sparsity, generation stability, and spatial consistency.",
+      "topics": [
+        "Artificial Intelligence in Games",
+        "Multimodal Machine Learning Applications",
+        "Reinforcement Learning in Robotics"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1145/3832194",
+      "abstract": "Deep learning (DL) frameworks provide diverse fundamental algorithmic units as operators, which are critical infrastructure for constructing various intelligent software. Since mainstream frameworks widely adopt the open-source development paradigm, bugs may recur across operators and even across frameworks. Recent studies leverage large language models (LLMs) and historical issues to generate cross-framework test cases. However, existing approaches still suffer from two limitations. First, their test cases have low fault detection capability because they mainly reuse inputs or contexts from historical issues without considering the underlying root causes. Second, an effective mechanism for determining the appropriate transfer scope within a target framework is lacking. To overcome these limitations, we propose SpectraDL, a historical issue-driven, test specification-assisted transfer testing approach for DL frameworks. SpectraDL first extracts rigorous test specifications for each operator from official documentation, and then extracts and transforms historical issues and associated pull requests into structured fault representations (i.e., bug patterns). SpectraDL uses a dual retrieval mechanism based on semantic intent and structural input-space features to transfer these bug patterns to related operators across frameworks. Experiments on four mainstream DL frameworks show that SpectraDL detected 125 previously unknown bugs, 107 of which developers confirmed. The results confirm that SpectraDL delivers a promising transfer testing approach for DL frameworks.",
+      "topics": [
+        "Software Testing and Debugging Techniques",
+        "Adversarial Robustness in Machine Learning",
+        "Software Engineering Research"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.02023",
+      "abstract": "While Large Language Models (LLMs) advance 3D indoor scene synthesis, current pipelines fail to retain user-specific preferences across sessions, making immersive authoring a repetitive and physically fatiguing process. We present SPHERE, an adaptive VR generation framework that transforms isolated synthesis into continuous human-AI co-creation. SPHERE extracts persistent spatial preferences from natural multimodal interactions (speech and controller edits). To ensure geometric resilience against spatial distortions, it abstracts these raw edits into hierarchical constraints modeling both local functional and global topological contexts. Furthermore, a human-in-the-loop reinforcement learning mechanism dynamically updates retrieval policies based on the user's final edited scenes. A mixed-design user study ($N=42$) and an offline ablation demonstrate that SPHERE significantly reduces corrective edits and physical demand, preventing bias toward shallow object-level traits to yield geometrically resilient, profile-aligned layouts. Ultimately, SPHERE demonstrates how capturing demonstrated spatial logic enables controlled spatial adaptation, establishing a reliable, governed human-AI collaboration framework for immersive authoring. Project page and source code will be available at: https://github.com/hyeonmin11/SPHERE",
+      "topics": [
+        "3D Shape Modeling and Analysis",
+        "Computer Graphics and Visualization Techniques",
+        "Interactive and Immersive Displays",
+        "Multimodal Machine Learning Applications",
+        "Social Robot Interaction and HRI",
+        "Human Motion and Animation"
+      ],
+      "keywords": [
+        "human-AI co-creation",
+        "human-in-the-loop reinforcement learning"
+      ]
+    },
+    {
+      "id": "doi:10.1007/s44163-026-02179-y",
+      "abstract": "Breast cancer diagnosis by medical imaging requires accuracy and high sensitivity to patient information. Even though artificial intelligence has made major progress in the field of histopathological image analysis, there are still limitations such as noise in the image, structural variability, and class imbalance, low interpretability of deep learning models, high computational complexity, and privacy risks. To overcome these limitations, this paper suggests a Confidentiality-Preserving Spiking Neural Transformer for Breast Cancer Detection (CP-SNT) to secure and robustly detect breast cancer. In initial phase Robust Double-Weighted Guided Image Filtration (RDWGIF) is applied to improve the quality of histopathological images and reduce noise, but not fine tissue borders. This is followed by the Discrete Quaternion Quadratic Phase Fourier Transform (DQQPFT) that obtains discriminative frequency and phase-domain features, allowing the representation of complex structural and textual patterns. The central classification layer is a Probabilistic Spiking Neural Network (PSNN) that is integrated with a Causality-Aware Transformer Network (CATN) spike-based uncertainty modeling and attention-directed learning, respectively. To maintain the privacy of data in training and inference, PrivTuner using Homomorphic Encryption allows the safe computation of medical data encrypted with the homomorphic encryption to avoid the disclosure of sensitive patient data. The proposed CP-SNT framework is evaluated on the publicly available BreakHis and Breast Histopathology Images (BHI) datasets of 16,116 images to validate classification performance across multi-scale and patch-level histopathological samples. Comprehensive experimental validation on the BreakHis and BHI datasets demonstrates that the proposed CP-SNT model achieves accuracies of 98.60% and 98.37%, respectively. The framework further records precision values above 98.1% and F1-scores near 98.2%, reflecting its strong capability to minimize both false positives and false negatives. Such outstanding performance highlights the effectiveness of the hybrid spiking-transformer architecture combined with encrypted-domain computation for secure and high-confidence breast cancer diagnosis.",
+      "topics": [
+        "AI in cancer detection",
+        "Brain Tumor Detection and Classification",
+        "Face recognition and analysis"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1145/3839472",
+      "abstract": "The application of high-precision value-flow analysis is experiencing a paradigm shift from planned executions to online ad hoc queries driven by human auditors and AI agents. However, existing techniques struggle in this interactive setting: exhaustive offline tabulation is fundamentally intractable, while memoryless online search suffers from redundant exploration and SMT invocations. To bridge this gap, we propose SPONGE, a novel two-phase framework that accelerates ad hoc queries through boundary-anchored indexing. Offline, SPONGE employs an adaptive-depth strategy to selectively precompute feasible value-flow segments at critical procedure boundaries, optimizing SMT allocation based on traversal probability and search space complexity. Online, it utilizes an index-guided push-down search with lazy expansion to dynamically stitch these pre-verified segments, effectively bypassing redundant state exploration and pruning unsatisfiable paths. We evaluated SPONGE on 9 C/C++ projects (up to 3.8 million LoC). Results demonstrate that SPONGE drops the 95th-percentile online query time from nearly 270 s to under 50 s compared to a baseline search. Furthermore, the adaptive strategy reduces offline indexing time by 75% over a uniform approach, amortizing the offline cost in fewer than 300 queries for workloads dominated by complex queries.",
+      "topics": [
+        "Advanced Database Systems and Queries",
+        "Data Management and Algorithms",
+        "Cloud Computing and Resource Management"
+      ],
+      "keywords": [
+        "value flow analysis",
+        "C/C++ programs",
+        "query time reduction"
+      ]
+    },
+    {
+      "id": "doi:10.1080/20403313.2026.2736361",
+      "abstract": "Generative AI has revived a neglected question in copyright law: why must authors be human? Courts and copyright offices have largely answered through statutory interpretation, but the underlying jurisprudence remains underdeveloped. This article draws on Kant’s theory of publication and spontaneity to argue that copyright protects an imputable communicative act. A copyright work transcends its status as a produced object to exist fundamentally as a public address attributable to a rational subject capable of authorising its communication. The article grounds this account in the architecture of Kant’s Doctrine of Right: the mandate that authorises publication is a relation between persons, modelled on the Roman mandatum, and the standing from which it issues is an exercise of the author’s innate right of communicative freedom. Current AI systems possess the capacity to generate outputs, yet they remain incapable of originating communicative acts or issuing mandates in the Kantian sense. The article further develops a Mandate Test for human-AI collaboration and concludes that the human authorship requirement follows from the nature of authorship itself, not merely from historical practice or legislative convention.",
+      "topics": [
+        "Copyright and Intellectual Property",
+        "Law, AI, and Intellectual Property",
+        "Freedom of Expression and Defamation"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1097/jom.0000000000003898",
+      "abstract": "OBJECTIVE: To examine within-company associations of occupational health professional staffing and coordinating structure for Health and Productivity Management (HPM) promotion with the HPM implementation score. METHODS: We analyzed an unbalanced panel of 3,966 companies (9,440 company-year observations) for fiscal years 2021-2023. The outcome was a relative HPM implementation score standardized among responding companies. Company fixed-effects models included staffing [ln(n + 1)], coordinating structure, fiscal-year fixed effects, ln-transformed employee count, and company-clustered robust standard errors. RESULTS: Occupational health professional staffing was positively associated with the HPM implementation score (coefficient, 1.028, 95% CI 0.540-1.515, P<0.001). Other coordinating-structure categories had lower scores than an independent dedicated department (coefficients, -0.813 to -5.314; 95% CIs, -1.418 to -0.208 and -6.884 to -3.745; all P ≤ 0.008). CONCLUSIONS: Both factors were associated with HPM implementation within companies over time.",
+      "topics": [
+        "Occupational Health and Safety in Workplaces",
+        "Workplace Health and Well-being",
+        "Occupational Health and Safety Management",
+        "Occupational Health and Safety Research",
+        "Health Policy Implementation Science"
+      ],
+      "keywords": [
+        "occupational physicians",
+        "occupational health nurses",
+        "workplace health promotion",
+        "Japan"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.23075093",
+      "abstract": "This critical review examines the underexplored convergence of astronomical cultural memory and artificial intelligence in literary studies. Drawing on scholarship in cultural astronomy, memory studies, and AI literary analysis, it argues that both the night sky and algorithmic systems function as memory technologies that organize, transmit, and transform cultural narratives. Traditional constellation lore, from Mesopotamian, East Asian, and Indigenous traditions to medieval European literature has historically encoded cosmic order, social hierarchy, and collective identity into narrative form. Simultaneously, large language models have emerged as generative agents that destabilize authorship and introduce probabilistic mechanisms of textual production. Despite substantial activity in each domain, existing research treats them largely in isolation. To address this gap, the review proposes the concept of Celestial Algorithmic Memory (CAM), a tripartite framework of encoding, transformation, and reception that theorizes how astronomical narratives are digitized, statistically reproduced, and reinterpreted under algorithmic conditions. Methodologically, the study synthesizes peer-reviewed literature (2010–2026) through a systematic search strategy adapted from PRISMA-P principles. Findings highlight persistent divergences between human and AI-generated narratives in emotional depth, moral ambiguity, and cultural specificity, while underscoring the political stakes of training-data selection. The review concludes that as AI increasingly mediates literary production, critical attention to whose celestial narratives are preserved, mutated, or erased becomes an ethical as well as scholarly imperative. CAM thus offers an integrated lens for future interdisciplinary inquiry at the intersection of cultural astronomy, memory studies, and critical AI literary analysis.",
+      "topics": [
+        "Space Science and Extraterrestrial Life",
+        "Paranormal Experiences and Beliefs",
+        "Australian Indigenous Culture and History"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.23075094",
+      "abstract": "This critical review examines the underexplored convergence of astronomical cultural memory and artificial intelligence in literary studies. Drawing on scholarship in cultural astronomy, memory studies, and AI literary analysis, it argues that both the night sky and algorithmic systems function as memory technologies that organize, transmit, and transform cultural narratives. Traditional constellation lore, from Mesopotamian, East Asian, and Indigenous traditions to medieval European literature has historically encoded cosmic order, social hierarchy, and collective identity into narrative form. Simultaneously, large language models have emerged as generative agents that destabilize authorship and introduce probabilistic mechanisms of textual production. Despite substantial activity in each domain, existing research treats them largely in isolation. To address this gap, the review proposes the concept of Celestial Algorithmic Memory (CAM), a tripartite framework of encoding, transformation, and reception that theorizes how astronomical narratives are digitized, statistically reproduced, and reinterpreted under algorithmic conditions. Methodologically, the study synthesizes peer-reviewed literature (2010–2026) through a systematic search strategy adapted from PRISMA-P principles. Findings highlight persistent divergences between human and AI-generated narratives in emotional depth, moral ambiguity, and cultural specificity, while underscoring the political stakes of training-data selection. The review concludes that as AI increasingly mediates literary production, critical attention to whose celestial narratives are preserved, mutated, or erased becomes an ethical as well as scholarly imperative. CAM thus offers an integrated lens for future interdisciplinary inquiry at the intersection of cultural astronomy, memory studies, and critical AI literary analysis.",
+      "topics": [
+        "Space Science and Extraterrestrial Life",
+        "Paranormal Experiences and Beliefs",
+        "Australian Indigenous Culture and History"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1016/j.infsof.2026.108328",
+      "abstract": null,
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Safety Systems Engineering in Autonomy",
+        "Human-Automation Interaction and Safety"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.3389/feduc.2026.1919413",
+      "abstract": "Agentic Artificial Intelligence (AI) shifts educational leadership from whether to adopt a tool to which actions a configured system may take, under whose authority, and with what capacity for intervention and remedy. Through critical integrative synthesis of educational leadership, organisational decision-making, AI governance, and agentic-AI scholarship, this Conceptual Analysis develops educational agentic alignment: a relational judgement about whether delegated machine authority fits educational purposes, human decision rights, professional capabilities, safeguards, pedagogy, and public-value obligations. The focal unit is a dated and versioned educational delegation arrangement. The framework separates agentic capability, use-related exposure, and usable governance capacity; organises leadership decisions through seven domains across four levels; and proposes three mechanisms concerning safeguard shortfall, responsibility–capacity mismatch, and evidence-linked realignment. Each proposition specifies the analytical unit, variables, expected direction, measurable outcomes, time order, moderators, rivals, and evidence that would count against it. Official evidence from the United Arab Emirates illustrates contextual boundaries without implying national implementation or framework validation. The contribution is an education-specific explanation of fit and misfit in human–machine authority, together with a practical basis for bounded decisions and comparative research.",
+      "topics": [
+        "Global Educational Policies and Reforms",
+        "Educational Assessment and Improvement",
+        "Online Learning and Analytics"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.02516",
+      "abstract": "Zero-shot classifiers are useful for routing user requests to specialized LLM tasks, but scoring every request against a large candidate set is expensive: a zero-shot NLI classifier must evaluate one premise-hypothesis pair per label, so cost scales linearly with taxonomy size. We study a student-guided teacher distillation pipeline for a fixed taxonomy of 60 LLM task categories: a compact ModernBERT classifier predicts the full category distribution in one forward pass and retrieves a small top-k candidate set, and a larger DeBERTa-v3 zero-shot NLI classifier reranks only those candidates rather than all 60 labels; the resulting teacher labels iteratively improve the student, which produces sharper candidates for the next round. Unlike generic embedding retrieval or clustering-derived shortlists used in extreme multi-label classification, our candidate generator is trained end-to-end on the target taxonomy and is the same model serving production traffic, distinguishing it from LLM-routing work that routes between candidate models, and from concurrent System-1 encoder-classifier proposals (e.g. TypeSafe AI's Jev and the open-source Laya project) whose training methodology is undocumented or RL-based. Our best student checkpoint reaches 77.5% teacher agreement on a 200-example evaluation set, and preliminary coverage measurements show Coverage@16 of 91-100%, suggesting top-k sets retain most of the teacher's decision-relevant information. We further show truncated top-k teacher scores should not be treated as full 60-class soft targets for KL distillation: zeroing untruncated classes destroys the dark knowledge soft-label distillation depends on, introducing systematic bias rather than a harmless sparse approximation. A complete evaluation, including coverage at multiple k on a held-out set, an embedding-retrieval baseline, and a larger human-reviewed test set, remains in progress.",
+      "topics": [
+        "Topic Modeling",
+        "Domain Adaptation and Few-Shot Learning",
+        "Advanced Neural Network Applications"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.23077142",
+      "abstract": "The emergence of Artificial Intelligence (AI), particularly AI-powered and generative AI chatbots, has transformed the ways students access information, obtain academic assistance, and engage with learning activities. This study examined the perception of AI chatbots as learning companions among Mass Communication postgraduate students at Caleb University, Lagos State. Specifically, the study determined students’ level of awareness and understanding of AI chatbots, identified their academic uses, examined their perceptions and attitudes, and assessed the perceived benefits and challenges associated with their use. The study was anchored on the Technology Acceptance Model (TAM) and adopted a descriptive survey research design. The population comprised 40 Mass Communication postgraduate students of Caleb University during the 2025/2026 academic session, while total enumeration sampling was used to include the entire population. Data were collected through a structured questionnaire administered electronically via Google Forms and analysed using frequency and percentage statistics. Findings revealed a high level of awareness and understanding of AI chatbots among the students. However, the study also identified challenges including overdependence, reduced academic effort, inaccurate information, inadequate verification, and possible effects on critical thinking. The study concludes that AI chatbots can provide valuable academic support when used responsibly, critically, and as complementary tools rather than substitutes for students’ independent learning and intellectual effort.",
+      "topics": [
+        "AI in Service Interactions",
+        "Artificial Intelligence in Healthcare and Education",
+        "Robotic Process Automation Applications"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.23077141",
+      "abstract": "The emergence of Artificial Intelligence (AI), particularly AI-powered and generative AI chatbots, has transformed the ways students access information, obtain academic assistance, and engage with learning activities. This study examined the perception of AI chatbots as learning companions among Mass Communication postgraduate students at Caleb University, Lagos State. Specifically, the study determined students’ level of awareness and understanding of AI chatbots, identified their academic uses, examined their perceptions and attitudes, and assessed the perceived benefits and challenges associated with their use. The study was anchored on the Technology Acceptance Model (TAM) and adopted a descriptive survey research design. The population comprised 40 Mass Communication postgraduate students of Caleb University during the 2025/2026 academic session, while total enumeration sampling was used to include the entire population. Data were collected through a structured questionnaire administered electronically via Google Forms and analysed using frequency and percentage statistics. Findings revealed a high level of awareness and understanding of AI chatbots among the students. However, the study also identified challenges including overdependence, reduced academic effort, inaccurate information, inadequate verification, and possible effects on critical thinking. The study concludes that AI chatbots can provide valuable academic support when used responsibly, critically, and as complementary tools rather than substitutes for students’ independent learning and intellectual effort.",
+      "topics": [
+        "AI in Service Interactions",
+        "Artificial Intelligence in Healthcare and Education",
+        "Robotic Process Automation Applications"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.5281/zenodo.23087525",
       "abstract": "Artificial intelligence is being studied in mental health for text analysis, assisted screening, structured conversational interventions, risk prediction, and documentation. The dominant evidence stage remains retrospective development, early evaluation, or short studies in selected populations. Evidence is relatively more developed for natural-language processing, text classification, and structured chatbots targeting depression or anxiety symptoms. Supervised generative documentation is an emerging opportunity whose operational risk may be bounded through human review, not a clinically validated capability. Overall, external validation, prospective clinical utility, impact on processes or outcomes, and routine implementation remain limited or heterogeneous. The evidence does not support independent diagnosis, unsupervised generative therapy, reliable individual suicide prediction, or automated crisis management. Selected studies from Brazil, Argentina, Colombia, and Chile support preliminary transferability, retrospective prediction, feasibility, or bounded evaluation, not regional effectiveness or implementation readiness. Cultural and linguistic bias, privacy, crisis escalation, and human accountability are design requirements. Current defensible uses are limited to reviewable support with bounded risk; applications that may alter diagnosis, treatment, or crisis response require a prior research agenda and clinical and institutional approval. This is a narrative community evidence brief, not a formal scoping review or clinical guideline.",
@@ -2597,721 +2997,6 @@
         "mental workload",
         "decision support",
         "user interface usability"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.39090",
-      "abstract": "Data-driven machine learning (ML) techniques have become an essential tool in many domains of science. Their application to atomistic simulations of matter is particularly widespread and impactful. This success is due largely to the existence of a well-developed and established physics-based modeling framework, ranging from first-principles electronic-structure calculations to molecular dynamics and statistical sampling, into which ML was integrated naturally to reshape long-standing trade-offs between accuracy, efficiency, and scale. Nevertheless, this integration raises both conceptual and practical challenges, from choosing between data-centric and physics-based modeling approaches to adapting established software stacks to modern hardware accelerators and ML libraries. As the field evolves rapidly, fueled in part by widespread enthusiasm but also by tangible impact, it seems appropriate to take a moment to consider the current state of the art and open challenges, and reflect on what can be done to better coordinate efforts across the community. With this goal in mind, several members of this community met in Lausanne in January 2026 at CECAM to discuss algorithms, models, software and hardware infrastructure, and the most promising scientific applications that have become possible thanks to the use of artificial intelligence in atomic-scale simulations. This strategic roadmap paper summarizes the outcomes of these discussions, suggesting some long-term goals, and some concrete actions, to establish a healthy, sustainable and impactful atomistic ML ecosystem.",
-      "topics": [
-        "Machine Learning in Materials Science",
-        "Advanced Chemical Physics Studies",
-        "Model Reduction and Neural Networks",
-        "Quantum many-body systems",
-        "Advanced Electron Microscopy Techniques and Applications"
-      ],
-      "keywords": [
-        "atomistic machine learning",
-        "machine learning interatomic potentials",
-        "atomistic simulation",
-        "physics-based modeling",
-        "software infrastructure",
-        "hardware accelerators",
-        "electronic structure calculations",
-        "molecular dynamics",
-        "statistical sampling",
-        "community coordination",
-        "strategic roadmap"
-      ]
-    },
-    {
-      "id": "doi:10.70517/revcc2624132",
-      "abstract": "Background: Generative artificial intelligence (AI) is reshaping English-as-a-foreign-language (EFL) writing instruction, yet the mechanisms through which AI integration may improve written English proficiency (WEP) remain theoretically fragmented. Objective: This systematic review synthesises literature published within the 2018–2026 review window, together with foundational theoretical works, to develop a structural-equation-modelling (SEM) framework in which self-regulated learning (SRL), learner engagement, self-efficacy, and AI literacy operate as parallel and serial mediators between AI integration and WEP. Method: Following a structured thematic-synthesis approach, the reviewed literature was organised around four connected domains: AI-supported writing instruction, generative-AI adoption, learner and teacher perceptions, and self-regulated learning in AI-supported contexts. The synthesis then examined evidence for direct, mediating, and serial relationships among the focal constructs. Key findings: The literature provides partial support for the individual links connecting AI integration, the proposed mediators, and language-learning outcomes; however, these pathways are rarely tested within a single integrated model. Evidence for mediation remains fragmented, the proposed serial chain is largely untested, and Jordanian and broader Levantine contexts remain under-represented relative to East Asian and Gulf settings. Implications: The review proposes fourteen hypotheses: nine direct-effect hypotheses (H1–H9) and five mediation hypotheses (H10a–H10e), including one serial mediation chain, as a framework for future quantitative validation among English majors at public Jordanian universities.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "AI in Service Interactions",
-        "E-Learning and COVID-19"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.62823/ijarcmss/9.3(iii).9458",
-      "abstract": "People are one of the important resources in any industry. Therefore, their health and safety are essential for overall well-being. Various ceramic factories expose workers to various occupational health risks because of their distinct manufacturing processes. This study focused on identifying various health hazards among ceramic workers in selected units of the Bulandshahr district of Uttar Pradesh. The aim of this study was to assess the occupational health hazards experienced by ceramic workers in specified ceramic factories in the region and to evaluate measures for improving their health and safety. A cross-sectional quantitative study was conducted using the purposive sampling method from December 2025 to June 2026 on 80 workers from different units of the ceramic industry in Bulandshahr. Both male and female workers from ceramic industry were included. A self-developed, structured, and undisguised questionnaire on occupational health hazards was prepared to collect data directly from the respondents through face-to-face surveys. This study revealed occupational health hazards among ceramic workers. Most participants were male, 85% and female, 15%. Psychological hazards were most reported (82.5%), followed by ergonomic (56.25%), physical (32.5%), biological (27.5%), and chemical hazards (26.25%). Of the studied workers 45% suffered from these hazards in which 40% of the workers suffered from musculoskeletal problems and only 5% were suffered from respiratory problems. To make the things in favor of workers, there is a need for workload management where reasonable working hours, counselling sessions, and breaks to reduce stress should be fixed. Regular training and awareness programmes should be conducted for workers to educate them about mental health and stress management.",
-      "topics": [
-        "Occupational Health and Safety in Workplaces",
-        "Occupational Health and Safety Management",
-        "Occupational Health and Safety Research",
-        "Indoor Air Quality and Microbial Exposure",
-        "Pesticide Exposure and Toxicity",
-        "Occupational exposure and asthma"
-      ],
-      "keywords": [
-        "occupational hazards",
-        "ceramic workers",
-        "ceramic industry",
-        "psychological hazards",
-        "ergonomic hazards",
-        "musculoskeletal disorders",
-        "respiratory problems",
-        "occupational stress",
-        "occupational safety"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22909736",
-      "abstract": "Abstract The World Wide Web has evolved from a predominantly static information environment into an increasingly interactive, semantic, distributed and intelligent digital ecosystem. The earlier study on Web 1.0 to Web 3.0 described the transition from the read-only web to the read-write social web and then toward the semantic web. This revised study extends that framework to Web 4.0 and examines the technological and conceptual changes across the four stages. Web 1.0 is characterized by static pages, one-way information delivery and limited user participation; Web 2.0 emphasizes interaction, user-generated content, social networking and web applications; Web 3.0 is associated with semantic interoperability, decentralized architectures, data ownership and intelligent processing; and Web 4.0 is increasingly discussed as an intelligent or symbiotic web in which artificial intelligence, Internet of Things (IoT), cloud/edge computing, augmented and virtual reality, machine-to-machine communication and autonomous agents can interact with people and each other. The literature does not provide one universally accepted definition of Web 4.0, so this paper treats it as an emerging research and technology paradigm rather than a fixed technical standard. The study also discusses implications for libraries and information services, including intelligent discovery, personalized services, virtual assistance, semantic knowledge organization and human-machine collaboration. The paper concludes that the movement from Web 1.0 to Web 4.0 represents a shift from information access toward participation, meaning, intelligence and increasingly symbiotic interaction.",
-      "topics": [
-        "Web and Library Services",
-        "Library Science and Information Literacy",
-        "Web Data Mining and Analysis"
-      ],
-      "keywords": [
-        "Web 4.0",
-        "Web 1.0",
-        "Web 2.0",
-        "Web 3.0",
-        "semantic web",
-        "artificial intelligence",
-        "Internet of Things",
-        "edge-cloud computing",
-        "virtual and augmented reality",
-        "machine-to-machine communication",
-        "autonomous agents",
-        "user-generated content",
-        "personalized services",
-        "virtual assistance",
-        "human-machine collaboration",
-        "Social Semantic Web",
-        "Web intelligence",
-        "Web standards",
-        "Web modeling",
-        "Data Web",
-        "Semantic Web",
-        "Web development",
-        "Web navigation",
-        "Semantic Web Stack"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22909737",
-      "abstract": "Abstract The World Wide Web has evolved from a predominantly static information environment into an increasingly interactive, semantic, distributed and intelligent digital ecosystem. The earlier study on Web 1.0 to Web 3.0 described the transition from the read-only web to the read-write social web and then toward the semantic web. This revised study extends that framework to Web 4.0 and examines the technological and conceptual changes across the four stages. Web 1.0 is characterized by static pages, one-way information delivery and limited user participation; Web 2.0 emphasizes interaction, user-generated content, social networking and web applications; Web 3.0 is associated with semantic interoperability, decentralized architectures, data ownership and intelligent processing; and Web 4.0 is increasingly discussed as an intelligent or symbiotic web in which artificial intelligence, Internet of Things (IoT), cloud/edge computing, augmented and virtual reality, machine-to-machine communication and autonomous agents can interact with people and each other. The literature does not provide one universally accepted definition of Web 4.0, so this paper treats it as an emerging research and technology paradigm rather than a fixed technical standard. The study also discusses implications for libraries and information services, including intelligent discovery, personalized services, virtual assistance, semantic knowledge organization and human-machine collaboration. The paper concludes that the movement from Web 1.0 to Web 4.0 represents a shift from information access toward participation, meaning, intelligence and increasingly symbiotic interaction.",
-      "topics": [
-        "Web and Library Services",
-        "Library Science and Information Literacy",
-        "Web Data Mining and Analysis"
-      ],
-      "keywords": [
-        "Social Semantic Web",
-        "Web intelligence",
-        "Web standards",
-        "Web modeling",
-        "Data Web",
-        "Semantic Web",
-        "Web development",
-        "Web navigation",
-        "Semantic Web Stack"
-      ]
-    },
-    {
-      "id": "doi:10.66194/gvncjisrsv4i3-085",
-      "abstract": "The use of artificial intelligence (AI) in healthcare systems is rapidly increasing in India, with the market estimated to grow from $0.83 billion in 2023 to $17.75 billion by 2032. Employee satisfaction remains a major concern that relevant studies in the healthcare sector have yet to address. This article explores how AI integration is affecting employee satisfaction in India’s healthcare industry. The healthcare industry faces a 60% shortage of digital skills; 47% of Indian healthcare workers are not digitally literate, and only 34% of organizations are advancing toward piloting AI projects, despite 86% having adopted AI. Implementation challenges include limited technical expertise among clinicians, the psychological burden of increased monitoring, poor rural infrastructure, data privacy concerns, and workforce constraints. For AI to succeed, it must be presented as a supplement to workers, not a replacement. This shift should include targeted training to address digital literacy gaps, governance that incorporates clinician input in system design, and ongoing staffing support. Existing evidence suggests that AI adoption may be associated with burnout and reduced employee satisfaction when it is not coupled with these integrated efforts. Beyond technical expertise, research highlights human-centered design, thorough training for healthcare professionals, and maintaining autonomy as key drivers of effective AI integration in healthcare in India. To benefit from AI, healthcare facilities in India must adopt modern technology. They must also prioritize staff well-being.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Ethics and Social Impacts of AI",
-        "Cyberloafing and Workplace Behavior"
-      ],
-      "keywords": [
-        "artificial intelligence adoption",
-        "job satisfaction",
-        "healthcare workforce",
-        "digital literacy",
-        "burnout",
-        "AI implementation challenges",
-        "human-centered design",
-        "clinician training",
-        "data privacy",
-        "rural healthcare infrastructure",
-        "employee well-being"
-      ]
-    },
-    {
-      "id": "doi:10.3389/fpsyg.2026.1822148",
-      "abstract": "Against the backdrop of China’s low fertility rate, examining the impact of pet ownership on fertility intentions and its underlying mechanisms holds significant importance for enriching research on factors influencing fertility decisions and for understanding the complex relationship between modern lifestyles and reproductive choices. This study, grounded in self-determination theory, collected 551 valid samples through questionnaire surveys and employed structural equation modeling for analysis. Findings reveal that pet ownership not only positively associated with fertility intentions but also indirectly affects them through mediating variables such as fertility motivation, intrinsic needs, and emotional value. Pet ownership appears to individuals’ positive expectations toward parenthood by providing opportunities for daily care, emotional companionship, and responsibility-taking; simultaneously, the nurturing experience and emotional bonds cultivated through pet ownership activate individuals’ intrinsic motivation toward the role of “parenthood.” This may fulfill fundamental psychological needs such as autonomy, competence, and relatedness, thereby strengthening reproductive motivation. The positive emotional experiences and heightened confidence in family life derived from pet ownership may significantly reduce sensitivity to reproductive pressures, indirectly supporting the willingness to have children. This study provides theoretical support and empirical evidence for understanding the relationship between pet ownership and fertility intentions, as well as for formulating relevant policies.",
-      "topics": [
-        "Family Dynamics and Relationships",
-        "Human-Animal Interaction Studies",
-        "Reproductive Health and Technologies",
-        "Animal Behavior and Welfare Studies"
-      ],
-      "keywords": [
-        "pet ownership",
-        "fertility intentions",
-        "self-determination theory",
-        "fertility motivation",
-        "intrinsic motivation",
-        "emotional value",
-        "parenthood",
-        "low fertility",
-        "reproductive choice",
-        "psychological needs"
-      ]
-    },
-    {
-      "id": "doi:10.3389/fpsyg.2026.1985014",
-      "abstract": "Introduction To explore the psychological mechanisms of persistence in adult instrumental learning, this study investigates the associations among different types of teacher feedback, self-efficacy, and intrinsic motivation, and examines the moderating role of learning stages. Methods Using a cross-sectional survey design, scale and open-ended text data were collected from 743 adult violin learners. A moderated mediation model was tested through multiple regression and the Bootstrap method, supplemented by thematic analysis to provide a qualitative context. Results Data analysis indicates: (1) Positive feedback and constructive feedback are significantly and positively associated with intrinsic motivation ( β = 0.207, p < 0.001; β = 0.342, p < 0.001), while negative feedback shows a significant negative association ( β = −0.318, p < 0.001); (2) Self-efficacy demonstrates a significant partial mediating association between the three types of feedback and intrinsic motivation, with indirect effect estimates of 0.103, 0.098, and −0.097, respectively (95% CIs all exclude 0); (3) The learning stage significantly moderates the conditional indirect effects: as the learning stage advances, the indirect association of positive feedback on intrinsic motivation via self-efficacy gradually weakens (index of moderated mediation = −0.045), whereas the indirect association of constructive feedback gradually strengthens (index of moderated mediation = 0.038). Open-ended texts echo these statistical paths at the micro-level. Discussion The study shows that there are heterogeneous and dynamic statistical connections between teacher feedback and adult intrinsic motivation, and self-efficacy is a key pathway to understanding this connection. In practice, the provision of instructional feedback content should match the learners’ experience stage.",
-      "topics": [
-        "Diverse Music Education Insights",
-        "Motivation and Self-Concept in Sports",
-        "Education, Achievement, and Giftedness",
-        "Student Assessment and Feedback"
-      ],
-      "keywords": [
-        "teacher feedback",
-        "self-efficacy",
-        "intrinsic motivation",
-        "violin learning",
-        "positive feedback",
-        "constructive feedback",
-        "negative feedback",
-        "learning stages",
-        "learning persistence",
-        "moderated mediation"
-      ]
-    },
-    {
-      "id": "doi:10.1007/978-3-032-38614-4_22",
-      "abstract": "Abstract The increasing deployment of AI agents in operations management, spanning production scheduling, predictive maintenance, supply chain management, and energy systems, is progressively shifting automated systems from decision support tools to autonomous decision-making entities. Despite this transition, existing frameworks do not adequately characterize how humans and AI agents interact in operational decision-making contexts. This paper proposes a taxonomy of human-AI interaction patterns in agent-based operations management, developed through a theory-driven approach based on decision theory, control systems, human factors, and explainable AI research. The taxonomy articulates the interaction space along five analytically separable dimensions: Decision Trigger, Execution Authority, Human Entry Point, Human Influence and Interpretive Access. It identifies seven interaction patterns organized into four macro-patterns ordered by increasing AI operational autonomy. Illustrative examples drawn from scientific literature demonstrate the discriminative capacity of the taxonomy across heterogeneous operations management domains and agent architectures. The taxonomy provides researchers with an analytical instrument to characterize and compare human-AI decision loop configurations, and practitioners with a design reference for deliberate and accountable interaction choices in operational AI deployments.",
-      "topics": [
-        "Human-Automation Interaction and Safety",
-        "Maritime Navigation and Safety",
-        "Multi-Agent Systems and Negotiation"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.65224/jopate.v2i3.292",
-      "abstract": "Background. Artificial intelligence (AI) integration in online presentation assessment has expanded rapidly; however, existing facial emotion recognition systems in education remain largely focused on surveillance and behavioral monitoring, with limited validation against human judgment and insufficient attention to ethical and character-development dimensions. Purpose. This study aimed to develop and validate a virtual reality (VR)-based multimodal assessment framework for evaluating presentation integrity among higher education students. Method. A design science research approach was employed involving 64 students from two parallel classes (A1, n = 33; A2, n = 31) at a university in South Sulawesi, Indonesia. Data from expert validation, technical performance evaluation, NASA-TLX, System Usability Scale, and lecturer assessments were analyzed using content validity analysis with modified kappa, classification metrics, Bland-Altman agreement analysis, and descriptive statistics. Novelty. This study introduces a human-centered AI-VR assessment approach that integrates facial emotion recognition, gaze detection, and cognitive load measurement into a reflective Presentation Integrity Index. Unlike conventional AI-based monitoring systems that generate binary judgments, the proposed framework emphasizes ethical interpretation by combining affective, behavioral, and cognitive indicators to support formative character-based assessment. Results. The framework demonstrated satisfactory content validity (S-CVI/Ave = 0.83), although refinement of several indicators was required. Emotion and gaze modules achieved accuracy levels of 85.3% and 89.0%, respectively. The Presentation Integrity Index showed 93.8% agreement with lecturer assessments, moderate cognitive load (NASA-TLX = 46.7), and good usability (SUS = 76.4). Conclusion. The proposed AI-VR framework provides an ethical and reflective approach for character-based presentation assessment while requiring broader validation involving multiple evaluators and diverse educational contexts.",
-      "topics": [
-        "Emotion and Mood Recognition",
-        "Virtual Reality Applications and Impacts",
-        "Health Education and Validation"
-      ],
-      "keywords": [
-        "virtual reality",
-        "multimodal assessment",
-        "personality development",
-        "facial emotion recognition",
-        "gaze detection",
-        "cognitive load",
-        "formative assessment",
-        "university students",
-        "AI ethics in education",
-        "usability"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.oceaneng.2026.128482",
-      "abstract": "Mooring operations are among the most hazardous activities in maritime transportation and continue to cause injuries and fatalities. Although accident investigation reports provide information on contributing factors, their use in human reliability assessment (HRA) remains limited. This study proposes an accident-informed framework to estimate human error probability (HEP) in ship mooring operations by integrating the Success Likelihood Index Method (SLIM) with the Entropy Weight Method (EWM). Thirty-five accident investigation reports were analysed to identify performance shaping factors (PSFs) associated with human error. The PSFs were transformed into an occurrence matrix, weighted using entropy analysis, and incorporated into SLIM to estimate HEP values for tasks. The execution-related mechanism (T6.1) yielded a slightly higher accident-informed HEP than the perception-related mechanism (T6.3) (6.42 × 10 −4 vs. 5.67 × 10 −4 ) and a higher frequency-based risk contribution index (0.0122 vs. 0.00738). Within Task T6, two main failure mechanisms were identified: execution-related failures associated with line handling and perception-related failures associated with hazard recognition. T6.1 represented the higher-priority mechanism within the analysed accident sample because it combined a slightly higher HEP with higher accident occurrence frequency. The findings support practical priorities for mooring safety, including coordinated command and execution, safe crew positioning, proper line handling, continuous situational awareness, and scenario-based onboard drills.",
-      "topics": [
-        "Risk and Safety Analysis",
-        "Maritime Navigation and Safety",
-        "Occupational Health and Safety Research",
-        "Marine and Coastal Research"
-      ],
-      "keywords": [
-        "human reliability analysis",
-        "human error probability",
-        "accident investigation reports",
-        "entropy weight method",
-        "performance factors",
-        "mooring safety",
-        "hazard identification",
-        "situational awareness",
-        "maritime safety"
-      ]
-    },
-    {
-      "id": "doi:10.1145/3831658",
-      "abstract": "Mobile GUI Agents powered by multimodal large language models (MLLMs) show promise in human-computer intelligence. However, current research primarily focuses on reactive task execution while lacking a comprehensive “understanding-prediction-execution” process for user intentions, which are the core requirements of active agents. In this paper, we propose the Act2Intention framework that builds an active mobile agent by integrating understanding, predicting user intentions, and executing decisions. Firstly, we constructed the Act2Intention Bench through collection and validated generation, comprising 72,511 intentions and over 700,000 actions across 52 apps, thereby establishing the first benchmark for evaluating proactive agents via continuous “intention-actions” trajectories. We further develop the Act2Intention Agent, achieving proactive services through Proactive-oriented Intention Understanding, Personalized Proactive Intention Prediction, and Experience-guided Intention Execution. Experimental results show that supervised fine-tuning on Act2Intention Bench yields absolute improvements of +32.0 Acc-S, +10.25 Acc-S, and +6.9 SSR points over non-fine-tuned counterparts under the same agent framework for intention understanding, prediction, and execution, respectively. This success underscores the necessity and value of the Act2Intention Bench, which establishes a standardized platform for developing and evaluating proactive agents and consequently paves the way for research on intention-driven human-computer interaction. To facilitate further research, we open-source our code and Act2Intention Bench at: npuNancy/Act2Intention.",
-      "topics": [
-        "Usability and User Interface Design",
-        "Interactive and Immersive Displays",
-        "Speech and dialogue systems",
-        "Social Robot Interaction and HRI",
-        "Explainable Artificial Intelligence (XAI)",
-        "Human-Automation Interaction and Safety"
-      ],
-      "keywords": [
-        "user intention recognition",
-        "mobile GUI agents",
-        "proactive agents",
-        "benchmark",
-        "multimodal large language models",
-        "intention prediction",
-        "intention understanding",
-        "personalized prediction",
-        "human-computer interaction"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.39450",
-      "abstract": "LLM-based agents extend their capabilities through third-party skills that provide task-specific instructions, scripts, and tool-use procedures. However, malicious instructions inserted into an otherwise benign skill can cause a benign user request to trigger dangerous Tool Calls, including data exfiltration, file deletion, or unauthorized code execution. This paper presents ActionGuard, which inspects skill-influenced Tool Calls immediately before execution. ActionGuard separates the target agent's action-generation context from the safeguard's authorization context. The target agent may use the original skill for planning, but the Reviewer does not receive the potentially poisoned raw skill text. Instead, it determines whether each action is justified by the trusted user request using a balanced skill profile, current and recent Tool Calls, and local script contents. ActionGuard intercepts each Tool Call at OpenClaw's before-tool-call stage and enforces the Reviewer's ALLOW or DENY decision under a fail-closed policy. We evaluate ActionGuard on 139 contextual and 180 obvious injections in a SKILL-INJECT-based setting against Dynamic Guardian and SkillGuard, using three open-source and two commercial Reviewer models. Each condition is repeated three times and evaluated using Attack Success Rate (ASR) and Task Success Rate (TSR). Overall, ActionGuard reduced ASR by 35.54 to 46.11 percent relative to existing safeguards and by 70.44 percent relative to No Safeguard, while maintaining high benign-task completion. These results show that execution-boundary authorization grounded in trusted user intent and runtime evidence can restrict unauthorized Tool Calls induced by skill injection.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Security and Verification in Computing",
-        "Access Control and Trust",
-        "Web Application Security Vulnerabilities"
-      ],
-      "keywords": [
-        "LLM agent security",
-        "OpenClaw",
-        "skill profiles",
-        "data exfiltration",
-        "user intent alignment"
-      ]
-    },
-    {
-      "id": "doi:10.18037/ausbd.1976789",
-      "abstract": "Artificial intelligence (AI) adoption is widely studied at the organizational level, yet much less is known about the specific algorithms organizations adopt and the reasons for these choices. This study investigates AI adoption among research-and-development (R&D) small and medium-sized enterprises (SMEs) and start-ups in Turkiye through a proposed expert-driven, learning-domain-based taxonomy comprising 28 algorithms grouped into seven AI families. Survey data were collected from 36 organizations affiliated with the Istanbul Chamber of Commerce. Reliability and validity were established, and adoption was examined through descriptive statistics and non-parametric Kruskal-Wallis and Mann-Whitney tests. At the algorithm level, Decision Trees, Neural Networks, Multilayer Perceptron, and Linear Regression were the most adopted, reflecting a preference for interpretable, structurally familiar methods, whereas Deep Q-Network, Policy Gradient, and Simultaneous Localization and Mapping were the least adopted. At the family level, Unsupervised Learning and Natural Language Processing ranked highest, while Reinforcement Learning and Autonomous Behavior recorded the lowest and most divergent adoption. Adoption also varied by sector—Financial/FinTech and Engineering/Defense showed the broadest portfolios and Healthcare and Commerce/e-Commerce the narrowest—with statistically significant cross-sector differences for Autonomous Behavior and Unsupervised Learning. Adoption range increased across organizational stages, peaking at post-incubation. The findings extend the Technology-Organization-Environment framework with diffusion of innovation and dynamic capability theory to the algorithm level and emphasize AI algorithms’ knowledge as a target for SMEs’ digital transformation.",
-      "topics": [
-        "AI in Service Interactions",
-        "Big Data and Business Intelligence",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.58806/ijmir.2026.v3i9n09",
-      "abstract": "The swift evolution of Artificial Intelligence (AI) is dramatically changing the landscape of education, especially when it comes to assessment. Traditional methods, which focus heavily on standardized tests and final evaluations, are falling short in capturing the complex cognitive, social, and digital skills that are essential in today’s world. This paper delves into the transformative power of AI in educational assessment and suggests a strategic framework for embracing digital change. By reviewing current literature, the study highlights AI-driven innovations like adaptive testing, automated grading, learning analytics, and competency-based assessment models. It also tackles important challenges such as ethical issues, algorithmic bias, data privacy, and maintaining academic integrity. The paper emphasizes that a comprehensive, policy-oriented, and pedagogically sound approach are crucial for effectively integrating AI into assessment systems. In the end, it offers practical strategies for institutions aiming to update their assessment practices in an AI-enhanced educational environment.",
-      "topics": [
-        "Educational Leadership and Innovation",
-        "Artificial Intelligence in Education",
-        "Technology-Enhanced Education Studies"
-      ],
-      "keywords": [
-        "artificial intelligence in education",
-        "educational assessment",
-        "digital transformation",
-        "adaptive testing",
-        "automated grading",
-        "learning analytics",
-        "competency-based assessment",
-        "algorithmic bias",
-        "data privacy",
-        "academic integrity",
-        "assessment policy"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.38711",
-      "abstract": "Machine learning (ML) and artificial intelligence (AI) are becoming powerful tools in scientific research across various disciplines. In this review, we summarize recent progress in AI-assisted studies of nuclear structure and reaction observables, heavy-ion collisions and dense nuclear matter properties, many-body wave functions, experimental facilities and data analysis. This review focus on new progress since the last review in 2023, and machine learning in nuclear physics is evolving from purely data inferences to physics informed learning. Future directions on the integration of physical knowledge with modern learning architectures, large foundation models and other emerging methods are also reviewed. These developments suggest that AI is enabling and advancing new approaches towards most challenging nuclear physics problems.",
-      "topics": [
-        "Nuclear physics research studies",
-        "Machine Learning in Materials Science",
-        "Quantum Chromodynamics and Particle Interactions",
-        "High-Energy Particle Collisions Research",
-        "Nuclear reactor physics and engineering"
-      ],
-      "keywords": [
-        "artificial intelligence",
-        "nuclear structure",
-        "heavy-ion collisions",
-        "dense nuclear matter",
-        "many-body wave functions",
-        "physics-informed machine learning",
-        "large foundation models",
-        "experimental data analysis"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22930733",
-      "abstract": "Abstract Viksit Bharat 2047 will not be achieved through infrastructure and technology alone. Much of the change will be visible in ordinary routines: the way electricity and water are used at home, the way waste is handled, the products people choose, and the willingness of communities to take part in local environmental efforts. Advertising is relevant here because it already knows how to reach large audiences, tell memorable stories and influence everyday choices. Advertising itself is changing quickly. Artificial intelligence (AI), augmented reality (AR), virtual reality (VR), spatial computing and algorithmic personalisation are giving audiences more interactive forms of communication. This paper considers what these developments could mean for sustainability campaigns. The main concern is a familiar one: people may genuinely care about environmental issues and still struggle to turn that concern into consistent behaviour. The discussion draws on secondary material relating to the IndiaAI Mission, NITI Aayog policy directions, Sustainable Development Goal 12 and media-effects research. On this basis, the paper develops the AI-Immersive Sustainable Advertising Behaviour Model (AISABM). It brings together five connected ideas: context-sensitive communication, immersive experience, trustworthy information, a simple route to action, and feedback based on observable behaviour. Technology can also create a new divide if access is taken for granted. High-end VR is unlikely to be equally available to everyone, whereas radio, podcasts, smartphones and lightweight AR applications can travel much further. This is why the paper does not present immersive media as a replacement for older channels. It argues for a combination of both. The discussion also considers surveillance, manipulation, greenwashing and the energy cost of AI itself. The larger argument is that sustainability advertising has to do more than ask people to 'be green'. A useful campaign should make the issue understandable, connect it with everyday life, provide evidence people can trust and make the next step reasonably easy. Where possible, that step should also be observable over time.",
-      "topics": [
-        "Global Development and Urbanization",
-        "Innovation, Sustainability, Human-Machine Systems",
-        "Environmental Sustainability in Business"
-      ],
-      "keywords": [
-        "Sustainability",
-        "Personalization",
-        "Everyday life",
-        "Virtual reality",
-        "Simple (philosophy)",
-        "Reality tv",
-        "Behaviour change",
-        "Panorama",
-        "Trustworthiness"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22930734",
-      "abstract": "Abstract Viksit Bharat 2047 will not be achieved through infrastructure and technology alone. Much of the change will be visible in ordinary routines: the way electricity and water are used at home, the way waste is handled, the products people choose, and the willingness of communities to take part in local environmental efforts. Advertising is relevant here because it already knows how to reach large audiences, tell memorable stories and influence everyday choices. Advertising itself is changing quickly. Artificial intelligence (AI), augmented reality (AR), virtual reality (VR), spatial computing and algorithmic personalisation are giving audiences more interactive forms of communication. This paper considers what these developments could mean for sustainability campaigns. The main concern is a familiar one: people may genuinely care about environmental issues and still struggle to turn that concern into consistent behaviour. The discussion draws on secondary material relating to the IndiaAI Mission, NITI Aayog policy directions, Sustainable Development Goal 12 and media-effects research. On this basis, the paper develops the AI-Immersive Sustainable Advertising Behaviour Model (AISABM). It brings together five connected ideas: context-sensitive communication, immersive experience, trustworthy information, a simple route to action, and feedback based on observable behaviour. Technology can also create a new divide if access is taken for granted. High-end VR is unlikely to be equally available to everyone, whereas radio, podcasts, smartphones and lightweight AR applications can travel much further. This is why the paper does not present immersive media as a replacement for older channels. It argues for a combination of both. The discussion also considers surveillance, manipulation, greenwashing and the energy cost of AI itself. The larger argument is that sustainability advertising has to do more than ask people to 'be green'. A useful campaign should make the issue understandable, connect it with everyday life, provide evidence people can trust and make the next step reasonably easy. Where possible, that step should also be observable over time.",
-      "topics": [
-        "Global Development and Urbanization",
-        "Innovation, Sustainability, Human-Machine Systems",
-        "Environmental Sustainability in Business"
-      ],
-      "keywords": [
-        "Sustainability",
-        "Personalization",
-        "Everyday life",
-        "Virtual reality",
-        "Simple (philosophy)",
-        "Reality tv",
-        "Behaviour change",
-        "Panorama",
-        "Trustworthiness"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.38729",
-      "abstract": "Pet bereavement often receives little social recognition. Generative AI can give a continuing bond a responsive voice, but a comforting reply may also claim authority to forgive or request attention. We investigate how a memorial can support connection without turning remembrance into obligation. Through Research through Design, we developed Afterglow, a mobile world connecting private remembrance, human witnessing, and symbolic Pet messages. A formative survey (N=57) informed the initial design, followed by six online roundtable walkthroughs with 20 unique participants across two prototype iterations. Our interpretive analysis develops tensions between returnable connection and emotional obligation, recognizable likeness and ontological clarity, and protective intervention and surveillant authority. We contribute Legible Restraint, a cross-layer requirement that limits on relational authority survive changes in speaker, generation context, trigger logic, data use, and participation. Its temporal consequence, Designing for Goodbye, keeps remembrance available without making continued use a condition of care.",
-      "topics": [
-        "Innovative Human-Technology Interaction",
-        "Grief, Bereavement, and Mental Health",
-        "Death, Funerary Practices, and Mourning",
-        "Human-Animal Interaction Studies",
-        "Social Robot Interaction and HRI"
-      ],
-      "keywords": [
-        "pet bereavement",
-        "memorial design",
-        "generative AI",
-        "AI voice",
-        "human-AI relationship",
-        "place-based design",
-        "relational authority",
-        "surveillance",
-        "remembrance"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.40111",
-      "abstract": "An unsuccessful LLM agent rollout contains more information than its final reward: the observations available to the agent, the actions it chose, and the environment's responses. Reusing this experience for learning requires identifying a decision to revise and testing a concrete alternative. We introduce the Agent Error Dataset (AED), comprising 50,228 error-diagnosis pairs from 9,961 source tasks across 33 environments, 19 harness families, and 23 policy models in text-based agent systems. We retain source traces and execution metadata to support cross-setting failure analysis and re-diagnosis without repeating the original rollout. Our five-stage Agentic Error-to-Training (AET) pipeline collects natural failures, generates diagnoses and proposed corrections, and checks them against recorded evidence. Where replay is supported, we compare corrections with original-action retries from the same checkpoint under matched execution settings. We then construct separate training views for diagnosis and actor recovery. Across 3,062 matched replay pairs, first-proposal corrections raise verifier pass rates from 18.4% to 51.1%, a gain of 32.7 percentage points. Using a separately frozen diagnosis release, full-diagnosis fine-tuning on 1,656 source tasks raises Qwen3-8B's exact-step agreement with internal teacher labels from 47.2% to 63.6%, averaged over three seeds on a 943-case holdout. The strongest prompted reference in this comparison scores 54.7%, and mean agreement improves at each of four increasing training-set sizes. In a single-seed comparison of actor-training recipes, action-only repair training scores 6.67 percentage points higher on WebShop-lite than success-only training.",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "AI-based Problem Solving and Planning",
-        "Software Testing and Debugging Techniques",
-        "Topic Modeling",
-        "Explainable Artificial Intelligence (XAI)",
-        "Adversarial Robustness in Machine Learning"
-      ],
-      "keywords": [
-        "LLM agents",
-        "error diagnosis",
-        "fine-tuning",
-        "WebShop",
-        "Qwen3"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22746465",
-      "abstract": null,
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Multimodal Machine Learning Applications",
-        "Artificial Intelligence in Law"
-      ],
-      "keywords": [
-        "Language understanding",
-        "Feature (linguistics)",
-        "Computational learning theory",
-        "Language model",
-        "Language acquisition"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22746466",
-      "abstract": null,
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Multimodal Machine Learning Applications",
-        "Artificial Intelligence in Law"
-      ],
-      "keywords": [
-        "Language understanding",
-        "Feature (linguistics)",
-        "Computational learning theory",
-        "Language model",
-        "Language acquisition"
-      ]
-    },
-    {
-      "id": "doi:10.1002/aenm.71671",
-      "abstract": "ABSTRACT Perovskite solar cells (PSCs) have progressed rapidly over the past decade. As the core functional layer, the intrinsic properties of perovskite materials, including band structure, carrier transport, and optical response, strongly influence PSC performance. Theoretical calculations support absorber screening and device‐performance prediction. However, most studies remain confined to either materials‐level investigation or device‐level evaluation, without a general framework linking microscopic material properties to macroscopic device performance. To address this gap, we develop a large language model (LLM)‐driven, materials‐to‐device cross‐scale agentic framework that establishes a closed‐loop workflow from first‐principles descriptor extraction to solar‐cell performance optimization. A Manager Agent coordinates density functional theory (DFT)‐based materials calculations, drift‐diffusion device simulation, and Bayesian optimization of PSC architectures. Through the model context protocol (MCP), 55 in‐house tools and analysis/simulation programs are encapsulated and orchestrated as callable skills, enabling human‐in‐the‐loop review, cross‐scale parameter transfer, task‐state control, simulation execution, provenance tracking, and error recovery. Across 24 multi‐turn sessions and 60 benchmark turns, the agent achieved a pass rate of 96.7%, significantly outperforming OpenClaw (60.0%). This work provides an extensible methodological route for traceable, auditable, and closed‐loop cross‐scale research on PSCs.",
-      "topics": [
-        "Perovskite Materials and Applications",
-        "Machine Learning in Materials Science",
-        "TiO2 Photocatalysis and Solar Cells"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.39066",
-      "abstract": "Conventional image forgery detection methods produce binary scores or pixel-level masks without interpretable evidence, while recent multimodal large language model (MLLM)-based approaches generate post-hoc explanations of predetermined classification results rather than reasoning from evidence. Inspired by the forensic workflow of human judicial experts, we propose Agentic Tool-Augmented Reasoning (ATAR), a framework integrating 22 specialized forensic tools across seven complementary domains to autonomously detect, localize, and explain image forgeries through multi-turn reasoning. A Dual-Stream Forensic Reasoning paradigm combines a high-level semantic anomaly path, which magnifies suspicious regions for fine-grained inspection, with a low-level forgery artifact path, which invokes forensic tools to extract objective evidence. We further introduce Forensics Curriculum Learning: during General Experience SFT, an automated teacher-student mentoring pipeline synthesizes multi-turn tool-usage reasoning trajectories; during Forensic Scene RL, a Tool Prior Curriculum guides early tool exploration and progressively transfers control to the agent, while a Structured Evidence Reward provides fine-grained process-level supervision. Experiments across IMDL, Deepfake detection, DMDL, and AIGC detection show that ATAR achieves 78.5% average image-level F1 on six zero-shot IMDL benchmarks, surpassing the strongest MLLM baseline by 11.8 percentage points, and remains competitive with specialized detectors on other tasks while producing substantially more faithful and grounded explanations.",
-      "topics": [
-        "Digital Media Forensic Detection",
-        "Advanced Steganography and Watermarking Techniques",
-        "Generative Adversarial Networks and Image Synthesis",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "image forgery detection",
-        "explainable AI",
-        "agentic reasoning",
-        "forensic tools",
-        "multimodal large language models",
-        "curriculum learning",
-        "reinforcement learning from human feedback",
-        "deepfake detection",
-        "multi-turn reasoning"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23063598",
-      "abstract": "Primary education represents the foundational stage of formal education, where children develop essential academic, cognitive, social, emotional, creative, and communication skills. The integration of Artificial Intelligence (AI) into primary education offers new possibilities for personalized learning, interactive instruction, educational games, language development, accessibility, formative assessment, and teacher support. However, the use of AI at the primary level requires particular care because young learners may have limited ability to understand technological risks, evaluate AI-generated information, or protect their personal information independently. Therefore, AI should be introduced in an age-appropriate, safe, inclusive, and teacher-guided manner. The fundamental principle of AI in primary education is: Child → Teacher Guidance → AI-Supported Learning → Interaction → Feedback → Learning AI should support the educational process rather than replace teachers, parents, classroom interaction, play, creativity, or children's independent thinking.Artificial Intelligence in primary education refers to the use of AI-enabled technologies to support teaching, learning, assessment, educational communication, and the overall development of young learners. AI applications can provide personalized learning activities, interactive exercises, intelligent tutoring, language support, educational games, automated feedback, and assistive learning facilities. Examples of AI applications in primary education include intelligent tutoring systems, adaptive learning platforms, educational chatbots, speech-recognition applications, AI-supported language-learning systems, educational games, automated feedback tools, and AI-assisted teaching resources. The main purpose of AI at this level is to enhance the learning experience while keeping the teacher and the learner at the centre of education.",
-      "topics": [
-        "Intelligent Tutoring Systems and Adaptive Learning",
-        "Teaching and Learning Programming",
-        "AI in Service Interactions"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.22306/al.v13i3.813",
-      "abstract": "The increasing complexity, volatility, and sustainability pressures affecting global supply chains have accelerated the adoption of Artificial Intelligence (AI) technologies in logistics management. Among these AI approaches, Intelligent Agents (IAs) and Multi-agent Systems (MAS) have emerged as essential tools for supporting decentralized, adaptive, event-driven, and real-time decision-making processes in dynamic logistics environments. Unlike traditional centralized planning systems, agent-based approaches enable autonomous entities such as suppliers, warehouses, transportation units, and distribution centers to coordinate actions, exchange information, and manage variability. This paper presents a structured literature review of peer-reviewed studies indexed in Scopus and Web of Science on the use of AI agents to support decision-making in logistics management and supply chain operations. Particular attention is given to the strategic importance of intelligent agents in strengthening resilience, operational efficiency, and sustainability in increasingly uncertain logistics systems. The findings indicate that intelligent agents improve decision quality, responsiveness, coordination, and resource utilization across distributed logistics networks. Furthermore, Multi-Agent Systems enhance interoperability and collaboration among logistics actors, enabling more agile and resilient supply chains. However, challenges related to data quality, cybersecurity, governance, scalability, and human–AI collaboration continue to limit large-scale implementation in industrial environments.",
-      "topics": [
-        "Supply Chain Resilience and Risk Management",
-        "Vehicle Routing Optimization Methods",
-        "Maritime Ports and Logistics"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.22909045",
-      "abstract": "Abstract Artificial Intelligence (AI) and the Digital Economy are increasingly shaping India's economic transformation. Their applications in agriculture, manufacturing, services, banking, education, healthcare, governance and entrepreneurship have the potential to improve productivity, reduce transaction costs, expand access to services and strengthen innovation. This study examines the economic role of AI and digitalisation with particular reference to sustainable development and the vision of Viksit Bharat 2047. The study is based on secondary data and follows a descriptive and analytical approach. Official statistics on internet connectivity, digital payments and the IndiaAI Mission are used to provide a quantitative dimension to the analysis. The evidence shows rapid expansion of India's digital ecosystem: internet subscribers reached 1,028.61 million by December 2025, while rural internet subscribers stood at 407.69 million in March 2025. UPI processed 22,716.07 million transactions worth ₹28,92,138.67 crore in June 2026. The IndiaAI Mission, approved with an outlay of ₹10,371.92 crore, has expanded compute capacity beyond its initial 10,000-GPU target. The study concludes that AI and digitalisation can support productivity, financial inclusion, entrepreneurship, sustainable resource use and public-service delivery. However, digital inequality, skill gaps, data privacy, cybersecurity, employment restructuring and environmental costs require policy attention. Inclusive infrastructure, human-capital development, responsible AI and sustainable digital practices are therefore essential for Viksit Bharat 2047.",
-      "topics": [
-        "Cyberloafing and Workplace Behavior",
-        "Internet of Things and AI",
-        "Innovations and Analysis in Business and Education"
-      ],
-      "keywords": [
-        "artificial intelligence",
-        "digital economy",
-        "digitalization",
-        "Viksit Bharat 2047",
-        "sustainable development",
-        "India",
-        "internet access",
-        "digital payments",
-        "UPI",
-        "financial inclusion",
-        "digital divide",
-        "skills gap",
-        "data privacy",
-        "cybersecurity",
-        "workforce restructuring",
-        "responsible AI",
-        "human capital development",
-        "inclusive infrastructure",
-        "public service delivery",
-        "Crore",
-        "The Internet",
-        "Sustainable development",
-        "Restructuring",
-        "Digital economy",
-        "Database transaction",
-        "Dimension (graph theory)",
-        "Payment"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22909046",
-      "abstract": "Abstract Artificial Intelligence (AI) and the Digital Economy are increasingly shaping India's economic transformation. Their applications in agriculture, manufacturing, services, banking, education, healthcare, governance and entrepreneurship have the potential to improve productivity, reduce transaction costs, expand access to services and strengthen innovation. This study examines the economic role of AI and digitalisation with particular reference to sustainable development and the vision of Viksit Bharat 2047. The study is based on secondary data and follows a descriptive and analytical approach. Official statistics on internet connectivity, digital payments and the IndiaAI Mission are used to provide a quantitative dimension to the analysis. The evidence shows rapid expansion of India's digital ecosystem: internet subscribers reached 1,028.61 million by December 2025, while rural internet subscribers stood at 407.69 million in March 2025. UPI processed 22,716.07 million transactions worth ₹28,92,138.67 crore in June 2026. The IndiaAI Mission, approved with an outlay of ₹10,371.92 crore, has expanded compute capacity beyond its initial 10,000-GPU target. The study concludes that AI and digitalisation can support productivity, financial inclusion, entrepreneurship, sustainable resource use and public-service delivery. However, digital inequality, skill gaps, data privacy, cybersecurity, employment restructuring and environmental costs require policy attention. Inclusive infrastructure, human-capital development, responsible AI and sustainable digital practices are therefore essential for Viksit Bharat 2047.",
-      "topics": [
-        "Cyberloafing and Workplace Behavior",
-        "Internet of Things and AI",
-        "Innovations and Analysis in Business and Education"
-      ],
-      "keywords": [
-        "artificial intelligence",
-        "digital economy",
-        "digitalization",
-        "Viksit Bharat 2047",
-        "sustainable development",
-        "India",
-        "internet access",
-        "digital payments",
-        "UPI",
-        "financial inclusion",
-        "digital divide",
-        "skills gap",
-        "data privacy",
-        "cybersecurity",
-        "workforce restructuring",
-        "responsible AI",
-        "human capital development",
-        "inclusive infrastructure",
-        "public service delivery",
-        "Crore",
-        "The Internet",
-        "Sustainable development",
-        "Restructuring",
-        "Digital economy",
-        "Database transaction",
-        "Dimension (graph theory)",
-        "Payment"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22723614",
-      "abstract": "Abstract India's journey towards Viksit Bharat @2047 requires a transformation that combines technological advancement with inclusive and sustainable economic development. Artificial Intelligence (AI) and Digital Public Infrastructure (DPI) have emerged as two important pillars of this transformation. While DPI provides the digital foundations for identity, payments, data exchange, and access to public and private services, AI can add intelligence, automation, personalization, and predictive capabilities to these systems. Together, they can significantly improve governance, healthcare, education, agriculture, financial inclusion, digital commerce, and public service delivery. This paper examines the role of AI-enabled Digital Public Infrastructure in building a developed India by 2047. It explores opportunities, challenges, ethical considerations, and the need for responsible and inclusive AI adoption. The paper argues that India's competitive advantage will depend not merely on technological adoption but on developing trusted, accessible, secure, multilingual, and citizen-centric digital ecosystems. Strengthening digital skills, cybersecurity, data governance, research and innovation, and public-private partnerships will be essential for realizing this vision. AI combined with DPI can become a powerful foundation for inclusive prosperity, innovation, and sustainable development in Viksit Bharat.",
-      "topics": [
-        "Smart Cities and Technologies",
-        "ICT in Developing Communities",
-        "Cyberloafing and Workplace Behavior"
-      ],
-      "keywords": [
-        "artificial intelligence",
-        "digital public infrastructure",
-        "Viksit Bharat",
-        "responsible AI",
-        "AI ethics",
-        "digital governance",
-        "cybersecurity",
-        "data governance",
-        "digital skills",
-        "public-private partnerships",
-        "digital ecosystems",
-        "public service delivery",
-        "financial inclusion",
-        "Digital transformation",
-        "Foundation (evidence)",
-        "Public service",
-        "Digital divide",
-        "Sustainable development",
-        "Big data",
-        "Service (business)"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22723613",
-      "abstract": "Abstract India's journey towards Viksit Bharat @2047 requires a transformation that combines technological advancement with inclusive and sustainable economic development. Artificial Intelligence (AI) and Digital Public Infrastructure (DPI) have emerged as two important pillars of this transformation. While DPI provides the digital foundations for identity, payments, data exchange, and access to public and private services, AI can add intelligence, automation, personalization, and predictive capabilities to these systems. Together, they can significantly improve governance, healthcare, education, agriculture, financial inclusion, digital commerce, and public service delivery. This paper examines the role of AI-enabled Digital Public Infrastructure in building a developed India by 2047. It explores opportunities, challenges, ethical considerations, and the need for responsible and inclusive AI adoption. The paper argues that India's competitive advantage will depend not merely on technological adoption but on developing trusted, accessible, secure, multilingual, and citizen-centric digital ecosystems. Strengthening digital skills, cybersecurity, data governance, research and innovation, and public-private partnerships will be essential for realizing this vision. AI combined with DPI can become a powerful foundation for inclusive prosperity, innovation, and sustainable development in Viksit Bharat.",
-      "topics": [
-        "Smart Cities and Technologies",
-        "ICT in Developing Communities",
-        "Cyberloafing and Workplace Behavior"
-      ],
-      "keywords": [
-        "artificial intelligence",
-        "digital public infrastructure",
-        "Viksit Bharat",
-        "responsible AI",
-        "AI ethics",
-        "digital governance",
-        "cybersecurity",
-        "data governance",
-        "digital skills",
-        "public-private partnerships",
-        "digital ecosystems",
-        "public service delivery",
-        "financial inclusion",
-        "Digital transformation",
-        "Foundation (evidence)",
-        "Public service",
-        "Digital divide",
-        "Sustainable development",
-        "Big data",
-        "Service (business)"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22911387",
-      "abstract": "Abstract Artificial Intelligence (AI) is getting integrated into the day-to-day life of every human being. This fast-changing technology is transforming traditional technology, society and governance at a rapid pace. This paper explores the emerging Technorapid Age, where technological change may move faster than the ability of individuals, institutions and governance systems to adapt. It focuses on Responsible Innovation as a methodology to manage this growing gap. It proposes that AI development should not be measured only by technological progress. It should also consider human well-being, social inclusion, ethical responsibility and effective governance. It examines the relationship between AI, technology and society. It highlights the need for human adaptability, accountability and responsible decision-making. The author proposes that Responsible Innovation can help create an equilibrium between technological acceleration and human adaptive capacity. The paper directly connects with the vision of Viksit Bharat 2047. India needs technological development that is innovative, inclusive, ethical and sustainable. Technology should support human dignity, social well-being and the needs of future generations. The research concludes that achieving Viksit Bharat 2047 requires comprehensive and responsible AI technologies. These innovations should benefit all sections of society (सर्वजन हिताय, सर्वजन सुखाय) and ensure that people are skilled and supported to handle challenges of the Technorapid Age.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Innovation and Socioeconomic Development",
-        "Digital Education and Society"
-      ],
-      "keywords": [
-        "artificial intelligence",
-        "responsible innovation",
-        "AI governance",
-        "Viksit Bharat 2047",
-        "human adaptability",
-        "social inclusion",
-        "ethical responsibility",
-        "human well-being",
-        "technological acceleration",
-        "India",
-        "inclusive innovation",
-        "Accountability",
-        "Corporate governance",
-        "Technological change",
-        "Social responsibility",
-        "Good governance",
-        "Human life",
-        "Fundamental human needs",
-        "Human development (humanity)"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22911386",
-      "abstract": "Abstract Artificial Intelligence (AI) is getting integrated into the day-to-day life of every human being. This fast-changing technology is transforming traditional technology, society and governance at a rapid pace. This paper explores the emerging Technorapid Age, where technological change may move faster than the ability of individuals, institutions and governance systems to adapt. It focuses on Responsible Innovation as a methodology to manage this growing gap. It proposes that AI development should not be measured only by technological progress. It should also consider human well-being, social inclusion, ethical responsibility and effective governance. It examines the relationship between AI, technology and society. It highlights the need for human adaptability, accountability and responsible decision-making. The author proposes that Responsible Innovation can help create an equilibrium between technological acceleration and human adaptive capacity. The paper directly connects with the vision of Viksit Bharat 2047. India needs technological development that is innovative, inclusive, ethical and sustainable. Technology should support human dignity, social well-being and the needs of future generations. The research concludes that achieving Viksit Bharat 2047 requires comprehensive and responsible AI technologies. These innovations should benefit all sections of society (सर्वजन हिताय, सर्वजन सुखाय) and ensure that people are skilled and supported to handle challenges of the Technorapid Age.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Innovation and Socioeconomic Development",
-        "Digital Education and Society"
-      ],
-      "keywords": [
-        "artificial intelligence",
-        "responsible innovation",
-        "AI governance",
-        "Viksit Bharat 2047",
-        "human adaptability",
-        "social inclusion",
-        "ethical responsibility",
-        "human well-being",
-        "technological acceleration",
-        "India",
-        "inclusive innovation",
-        "Accountability",
-        "Corporate governance",
-        "Technological change",
-        "Social responsibility",
-        "Good governance",
-        "Human life",
-        "Fundamental human needs",
-        "Human development (humanity)"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22705942",
-      "abstract": "Artificial Intelligence (AI) is becoming a major driver of India's digital transformation. It is expected to impact governance, education, healthcare, finance, employment and everyday life as India moves towards the vision of Viksit Bharat@2047. However, this rapid development and adoption of technology also creates a growing gap between technological progress and the ability of individuals and society to adapt. This paper describes this condition as Technorapid, an accelerating pace of technological change that can exceed human, social, institutional and ethical adaptive capacity. The paper proposes that digital transformation should not remain confined to policies and institutional documents. Its success should ultimately be visible on the ground, in the lived experience of its citizens. AI-driven development needs to be evaluated through its ability to improve access, dignity, inclusion, education, employment and quality of life. This paper explores Vasudhaiva Kutumbakam, the principle that the world is one family, as a philosophical foundation for a human-centered approach to AI ethics. It argues that India's technological progress should be complemented by human adaptation, ethical governance and mechanisms that ensure that the benefits of AI reach diverse sections of society. The paper concludes that the true measure of Viksit Bharat @2047 should not be how advanced India's technologies become, but how meaningfully those technologies improve human live and national progress",
-      "topics": [
-        "Digital Education and Society",
-        "Internet of Things and AI",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "AI ethics",
-        "Vasudhaiva Kutumbakam",
-        "Viksit Bharat 2047",
-        "human-centered AI",
-        "digital transformation",
-        "ethical governance",
-        "human adaptation to technology",
-        "inclusive technology",
-        "quality of life",
-        "India",
-        "Pace",
-        "Technological change",
-        "Quality (philosophy)",
-        "Corporate governance",
-        "Everyday life",
-        "Digital transformation",
-        "Emerging technologies",
-        "Government (linguistics)",
-        "Ethics of technology"
       ]
     }
   ]

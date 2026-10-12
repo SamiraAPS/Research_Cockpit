@@ -1,7 +1,380 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-11T11:26:30.005Z",
+  "generatedAt": "2026-10-12T13:13:04.841Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.11862",
+      "abstract": "Mathematicians value proofs for more than correctness: among correct proofs, simplicity, purity and the computational cost of finding them vary widely. Yet LLM-powered theorem provers largely search for any correct proof, and improve its quality only after it is found. We propose LEVER, a proof search algorithm that makes the objective over correct proofs programmable and optimizes it during search. LEVER scores partial proofs over an AND/OR proof graph, combining realized objective values with predictions for open subgoals, so the objective guides search before a proof is complete. The same mechanism optimizes computational cost, proof length, topical impurity, and even their weighted combinations, while the Lean kernel enforces correctness. On PutnamBench in Lean 4, under matched budgets, LEVER costs 34% less than a strong single-conversation agent while raising the solve rate from 80% to 96%. On reducing topical impurity, i.e., how far a proof strays from its theorem's subject, it improves over post-hoc refactoring (42% reduction against 33%) at two-thirds of the cost and more reliably; on proof length, the metric refactoring is built for, it approaches refactoring. Varying the objective's weights traces a quality-cost trade-off curve, so the user can choose how much a better proof is worth. Overall, LEVER is a performant, cost-efficient and tunable proof search algorithm for navigating the space of correct proofs.",
+      "topics": [
+        "Logic, programming, and type systems",
+        "Mathematics, Computing, and Information Processing",
+        "Artificial Intelligence Applications"
+      ],
+      "keywords": [
+        "automated theorem proving",
+        "proof search",
+        "proof length",
+        "Lean 4",
+        "cost-quality trade-off"
+      ]
+    },
+    {
+      "id": "doi:10.3758/s13423-026-03019-x",
+      "abstract": null,
+      "topics": [
+        "Reading and Literacy Development",
+        "Second Language Acquisition and Learning",
+        "Neurobiology of Language and Bilingualism"
+      ],
+      "keywords": [
+        "vocabulary knowledge",
+        "everyday language",
+        "vocabulary acquisition",
+        "language learning"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.11260",
+      "abstract": "Efficient checkpoint/restart support is essential for resilient HPC scientific applications, but implementing it requires substantial expertise: developers must identify recoverable state, choose globally consistent checkpoint points, and preserve application invariants during restart. We study whether frontier LLM coding agents can automate this process. We build a benchmark suite of 16 MPI applications spanning diverse domains, code sizes, and critical-state structures, and evaluate them with a no-human-in-the-loop generate--validate--revise pipeline for checkpoint/restart synthesis. Across the benchmark, the pipeline produces 41 working resilient implementations. Our results show that agent-driven resilience engineering is practical when critical state is visible or accessible through coherent abstractions: successful runs finish in under one hour on average, consume about 15M tokens, and produce implementations with negligible failure-free overhead and recovery efficiency comparable to human-written code. However, modularized and fragmented state remains a major limitation, with some failed attempts consuming over 100M tokens and 300 minutes without producing a working implementation.",
+      "topics": [
+        "Distributed systems and fault tolerance",
+        "Software Engineering Research",
+        "Software System Performance and Reliability"
+      ],
+      "keywords": [
+        "LLM coding agents",
+        "checkpointing",
+        "resilience engineering",
+        "MPI applications",
+        "benchmark suite"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.11253",
+      "abstract": "Large language model agents are being increasingly deployed as autonomous scientists, designing experiments and inferring mechanistic world models with minimal human oversight. Yet identifiability is often overlooked: when a plateau is reached, the agent needs to know whether it is not yet capable enough or the model simply is not identifiable from the data, in which case no amount of further experimentation of the same kind can help. We propose the Identifiability-Driven Experimental Agent (LLM-IDEA) for closed-loop discovery with an identifiability engine that returns a three-way plateau verdict: capability limit, resolvable within the design class, or certified exhausted. On ODEBench, 60 of the 62 systems with free constants are identifiable at round 0; the RC circuit is certified exhausted for every experiment that protocol can run, and a harvesting model is resolvable by one added initial condition. The identifiability engine reproduces known verdicts on Lotka-Volterra, Van der Pol, Lorenz, and a pharmacokinetic model, where it recommends the intravenous arm pharmacologists use, and it ranks the depth scorer of our own benchmark last among four observation designs. On the DiscoverPhysics benchmark, it finds two public worlds whose explanation rubric rewards a distinction no legal experiment can make, and every model there with accurate trajectories failed the explanation grade (15 of 15, against 5 of 9 in identifiable worlds, p = 0.012). On the Alien Universe, a two-body testbed we propose in which a force law switches between a provably non-identifiable and an identifiable protocol, LLM-IDEA on the identifiable protocol reaches discovery depth at least three on 8/8 seeds versus 1/8 without it. An autonomous discovery agent can thus compute, rather than guess, whether a plateau calls for more search, a better experiment of the same kind, or a different kind of experiment.",
+      "topics": [
+        "Control Systems and Identification",
+        "Model Reduction and Neural Networks",
+        "Machine Learning in Materials Science"
+      ],
+      "keywords": [
+        "identifiability",
+        "autonomous scientific discovery",
+        "LLM agents",
+        "experimental design",
+        "closed-loop experimentation",
+        "parameter identifiability",
+        "observation design"
+      ]
+    },
+    {
+      "id": "doi:10.3390/math14193637",
+      "abstract": "User stories are central to agile requirements engineering, but in practice they often exhibit ambiguity, missing information, and weak or absent acceptance criteria, thereby increasing rework and reducing verifiability. This paper presents LOONA, a mathematically formulated NLP/LLM decision-support pipeline for Spanish user story quality assurance. We model the task as supervised binary classification followed by conditional text generation: a fine-tuned Spanish BERT classifier estimates whether a story requires improvement, and a generative model is triggered only when the estimated class exceeds a decision threshold. The study uses an anonymized reconstruction of 100 Spanish-language user stories from an administrative software backlog, labeled by three agile requirements experts through majority vote. The reconstructed annotation table yields Fleiss’ κ=0.76, indicating substantial agreement. We report stratified 5-fold classification results, lexical baselines, rule-based baselines, automatic rewrite-similarity metrics, and paired expert review of held-out outputs. LOONA achieved Accuracy =0.91, Precision =0.90, Recall =0.92, F1-score =0.91, and MCC =0.82, outperforming TF-IDF logistic regression, TF-IDF support vector machines, and a rule-based baseline. In paired expert review (n=30), 70% of generated rewrites improved over the original story, 20% were unchanged, and 10% degraded; generated acceptance criteria were judged correct in 86.7% of cases and free of hallucinated information in 93.3%. The contribution is framed as a formal and empirical proof of concept for model-level LLM-assisted requirements quality assurance, with explicit limitations regarding dataset size, confidentiality, and human oversight.",
+      "topics": [
+        "Software Engineering Techniques and Practices",
+        "Software Engineering Research",
+        "Topic Modeling"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.11634",
+      "abstract": "Large language models (LLMs) perform remarkably well on complex tasks, yet remain highly vulnerable to prompt injection attacks, where malicious instructions embedded in external data can override user intent. Existing defenses remain limited by model fine-tuning requirements, vulnerability to adaptive attacks, or reliance on brittle handcrafted prompts. We argue that a fundamental source of this vulnerability is the lack of an explicit representation of trust provenance. To address this, we introduce Learnable Trust-Boundary Delimiters (LTBD), a lightweight defense that explicitly encodes trust boundaries in the input while keeping the LLM parameters unchanged. LTBD uses a small number of learnable delimiters to distinguish trusted user instructions from untrusted external data, enabling the model to better respect the intended trust hierarchy. Experimental results show that LTBD substantially outperforms inference-time defenses and performs competitively with training-based approaches, while preserving benign-task utility and introducing negligible inference overhead. In particular, LTBD achieves 0.00% ASR on AlpacaFarm and only 0.11-0.19% ASR on TaskTracker. LTBD also remains effective under adaptive attacks, where adversaries have full knowledge of the defense and explicitly attempt to bypass it.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Security and Verification in Computing",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "prompt injection",
+        "large language models",
+        "prompt injection defense",
+        "trust boundaries",
+        "adaptive attacks"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.23240750",
+      "abstract": "This study investigates the application of machine learning and deep learning techniques to portfolio allocation, with particular emphasis on their ability to capture complex and dynamic relationships among financial assets. The study compares recurrent neural network architectures, including Recurrent Neural Networks (RNNs), Long Short-Term Memory (LSTM), and Gated Recurrent Units (GRU), together with Transformer models, against classical portfolio optimization approaches represented by the Markowitz mean-variance model and the Black-Litterman model. The empirical analysis uses daily financial data for ten highly liquid assets: Apple (AAPL), Microsoft (MSFT), Alphabet (GOOGL), Amazon (AMZN), Tesla (TSLA), NVIDIA (NVDA), Meta Platforms (META), Netflix (NFLX), JPMorgan Chase (JPM), and Bank of America (BAC). The analysis covers approximately eight years of historical data and incorporates selected macroeconomic indicators obtained from the Federal Reserve Economic Data (FRED). Portfolio performance is evaluated using measures including annualized return, volatility, Sharpe ratio, and maximum drawdown. The study finds that the performance of deep learning approaches varies substantially across architectures. In the reported experiments, Transformer and RNN-based approaches demonstrate strong portfolio performance relative to the classical benchmarks, while the GRU and LSTM models do not consistently outperform the traditional approaches. The study contributes to the growing intersection of artificial intelligence, machine learning, and computational finance by examining how deep learning architectures can be incorporated into portfolio allocation. It also highlights the importance of model selection, robust evaluation, and careful interpretation when applying machine learning methods to financial markets. This work was completed as an MScFE Capstone Project at WorldQuant University and is intended for academic and research purposes. It does not constitute investment or financial advice.",
+      "topics": [
+        "Stock Market Forecasting Methods",
+        "Risk and Portfolio Optimization",
+        "Financial Markets and Investment Strategies"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.4018/979-8-2600-0423-4.ch006",
+      "abstract": "Introduction to Machine Learning in Plasma Science involves understanding how modern data-driven algorithms, statistical learning methods, and artificial intelligence techniques are being applied to study, model, predict, and control plasma behavior across a wide range of scientific and engineering domains. Plasma science, which deals with ionized gases consisting of free electrons and ions, is fundamental to many advanced technologies including nuclear fusion, astrophysics, space physics, semiconductor manufacturing, and plasma-based propulsion systems. Because plasma systems are highly nonlinear, multiscale, and often chaotic in nature, traditional analytical and numerical modeling approaches frequently face limitations in accuracy, computational cost, and predictive capability. Machine learning (ML) provides a transformative approach by enabling systems to learn complex plasma behaviors directly from experimental and simulation data without relying solely on explicit physical equations.",
+      "topics": [
+        "Plasma Diagnostics and Applications",
+        "Magnetic confinement fusion research",
+        "Fusion and Plasma Physics Studies"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.14744/cpr.2026.17486",
+      "abstract": "Objective: Fatigue is a significant occupational health issue that adversely affects attention and decision-making. This study aimed to objectively predict fatigue levels using EEG signals and machine learning models and to develop a physiologically based assessment framework with potential future applications in nursing. Materials and Methods: Time-domain, frequency-domain, entropy, Hjorth, and wavelet features were extracted from EEG data collected from 12 participants aged 21–40 years, with fatigue levels labeled using various scales. Results: Classification performance varied across validation strategies. Under 5-fold cross-validation, Random Forest achieved the highest performance (accuracy=1.00, macro-F1=1.00), while KNN and NB also demonstrated strong performance. However, under LOOCV, sensitivity, precision, and macro-F1 values decreased despite relatively high accuracy. LOSO validation yielded more balanced results, with Random Forest maintaining the best performance (accuracy=0.97, macro-F1=0.91). Conclusion: EEG-derived features provide valuable information for fatigue assessment. Although high performance was achieved under certain validation strategies, subject-independent evaluation revealed more realistic performance levels. The proposed framework offers a practical approach to fatigue monitoring. Future studies should focus on larger, domain-specific datasets and multimodal integration to enhance generalizability.",
+      "topics": [
+        "EEG and Brain-Computer Interfaces",
+        "Sleep and Work-Related Fatigue",
+        "Emotion and Mood Recognition"
+      ],
+      "keywords": [
+        "fatigue detection",
+        "EEG signals",
+        "machine learning",
+        "nursing",
+        "patient monitoring"
+      ]
+    },
+    {
+      "id": "doi:10.63451/dti.v2i23.390",
+      "abstract": "The global artisanal goods market faces significant challenges related to product authenticity, verifiable provenance, and efficient market access for independent creators. This paper presents a novel omnichannel marketplace platform designed to resolve these systemic deficiencies through the synergistic integration of advanced Artificial Intelligence (AI) and decentralized blockchain technologies. The platform enhances market transparency and fosters buyer trust via an AI-powered recommendation engine and art intelligence that incorporates trust ratings and a blockchain system for verifiable provenance tracking using Non-Fungible Tokens (NFTs). Crucially, the platform incorporates neuroscientific principles into its design, leveraging neuroaesthetics to optimize the presentation of artistic style and cultural significance, and neuromarketing to structure the artisan's narrative for maximal perceived value and emotional resonance. A key innovation is the Machine Learning (ML)-Driven Interoperability component, which secures and optimizes cross-chain mechanisms, enabling scalable, high-security asset transfer across disparate networks. Initial meta-analytic results suggest that AI recommendations provide an expected conversion rate lift of 15% (Hedges' g = 0.45) compared to non-personalized systems, and ML-enhanced interoperability reduces cross-chain transaction latency by an average of 18% compared to non-optimized bridges. The platform demonstrates high potential for empowering artisans, promoting sustainable artisanal commerce, and establishing a new paradigm for trustworthy e-commerce.",
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Blockchain Technology in Education and Learning",
+        "Impact of AI and Big Data on Business and Society"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1080/02601370.2026.2742209",
+      "abstract": "This study explores the experiences of mothers with babies participating in full-time higher education in East Africa within a lifelong learning framework. Drawing on qualitative narratives, it examines how ten student mothers navigate the intersecting demands of academic study, caregiving, and socio-economic constraints. Findings reveal that women’s participation in higher education is driven by intrinsic motivations for personal growth, leadership development, and economic mobility, alongside extrinsic opportunities such as scholarships and institutional advancement. However, their lifelong learning trajectories are shaped by persistent structural barriers, including limited childcare provision, financial hardship, rigid institutional policies, and socio-cultural expectations of motherhood. Despite these constraints, student mothers demonstrate agency through adaptive strategies, including time management, reliance on family and peer networks, and engagement with flexible learning arrangements where available. Social support systems and institutional responsiveness are central to sustaining participation and well-being, yet inconsistencies in policy implementation and exclusionary institutional practices continue to undermine equitable access and success. The study argues that achieving Sustainable Development Goal (SDG) 4 on inclusive and equitable quality education and SDG 5 on gender equality in African higher education requires rethinking lifelong learning as a gendered, relational, and intersectional process embedded in care work and structural inequality. It calls for gender-responsive institutional reforms that integrate caregiving into higher education systems.",
+      "topics": [
+        "Work-Family Balance Challenges",
+        "Higher Education Research Studies",
+        "Adult and Continuing Education Topics"
+      ],
+      "keywords": [
+        "student mothers",
+        "higher education",
+        "learning management",
+        "student experience"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-11158446/v1",
+      "abstract": null,
+      "topics": [
+        "Topological and Geometric Data Analysis",
+        "Adversarial Robustness in Machine Learning",
+        "Machine Learning and Data Classification"
+      ],
+      "keywords": [
+        "topological data analysis",
+        "persistent homology",
+        "model robustness",
+        "noise injection",
+        "crossover point",
+        "Vietoris-Rips complex",
+        "Wasserstein distance",
+        "bottleneck distance",
+        "UMAP dimensionality reduction",
+        "MNIST",
+        "random forest",
+        "Gaussian mixture model",
+        "support vector machine",
+        "multilayer perceptron",
+        "logistic regression",
+        "tabular data",
+        "latent manifold"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.11586",
+      "abstract": "Existing evaluation methods for healthcare LLMs primarily assess factual correctness,safety, and fluency, while providing limited insight into whether generated interactions reflect culturally situated healthcare reasoning. This limitation is particularly important in maternal health, where care decisions are shaped by social and relational norms. We introduce MH-INDIC, a culturally grounded evaluation framework for maternal-health interactions in urban and semi-urban North Indian contexts that operationalises cultural behaviour through ten dimensions of maternal-health reasoning. Using a 26-item survey administered to 102 pregnant and postpartum women from urban and semi-urban North India, we evaluate ten LLMs. We distinguish population level cultural alignment from profile-level behavioural variation. Although several models approximate the human population-level distribution, all evaluated systems exhibit substantially lower variation across demographic and household profiles than the human cohort, revealing a gap between aggregate alignment and profile-conditioned sensitivity. As a downstream application of MH-INDIC, we use the strongest-aligned proprietary and open-source models to generate culturally conditioned maternal-health dialogues under zero-shot, self-conditioned, and human-grounded prompting. Human-grounded conditioning produces stronger profile alignment and dialogue quality ratings, suggesting that measured cultural profiles can improve the cultural grounding of generated interactions",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Speech and dialogue systems",
+        "Cultural Competency in Health Care"
+      ],
+      "keywords": [
+        "maternal health",
+        "large language models",
+        "cultural alignment",
+        "pregnant and postpartum women",
+        "North India"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.23239682",
+      "abstract": "Introduction: The long-term preservation and reuse of scientific data rely on scalable repository stewardship aligned with FAIR principles. Recent advances in large language models (LLMs) create new opportunities for machine-assisted data curation. Dataset publications provide narrative descriptions that support human understanding and reuse. However, it remains unclear to what extent such documentation can reliably support automated FAIR-oriented curation and reuse workflows. To address this gap, we introduce a documentation-derived Curatability Score (CS) and an LLM-assisted framework to estimate whether dataset documentation enables automated repository ingestion. Dataset Curatability Framework and Study Design: This study introduces the concept of dataset curatability, defined as the extent to which dataset publications encode information enabling machine- assisted discovery, access validation, structural interpretation, and automated reuse validation based solely on documentation. Using Scientific Data as a representative source, we constructed a large-scale evaluation corpus by collecting and parsing 4,292 data papers via metadata aggregation and full-text analysis. Our framework reconstructs dataset access endpoints, structural organization, and execution context directly from documentation without inspecting the underlying datasets. The reconstructed information is used to generate executable data validation scripts and corresponding runtime environments for automated reuse validation. To quantify documentation-level automation readiness, we introduce a documentation-derived CuratabilityScore (CS) summarizing structural clarity, schemaavailability, and documentation signals relevant toautomated dataset ingestion. Empirical Assessment of Dataset Curatability: Among the 4,292 parsed data papers, 182 datasets withaccessible data and code repositories were evaluated, of which 141 contained supported tabular files that enabled automatic generation of validation scripts. Among these 141 datasets, 89 (63.1%) successfullyexecuted in reconstructed runtime environments. Failures were primarily caused by missingdependencies, inconsistent file paths, or incompletedocumentation of data loading procedures. To examine how documentation affects automationfeasibility, we analyzed execution success acrossCuratability Score (CS) ranges and dataset organization types. Execution successincreases with higher CS values. Dataset organization also affects outcomes: flat datasetsachieve the highest success rate (70%), followedbyhierarchical datasets (60%), while mixed structuresshow lower success rates (50%). These results suggest that both documentation completeness and structural simplicity are key factorsenabling machine-assisted repository ingestion. Conclusion: By linking documentation-derived curatability to automation outcomes, the CuratabilityScore provides a practical indicator for estimatingautomation feasibility and prioritizing repository ingestion tasks. These results show that dataset documentation can be systematically assessed to support scalable, machine-assisted repository stewardship.",
+      "topics": [
+        "Research Data Management Practices",
+        "Scientific Computing and Data Management",
+        "Data Analysis and Archiving"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2737458",
+      "abstract": "Tech savviness is an important but understudied construct in UX research. We describe the development and assessment of a standardized questionnaire for the measurement of tech savviness, the TAC-10, investigating different approaches to the measurement of tech savviness including quizzes, self-assessment questionnaires, and technical activity checklists. We found the technical activity checklists to have better measurement properties and, of our tested versions, the one with a carefully curated list of ten activities (TAC-10) provided the best balance between conciseness and completeness. We found its scores were predictive of successful task completion rates in several usability studies, could be used to classify respondents into levels of tech savviness, and could incidentally be used to identify problematic response patterns for screening and data cleaning. Thus, the TAC-10 is a valuable metric for UX practitioners and researchers to use to better understand how levels of tech savviness affect UX-related behaviors and attitudes.",
+      "topics": [
+        "Usability and User Interface Design",
+        "Gender and Technology in Education",
+        "Innovative Human-Technology Interaction"
+      ],
+      "keywords": [
+        "questionnaire development",
+        "self-assessment",
+        "usability",
+        "task completion",
+        "user classification",
+        "data cleaning"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-11286301/v1",
+      "abstract": null,
+      "topics": [
+        "Academic integrity and plagiarism",
+        "Artificial Intelligence in Education",
+        "Ethics in Business and Education"
+      ],
+      "keywords": [
+        "generative AI",
+        "academic integrity",
+        "moral judgment",
+        "university students",
+        "scale development",
+        "institutional integrity",
+        "AI self-efficacy",
+        "academic motivation",
+        "academic dishonesty",
+        "higher education"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.11312",
+      "abstract": "Large-scale construction of medical vision-language model (VLM) benchmarks is increasingly feasible with richly annotated imaging datasets and large language models (LLMs), yet existing automation largely focuses on generating evaluation items within predefined benchmark specifications. We study the broader problem of automatically deriving the specification itself: what to evaluate, which annotations support each task, and how to translate this evidence into reliable evaluation items. We formulate benchmark construction as constrained compilation, in which the benchmark specification is progressively derived from evaluation requirements, heterogeneous annotations, and medical knowledge. Based on this formulation, we introduce MedBenchAgent, a multi-agent framework with a Benchmark Intermediate Representation (BIR) that encodes task definitions, evidence mappings, evaluation protocols, and item specifications across construction stages. MedBenchAgent separates planning, which derives and verifies the specification, from instantiation, which constructs and audits items under the locked specification. MedBenchAgent achieves a Task-Space F1 of 90.9%, outperforming direct task induction (79.2-80.0%) and prior-guided induction (85.1%); 994 of 1,000 sampled items from correctly identified tasks pass human audit. We further demonstrate portability to a specialized medical domain and evaluate twelve VLMs, revealing task- and setting-specific variation obscured by aggregate scores. These results establish constrained compilation as a scalable and auditable framework for medical VLM benchmark construction beyond question generation.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Artificial Intelligence in Healthcare and Education",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "keywords": [
+        "medical vision-language models",
+        "benchmark design",
+        "multi-agent systems",
+        "large language models"
+      ]
+    },
+    {
+      "id": "doi:10.71112/djwxe851",
+      "abstract": "The study analyzed the relationship between pedagogical mediation involving generative artificial intelligence and the development of critical thinking among students at a public educational institution under Ecuador's Ministry of Education. The sample consisted of 100 students from the intermediate and upper levels of General Basic Education and the Unified General Baccalaureate. The study employed a mixed-methods approach predominantly quantitative using a non-experimental, cross-sectional, and descriptive-correlational design. Data collection involved a mixed-format questionnaire comprising 15 Likert-scale items and two open-ended questions. Results revealed a favorable perception regarding the pedagogical use of generative artificial intelligence, with an overall mean score of 3.91 out of 5. Argumentation and reflection received the highest ratings, whereas information verification received the lowest. Students in the Baccalaureate program demonstrated greater autonomy and critical engagement. The study concludes that teacher mediation is essential for fostering the ethical, reflective, and responsible use of artificial intelligence in school-based learning.",
+      "topics": [
+        "Artificial Intelligence in Education",
+        "Artificial Intelligence in Healthcare and Education",
+        "Education and Critical Thinking Development"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1097/iop.0000000000003302",
+      "abstract": "PURPOSE: This study aimed to report the performance of medical literature-specific artificial intelligence (MLS-AI) deep learning tools in the context of lacrimal drainage disorders. METHODS: Prompt engineering was performed using 22 previously validated questions and statements to include common and rare aspects of lacrimal drainage disorders. Prompts were presented at least twice to the latest versions of OpenEvidence, Heidi Evidence, Consensus, and PubMed.ai [Accessed May 14-26, 2026]. The prompts included general queries, such as the management of congenital nasolacrimal duct obstructions, as well as specific queries, such as the terminology of idiopathic canalicular inflammatory disease or a history of dacryocystorhinostomy surgery. The MLS-AI were also quizzed on controversial topics, such as the use of silicone intubation and mitomycin-C in dacryocystorhinostomy. The responses were assessed for overall quality, organization, and clarity, evidence-based content, updated knowledge, specific responses, speed, and factual inaccuracies. The responses were graded by the authors as correct, partially correct, and factually incorrect. RESULTS: The overall performance of OpenEvidence and Heidi was comparable in the context of lacrimal drainage disorders. However, Heidi hallucinated twice, giving OpenEvidence an edge over Heidi. Consensus came in a close third largely due to the quality of its responses. There is much to be desired from the performance of PubMed.ai. In terms of response accuracy, the MLS-AI models performed differently. OpenEvidence's responses were graded as correct in 90.9% (20/22), and partially correct in 9.1% (2/22), with no factually incorrect responses. Heidi's responses were graded as correct in 63.6% (14/22), partially correct in 31.8% (7/22), and factually incorrect in 4.6% (1/22). In comparison, the responses of Consensus were graded as correct in 54.5% (12/22), partially correct in 40.9% (9/22), and factually incorrect in 4.6% (1/22). PubMed.ai was the worst-performing MLS-AI, with 45.5% partially correct responses, 22.7% (5/22) factually incorrect answers, and 9% (2/22) with no response. CONCLUSION: OpenEvidence has a slight edge over Heidi Evidence. PubMed.ai is lagging far behind the other 3 tools. Each of the MLS-AI tools had unique advantages and could complement one another based on context and prompt type. They need to be specifically trained further to capture more indexed mainstream journal publications. All MLS-AI responses at present should have human oversight and verification before they are accepted as true.",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Nasolacrimal Duct Obstruction Treatments",
+        "Information Retrieval and Search Behavior"
+      ],
+      "keywords": [
+        "large language models",
+        "lacrimal drainage disorders",
+        "prompt engineering",
+        "OpenEvidence",
+        "consensus",
+        "hallucinations",
+        "response accuracy",
+        "congenital nasolacrimal duct obstruction",
+        "dacryocystorhinostomy",
+        "mitomycin C",
+        "silicone intubation",
+        "evidence-based medicine",
+        "AI-assisted clinical decision support"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.23243172",
+      "abstract": "Managing business finances involves more than recording income and expenses. Transaction data, invoices, inventory, payments, taxes, and financial reports need to be connected so businesses can gain a more comprehensive view of their financial condition. Integrated Accounting and Financial Management Mekari Jurnal is a cloud-based accounting and financial management software platform that utilizes artificial intelligence (AI) technology to support businesses in managing their financial processes. The platform brings key accounting and financial activities together within an integrated system. Businesses can use Mekari Jurnal to manage bookkeeping, record transactions, handle invoices and accounts receivable, monitor expenses, manage inventory, perform bank reconciliation, manage tax-related processes, and generate financial reports based on recorded operational data. Supporting Accounting Automation with AI AI technology can support accounting workflows by helping businesses reduce repetitive manual processes and process financial data more efficiently. Combined with automation and cloud-based access, this approach allows financial information to be managed in a more structured and connected environment. Mekari Jurnal combines accounting software capabilities with AI technology and financial data integration to support more efficient accounting workflows. This can help businesses reduce reliance on manual processes while maintaining better visibility into their financial information. Building Scalable Financial Processes As businesses grow, financial data and accounting activities can become increasingly complex. An integrated accounting system can help businesses organize financial processes while making relevant information easier to monitor and use for reporting. By combining cloud technology, accounting automation, integrated financial data, and AI capabilities, Mekari Jurnal supports businesses in building more structured and scalable financial management processes. Learn More Businesses looking to explore accounting software that utilizes AI technology can learn more about Mekari Jurnal and its accounting and financial management capabilities through the official website.",
+      "topics": [
+        "Robotic Process Automation Applications",
+        "Decision Support System Applications",
+        "Financial Literacy and Behavior"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.23243283",
+      "abstract": "Managing business finances involves more than recording income and expenses. Transaction data, invoices, inventory, payments, taxes, and financial reports need to be connected so businesses can gain a more comprehensive view of their financial condition. Integrated Accounting and Financial Management Mekari Jurnal is a cloud-based accounting and financial management software platform that utilizes artificial intelligence (AI) technology to support businesses in managing their financial processes. The platform brings key accounting and financial activities together within an integrated system. Businesses can use Mekari Jurnal to manage bookkeeping, record transactions, handle invoices and accounts receivable, monitor expenses, manage inventory, perform bank reconciliation, manage tax-related processes, and generate financial reports based on recorded operational data. Supporting Accounting Automation with AI AI technology can support accounting workflows by helping businesses reduce repetitive manual processes and process financial data more efficiently. Combined with automation and cloud-based access, this approach allows financial information to be managed in a more structured and connected environment. Mekari Jurnal combines accounting software capabilities with AI technology and financial data integration to support more efficient accounting workflows. This can help businesses reduce reliance on manual processes while maintaining better visibility into their financial information. Building Scalable Financial Processes As businesses grow, financial data and accounting activities can become increasingly complex. An integrated accounting system can help businesses organize financial processes while making relevant information easier to monitor and use for reporting. By combining cloud technology, accounting automation, integrated financial data, and AI capabilities, Mekari Jurnal supports businesses in building more structured and scalable financial management processes. Learn More Businesses looking to explore accounting software that utilizes AI technology can learn more about Mekari Jurnal and its accounting and financial management capabilities through the official website.",
+      "topics": [
+        "Robotic Process Automation Applications",
+        "Decision Support System Applications",
+        "Financial Literacy and Behavior"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.11794",
+      "abstract": "Learning to act in unfamiliar environments requires agents to infer how the world works and revise that understanding as new evidence arrives. Yet limited observations can support multiple world models that explain past interactions but predict different outcomes in unseen states. We introduce Memento 3, building on the Memento series to enable frozen LLM agents to continually learn explicit world models through external memory. The agent maintains a natural-language rulebook as persistent semantic memory, recording revisable hypotheses about environment dynamics while leaving unknown aspects underspecified. It compiles this rulebook into executable code for prediction and planning. Through a continual loop of observation, reflection, rule revision, compilation, and verification, the agent uses prediction errors to refine both the rulebook and its code. Updated code is accepted only when the LLM judges it faithful to the rulebook and cell-exact replay reproduces the observed transitions. We investigate this process as a model-based route to recursive self-improvement (RSI): the agent autonomously explores the environment, revises its world model, and uses verified updates to guide subsequent interaction and learning, while the underlying LLM remains fixed. A population extension maintains multiple world models in parallel, sharing interaction evidence and using their predictions to guide exploration. On ARC-AGI-3, the single-model agent clears every level of all 25 public games, achieves a mean Relative Human Action Efficiency (RHAE) of 100.0, and uses 44% of the human action count. In an Atari Pong case study, a learned feedback controller wins 21:0 in each of three evaluated episodes with different openings, without further LLM calls.",
+      "topics": [
+        "AI-based Problem Solving and Planning",
+        "Psychiatry, Mental Health, Neuroscience",
+        "Reinforcement Learning in Robotics"
+      ],
+      "keywords": [
+        "recursive self-improvement",
+        "world model learning",
+        "external memory",
+        "semantic memory",
+        "model revision",
+        "prediction error",
+        "program compilation",
+        "game-playing agents",
+        "continual learning"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.11732",
+      "abstract": "Large language model (LLM) agents for portfolio management learn from experience: they credit each experience in their memory with the outcome of the decisions that used it. In financial markets, however, this outcome mostly reflects the market move shared by all decisions on that date, so the credit tracks the market rather than the experience, and these agents often do worse than simply holding the equal-weight (1/$N$) portfolio. We ask how an agent can credit an experience with what it changes, and answer it by putting memory on trial: drafts of the same decision with and without an experience face the same market, so the outcome they share cancels in their difference. Our agent, MemTrial, drafts each decision with eight combinations of its retrieved experiences, chosen by a fractional factorial design, and credits each experience with its Banzhaf value, the average of these differences. As each date occurs once and each draft is a noisy LLM sample, these credits are noisy and may not hold on new dates. MemTrial therefore pools them across dates and similar experiences with a hierarchical Bayesian model, acts on them only after they have predicted unseen dates, and otherwise stays anchored at a conservative reference such as 1/$N$. On four benchmarks, MemTrial not only benefits from experiences that matter (the best of 15 methods on a semi-synthetic benchmark with known experience quality) but also limits its losses when its values do not hold (at most 2.2\\% below 1/$N$ on PortBench and InvestorBench, against 15--38\\% for the best experience-learning agent). Averaged over five settings, it improves the utility of the best experience-learning agent by 21.2\\%, and with eight LLMs it beats every LLM-based baseline on InvestorBench.",
+      "topics": [
+        "Stock Market Forecasting Methods",
+        "Financial Markets and Investment Strategies",
+        "Risk and Portfolio Optimization"
+      ],
+      "keywords": [
+        "portfolio management",
+        "Banzhaf value",
+        "fractional factorial design",
+        "experiential learning",
+        "Bayesian hierarchical model",
+        "equally weighted portfolio",
+        "financial market forecasting",
+        "LLM agents",
+        "investor decision-making"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.12453",
+      "abstract": "Large foundation models have accelerated progress toward general-purpose agents that interact with humans and other agents through language and multimodal signals. However, robust multi-agent decision-making requires reasoning about what other agents know, intend, and are likely to do under partial observability. Current agentic systems often operate through prompt design, memory, or end-to-end behavioral shaping, but typically do not learn an explicit partner-state representation that can be reused as a decision variable across tasks. We introduce \\emph{mental-model-enabled agents}, a framework that equips an agent with a latent mental model of its counterpart, allowing it to infer hidden beliefs, intentions, and likely reactions from the observed history and use these inferences to guide action selection. Our method learns an amortized recursive Theory-of-Mind representation, with first- and second-order mental-state structure, jointly with a belief-conditioned reward model that evaluates candidate actions relative to the inferred partner state. A policy is then learned under this belief-aware signal, yielding an agent that can act independently at inference time while retaining the benefits of explicit partner modeling. We evaluate the same framework on both language-only and multimodal benchmarks. Across these settings, explicit mental-state modeling consistently improves interaction quality and Theory-of-Mind performance over base agentic systems, showing that structured partner modeling is a useful inductive bias for general multi-agent systems. Our code is publicly available at https://github.com/hananshafi/Mental-Models",
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Speech and dialogue systems",
+        "Child and Animal Learning Development"
+      ],
+      "keywords": [
+        "multi-agent systems",
+        "mental models",
+        "theory of mind",
+        "agent interaction",
+        "partial observability",
+        "inductive bias",
+        "language agents",
+        "multimodal agents",
+        "action selection"
+      ]
+    },
     {
       "id": "doi:10.5281/zenodo.23247468",
       "abstract": "Research on human-AI interaction increasingly relies on naturalistic conversation data, interaction logs and process measures to draw inferences about human cognitive contribution, reliance and capability. This working paper sets out a methodological foundation for such research. It separates five analytic levels: observable interaction behavior, inferred cognitive processes, human capabilities, capability formation over time, and educational interventions. It states that evidence at one level cannot stand as direct evidence at a higher level, and that the absence of an observable cognitive contribution in a conversation is not evidence that no cognitive work took place. It distinguishes human cognitive contribution from AI offloading, proposes the contrast between structural initiation and post-hoc adaptation as a research hypothesis, and describes validation, calibration, novelty and anti-confirmation safeguards. The paper closes with a twelve-step standing protocol for proposing new measures, facets or classifications. Its claims are methodological, and its contribution is a set of explicit constraints on inference.",
@@ -583,7 +956,7 @@
     },
     {
       "id": "doi:10.20944/preprints202608.1283.v1",
-      "abstract": "Antimicrobial resistance is a critical global health threat, as conventional antibiotics are increasingly ineffective against multidrug-resistant (MDR) pathogens, particularly ESKAPE organisms. In response, bacteriophages and their derived lytic proteins, including endolysins, holins, and spanins, have emerged as promising therapeutic alternatives. This review examines the comparative therapeutic potential of phages and phage-derived lytic proteins as complementary antibacterial strategies within a One-Health framework, which remains underdeveloped. We explore phage biology, including both lytic and lysogenic cycles, as a mechanistic foundation for understanding their role in addressing the growing threat of antimicrobial resistance. Additionally, we detail bacterial defense mechanisms, such as restriction modification systems, CRISPR-Cas systems, and spontaneous mutations that confer phage resistance. Lytic proteins demonstrate efficacy in treating systemic infections, disrupting biofilm, and targeting resistant pathogens across humans, livestock, and aquaculture. Although phage therapy is a promising antibacterial alternative, it still faces several constraints, including a narrow host range, immune clearance, complex pharmacokinetics, and the inability of exogenous lytic proteins to cross the outer membranes of Gram-negative bacteria. This review highlights emerging solutions to these challenges, including the use of artificial intelligence (AI) for phage and lysin discovery, machine learning models for predicting effective phage combinations, and the engineering of phage lytic proteins to broaden antimicrobial spectra. It also discusses combination strategies that pair whole phages with their derived proteins to exploit synergistic antibacterial effects and counter the emergence of resistance, as well as advanced delivery systems designed to protect phage integrity and enhance activity in hostile physiological environments.",
+      "abstract": "Antimicrobial resistance is a critical global health threat, as conventional antibiotics are increasingly ineffective against multidrug-resistant (MDR) pathogens, particularly ESKAPE organisms. In response, bacteriophages and their derived lytic proteins, including endolysins, holins, and spanins, have emerged as promising therapeutic alternatives. This review examines the current landscape and future prospects of phage-based therapeutics within a One Health framework spanning human, veterinary, and environmental applications. We explore phage biology, including both lytic and lysogenic cycles, as a mechanistic foundation for understanding their role in addressing the growing threat of antimicrobial resistance. Additionally, we detail bacterial defence mechanisms, such as restriction modification systems, CRISPR-Cas systems, and spontaneous mutations that confer phage resistance. Lytic proteins demonstrate efficacy in treating systemic infections, disrupting biofilm, and targeting resistant pathogens across humans, livestock, and aquaculture. Although phage therapy is a promising antibacterial alternative, it still faces several constraints, including a narrow host range, immune clearance, complex pharmacokinetics, and the inability of exogenous lytic proteins to cross the outer membranes of Gram-negative bacteria. This review highlights emerging solutions to these challenges, including the use of artificial intelligence (AI) for phage and lysin discovery, machine learning models for predicting effective phage combinations, and the engineering of phage lytic proteins to broaden antimicrobial spectra. It also discusses combination strategies that pair whole phages with their derived proteins to exploit synergistic killing and counter the emergence of resistance, as well as advanced delivery systems designed to protect phage integrity and enhance activity in hostile physiological environments.",
       "topics": [
         "Bacteriophages and microbial interactions",
         "CRISPR and Genetic Engineering",
@@ -1180,7 +1553,7 @@
     },
     {
       "id": "doi:10.1007/s40725-026-00291-x",
-      "abstract": "Minimizing residual tree damage during mechanized forest operations is vital for sustainable forest management since this damage can affect stand structure, timber quality, and long-term forest health. Although various studies have examined tree damage factors, evidence remains fragmented across regions and systems. The review synthesizes the state of knowledge of residual tree damage during forest operations, identifying how operational, silvicultural, and human factors have been reported to influence damage characteristics and synthesize mitigation strategies. Of the 547 articles that were systematically screened, 76 were selected for synthesis. Reported damage frequency ranged from 0.7% to 68% across studies, reflecting substantial variation associated with differences in assessment methods, damage thresholds, and operational contexts. The reviewed literature associated residual tree damage with stand and site conditions, harvesting systems and methods, harvesting intensity, trail configuration, tree position, and operator-related factors. However, the direction and magnitude of these reported relationships varied across the studies suggesting substantial context dependence. Human-related factors received comparatively limited attention, and direct evidence relating to operator experience, mental workload, visibility, and related ergonomic conditions to residual tree damage remained limited. Residual tree damage cannot be consistently explained by any single factor, instead, reported patterns reflect interacting operational, silvicultural, and human influences. By categorizing the literature into these three factors, this review identifies an imbalance in the evidence base, with human-related influences receiving less direct examination in relation to residual tree damage than operational and silvicultural factors. This underrepresentation highlights the need for further research examining operator experience, workload, and visibility in relation to residual tree damage, and evaluating these factors jointly with operational and silvicultural factors. To support this integrated perspective, the review proposes a conceptual framework that organizes the reported factor categories, damage characteristics, and mitigation strategies.",
+      "abstract": "Purpose of Review: Minimizing residual tree damage during mechanized forest operations is vital for sustainable forest management since this damage can affect stand structure, timber quality, and long-term forest health. Although various studies have examined tree damage factors, evidence remains fragmented across regions and systems. The review synthesizes the state of knowledge of residual tree damage during forest operations, identifying how operational, silvicultural, and human factors have been reported to influence damage characteristics and synthesize mitigation strategies. Recent Findings: Of the 547 articles that were systematically screened, 76 were selected for synthesis. Reported damage frequency ranged from 0.7% to 68% across studies, reflecting substantial variation associated with differences in assessment methods, damage thresholds, and operational contexts. The reviewed literature associated residual tree damage with stand and site conditions, harvesting systems and methods, harvesting intensity, trail configuration, tree position, and operator-related factors. However, the direction and magnitude of these reported relationships varied across the studies suggesting substantial context dependence. Human-related factors received comparatively limited attention, and direct evidence relating to operator experience, mental workload, visibility, and related ergonomic conditions to residual tree damage remained limited. Summary: Residual tree damage cannot be consistently explained by any single factor, instead, reported patterns reflect interacting operational, silvicultural, and human influences. By categorizing the literature into these three factors, this review identifies an imbalance in the evidence base, with human-related influences receiving less direct examination in relation to residual tree damage than operational and silvicultural factors. This underrepresentation highlights the need for further research examining operator experience, workload, and visibility in relation to residual tree damage, and evaluating these factors jointly with operational and silvicultural factors. To support this integrated perspective, the review proposes a conceptual framework that organizes the reported factor categories, damage characteristics, and mitigation strategies.",
       "topics": [
         "Forest Management and Policy",
         "Tree Root and Stability Studies",
@@ -2598,339 +2971,6 @@
         "university students",
         "higher education",
         "serial mediation"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2739758",
-      "abstract": "Large language models routinely produce factually incorrect or misleading outputs, yet conventional automated benchmarks overlook how users perceive reliability during interaction. We introduce the System Hallucination Scale (SHS), a lightweight instrument modeling the famous System Usability Scale (SUS) and System Causability Scales (SCS). SHS measures perceived reliability across five dimensions: factual accuracy, source reliability, logical coherence, deceptiveness of presentation, and responsiveness to user guidance, using ten balanced Likert-scale items that provide a directional score and consistency diagnostic. In a supervised validation study with 193 participants (386 evaluations across 47 trained experimenters), SHS demonstrated strong internal consistency and high clarity, completing in an average of 4.2 minutes. Participants rated source verifiability and presentation deceptiveness worse than factual accuracy, indicating perceived vulnerabilities lie primarily in traceability and framing. As a proof of concept, SHS assesses human-perceived reliability rather than ground-truth correctness, providing open-source multilingual implementations and an interactive calculator.",
-      "topics": [
-        "Usability and User Interface Design",
-        "Natural Language Processing Techniques",
-        "Human-Automation Interaction and Safety"
-      ],
-      "keywords": [
-        "large language models",
-        "perceived reliability",
-        "hallucinations",
-        "System Usability Scale",
-        "user perception",
-        "factual accuracy",
-        "logical coherence",
-        "traceability"
-      ]
-    },
-    {
-      "id": "doi:10.18282/hrms6363",
-      "abstract": "This study examines the associations among AI-enabled Corporate Wellness Systems (AI-CWS), Employee Well-Being (EWB), and Organizational Commitment (OC) among employees in Indian organizations. Using a quantitative, cross-sectional survey design, primary data from 1,259 respondents in technology, banking, healthcare, and education-related organizations were analysed using descriptive statistics, Pearson correlations, hierarchical regression, and bootstrapped mediation analysis. The results indicate a statistically significant negative association between AI-CWS and EWB (B = −0.183, p < 0.001) and a statistically significant positive association between AI-CWS and OC (B = 0.323, p < 0.001). EWB was positively associated with OC (B = 0.160, p < 0.001). The bootstrapped indirect association of AI-CWS with OC through EWB was negative and statistically significant (indirect effect = −0.029, 95% CI [−0.045, −0.016]), while the direct association remained positive (B = 0.352, p < 0.001). The pattern is therefore consistent with an inconsistent or competitive mediation structure rather than positive partial mediation. Given the cross-sectional and self-reported nature of the data, the findings are interpreted as associations rather than causal effects. The study extends Job Demands–Resources and Perceived Organizational Support perspectives by showing that AI-enabled wellness systems may be perceived simultaneously as organizational support and as a potential technological demand. Keywords: Artificial intelligence; AI-enabled corporate wellness systems; Employee well-being; Organizational commitment; Perceived organizational support; Job demands–resources theory.",
-      "topics": [
-        "AI and HR Technologies",
-        "Job Satisfaction and Organizational Behavior",
-        "Workplace Health and Well-being"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.20944/preprints202610.0496.v1",
-      "abstract": "Small and medium-sized enterprises (SMEs) form the backbone of most economies, yet they typically operate with limited staff, tight budgets and little specialist technical capacity. Recent advances in large language models have produced AI agents: software systems that can interpret goals, plan multi-step tasks, use external tools and act with a degree of autonomy. This paper examines how AI agents can be applied in small businesses, what benefits they may offer, and what risks must be managed. Drawing on the literature on intelligent agents, technology adoption and the resource-based view of the firm, the paper develops a function-by-function analysis covering customer service, sales and marketing, finance and administration, operations, and human resources. It then proposes a five-stage adoption framework and a set of research propositions tailored to the constraints of small firms. The analysis suggests that AI agents are most valuable when applied to repetitive, text-heavy and tool-mediated tasks, when the owner-manager remains in the loop for consequential decisions, and when data protection, transparency and vendor dependence are addressed from the outset. The paper concludes with practical guidance for owner-managers and directions for empirical research.",
-      "topics": [
-        "Artificial Intelligence Applications",
-        "Impact of AI and Big Data on Business and Society",
-        "AI in Service Interactions"
-      ],
-      "keywords": [
-        "AI agents",
-        "small and medium-sized enterprises",
-        "large language models",
-        "technology adoption",
-        "resource-based view",
-        "adoption framework",
-        "customer service automation",
-        "data protection",
-        "transparency",
-        "task automation"
-      ]
-    },
-    {
-      "id": "doi:10.1108/jima-05-2026-0364",
-      "abstract": "Purpose This study aims to examine Islamic FinTech transformation as a governance process, not only as a source of technical efficiency. Although previous research emphasizes growth, it gives less attention to how artificial intelligence and big data affect the field’s ethical and institutional foundations. The study therefore considers how these technologies influence Sharīʿah compliance, ethical governance and institutional legitimacy. Design/methodology/approach The study adopts a critical narrative review of peer-reviewed publications and selected scholarly and institutional sources. The main search assessed 120 distinct candidate records and included 87 in the analytical synthesis. A separate complementary update and re-evaluation assessed 68 records, used 20 and excluded 48. Hybrid inductive–deductive coding produced seven constructs and four cross-cutting analytical dimensions; the relationships proposed are empirically testable theoretical propositions, not causal findings. Findings Algorithmic transparency, ethical principles, digital Sharīʿah auditing and data privacy are central to institutional trust, continued Sharīʿah compliance and legitimacy. The framework organizes seven constructs across five relational stages, with algorithmic transparency as a possible mediator between technological inputs and institutional trust. Trust functions as the legitimacy mechanism, sustainability as the final outcome, and a feedback loop connects institutional learning and regulatory alignment. Originality/value Unlike reviews that mainly catalogue applications, adoption drivers or performance effects, this study explains how technological inputs may acquire legitimacy through ethical governance, Sharīʿah compliance and algorithmic transparency. The resulting framework connects institutional trust with sustainability and translates unresolved relationships into a testable research agenda.",
-      "topics": [
-        "Islamic Finance and Banking Studies",
-        "FinTech, Crowdfunding, Digital Finance",
-        "Islamic Finance and Communication"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23237299",
-      "abstract": "This article examines how artificial intelligence (AI) and related digital technologies are reshaping the core functions of management: planning, organizing, leading and controlling. Drawing on a structured review of the management and information-systems literature, it develops a conceptual framework that links technology capabilities (prediction, automation, augmentation and coordination) to managerial functions and to organizational outcomes. The analysis shows that AI creates the most value when it is used to augment managerial judgment rather than replace it, and when adoption is accompanied by data governance, skills development and changes in organizational structure. The article also identifies the main risks, including algorithmic bias, opacity, employee surveillance and over-reliance on automated recommendations, and proposes a phased adoption model with practical recommendations for managers and policymakers.",
-      "topics": [
-        "Impact of AI and Big Data on Business and Society",
-        "Artificial Intelligence Applications",
-        "AI and HR Technologies"
-      ],
-      "keywords": [
-        "artificial intelligence in management",
-        "digital technologies",
-        "management functions",
-        "planning, organizing, leading, and controlling",
-        "technological capabilities",
-        "data governance",
-        "skill development",
-        "organizational structure",
-        "algorithmic bias",
-        "algorithmic opacity",
-        "employee surveillance",
-        "risks of AI adoption"
-      ]
-    },
-    {
-      "id": "doi:10.4324/9781042018857-9",
-      "abstract": null,
-      "topics": [
-        "Artificial Intelligence Applications",
-        "Insurance and Financial Risk Management",
-        "Impact of AI and Big Data on Business and Society"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23235295",
-      "abstract": "Abstract: The rapid development of generative artificial intelligence has substantially changed the way academic writing can be taught, practiced, and assessed in higher education. This article examines the theoretical and pedagogical principles underlying AI-assisted academic writing instruction, with particular attention to learner agency, process-oriented writing, scaffolding, feedback, metacognition, academic integrity, and human–AI collaboration. The study adopts a theoretical-analytical methodology based on a review and synthesis of recent research on generative AI in education, academic writing pedagogy, and responsible technology use. The analysis shows that AI is most pedagogically valuable when it is used not as a substitute for student thinking, but as a scaffold that supports planning, drafting, revision, language development, and critical reflection. Effective AI-assisted writing instruction therefore requires a shift from product-oriented assessment toward process-oriented pedagogy, in which students make visible how ideas are generated, evaluated, revised, and verified. The article also argues that academic integrity should be addressed through transparent AI-use policies, source verification, disclosure, and the development of AI literacy rather than through prohibition alone. A pedagogically sound model of AI-assisted academic writing is thus based on human agency, iterative feedback, critical evaluation, ethical responsibility, and purposeful integration of digital tools into the writing process. Keywords: generative artificial intelligence, academic writing, writing instruction, AI literacy, scaffolding, feedback, academic integrity, metacognition, higher education, human–AI collaboration.",
-      "topics": [
-        "Artificial Intelligence in Education",
-        "EFL/ESL Teaching and Learning",
-        "Discourse Analysis in Language Studies"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1093/acamed/wvag318",
-      "abstract": "Abstract Clinical reasoning is a foundational competency that develops over the course of training and comprises two sub-components. Diagnostic reasoning classifies a patient’s condition and assigns a diagnostic label, whereas management reasoning weighs multiple defensible plans with consideration of patient preferences and contextual constraints. Clinical reasoning education has historically emphasized “in-the-head” cognitive processes, such as information gathering, hypothesis generation, problem representation, and differential prioritization, over “out-in-the-world” contextualized processes, such as system navigation, use of tools, and interprofessional management. Generative artificial intelligence (GAI), itself a tool “out-in-the-world,” is changing where, with whom and what, and how trainees learn to reason. The unit of reasoning educators must attend to shifts from the individual learner to the learner-AI dyad. This shift creates opportunities for upskilling alongside risks of never-skilling, mis-skilling, and deskilling. Drawing on “in-the-head” information processing theories and “out-in-the-world” situativity theories, the authors propose a redesign of clinical reasoning education. They share learner vignettes to illustrate the upskilling potential and skilling risks most concerning at each stage of training before proposing five cross-cutting strategies for redesign: introduce GAI tools early in the curriculum, preserve reasoning-first GAI-assisted workflows, promote graduated autonomy for GAI use in clinical care, equip faculty to supervise GAI-assisted reasoning, and rethink clinical reasoning assessment. If GAI is integrated deliberately in a theory-informed way, the next generation of learners can be better prepared to incorporate GAI skillfully and responsibly into clinical reasoning.",
-      "topics": [
-        "Clinical Reasoning and Diagnostic Skills",
-        "Artificial Intelligence in Healthcare and Education",
-        "Innovations in Medical Education"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1080/00029890.2026.2736398",
-      "abstract": null,
-      "topics": [
-        "Artificial Intelligence Applications",
-        "Cognitive Computing and Networks",
-        "Cybernetics and Technology in Society"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.11734",
-      "abstract": "We introduce Timer-M1, a pretrained multivariate time series foundation model that learns with primitives for zero-shot forecasting. Across domains, time series share elementary temporal and relational patterns, termed primitives, yet differ in how these primitives manifest and evolve across different contexts. Despite progress in zero-shot and task-general forecasting, existing foundation models may still struggle to generalize to complex real-world scenarios. To this end, we develop a primitive-based data synthesis and pretraining pipeline. The synthesis pipeline generates series with temporal primitives shared across domains and then assembles real and generated series into multivariate samples using relational primitives. Afterwards, samples are organized into episodes by assigning distinct channel roles as target variates, past-only covariates, and known-future covariates, ensuring that the model is optimized on predictable variates using available exogenous information. Technically, Timer-M1 further adapts gated two-dimensional Transformer blocks that dynamically allocate cross-variate attention across layers. Across three large-scale forecasting benchmarks, Timer-M1 ranks first on both FEV and TIME and second on GIFT-Eval among most recent time series foundation models. These results support effective primitive-based pretraining as a route to robust general forecasting technique across domains and task settings.",
-      "topics": [
-        "Time Series Analysis and Forecasting",
-        "Forecasting Techniques and Applications",
-        "Stock Market Forecasting Methods"
-      ],
-      "keywords": [
-        "multivariate time series",
-        "time series foundation models",
-        "zero-shot forecasting",
-        "synthetic data generation",
-        "pre-training",
-        "exogenous variables"
-      ]
-    },
-    {
-      "id": "doi:10.1108/ijm-04-2026-0378",
-      "abstract": "Purpose We examine how artificial intelligence (AI) reshapes the relative economic positioning of entry-level and experienced workers within industries. Rather than focusing on job elimination, we investigate whether AI changes the returns to experience. Design/methodology/approach We construct an industry-quarter panel from 337 million US Lightcast job postings across 16 NAICS2 industries, with finer-grained inference and decomposition across 86 NAICS3 industries (Q1 2017 to Q1 2026). Difference-in-differences models use a leave-own-industry-out shift-share measure, with industry and quarter fixed effects and small-cluster-robust inference. Lightcast AI-skills rate and Felten task-exposure provide comparisons, with Census firm-reported AI adoption and BLS occupational data providing triangulation. Findings Entry-level posting shares decline modestly but not differentially with AI-exposure. By contrast, the experienced-entry pay gap widens with greater shift-share AI exposure; a one-percentage-point increase in exposure predicts a significant $2,780 widening. Occupational reallocation toward higher-paid jobs accounts for 61% of the widening, and stronger within-occupation wage growth concentrated among experienced workers accounts for 39%. Research limitations/implications The findings suggest AI and labour-market research should distinguish potential task exposure from realized adoption and examine how occupational restructuring alters within-industry career stage inequality. Originality/value We shift attention from displacement to experience repricing, introducing career-stage-biased technical change as a two-channel account in which AI may alter both occupational demand and the rewards to experience-mediated capabilities.",
-      "topics": [
-        "Labor market dynamics and wage inequality",
-        "Digital Economy and Work Transformation",
-        "Impact of AI and Big Data on Business and Society"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.20944/preprints202610.0486.v1",
-      "abstract": "Autonomous AI agents—systems that invoke external tools, maintain goal-directed behavior across multiple sequential steps, and write to persistent state—introduce safety failures that output-level evaluation frameworks cannot detect. We formally show that any monitoring policy conditioning only on the current action cannot reliably detect failure modes whose definitions require access to the prior execution state—specifically Goal Drift and Hallucination Cascades. We introduce the Responsible Agentic Lifecycle (RAL), a five-component modular governance framework that unifies goal alignment monitoring, hallucination cascade detection, and resource constraint enforcement into a single trajectory-conditioned Safety Score S(t) computed over execution history ℋₜ. The Goal Anchoring Protocol (GAP, Algorithm 1) provides a runtime pseudocode specification for semantic goal drift detection and re-anchoring. S(t) is bounded, monotone in each constraint cost, and trajectory-sensitive by construction.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Digitalization, Law, and Regulation",
-        "Safety Systems Engineering in Autonomy"
-      ],
-      "keywords": [
-        "agentic AI",
-        "AI governance",
-        "responsible AI",
-        "autonomous AI agents",
-        "governance framework"
-      ]
-    },
-    {
-      "id": "doi:10.4324/9781003713463-15",
-      "abstract": "Artificial intelligence (AI) is transforming financial services through automation, predictive analytics, and algorithmic decision-making. In Islamic finance, its adoption raises unique ethical and Shariah governance challenges, as institutions must comply with both regulatory and Islamic principles. Southeast Asia (SEA) is leading AI adoption in areas such as credit scoring, fraud detection, robo-advisory, and customer support. However, governance frameworks have not kept pace, creating risks related to opacity ( gharar ), bias and injustice ( zulm ), data misuse, and errors in automated advisory systems. This study examines AI use in Malaysia, Indonesia, Singapore, and Brunei through qualitative analysis of regulations, industry practices, and Shariah principles. It identifies key gaps and proposes a Southeast Asian Shariah -Compliant AI Framework. The framework emphasises Shariah -by-Design, ethical data governance, and human oversight throughout the AI lifecycle. It offers a structured approach to align AI innovation with Islamic values, positioning SEA as a leader in ethical and Shariah -compliant financial innovation.",
-      "topics": [
-        "Islamic Finance and Banking Studies",
-        "FinTech, Crowdfunding, Digital Finance",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "ethical AI",
-        "Islamic finance",
-        "AI ethics",
-        "algorithmic fairness",
-        "Islamic ethics"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.11450",
-      "abstract": "We study how a coding agent learns across a sequence of abstract reasoning tasks. The agent runs on a frozen foundation model inside a fixed harness and acts by writing and running Python and shell scripts. It retains no state across turns other than its written artifacts, so every thought it forms, carries, corrects or abandons leaves a trace, where a thought is any belief, rule or plan committed to a file. We let the agent play ARC-AGI-3, a set of interactive reasoning games that provide no instructions. Each game is a sequence of levels, and a strategy that clears one level can fail on the next, so every new level is in effect a new task. The agent records what it learns as Python scripts and text notes, while the harness keeps a complete log of every action and observation. Our contribution is a measurement protocol that traces each thought through these files, from the task where it forms to the task where it is corrected or abandoned, applied to seven evaluation runs with three backbones from two model families. Scripts written for one task are almost never called again in a later task (33 of 630 references cross a task boundary), because most scripts embed the state of the current level. Instead, the agent rewrites its knowledge into new scripts, keeping the general rules and dropping the level-specific details, and abandons 74% of the scripts it wrote before a boundary. The notes, which only the model reads, are never revised: the agent appends without removing earlier claims, and the contradictions that accumulate are settled against the log. Because the log preserves everything, the agent forgets selectively, not catastrophically. The most costly error is a hard-coded value carried into a task where it no longer holds. These findings come from the files the agent wrote, without access to the model, and constitute a white-box analysis of how a coding agent continually learns.",
-      "topics": [
-        "AI-based Problem Solving and Planning",
-        "Domain Adaptation and Few-Shot Learning",
-        "Psychiatry, Mental Health, Neuroscience"
-      ],
-      "keywords": [
-        "coding agents",
-        "continual learning",
-        "knowledge retention",
-        "selective forgetting",
-        "catastrophic forgetting",
-        "frozen foundation models",
-        "white-box analysis",
-        "task boundaries"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.11858",
-      "abstract": "Agent skills provide reusable guidance for code agents, but incomplete or unsuitable guidance can impair task execution. To reduce the manual effort of skill refinement, recent approaches use LLMs to generate revisions from execution feedback. However, grounding these revisions in explicit behavioral evidence remains challenging. To address this gap, we propose SkillMorph, a skill-evolution approach based on trajectory-guided fault localization in agent skills. Its core idea is to link execution evidence to specific skill contents before generating revisions. Specifically, SkillMorph compares failure and success evidence in abstracted trajectories across repeated runs and tasks, incorporating changes between evolution loops to identify suspicious actions. It then uses these suspicious actions to localize edit sites in the skills and generate corresponding revisions. Experiments on SWE-Skills-Bench and CannBot show that the skills evolved by SkillMorph consistently achieve higher trial-level accuracy and execution consistency than the original skills and those from four existing skill-evolution methods. We have also applied SkillMorph to automated kernel generation with an AI operator-development team, which has accepted 6 skill-revision pull requests.",
-      "topics": [
-        "Software Engineering Research",
-        "Software Testing and Debugging Techniques",
-        "Evolutionary Algorithms and Applications"
-      ],
-      "keywords": [
-        "coding agents",
-        "execution feedback"
-      ]
-    },
-    {
-      "id": "doi:10.1108/joepp-01-2026-0084",
-      "abstract": "Purpose This study aims to investigate the relationship between employee resilience in the IT industry and the effects of transformational leadership and organizational culture, as well as the moderating effect of AI control systems in the relationships mentioned above. The objective of this research is to determine if AI control systems, which are becoming more prevalent in the IT industry, enhance or reduce the effects of transformational leadership and organizational culture on employee resilience. Design/methodology/approach The research method adopted is a survey-based, quantitative approach, based on the Socio-Technical Systems theory. The data from a total of 219 information technology professionals were analyzed using the Partial Least Squares Structural Equation Modeling (PLS-SEM). A common method bias test was conducted using Harman’s one-factor test, while multicollinearity was checked using variance inflation factors (VIF). Findings The evidence shows that transformational leadership and organizational culture have a significant positive influence on employee resilience, which together account for 77% of the variation. In addition, AI control functioned as a negative moderator in the relationship between transformational leadership and employee resilience (β = −0.213, p = 0.011), implying that over-automation diminishes the inspirational influence of leaders. In contrast, AI control was not a significant moderator in the relationship between organizational culture and employee resilience (β = 0.085). Practical implications From the results, IT firms need to engage in transformational leadership training and foster positive organizational cultures to increase their resilience. Nevertheless, AI tracking technologies need to be considered as complementary rather than control devices. In particular, HR departments need to develop human-in-the-loop systems that allow leaders to maintain autonomy, formulate AI governance frameworks that restrict AI’s interference in leadership engagements and develop leadership training programs emphasizing the importance of keeping inspirational communication in an AI-driven environment. Originality/value This paper is the first research to concurrently incorporate the concepts of transformational leadership, organizational culture and artificial intelligence (AI) control into a socio-technical perspective for investigating resilience among employees in the information technology (IT) industry. All previous studies either have considered each of these constructs separately or in other industries. The uniqueness of this research relates to the consideration of AI control as a boundary condition rather than an independent variable in the socio-technical perspective, highlighting the negative moderating role of AI control, which has never been empirically tested before.",
-      "topics": [
-        "Corporate Management and Leadership",
-        "Job Satisfaction and Organizational Behavior",
-        "Employee Performance and Leadership"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.56201/ijrcp.vol.11.no7.2026.pg39.46",
-      "abstract": "Transhumanism, the philosophical and technological movement that seeks to transcend the biological limits of the human condition through science, is increasingly present in African life through artificial intelligence, genetic technologies, and digital medicine, yet it has received little sustained attention from African Christian scholarship. This paper examines the encounter between transhumanist aspirations and Christian anthropology, with particular reference to the contemporary African context. The problem addressed is the philosophical and theological tension generated when technological self-enhancement is pursued alongside a Christian understanding of humanity as a creature dependent upon God for identity, dignity and destiny. The study sets out to examine the central claims of transhumanism, analyse the fundamental assumptions of Christian anthropology, identify areas of convergence and divergence between the two, explore what emerging technologies mean for African Christian understandings of personhood, and propose an appropriate Christian response. Employing a qualitative, philosophical, and theological method that draws on biblical, theological and interdisciplinary literature, the paper argues that Christian anthropology need not reject technology outright but supplies enduring boundaries for evaluating human enhancement, since it locates human worth in the imago Dei rather than in technological self-transcendence. The African context further demands attention to communal personhood, inequality, indigenous conceptions of life and death, and the risk of technological dependency. The paper concludes that African churches and theologians must engage transhumanism critically and constructively rather than ignore it.",
-      "topics": [
-        "Neuroethics, Human Enhancement, Biomedical Innovations",
-        "Bioethics and Human Rights Issues",
-        "Christian Theology and Mission"
-      ],
-      "keywords": [
-        "transhumanism",
-        "Christian anthropology",
-        "African Christianity",
-        "personhood",
-        "human enhancement",
-        "artificial intelligence",
-        "genetic technologies",
-        "digital medicine",
-        "image of God",
-        "technology dependence",
-        "African theology"
-      ]
-    },
-    {
-      "id": "doi:10.54963/entu.v16i4.102591",
-      "abstract": "Transoral robotic surgery (TORS) has reshaped the surgical management of head and neck neoplasms since its introduction in the mid-2000s, offering a minimally invasive transoral route to lesions of the oropharynx, larynx, hypopharynx, and nasopharynx. This narrative review synthesizes the technical foundations, current clinical evidence, and emerging directions of TORS, with explicit attention to study rigor and evidentiary hierarchy. Powered by the da Vinci platform, TORS provides magnified three-dimensional visualization and wristed instrumentation that enable en bloc resection with reduced external morbidity, shorter hospitalization, and the potential to spare or de-intensify adjuvant radiotherapy in selected human papillomavirus (HPV)-driven oropharyngeal cancers. For early-stage oropharyngeal disease, local control rates of 90–95% and disease-specific survival above 90% are consistently reported, and recent systematic reviews and large multicenter cohorts, including the international Recurrent Tumors of the Upper Aerodigestive Tract (RECUT) experience, confirm durable oncologic and functional outcomes in both primary and salvage settings, although randomized trials have yielded nuanced, sometimes divergent quality-of-life results. We appraise outcomes by anatomical subsite, the de-escalation trial landscape, complications and their mitigation, learning-curve dynamics, health economics, and the rapidly evolving integration of artificial intelligence in segmentation, augmented-reality navigation, intraoperative margin assessment, and outcome prediction. Recent evidence confirms that TORS is a valuable but expertise-dependent option whose benefit is greatest in carefully selected patients managed within multidisciplinary, high-volume pathways. We conclude by defining the principal unresolved questions and the evidence required to position TORS appropriately within contemporary multidisciplinary care.",
-      "topics": [
-        "Head and Neck Cancer Studies",
-        "Head and Neck Surgical Oncology",
-        "Esophageal Cancer Research and Treatment"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.70382/caijarss.v13i2.064",
-      "abstract": "This study examined the psychometric characteristics of Artificial Intelligence (AI)-generated Econometrics multiple-choice test items Parameters (EMCTIP) among undergraduate Economics students, Nasarawa State University, Keffi, Nigeria. The study specifically determined the trend in the difficulty indices, discrimination indices, and effectiveness of distractors of AI-generated test items. A descriptive evaluative research design was adopted. The sample comprised 400 undergraduate Economics students. A 30-items AI-generated Econometrics multiple-choice test (EMCT). The EMCT was subjected to experts’ judgement, and yielded validity index of 0.74, and 0.073 reliability index. Item analysis was conducted using difficulty index, discrimination index, and distractor effectiveness as the major indices. Means and standard deviations was used to answered the psychometric indices and examine their trends across successive test administrations and One Way ANOVA to test the hypotheses at 95% confidence level. The findings revealed that there is a significant difference in the difficulty indices of AI-generated EMCT items; there is no significant difference in the effectiveness of distractors of the AI-generated EMCT items; and there is no significant difference in the discrimination indices and effectiveness of distractors of AI-generated EMCT items across successive test administrations among undergraduate Economics students of NSUK, Nigeria. The study concluded that AI-generated EMCT items demonstrated satisfactory psychometric properties in terms of difficulty, discrimination, and distractor effectiveness. It was recommended that lecturers and test developers should subject AI-generated test items to systematic human review, empirical item analysis, and validation before their use in formal examinations.",
-      "topics": [
-        "Artificial Intelligence in Education",
-        "Educational Technology and Assessment",
-        "Psychometric Methodologies and Testing"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.68217/c2qss455",
-      "abstract": "Artificial intelligence now stands between merchants and consumers across digital exchange, in chatbots, recommenders, virtual influencers, generative content, service robots and robo-advisors. Consumer reliance on that intermediary is shaped in part by trust. This review synthesises 166 studies in which trust or calibrated reliance is explicitly measured, manipulated or theorised, screened from 7,606 records under PRISMA 2020, with 45 trust-adjacent studies reported separately. Coding what is trusted shows three referents, the AI agent, the deploying merchant and the platform-institutional system, distributed non-randomly across applications. Formal testing finds no detectable association between the direction of the anthropomorphism effect and either stakes or referent, a provisional association between disclosure direction and stakes, and a strong association between reporting any boundary condition and experimental design. The resulting framework links referent, mechanism, boundary condition, trust and reliance state, outcome and repair, and reframes electronic commerce design around calibrated reliance rather than maximal trust.",
-      "topics": [
-        "AI in Service Interactions",
-        "Technology Adoption and User Behaviour",
-        "Digital Marketing and Social Media"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.4018/979-8-2600-4780-4.ch004",
-      "abstract": "Artificial Intelligence (AI) has been one of the most disruptive forms of technology that is redefining the modern organizational system. In any industry, AI technologies are being integrated into the functioning of the organization, decision-making system, and service delivery process. Conventionsally human-experienced, professionally judgemental, and manual sectors (i.e. human resource management (HRM) departments and libraries) are undergoing a radical digital transformation with the introduction of intelligent systems, predictive analytics, and automation tools. Not only the technical workflow is changing with the implementation of AI in these areas but also professional identities, organizational roles, and institutional trust structures are redefined.",
-      "topics": [
-        "AI and HR Technologies",
-        "Ethics and Social Impacts of AI",
-        "Impact of AI and Big Data on Business and Society"
-      ],
-      "keywords": [
-        "artificial intelligence in human resource management",
-        "organizational trust",
-        "digital transformation",
-        "future of work",
-        "automation",
-        "predictive analytics",
-        "professional identity",
-        "organizational roles"
-      ]
-    },
-    {
-      "id": "doi:10.1002/japp.70137",
-      "abstract": "ABSTRACT ‘Trustworthy AI’ is a buzzword in AI research, with scores of scholars discussing whether AI systems can be trustworthy. This demand for trustworthy AI is intuitive, especially when AI is used in healthcare or criminal law, where the stakes are incredibly high. In this article, I push back on calls for trustworthy AI. Even if trustworthy AI can be developed, it will not offer people any benefits over AI that is reliable, transparent, non‐discriminatory, and safe. As a result, we should discuss AI in terms of those more specific properties, and think about how the people and institutions that use AI systems can be trustworthy. I offer two sets of arguments. On one hand, many theories of trustworthy AI reduce trustworthy AI to systems that possess other desirable traits, like reliability, transparency, and so on. Thus, the value of trustworthy AI is similarly reducible to the value of those traits. On the other hand, other theories define trustworthiness as reliability combined with some mental property, like goodwill. On those theories, the goods of trust – that is, the reason trust is distinctly valuable – are goods that are enjoyed within interpersonal relationships. They cannot be realized, or need not be realized, in human–AI interactions. Thus, we do not gain any distinct value from having trustworthy AI.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Philosophical Ethics and Theory",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23249627",
-      "abstract": "KAIPAL and KENOS: Democratizing Artificial Intelligence Through Privacy-First Local Models and a Unified Chat-Native Operating Interface Kohenoor Labs | Kohenoor Technologies Description This publication presents the technological vision, architectural philosophy, and applied development direction of Kohenoor Labs through two complementary initiatives: the KAIPAL (KAI Pocket Assistant Lite) series, focused on accessible, purpose-built, locally deployed artificial intelligence, and the Kohenoor Operating System (KENOS), a unified, chat-native interface for intelligent applications, professional advisory services, and supervised agentic workflows. Together, these initiatives explore an alternative to conventional AI deployment models that depend heavily on centralized infrastructure, expensive computing resources, fragmented application interfaces, and continuous cloud connectivity. KAIPAL: Purpose-Built Intelligence for Mass Adoption The KAIPAL series is designed to maximize the practical utility of compact, open-weight language models on ordinary consumer hardware, with an emphasis on CPU-capable inference, modest memory requirements, and reduced dependence on dedicated graphics processing units. Rather than attempting to replicate the unrestricted capabilities of frontier-scale AI systems, KAIPAL adopts an audience-centered specialization strategy. Models are developed for defined professional and educational requirements, including entrepreneurship, business advisory, career development, financial literacy, everyday productivity, and foundational technical assistance. The central research hypothesis is that carefully specialized and evaluated small language models can address a substantial proportion of routine tasks within their intended domains. Kohenoor Labs has established a development objective of satisfying up to 90% of common, in-scope user requirements, subject to systematic task-based evaluation and validation. Local-first deployment is intended to provide offline availability after installation, eliminate recurring cloud inference charges for local operations, and enable user information to remain on the device. The broader goal is to make AI practically accessible to students, professionals, entrepreneurs, small enterprises, and users in infrastructure-constrained economies. KENOS: A Unified Chat-Native Operating Interface KENOS extends the Kohenoor vision beyond standalone AI models by introducing a conversational operating environment in which natural language serves as the principal interface for interacting with multiple integrated applications and services. Instead of requiring users to navigate numerous independent dashboards, menus, and software environments, KENOS is designed to bring application workflows directly into a unified conversational workspace. Its architecture incorporates: A chat-native interaction layer integrating approximately 12 application domains. Role-based expert advisory capabilities across 11 professional and operational roles. Supervised agentic workflows capable of assisting with multi-step tasks and interacting with authorized application functions. Human-in-the-loop (HITL) controls for consequential actions, approvals, and execution boundaries. User-authorized machine connectivity and controlled interaction with external systems. Multilayer AI orchestration for selecting, coordinating, and supervising specialized capabilities. Security, governance, and permission controls intended to preserve user authority over system operations. The central innovation proposed by KENOS is the integration of conversational intelligence, application functionality, professional advisory, and controlled task execution within a single interaction environment. This architecture seeks to reduce workflow fragmentation while enabling AI to evolve from a response-generation tool into a supervised operational assistant. Complementary Architectural Strategy KAIPAL and KENOS address different but interconnected dimensions of AI accessibility. KAIPAL focuses on where intelligence runs, emphasizing local hardware, efficient inference, affordability, privacy, and domain specialization. KENOS focuses on how intelligence is accessed and applied, emphasizing a unified conversational interface, cross-application coordination, human oversight, and practical execution. Together, they support a broader architectural direction in which lightweight local intelligence can handle routine activities while more capable cloud-based systems remain available for complex computation, large-scale analysis, or specialized enterprise requirements. This approach seeks to align the computational resources consumed by AI with the actual complexity and importance of user tasks. Research Contribution and Significance This publication contributes a practical development framework organized around five priorities: Intelligence accessibility: Delivering useful AI capabilities on widely available hardware. Audience-centered model specialization: Optimizing compact models for identifiable user needs rather than maximizing general-purpose model scale. Privacy-first deployment: Prioritizing local inference and user control over sensitive information. Chat-native application convergence: Integrating multiple software workflows and expert advisory functions into a common conversational interface. Governed agentic execution: Combining intelligent task support with explicit permissions, human oversight, and controlled machine interactions. The work is particularly relevant to research and development in small language models, applied AI, human-computer interaction, edge intelligence, agentic systems, AI democratization, and intelligent enterprise software. The publication describes an evolving research and engineering initiative. Its architecture and development objectives should be distinguished from independently validated performance benchmarks or claims of universal task coverage. Availability The publicly released KAIPAL model, KAI Lite 1, is available through Ollama: https://ollama.com/kohenoor/kai-lite1 Keywords: KAIPAL, KENOS, Kohenoor Labs, Kohenoor AI, Local Artificial Intelligence, Small Language Models, Open-Weight Models, On-Device AI, Privacy-First AI, Chat-Native Operating System, Conversational User Interface, Agentic AI, Human-in-the-Loop, AI Orchestration, Edge AI, CPU Inference, AI Democratization, Domain-Specialized Language Models.",
-      "topics": [
-        "Artificial Intelligence Applications",
-        "Speech and dialogue systems",
-        "Topic Modeling"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.4018/979-8-3373-8332-3.ch002",
-      "abstract": "This scoping review summarizes findings on an emergent area, “prompt literacy,” in generative artificial intelligence (GenAI). It specifically maps key types identified in prompt literacy, including the competencies associated with each. Using a systematic approach to analyze recent literature on the types of prompts (e.g., instruction, exploration, iteration, and evaluation) used throughout GenAI's development provides insight into how they have shaped users' experiences and interactions with new AI-based systems. Additionally, this report provides a list of basic competencies to support effective development of prompt literacy skills, including linguistic accuracy/precision, context awareness, ethical reasoning, and iterative problem-solving—all of which help individuals become successful with their digital and information literacy skills but offer new challenges when people work with AI systems. In conclusion, this review revealed that prompt literacy is a technical/cognitive skill set that encompasses (but isn't limited to) flexibility and critical thinking at all levels.",
-      "topics": [
-        "Digital literacy in education",
-        "Library Science and Information Literacy",
-        "Information Retrieval and Search Behavior"
-      ],
-      "keywords": [
-        "prompt literacy",
-        "generative AI",
-        "context awareness",
-        "moral reasoning",
-        "critical thinking",
-        "digital literacy",
-        "information literacy"
       ]
     }
   ]

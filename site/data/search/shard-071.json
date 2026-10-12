@@ -1,7 +1,277 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-11T11:26:30.005Z",
+  "generatedAt": "2026-10-12T13:13:04.841Z",
   "documents": [
+    {
+      "id": "arxiv:2607.27557",
+      "abstract": "While Large Language Models (LLMs) demonstrate remarkable general instruction-following capabilities, they often fall short of human experts in highly specialized, open-ended domains such as creative screenwriting. Prior approaches typically adopt post-training, yet both supervised fine-tuning and reinforcement learning require weight access that closed-source frontier models do not offer, and demand heavy compute. Moreover, what is learned is tied to a single checkpoint and cannot be inspected by humans. Recent advancements in agentic continual learning instead attempt to bridge this gap by accumulating external textual skills. However, these methods heavily rely on costly human expert annotations or unreliable LLM-as-a-judge feedback for reflection. To overcome this bottleneck, we propose a novel, unsupervised self-evolving agent framework inspired by the corruption-and-reconstruction paradigm of diffusion models. Instead of relying on explicit external scoring, we leverage existing high-quality human artifacts to construct self-supervised signals. Training then follows the familiar loop of neural network training, forward, loss, and backward, with the loss coming from contrasting the agent's reconstruction against the human original. What is updated is not model weights but an external library of textual skills. We evaluate our framework on the challenging task of short drama screenwriting. Experimental results demonstrate that our method enables the agent to autonomously extract and internalize highly generalizable skills, significantly enhancing its domain-specific generation capabilities. Furthermore, this self-contrastive reflection paradigm offers a scalable pathway for agents to teach themselves the production of complex, high-quality human artifacts, without requiring external supervision.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.28200",
+      "abstract": "Frequency-domain thermoreflectance (FDTR) is a laser pump-probe technique widely used to measure thermal properties at the micro- and nanoscale; however, it relies on a complex data analysis procedure that demands substantial domain expertise and is susceptible to subtle human errors. Here, we present Vibe-FDTR, an agent-oriented framework that enables large language model (LLM) agents to perform reliable and reproducible FDTR analyses directly from natural language requests. This framework couples a configuration-driven FDTR code package, which enforces physical and parametric consistency, with procedural agent skills that translate user intentions into organized and verifiable analysis steps. We evaluate Vibe-FDTR using a controlled benchmark with two levels: synthetic single-step tasks and real-data multi-step tasks based on measurements of gold-coated graphite samples. Across the two levels, agents using Vibe-FDTR achieve success rates of 100% and 98.9%, respectively. In sharp contrast, ablating skills (Code-agent) reduces performance to 91.4% and 36.7%, which drops further to 38.6% and 0% when the domain package is also omitted (Agent-only). Beyond success rate, Vibe-FDTR also reduces computational cost by 87.7% relative to the Code-agent variant and cuts execution time by more than 60%. Finally, an optional expert mode supports experimental planning via autonomous sensitivity and uncertainty evaluations, and formulates physically grounded recommendations for underspecified tasks. These results demonstrate that encapsulating domain code and expert knowledge into agent skills offers a promising route toward low-barrier, autonomous, and trustworthy thermal metrology.",
+      "topics": [
+        "physics.app-ph",
+        "cond-mat.mtrl-sci",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.27938",
+      "abstract": "Composite visualizations integrate multiple visualizations to represent complex datasets effectively, but their intrinsic composite designs often impose a high initial cognitive load on novice users. Existing visualization onboarding approaches are typically platform-dependent, require substantial manual authoring effort, and struggle with the structural complexity of composite visualizations, limiting their general applicability. We present VizPilot, an automated visualization onboarding approach that reverse-engineers composite visualization structure to generate interactive onboarding experiences directly from raw visualization artifacts. VizPilot consists of two modules: a Composite Visualization Analyzer and an Onboarding Interface. Leveraging Multimodal Large Language Models (MLLMs), the Analyzer employs a two-stage pipeline that decomposes a visualization into visual components, extracts structured explanations, and maps them to precise SVG elements for reliable highlighting and interaction. Implemented as a browser extension, VizPilot requires only a brief visualization description and optional interaction source code from the visualization developer to automatically generate onboarding content. The Onboarding Interface supports both guided narrative scrollytelling and free exploration, enabling users to learn visualization components progressively or on demand. We evaluate VizPilot through a comparative analysis of different input modalities, a usage scenario demonstrating reduced authoring effort, and a user study assessing its impact on users' cognitive load. The results demonstrate that VizPilot effectively automates the authoring of onboarding experiences while improving the usability and accessibility of composite visualizations.",
+      "topics": [
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.28041",
+      "abstract": "As AI systems become capable of producing the essays, code, reports, summaries, plans, and decisions through which institutions usually recognize competence, a familiar question becomes harder to answer: what is learning for? Existing AI ethics rightly emphasizes present failures--bias, opacity, hallucination, labor extraction, privacy risk, and weak accountability. But if the case for learning rests only on those failures, then each technical improvement appears to weaken it. This article develops a different answer. Using the idealization of AI that executes specified tasks flawlessly while lacking authority over purposes, legitimacy, and responsibility, we argue for post-instrumental learning: learning that preserves the capacities people and institutions need when many useful outputs can be delegated. We analyze five such capacities--end-setting, reason-giving, contestability, refusal/revision, and participation--and name their erosion capacity dissolution. The central case is assessment under generative AI. When a polished artifact no longer reliably evidences understanding, institutions must assess the learner's accountable relation to AI-mediated work rather than the artifact alone. The takeaway is practical: AI governance should evaluate not only whether systems perform well, but also whether their deployment leaves people able to understand, challenge, revise, and share responsibility for the practices those systems mediate.",
+      "topics": [
+        "cs.CY"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.28421",
+      "abstract": "Derived measurements increasingly enter large language model (LLM) pipelines as direct facts despite their instance-dependent validity. We define derived-feature over-trust (DFOT) as the failure in which a downstream LLM assigns such a measurement the epistemic status of a direct fact or uses it outside its valid scope. Using physiological sensing as a case study, D1 tests acceptance of a PPG-derived rhythm contradicted by offline ECG, whereas D2 tests rejection of an offline-confirmed reliable PPG rhythm under misleading severe history. ECG supplies training supervision and offline reference construction but is never shown to the LLM. Five estimands quantify this chain: conflict over-trust rate (COTR) and context-induced error rate (CIR) characterize D1/D2; correct repair rate (CRR) measures frozen-error repair; evidence-specific repair margin (ESRM) contrasts matched and patient-disjoint shuffled evidence; and utility harm rate (UHR) measures unnecessary verification among HIGH-reliability cases used without verification at baseline. The framework does not depend on a particular reliability generator. We demonstrate it on 50,000 paired PPG-ECG records using ECG-to-PPG privileged distillation as an illustrative baseline and PPG-only inference. On a protocol-locked 187-patient test, the baseline improves four repair and specificity endpoints by 1.82-6.69 percentage points, with all paired confidence intervals excluding zero; UHR increases by 0.67 percentage points (95% CI: -0.4 to +1.7). DFOT provides a common evaluation target for stronger mitigation methods. The code is available at https://github.com/Zongheng-Guo/When-Derived-Measurements-Mislead.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.28418",
+      "abstract": "Pruning is a promising approach for improving the efficiency of LLMs. Existing static structured pruning methods are hardware-friendly and can deliver practical throughput gains, but their input-agnostic computation allocation often causes substantial accuracy degradation under aggressive sparsity. Recent dynamic sparsity methods improve quality retention by adapting computation to individual inputs, yet they remain largely limited to coarse-grained structural decisions and their practical acceleration under real-world inference scenarios remains challenging. To address these challenges, we present WIDE, the first end-to-end differentiable token-level dynamic width pruning framework designed for both prefill and decode scenarios. WIDE enables fine-grained computation allocation by allowing each token to dynamically select attention-head groups and FFN-channel groups, extending dynamic pruning beyond layer-level decisions to neuron-block-level granularity. Through a two-stage training pipeline, WIDE learns effective token-wise sparse execution patterns and achieves substantially better quality retention than existing approaches. To make such fine-grained dynamic pruning practical, we further propose a pruning--kernel co-design framework that decomposes dynamic sparsity acceleration into mask reordering, hardware-agnostic block-level skipping, and hardware-dependent intra-block skipping, enabling efficient execution across different granularities. At 50% sparsity, WIDE provides 55.1% performance boost when compared to the state-of-the-art dynamic depth pruning under calibration-only settings. Under prefill and decoding inference workloads, WIDE achieves close-to-theoretical kernel-level speedups of up to 1.98x for prefill and 4.95x for decoding, as well as 1.68x and 1.55x end-to-end acceleration. Our code is available at https://github.com/EIT-NLP/LLM-Pruning/tree/main/WIDE.",
+      "topics": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.28478",
+      "abstract": "As large language models (LLMs) continue to advance in complex reasoning tasks, they have learned to heavily prioritize explicit conditions provided in the input. However, in everyday commonsense reasoning, this mechanism exposes a critical vulnerability which we term Salience Bias: models become easily hijacked by useless explicit distractors (e.g., numerical values), leading them to ignore the implicit physical or commonsense prerequisites of a task. A critical open question is whether this failure reflects a genuine gap in commonsense knowledge or merely its suppression under misleading task framing. To investigate this, we construct the SaliTrap Benchmark, a high-quality dataset across four trap dimensions. Evaluating 12 state-of-the-art LLMs, we find that all mainstream models suffer significantly from salience bias, with severity scaling with distractor density and detecting the trap often decoupled from actually avoiding it. Crucially, by re-eliciting the same models with the task framing stripped away, we show that this is overwhelmingly a failure of \\textbf{knowledge suppression rather than knowledge absence}: a context-free knowledge probe alone recovers over 90\\% of sycophantic-compliance failures, revealing that the requisite commonsense is intrinsically present but actively crowded out by salient distractors that lure the model into over-compliant, unnecessary computation. Building on this diagnosis, we further show that lightweight, inference-time prompting alone substantially closes the gap without any retraining. Our findings relocate the bottleneck of commonsense reasoning failures from model competence to elicitation, and we release SaliTrap as a testbed for this blind spot. The codes are available at https://github.com/Wuzheng02/SaliTrap.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.27499",
+      "abstract": "Large language models have improved rapidly on tasks with verifiable answers, such as mathematics and programming. Much less is known about their ability to reason about what we call conceptual questions: questions for which no ground truth is realistically accessible and no widely accepted resolution methodology exists, but on which progress can still be made by debating arguments. Most philosophical questions are of this kind, as are central components of questions in AI safety, decision theory, and social choice. Our approach is based on the view that while bottom-line conclusions on such questions are hard to evaluate, individual contextualized arguments can be evaluated far more reliably. We therefore introduce a dataset of 951 argumentative critiques of 442 position texts, spanning topics from AI safety and decision theory to ethics and politics, with 1,458 ratings by six expert raters along dimensions including centrality, strength, correctness, and clarity. We propose two scoring functions and benchmark a range of models. Performance tracks general capability rankings.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26526",
+      "abstract": "Visual network analysis leverages network visualization authoring techniques to facilitate sensemaking, serendipitous discovery, and hypothesis verification on network data. However, transferring the same paradigm to immersive environments is non-trivial due to insufficient UI affordance for authoring operations. Researchers have studied combining multiple modalities for interactions, but the high learning curve of such input systems limits their adoption by typical data analysts, let alone for network analytics. In this work, we investigate the advantages and limitations of voice as the primary input modality with a research-through-design (RtD) study, in which we design a system that supports voice-based interactions for immersive network visualization facilitated by Large Language Models (LLMs). Through a user study on social network data analysis with participants from social science and computer science backgrounds, we find that voice interactions can improve perceived usability relative to controller-based interaction and lower the cognitive effort of formulating commands, since users can express intent in natural language rather than compressing it into terse instructions. We discuss design implications for immersive visualizations, highlighting how usability limits adoption while simplified interactions and voice-based controls enhance fluidity and support complex, multi-parameter operations.",
+      "topics": [
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2609.13180",
+      "abstract": "Artificial intelligence is shifting from a static decision-support tool to an adaptive collaborator that must sense context, decide when and how to intervene, and improve through repeated interaction with humans individually and in groups. Yet meta-analytic evidence shows that human-AI combinations often fail to outperform the best of either partner alone, and the enabling literature remains fragmented across multimodal sensing, uncertainty quantification, reliance and delegation, facilitation, and teaming. This paper reports a review of adaptive human-AI collaboration literature through a closed-loop lens. Following iterative identification, staged selection against explicit criteria, structured extraction, taxonomy-driven synthesis, and snowballing, we analyze 50 reviewed works. We contribute i) a taxonomy of multimodal context modeling, from individual states to collective states such as group engagement and participation equality; ii) a taxonomy of uncertainty-aware intervention, covering uncertainty sources, estimation and calibration mechanisms, an intervention repertoire that ranges from explanation modulation and deferral to group facilitation, and intervention policies; and iii) a taxonomy of longitudinal co-adaptation and synergy-oriented evaluation. We integrate the three taxonomies into MCAL, a dual-timescale Multimodal Co-Adaptation Loop reference model, and instantiate it on a mixed human-robot workspace, walking every stage of the loop through one concrete setting to show what each taxonomy cell holds in practice.",
+      "topics": [
+        "cs.HC",
+        "cs.SE"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26533",
+      "abstract": "Graph Foundation Models (GFMs) aim to learn transferable knowledge from multi-domain graphs and adapt to unseen scenarios. As a fundamental source of relational semantics in graphs, the transferability of topological patterns has long been central to GFM research. However, local structural patterns may vary across graphs and even among nodes within the same graph. Despite such structural variation, most existing GFMs rely on manually designed propagation schemes and apply them to new graphs largely unchanged. Such fixed schemes may not suit the diverse structural patterns of different nodes. This raises a key question: can each node autonomously determine how information should be propagated through the graph? We refer to this capability as information-flow control. Inspired by recent advances in agent technology, we formulate this problem as agent-based decision making and treat each node as an agent. Accordingly, we propose AgentGFM, in which all node agents follow a shared end-to-end trainable policy rather than using independent models. For adaptive information-flow control, each node interacts with the graph through a predict-act-observe-correct process. During the act stage, the node makes three decisions: source reception, signal-channel selection and gain-aware node-wise halting. The resulting observation is compared with the prediction and their discrepancy is used to correct the node state and guide subsequent interactions. Extensive experiments across node-level, graph-level and large-scale transfer scenarios demonstrate the effectiveness of AgentGFM across diverse graph topologies.",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26661",
+      "abstract": "Ascend C operator optimization is critical for NPU (Neural Processing Unit) inference performance but requires deep hardware expertise. While large language models (LLMs) have shown promise in automated CUDA kernel generation, the fundamentally different programming model of Ascend C introduces unique challenges that remain unexplored. In this paper, we propose AgenticCANN, a knowledge-augmented agentic evolution framework specifically tailored for automated Ascend C operator synthesis in low-corpus NPU environments. To overcome the severe platform knowledge deficit on unfamiliar hardware, AgenticCANN incorporates a knowledge-orchestrated generation system that delivers structured, multi-level domain insights across the development lifecycle to resolve the upstream feasibility bottleneck. Building on this foundation, it features a stage-adaptive agentic evolution strategy that dynamically aligns LLM interaction modes with specific generation and evolution phases, balancing high-exploration candidate discovery with high-convergence performance tuning. Extensive experiments on Huawei Ascend 910B across six operators spanning five pattern categories demonstrate that our method achieves 90 to 100 percent feasibility on elementwise and normalization operators, 56% on fusion operators, and up to 6.65$\\times$ speedup on 1B Pangu model inference kernels. Further analysis reveals that knowledge injection monotonically improves feasibility from 57% to 86% on elementwise operators, demonstrating its general rather than operator-specific benefit.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26998",
+      "abstract": "Large language model (LLM) agents automate penetration testing through an observation-action loop, selecting actions based on observations returned by tools. This dependence allows defenders to inject deceptive observations that can mislead the agent's decision-making process. However, existing defenses rely heavily on static, isolated artifacts planted in the environment prior to an attack. Advanced agents can progressively recognize and bypass these artifacts, ultimately refocusing their exploitation attempts on the real target. To address this issue, we introduce AgentSnare, a trajectory-adaptive deception system that dynamically unfolds a decoy environment to continually steer the penetration agent away from the real target. Specifically, AgentSnare employs an artifact-construction policy model that constructs candidate artifacts conditioned on the agent's interaction history and decoy state. AgentSnare then validates these candidates and incrementally incorporates valid artifacts into a factually consistent decoy environment, thereby delaying the attack by absorbing its tool calls, diverting its post-entry trajectory within the decoy, and defusing it by inducing completion reports grounded in decoy evidence. Across 15 CVE-Bench web applications and three attacker models, AgentSnare absorbs 46.8% of the agent's tool calls in the decoy and retains 55.9% of post-entry actions there, while 90.0% of completion attempts are grounded in decoy evidence; across all 45 attacker-CVE pairs, no real target is successfully exploited at pass@3.",
+      "topics": [
+        "cs.CR",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26642",
+      "abstract": "Automated alpha mining has increasingly adopted large language model (LLM) agents for factor generation and iterative discovery. However, existing LLM-based systems often delegate both factor construction and search decisions to the agent itself, without an explicit exploration space or a principled mechanism for navigating that space. As a result, exploration remains largely implicit and difficult to control or optimize systematically. We introduce AlphaSchema, which constructs and explores a structured space of trading semantics for alpha mining. Each point in this space is a schema plan composed of Event, Context, Qualities, Direction, and Output, specifying the semantics of a candidate factor before implementation. AlphaSchema decouples exploration from implementation: an LLM translates selected schema plans into executable factors, while evaluated rewards are accumulated to learn a surrogate model over the semantic space. An iterative selection mechanism uses this model to balance global exploration, surrogate-guided exploitation, and local mutation. Experiments on the Chinese stock market show that AlphaSchema discovers factor pools with strong predictive and portfolio performance. Further analyses show that the semantic search process navigates diverse regions while increasingly allocating evaluations toward high-reward regions, and that implementations of the same schema plans by different LLMs exhibit comparable predictive quality, suggesting that alpha mining quality is largely robust to the choice of LLM within our framework.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.27154",
+      "abstract": "CT vision-language foundation models have demonstrated promising performance across downstream tasks, but are typically trained with whole-volume representations that dilute fine-grained anatomical signals. Fine-grained vision-language pre-training addresses this by aligning anatomy-level visual features with anatomy-specific text, but in doing so discards the global context that whole-volume models provide. Furthermore, existing fine-grained approaches train from scratch, making them computationally expensive. We introduce Anatomy Contextualized Adaptation (ACA), a lightweight framework that adapts frozen CT foundation model representations for anatomy-level vision-language alignment while enhancing global contextualization. ACA uses TotalSegmentator to decompose CT volumes into anatomy-level embeddings, which are refined via a transformer that captures cross-anatomy relationships, and aligned to both per-anatomy and scan-level text extracted from radiology reports. Evaluated on Merlin and CT-RATE, ACA consistently outperforms both the frozen foundation model baselines and existing fine-grained methods in zero-shot finding classification, while requiring less than one hour of training once embeddings are cached. The attention weights learned by ACA's inter-anatomy transformer additionally indicate plausible cross-anatomy context routing. Altogether, these results support ACA as a lightweight approach for adapting CT foundation models to anatomically grounded vision-language alignment while preserving and enhancing global anatomical context.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.27415",
+      "abstract": "Recent advancements in inference-time scaling have significantly unlocked the complex reasoning capabilities of Large Language Models~(LLMs). However, for agents, these approaches suffer from a critical inefficiency, operating in a stateless manner and engaging in redundant search processes. Existing memory mechanisms largely rely on the reasoning capabilities of LLMs, leading to prohibitive computational costs. In this paper, we propose a novel framework, \\textit{GAMER}~(Graph-based Action-centric Memory with Episodic Reasoning), that bridges the gap between inference scaling and episodic memory. Our approach models historical reasoning as a dynamic \\textit{Action-Centric Graph}. By decoupling the memory mechanism from LLMs, our method can save token/money usage by providing less memory context than memory mechanism baselines. To extract knowledge from the graph effectively, we use a dual-stream Temporal Difference learning mechanism to estimate the positive~(suggestion) and negative~(avoidance) value of action nodes based on past successes and failures. During the inference phase, this learned value function optimizes decision-making bi-directionally, so that positive values provide action suggestions, while negative values indicate high-risk actions. By performing efficient searches on the graph, our method significantly improves the efficiency of inference scaling. Experiments on multiple benchmarks demonstrate that \\textit{GAMER} achieves superior performance by \\textbf{20.81\\%/6.17\\%} for success/progress rate compared to vanilla baselines.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26393",
+      "abstract": "Social deduction games (SDGs) such as Werewolf have become challenging testbeds for AI agents. These games require complex social skills such as reasoning, deception, and collaboration. While recent advances in large language models (LLMs) have driven significant progress in SDG agents, current approaches are predominantly text-based, overlooking the multimodal nature that is fundamental to human social interaction. To bridge this gap, we introduce CaM-Wolf, the first SDG agent that integrates multimodal perception and generation. CaM-Wolf processes video inputs from other players, employs a causal-aware Reasoner trained via reinforcement learning to establish logical chains between observable behaviors and hidden roles, and presents itself through an animated avatar. Our experiments and user study show that CaM-Wolf achieves superior agent gameplay performance and enhances the quality of human-AI interaction. This work represents a significant advancement towards creating more human-like AI agents capable of participating in nuanced social dynamics. Our code is available at https://3dagentworld.github.io/avatar_wolf.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26596",
+      "abstract": "Multimodal large language models (MLLMs) have demonstrated remarkable capabilities by integrating visual and textual understanding within a unified transformer architecture. However, fine-tuning all parameters of these models for visual instruction tuning is computationally expensive and often unnecessary, as the representation requirements for visual and textual tokens diverge significantly in the deeper layers of the network. In this paper, we propose Decoupled Visual Processing (DVP), an efficient training framework that replaces the upper decoder layers of a pretrained LLM with a lightweight, independently trainable single transformer block dedicated exclusively to visual token processing. Specifically, after shared processing through the first half of the decoder layers, visual and textual tokens are split: visual tokens are routed through a newly initialized single transformer block while textual tokens continue through the original frozen decoder layers. The two streams are then concatenated before the language modeling head. During training, only the single transformer block is updated, dramatically reducing the number of trainable parameters. Experiments on the LLaVA-1.5 framework demonstrate that DVP achieves competitive performance on MME, POPE, and ChartQA benchmarks while training only a fraction of the total parameters, suggesting that visual representations in MLLMs can be effectively learned through a decoupled, parameter-efficient pathway.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.14644",
+      "abstract": "Real-world LLM deployments increasingly rely on runtime-injected prohibitions--enterprise policies, PII redlines, tool boundaries--that vary per request and per tenant. Conventional post-training is structurally ill-suited: SFT hides the violation signal in compliant labels, and DPO's sequence-level preferences mismatch token-localized violations. We propose DUET, a token-selective on-policy distillation method for prohibition compliance. DUET pairs a teacher that sees the prohibition (positive) with an identical-weight teacher that does not (negative). Because the two teachers differ only in prohibition visibility, their per-token disagreement isolates the prohibition's causal effect--yielding a clean supervision signal uncontaminated by model capacity or mismatch. This disagreement drives two complementary mechanisms: signal cleaning, which discards agreement tokens as redundant or prefix-corrupted, and preference-directed learning, which pushes the student away from the negative teacher and toward the positive one at token granularity, embedding DPO-style optimization directly into OPD without offline preference data. We construct an industrial Prohibition-Compliance benchmark spanning five task families covering explicit-refusal, paraphrase robustness, and over-refusal. Across 1.5B-8B Qwen variants, DUET achieves 72.3-85.2% violation compliance while preserving 88-93% normal utility, dramatically outperforming teacher model and other distillation baselines. External evaluation on SysBench confirms improved safety alignment with minimal degradation on GSM8K and MATH-500.",
+      "topics": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1007/978-3-032-35387-0_11",
+      "abstract": "The rapid emergence of 3D CT foundation models has opened new avenues for predictive modeling from CT imaging, offering a compelling alternative to traditional radiomics which is known to suffer from reproducibility issues and sensitivity to acquisition protocol variations. Yet, as these models grow in availability, a critical need arises to evaluate how well their learned representations generalize across diverse clinical settings and whether adaptation to specific downstream tasks is necessary to unlock their full potential. To address these questions, we benchmarked several 3D CT foundation models for predicting recurrence-free survival in head and neck cancer across two public datasets totaling 3,644 patients, evaluating various adaptation strategies and modality fusion mechanisms. Our findings reveal persistent difficulty in identifying features that generalize consistently across different imaging distributions, as evidenced by significant performance drops on external validation cohorts. Ultimately, the integration of imaging features with clinical data remains the most accurate approach for prognostic prediction, though achieving universal generalization across varied clinical contexts continues to represent a substantial challenge for the current generation of models.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26490",
+      "abstract": "Physics-informed neural networks (PINNs) have emerged as a powerful paradigm for solving partial differential equations (PDEs), yet their performance heavily relies on the manual, trial-and-error engineering of neural representations, loss formulations, and optimization dynamics. While Large Language Models (LLMs) offer a promising avenue for automated design, unconstrained code generation often yields mathematically invalid or numerically unstable solutions under strict scientific computing constraints. To bridge this gap, we propose \\textbf{EvoPINN}, an agentic framework that reformulates PINN development from labor-intensive manual design into a rigorous, execution-grounded algorithm discovery problem. EvoPINN navigates a modular search space by decoupling neural representations from training programs, utilizing an LLM agent to iteratively propose memory-conditioned programmatic modifications. To ensure scientific validity, all candidates undergo strict structural verification and budget-matched PDE evaluation. Extensive experiments across diverse PDE regimes (oscillatory, elliptic, dissipative, and nonlinear transport) demonstrate that EvoPINN discovers PDE-specialized learning algorithms that significantly reduce relative $L_{2}$ error compared to baselines. Crucially, EvoPINN autonomously invented SLRC-PINN, a novel architecture whose performance gains persist under rigorous parameter-matched comparisons, establishing the viability of execution-grounded agents for discovering genuinely new scientific computing mechanisms.",
+      "topics": [
+        "cs.AI",
+        "cs.LG",
+        "cs.NE"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26513",
+      "abstract": "Current Vision-Language-Action (VLA) models rely mainly on 2D inputs, neglecting the rich object structural information and commonsense knowledge inherent in the 3D physical world. This deficiency restricts their spatial awareness and adaptability for complex, high-precision manipulation. To bridge this crucial gap, we construct a Concept Expert module for VLA to build executable Analytic Concepts that represent objects as explicit, programmatic blueprints. Our mechanism operates in two synergistic phases: First, prior to VLA inference, the Concept Expert leverages 3D information from Vision Foundation Models (VFMs) to estimate the initial kinematic and structural parameters. Second, throughout the manipulation process, the VLA model utilizes its inherent capability to dynamically track the dynamic concept parameters, continuously aligning them with observational changes to ensure persistent accuracy. Once established, the Analytic Concepts provide explicit, high-quality guidance for VLA fine-tuning through (1) dense, programmatic manipulation rewards and (2) precise spatial guidance. This formulation allows VLA models to learn physically grounded interaction behaviors while maintaining end-to-end learning flexibility. Our experimental results show consistent improvements in success rate and learning efficiency across supervised and reinforcement learning settings, demonstrating the effectiveness of structured, concept-based guidance for VLA post-training.",
+      "topics": [
+        "cs.RO"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26641",
+      "abstract": "Identity document (ID) authentication relies on the structural integrity of complex, high-frequency security patterns. However, advanced Generative AI models can now inject localized, high-fidelity manipulations, creating deceptive attacks that bypass standard verification. Training robust image forensic models to detect these anomalies is hindered by privacy regulations, forcing reliance on synthetic templates lacking the intricate visual patterns of real IDs. To bridge this domain gap, we introduce FakeIDet3-DB, the first comprehensive database of digital manipulations on real, government-issued IDs. FakeIDet3-DB encompasses classical (e.g., copy-move) and Generative AI-driven manipulations (e.g., face-swapping, inpainting) enhanced with advanced image refinement procedures to suppress visual artifacts. In addition, to comply with strict data protection regulations (e.g., GDPR), we adopt a recently-proposed framework based on patches. In order to maximize forensic utility, we formulate privacy-aware patch extraction from a real ID as a geometrically constrained image processing problem. We propose PACE, a Pseudo-Anonymized Contextual patch Extraction algorithm, which leverages Integral Image mapping and distance-driven Non-Maximum Suppression (NMS). PACE efficiently contours anonymization masks that prevent Personally Identifiable Information (PII) leakage while maximizing semantic density in peri-censorship regions, yielding almost 5.2M patches extracted from more than 6.4K images from real/fake IDs. Furthermore, an extensive evaluation of the proposed FakeIDet3-DB is performed using state-of-the-art models, showcasing they all struggle to detect and locate attacks coming from generative and classic techniques (32.45\\% EER in detection and 83.48\\% AUC-ROC in localization).",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26825",
+      "abstract": "Large language models (LLMs) encode rich concept-like information, but represent it implicitly through distributed statistical associations rather than as explicit, structured, compositional concepts. Consequently, concept-level structure is typically \\emph{found} rather than \\emph{designed}: it is recovered after training through probing or dictionary learning, with no architectural guarantee of stability, compositionality, controllability, or alignment with human conceptual organization. We organize concept-aware interventions along two dimensions: whether concept structure is internally induced or externally grounded, and the stage of the pipeline where it is introduced. This taxonomy reveals three broad patterns: inference-time approaches remain comparatively underexplored, related ideas have developed largely in isolation across pipeline stages, and externally grounded methods span the entire pipeline despite often being described under different terminology. Together, these observations motivate moving beyond recovering concept-like structure from trained models toward designing LLMs with explicit conceptual representations.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.28619",
+      "abstract": "Medical history taking is a dialogue-based clinical reasoning task in which learners must gather, organise, and integrate patient information while the consultation unfolds. Generative AI-powered virtual patients (GenAI VPs) make repeated history taking practice scalable and preserve full turn by turn dialogue. However, these logs are educationally difficult to use directly. Complete transcripts are too detailed for routine teacher review, whereas final scores obscure whether learners followed up patient cues, checked uncertainty, or used summaries to guide later questioning. This study examined whether coded GenAI VP dialogues can provide teacher-interpretable process evidence of clinical reasoning. We analysed 1{,}030 GenAI VP dialogues from 210 second-year medical learners across five weeks chest-pain cases. Each consultation was teacher-scored using a rubric assessing the full history taking dialogue, and consultations were classified within each week as high- or low-rated using the weekly median score. To explain how rated performance was reflected in the dialogue process, we applied three analytic layers to the same coded dialogue data: behavioural prevalence, local co-occurrence using Epistemic Network Analysis, and sequential transition using Transition Network Analysis. High-rated consultations involved more history taking activity, but differences were not simply about volume. High rated consultations more often connected information gathering and symptom exploration with communication, checking, organisation, and synthesis. Summarising and organising moves more often led to verification or mechanism-oriented follow-up. These findings show how layered analysis of GenAI VP dialogue logs can reveal process patterns associated with high rated history taking and support process-focused feedback in medical education.",
+      "topics": [
+        "cs.CL",
+        "cs.AI",
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26402",
+      "abstract": "Human-computer interaction (HCI) is undergoing a paradigm shift from \"tool use\" toward \"partnership\" and even \"mind symbiosis,\" with psychology evolving from a supplementary explanatory tool to a core pillar shaping interaction paradigms and long-term relationships. This paper systematically reviews relevant research and proposes a four-layer integrative framework comprising the Micro-cognitive, Meso-affective, Macro-social, and Self-constructive layers. The framework reveals that: the cognitive layer constitutes the foundation of interaction, the affective layer drives relational engagement, the social layer regulates trust and behavior through norms, and the self-constructive layer points to the ultimate goal of human-machine symbiosis. These four layers follow a progressive logic of \"foundation--mediation--context--goal.\" The review further argues that psychology has shifted from \"post-hoc evaluation\" to a \"proactive design paradigm,\" with direct implications for emerging scenarios such as generative AI and embodied agents. Concurrently, this paper identifies core challenges including the nature of affect, agency erosion, and ethical risks, and proposes future directions such as bidirectional theory of mind and personalized co-evolution. This framework offers a systematic theoretical perspective for understanding complex human-machine relationships.",
+      "topics": [
+        "cs.CY"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.27389",
+      "abstract": "Learning-to-optimize (L2O) methods accelerate repeated optimization by training models to predict solutions, warm starts, branching decisions, or other forms of solver guidance. A critical yet largely overlooked component of these pipelines is the feature function that maps problem instances to inputs for machine learning models. Existing L2O methods typically rely on hand-crafted features, making representation design manual and largely fixed across domains. We introduce FunL2O, the first unified framework for automating feature design through LLM-driven program evolution for L2O. In a FunSearch-style loop, an LLM proposes executable feature functions, while a fixed evaluation process retrains the original L2O model and measures downstream optimization performance. We evaluate FunL2O on linear and quadratic programming tasks involving solution prediction and warm-starting, as well as on mixed-integer optimization tasks using GNN-guided backdoor branching and Predict-and-Search. Across continuous and discrete optimization tasks and four LLMs, the evolved features consistently outperform hand-crafted representations. These results establish LLM-driven feature evolution as a general and effective approach to automating representation design in L2O.",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26515",
+      "abstract": "We present, to our knowledge, the first end-to-end FP4 RL post-training, in which both the rollout and training policies, including their forward and backward passes, operate at 4-bit precision. A systematic study reveals that the dominant source of degradation in FP4 RL is not training-side quantization error but rollout activation quantization: outliers stretch the dynamic range so far that a large number of activation values underflow to zero under FP4. Counterintuitively, restoring the training policy to higher precision while keeping the rollout in FP4 makes accuracy worse than full FP4 baseline, exposing rollout-training mismatch as the principal failure mode and ruling out standard pretraining-style fixes. We address this with Rollout Residual Quantization (Rollout-ResQ): a single residual correction term constrained to a hardware-friendly sparsity pattern, added only to the FP4 rollout matmul -- a lightweight correction that recovers most of the precision lost to outlier-driven underflow without inflating the rollout's compute footprint. On Qwen2.5-3B and Qwen2.5-Math-7B, Rollout-ResQ paired with the HiFloat4 (HiF4) format -- whose three-level hierarchical scaling preserves resolution under FP4's tight 4-bit budget -- closes the accuracy gap to BF16 from 4.9% to 1.1%, bringing fully quantized FP4 RL within striking distance of full precision. Applied to the open-standard MXFP4, the same recipe narrows the gap from 13.6% to 5.3%, revealing that FP4 format choice is a key factor that determines the ceiling on recoverable accuracy. Together, these results establish HiF4 as the enabling format for end-to-end FP4 RL post-training, and Rollout-ResQ as the activation-side mechanism that makes the gap to BF16 closable.",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26899",
+      "abstract": "Diverse human groups produce diverse ideas, the raw material of innovation. Generative AI challenges this engine twice over: everyday AI assistance may homogenize what diverse people create, and AI-simulated diversity may replace the people altogether. We tested both challenges in a preregistered creative metaphor experiment with native (L1) and non-native (L2) English writers, who wrote without AI, with AI-generated ideas (AI ideation), or with AI refining their own ideas (AI refinement). L2 writers contributed more collective diversity than L1 writers, with native-language ideation showing the most diverse pools. AI ideation compressed collective diversity for everyone and left the L2 advantage undetectable, whereas AI refinement preserved both. We then simulated the entire writer pool using personas built from participants' real backgrounds, three model families, native-language prompting, and elevated sampling temperatures. Every simulated pool fell below every human pool, and pushing models further induced diversity only through degenerate text. However, at the individual level, AI ideation raised writers' ratings, pitting private incentives against the collective good, except when L2 writers used their native language, which benefited both. Human diversity remains a valuable creative resource that current AI cannot simulate or sustain; the design of human-AI collaborative workflows determines whether it survives.",
+      "topics": [
+        "cs.HC",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.18135",
+      "abstract": "Introduction: Medication errors (MEs) represent a significant threat to global healthcare systems, contributing to patient harm. Introducing artificial intelligence (AI) in rural healthcare enhances patient safety. The aim is to explore the applications and effectiveness of AI technologies in enhancing patient safety and reducing medication errors in rural health settings. Methods: A scoping review was conducted through a systematic literature search spanning 2012 to 2025 across multiple databases, including EBSCohost, Emcare (Ovid), MEDLINE, and the ProQuest Consumer Health Database. Twelve primary studies from nine different nations were examined. Data were analysed thematically to obtain insights on AI interventions across the medication process. Results: AI technologies have been integrated into every stage of medication management, right from prescribing and dispensing to administration and post-administration monitoring. Four key themes came to light: (1) the various types of AI being utilised (like Clinical Decision Support Systems, Machine Learning, Natural Language Processing, and smart pumps); (2) the phases of the medication process that are affected; (3) how effective these technologies are in minimising errors and boosting workflow safety; and (4) rural-specific challenges including infrastructure, staff training, system integration, and alert fatigue. Several studies have demonstrated that machine learning-based surveillance improves incident detection and reduces prescribing and transcription errors by an impressive 34% to 80%. Barriers included lack of governance frameworks, financial limitations, and clinician resistance, which still present major obstacles. Conclusion: In rural healthcare, AI technologies hold great potential for enhancing pharmaceutical safety. They can allow data-driven monitoring, automate processes, and offer clinical decision assistance.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26473",
+      "abstract": "Personalizing large language models (LLMs) to individual users is essential for improving user experience, yet existing approaches typically rely on explicit preference supervision such as pairwise comparisons or demographic attributes, limiting their applicability in natural interaction settings. We propose IRIS, a framework that learns dynamic user personas directly from implicit interaction streams by extracting behavioral signals from everyday conversations and iteratively refining persona representations through a prediction-driven closed loop without requiring explicit feedback. We introduce an evaluation protocol based on behavior prediction, persona stability, and decision prediction. A proof-of-concept study on a synthetic interaction stream derived from public-domain autobiographical text shows that IRIS produces stable personas and distinguishes individual users while revealing limitations of memory-only approaches on recall-oriented metrics. We then validate IRIS on anonymized real-world Reddit r/AmItheAsshole (AITA) data, with personas built solely from each author's historical interactions. Across 100 authors, IRIS achieves the highest decision prediction accuracy among all evaluated methods (61.0%), outperforming static personas, memory-only retrieval, and no-personalization baselines. These results suggest that implicit behavioral modeling provides a scalable alternative to explicit preference learning for personalized LLMs and offers a practical foundation for adaptive conversational systems and embodied agents that require continuously evolving models of their users.",
+      "topics": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2607.27134",
       "abstract": "Writing and communication are increasingly mediated by large language models (LLMs) that are being used to draft, revise and polish text. Although such assistance can improve clarity and help authors meet institutional expectations, widespread reliance on shared models may reduce population-level variation in linguistic form, a phenomenon we refer to as linguistic monoculture. We develop a mathematical framework in which authors and LLMs are represented as distributions over linguistic features and coevolve through repeated interaction. We analyze three interaction mechanisms: a shared model with a fixed linguistic distribution, a shared model recursively updated from author outputs, and personalized models updated through author-specific and population-level feedback. We characterize the resulting equilibria and convergence rates, showing that, shared models can drive authors toward a common norm, recursive feedback relocates the shared norm without altering pairwise spread under common conformity, and personalization can preserve a family of distinct author-model equilibria with nonzero linguistic diversity. We then endogenize conformity as a strategic choice trading off private benefits from clarity, legibility, and perceived fluency against distinctive style. Within this utility model, individually rational authors may conform more than is socially optimal because they do not internalize the value their distinctiveness provides to others, creating a negative externality and a price of monoculture that is finite for each fixed instance but can grow without bound when distinctiveness dominates authenticity. Synthetic simulations illustrate how fixed shared assistance, recursive feedback, and personalization produce different long-run diversity outcomes.",
@@ -2300,549 +2570,6 @@
         "Calibration",
         "Intensity (physics)",
         "Control (management)"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2686774",
-      "abstract": "Despite the rapid advancement of AI agents in healthcare, patients continue to exhibit substantial privacy concerns when adopting healthcare AI agent services. While prior research has examined internal AI-system strategies for alleviating privacy concerns, this research highlights the role of disclosing human doctor supervision information from an external governance perspective. Drawing on signaling theory, we examine how such disclosure acts as an informational cue that influences patients’ privacy concerns. Across three studies, we find that human doctor supervision disclosure reduces patients’ privacy concerns during interactions with AI healthcare agents. This effect is mediated by patients’ perceived personal relevance of the information requested by AI agents. Furthermore, the effect is moderated by disease severity: the effect is attenuated when perceived disease severity is high. Our findings contribute to the literature on human-AI collaboration, privacy concerns, and signaling theory in healthcare contexts, and offer practical guidance for alleviating patients’ privacy concerns.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "AI in Service Interactions",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "Relevance (law)",
-        "Health care",
-        "Corporate governance",
-        "Information privacy",
-        "Privacy policy",
-        "Personally identifiable information",
-        "Medical information",
-        "Disease"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.ergon.2026.103994",
-      "abstract": null,
-      "topics": [
-        "Social Robot Interaction and HRI",
-        "Team Dynamics and Performance",
-        "AI in Service Interactions"
-      ],
-      "keywords": [
-        "Mediation",
-        "Human–robot interaction",
-        "Embodied cognition",
-        "Robot",
-        "Cognition",
-        "Humanoid robot",
-        "Mechanism (biology)",
-        "Association (psychology)"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03149-9",
-      "abstract": null,
-      "topics": [
-        "Digital Economy and Work Transformation",
-        "Ethics and Social Impacts of AI",
-        "Cultural Industries and Urban Development"
-      ],
-      "keywords": [
-        "Feeling",
-        "Generative grammar",
-        "Perception",
-        "Performing arts",
-        "Product (mathematics)",
-        "Risk perception",
-        "Entertainment industry",
-        "Existentialism"
-      ]
-    },
-    {
-      "id": "doi:10.1287/orsc.2025.20702",
-      "abstract": "We examine how artificial intelligence (AI) impacts three core pillars of collaboration—performance enhancement, expertise integration, and social engagement—through a preregistered field experiment with 791 professionals at Procter & Gamble, a global consumer packaged goods company. Working on real product innovation challenges, professionals were randomly assigned to work either with or without AI, and either individually or with another professional in new product development teams. Our findings show that (1) AI significantly enhances performance: individuals with AI matched the performance of teams without AI, suggesting that AI can effectively replicate certain benefits of human collaboration. Moreover, (2) AI helps bridge functional silos: without AI, research and development professionals tended to suggest more technical solutions, whereas commercial professionals leaned toward commercially oriented proposals. Professionals using AI produced more balanced solutions, regardless of their professional background. (3) AI’s language-based interface prompted more positive self-reported emotional responses among participants, suggesting it can fulfill part of the social and motivational role traditionally offered by human teammates. Finally, decomposing the innovation process suggests that AI primarily enhances the quality of generated ideas, shifting the distribution of creative output upward, whereas human judgment retains value in evaluative selection. This finding highlights the multiple and complementary roles that human and AI partners can play in new product development tasks and creative problem solving. More generally, our results suggest that AI adoption in knowledge work affects not only performance but also how expertise and sociality appear within teams, offering insights into the impact of generative AI on collaborative work within organizations. Funding: Funding for this research was provided in part by Harvard Business School. Supplemental Material: The online appendix is available at https://doi.org/10.1287/orsc.2025.20702 .",
-      "topics": [
-        "Team Dynamics and Performance",
-        "Ethics and Social Impacts of AI",
-        "AI in Service Interactions"
-      ],
-      "keywords": [
-        "Generative grammar",
-        "Teamwork",
-        "New product development",
-        "Product (mathematics)",
-        "Field (mathematics)",
-        "Quality (philosophy)",
-        "Process (computing)",
-        "Generative model",
-        "Work (physics)"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.chb.2026.109080",
-      "abstract": null,
-      "topics": [
-        "AI in Service Interactions",
-        "Consumer Retail Behavior Studies",
-        "Consumer Behavior in Brand Consumption and Identification"
-      ],
-      "keywords": [
-        "Emotional intelligence",
-        "Mental model",
-        "Mental image",
-        "Nation branding",
-        "Consumer behaviour"
-      ]
-    },
-    {
-      "id": "doi:10.1177/00187208261457702",
-      "abstract": "Objective We examine how artificial intelligence (AI) roles (teammate, support, tool) shape acceptance via the mind perception subdimensions of agency and conscious experience. Background Adoption of the term AI “teammate” has outpaced evidence of the term’s impact. Such reframing does not guarantee that the benefits of human teamwork will extend to human-AI teams. Understanding the potential benefits and risks of reframing AI as a teammate is essential for guiding effective integration. Methods Across three studies—one survey of employees who use AI at least weekly (Study 1) and two experimental vignette designs (Studies 2-3)—we examined the relationship between AI roles and acceptance using both technology-centered (technology acceptance model, cognitive trust) and human-centered (affective trust) perspectives. This design distinguished role perception from presentation (Study 1 versus Studies 2-3). Results As hypothesized, “teammate” was associated with higher AI mind perception relative to less collaborative roles. While perceiving AI as a teammate showed only positive relationships with acceptance, presenting AI as a teammate was negatively related to some acceptance outcomes after controlling for mind perception. Further, agency and conscious experience were differentially related to technology- and human-centered outcomes, supporting the importance of integrating both perspectives. Conclusion Shifting AI roles from tool to teammate may enhance acceptance via mind perception, but forcing labels may have hidden costs. Applications Collaborative AI roles such as “teammate” should be strategically implemented and aligned with intended mind perception and outcomes. Intermediate labels such as “support” may be more appropriate for describing the roles of today’s AI systems.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "AI in Service Interactions",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": [
-        "Cognitive reframing",
-        "Perception",
-        "Vignette",
-        "Agency (philosophy)",
-        "Cognition",
-        "Sense of agency"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.chb.2026.109079",
-      "abstract": null,
-      "topics": [
-        "Intelligent Tutoring Systems and Adaptive Learning",
-        "AI in Service Interactions",
-        "Social Robot Interaction and HRI"
-      ],
-      "keywords": [
-        "Attraction",
-        "Perception",
-        "Self-determination theory",
-        "Higher education"
-      ]
-    },
-    {
-      "id": "doi:10.1080/00140139.2026.2686849",
-      "abstract": "Assistive robotics are increasingly adopted in manufacturing to support human work. In automotive assembly, confined spaces and takt-time constraints mean technological support affects biomechanical, cognitive, psychosocial, and organisational dimensions of work. This paper presents a multi-dimensional evaluation of an upper-limb exoskeleton and a proximity-aware cobot through two studies: a focus group with automotive practitioners addressing safety, trust, acceptance, and implementation barriers, and an experimental study with workers performing assembly tasks. The technologies were assessed independently and in combination, combining objective posture and performance indicators with subjective measures of workload, usability, comfort, trust, and acceptance. While each technology reduced biomechanical load alone, their combined use yielded no additive benefits and introduced cognitive and coordination costs that offset physical gains. Findings emphasise the importance of multi-dimensional evaluation when integrating assistive technologies in automotive assembly.",
-      "topics": [
-        "Prosthetics and Rehabilitation Robotics",
-        "Ergonomics and Musculoskeletal Disorders",
-        "Motor Control and Adaptation"
-      ],
-      "keywords": [
-        "Exoskeleton",
-        "Automotive industry",
-        "Human engineering",
-        "Human–robot interaction"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.ssci.2026.107311",
-      "abstract": "Various technologies, including the Internet of Things (IoT) and artificial intelligence (AI), have been increasingly applied in Occupational Safety and Health (OSH). Digitalization has the potential to improve OSH through real-time monitoring and data-driven decision-making, particularly in hazardous workplaces. However, important research gaps remain regarding the use of sensor data for proactive decision-making, the integration of data privacy mechanisms into monitoring systems, and the evaluation of such solutions in real workplace environments. This paper presents OSH Guardian, an integrated monitoring system designed for individualized occupational environmental risk assessment and management. The study adopts a technological research methodology involving the design and evaluation of an innovative solution for a practical OSH problem. The system combines environmental measurements and worker health profiles to generate personalized alerts and support preventive decision-making. It also incorporates data privacy mechanisms aligned with the General Data Protection Regulation (GDPR). Field tests were conducted in real construction and building maintenance environments. The results revealed environmental exposure levels substantially above recommended thresholds. The highest recorded temperature exceeded the established limit by 46%, while the highest ultraviolet radiation (UVR) exposure reached ten times the recommended threshold. In addition, workers operating at the same site experienced substantially different exposure levels to the same environmental agents. These findings highlight the importance of individualized environmental monitoring and demonstrate the potential of personalized and privacy-aware monitoring systems to support proactive OSH strategies in hazardous workplaces.",
-      "topics": [
-        "Chemical Safety and Risk Management",
-        "Ergonomics and Human Factors",
-        "Occupational Health and Safety Research"
-      ],
-      "keywords": [
-        "Occupational safety and health",
-        "Risk assessment",
-        "Poison control",
-        "Human factors and ergonomics",
-        "Injury prevention",
-        "Suicide prevention"
-      ]
-    },
-    {
-      "id": "doi:10.1080/00140139.2026.2686284",
-      "abstract": "Generative AI (GenAI) systems provide complete cognitive task outputs to untrained users across unrestricted domains at population scale, creating an unprecedented form of automation. We use a foundational four-stage model of automation (information acquisition, information analysis, decision selection, and action specification) to characterise the shift: GenAI automates all four stages simultaneously. Yet the classical automation effects (such as the 'lumberjack effect') were established exclusively in trained operators working within bounded domains. Whether these effects persist, intensify, or transform when GenAI violates all of these scope conditions at once remains an open empirical question. Nearly a billion people now use this technology without the empirical foundation needed to predict its consequences for human performance. This commentary maps how GenAI's deployment configuration exceeds the empirical boundaries of automation theory and identifies the critical research questions needed to guide investigation of human performance and safety in this understudied area of automation design.",
-      "topics": [
-        "Human-Automation Interaction and Safety",
-        "Cognitive Functions and Memory",
-        "EEG and Brain-Computer Interfaces"
-      ],
-      "keywords": [
-        "Automation",
-        "Cognitive ergonomics",
-        "Scope (computer science)",
-        "Cognition",
-        "Population",
-        "Software deployment",
-        "Empirical research",
-        "Task (project management)",
-        "Human factors and ergonomics"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.ijhcs.2026.103855",
-      "abstract": "Artificial intelligence (AI) systems are increasingly integrated into decision-making across high-stakes domains, influencing not only task performance but potentially human learning. While prior research has focused on AI’s impact on accuracy, its role in supporting long-term knowledge acquisition remains underexplored. This study investigates whether AI-based decision support systems can serve as implicit mentors, enabling users to internalize novel decision strategies through repeated interaction, a phenomenon we term machine mentoring. In a simulated diagnostic task, 289 medical students received different forms of AI support. Participants in the Feedback condition, who received trial-by-trial feedback on the correctness of both their own and the AI’s decisions, significantly improved their accuracy on cases involving a hidden diagnostic criterion and retained these gains in subsequent unaided trials. By contrast, AI advice alone, or with confidence indicators, did not lead to significant learning outcomes. These findings indicate that evaluative, trial-by-trial feedback is the key driver of AI-supported knowledge transfer: advice alone, even when paired with calibrated confidence cues, did not yield durable learning. Rather than attributing the effect to AI per se, our results indicate that what drives durable learning is access to trial-level, ground-truth corrective feedback—something competent AI systems can help deliver at scale. This is especially relevant in medical education and simulation contexts, where feedback can be reliably validated.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Clinical Reasoning and Diagnostic Skills",
-        "Intelligent Tutoring Systems and Adaptive Learning"
-      ],
-      "keywords": [
-        "Task (project management)",
-        "Correctness",
-        "Key (lock)",
-        "Advice (programming)",
-        "Knowledge acquisition",
-        "Decision support system",
-        "Term (time)"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2680242",
-      "abstract": "Authenticity is moving to the heart of communication theory as an audience-level judgment built from cues. Current frameworks assume a human communicator and predict that richer channels enhance authenticity, an assumption we test by contrasting human and synthetic authenticity. We define synthetic authenticity as the perception that an artificial agent is real enough to engage despite known ontological hollowness. Drawing on a bibliometric map of 2,685 articles (1966–2025) and a meta-synthesis of 111 AI persona studies (2017–2025), we argue that human authenticity relies on cue accumulation, where redundancy reinforces trust, while synthetic authenticity relies on cue minimalism, where redundancy triggers scrutiny unless sensory fidelity is calibrated to the task. We operationalize this divergence through the Threshold Model of Synthetic Authenticity, which posits sufficiency, script, and relational thresholds beyond which the suspension of disbelief collapses and human-AI interaction shifts from communication to forensic audit.",
-      "topics": [
-        "Nostalgia and Consumer Behavior",
-        "Memory, Trauma, and Commemoration",
-        "Face Recognition and Perception"
-      ],
-      "keywords": [
-        "Perspective (graphical)",
-        "Feature (linguistics)",
-        "Set (abstract data type)",
-        "Meaning (existential)",
-        "Field (mathematics)"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03139-x",
-      "abstract": "Abstract This paper critically examines the perceived impact of ChatGPT on journalism and mass communication education in the United States, with particular attention to how the technology is framed by instructors within the field. Using a survey of 91 educators, the study explores perceived threats, benefits, and pedagogical adaptations related to generative AI. Drawing on critical perspectives from science and technology studies, the paper interrogates the notion of “disruption” in journalism education, analyzing how AI tools are reshaping assumptions about authorship, expertise, and the future of media labor. While some educators see promise in using ChatGPT for writing assistance or curriculum augmentation, others express concern over misinformation, plagiarism, and the deskilling of critical journalistic judgment. This paradoxical tension exists between acknowledgment of the responsibility to teach proper use of ChatGPT, given its central role in current journalistic production practice, and acute awareness of how overreliance on generative AI risks not only deskilling but also eroding the expressive and epistemic labor central to journalism. Based on Giroux’s critical pedagogy and Christensen’s theory of disruptive innovation, the study calls for a reflexive, ethically grounded approach to integrating generative AI, informed by a broader understanding of technological governance and academic labor in the digital university.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Misinformation and Its Impacts",
-        "Computational and Text Analysis Methods"
-      ],
-      "keywords": [
-        "Deskilling",
-        "Generative grammar",
-        "Journalism",
-        "Curriculum",
-        "Sociology of Education",
-        "Lifeworld",
-        "Transformative learning",
-        "Citizen journalism",
-        "Critical theory"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03143-1",
-      "abstract": null,
-      "topics": [
-        "Educational Leadership and Innovation",
-        "Interdisciplinary Studies: Technology, Society, and Humanities",
-        "Artificial Intelligence in Education"
-      ],
-      "keywords": [
-        "Generativity",
-        "Temporality",
-        "Generative grammar",
-        "Ecological succession",
-        "Performing arts",
-        "Human life"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03148-w",
-      "abstract": "Abstract In today’s world of Generative AI (GenAI), the challenges in education are often reduced to simple questions: ‘How do we stop cheating?’ or ‘How can we work faster?’ However, this paper poses a deeper question: When machines can speak and write for us, what does it mean for a human to think? Drawing on years of experience teaching English, the author observes that schooling often transforms learning into calculative thinking—a relentless pursuit of standard answers, grades, and future job prospects. This trend encourages students to treat language as a warehouse of information that can be easily outsourced to AI. Borrowing from the philosopher Martin Heidegger, this paper argues that thinking is not just about producing an output; it is a way of being in the world and ‘dwelling’ within language. The article explores how modern education distorts our sense of time, causes our judgment to wither into mere calculation, and allows GenAI to fragment our language. It reveals how technology subtly pressures us to become as efficient and predictable as the machines we use. Finally, the author proposes a new educational stance called answerability without exhaustiveness. This approach calls for ‘meditative thinking,’ reimagining education as a journey to discover our connection to the world, rather than a factory for producing compliant text.",
-      "topics": [
-        "Digital Education and Society",
-        "Digital Media and Philosophy",
-        "Educational Leadership and Innovation"
-      ],
-      "keywords": [
-        "Generative grammar",
-        "Human intelligence",
-        "Artificial general intelligence",
-        "Simple (philosophy)",
-        "Factory (object-oriented programming)",
-        "Generative model",
-        "Performing arts"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.ijhcs.2026.103859",
-      "abstract": "The increasing volume of job applications received by organizations presents significant logistical and ethical challenges for recruitment processes. Traditional methods of screening and interviewing are often inefficient, inconsistent, and susceptible to bias, especially at scale. In this work, we introduce the Multi-Agent Interviewing System (MAIS), an AI-powered interview platform designed to support scalable and fair recruitment while preserving the human experience at the center of the process. MAIS combines multilingual, multi-channel communication with real-time monitoring and safeguards against misuse, enabling candidates to interact naturally with an AI interviewer through speech or text. We conducted a two-part user study involving 22 participants to explore both the usability of MAIS and the human perceptions that arise during interaction with an AI interviewer. Participants reported high usability and engagement, while qualitative feedback revealed themes of trust, transparency, and perceived fairness. These findings highlight not only the potential of MAIS to reduce recruiter workload and enhance consistency but also provide new insights into human-AI interaction dynamics in evaluative, high-stakes contexts. This work contributes to the design of safer, more transparent, and human-centered generative AI applications in recruitment and beyond.",
-      "topics": [
-        "Employer Branding and e-HRM",
-        "Ethics and Social Impacts of AI",
-        "Mobile Crowdsensing and Crowdsourcing"
-      ],
-      "keywords": [
-        "Interview",
-        "Usability",
-        "Consistency (knowledge bases)",
-        "Workload",
-        "Perception",
-        "Qualitative research"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03118-2",
-      "abstract": "Abstract The ethical governance of AI in defence confronts a paradox: principles proliferate while implementation falters. This systematic review of 1085 publications exposes why frameworks flounder where ethical governance matters most. We identify seven barriers—governance and structural, conceptual, strategic, operational, relational and cultural, technical and data, and resource constraints—that operate as an interconnected system. Governance and structural barriers dominate the literature. This prominence may reflect their visibility rather than their primacy; technical, operational, and cultural dynamics remain harder to trace but are equally consequential. The challenges created by these seven barriers are severe but not insurmountable. We propose three strategic interventions: establishing authoritative, interoperable governance architectures that transcend organisational and national boundaries; building institutional capacity through dedicated resources and interdisciplinary expertise; and integrating ethical governance as core capability throughout the AI lifecycle rather than as compliance retrofit. This systemic analysis advances scholarship beyond principle enumeration and towards understanding the institutional, structural, and technical conditions under which ethical governance of AI in the defence domain can acquire operational traction in contested strategic environments.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Neuroethics, Human Enhancement, Biomedical Innovations",
-        "Cybersecurity and Cyber Warfare Studies"
-      ],
-      "keywords": [
-        "Corporate governance",
-        "Scholarship",
-        "Interoperability",
-        "Viewpoints",
-        "Information governance",
-        "Diversity (politics)"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2678532",
-      "abstract": "Artificial Intelligence (AI)-powered conversational agents are entering young children’s learning and play, yet little is known about how children construe these agents during interaction. We examined anthropomorphism toward an AI-powered conversational agent and asked how children’s attributions related to behavioral and neural engagement. Children aged 5–6 (N = 23) completed three sessions: storytelling with an AI alone, with a parent alone, and with the AI and parent together, while prefrontal brain activity was recorded. Children anthropomorphized parents more than the AI overall but still attributed strong perceptive and epistemic abilities to the AI. Higher perceptive attributions were associated with greater right dorsomedial prefrontal activation during AI-only interaction, lower activation when a parent was present, and more scared mood. Findings highlight how children’s AI construals and parent co-presence shape child-AI interaction and point to design considerations for age-appropriate AI-powered conversational agent systems for young children.",
-      "topics": [
-        "AI in Service Interactions",
-        "Social Robot Interaction and HRI",
-        "Digital Mental Health Interventions"
-      ],
-      "keywords": [
-        "Attribution",
-        "Construals",
-        "Neural activity",
-        "Storytelling",
-        "Social cognition",
-        "Cognition",
-        "Neural system"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03122-6",
-      "abstract": "Abstract Generative AI is often framed as a technical breakthrough, yet its social meanings are unevenly understood beyond Western contexts. This study examines how Filipino Facebook users make sense of ChatGPT through everyday posts and comment threads, showing how AI becomes entangled with local ideas of effort, authorship, and identity. Drawing on reflexive thematic analysis, the paper identifies four recurring patterns: the continued valorization of hard work as a marker of authenticity, the emergence of digital shame as users humorously and indirectly manage uneasy reliance on AI, the reframing of ChatGPT as diskarte or practical resourcefulness, and the circulation of satirical content that highlights mismatches in AI-generated representations. Rather than expressing a unified stance, these discourses reveal an ongoing negotiation in which AI is alternately questioned, normalized, and reworked through familiar cultural logics. The article introduces postcolonial digital reflexivity to describe how users interpret and position themselves within algorithmic systems without fully rejecting them, showing how the meanings of automation are locally produced, contested, and affectively lived in the Global South.",
-      "topics": [
-        "AI in Service Interactions",
-        "Artificial Intelligence in Healthcare and Education",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "Reflexivity",
-        "Cognitive reframing",
-        "Negotiation",
-        "Agency (philosophy)",
-        "Representation (politics)",
-        "Shame",
-        "Generative grammar",
-        "Narrative",
-        "Gesture",
-        "Technological determinism"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.ssci.2026.107302",
-      "abstract": null,
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Advanced Radiotherapy Techniques",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "Risk assessment",
-        "Radiation therapy",
-        "Failure mode and effects analysis",
-        "Risk management",
-        "Poison control",
-        "MEDLINE"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2676768",
-      "abstract": "As human-machine learning (ML) interaction increases in relevance, system designers must understand the influence of performance- and non-performance-based ML systems’ attributes on users’ trust. This understanding will ensure ML-enabled systems are appropriately relied upon, leading to performance benefits in human-ML interactions. An iterative approach was taken across three online experiments, in which participants evaluated the performance of ML-enabled classifiers varying in terms of their accuracy, type, and explainability. In many cases, all three factors interacted to shape individuals’ subjective perceptions of the algorithms and their objective task performance, demonstrating a benefit of accurate, white-box models paired with explainable artificial intelligence tools. Taken together, ML algorithm accuracy, type, and explainability affect subjective and objective trust-relevant criteria. Implications for this work concern human-centered design and an appreciation of users’ expectations and interpretations of these complex systems.",
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Ethics and Social Impacts of AI",
-        "AI in Service Interactions"
-      ],
-      "keywords": [
-        "Noise (video)",
-        "Feature (linguistics)",
-        "Interpretability",
-        "Support vector machine",
-        "Pattern recognition (psychology)"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03135-1",
-      "abstract": "Abstract We have witnessed a burgeoning debate on the nature of AI creativity and its implications for the creative industries, particularly in relation to labour dynamics. However, even though we can find critical studies on AI and creative work, more research is needed to investigate, empirically or conceptually, the sources, methods, and forms of resistance against AI in the creative industries. By pivoting the reference of analysis to concentrate on the agency of workers in accepting, resisting, and navigating these technologies, this paper brings a novel conceptualisation of everyday work practices of resistance against AI through the qualitative investigation of 30 artists and designers in Greater Melbourne, Australia, between 2022 and 2024. Building on resistance theory, I propose to re-position the AI-labour debate towards the forms of everyday resistance creative workers employ to avoid , break , and construct discourses against AI. More specifically, I demonstrate how valuing imperfections and reviving the analogue , amongst other practices, are transformed into acts of resistance against the extractive modes of production and the ideology of frictionlessness that AI catalyses in the creative industries. This article shows that uncovering, explaining, and conceptualising resistance is an important step to further unpack the political economy of Artificial Intelligence.",
-      "topics": [
-        "Digital Economy and Work Transformation",
-        "Cultural Industries and Urban Development",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "Resistance (ecology)",
-        "Agency (philosophy)",
-        "Creativity",
-        "Construct (python library)",
-        "Creative industries",
-        "Ideology",
-        "Performing arts",
-        "Conceptual framework"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2676762",
-      "abstract": "The rapid advancement of artificial intelligence (AI) is reshaping human collaboration, making trust repair critical in human–AI teams. However, limited guidance exists on how to restore trust after AI-related violations. Drawing on social exchange theory and trust repair theory, this study examined the effects of trust repair strategies in team decision-making. We conducted a 3 × 2 between-subjects experiment with 134 valid participants, manipulating trust repair strategy (commitment, apology, no repair) and team type (human–AI vs. human–human) in an urban risk management task. Results showed that team type significantly affected team performance and job satisfaction, and that repair strategies moderated these effects. Perceived support and collective efficacy mediated, and jointly chain-mediated, the relationships among team type, repair strategy, and outcomes. Commitment-based repair produced the most favorable results, particularly in human–AI teams. These findings advance trust repair theory in human–AI collaboration and inform human-centered AI design.",
-      "topics": [
-        "Human-Automation Interaction and Safety",
-        "Team Dynamics and Performance",
-        "Innovation, Sustainability, Human-Machine Systems"
-      ],
-      "keywords": [
-        "Differential (mechanical device)",
-        "Work (physics)",
-        "Context (archaeology)",
-        "Government (linguistics)",
-        "Matching (statistics)"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2674830",
-      "abstract": "As artificial intelligence (AI) increasingly participates in fact-checking, it remains unclear how audiences evaluate AI fact-checking compared to human fact-checking. Grounded in machine heuristic theory, this study used a 3 (source: human vs. AI vs. human–AI collaboration) × 2 (topic: health vs. society) × 2 (correction method: fact-based vs. logic-based) online experiment (N = 480) to test how source, topic, and correction method shape machine heuristic, perceived quality, and attitudes. Results showed that AI and human–AI fact-checking evoked stronger machine heuristic than human fact-checking. However, AI fact-checking was associated with lower perceived quality and more negative attitudes, while human–AI collaboration increased perceived quality. Social topics unexpectedly heightened machine heuristic, and machine heuristic mediated AI’s source effects on perceived quality and attitudes. Algorithm appreciation moderated the effect of AI fact-checking on machine heuristic and the effect of machine heuristic on perceived quality. These findings extend understanding of audience responses to AI fact-checking.",
-      "topics": [
-        "Misinformation and Its Impacts",
-        "Computational and Text Analysis Methods",
-        "Deception detection and forensic psychology"
-      ],
-      "keywords": [
-        "Misinformation",
-        "Journalism",
-        "Casual"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2676217",
-      "abstract": "Generative artificial intelligence (AIGC) has transformed creative practices, yet its promise of “universal creativity” is constrained by high cognitive demands. Users must translate abstract ideas into structured prompts while maintaining conceptual and cultural coherence, a process that often overloads working memory. This challenge becomes critical in cultural heritage creation, where accuracy depends on specialized domain knowledge. To address this issue, this study proposes the Knowledge-Augmented Generative Engine (KAGE), integrating integrates domain-specific knowledge graphs and intelligent agents to support cognitively sustainable creation. Grounded in Cognitive Load Theory and Distributed Cognition Theory, KAGE externalizes complex knowledge retrieval, allowing users to focus on high-level creative decisions. A controlled experiment using NASA-TLX, expert evaluation, and user experience measures, results show that KAGE significantly reduces extraneous cognitive load and improves creative quality. Mediation analysis further demonstrates that cognitive load reduction indirectly enhances perceived experience. These findings establish the Cognitive–Quality–Experience (CQE) Framework, and offer design principles for building cognitively friendly generative systems that enhance, rather than replace, human creativity.",
-      "topics": [
-        "3D Surveying and Cultural Heritage",
-        "Image Processing and 3D Reconstruction",
-        "AI-based Problem Solving and Planning"
-      ],
-      "keywords": [
-        "Cultural heritage",
-        "Generative grammar",
-        "Field (mathematics)",
-        "Variety (cybernetics)",
-        "Reflection (computer programming)",
-        "Cultural heritage management"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03124-4",
-      "abstract": null,
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Cybersecurity and Cyber Warfare Studies",
-        "Neuroethics, Human Enhancement, Biomedical Innovations"
-      ],
-      "keywords": [
-        "Operationalization",
-        "Corporate governance",
-        "Conceptual framework",
-        "Writ",
-        "Equity (law)",
-        "Correctness",
-        "Redress",
-        "Accountability",
-        "Stakeholder"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03092-9",
-      "abstract": null,
-      "topics": [
-        "Educational Strategies and Epistemologies",
-        "Digital Education and Society",
-        "Educational Theory and Curriculum Studies"
-      ],
-      "keywords": [
-        "Cognitive reframing",
-        "Agency (philosophy)",
-        "Construct (python library)",
-        "Function (biology)",
-        "Experiential learning",
-        "Literacy",
-        "Power (physics)"
-      ]
-    },
-    {
-      "id": "doi:10.1177/01708406261459055",
-      "abstract": "Drawing on a 16-month ethnographic study at a global marine engine company, this paper investigates how mechanics’ autonomy and workplace power relations are shaped when labor is mediated by algorithmic management systems (AMS). Can workers’ engagement with AMS generate emancipatory forms of agency not fully subsumed under managerial goals? Mobilizing Simondon’s perspective on technology, this paper examines the mechanics’ capacity to act through AMS and shows how aspects of this engagement become partially decoupled from organizational ends. The findings highlight the dual character of algorithmic technologies: as instruments of organizational control and, simultaneously, as sites of potential emancipatory agency for workers.",
-      "topics": [
-        "Digital Economy and Work Transformation",
-        "Information Systems Theories and Implementation",
-        "Management and Organizational Studies"
-      ],
-      "keywords": [
-        "Agency (philosophy)",
-        "Perspective (graphical)",
-        "Power (physics)",
-        "Autonomy",
-        "Ethnography",
-        "Control (management)",
-        "Dual (grammatical number)"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.chb.2026.109063",
-      "abstract": null,
-      "topics": [
-        "AI in Service Interactions",
-        "Ethics and Social Impacts of AI",
-        "Human-Automation Interaction and Safety"
-      ],
-      "keywords": [
-        "Social trust",
-        "Technology acceptance model",
-        "Public trust",
-        "Social capital",
-        "Information technology"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03130-6",
-      "abstract": null,
-      "topics": [
-        "Language, Metaphor, and Cognition",
-        "Language and cultural evolution",
-        "Embodied and Extended Cognition"
-      ],
-      "keywords": [
-        "Negotiation",
-        "Generative grammar",
-        "Narrative",
-        "Performing arts",
-        "Frame (networking)",
-        "Intercultural communication"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2673416",
-      "abstract": "The paradigm shift from mass production to mass customization has empowered users to actively participate in the product design process. Consequently, interactive product customization has emerged as a critical link connecting user preferences with intelligent manufacturing. However, this system faces two major challenges: the increased cognitive load and decision fatigue caused by explicit feedback (e.g., Rating products), and the difficulty in discerning users’ implicit preferences from the vast amount of procedural information generated during interaction. To address these challenges, this study proposes a novel preference analysis method based on multi-graph that incorporates the user’s selective attention process. This method first achieves a unified representation of gaze and selection behaviors through a graph network, thereby establishing a unified representation for analyzing user cognitive patterns. By integrating global and local information from the graph network, we then propose a selective attention centrality metric to effectively quantify the prominence of different design options within the user’s cognitive process. To demonstrate its practical application, we integrated this metric with an interactive genetic algorithm to develop a customization system for Chinese vases. A controlled experiment was then conducted to compare our method against two traditional approaches. Experimental results show that our proposed method offers significant advantages in multiple metrics, including interaction efficiency, algorithm convergence, and user satisfaction. Specifically, the total evaluation time was reduced by 65.45% and 32.09% compared to the traditional interactive genetic algorithm and eye-tracking analysis methods, respectively. This research combines cognitive science theory with graph network analysis methods. It demonstrates the potential of graph networks in decoding complex human behavior information and building efficient human-AI collaboration systems.",
-      "topics": [
-        "Color perception and design",
-        "Product Development and Customization",
-        "Cognitive Computing and Networks"
-      ],
-      "keywords": [
-        "Personalization",
-        "Product (mathematics)",
-        "User interface",
-        "Focus (optics)",
-        "Key (lock)"
       ]
     }
   ]

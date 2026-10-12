@@ -1,7 +1,301 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-11T11:26:30.005Z",
+  "generatedAt": "2026-10-12T13:13:04.841Z",
   "documents": [
+    {
+      "id": "doi:10.1016/j.isci.2026.117786",
+      "abstract": "Gas station employees are chronically exposed to fuel vapors containing benzene, toluene, ethylbenzene, and xylene (BTEX), and other volatile organic compounds (VOCs), raising occupational concerns about olfactory function. In this cross-sectional study, 116 Brazilian gas station employees (86 men and 30 women; median age, 37.5 years; range, 19–58) completed a questionnaire and underwent objective olfactory assessment with the MultiScent-20 digital odor identification test. Overall, 58.6% had olfactory dysfunction, including 46.6% with hyposmia and 12.1% with anosmia, whereas only 23.3% reported that their work affected their sense of smell. Longer employment duration was associated with lower olfactory scores (Spearman's ρ = −0.41; p < 0.001) and independently increased the odds of dysfunction (odds ratio [OR] = 1.15 per additional year; 95% confidence interval [CI], 1.06–1.26; p = 0.003). These findings support incorporating olfactory assessment into occupational health surveillance for workers chronically exposed to fuel vapors.",
+      "topics": [
+        "Olfactory and Sensory Function Studies",
+        "Occupational Health and Safety in Workplaces",
+        "Advanced Chemical Sensor Technologies"
+      ],
+      "keywords": [
+        "olfactory dysfunction",
+        "gas station employees",
+        "fuel vapor",
+        "BTEX",
+        "volatile organic compounds",
+        "hyposmia",
+        "anosmia",
+        "occupational exposure",
+        "job tenure",
+        "occupational health surveillance"
+      ]
+    },
+    {
+      "id": "doi:10.55041/ijcope.v2i10.034",
+      "abstract": "The increasing capability of large language models (LLMs) creates an opportunity to redesign how users interact with computational design software. Architectural planning is a particularly relevant domain because early-stage requirements are often expressed in natural language, while the resulting design must ultimately be represented as geometry. This paper presents Omni Build Intelligence, an implemented full-stack prototype that explores an LLM-assisted workflow for generating preliminary architectural floor plans from structured user requirements. The system accepts building type, requested room count, plot width and length, and special requirements. A Flask backend constructs a domain-specific prompt and invokes a Llama 3.3 70B model through the Grok API. The response is expected in a structured textual format containing rooms, coordinates, dimensions, door relationships, and a summary. The generated representation is parsed into easy for software to read objects and passed to a React interface. The interface provides a two-dimensional blueprint view and an isometric three-dimensional visualization. A conversion layer transforms generated room rectangles into editable wall and label primitives that can be associated with a project record. The broader platform also includes authentication, project management, plot listing and filtering, dashboard functionality, and persistence of drawing data. These components make Omni Build more than a standalone text-generation demonstration: it is a prototype for integrating generative AI into an interactive design workflow. The research contribution of this paper is the formulation of a rigorous evaluation methodology for such a system. The proposed methodology defines an Architectural Requirement Prompt Dataset, meaningful baselines, formal geometric constraints, automated validation metrics, human evaluation criteria, ablation experiments, and statistical analysis procedures. Metrics include constraint satisfaction, boundary violations, room overlap, requirement accuracy, dimension validity, space use of space, valid-plan rate, and generation latency. A user guided study is proposed to evaluate perceived practicality and usefulness. The study deliberately does not claim measured superiority because the repository provides implementation evidence but not a completed controlled benchmark. Instead, the paper establishes a reproducible experimental framework through which the system can be evaluated. This distinction prevents software functionality from being mistaken for research evidence. The work concludes that LLM-based architectural assistance is most appropriately positioned as an early-stage design aid whose natural-language flexibility is combined with explicit geometric validation and human review. Keywords: large language models, generative AI, computer based architectural design, floor-plan generation, constraint based prompting, spatial reasoning, structured generation, user guided design, interactive visualization, project management",
+      "topics": [
+        "Architecture and Computational Design",
+        "Urban Design and Spatial Analysis",
+        "Artificial Intelligence in Games"
+      ],
+      "keywords": [
+        "large language models",
+        "interactive visualization"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.23254367",
+      "abstract": "An AI agent receives permission to execute a command. But what if the command reaches the wrong destination, the payment follows a compromised route, or a robotic actuator behaves differently from what was authorized? Should that original permission still allow the system to continue? As frontier AI models and autonomous agents increasingly control financial transactions, cloud infrastructure, sensitive communications, software deployments, industrial equipment, robotics, and critical systems, conventional authorization faces a fundamental limitation: permission to execute does not establish that the intended real-world effect actually occurred. This paper examines a different approach to machine authority: “A permit to effect once is not a permit to effect permanently.” Building on the principle that “Computation is not authority to act,” the proposed architecture introduces a further requirement: authority to continue must be earned through independently verified evidence of a preceding real effect. The paper presents a safety-first execution-finality architecture based on Receipt-Gated Interim Effectuation Validation (IEV). Instead of immediately releasing the full consequence of a high-risk operation, the system can authorize a deliberately bounded real effect on the actual operational path. A protected observer, destination, transaction system, network component, or hardware controller produces evidence of what actually occurred. An independent Interim Effectuation Validator examines that evidence against the authorized act, expected outcome, destination, scope, freshness, policy, and revocation state. Only successful validation establishes the protected continuation condition required for the next phase. In stronger realizations, this is not merely another software approval. The cryptographic material required to complete the next effect is unavailable until the preceding real-world effect has been independently verified. Continuation may depend on receipt-bound key derivation, split credentials, protected state transitions, threshold approvals, hardware registers, or other protected enforcement mechanisms. The validator does not relay the original command, and an agent's own assertion of success is never a substitute for required independent evidence. The paper consolidates 35 execution-finality workflow profiles (E01–E35) spanning eight broad technical families, including: AI agents, autonomous tool execution, frontier model deployment, and credential control. Financial transactions, payment verification, settlement, and protected value release. Messages, file transfers, confidential data disclosure, and destination verification. Cloud infrastructure, database mutations, software updates, and persistent AI memory. Robotics, industrial automation, autonomous vehicles, and unmanned aerial systems. Telecommunications, radio transmission, satellite operations, and network control. GPUs, accelerators, hardware enforcement, and protected execution domains. Distributed effectuation, quorum validation, uncertain outcomes, and recovery. The architecture also examines 12 implementation-equivalence and design-around closures, addressing attempts to bypass the protected causal dependency through alternate execution paths, substituted components, software–hardware rearrangements, or different credential and validation topologies. A dedicated Safety-First Critical-System Profile establishes that execution correctness, consequence containment, and mandatory validation take precedence over minimizing latency. Optimizations remain possible, but they must preserve the protections selected for the relevant consequence class. A further distinction is made between simulation and actual effectuation. A successful simulation cannot establish that the real recipient, network route, transaction destination, or physical actuator will behave as expected. The proposed staged mechanism therefore uses bounded effects on the actual consequence-capable path, subject to protected observation and explicit safety assumptions. When evidence is missing, conflicting, stale, replayed, or indeterminate, ordinary continuation remains unavailable. Unknown outcomes require reconciliation, bounded remediation, safe-state handling, or protected escalation—not automatic success or blind retry. The central research question is straightforward: Should a high-consequence autonomous machine be permitted to cause its next irreversible effect before independently verifying what happened during its previous authorized effect? This publication proposes that, for selected high-risk operations, real-world evidence should become a technical and cryptographic prerequisite for continuing execution—not merely an audit record produced after the consequences have occurred. The paper is a technical architecture and analytical contribution. It does not report experimental deployment, measured security improvements, or empirical validation. Its proposed properties depend on assumptions concerning evidence integrity, protected authority, enforcement-path completeness, and atomic consumption of continuation authority. Patent pending: Indian Patent Office application 202631117633, “Systems and Methods for Cryptographically Staged Effectuation with Verified Partial Effect, Receipt-Bound Full Effectuation, and Software-Hardware Enforcement.” This publication makes no assertion that any particular commercial system implements the architecture and does not establish patentability, infringement, ownership, or priority. Invitation for Independent Technical Review Researchers, frontier AI model providers, cloud and hardware engineers, security architects, patent professionals, and critical-infrastructure specialists are invited to examine the 35 workflows, test the security assumptions, identify relevant prior art, challenge the anti-bypass properties, and evaluate whether receipt-dependent execution authority provides meaningful additional protection for consequential autonomous systems. Critical feedback, adversarial analysis, alternative engineering approaches, and independent conclusions are welcome.",
+      "topics": [
+        "Access Control and Trust",
+        "Advanced Authentication Protocols Security",
+        "Security and Verification in Computing"
+      ],
+      "keywords": [
+        "autonomous agents",
+        "frontier AI models",
+        "payment settlement",
+        "autonomous vehicles",
+        "robot safety",
+        "AI safety"
+      ]
+    },
+    {
+      "id": "doi:10.3389/frai.2026.1929605",
+      "abstract": "Crypto-asset disputes create distinctive barriers to effective remedies because they combine technical opacity, cross-border legal fragmentation, pseudonymous actors, irreversible transactions and uncertain enforcement pathways. These barriers are especially significant for vulnerable and non-expert users, who may be unable to identify the legally relevant harm, organize blockchain-based evidence, select an appropriate forum or obtain practical enforcement. This article develops a conceptual, normative and legal-design proposal for a hybrid Online Dispute Resolution (ODR) architecture that integrates off-chain artificial intelligence (AI) assistance with a minimized on-chain smart-contract layer. The model assigns AI systems a supporting role in legal information, triage, claim classification, evidence organization, explanation and negotiation, while reserving contested legal determinations for human review. A permissioned distributed ledger records only hashes, timestamps, procedural events, escrow states and execution proofs; personal data, communications, evidence and AI processing remain off-chain. Smart contracts are used as bounded enforcement tools for registration, escrow and execution of validated settlement terms, rather than as autonomous adjudicators. The article applies the architecture to three illustrative scenarios: asset seizure and recovery, exchange failure and mass claims, and crypto scams involving cross-border fraud. It then evaluates the model against European requirements concerning artificial intelligence, crypto-asset services, data protection, procedural fairness, cybersecurity and accountability. The contribution is twofold. First, it advances the concept of access to remedies by design, under which comprehension, participation, contestability, evidentiary integrity and enforceability are embedded into the architecture of digital dispute resolution. Second, it provides a technically specified evaluation framework for future prototyping and empirical validation. The article does not claim measured improvements in accessibility or efficiency; rather, it identifies testable design requirements and performance indicators for subsequent pilots, user studies and regulatory sandboxes.",
+      "topics": [
+        "Dispute Resolution and Class Actions",
+        "Digital Transformation in Law",
+        "Blockchain Technology Applications and Security"
+      ],
+      "keywords": [
+        "online dispute resolution",
+        "artificial intelligence in dispute resolution",
+        "smart contracts",
+        "digital inclusion",
+        "access to remedy",
+        "escrow",
+        "cross-border fraud",
+        "mass claims",
+        "data protection",
+        "procedural justice",
+        "AI accountability",
+        "distributed ledger technology",
+        "legal design"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.23259912",
+      "abstract": "Integrating artificial intelligence (AI) with web technologies is one of the most significant areas of development in modern e-commerce systems. AI can substantially improve the processes of designing and building web applications. Modern AI tools can support user interface design, software development and testing, security analysis, and threat detection. This article examines opportunities for using AI in the development of e-commerce web applications and throughout their entire lifecycle, as well as contemporary architectural models, the role of generative AI, and areas of practical application.",
+      "topics": [
+        "Artificial Intelligence Applications",
+        "Mobile and Web Applications",
+        "Software Engineering Research"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.51878/community.v6i2.15919",
+      "abstract": "The advancement of technological disruption in the digital era necessitates fundamental transformations within vocational education, particularly regarding teachers' readiness to produce innovative and contextual learning materials. Preliminary observations at SMK PGRI 1 Jakarta revealed that only 13.33% of teachers had independently developed interactive digital teaching materials due to technological barriers and time constraints. This Community Service (PkM) initiative aimed to enhance teachers' digital pedagogical competencies through a structured workshop focusing on the development of digital learning materials grounded in a deep learning approach assisted by artificial intelligence (AI) tools. The execution methodology incorporated the Asset-Based Community Development (ABCD) framework synthesized with the procedural phases of the Plomp model, encompassing preliminary research, development/prototyping, and assessment phases. The intervention was conducted offline on June 13, 2026, involving 30 vocational teachers from four expertise concentrations. Data were collected using self-evaluations, expert reviews, one-to-one evaluations, small-group evaluations, and final portfolio assessments. The evaluation results demonstrated that the digital teaching modules achieved an expert validity score of 4.40 out of 5.00 (highly valid), a small-group practicality score of 4.43 out of 5.00 (highly practical), and 86.67% of teachers successfully generated functional digital materials fulfilling vocational curriculum standards. This program offers practical implications as a sustainable instructional mentoring model to cultivate an autonomous digital learning ecosystem in vocational schools. ABSTRAK Perkembangan disrupsi teknologi di era digital menuntut transformasi mendasar pada sektor pendidikan vokasi, khususnya kesiapan guru dalam memproduksi materi pembelajaran yang inovatif dan kontekstual. Berdasarkan studi pendahuluan di SMK PGRI 1 Jakarta, ditemukan bahwa hanya 13,33% guru yang pernah mengembangkan bahan ajar digital interaktif secara mandiri akibat kendala literasi teknologi dan keterbatasan waktu. Program Pengabdian kepada Masyarakat (PkM) ini bertujuan untuk meningkatkan kompetensi pedagogik digital guru melalui workshop terstruktur penyusunan bahan ajar digital berbasis pendekatan pembelajaran mendalam (deep learning) berbantuan perangkat kecerdasan buatan (artificial intelligence / AI). Metode pelaksanaan mengadopsi pendekatan Asset-Based Community Development (ABCD) yang dipadukan dengan siklus pengembangan model Plomp, meliputi fase pengkajian awal (preliminary research), fase perancangan (development or prototyping phase), dan fase penilaian (assessment phase). Kegiatan dilaksanakan secara luring pada tanggal 13 Juni 2026 yang diikuti oleh 30 orang guru kejuruan dari empat konsentrasi keahlian. Pengumpulan data dilakukan menggunakan teknik self-evaluation, expert review, one-to-one evaluation, small group evaluation, serta penilaian portofolio produk akhir. Hasil evaluasi menunjukkan bahwa modul bahan ajar digital yang dikembangkan memperoleh skor validitas ahli sebesar 4,40 dari skala 5,00 (kategori sangat valid), tingkat kepraktisan kelompok sebesar 4,43 dari skala 5,00 (kategori sangat praktis), dan sebanyak 86,67% guru berhasil memproduksi bahan ajar digital siap pakai yang memenuhi kriteria kelayakan kurikulum vokasi. Program ini berimplikasi sebagai model pendampingan instruksional berkelanjutan dalam membangun ekosistem digital mandiri di sekolah kejuruan.",
+      "topics": [
+        "Digital literacy in education",
+        "Vocational Education and Training",
+        "Vocational and Entrepreneurial Education"
+      ],
+      "keywords": [
+        "pedagogical competence",
+        "vocational education teachers",
+        "digital learning resources",
+        "deep learning",
+        "AI tools",
+        "teacher workshops",
+        "asset-based community development",
+        "Plomp development model",
+        "vocational high school",
+        "instructional materials development",
+        "technological literacy",
+        "digitalization of education",
+        "teacher autonomy"
+      ]
+    },
+    {
+      "id": "openalex:W7221420930",
+      "abstract": "A go-kart is a small, lightweight four-wheeled vehicle designed for recreational, educational and competitive driving. This project deals with the design and fabrication of a go-kart powered by an internal combustion (IC) engine. The main objective is to develop a simple, strong, economical and serviceable vehicle using commonly available mechanical components and workshop processes. The project covers the selection of the IC engine, chassis design, steering system, braking system, power transmission, wheels and tyres, accelerator and control mechanism. The frame is designed to support the engine, driver and other components while maintaining adequate rigidity and stability. The engine converts the chemical energy of fuel into mechanical power, which is transmitted to the driving axle through a suitable transmission arrangement. The methodology includes requirement identification, conceptual design, component selection, basic engineering calculations, CAD/drawing preparation, material procurement, fabrication, assembly and testing. The report also discusses important safety aspects such as braking performance, steering response, chain guarding, fastener tightening and driver protection. The project provides practical understanding of automobile engineering, IC engines, manufacturing processes, machine design, welding, power transmission and vehicle testing. The final design can be further improved by reducing weight, improving ergonomics, optimizing power transmission and introducing additional safety and instrumentation.",
+      "topics": [
+        "Vehicle Dynamics and Control Systems",
+        "Engineering Applied Research",
+        "Engineering and Materials Science Studies"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1007/978-3-032-19374-2_4",
+      "abstract": "The chapter introduces the organizational dimension of ergonomics for robotics. Specifically, it introduces the foundations of organizational ergonomics and sociotechnical principles for effective work systems design and development. It then highlights key challenges involved in issues related to work, activities, and quality of life in robotic setups. In this realm, attitudes towards robots and automation play a major role in the adoption of new technologies and change management in organizations. These broad-scale changes are important to be recognized as they shape human–robot interaction in various work settings, ranging from smart manufacturing to defence. The chapter then addresses specific aspects of teamwork and the design of high-performance teams. These topics include team performance and well-being, human function allocation, shared situation awareness, and job roles, amongst other such topics that will be explored later in the book by subsequent chapters. This chapter supplements the previous chapters on physical and cognitive ergonomics, but it goes beyond these aspects to highlight the organizational basis required to develop robotics holistically.",
+      "topics": [
+        "Ergonomics and Human Factors",
+        "Robot Manipulation and Learning",
+        "Robotics and Automated Systems"
+      ],
+      "keywords": [
+        "organizational ergonomics",
+        "human-robot interaction",
+        "workplace design",
+        "human-robot collaboration",
+        "work organization"
+      ]
+    },
+    {
+      "id": "doi:10.1061/jcemd4.coeng-18788",
+      "abstract": "Abstract Plumbers face several occupational health and safety (OHS) risks in the construction industry. However, existing evidence is largely fragmented, dated, or limited to prevalence-based assessments. This study addresses this gap by analyzing recent long-term (15 years, 2009–2023) workers’ compensation data from the Australian construction sector to examine the prevalence, severity, and mechanisms of both physical injuries and occupational diseases among plumbers. Descriptive statistical and two-way and three-way chi-square contingency analyses were performed to examine how incident severity varies across injury and disease types, incident mechanisms and agencies, affected body parts, worker demographics, and organizational size. The study found that physical injuries accounted for 80% of all incidents, and musculoskeletal disorders (MSDs) and noise-induced hearing loss dominated health issues. Fatalities were primarily linked to asbestos-related diseases and electrocution, and permanent incapacities were driven by hearing loss, MSDs, and amputations. Plumbers accounted for nearly 10% of all construction incidents, with micro-businesses disproportionately affected, and apprentices represented 13% of cases. Noise-induced hearing loss emerged as the leading cause of permanent incapacity, highlighting underrecognized auditory risks. The study also identified 20 most common incident agencies and found strong associations between injury severity and affected body parts, particularly the head, neck, ears, back, shoulders, fingers, and knees. These findings advocate a trade-specific, priority-driven OHS risk management approach, accompanied by changes to policies and management practices related to noise exposure, ergonomic risks, hazardous material handling, and work organization in small enterprises.",
+      "topics": [
+        "Occupational Health and Safety Research",
+        "Occupational Health and Safety in Workplaces",
+        "Occupational Health and Safety Management"
+      ],
+      "keywords": [
+        "plumbers",
+        "occupational health and safety",
+        "construction industry",
+        "workers' compensation",
+        "musculoskeletal disorders",
+        "noise-induced hearing loss",
+        "asbestos-related diseases",
+        "electrocution",
+        "amputation",
+        "permanent disability",
+        "injury severity",
+        "microenterprises",
+        "apprentices",
+        "noise exposure",
+        "ergonomic risk factors",
+        "hazardous materials handling"
+      ]
+    },
+    {
+      "id": "doi:10.1093/bjr/tqag240",
+      "abstract": "Utilization of ultra-high-field (UHF) MRI in humans has rapidly increased over the past decade, following regulatory approval of the first clinical 7 Tesla (7T) platforms in 2017 for brain and knee imaging. Currently, there are approximately 140 MRI scanners worldwide operating at or above 7T [1]. While the majority of 7T scanners are dedicated to research and development, select hospitals have successfully implemented 7T MRI for clinical care. Key advantages of 7T over lower-field systems include higher spatial and contrast resolution for anatomic and microstructural detail, susceptibility effects for functional and vascular imaging, and spectral resolution for metabolic evaluation. However, safety considerations-particularly specific absorption rate thresholds-have historically constrained utility to patients with weights of 30 kg and above. Additional considerations, including operating costs, longer imaging times, increased artifacts, and greater bioeffects, have limited widespread adoption, especially in pediatric patients. In this article, we discuss emerging technology advances and clinical applications for 7T MRI imaging of children. Major technical considerations are scanner hardware, coils, safety, sedation, and monitoring. Important clinical applications include neurodevelopmental, epilepsy, demyelinating, vascular, genetic, neoplastic, and traumatic disorders. Major research areas involve artificial intelligence, extracranial imaging, and field strengths exceeding 10T. Real-life imaging examples are provided for children and young adults to highlight the advantages and pitfalls of 7T in this population.",
+      "topics": [
+        "Advanced MRI Techniques and Applications",
+        "Fetal and Pediatric Neurological Disorders",
+        "Advanced Neuroimaging Techniques and Applications"
+      ],
+      "keywords": [
+        "7T MRI",
+        "ultra-high field MRI",
+        "pediatric MRI",
+        "children",
+        "MRI safety",
+        "specific absorption rate",
+        "sedation",
+        "neurodevelopmental disorders",
+        "epilepsy",
+        "demyelinating disease",
+        "vascular imaging",
+        "genetic disorders",
+        "pediatric neoplasms",
+        "traumatic brain injury",
+        "artificial intelligence in MRI"
+      ]
+    },
+    {
+      "id": "doi:10.51878/educator.v6i4.16078",
+      "abstract": "This study was motivated by students’ low proficiency in writing German texts, particularly in grammar use and story development. Meta AI, as an Artificial Intelligence-based technology, can be utilized as a tool to address these challenges. This study aims to (1) measure differences in students’ German writing skills before and after using Meta AI and (2) determine the extent to which Meta AI can help improve students’ German writing skills. This study employed a quantitative approach using a quasi-experimental pretest-posttest control group design. The participants were students enrolled in the Schriftliche Kommunikation course at Universitas Negeri Malang, who were divided into an experimental group and a control group. Data were collected through essay tests, writing assignments, and questionnaires and analyzed using descriptive statistics, a t-test, and Cohen’s d effect size. The results showed that students’ writing skills in the experimental group increased by 10.7 points after using Meta AI. The statistical analysis showed a significant difference in students’ writing skills before and after the treatment, with a p-value of p = 0.003 < 0.05, and Cohen’s d = 0.968, indicating a large effect. The writing assignments and questionnaire results indicated that Meta AI helped students develop ideas, enrich their vocabulary, understand the use of articles (der, die, and das), improve grammatical accuracy, and produce more structured texts. Therefore, Meta AI can serve as a supportive technology that provides gradual assistance in the German writing learning process. ABSTRAK Studi ini dilatarbelakangi oleh rendahnya kemampuan mahasiswa dalam menulis teks bahasa Jerman, khususnya dalam penggunaan tata bahasa dan penyusunan alur cerita. Meta AI sebagai teknologi berbasis Artificial Intelligence dapat dimanfaatkan sebagai alat bantu dalam mengatasi permasalahan tersebut. Studi ini bertujuan untuk (1) mengukur perbedaan kemampuan menulis teks bahasa Jerman mahasiswa sebelum dan sesudah menggunakan Meta AI dan (2) mengetahui sejauh mana Meta AI dapat membantu meningkatkan kemampuan menulis teks bahasa Jerman mahasiswa. Penelitian ini menggunakan pendekatan kuantitatif dengan desain quasi experiment tipe pretest-posttest control group design. Sampel penelitian terdiri atas mahasiswa mata kuliah Schriftliche Kommunikation Universitas Negeri Malang yang terbagi dalam kelas eksperimen dan kelas kontrol. Data diperoleh melalui tes esai, tugas menulis, dan angket, kemudian dianalisis menggunakan statistik deskriptif, uji t, dan effect size Cohen’s d. Hasil penelitian menunjukkan bahwa kemampuan menulis mahasiswa pada kelas eksperimen meningkat sebesar 10,7 poin setelah menggunakan Meta AI. Hasil uji statistik menunjukkan terdapat perbedaan yang signifikan antara kemampuan menulis sebelum dan sesudah perlakuan dengan nilai t = 3,613, p = 0,003 < 0,05, dan effect size Cohen’s d = 0,968, yang menunjukkan kategori efek kuat. Hasil tugas dan angket menunjukkan bahwa Meta AI membantu mahasiswa mengembangkan ide, memperkaya kosakata, memahami penggunaan artikel (der, die, dan das), memperbaiki tata bahasa, serta menyusun teks yang lebih terstruktur. Dengan demikian, Meta AI dapat menjadi teknologi pendukung yang memberikan bantuan secara bertahap dalam proses pembelajaran menulis bahasa Jerman.",
+      "topics": [
+        "Artificial Intelligence in Education",
+        "Linguistic Education and Pedagogy",
+        "EFL/ESL Teaching and Learning"
+      ],
+      "keywords": [
+        "Meta AI",
+        "German as a foreign language",
+        "AI-assisted writing",
+        "grammatical accuracy",
+        "story development",
+        "article usage",
+        "vocabulary enrichment",
+        "writing instruction",
+        "university students",
+        "writing fluency",
+        "writing motivation",
+        "writing confidence",
+        "writing anxiety",
+        "writing self-efficacy",
+        "writing self-regulation",
+        "writing self-monitoring",
+        "writing self-assessment"
+      ]
+    },
+    {
+      "id": "doi:10.51878/teaching.v6i4.14317",
+      "abstract": "Physical Education, Health, and Sport (PJOK) learning outcomes in elementary schools frequently remain suboptimal due to conventional instructional methods that fail to engage multiple sensory modalities. This empirical gap is evident in students' low mastery of flexibility movement concepts, where varied learning preferences are rarely facilitated simultaneously. Consequently, adopting an integrated learning model that synthesizes bodily movement with cognitive engagement is critical. This study aims to determine the effect of the SAVI (Somatic, Auditory, Visualization, and Intellectually) learning model on fourth-grade students' PJOK learning outcomes at SD Negeri 068332 Simalingkar during the 2025/2026 academic year. A quantitative pre-experimental method with a one-group pretest-posttest design was conducted on 30 students selected via total sampling. Data were gathered through expert-validated achievement tests and student response questionnaires. Findings revealed that the initial pretest average of 50.66 significantly increased to 78.50 in the posttest assessment. The paired sample t-test generated a t_\"value\" greater than the critical t_\"table\" (9.859≥1.697) at a significance level of 0.000 (p<0.05). Thus, the SAVI learning model exerts a statistically significant positive effect on enhancing primary students' physical education outcomes. ABSTRAK Hasil belajar Pendidikan Jasmani, Olahraga, dan Kesehatan (PJOK) di sekolah dasar sering kali belum mencapai ketuntasan optimal karena dominasi pembelajaran konvensional yang kurang mengintegrasikan seluruh modalitas sensori siswa. Kesenjangan ini tampak pada rendahnya pemahaman konsep serta keterampilan gerak materi kelenturan yang belum mengakomodasi keberagaman gaya belajar anak secara simultan. Oleh karena itu, penerapan model pembelajaran terpadu yang memadukan aktivitas fisik dan proses berpikir menjadi sangat penting untuk diterapkan. Penelitian ini bertujuan untuk menguji pengaruh model pembelajaran SAVI (Somatic, Auditory, Visualization, and Intellectually) terhadap peningkatan hasil belajar PJOK siswa kelas IV SD Negeri 068332 Simalingkar Tahun Pembelajaran 2025/2026. Pendekatan kuantitatif dengan desain pre-experimental tipe one-group pretest-posttest design diterapkan terhadap 30 siswa yang dipilih melalui teknik total sampling. Pengumpulan data menggunakan instrumen tes hasil belajar kognitif dan psikomotorik yang telah divalidasi ahli serta angket respon siswa. Hasil penelitian membuktikan bahwa rata-rata pretest sebesar 50,66 meningkat secara signifikan menjadi 78,50 pada perolehan posttest. Hasil analisis uji hipotesis menunjukkan nilai t_\"hitung\" lebih besar daripada t_\"tabel\" (9,859≥1,697) dengan signifikansi 0,000 (p<0,05). Dengan demikian, model pembelajaran SAVI berpengaruh signifikan dalam meningkatkan hasil belajar PJOK materi kelenturan pada siswa sekolah dasar.",
+      "topics": [
+        "Physical Education and Pedagogy",
+        "Physical Education and Training Studies",
+        "Physical Education and Gymnastics"
+      ],
+      "keywords": [
+        "SAVI learning model",
+        "physical education learning outcomes",
+        "elementary school students",
+        "fourth grade",
+        "learning model effectiveness",
+        "learning outcomes",
+        "student response questionnaire",
+        "achievement test scores",
+        "student engagement",
+        "physical education and health curriculum"
+      ]
+    },
+    {
+      "id": "doi:10.61132/jpbi.v4i4.1762",
+      "abstract": "The rapid development of artificial intelligence (AI) has transformed organizational processes and increased the demand for talent with specialized knowledge and skills to integrate AI into business activities. This study aims to examine the role of artificial intelligence talent in building organizational competitive advantage. The research employs a systematic literature review (SLR) by identifying, evaluating, and synthesizing relevant national and international studies on AI talent, AI skills, human capital, innovation, organizational performance, and competitive advantage. The findings indicate that AI talent contributes to competitive advantage through innovation, productivity improvement, data-driven decision-making, knowledge utilization, and organizational AI capabilities. Furthermore, AI talent requires not only technical expertise but also analytical, collaborative, and business-oriented competencies. Theoretically, this study positions AI talent as a strategic human capital resource within the Resource-Based View and Dynamic Capabilities perspectives. Practically, the findings emphasize the importance of strategic recruitment, continuous upskilling and reskilling, and knowledge sharing to optimize AI talent. Overall, AI talent plays an important role in transforming technological capabilities into sustainable competitive advantage.",
+      "topics": [
+        "AI and HR Technologies",
+        "Human Resource and Talent Management",
+        "Artificial Intelligence Applications"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.3389/fpsyg.2026.1824712",
+      "abstract": "Introduction Organizations increasingly adopt Artificial Intelligence (AI) to gain competitive advantages, but anticipated benefits may not materialize when employee needs and work design aspects are neglected. Job crafting—employees' self-initiated work adjustments—may represent an important mechanism linking perceived AI support with work outcomes, but its role in the context of AI-supported work remains underexplored. Drawing on job demands-resources theory, this cross-sectional study examines relationships between perceived AI support, approach and avoidance crafting, and how these pathways may mediate associations with job satisfaction, perceived productivity, work engagement, turnover intentions, and burnout. Methods Data were collected via an online survey of employees engaged in information and knowledge work in Germany, who use AI systems ( n = 695). Using structural equation modeling, a mediation model with approach and avoidance crafting as parallel mediators was tested. Results Results revealed that perceived AI support was positively associated with both approach and avoidance crafting. Approach crafting emerged as a dominant pathway, being positively associated with job satisfaction, work engagement, and perceived productivity and negatively associated with burnout and turnover intentions. Avoidance crafting showed contrary associations. Total effects of AI support through approach and avoidance crafting indicated associations with increased job satisfaction, perceived productivity and work engagement, and reduced burnout. Discussion These findings extend job crafting theory to AI-supported work by indicating that perceived AI support functions as a job resource that is associated with distinct crafting pathways. Organizations should implement AI systems that employees perceive as supportive, thereby providing a resource that enables job crafting, and further promote approach over avoidance crafting through corresponding work design measures and targeted personnel development.",
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "AI and HR Technologies",
+        "Technostress in Professional Settings"
+      ],
+      "keywords": [
+        "job crafting",
+        "job satisfaction",
+        "work engagement",
+        "burnout",
+        "turnover intention",
+        "perceived productivity",
+        "job demands-resources model",
+        "job design"
+      ]
+    },
+    {
+      "id": "openalex:W7221393946",
+      "abstract": "A go-kart is a small, lightweight four-wheeled vehicle designed for recreational, educational and competitive driving. This project deals with the design and fabrication of a go-kart powered by an internal combustion (IC) engine. The main objective is to develop a simple, strong, economical and serviceable vehicle using commonly available mechanical components and workshop processes. The project covers the selection of the IC engine, chassis design, steering system, braking system, power transmission, wheels and tyres, accelerator and control mechanism. The frame is designed to support the engine, driver and other components while maintaining adequate rigidity and stability. The engine converts the chemical energy of fuel into mechanical power, which is transmitted to the driving axle through a suitable transmission arrangement. The methodology includes requirement identification, conceptual design, component selection, basic engineering calculations, CAD/drawing preparation, material procurement, fabrication, assembly and testing. The report also discusses important safety aspects such as braking performance, steering response, chain guarding, fastener tightening and driver protection. The project provides practical understanding of automobile engineering, IC engines, manufacturing processes, machine design, welding, power transmission and vehicle testing. The final design can be further improved by reducing weight, improving ergonomics, optimizing power transmission and introducing additional safety and instrumentation.",
+      "topics": [
+        "Mechanical Engineering and Vibrations Research",
+        "Vehicle Dynamics and Control Systems",
+        "Engineering Applied Research"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1177/10519815261495921",
+      "abstract": "BackgroundArtificial intelligence (AI)- supported ergonomic assessments identify occupational musculoskeletal risks, though agreement with physiotherapist-based evaluations remains insufficiently studied to date.ObjectiveThis study aimed to investigate the relationship between AI-assisted ergonomic risk analysis and physiotherapist-based ergonomic assessments among young adults performing desk-based work.MethodsThis cross-sectional study included 133 desk workers aged 18-25 years who used electronic devices at their desks for more than 4 h per day. Ergonomic risk was evaluated using two methods: Rapid Upper Limb Assessment (RULA) and OpenAI ChatGPT. Pain intensity was measured with the Visual Analog Scale (VAS). Pearson correlation analysis assessed the relationship between RULA and ChatGPT scores. Receiver Operating Characteristic (ROC) analysis was performed to assess discriminative performance and determine the optimal cutoff value for the AI-based assessment.ResultsThe participants' (48.9% females and 51.1% males) mean age was 24.02 ± 6.34 years. The mean RULA and ChatGPT scores were 4.65 ± 1.31 and 45.71 ± 16.31. A statistically significant positive correlation was observed between ChatGPT and RULA scores (r = 0.304, p < 0.001). ROC analysis showed moderate discriminatory performance for the AI-based assessment (AUC = 0.659; 95% CI: 0.565-0.752; p = 0.002). The optimal cutoff for the ergonomic risk analysis using ChatGPT was 42.5, yielding 72.4% sensitivity and 56.0% specificity.ConclusionsAI-assisted ergonomic risk analysis showed moderate agreement with conventional physiotherapist-based assessments and may serve as a rapid, accessible screening tool for desk workers. Nevertheless, clinical interpretation by healthcare professionals remains essential for accurate ergonomic evaluation and decision-making.",
+      "topics": [
+        "Ergonomics and Musculoskeletal Disorders",
+        "Occupational Health and Safety in Workplaces",
+        "Occupational health in dentistry"
+      ],
+      "keywords": [
+        "ChatGPT",
+        "desk work",
+        "work posture",
+        "musculoskeletal risk",
+        "RULA",
+        "young adults",
+        "upper limb pain"
+      ]
+    },
     {
       "id": "doi:10.4274/eajem.galenos.2026.85451",
       "abstract": "Aim: To evaluate the diagnostic and safety-related response performance of consumer multimodal large language model interfaces on a selected publication-derived challenge set of initially misdiagnosed dermatologic emergencies. Materials and Methods:This exploratory cross-sectional study evaluated 50 cases of initially misdiagnosed dermatologic emergencies, selected from published reports identified between May 1 and June 1, 2026.ChatGPT, Gemini, and Claude were tested on June 2, 2026, under text-only and text-plus-image conditions using a single standardized prompt.Outcomes were Top-1 and cumulative Top-4 accuracies, clinically appropriate emergency management, risk-triage failure, and harmful recommendations.Results: Top-1 accuracy ranged from 32.0% to 50.0% with text-only input and from 36.0% to 58.0% with text-plus-image input; corresponding Top-4 ranges were 50.0%-66.0%and 56.0%-74.0%.Appropriate management ranged from 38.0% to 54.0% and from 44.0% to 64.0%.No within-platform input-mode comparisons remained significant after Holm correction.Between-platform differences remained significant for Top-1 accuracy under both input conditions and for Top-4 accuracy and management appropriateness under text-plus-image input.Post-hoc differences primarily reflected lower observed performance for Claude than for Gemini in this dataset.Appropriate management occurred in 100% of Top-1-correct responses compared with 9.9% of Top-1-incorrect responses, whereas 18.0% of Top-4-correct responses had inappropriate management.Conclusion: Within this selected challenge set and a single standardized prompting condition, the platforms demonstrated moderate diagnostic performance and variable performance on safety-related responses.Correct Top-1 diagnosis closely corresponded to appropriate management, whereas Top-4 recognition did not ensure safe management.The findings represent a single-run technical benchmark and do not establish output reproducibility, clinical usefulness, real-world safety, or stable platform superiority.",
@@ -105,6 +399,29 @@
         "text summarization",
         "research impact",
         "information retrieval"
+      ]
+    },
+    {
+      "id": "doi:10.17605/osf.io/tx7rn",
+      "abstract": "This project registers the frozen (v1.4) protocol of a cross-cohort benchmark comparing task-specific and foundation models for kidney segmentation in ultrasound, with a fully automatic, zero-manual-annotation deployment pipeline. Purpose. (1) Quantify how U-Net and nnU-Net v2 compare with segmentation foundation models (MedSAM, SAM+LoRA, SAMUS, and the prompt-free ultrasound foundation model USFM) under identical data, splits, preprocessing, and evaluation; (2) measure out-of-the-box cross-cohort degradation on an external paired 3D ultrasound–CT cohort, normalized by radiologist inter-observer agreement (IoD); (3) test how closely a fully automatic pipeline — a YOLO detector deriving box prompts from existing masks, with no manual prompts and no ground-truth access at inference — approaches oracle-prompt performance. Design. Internal training on the Open Kidney Dataset (486 images, patient-level split, seed 42); external testing on the full TRUSTED ultrasound cohort (59 kidneys / 39 patients, dual-radiologist annotations + STAPLE consensus); a second external cohort (UT Kidney, 570 images / 281 patients) admitted for inference only. Experiments: internal benchmark; cross-cohort external validation with degradation rates and IoD-normalized Dice; prompting-strategy ablation (P1 prior-box / P2 centroid / P4 detector-box as the headline deployment configuration / P3 oracle as upper bound); 3D volume-level aggregation with a reverse 2D/3D degradation-attribution matrix; Bland–Altman clinical endpoints; failure analysis; deployment metrics (latency, memory). Expected outcomes. A pre-specified multi-model comparison with patient-level bootstrap confidence intervals (Friedman + Holm, Wilcoxon signed-rank, linear mixed model cross-check); a degradation-attribution analysis separating domain shift from 2D/3D format loss; and an open reproduction package. With 39 external patient clusters, differences below 2 Dice points are declared undetectable in advance; conclusions will avoid equivalence claims. Timing disclosure. Protocol v1.0 was finalized 2026-10-08; v1.1–v1.3 amendments were written before formal external-validation runs began; v1.4 (fairness unification, USFM as the sixth model, pre-registered augmentation sensitivity arms, second external cohort) was specified with fixed parameters and decision rules prior to the aggregation and reporting of external results. External inference began 2026-10-09 and a subset of external outputs existed before registration; no external results had been aggregated or reported. From registration the protocol is frozen; any deviation will be reported as post-registration deviations in the manuscript.",
+      "topics": [
+        "Medical Image Segmentation Techniques",
+        "Artificial Intelligence in Healthcare and Education",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "keywords": [
+        "kidney segmentation",
+        "ultrasonography",
+        "cross-cohort validation",
+        "MedSAM",
+        "SAMU",
+        "prompt-based segmentation",
+        "U-Net",
+        "nnU-Net",
+        "interobserver agreement",
+        "Dice coefficient",
+        "domain shift",
+        "automated annotation pipeline"
       ]
     },
     {
@@ -1441,6 +1758,20 @@
       ]
     },
     {
+      "id": "openalex:W7219376113",
+      "abstract": "Research Context: Artificial Intelligence (AI) has begun to be adopted in the Judiciary to streamline inherently human activities, ranging from supporting human judges in decision-making to executing autonomous operations. Within this landscape, this study investigates how court digitization is being developed through the lens of Social Digital Twins, mapping the extent of its implementation and potential implications for the judicial system and society. Scientific and/or Practical Problem: Despite growing interest in AI-driven court automation, systematic research on the social impacts of this digitization remains scarce. Current developments focus predominantly on technical architectures while overlooking stakeholder perspectives, risking an inadequate virtualization that subverts the paradigm mission of a Court of Law. Proposed Solution and/or Analysis: Grounded in the Social Digital Twin perspective, this work presents a Systematic Mapping Study to identify emerging technologies, application domains, thematic debates, and social limitations associated with court virtualization. Related IS Theory: We adopt Sociotechnical Systems Theory as an analytical lens to understand how social variables integrate, enable, or constrain judicial simulations as an observational lens for societal effects. Research Method: Following SEGRESS guidelines and the PICO framework, this study analyzed 37 primary works published between 2021 and August 2026 across Scopus, IEEE Xplore, Science Direct, Springer Link, ACM, and Web of Science. Summary of Results: Findings indicate the application of technology across specific domains, ranging from partial decision support to the complete substitution of the human judge. However, strictly technical approaches dominate, exposing a critical lack of research on socio-legal effects and stakeholder integration. Contributions and Impact to IS area: This study sheds light on the risks of stakeholder-detached virtualization, which introduces new sociotechnical actors that profoundly reshape society. Aligned with the Brazilian Grand Research Challenges in IS (GranDSI-Br), it establishes an essential knowledge foundation to prevent technology from distorting the core purpose of the Judiciary.",
+      "topics": [
+        "Artificial Intelligence in Law",
+        "Education, Law, and Society",
+        "E-Government and Public Services"
+      ],
+      "keywords": [
+        "digital twin",
+        "judiciary",
+        "digitalization of courts"
+      ]
+    },
+    {
       "id": "doi:10.67547/fanistiqbollari.2026.748",
       "abstract": "This article provides a comprehensive analysis of the theoretical and methodological foundations, essence, content, structural components, and pedagogical, psychological, social, organizational-institutional, and personal factors involved in the formation of valeological competence among students in higher education institutions. In contemporary conditions, the preservation and promotion of human health is regarded not only as a medical issue but also as an important component of the educational and upbringing process. In particular, the student period is characterized by adaptation to an independent lifestyle, self-organization of daily activities, regulation of study and rest schedules, and independent decision-making concerning nutrition, physical activity, psychological stress, and the use of various information sources. Therefore, the purposeful development of health-related knowledge, skills, values, and behavioral patterns during higher education is an important pedagogical task. The article interprets valeological competence as an integrative personal competence that enables individuals to understand, assess, preserve, and strengthen their own health, consciously organize a healthy lifestyle, choose safe patterns of behavior, critically evaluate health-related information, and reflectively monitor their own activities. The study employs systemic, competency-based, learner- centered, activity-based, axiological, and interdisciplinary approaches. Based on an analysis of scientific literature, the motivational-value, cognitive, activity-based, and reflective-personal components of valeological competence are identified, and the main factors influencing its formation are systematized. The findings substantiate that the effectiveness of developing valeological competence among students depends not only on providing specialized knowledge but also on creating a health-promoting educational environment, developing students’ intrinsic motivation, organizing practical activities, improving digital health literacy, and establishing regular reflective monitoring.",
       "topics": [
@@ -2386,7 +2717,19 @@
         "Cybernetics and Technology in Society",
         "Embodied and Extended Cognition"
       ],
-      "keywords": []
+      "keywords": [
+        "language models",
+        "context window",
+        "consciousness",
+        "artificial consciousness",
+        "attention",
+        "situational awareness",
+        "long context",
+        "residual state",
+        "higher-order theories of consciousness",
+        "predictive processing",
+        "recurrent processing"
+      ]
     },
     {
       "id": "doi:10.5281/zenodo.23251350",
@@ -2483,6 +2826,22 @@
         "system resilience",
         "regulatory compliance",
         "financial reporting"
+      ]
+    },
+    {
+      "id": "doi:10.3791/72637",
+      "abstract": "Machine and deep learning algorithms have been proven their efficiency in the medical domain. This is particularly noticeable in medical imaging, where these algorithms have demonstrated exceptional capabilities, often surpassing human experts in detecting diseases, segmenting anatomical structures, and in aiding diagnosis. However, despite their high performance, the non-transparency of these models has raised concerns about trust and explainability, especially in critical domains, such as healthcare. Explainable AI (XAI) has emerged as a promising field that, aims to make the decision-making processes of AI systems more interpretable and understandable to humans. By offering clear, human-understandable justifications, XAI enhances clinicians' trust in AI-assisted decisions, and supports the safe integration of these technologies into clinical workflows. This paper focuses on perturbation-based and backpropagation-based explainability methods that are widely adopted for convolutional neural networks in medical imaging. We intend to provide deeper insight into the relevance of XAI methods in medical imaging. We propose a structured taxonomy that categorizes these methods into perturbation and backpropagation-based approaches. For each category, we highlight their respective strengths, limitations, and areas of applicability. Furthermore, we discuss the key challenges hindering the adoption of XAI and identify promising research directions to bridge the gap between high-performance AI models and their responsible deployment in real-world healthcare environments.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "COVID-19 diagnosis using AI"
+      ],
+      "keywords": [
+        "explainable AI",
+        "diagnostic imaging",
+        "model interpretability",
+        "feature attribution",
+        "gradient-based explanation"
       ]
     },
     {
@@ -3292,308 +3651,6 @@
         "Data Mining and Machine Learning Applications",
         "FinTech, Crowdfunding, Digital Finance",
         "Private Equity and Venture Capital"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-11114403/v1",
-      "abstract": null,
-      "topics": [
-        "Web Application Security Vulnerabilities",
-        "Adversarial Robustness in Machine Learning",
-        "Network Security and Intrusion Detection"
-      ],
-      "keywords": [
-        "web application penetration testing",
-        "multi-agent systems",
-        "large language models",
-        "reinforcement learning",
-        "red teaming",
-        "vulnerability assessment",
-        "proximal policy optimization",
-        "attack planning",
-        "OWASP",
-        "automated vulnerability scanning",
-        "web application security"
-      ]
-    },
-    {
-      "id": "doi:10.1371/journal.pone.0359596",
-      "abstract": "Agricultural productivity in developing regions is significantly affected by plant diseases and pest infestations, making early detection and timely intervention essential for improving crop yield and food security. This study proposes a multimodal context-aware AI recommendation framework that integrates maize leaf image analysis and environmental conditions to support intelligent agricultural decision-making. The framework combines a deep learning-based image classification model with weather variables, including temperature, humidity, rainfall, and solar radiation, through a multimodal fusion model for maize disease diagnosis. Based on the predicted crop condition, a context-aware recommendation engine integrates rule-based agronomic knowledge with the Qwen2.5:7B large language model to generate reliable and actionable natural-language recommendations for farmers. The generated recommendations are subsequently evaluated using Llama 3.1:8B in a blind LLM-based evaluation framework. Experiments were conducted using maize leaf images from the YEESI Lab dataset and a 61-day environmental dataset from the NASA POWER database, obtained for the geographic coordinates of Morogoro, Tanzania. Three maize conditions were considered: healthy plants, aphid infestation, and maize streak virus infection. The image-based model achieved an accuracy of 91%, while the weather-based model showed lower performance due to overlapping environmental characteristics among disease classes. The proposed multimodal fusion model achieved a classification accuracy of 94%, demonstrating the effectiveness of integrating visual and environmental information for disease diagnosis. The recommendation engine achieved an overall evaluation score of 4.80/5.00 across five quality dimensions—Safety, Technical Accuracy, Relevance, Actionability, and Clarity—indicating that the generated recommendations were agronomically consistent, context-aware, and actionable. The proposed framework provides an end-to-end AI-driven decision-support solution that integrates multimodal disease diagnosis, and context-aware recommendation for precision agriculture.",
-      "topics": [
-        "Smart Agriculture and AI",
-        "Remote Sensing in Agriculture",
-        "Advanced Neural Network Applications"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1007/s00464-026-13359-3",
-      "abstract": null,
-      "topics": [
-        "Surgical Simulation and Training",
-        "Hernia repair and management",
-        "Anatomy and Medical Technology"
-      ],
-      "keywords": [
-        "totally extraperitoneal repair",
-        "landmark detection",
-        "artificial intelligence",
-        "anatomical models",
-        "inguinal hernia",
-        "surgical navigation"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.engappai.2026.115468",
-      "abstract": "Large language models face a critical privacy utility tradeoff because training data contains personally identifiable information vulnerable to extraction attacks, while existing differential privacy methods significantly degrade model performance. This work proposes the trust-weighted and ethical gradient model, a novel privacy-preserving model that addresses challenges through three integrated mechanisms. First, trust-weighted memory employs per-sample weighting based on data sensitivity to reduce memorization of sensitive information while preserving learning signals from non-sensitive data. Second, ethical gradient masking combines per-sample clipping and Gaussian noise with sensitivity-based soft masking under a tracked ( ϵ , δ ) privacy budget, while maintaining utility. Third, the ethical boundary layer classifies and mitigates risky outputs before delivery, providing a final defense against privacy leakage. A distinctive feature of the proposed approach is the integration of computational interpretations of trustworthiness, privacy, and non-intrusion into artificial intelligence privacy systems. Extensive experiments on the Pile dataset demonstrate that trust-weighted and ethical gradient models achieve a reduction in personally identifiable information leakage while maintaining baseline utility, outperforming baseline differential privacy methods in this evaluation. The model exhibits strong resistance against membership inference, extraction attacks, and linkage attacks for privacy-preserving large language model training. The selective masking improves utility compared to uniform differential privacy under the same privacy budget.",
-      "topics": [
-        "Privacy-Preserving Technologies in Data",
-        "Adversarial Robustness in Machine Learning",
-        "Cryptography and Data Security"
-      ],
-      "keywords": [
-        "gradient masking",
-        "differential privacy",
-        "privacy-preserving machine learning"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.12118",
-      "abstract": "Automated methods have been proposed to overcome the limitations of human verbal deception detection, but evidence remains fragmented across disciplines. We systematically reviewed 25 years of research (289 reports, 6,136 classification models) and meta-analyzed 3,653 models nested within 97 datasets. Pooled accuracy was 74.4% (95% CI: 71.2%-77.4%) with substantial heterogeneity. Accuracy was driven by methodological quality (ground truth, data source, class balance, evaluation procedure) more than by model complexity: the adoption of embeddings and large language models has not translated into improved predictive performance. Only 12.46% of reports used data with verifiable ground-truth, and only 23.96% of models were evaluated on independent data. The pooled accuracy aligns with meta-analyses of manual approaches, suggesting a ceiling of 70-75%, unlikely to be lifted by current research conventions.",
-      "topics": [
-        "Deception detection and forensic psychology",
-        "Misinformation and Its Impacts",
-        "Emotion and Mood Recognition"
-      ],
-      "keywords": [
-        "deception detection",
-        "classification models",
-        "methodological quality",
-        "ground truth",
-        "class imbalance",
-        "embeddings",
-        "large language models"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.11405",
-      "abstract": "Near the ocean surface, tropical cyclone winds change rapidly with height, but direct measurements are limited because aircraft dropsondes provide only sparse and irregular observations. Continuous wind profiles are important for understanding hurricane boundary-layer processes, improving storm-surge prediction, supporting offshore engineering, and assessing coastal hazards. In this study, we developed an artificial intelligence model that combines machine learning with physical principles to reconstruct continuous wind profiles from sparse observations. The model is designed to preserve the observed surface winds while generating realistic changes in wind speed and direction with height. Tests using more than two decades of NOAA hurricane observations show that the method accurately reproduces the vertical structure of tropical cyclone winds over a wide range of storm intensities. The framework can also extend satellite-derived surface wind measurements into three-dimensional near-surface wind fields, providing new opportunities for hurricane research, operational forecasting, and engineering applications.",
-      "topics": [
-        "Tropical and Extratropical Cyclones Research",
-        "Meteorological Phenomena and Simulations",
-        "Oceanographic and Atmospheric Processes"
-      ],
-      "keywords": [
-        "tropical cyclones",
-        "physics-constrained machine learning",
-        "sparse observations",
-        "hurricane boundary layer",
-        "storm surge forecasting",
-        "offshore engineering",
-        "coastal hazards"
-      ]
-    },
-    {
-      "id": "doi:10.3389/fdgth.2026.1910263",
-      "abstract": "Ambient artificial intelligence (AI) scribes and other electronic health record (EHR)-integrated generative AI tools are entering clinical documentation workflows because they offer measurable, if still modest, gains in documentation efficiency and clinician experience. At the same time, the medical record remains a high-consequence informatics object that supports clinical communication, continuity, documentation clarification, coding, payment, and downstream organizational reporting. As AI-generated content moves through drafting, summarization, clarification, and coding-adjacent workflows, the central challenge is no longer simply whether a model can generate fluent text, but whether health systems can preserve record integrity as documentation moves downstream. We examine this problem in United States inpatient claim-linked workflows. This Perspective proposes a prebill control plane as a candidate governance model for that problem. We describe three recurring modes of record-integrity failure that motivate it: unsupported addition, clinically meaningful loss, and propagation across encounters and systems. We then outline five operational components of a minimum viable control plane: physician-led governance and oversight, evidence visibility, change control, monitoring, and auditability. The framework is intended to support safer adoption by protecting patient safety, clinician safety, and record integrity under real-world inpatient and mid-revenue-cycle workflow pressure.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Electronic Health Records Systems",
-        "Medical Coding and Health Information"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.3389/feduc.2026.1921022",
-      "abstract": "Recent quantitative literature in mathematics education has exposed a critical empirical paradox: neither classroom management nor mastery-oriented instructional practices statistically mediate the relationship between teachers' Pedagogical Content Knowledge (PCK) and secondary student achievement. Because quantitative designs rely on standardized numerical surveys, they frequently treat the interactive classroom environment as a black box, leaving the operational mechanisms behind this statistical breakdown completely unexplained. To address this literature gap, this interpretive qualitative multi-case study investigated the lived experiences of secondary school students within the Kumasi Metropolis of Ghana to explore why traditional structural optimization fails to translate into conceptual understanding. Four distinct public Senior High School mathematics classrooms characterized by highly qualified instructors yet uneven student performance were selected as bounded cases. Data collection was thoroughly triangulated over a two-month period using non-participant classroom observations, four student focus group discussions ( n = 32 ), and four semi-structured teacher interviews. Following an inductive and deductive thematic analysis guided by Self-Determination Theory, the findings revealed that students predominantly experience classroom management as a restrictive mechanism of rigid behavioral control rather than an instructional resource. Although strict behavioral strategies successfully secure classroom silence, they create an atmosphere of intense emotional anxiety that thwarts students' basic psychological needs for autonomy and relatedness. This psychological alienation creates a severe instructional barrier where students become passive spectators who engage in superficial compliance and rote copying rather than the cognitive vulnerability required to master complex mathematical tasks. Consequently, high teacher PCK remains pedagogically locked within a teacher-centered framework because the controlling environment actively thwarts the interactive, communicative discourse necessary for internalizing knowledge. This study concludes that classroom management fails as a statistical mediator because it prioritizes structural containment over genuine cognitive engagement. Based on these findings, it is recommended that the Ministry of Education and the Ghana Education Service restructure professional development to favor autonomy-supportive management frameworks and relational, error-tolerant learning environments.",
-      "topics": [
-        "Mathematics Education and Teaching Techniques",
-        "Education, Achievement, and Giftedness",
-        "Educational Environments and Student Outcomes"
-      ],
-      "keywords": [
-        "pedagogical content knowledge",
-        "classroom management",
-        "mathematics achievement",
-        "high school mathematics",
-        "self-determination theory",
-        "student independence",
-        "relatedness",
-        "classroom climate",
-        "teacher-centered instruction",
-        "student anxiety",
-        "teacher professional development",
-        "Ghana"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23233630",
-      "abstract": "Introduction: The Human and Robotic Exploration Data Archive (HREDA) is ESA’s main repository for scientific results and metadata from exploration missions and ground-based campaigns. While it offers structured search and filtering, discovery is often hindered by complex domain terminology and database conventions, limiting accessibility. To address this, we created the HREDA Conversational Search service, a Retrieval-Augmented Generation (RAG) assistant for natural-language queries grounded in HREDA’s content. This abstract outlines how HREDA’s relational data is transformed into a semantic knowledge base for conversational retrieval. System Architecture and Methodology: Our approach implements a Python-based ETL (Extract– Transform–Load) pipeline that synchronizes a semantic index with the HREDA “source of truth” stored in PostgreSQL. The pipeline extracts and denormalizes relational entities (e.g., investigations, teams, affiliations, sponsors, industrial partners, missions/platforms) into coherent, human-readable documents designed specifically for retrieval. The central concept is the procedural creation of “Investigation Cards”: compact narrative representations of each investigation that preserve key context (purpose, actors, campaign/mission links, and associated datasets) while remaining retrievable via semantic similarity. Each card is enriched with computed metadata such as dataset counts and mission associations, then segmented into chunks using a recursive character splitter tuned for scientific/technical text. A frequent limitation of conventional RAG systems is reduced performance on high-level aggregate questions that are not explicitly expressed in any single record (e.g., “How many studies were conducted in 2020?” or “Which countries contributed most investigations?”). To address this, we add a Summary Document generation stage. The pipeline pre-computes aggregations directly in SQL (e.g., by Year, Category, Platform, Mission, and Country) and transforms these results into short, vectorizable summary texts that can be retrieved and cited by the assistant. This design shifts aggregation from the language model to deterministic database queries, improving correctness and reproducibility. All generated content—Investigation Cards, Summary Documents, and static help material (Help Pages/FAQs)—is embedded using the Sentence Transformers all-MiniLM-L6-v2 model and stored in a pgvector-enabled PostgreSQL instance. Keeping embeddings within PostgreSQL simplifies operations, supports consistent access control, and maintains tight alignment between the semantic index and curated archival content. Conclusion: The HREDA vectorization pipeline shows how scientific archives can benefit from LLM-powered conversational search while preserving data integrity. By using denormalized investigation summaries and pre-computed statistics, it enhances both record and aggregate retrieval. Future efforts will expand citation signals and explore multi-modal embeddings for broader HRE data discovery. References:[1] LangChain AI. (2024) LangChain: Building applications with LLMs. https://python.langchain.com/[2] Hugging Face. (2024) Sentence Transformers: Multilingual Sentence Embeddings. https://huggingface.co/sentence-transformers[3] PostgreSQL Global Development Group. (2024) pgvector: Open-source vector similarity search for Postgres. https://github.com/pgvector/pgvector Acknowledgments: This work has received funding from the European Space Agency (ESA Contract No 4000128429/19/ES/JD).",
-      "topics": [
-        "Information Retrieval and Search Behavior",
-        "Topic Modeling",
-        "Semantic Web and Ontologies"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10863438/v1",
-      "abstract": null,
-      "topics": [
-        "Statistical Methods and Applications",
-        "Advanced Statistical Methods and Models",
-        "Psychometric Methodologies and Testing"
-      ],
-      "keywords": [
-        "multiplicative relations",
-        "logarithmic transformation",
-        "rank-one matrices",
-        "perturbation analysis",
-        "statistical inference",
-        "anthropometry",
-        "morphometrics"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s11255-026-05367-y",
-      "abstract": "BACKGROUND: Buccal mucosal graft (BMG) urethroplasty is widely considered the standard technique for urethral reconstruction using a graft. Although graft placement techniques have been extensively described, less attention has been given to optimizing graft harvesting. Conventional harvesting methods typically rely on manual retraction by surgical assistants, which may limit surgical autonomy and procedural efficiency. OBJECTIVE: To describe a reproducible technique for buccal mucosal graft harvesting that allows a single surgeon to perform the procedure using a circumferential oral retraction system and topical tranexamic acid for donor-site hemostasis and to report donor-site outcomes in a retrospective case series. METHODS: We describe a step-by-step surgical technique for harvesting buccal mucosa using a circumferential retraction configuration based on the Scott retractor system. This setup provides stable, hands-free exposure of the oral cavity. We harvested the graft through a sharp mucosal incision, followed by submucosal dissection over the buccinator muscle. We achieved donor-site hemostasis with electrocautery and topical tranexamic acid applied with gauze packing, allowing healing by secondary intention. We additionally performed a retrospective review of 33 patients who underwent this technique, assessing donor-site complications at early (< 3 months) and 3-month follow-up, classified using the Clavien-Dindo system. RESULTS: The circumferential retraction system provides stable exposure of the oral vestibule, facilitating the identification of anatomical landmarks such as the Stensen duct and enabling a single surgeon to perform graft dissection. Donor-site management includes electrocautery followed by temporary application of tranexamic acid-soaked gauze, with the donor site left to heal by secondary intention. In the retrospective series of 33 patients, donor-site complications occurred in 7 (21.2%) during the early postoperative period, most commonly oral pain (12.1%); donor-site bleeding requiring intervention occurred in one patient (3.0%), managed without surgical revision. At 3 months, only one patient (3.0%) had a persistent complication (perioral sensory loss). No Stensen duct injuries occurred. CONCLUSIONS: This technique provides a practical, reproducible method for harvesting buccal mucosal grafts in single-surgeon practice. Stable circumferential retraction combined with topical tranexamic acid may simplify the procedure, improve surgical ergonomics, and facilitate the donor-site management without compromising established principles of buccal graft preparation. In this cohort, donor-site morbidity was low and comparable to or lower than previously reported series.",
-      "topics": [
-        "Urological Disorders and Treatments",
-        "Reconstructive Surgery and Microvascular Techniques",
-        "Reconstructive Facial Surgery Techniques"
-      ],
-      "keywords": [
-        "buccal mucosa graft",
-        "urethroplasty",
-        "topical tranexamic acid",
-        "electrocautery",
-        "donor site morbidity",
-        "oral pain",
-        "surgical ergonomics"
-      ]
-    },
-    {
-      "id": "doi:10.54254/2755-2721/2026.ch37479",
-      "abstract": "Under the background of digital transformation in the construction industry, Building Information Modeling (BIM) and artificial intelligence (AI) have become an important technical path to promote the intelligent upgrading of the construction industry. AI-BIM integration improves design efficiency, project control quality and building full lifecycle management capability. Fragmented data and poor interoperability hinder its widespread use. This paper conducts a literature review to summarise AI-BIM applications in automated design, construction management, operation and maintenance optimisation, and cross-stage collaboration. This paper further looks into how key technologies like machine learning, computer vision and NLP can be integrated. It also sums up current challenges and future research directions. Studies show that AI can improve BIM's ability in data processing, scheme design and smart decision-making. In the future, combining AI with digital twins and large language models will break existing limits and support the high-quality development of intelligent construction.",
-      "topics": [
-        "BIM and Construction Integration",
-        "Architecture and Computational Design",
-        "3D Modeling in Geospatial Applications"
-      ],
-      "keywords": [
-        "building information modeling",
-        "artificial intelligence in construction",
-        "design automation",
-        "construction management",
-        "building operation and maintenance",
-        "interoperability",
-        "machine learning",
-        "computer vision",
-        "natural language processing",
-        "digital twin",
-        "large language models",
-        "intelligent construction",
-        "digital transformation of construction"
-      ]
-    },
-    {
-      "id": "doi:10.1186/s13023-026-04619-5",
-      "abstract": "Abstract Background The low prevalence and heterogeneous nature of rare diseases make them particularly difficult to diagnose and prognosticate. These issues are amplified in the paediatric population, who are disproportionately affected by rare diseases. Non-generative artificial intelligence (AI) is a powerful tool that can aid clinicians in diagnostics, risk stratification and patient subgrouping. The extent to which this has been applied to rare diseases, in particular paediatric rare disease cohorts, is not well defined. Objective This scoping review aimed to identify how AI techniques have been used to aid diagnosis and prognosis of rare diseases, with a focus on their use in paediatric populations. Methods Embase, Medline, Web of Science, IEEE Xplore and Scopus databases were searched for original articles using the search terms “(‘machine learning’ OR ‘artificial intelligence’) AND (‘rare’ OR ‘orphan’) AND (‘condition*’ OR ‘disease*’ OR ‘disorder*’)”. Results One hundred and thirty-six studies met inclusion criteria, 28 (20.6%) of which used paediatric cohorts, with a variety of study types [diagnostic ( n = 61, 44.9%), prognostic ( n = 39, 28.7%), classification ( n = 19, 14.0%) and screening ( n = 17, 12.5%)]. The number of participants per study ranged from 16 to over 3 million. Tree-based models were the most frequently used in the studies ( n = 62, 45.6%) followed by neural networks ( n = 49, 36.1%) and linear models ( n = 46, 33.9%); the most frequent methods used in paediatric cohorts were neural networks ( n = 11, 39.2%), tree-based ( n = 10, 35.7%), and linear ( n = 10, 35.7%) models. Pre-processing steps were only described in a small number of studies, including feature selection ( n = 41, 30.1%), handling data missingness ( n = 36, 19.1%), data cleaning ( n = 44, 32.4%), addressing data imbalance ( n = 21, 15.4%), and data augmentation ( n = 23, 16.9%). Only 27 (19.9%) models were externally validated. Clinician involvement was described in 56 studies (41.2%), and no models had been translated into regular use in clinical practice. Conclusions AI tools to aid diagnosis and prognosis in rare diseases are increasingly being investigated, but their use for paediatric rare disease cohorts remains scarce. Limited methodological description of model development, clinician involvement and lack of external validation means there has been poor translation of models into clinical practice.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Artificial Intelligence in Healthcare",
-        "Machine Learning in Healthcare"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.11893",
-      "abstract": "Retrieval-Augmented Generation (RAG) systems extend large language models (LLMs) with external knowledge through a multi-stage pipeline. While this architecture can improve the factual grounding of generated answers, it introduces structural attack surfaces that extend beyond those of standalone LLMs. In this paper, we introduce a security meta-model that captures explicit causal relationships between RAG surfaces, attacks, weaknesses, risks, and CIA impact (Confidentiality, Integrity, Availability). Its purpose is to provide security engineers with a structured and user-friendly framework for gathering and assessing the risks, weaknesses, and mitigations relevant to their RAG deployment. We designed the meta-model through an iterative, structured analysis of 43~publications (2023--2026) and instantiated it as a catalog populated with the security threats and remediations reported in the literature. Filtering the catalog according to a deployment configuration produces a risk profile containing the risks applicable to that deployment. An interactive web visualizer lets users navigate the catalog as a graph, follow causal chains, and explore stakeholder-specific views. Analysis of the catalog revealed a persistent imbalance between attack-focused and defense-focused research, a concentration of threats at ingestion, and coverage gaps affecting output integrity. Coverage is assessed against the OWASP LLM Top~10, and operational applicability is illustrated across textual, graph-based, and multimodal RAG configurations.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Topic Modeling",
-        "Information and Cyber Security"
-      ],
-      "keywords": [
-        "retrieval-augmented generation",
-        "large language models",
-        "attack surface",
-        "security risk assessment",
-        "confidentiality, integrity and availability",
-        "factual grounding",
-        "external knowledge retrieval",
-        "graph-based RAG"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23242280",
-      "abstract": "Abstract: Artificial Intelligence (AI) and Green Finance have emerged as two of the most important forces that have the potential to drive the world towards a sustainable economy. The current paper attempts to explore the role of AI and Green Finance in promoting and supporting a sustainable economy with reference to building a Viksit Bharat 2047. A survey was conducted among 160 respondents, with the results analysed using descriptive statistics, reliability analysis, correlation, regression, and an independent-samples t-test. The results demonstrated that the population studied had a generally positive perception about how AI can support Green Finance and lead the economy towards sustainability. The analysis identified strong awareness about AI as the biggest predictor of increased perception of the integration of AI and Green Finance (r = 0.78, p < .001). Additionally, participants who were aware of Green Finance had significantly higher scores for the perceived level of integration than those who were not (t = 2.65, p = .009). As such, there is reason to reject the null hypothesis, which claimed that there is no connection between the two concepts. Finally, the paper provides recommendations that financial institutions, regulators, and educators can consider in order to promote and support responsible and AI-enabled Green Finance.",
-      "topics": [
-        "Sustainable Finance and Green Bonds",
-        "Digital Transformation in Financial Services",
-        "FinTech, Crowdfunding, Digital Finance"
-      ],
-      "keywords": [
-        "artificial intelligence",
-        "green finance",
-        "sustainable economy",
-        "Viksit Bharat 2047",
-        "public perception",
-        "AI awareness",
-        "responsible AI",
-        "financial institutions",
-        "regulators"
-      ]
-    },
-    {
-      "id": "doi:10.4038/jmm.v13i1.111",
-      "abstract": "This study explores the level of awareness and key influencing factors related to the use of Generative Artificial Intelligence (GAI) tools among undergraduates in Sri Lanka’s state universities. As AI tools such as ChatGPT, Grammarly, and Google Gemini become increasingly prevalent in higher education, understanding how students perceive and adopt these technologies is critical. The study applies the Technology Acceptance Model (TAM), Unified Theory of Acceptance and Use of Technology (UTAUT), and the Technology Readiness Index (TRI) to examine four independent variables: Attitude, Peer Influence, Perceived Usefulness, and Technological Readiness. Data were collected from a sample of 384 undergraduates across state universities using a structured questionnaire and analyzed using SPSS. Findings reveal that technological readiness and perceived usefulness are the strongest predictors of awareness, while gaps remain in ethical understanding. The study recommends integrating AI literacy and ethical guidelines into curricula to ensure responsible use. These findings provide practical guidance for policymakers and educators in developing strategies to enhance AI awareness and readiness among undergraduates.",
-      "topics": [
-        "Artificial Intelligence in Education",
-        "Technology Adoption and User Behaviour",
-        "Gender and Technology in Education"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.70767/jmec.v3i7.1285",
-      "abstract": "The environmental comfort in university classrooms affects learners' cognitive efficiency and physical/mental state however most evaluations are restricted by comparing single physical parameter threshold without considering the mechanisms of human factors. From the perspective of human factors engineering this research includes three aspects such as theoretical construction, model design and mechanism analysis. Based on the integration of sensory thresholds, cognitive load and environmental stress theories, we established a progressive analytical framework and analyzed the interactive coupling characteristics between four types of environmental factors; developed a three-level tree-structured evaluation index system and a fuzzy preference weight aggregation strategy which can be used to construct a comprehensive evaluation mechanism that integrates both objective data-driven and subjective correction; Analyzing the pathway of factor transmissions via the stimulus-organism-response paradigm revealed the dynamic shaping effect of climate adaptation and behavior patterns on comfort needs so as to provide systematic theoretical tools and methodological supports for evaluating university classroom environment.",
-      "topics": [
-        "Building Energy and Comfort Optimization",
-        "Educational Environments and Student Outcomes",
-        "Ergonomics and Human Factors"
-      ],
-      "keywords": [
-        "university classrooms",
-        "human factors engineering",
-        "sensory threshold",
-        "cognitive load",
-        "environmental stress",
-        "evaluation index system",
-        "stimulus-organism-response model",
-        "climate change adaptation",
-        "student behavior patterns",
-        "learning environment"
-      ]
-    },
-    {
-      "id": "doi:10.1108/lfet-12-2025-0138",
-      "abstract": "Purpose This study aims to examine current evidence on the educational use of artificial intelligence (AI)-generated video (AIGV) through a SWOT analysis and to outline plausible future scenarios for its adoption. Design/methodology/approach Relevant studies were identified through a structured literature search, and their findings were organized into strengths, weaknesses, opportunities and threats. Findings The analysis reveals that AIGV offers strengths, including rapid and efficient video production, accessibility and scalability, vivid visual storytelling and short-term learning outcomes comparable to human-made videos. However, key weaknesses include misinformation and content inaccuracies, limited teaching and social presence and blurred boundaries between authentic and synthetic content. Opportunities include multilingual delivery, personalized and adaptive learning, reflective learning through AI-generated scenarios and growing interest in AIGV across educational fields. Threats include ethical concerns related to autonomy, privacy and copyright; risks of biased representations; and trust and governance challenges limiting adoption. Research limitations/implications This study highlights the need for further research on how educators and institutions perceive and respond to the proposed future scenarios for AIGV adoption. Practical implications The findings can inform educators and institutions in making responsible decisions about the adoption of AIGV in education. Originality/value This paper contributes to the emerging literature on AIGV in education by applying a SWOT lens to synthesize current evidence and outline plausible future scenarios for its adoption.",
-      "topics": [
-        "Artificial Intelligence in Education",
-        "Artificial Intelligence in Healthcare and Education",
-        "Educational Technology in Learning"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.3390/laboratories3040028",
-      "abstract": "In the artificial intelligence (AI) era, the structure of safety hazards in university laboratories is changing, with unconventional hazards making up a growing share. As AI evolves from an auxiliary tool into an autonomous research collaborator, interdisciplinary experiments are becoming faster and more intense, producing hazards that are more dynamic, less predictable, and harder to assess and prevent. Most laboratory safety frameworks, however, still rely on static rules built for known risks, and these are poorly suited to such emerging threats. A shift from static rule-based control toward dynamic risk management is therefore needed. Adopting a conceptual mapping approach rather than an empirical study, this paper examines how Zero Trust—a cybersecurity framework based on continuous trust evaluation—could be adapted to university laboratory safety. It defines three adapted attributes (universal distrust with dynamic verification, least privilege with dynamic adjustment, and continuous monitoring with real-time early warning), identifies the main implementation barriers, and suggests targeted responses.",
-      "topics": [
-        "Chemical Safety and Risk Management",
-        "Occupational Health and Safety Research",
-        "Information and Cyber Security"
       ],
       "keywords": []
     }

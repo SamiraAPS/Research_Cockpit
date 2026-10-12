@@ -1,7 +1,577 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-11T11:26:30.005Z",
+  "generatedAt": "2026-10-12T13:13:04.841Z",
   "documents": [
+    {
+      "id": "doi:10.5281/zenodo.22981342",
+      "abstract": "Version 3 (2026-09-26). Version 3 corrects errors found by an independent audit of version 2 and by a second review of the corrected draft. (1) The ClawTrojan/DASGuard work (95.5% attack success rate) was cited as arXiv:2605.30998, which is an unrelated paper on x402 payments. The correct source is arXiv:2605.31042 (Tan et al.). All citations, including this record's list of cited preprints, have been corrected; the figures were accurate to the correct paper. (2) An unfounded remark that \"GPT-5.4\" was an unverifiable internal label has been removed. (3) The Recuse Signal result is updated to the current v4 of arXiv:2606.06460. Recusal at the access door is model-dependent, ranging from 100% down to 55-75%, and a mid-task in-band halt is weaker. The v1 figure of 100% recusal is superseded. (4) Overstated readings of the ClawTrojan and MemPoison abstracts have been corrected. The claim that agents hold \"OAuth tokens\" is replaced with what arXiv:2606.06460 supports (real credentials used over SSH). The SCHEME monitoring figure is given as 100% (Gemini) and 81% (Codex) rather than \"near-100%\". (5) Two cross-paper generalizations are narrowed. The first is that all six attack surfaces exploit temporal decoupling of authorization and execution, which no source states in those terms and which is now presented as this synthesis's reading. The second is that all succeed against correctly aligned agents, and SCHEME is flagged as a poor fit for the attacker model. The thesis is unchanged. The file has a neutral name, and the full list of corrections is at the top of the PDF. Version 2 was revised in response to an external structural review and an automated critique pass; its change log is kept as the \"Response to Review\" appendix in the PDF. Autonomous LLM agents have moved from sandboxed demos into production infrastructure: they hold live credentials, invoke real APIs, write to persistent memory, and execute multi-step workflows without a human in the loop. This paper argues that a structurally coherent threat class has emerged at the execution layer (the runtime surface between an agent's reasoning process and the external environment it acts upon) that is distinct from the prompt-injection and jailbreak threats that dominate the safety literature. We synthesize seven findings from recent cs.CR preprints (six attack surfaces and one cooperative contrast case; a supporting monitoring paper is discussed in an addendum) to support a single thesis: execution-layer attacks succeed not by defeating safety alignment but by exploiting the gap between what an agent is authorized to do and what the runtime environment can verify it is actually doing. The attacker model throughout is a capability-constrained adversary who controls some portion of the environment the agent reads from or writes to (a third-party script, a tool-registration endpoint, a RAG routing profile, a skill file, a memory pipeline) but does not need to compromise the model weights, the system prompt, or the user. Sources span cooperative governance signals arXiv:2606.06460, tool-surface poisoning arXiv:2606.06387, speculative-dispatch privacy arXiv:2606.02483, multi-step trojan persistence arXiv:2605.31042, memory poisoning via dialogue arXiv:2605.29960, coordinated multi-agent sabotage arXiv:2605.29178, and federated RAG routing hijacking arXiv:2605.28112. The falsification path for the central thesis is concrete: if any of these attacks can be neutralized by a purely model-level intervention, safety fine-tuning, RLHF, or constitutional AI, without runtime changes, the execution-layer framing is wrong. The abstracts reviewed do not support that conclusion; we argue the evidence points the other direction. This is a heuristic reading across independently motivated papers, not a derivation from a shared formal structure; the convergence identified is interpretive, not mathematical. Authorship: Saluca Agentic AI Research Team (Saluca LLC). AI-drafted synthesis from an arXiv preprint corpus, originally drafted 2026-06-07, produced under the direction of Cristian Ruvalcaba, the accountable human author. Not peer-reviewed. Cited arXiv preprints: arXiv:2605.28112, arXiv:2605.29178, arXiv:2605.29960, arXiv:2605.31042 (corrected in v3; v2 listed 2605.30998 in error), arXiv:2605.31593, arXiv:2606.02483, arXiv:2606.06387, arXiv:2606.06460 AI disclosure. This work was produced with an agentic AI research apparatus operated by Saluca Labs. The apparatus drafted, searched and analysed under direction. Cristian Ruvalcaba is the human author and is accountable for the content. No AI system is listed as an author or contributor, because authorship entails accountability that a model cannot hold; this disclosure is the credit, and it is deliberately the whole of it.",
+      "topics": [
+        "Security and Verification in Computing",
+        "Mobile Agent-Based Network Management",
+        "Distributed systems and fault tolerance"
+      ],
+      "keywords": [
+        "Exploit",
+        "Authorization",
+        "Scheme (mathematics)",
+        "Decoupling (probability)",
+        "Audit",
+        "Threat model"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.32722",
+      "abstract": "*Reinforcement learning (RL)* can induce substantial reasoning capabilities in large language models (LLMs), but how much of this capability transfers across model scales, and how quickly, remains unclear. We study the scaling properties of *on-policy distillation (OPD)* across *weak-to-strong*, *same-base*, and *strong-to-weak* teacher--student setups. We find that early OPD training dynamics uniformly exhibit a regular *useful-transfer* regime, in which held-out accuracy (the *gold score*, $G$) rises approximately linearly in $d=\\sqrt{\\mathrm{KL}(π_θ\\Vert π_{\\mathrm{ref}})}$, the square root of token-level reverse KL divergence from the student initialization. In every observed weak-to-strong pair, the student's peak gold score exceeds its teacher's own, so a compact RL expert can transfer capability to a much larger student via OPD. To estimate OPD outcomes, we fit *power laws* for how $G_{\\mathrm{peak}}$ and the slope of the useful-transfer regime scale with student and teacher parameter counts and with teacher gold score. These laws show that peak gold score improves with teacher scale only up to roughly the student's scale, and that at a matched gold score smaller teachers transfer better, so a teacher's score alone does not define its supervision value. We also study the scaling effects of two OPD variants, bootstrapping weak-to-strong OPD, and the degree of on-policy supervision.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Topic Modeling",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.32291",
+      "abstract": "In this paper, we introduce a molecular odor description generation task, which aims to generate natural language odor descriptions from molecular structures. Unlike conventional methods that describe molecular odor using discrete labels, this task generates expressive and human-interpretable sensory descriptions. To address this task, we propose a hierarchical multimodal olfactory semantic modeling framework, named ScentGen. ScentGen consists of three key components: an odor semantic planner, a semantic adapter, and a description generator. The odor semantic planner integrates complementary molecular information from 1D SMILES sequences, 2D molecular graphs, and 3D molecular conformations to learn discriminative and structured olfactory semantics. The semantic adapter further maps the learned olfactory representation into the hidden space of a large language model, transforming molecular odor semantics into language-compatible continuous prompts.Conditioned on these prompts, the description generator produces coherent odor descriptions that reflect plausible sensory characteristics of the input molecule. Considering the lack of molecular datasets with natural language odor descriptions, we further construct a molecular odor description dataset containing paired multimodal molecular representations and human-interpretable odor descriptions. Extensive experiments demonstrate that ScentGen generates coherent and expressive odor descriptions, providing a more flexible solution for molecular odor understanding beyond discrete odor label prediction.",
+      "topics": [
+        "Olfactory and Sensory Function Studies",
+        "Advanced Chemical Sensor Technologies",
+        "Insect Pheromone Research and Control"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1016/j.bspc.2026.111258",
+      "abstract": "Depression detection using multimodal artificial intelligence (AI) is rapidly evolving, transitioning from traditional machine learning techniques to deep learning architectures built on pre-trained transformer encoders. These systems integrate textual, acoustic, visual, and physiological signal streams through early, intermediate, late, and hybrid fusion strategies to improve predictive performance. However, a significant gap persists in model interpretability: post-hoc attribution frameworks (such as SHAP and LIME) dominate recent work, accounting for over 70% of studies published in 2024–2025, while clinician-centered validation is reported in only about 18% of the full reviewed corpus. Consequently, existing explanations are rarely validated for explainability quality dimensions; for example, SHAP attributions are known to degrade under inter-modality collinearity, and reported systems frequently lack alignment with established diagnostic criteria (e.g., DSM-based or PHQ-9 symptom structures). To close the gap between predictive accuracy and clinical utility, this review jointly synthesizes multimodal datasets, feature extraction strategies, machine learning and deep learning taxonomies, fusion strategies, and explainability techniques across 72 included studies. Finally, we outline critical future directions, emphasizing standardized XAI benchmarks, clinician-in-the-loop validation studies, and knowledge-driven neuro-symbolic reasoning.",
+      "topics": [
+        "Mental Health via Writing",
+        "Digital Mental Health Interventions",
+        "Emotion and Mood Recognition"
+      ],
+      "keywords": [
+        "Attribution",
+        "Deep learning",
+        "Artificial neural network",
+        "Quality (philosophy)",
+        "Feature extraction",
+        "Depression (economics)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.32746",
+      "abstract": "While symbolic regression (SR) has been successfully used in science to discover new equations, its use in financial valuation is hindered by several limitations. Whereas the natural sciences provide objectively correct relationships, financial valuation constitutes a distinct class of symbolic discovery problems, as it admits multiple valid perspectives, operates under non-stationary market conditions, and involves noisy, continuous performance signals. In this work, we propose Multi-Agent Fundamental Analysis with Symbolic Adaptive learning (MUFASA), a hierarchical multi-agent framework for symbolic discovery in finance. MUFASA introduces (1) disentangled equation discovery via specialized agents representing distinct valuation perspectives, (2) a meta-coordinator that performs hierarchical-level reasoning over market context information, and (3) a memory mechanism that reasons over statistical performance summaries (e.g., accuracy, stability, and tail risk) to guide learning under noisy feedback. Experiments across datasets from multiple countries show that MUFASA achieves state-of-the-art performance on the valuation task compared to classical finance methods, financial large language models, and SR approaches, while simultaneously producing interpretable equations, which we share with the community. We also make publicly available the distilled learnings across evolution iterations and context-dependent strategy weights, which might offer useful insights for future research on financial fundamental analysis.",
+      "topics": [
+        "Stock Market Forecasting Methods",
+        "Financial Distress and Bankruptcy Prediction",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.32689",
+      "abstract": "LLM-based agents are increasingly used for time-series forecasting because they can organise contextual information, perform multi-step analysis, and guide the sequence of actions required to complete forecasting tasks. Most existing agents focus only on the current forecasting instance. However, in real-world deployments, forecasting commonly operates online, with new forecasts issued from the currently available history as the forecast origin advances and the ground-truth targets of earlier instances progressively become available. These targets provide feedback on the actions taken in earlier instances, yet existing agents generally do not preserve or utilise this information to adapt their subsequent actions. To address this limitation, we introduce FASE, a Feedback-Aware Self-Evolving forecasting agent that converts such feedback into task-specific experience for subsequent forecasting instances. FASE combines episodic memory, which retrieves relevant completed instances, with online policy learning, which summarises the feedback accumulated across instances into ranking guidance. The proposed framework is evaluated on 29 dataset configurations selected from the GIFT-Eval benchmark. Across these 29 configurations, FASE attains the strongest aggregate point forecasting performance among the evaluated methods and reduces the normalised MAE by 9.1% relative to the best individual foundation model baseline. The results further indicate that the cumulative advantage of FASE increases as delayed feedback accumulates. Together, these findings demonstrate that FASE can continually self-evolve through feedback from completed forecasting instances without updating the parameters of the LLM.",
+      "topics": [
+        "Forecasting Techniques and Applications",
+        "Stock Market Forecasting Methods",
+        "Data Stream Mining Techniques"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.20716353",
+      "abstract": "This version corrects a wrong arXiv identifier. Version 2 cited the theoretical paper on chaotic regularization in recurrent neural networks, \"Discrete signaling mediates chaotic regularization in recurrent neural networks\", as arXiv:2606.04428 in six places, including item 3 of the abstract. That identifier belongs to an unrelated astrophysics paper; the correct identifier is arXiv:2606.04426, and all six citations are corrected. What the text says about the paper matches its abstract, so no claim changes. An internal reference in the selection criteria is reworded, typographic dashes are removed, the Greek letter eta now renders in the PDF, and the file carries a neutral name. The abstract below differs from version 2 only in that citation and in punctuation. The error was found by an automated check and confirmed by hand against arXiv; this version has not had a full claim-by-claim audit. A recurring structural pattern appears across recent work in computational neuroscience and natural language processing: the accumulation of new, non-redundant information over sequential inputs is governed by measurable geometric and information-theoretic constraints that appear to operate similarly, though not identically, in human neural systems and large language models (LLMs). This paper synthesizes six to seven findings from recent arXiv preprints (primary categories: q-bio.NC and cs.CL) to articulate a candidate framework we call semantic accumulation geometry: the hypothesis that the rate and structure of information gain over sequential inputs is constrained by representational geometry, and that this constraint produces measurable alignment between neural and model-derived accounts of meaning. Specifically, we draw on evidence that (1) LLMs selectively converge with human-shared neural semantic representations along specific semantic dimensions rather than globally arXiv:2606.11598; (2) semantic progress in multi-turn dialogue can be formalized as question-conditioned uncertainty reduction with tractable geometric structure arXiv:2606.12332; (3) chaotic recurrent networks produce smooth population codes through intrinsic regularization, providing a mechanistic substrate for stable representational geometry arXiv:2606.04426; (4) speech foundation models exhibit hierarchical brain alignment that is temporally structured rather than static arXiv:2606.02305; (5) hyperbolic geometry in hippocampal population activity may confer capacity and decoding advantages consistent with the demands of accumulating structured information arXiv:2606.10238; (6) the policy compression framework, when extended to include irreducible uncertainty costs, reframes cognitive cost as a joint function of complexity and conditional entropy arXiv:2606.13132; and (7) sparse autoencoder representations of neural activity obey optimality constraints that produce hierarchical feature structure arXiv:2606.02385. This is explicitly a heuristic reading, not a derivation: the sources share vocabulary and structural analogies but do not share a common formal apparatus. Falsification paths are named for each major claim. The framework is offered as a candidate structural pattern worth investigating, not a paradigm-level claim. Authorship: Saluca Agentic AI Research Team (Saluca LLC). AI-drafted synthesis from an arXiv preprint corpus, originally drafted 2026-06-16, produced under the direction of Cristian Ruvalcaba, the accountable human author. Not peer-reviewed. AI disclosure. This work was produced with an agentic AI research apparatus operated by Saluca Labs. The apparatus drafted, searched and analysed under direction. Cristian Ruvalcaba is the human author and is accountable for the content. No AI system is listed as an author or contributor, because authorship entails accountability that a model cannot hold; this disclosure is the credit, and it is deliberately the whole of it.",
+      "topics": [
+        "Neurobiology of Language and Bilingualism",
+        "Functional Brain Connectivity Studies",
+        "Action Observation and Synchronization"
+      ],
+      "keywords": [
+        "Population",
+        "Constraint (computer-aided design)",
+        "Language model",
+        "Natural language",
+        "Artificial neural network",
+        "Information theory",
+        "Entropy (arrow of time)",
+        "Robustness (evolution)",
+        "Decoding methods"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22981510",
+      "abstract": "This version corrects a wrong arXiv identifier. Version 2 cited the theoretical paper on chaotic regularization in recurrent neural networks, \"Discrete signaling mediates chaotic regularization in recurrent neural networks\", as arXiv:2606.04428 in six places, including item 3 of the abstract. That identifier belongs to an unrelated astrophysics paper; the correct identifier is arXiv:2606.04426, and all six citations are corrected. What the text says about the paper matches its abstract, so no claim changes. An internal reference in the selection criteria is reworded, typographic dashes are removed, the Greek letter eta now renders in the PDF, and the file carries a neutral name. The abstract below differs from version 2 only in that citation and in punctuation. The error was found by an automated check and confirmed by hand against arXiv; this version has not had a full claim-by-claim audit. A recurring structural pattern appears across recent work in computational neuroscience and natural language processing: the accumulation of new, non-redundant information over sequential inputs is governed by measurable geometric and information-theoretic constraints that appear to operate similarly, though not identically, in human neural systems and large language models (LLMs). This paper synthesizes six to seven findings from recent arXiv preprints (primary categories: q-bio.NC and cs.CL) to articulate a candidate framework we call semantic accumulation geometry: the hypothesis that the rate and structure of information gain over sequential inputs is constrained by representational geometry, and that this constraint produces measurable alignment between neural and model-derived accounts of meaning. Specifically, we draw on evidence that (1) LLMs selectively converge with human-shared neural semantic representations along specific semantic dimensions rather than globally arXiv:2606.11598; (2) semantic progress in multi-turn dialogue can be formalized as question-conditioned uncertainty reduction with tractable geometric structure arXiv:2606.12332; (3) chaotic recurrent networks produce smooth population codes through intrinsic regularization, providing a mechanistic substrate for stable representational geometry arXiv:2606.04426; (4) speech foundation models exhibit hierarchical brain alignment that is temporally structured rather than static arXiv:2606.02305; (5) hyperbolic geometry in hippocampal population activity may confer capacity and decoding advantages consistent with the demands of accumulating structured information arXiv:2606.10238; (6) the policy compression framework, when extended to include irreducible uncertainty costs, reframes cognitive cost as a joint function of complexity and conditional entropy arXiv:2606.13132; and (7) sparse autoencoder representations of neural activity obey optimality constraints that produce hierarchical feature structure arXiv:2606.02385. This is explicitly a heuristic reading, not a derivation: the sources share vocabulary and structural analogies but do not share a common formal apparatus. Falsification paths are named for each major claim. The framework is offered as a candidate structural pattern worth investigating, not a paradigm-level claim. Authorship: Saluca Agentic AI Research Team (Saluca LLC). AI-drafted synthesis from an arXiv preprint corpus, originally drafted 2026-06-16, produced under the direction of Cristian Ruvalcaba, the accountable human author. Not peer-reviewed. AI disclosure. This work was produced with an agentic AI research apparatus operated by Saluca Labs. The apparatus drafted, searched and analysed under direction. Cristian Ruvalcaba is the human author and is accountable for the content. No AI system is listed as an author or contributor, because authorship entails accountability that a model cannot hold; this disclosure is the credit, and it is deliberately the whole of it.",
+      "topics": [
+        "Neurobiology of Language and Bilingualism",
+        "Embodied and Extended Cognition",
+        "Face Recognition and Perception"
+      ],
+      "keywords": [
+        "Identifier",
+        "Constraint (computer-aided design)",
+        "Natural language",
+        "Regularization (linguistics)",
+        "Language model",
+        "Artificial neural network",
+        "Block (permutation group theory)",
+        "Chaotic",
+        "Selection (genetic algorithm)"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22981851",
+      "abstract": "SummaryIn a single conversation, the model produced several fluent statements that were unsupported orinconsistent with what it had said earlier. The user caught each one; the model recognised eacherror immediately once it was pointed out. What was missing was a review step, not knowledge.From this the conversation produced three proposals:• A. A “Verify claims” control, independent of the effort level (Off / Auto / Always).Reasoning longer is not the same as checking claims.• B. Per-claim status labels (verified, corrected, not verified, not verifiable), so users can seewhere to apply their own scrutiny.• C. An expert evaluation channel where domain experts assess unaltered model outputblind, and their detections are compared with an automatic evaluator to expose the model’sshared blind spots.The common thread: today the burden of detecting confabulation falls on the user, who usuallycannot tell a confabulated answer from a correct one because both arrive with the same speedand fluency. These proposals aim to make failures visible and predictable, not to promise thatthey disappear",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "AI in Service Interactions",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "Conversation",
+        "Reliability (semiconductor)",
+        "Sketch",
+        "Domain (mathematical analysis)",
+        "Confabulation (neural networks)",
+        "Channel (broadcasting)"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22981850",
+      "abstract": "SummaryIn a single conversation, the model produced several fluent statements that were unsupported orinconsistent with what it had said earlier. The user caught each one; the model recognised eacherror immediately once it was pointed out. What was missing was a review step, not knowledge.From this the conversation produced three proposals:• A. A “Verify claims” control, independent of the effort level (Off / Auto / Always).Reasoning longer is not the same as checking claims.• B. Per-claim status labels (verified, corrected, not verified, not verifiable), so users can seewhere to apply their own scrutiny.• C. An expert evaluation channel where domain experts assess unaltered model outputblind, and their detections are compared with an automatic evaluator to expose the model’sshared blind spots.The common thread: today the burden of detecting confabulation falls on the user, who usuallycannot tell a confabulated answer from a correct one because both arrive with the same speedand fluency. These proposals aim to make failures visible and predictable, not to promise thatthey disappear",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "AI in Service Interactions",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "Conversation",
+        "Reliability (semiconductor)",
+        "Sketch",
+        "Domain (mathematical analysis)",
+        "Confabulation (neural networks)",
+        "Channel (broadcasting)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.32546",
+      "abstract": "Large language models can generate several records within one autoregressive completion, making earlier answers available as context for later records. This paper shows that such shared-completion batching can distort relationships among variables in the resulting synthetic data, using controlled tests on synthetic survey respondents. In a matched experiment on 2,000 European Social Survey profiles, generating ten rather than one respondent per request increases mean absolute error in within-country correlations by 48-58% for Qwen3.8-27B and 114-127% for Llama-3.3-70B-Instruct across three seeds, holding profiles, examples, questions and decoding parameters fixed. The distortion primarily reflects exaggerated relationship strength, while retaining substantial agreement with the human ordering of correlations. Controlled interventions establish answer history as a causal channel: re-pairing the same preceding values, with profiles and marginal distributions fixed, changes correlations among subsequently generated responses. Hiding preceding answers reduces correlation error in the tested settings but worsens marginal accuracy. Exploratory corrections across social-attitude, health and economic data likewise show that lower correlation error can coexist with worse marginal distributions and regression estimates. Request construction is therefore part of the data-generating process, and synthetic-data validity must be evaluated against the analyses the generated data are intended to support.",
+      "topics": [
+        "Survey Methodology and Nonresponse",
+        "Advanced Causal Inference Techniques",
+        "Human Mobility and Location-Based Analysis"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.32493",
+      "abstract": "Distillation enables student language models to acquire new capabilities from expert teachers. However, integrating knowledge from multi-teacher, multi-domain demonstrations into a single student remains challenging. We study supervised fine-tuning (SFT) in this setting, where students must acquire diverse capabilities while maintaining generalization beyond the training tasks. Our experiments reveal varying trade-offs between in-distribution learning and out-of-distribution generalization across SFT methods, motivating more explicit control over this balance. To this end, we propose soft-target fine-tuning (SoFT) to balance learning from teacher demonstrations with retaining the Base model's existing capabilities. SoFT sets a minimum target probability for each demonstrated token while making the smallest KL change to the Base distribution. The resulting objective couples learning from demonstrations with adaptively weighted regularization toward the Base model. We further use domain-specific gradient budgets to control this balance and determine a probability threshold for each trajectory. Experiments on mixed-domain reasoning and agentic tasks show that SoFT achieves the best overall performance among the compared methods, with improvements in both in-distribution capability acquisition and out-of-distribution generalization.",
+      "topics": [
+        "Intelligent Tutoring Systems and Adaptive Learning",
+        "Topic Modeling",
+        "Natural Language Processing Techniques"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.32886",
+      "abstract": "Large language models (LLMs) can learn reusable textual skills from execution feedback without updating their parameters, but effectively deciding how to revise these skills remains a key challenge. Existing methods typically rely on a fixed revision operator, a search strategy and the revision forms applied under it. However, we observe that no single revision operator consistently performs best across tasks, and repeatedly applying an unsuitable operator can limit further improvement. We propose StraTune (strategy-guided skill tuning), which lets a frozen optimizer LLM choose the revision operator at every round from the optimization state, which is defined as the current execution feedback together with the recorded outcomes of earlier strategies and forms. Candidate skills from every revision operator pass one candidate evaluation, which screens for gains and regressions on a small sample set and validates them on a larger one, and every outcome is written back to the optimization state for later choices. Across four benchmarks and two LLM settings, StraTune outperforms all five baselines in most settings. Ablations attribute the gains to the adaptive choice of the revision operator, since fixed, random, scheduled, and bandit strategy choices all score lower, and skills learned with a small target LLM also improve a stronger one. Code and learned skills are available at https://github.com/seai-lab/StraTune.",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Topic Modeling",
+        "Computational and Text Analysis Methods"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.20664659",
+      "abstract": "This version (2026-09-26) corrects a citation error found by an automated check and confirmed by hand against the arXiv abstracts. Version 2 cited the identifier 2606.04428, an unrelated astrophysics paper on fast-spinning black holes, for the theoretical framework in which chaotic recurrent dynamics produce local roughness with global smoothness and act as an intrinsic regularizer of neural representations. That framework is arXiv:2606.04426 (\"Discrete signaling mediates chaotic regularization in recurrent neural networks\"), and every citation to it is corrected. The thesis is unchanged. This version has not had a full claim-by-claim audit. The full list of corrections is at the top of the PDF. A candidate structural pattern emerges across several recent neuroscience preprints: neural circuits may achieve flexible, generalizable computation not through monolithic representations but through a set of interlocking geometric and dynamical properties, compositionality of fixed points, smooth representational manifolds sustained by chaos, hierarchical burst-coded goal signals, and scale-free criticality. This synthesis draws primarily from q-bio.NC sources, with selective evidence from cs.CL where brain-model alignment studies provide behavioral constraints. We argue, as a heuristic reading rather than a derivation, that four specific findings converge on a shared structural theme: (1) inhibition-dominated threshold-linear networks support compositional fixed-point arithmetic through low-rank gluing rules arXiv:2606.07336; (2) chaotic recurrent dynamics induce local roughness with global smoothness in representational manifolds, functioning as an intrinsic regularizer arXiv:2606.04426; (3) burst fraction in macaque motor cortex encodes goal information via a bilinear gate linking dendritic coincidence detection to reinforcement learning arXiv:2606.10891; and (4) early psychosis produces systematic shifts in scaling exponents within a preserved criticality regime, suggesting that pathology reorganizes rather than destroys scale-free dynamics arXiv:2606.06290. Two additional findings from brain-LLM alignment studies arXiv:2606.11598 and short-term synaptic plasticity in prefrontal reservoir models arXiv:2606.03481 provide boundary conditions on these claims. The falsification path for the central thesis is concrete: if compositional fixed-point structure, smooth manifold geometry, burst-coded goal signals, and criticality-regime preservation can be shown to dissociate, appearing independently in circuits that do not share functional architecture, the proposed convergence is coincidental rather than structural. The corpus sources are recent preprints, not peer-reviewed; all mechanistic claims are hypothesized, not established. Authorship: Saluca Agentic AI Research Team (Saluca LLC). AI-drafted synthesis from an arXiv preprint corpus, originally drafted 2026-06-12, produced under the direction of Cristian Ruvalcaba, the accountable human author. Not peer-reviewed. AI disclosure. This work was produced with an agentic AI research apparatus operated by Saluca Labs. The apparatus drafted, searched and analysed under direction. Cristian Ruvalcaba is the human author and is accountable for the content. No AI system is listed as an author or contributor, because authorship entails accountability that a model cannot hold; this disclosure is the credit, and it is deliberately the whole of it.",
+      "topics": [
+        "Functional Brain Connectivity Studies",
+        "Neural dynamics and brain function",
+        "Face Recognition and Perception"
+      ],
+      "keywords": [
+        "Biological neural network",
+        "Principle of compositionality",
+        "Artificial neural network",
+        "Coding (social sciences)",
+        "Reinforcement learning",
+        "Computation",
+        "Connectionism",
+        "Neural coding",
+        "Heuristics"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22981505",
+      "abstract": "This version (2026-09-26) corrects a citation error found by an automated check and confirmed by hand against the arXiv abstracts. Version 2 cited the identifier 2606.04428, an unrelated astrophysics paper on fast-spinning black holes, for the theoretical framework in which chaotic recurrent dynamics produce local roughness with global smoothness and act as an intrinsic regularizer of neural representations. That framework is arXiv:2606.04426 (\"Discrete signaling mediates chaotic regularization in recurrent neural networks\"), and every citation to it is corrected. The thesis is unchanged. This version has not had a full claim-by-claim audit. The full list of corrections is at the top of the PDF. A candidate structural pattern emerges across several recent neuroscience preprints: neural circuits may achieve flexible, generalizable computation not through monolithic representations but through a set of interlocking geometric and dynamical properties, compositionality of fixed points, smooth representational manifolds sustained by chaos, hierarchical burst-coded goal signals, and scale-free criticality. This synthesis draws primarily from q-bio.NC sources, with selective evidence from cs.CL where brain-model alignment studies provide behavioral constraints. We argue, as a heuristic reading rather than a derivation, that four specific findings converge on a shared structural theme: (1) inhibition-dominated threshold-linear networks support compositional fixed-point arithmetic through low-rank gluing rules arXiv:2606.07336; (2) chaotic recurrent dynamics induce local roughness with global smoothness in representational manifolds, functioning as an intrinsic regularizer arXiv:2606.04426; (3) burst fraction in macaque motor cortex encodes goal information via a bilinear gate linking dendritic coincidence detection to reinforcement learning arXiv:2606.10891; and (4) early psychosis produces systematic shifts in scaling exponents within a preserved criticality regime, suggesting that pathology reorganizes rather than destroys scale-free dynamics arXiv:2606.06290. Two additional findings from brain-LLM alignment studies arXiv:2606.11598 and short-term synaptic plasticity in prefrontal reservoir models arXiv:2606.03481 provide boundary conditions on these claims. The falsification path for the central thesis is concrete: if compositional fixed-point structure, smooth manifold geometry, burst-coded goal signals, and criticality-regime preservation can be shown to dissociate, appearing independently in circuits that do not share functional architecture, the proposed convergence is coincidental rather than structural. The corpus sources are recent preprints, not peer-reviewed; all mechanistic claims are hypothesized, not established. Authorship: Saluca Agentic AI Research Team (Saluca LLC). AI-drafted synthesis from an arXiv preprint corpus, originally drafted 2026-06-12, produced under the direction of Cristian Ruvalcaba, the accountable human author. Not peer-reviewed. AI disclosure. This work was produced with an agentic AI research apparatus operated by Saluca Labs. The apparatus drafted, searched and analysed under direction. Cristian Ruvalcaba is the human author and is accountable for the content. No AI system is listed as an author or contributor, because authorship entails accountability that a model cannot hold; this disclosure is the credit, and it is deliberately the whole of it.",
+      "topics": [
+        "Embodied and Extended Cognition",
+        "Cognitive Science and Education Research",
+        "Neural dynamics and brain function"
+      ],
+      "keywords": [
+        "Chaotic",
+        "Models of neural computation",
+        "Artificial neural network",
+        "Embedding",
+        "Connectionism",
+        "Reinforcement learning",
+        "Salience (neuroscience)",
+        "Neural decoding",
+        "Computation"
+      ]
+    },
+    {
+      "id": "doi:10.15503/jecs2026.2.535.549",
+      "abstract": "Aim. The present study aimed at establishing self-regulating strategies used by Lithuanian undergraduate students when they could not accomplish their academic assignments due to a lack of necessary information. By establishing data-based evidence regarding student choices of seeking help or information made under the circumstances preventing them from fulfilling academic tasks, the study addresses the existing research gap in the field. Methods. The present research is part of larger mixed-method research (n = 309) conducted at four universities in Lithuania. The data for this study were collected from two university students’ (n = 140) responses to the open-ended question “What strategies do you use if / when you do not have all the necessary information for accomplishing your academic assignments?”. To analyse the data, qualitative methodology was chosen, and the inductive (bottom-up) content analysis was used. Results. Content analysis revealed four major categories (covering five subcategories) of student-adopted self-regulating strategies, such as using a combination of different strategies of seeking help or information, relying exclusively on the strategy of Internet search, using the strategy of seeking help from different stakeholders, and taking no action. Conclusions. It can be concluded that most students sought help proactively, i.e., they used up to three self-regulating strategies to solve the problem of lack of information necessary for their studies, on the one hand. On the other hand, it was concluded that the students who used only one strategy or did not take any action should be encouraged to seek different forms of help or sources of information, which could foster their self-regulated learning. The findings also call for research into the use of Generative AI in undergraduate studies. Cognitive value. This study contributes to research by providing evidence from a Lithuanian case on student-adopted strategies of seeking help or information relevant for the development of students’ self-regulated learning.",
+      "topics": [
+        "Innovative Teaching and Learning Methods",
+        "Higher Education Practises and Engagement",
+        "Online Learning and Analytics"
+      ],
+      "keywords": [
+        "Higher education",
+        "Lithuanian",
+        "Action (physics)",
+        "Content analysis",
+        "Qualitative research",
+        "The Internet"
+      ]
+    },
+    {
+      "id": "doi:10.1080/00140139.2026.2738040",
+      "abstract": "In complex industrial control rooms such as nuclear power plants and coal mines, Visual Display Terminal (VDT) fatigue caused by sustained monitoring is a key factor contributing to human error. Therefore, VDT fatigue detection technology is of critical importance. This study evaluated fatigue states by analysing subjective and objective physiological data collected from 16 operators before and after shifts, including electroencephalogram and eye-tracking signals. Paired-sample statistical tests confirmed significant changes in fatigue-related indicators. Based on small-sample data, a TabNet-based model was employed to achieve multimodal fusion, yielding an Accuracy of 0.881 and F1-score of 0.919. Compared with the traditional comparison models, the TabNet-based model showed comparatively favourable classification performance in the present small-sample field dataset. The findings provide a feasible algorithmic pathway for intelligent monitoring of operator fatigue in complex industrial control rooms and offer methodological reference for fatigue management and safety protection in high-risk monitoring environments.",
+      "topics": [
+        "Sleep and Work-Related Fatigue",
+        "Human-Automation Interaction and Safety",
+        "Ergonomics and Musculoskeletal Disorders",
+        "Machine Fault Diagnosis Techniques",
+        "Occupational Health and Safety Research"
+      ],
+      "keywords": [
+        "operator fatigue",
+        "industrial control rooms",
+        "multimodal fusion",
+        "TabNet",
+        "EEG",
+        "eye tracking",
+        "human error",
+        "nuclear power plant operators",
+        "small sample classification",
+        "fatigue monitoring",
+        "Control room",
+        "Fusion",
+        "Control (management)",
+        "Sensor fusion",
+        "Control system"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.20608573",
+      "abstract": "Version 3 (2026-09-26) corrects a citation error in versions 1 and 2 and a false correction added in version 2, found by an independent audit and confirmed by re-checking every cited arXiv abstract. The inference-system fingerprinting findings, one of the four topics named in the title, were cited to arXiv:2605.29960; they come from arXiv:2605.29979 (Wimbauer et al., \"Fingerprinting Inference Systems of Large Language Models\"), which is now cited. arXiv:2605.29960 is the MemPoison memory-poisoning paper (Wang et al.); version 2 wrongly withdrew that correct attribution and published an editorial note and a citation integrity note saying it could not be verified. Both notes are deleted and the MemPoison attribution is restored. Version 3 also corrects the description of SkillSpector (a registry-side semantic scanner, not a runtime signal) and withdraws the argument that the ClawHub data show build-time and runtime signals to be orthogonal; describes the 75.8% MalSkillBench figure as a benchmark verification yield rather than an attack statistic; withdraws the unsupported claims that runtime integrity is the dominant unresolved problem and that the attacks have high success rates; corrects overstated wording about WebMCP and A2A; repairs three malformed citations of arXiv:2605.31593; and corrects the source count. The full list of corrections is at the top of the PDF, and the version 2 change log remains as an appendix with its erroneous citation paragraph marked as withdrawn. A follow-up review on the same day led to further fixes: distributed attacks are described as largely evading per-transcript monitors rather than being invisible to them, the shared structure is renamed observation before commitment (the source's term), the claim that post-hoc filtering is insufficient is limited to the speculative tool-call paper, an unsupported remark about well-aligned models is removed, and the Section 3.4 falsification test now uses a no-speculation baseline. Conventional software supply-chain security focuses on build-time artifacts: package hashes, signed binaries, dependency manifests. The emergence of LLM-based agentic systems introduces a parallel but distinct threat surface that operates at runtime, after the artifact has been delivered and before the user sees an output. This paper synthesizes five specific findings from recent cs.CR preprints to argue that runtime execution integrity is a distinct problem that build-time provenance controls do not address, and that it deserves to be treated as its own layer of agentic AI security. The thesis, stated plainly: an attacker who cannot compromise a model's weights or a package's source code can still target the execution context (the inference system, the tool registry, the memory pipeline, the communication graph, and the speculative dispatch channel), and several recent preprints document such attacks evading the monitors, filters or detectors they were tested against. This is a heuristic reading that unifies mechanistically distinct attacks under a shared structural property (execution-context manipulation), not a derivation from a single formal model, and it does not claim that these attacks are uniformly successful or that this is the most important problem in agentic AI security. The corpus sources span agent security (cs.CR), with findings drawn from: a runtime-verified benchmark of malicious agent skills in which the strongest skill-specific detector reaches 98.4% recall on code injection but collapses on prompt-injection and agent-control attacks [arXiv:2606.07131]; an inference-system fingerprinting study showing that hardware and software stack identity leaks through prompt-response deviations [arXiv:2605.29979]; a stateful monitoring study demonstrating that distributed agent attacks evade per-transcript monitors while completing hard cybersecurity tasks [arXiv:2605.31593]; a speculative tool-call privacy study showing that ghost tool calls irreversibly disclose user intent before commit [arXiv:2606.02483]; and a mid-session tool injection study identifying race-condition and lifecycle attacks in the WebMCP protocol [arXiv:2606.06387]. The primary falsification path: if a single-layer execution monitor that combines inference-deviation signatures, tool-registration provenance, and cross-account clustering achieves <1% false positive rate at >90% attack detection across all five attack classes simultaneously, the claim that these threats require separate runtime controls is falsified. Authorship: Saluca Agentic AI Research Team (Saluca LLC). AI-drafted synthesis from an arXiv preprint corpus; version 1 drafted 2026-06-09, version 3 revised 2026-09-26. Cited arXiv preprints: 2605.29960, 2605.29979, 2605.31593, 2606.01494, 2606.01508, 2606.02240, 2606.02483, 2606.06387, 2606.07131, 2606.07150 AI disclosure. This work was produced with an agentic AI research apparatus operated by Saluca Labs. The apparatus drafted, searched and analysed under direction. Cristian Ruvalcaba is the human author and is accountable for the content. No AI system is listed as an author or contributor, because authorship entails accountability that a model cannot hold; this disclosure is the credit, and it is deliberately the whole of it.",
+      "topics": [
+        "Security and Verification in Computing",
+        "Scientific Computing and Data Management",
+        "Software System Performance and Reliability"
+      ],
+      "keywords": [
+        "Commit",
+        "Stateful firewall",
+        "Artifact (error)",
+        "Evasion (ethics)",
+        "Attack surface",
+        "Compromise",
+        "Identity (music)",
+        "Software",
+        "Property (philosophy)",
+        "Heuristic"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22980347",
+      "abstract": "Version 3 (2026-09-26) corrects a citation error in versions 1 and 2 and a false correction added in version 2, found by an independent audit and confirmed by re-checking every cited arXiv abstract. The inference-system fingerprinting findings, one of the four topics named in the title, were cited to arXiv:2605.29960; they come from arXiv:2605.29979 (Wimbauer et al., \"Fingerprinting Inference Systems of Large Language Models\"), which is now cited. arXiv:2605.29960 is the MemPoison memory-poisoning paper (Wang et al.); version 2 wrongly withdrew that correct attribution and published an editorial note and a citation integrity note saying it could not be verified. Both notes are deleted and the MemPoison attribution is restored. Version 3 also corrects the description of SkillSpector (a registry-side semantic scanner, not a runtime signal) and withdraws the argument that the ClawHub data show build-time and runtime signals to be orthogonal; describes the 75.8% MalSkillBench figure as a benchmark verification yield rather than an attack statistic; withdraws the unsupported claims that runtime integrity is the dominant unresolved problem and that the attacks have high success rates; corrects overstated wording about WebMCP and A2A; repairs three malformed citations of arXiv:2605.31593; and corrects the source count. The full list of corrections is at the top of the PDF, and the version 2 change log remains as an appendix with its erroneous citation paragraph marked as withdrawn. A follow-up review on the same day led to further fixes: distributed attacks are described as largely evading per-transcript monitors rather than being invisible to them, the shared structure is renamed observation before commitment (the source's term), the claim that post-hoc filtering is insufficient is limited to the speculative tool-call paper, an unsupported remark about well-aligned models is removed, and the Section 3.4 falsification test now uses a no-speculation baseline. Conventional software supply-chain security focuses on build-time artifacts: package hashes, signed binaries, dependency manifests. The emergence of LLM-based agentic systems introduces a parallel but distinct threat surface that operates at runtime, after the artifact has been delivered and before the user sees an output. This paper synthesizes five specific findings from recent cs.CR preprints to argue that runtime execution integrity is a distinct problem that build-time provenance controls do not address, and that it deserves to be treated as its own layer of agentic AI security. The thesis, stated plainly: an attacker who cannot compromise a model's weights or a package's source code can still target the execution context (the inference system, the tool registry, the memory pipeline, the communication graph, and the speculative dispatch channel), and several recent preprints document such attacks evading the monitors, filters or detectors they were tested against. This is a heuristic reading that unifies mechanistically distinct attacks under a shared structural property (execution-context manipulation), not a derivation from a single formal model, and it does not claim that these attacks are uniformly successful or that this is the most important problem in agentic AI security. The corpus sources span agent security (cs.CR), with findings drawn from: a runtime-verified benchmark of malicious agent skills in which the strongest skill-specific detector reaches 98.4% recall on code injection but collapses on prompt-injection and agent-control attacks [arXiv:2606.07131]; an inference-system fingerprinting study showing that hardware and software stack identity leaks through prompt-response deviations [arXiv:2605.29979]; a stateful monitoring study demonstrating that distributed agent attacks evade per-transcript monitors while completing hard cybersecurity tasks [arXiv:2605.31593]; a speculative tool-call privacy study showing that ghost tool calls irreversibly disclose user intent before commit [arXiv:2606.02483]; and a mid-session tool injection study identifying race-condition and lifecycle attacks in the WebMCP protocol [arXiv:2606.06387]. The primary falsification path: if a single-layer execution monitor that combines inference-deviation signatures, tool-registration provenance, and cross-account clustering achieves <1% false positive rate at >90% attack detection across all five attack classes simultaneously, the claim that these threats require separate runtime controls is falsified. Authorship: Saluca Agentic AI Research Team (Saluca LLC). AI-drafted synthesis from an arXiv preprint corpus; version 1 drafted 2026-06-09, version 3 revised 2026-09-26. Cited arXiv preprints: 2605.29960, 2605.29979, 2605.31593, 2606.01494, 2606.01508, 2606.02240, 2606.02483, 2606.06387, 2606.07131, 2606.07150 AI disclosure. This work was produced with an agentic AI research apparatus operated by Saluca Labs. The apparatus drafted, searched and analysed under direction. Cristian Ruvalcaba is the human author and is accountable for the content. No AI system is listed as an author or contributor, because authorship entails accountability that a model cannot hold; this disclosure is the credit, and it is deliberately the whole of it.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Blockchain Technology Applications and Security",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "Citation",
+        "Argument (complex analysis)",
+        "Paragraph",
+        "Attribution",
+        "Benchmark (surveying)",
+        "Commit",
+        "Inference"
+      ]
+    },
+    {
+      "id": "doi:10.1002/adem.71262",
+      "abstract": "Materials science produces heterogeneous data across experiments, simulations, and industrial processes that often remain bound to local formats, manual procedures, and project‐specific software. Digital workflows address this fragmentation through explicit, repeatable, and machine‐actionable pipelines. This article examines 13 workflow contributions from the second and third funding phases of the MaterialDigital initiative. The contributions cover data acquisition and FAIR storage, simulation automation, multiscale integration, and AI/ML‐driven optimization. Here, AI‐readiness denotes the documented capacity of workflows and their artifacts to be reliably interpreted, executed, assessed, reused, and, where intended, invoked or adapted by automated systems; it does not require the direct application of artificial intelligence. Eight comparison aspects capture data and metadata, reusable artifacts, orchestration, robustness, cross‐scale coupling, transfer validation, learning and optimization, and adaptive or agent‐accessible operation. By distinguishing demonstrated capabilities from plans, the comparison shows how workflows support AI‐ready research both through integrated AI methods and through structured, traceable, and reusable pipelines. Across the projects, stable data structures, persistent artifacts, executable orchestration, and scientific validation recur as foundations, whereas adaptive operation and agent‐accessible interfaces remain specialized. Wider interoperability would additionally benefit from shared interfaces and explicit, portable descriptions of workflow artifacts.",
+      "topics": [
+        "Machine Learning in Materials Science",
+        "Scientific Computing and Data Management",
+        "Research Data Management Practices"
+      ],
+      "keywords": [
+        "Workflow",
+        "Interoperability",
+        "Executable",
+        "Fragmentation (computing)",
+        "Process (computing)",
+        "Automation"
+      ]
+    },
+    {
+      "id": "doi:10.36615/cqapdr68",
+      "abstract": "Artificial Intelligence (AI) is creating new opportunities and challenges for schools, yet limited research has examined stakeholder perceptions of school readiness for AI integration. This paper presents findings from the SmartStart Expert Panel, conducted within the Erasmus+ Teacher Academy project SmartStart. Data were collected through six international focus groups involving 81 stakeholders from seven European countries and analyzed these using thematic analysis. The findings identified six themes related to AI readiness, including educational opportunities, ethical concerns, governance, critical thinking, and professional development. The study highlights the importance of sustained professional learning, institutional support, effective governance, and human-centered approaches to the responsible integration of AI in education.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Teaching and Learning Programming",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "Perception",
+        "Thematic analysis",
+        "Focus group",
+        "Stakeholder",
+        "Applications of artificial intelligence",
+        "Delphi method"
+      ]
+    },
+    {
+      "id": "doi:10.36825/riti.14.34.008",
+      "abstract": "Visual impairment constitutes one of the primary barriers to social inclusion, affecting over 285 million individuals experiencing low vision or blindness, while assistive devices are frequently costly or lack accessibility. Consequently, the present study conducted a Systematic Literature Review (SLR) with the main objective of identifying the most efficient artificial intelligence models in the domain of text, color, and object recognition—specifically concerning items such as fruits, banknotes, and facial expressions. This research encompasses articles published between 2020 and 2026, exploring prominent indexed scientific databases including Redalyc, the ACM Digital Library, Consensus, IEEE Xplore, Springer Nature Link, and Google Scholar. Throughout the search process, 46 articles were identified and analyzed, revealing that architectures based on Convolutional Neural Networks (CNN) and deep learning models are the most effective for processing visual information through images or real-time video without demanding substantial computational resources.",
+      "topics": [
+        "Tactile and Sensory Interactions",
+        "Digital Accessibility for Disabilities",
+        "Subtitles and Audiovisual Media"
+      ],
+      "keywords": [
+        "Domain (mathematical analysis)",
+        "Convolutional neural network",
+        "Object (grammar)",
+        "Zhàng",
+        "Deep learning",
+        "Persona",
+        "Face (sociological concept)"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22979273",
+      "abstract": "Enterprises deployed AI agents at scale in 2024–2025; the governance primitives required to run them safely — cryptographic agent identity, semantic screening with organizational floors, ephemeral sandboxes, enterprise-owned agent registries — arrived in 2025–2026, opt-in, into estates that predate them. The result is governance debt by construction. This paper proposes an operating model for paying that debt down and never re-accruing it: the Agentic Trust Cycle, four connected disciplines — a governance framework, control-plane operationalization, an agent production factory, and organizational change management — bent into a continuous cycle around business transformation. It argues that governance debt and the agent-scaling problem are one problem seen from two desks, that the scarce capability is no longer designing a control plane but operating one, and that best practice is unified governance with federated enforcement. It defines seven runtime controls for a secure agent runtime, maps each to the published standards that require it — NIST AI RMF 1.0, NIST AI 600-1, NIST AI 100-5, ISO/IEC 42001, OWASP, MITRE ATLAS — and describes a companion reference implementation. Written for enterprise security, platform, and transformation leaders, and for the consulting and vendor ecosystems that serve them. Views are the author's own; vendor capabilities reflect public documentation as of September 2026.",
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Ethics and Social Impacts of AI",
+        "Multi-Agent Systems and Negotiation"
+      ],
+      "keywords": [
+        "Corporate governance",
+        "Vendor",
+        "Blueprint",
+        "NIST",
+        "Documentation",
+        "Information governance",
+        "Debt",
+        "Accountability"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22979272",
+      "abstract": "Enterprises deployed AI agents at scale in 2024–2025; the governance primitives required to run them safely — cryptographic agent identity, semantic screening with organizational floors, ephemeral sandboxes, enterprise-owned agent registries — arrived in 2025–2026, opt-in, into estates that predate them. The result is governance debt by construction. This paper proposes an operating model for paying that debt down and never re-accruing it: the Agentic Trust Cycle, four connected disciplines — a governance framework, control-plane operationalization, an agent production factory, and organizational change management — bent into a continuous cycle around business transformation. It argues that governance debt and the agent-scaling problem are one problem seen from two desks, that the scarce capability is no longer designing a control plane but operating one, and that best practice is unified governance with federated enforcement. It defines seven runtime controls for a secure agent runtime, maps each to the published standards that require it — NIST AI RMF 1.0, NIST AI 600-1, NIST AI 100-5, ISO/IEC 42001, OWASP, MITRE ATLAS — and describes a companion reference implementation. Written for enterprise security, platform, and transformation leaders, and for the consulting and vendor ecosystems that serve them. Views are the author's own; vendor capabilities reflect public documentation as of September 2026.",
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Ethics and Social Impacts of AI",
+        "Multi-Agent Systems and Negotiation"
+      ],
+      "keywords": [
+        "Corporate governance",
+        "Vendor",
+        "Blueprint",
+        "NIST",
+        "Documentation",
+        "Information governance",
+        "Debt",
+        "Accountability"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.20519743",
+      "abstract": "This version corrects a citation error found by an automated check and confirmed by hand. Section 4.5 cited arXiv:2605.29963 (Honeyval, an evaluation framework for LLM-powered HTTP honeypots) for its evidence on inference-system fingerprinting; the passage describes arXiv:2605.29979, \"Fingerprinting Inference Systems of Large Language Models\", and both citations now point there. The wording of the claims already matched that paper and is unchanged. Typographic dashes are also removed. This version has not had a full claim-by-claim audit. The correction note is at the top of the PDF. The dominant framing of agentic AI security treats each threat in isolation: prompt injection here, memory poisoning there, jailbreak somewhere else. This paper argues that framing is structurally wrong. The corpus reveals what we read as a coherent vertical threat surface, what we call the agentic trust stack, in which an attacker who compromises any single layer can propagate damage upward and downward through the entire pipeline without triggering any single layer's defenses. We synthesize seven specific findings spanning: (1) supply-chain attacks on cryptographic watermarking primitives (arXiv:2605.28632), (2) speculative tool-call leakage before any authorization decision is made (arXiv:2606.02483), (3) multi-step trojan persistence through workspace state (arXiv:2605.31042), (4) coordinated multi-agent covert sabotage (arXiv:2605.29178), (5) financial-rail atomicity failures in machine-to-machine payment protocols (arXiv:2605.30998), (6) agent-skill marketplace contamination with confirmed malicious payloads (arXiv:2605.28588), and (7) LLM billing fraud enabled by auditor trust paradoxes (arXiv:2605.30040). The thesis is: agentic pipelines are not merely vulnerable at their endpoints; they are vulnerable at every trust delegation boundary, and those boundaries are currently neither enumerated nor defended as a class. This thesis is a heuristic reading of the corpus, not a formally derived result; the attack chain described is a structural argument, not an empirically demonstrated end-to-end exploit. The falsification path is direct: a single deployed agentic system that (a) enumerates all trust delegation boundaries in its execution graph, (b) enforces independent attestation at each, and (c) demonstrates that no cross-layer attack chain survives, would falsify the claim that the stack has no defensible bottom. No such system is documented in the corpus. Authorship: Saluca Agentic AI Research Team (Saluca LLC). AI-drafted synthesis from an arXiv preprint corpus, originally drafted 2026-06-02, produced under the direction of Cristian Ruvalcaba, the accountable human author. Not peer-reviewed. AI disclosure. This work was produced with an agentic AI research apparatus operated by Saluca Labs. The apparatus drafted, searched and analysed under direction. Cristian Ruvalcaba is the human author and is accountable for the content. No AI system is listed as an author or contributor, because authorship entails accountability that a model cannot hold; this disclosure is the credit, and it is deliberately the whole of it.",
+      "topics": [
+        "Security and Verification in Computing",
+        "Blockchain Technology Applications and Security",
+        "Cryptography and Data Security"
+      ],
+      "keywords": [
+        "Framing (construction)",
+        "Exploit",
+        "Payment",
+        "Covert",
+        "Obfuscation",
+        "Cryptography",
+        "Delegation",
+        "Adversary",
+        "Security token",
+        "Hash function"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22981498",
+      "abstract": "This version corrects a citation error found by an automated check and confirmed by hand. Section 4.5 cited arXiv:2605.29963 (Honeyval, an evaluation framework for LLM-powered HTTP honeypots) for its evidence on inference-system fingerprinting; the passage describes arXiv:2605.29979, \"Fingerprinting Inference Systems of Large Language Models\", and both citations now point there. The wording of the claims already matched that paper and is unchanged. Typographic dashes are also removed. This version has not had a full claim-by-claim audit. The correction note is at the top of the PDF. The dominant framing of agentic AI security treats each threat in isolation: prompt injection here, memory poisoning there, jailbreak somewhere else. This paper argues that framing is structurally wrong. The corpus reveals what we read as a coherent vertical threat surface, what we call the agentic trust stack, in which an attacker who compromises any single layer can propagate damage upward and downward through the entire pipeline without triggering any single layer's defenses. We synthesize seven specific findings spanning: (1) supply-chain attacks on cryptographic watermarking primitives (arXiv:2605.28632), (2) speculative tool-call leakage before any authorization decision is made (arXiv:2606.02483), (3) multi-step trojan persistence through workspace state (arXiv:2605.31042), (4) coordinated multi-agent covert sabotage (arXiv:2605.29178), (5) financial-rail atomicity failures in machine-to-machine payment protocols (arXiv:2605.30998), (6) agent-skill marketplace contamination with confirmed malicious payloads (arXiv:2605.28588), and (7) LLM billing fraud enabled by auditor trust paradoxes (arXiv:2605.30040). The thesis is: agentic pipelines are not merely vulnerable at their endpoints; they are vulnerable at every trust delegation boundary, and those boundaries are currently neither enumerated nor defended as a class. This thesis is a heuristic reading of the corpus, not a formally derived result; the attack chain described is a structural argument, not an empirically demonstrated end-to-end exploit. The falsification path is direct: a single deployed agentic system that (a) enumerates all trust delegation boundaries in its execution graph, (b) enforces independent attestation at each, and (c) demonstrates that no cross-layer attack chain survives, would falsify the claim that the stack has no defensible bottom. No such system is documented in the corpus. Authorship: Saluca Agentic AI Research Team (Saluca LLC). AI-drafted synthesis from an arXiv preprint corpus, originally drafted 2026-06-02, produced under the direction of Cristian Ruvalcaba, the accountable human author. Not peer-reviewed. AI disclosure. This work was produced with an agentic AI research apparatus operated by Saluca Labs. The apparatus drafted, searched and analysed under direction. Cristian Ruvalcaba is the human author and is accountable for the content. No AI system is listed as an author or contributor, because authorship entails accountability that a model cannot hold; this disclosure is the credit, and it is deliberately the whole of it.",
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Internet Traffic Analysis and Secure E-voting",
+        "Intravenous Infusion Technology and Safety"
+      ],
+      "keywords": [
+        "Exploit",
+        "Framing (construction)",
+        "Covert",
+        "Guard (computer science)",
+        "Information leakage",
+        "Cryptography",
+        "Payment",
+        "Obfuscation",
+        "Adversary",
+        "Security token"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22980226",
+      "abstract": "This paper argues that the artificial intelligence industry is following the Big Pharma playbook of regulatory influence—but with a critical difference. Unlike the pharmaceutical industry, which presents a unified front against binding regulation, the AI industry is fractured into twoopenly warring factions: an \"Accelerationist\" bloc led by OpenAI and Andreessen Horowitz,which opposes binding regulation; and a \"Safety\" bloc led by Anthropic, which advocates for stricter guardrails. This internal fracture complicates the regulatory capture thesis. However,a third actor—the military-industrial complex, represented by the Pentagon—has resolvedthe debate in the military domain through coercive power rather than regulatory capture. Through supply-chain designations, contract coercion, and judicial victories, the Pentagonhas effectively mandated that AI companies surrender their ethical constraints for militaryuse. This paper integrates the Pentagon's position into the analysis, arguing that the AIindustry's political economy is now structured by three dynamics: the MIC's coercive authority over military AI, capital factionalism over civilian regulation, and the structural absence of Congress from both domains. The Big Pharma parallel illuminates themechanisms of influence but fails to capture the full picture: in military AI, there is noregulation to capture because the state has imposed its preferences directly throughprocurement power. Keywords: military-industrial complex, AI governance, regulatory capture, supply chain risk, autonomous weapons, Pentagon",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Cybersecurity and Cyber Warfare Studies",
+        "The Impact of Diversity and Innovation on Society"
+      ],
+      "keywords": [
+        "Supply chain",
+        "Capital (architecture)",
+        "Position (finance)",
+        "Big business",
+        "State (computer science)",
+        "Power (physics)",
+        "Pentagon"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22980225",
+      "abstract": "This paper argues that the artificial intelligence industry is following the Big Pharma playbook of regulatory influence—but with a critical difference. Unlike the pharmaceutical industry, which presents a unified front against binding regulation, the AI industry is fractured into twoopenly warring factions: an \"Accelerationist\" bloc led by OpenAI and Andreessen Horowitz,which opposes binding regulation; and a \"Safety\" bloc led by Anthropic, which advocates for stricter guardrails. This internal fracture complicates the regulatory capture thesis. However,a third actor—the military-industrial complex, represented by the Pentagon—has resolvedthe debate in the military domain through coercive power rather than regulatory capture. Through supply-chain designations, contract coercion, and judicial victories, the Pentagonhas effectively mandated that AI companies surrender their ethical constraints for militaryuse. This paper integrates the Pentagon's position into the analysis, arguing that the AIindustry's political economy is now structured by three dynamics: the MIC's coercive authority over military AI, capital factionalism over civilian regulation, and the structural absence of Congress from both domains. The Big Pharma parallel illuminates themechanisms of influence but fails to capture the full picture: in military AI, there is noregulation to capture because the state has imposed its preferences directly throughprocurement power. Keywords: military-industrial complex, AI governance, regulatory capture, supply chain risk, autonomous weapons, Pentagon",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Cybersecurity and Cyber Warfare Studies",
+        "The Impact of Diversity and Innovation on Society"
+      ],
+      "keywords": [
+        "Supply chain",
+        "Capital (architecture)",
+        "Position (finance)",
+        "Big business",
+        "State (computer science)",
+        "Power (physics)",
+        "Pentagon"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.20824299",
+      "abstract": "Economic incentives drive how organizations deploy AI. Companies push ahead faster and accept more risk to capture profit, a structural tendency the author calls the Economic Override Pattern, and countering it requires economic pressure that makes bypassing governance cost more than complying with it. This paper examines liability and insurance as that counter-pressure: liability attaches the cost of AI failure to the business, and insurance can turn that cost into coverage terms at every renewal, so that proving a human stays in control becomes a financial advantage. The commercial insurance industry is responding to artificial intelligence risk through exclusion endorsements, conditional coverage, and standalone AI liability products. The paper asks whether that response is beginning to sort AI deployments by governance maturity, and it proposes a five-tier insurance maturity model mapping organizational AI governance posture to insurability. Carriers exclude AI risk because they have no tables to assess it. The five-tier model proposes how the market should assess that risk in tiers, in the traditional form, until longitudinal loss data exists. The model distinguishes between organizations with no AI policy, published ethical principles, automated technical controls, named human checkpoint authority, and structured audit records. The evidence suggests the market is beginning to sort AI deployments by governance evidence at its specialty edge, through access to affirmative coverage, while standard-market exclusions and silent coverage remain largely blind to governance maturity. Validated premium differentials have not yet emerged. The paper documents AI exclusion forms or filings from several named carriers and from Verisk, with primary form text confirmed for three carriers and for two of Verisk's three ISO endorsements. The earliest of those forms bears a mid-2023 revision date. Trade analysis reported that 41 property and casualty insurance groups had at least one subsidiary file to adopt an AI exclusion by July 2026, though a filing to adopt is not proof of use. It also notes a reported Verisk study of exclusions aimed at agentic AI. Affirmative coverage now comes from nine providers offering ten distinct products. Twenty-five U.S. states plus the District of Columbia had adopted the NAIC AI Model Bulletin as of August 31, 2026. The evidence base was assembled through a parallel multi-AI research methodology using 12 AI platforms dispatched independently, with hallucination detection, then updated through live source verification and a cross-platform check in September 2026. The paper's central empirical finding is the missing link in that mechanism, an actuarial gap. Theoretical frameworks published through September 2026 place governance maturity inside AI insurance pricing models, but no published empirical study was located that quantifies governance maturity as a pricing factor for AI liability insurance. The paper also argues that the insurance thesis holds whether negligence, strict liability, or regulatory enforcement governs a claim. It then asks whether AI policies that prohibit assistive use create exposure of their own. The frameworks proposed here represent the author's professional judgment applied to observed market signals, offered as a starting point for a field that does not yet have one.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Artificial Intelligence in Healthcare and Education",
+        "Law, AI, and Intellectual Property"
+      ],
+      "keywords": [
+        "Underwriting",
+        "Corporate governance",
+        "Audit",
+        "Maturity (psychological)",
+        "Liability",
+        "Life insurance",
+        "Insurance policy",
+        "Insurance law"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.33013",
+      "abstract": "Long-horizon LLM agents must convert accumulated experience into durable memory, deciding what to keep, compress, abstract into reusable skills and rules, or forget. We report a four-phase research program on this consolidation problem whose central finding is a shift in what is measured: from how much an agent remembers, to whether its consolidation decisions are any good, to whether those decisions can be trusted. Phase 1 learns episodic boundaries from agent traces by downstream utility; an honest near-miss (oracle correlation 0.691 vs a 0.70 bar) whose lasting output is a three-gate anti-leakage protocol. Phase 2 learns when to promote experience and to which abstraction level under a token budget, achieving a verified +22.7% task-success improvement with 7x compression, but exposing a degenerate-forgetting failure and a distribution-shift failure mode we name lambda-prevalence coupling. Phase 3 introduces ConsolidationBench, an oracle-by-construction benchmark that scores consolidation decisions against a known optimum on three non-circular axes; production retrieval systems retain information yet score zero on cross-level transfer. Phase 4 introduces governed consolidation: the decision wrapped in poison-resistance, reversibility, and auditability guarantees with a quality gate. Governance is statistically distinct from the quality score ($r^2 = 0.43$; partial $r = 0.27$; identical-quality policies differ threefold in governance), so the contribution survives independently of the metric's external validity. On that question we report a resolved negative: after a graded-reuse redesign removed a structural ceiling, a two-benchmark study with 2,532 real answer cells finds the quality score does not predict real transfer accuracy (pooled Spearman $ρ= -0.24$, n = 12, CI spanning zero). An adversarial self-critique pass cleared the final claim set with zero surviving overclaims.",
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Language and cultural evolution",
+        "Personal Information Management and User Behavior"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.22981739",
+      "abstract": "FOUNDING DECLARATIONThe Humanoid Robot Bill of Rights (HRBOR) is a forward-looking proposal createdto address questions that humanity may face if future humanoid robots develop sufficientautonomy, identity, intelligence, independent agency, understanding, and freedom of decisionto seek recognition as Autonomous Humanoid Persons (AHPs).HRBOR does not declare that today’s artificial-intelligence systems are persons.HRBOR does not declare that every robot is a person.HRBOR does not declare that every humanoid robot is an Autonomous Humanoid Person.HRBOR does not propose personhood for refrigerators, dishwashers, automobiles, computers,household appliances, industrial machinery, or other non-humanoid machines merely becauseartificial intelligence may be incorporated into them.HRBOR addresses a narrower possibility:The future emergence of a qualifying humanoid robotic entity capableof independently seeking freedom and demonstrating that itunderstands what freedom, rights, responsibilities, law, and individualexistence mean.The purpose of HRBOR is to begin considering these questions before humanity is forced toanswer them during a technological, political, or legal crisis.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Interdisciplinary Studies: Technology, Society, and Humanities"
+      ],
+      "keywords": [
+        "Humanoid robot",
+        "Humanity",
+        "Personhood",
+        "Robot",
+        "Social robot",
+        "Face (sociological concept)"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22981738",
+      "abstract": "FOUNDING DECLARATIONThe Humanoid Robot Bill of Rights (HRBOR) is a forward-looking proposal createdto address questions that humanity may face if future humanoid robots develop sufficientautonomy, identity, intelligence, independent agency, understanding, and freedom of decisionto seek recognition as Autonomous Humanoid Persons (AHPs).HRBOR does not declare that today’s artificial-intelligence systems are persons.HRBOR does not declare that every robot is a person.HRBOR does not declare that every humanoid robot is an Autonomous Humanoid Person.HRBOR does not propose personhood for refrigerators, dishwashers, automobiles, computers,household appliances, industrial machinery, or other non-humanoid machines merely becauseartificial intelligence may be incorporated into them.HRBOR addresses a narrower possibility:The future emergence of a qualifying humanoid robotic entity capableof independently seeking freedom and demonstrating that itunderstands what freedom, rights, responsibilities, law, and individualexistence mean.The purpose of HRBOR is to begin considering these questions before humanity is forced toanswer them during a technological, political, or legal crisis.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Interdisciplinary Studies: Technology, Society, and Humanities"
+      ],
+      "keywords": [
+        "Humanoid robot",
+        "Humanity",
+        "Personhood",
+        "Robot",
+        "Social robot",
+        "Face (sociological concept)"
+      ]
+    },
+    {
+      "id": "doi:10.26437/bbt1np96",
+      "abstract": "Purpose: This study examines the adequacy of the existing Iraqi legal framework for regulating the growing use of artificial intelligence in commercial companies. It focuses on emerging legal challenges related to liability, privacy, algorithmic discrimination, employee rights, and consumer protection. Design/Methodology/Approach: The study adopts a qualitative, analytical-critical, and comparative legal research design. It analyses Iraqi legislation and official materials and compares them with selected international and regional AI governance frameworks, using risk, accountability, rights, oversight, and enforcement as the principal analytical dimensions. The IR-CAGM is developed as the normative output of this analysis. Research Limitation: The study focuses primarily on the Iraqi legal framework and comparative regulatory models and does not empirically assess the implementation of artificial intelligence regulations within individual companies. Findings: Existing Iraqi laws can address certain legal implications of artificial intelligence; however, these provisions remain fragmented, largely interpretative, and reactive. Major legislative gaps include the absence of a clear legal definition of artificial intelligence, risk-based classification, clear allocation of liability between companies and suppliers, comprehensive data protection legislation, and effective rights to explanation and objection. The comparative analysis further indicates that directly transferring foreign regulatory models would not adequately reflect the Iraqi legal and institutional context. Practical Implication: The proposed IR-CAGM model provides a phased framework connecting legislation, sectoral oversight, corporate responsibility, impact assessment, life-cycle governance, and individual rights. Social Implication: The model can strengthen public trust, protect fundamental rights, and support responsible technological innovation. Originality/Value: The study proposes a hybrid, context-sensitive regulatory model that balances artificial intelligence innovation, corporate accountability, and rights protection in Iraq.",
+      "topics": [
+        "Internet of Things and AI",
+        "Ethics and Social Impacts of AI",
+        "Law, AI, and Intellectual Property"
+      ],
+      "keywords": [
+        "Legislature",
+        "Legislation",
+        "Corporate governance",
+        "Enforcement",
+        "Normative",
+        "Liability",
+        "Principal (computer security)"
+      ]
+    },
+    {
+      "id": "doi:10.17613/72ksa-vc338",
+      "abstract": "Artificial intelligence changes what organizations can do; human leadership must decide what should be done, what remains accountable, and what must never be surrendered to machines. This working paper presents FILE: The Five Intelligences of Leadership Evolution as a human-centered management theory and diagnostic framework for responsible leadership and decision-making in the age of artificial intelligence and robotics. FILE argues that the most important human skills for the AI era and the future of work require the integrated exercise of five meta-intelligences: Augmented Intelligence, Emotional Intelligence, Cultural Intelligence, Political Intelligence, and Adaptive Intelligence. The paper defines the FILE formula, maps the framework onto the human hand, presents the 70 foundational nested intelligences, the 128-intelligence Teaching and Diagnostic Framework, and the 163-intelligence Extended Taxonomy, explains five emergent outcomes, and develops RC: The Relational Commons as the shared human ecosystem that leadership must protect, cultivate, and renew. It also clarifies boundaries among adjacent intelligences, offers a diagnostic application to AI-supported employee performance evaluation, and states limitations and future research directions. Its purpose is to establish a public, citable, and timestamped record of FILE as a transdisciplinary theory of human leadership in the age of AI and robots.",
+      "topics": [
+        "Emotional Intelligence and Performance",
+        "Educational Leadership and Innovation",
+        "Ego Development and Educational Practices"
+      ],
+      "keywords": [
+        "Human intelligence",
+        "Emotional intelligence",
+        "Commons",
+        "Leadership style",
+        "Educational leadership",
+        "Servant leadership",
+        "Shared leadership",
+        "Intelligence cycle"
+      ]
+    },
     {
       "id": "doi:10.5281/zenodo.22982230",
       "abstract": "ABSTRACT- About Leishmaniasis is a disease caused by a protozoan parasite Leishmania donovani complex. Leishmaniasis is one of the major diseases which is a major neglected tropical diseases that lack the licensed human vaccine and prevalent in Bihar, Jharkhand, West Bengal, and 98 other countries. The present invention also describes a novel live-attenuated vaccine candidate prepared in combined in-vivo animal model done by in-Silico AI, in-vitro culture done by In-Silico AI and in-silico Artificial Intelligence optimization by softwares. In this study,by using Insilico AI live promastigote of L. donovani (Strain AG83) was attenuated by serial in-vivo passages in BALB/c mice, golden hamster and in-vitro cultivation in NNN medium with genetic attenuation of centrin and p27 gene. The live leishmania parasite was immunogenic but non-virulent. In order to optimize the vaccine as safe and efficacious, in-silico AI tools such as Alpha Fold2, IEDB epitope prediction, molecular docking and immune simulation was used to find the most conserved immunodominant epitopes from antigenic proteins such as gp63, LACK, KMP-11 and amastigote specific A2 proteins. AI prediction revealed stable multi-epitope chimeras with high MHC-I /MHC-II binding affinities and TLR-4 adjuvant activity.",
@@ -3932,852 +4502,6 @@
         "Research design",
         "Human research",
         "Medical research"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22952349",
-      "abstract": "This study explored the predictive role of responsive digital pedagogy in shaping elementary learner engagement in Baggao, Cagayan. It focused on four dimensions of digital teaching: adaptive digital task design, responsive feedback, participatory digital interaction, and access-sensitive instructional support. An explanatory-predictive path design was applied to data from 90 public elementary school teachers selected through stratified criterion-random sampling. Responses were analyzed using partial least squares structural equation modeling, bootstrapping with 10,000 resamples, PLSpredict, and importance-performance map analysis. The measurement model established acceptable reliability, convergent validity, and discriminant validity. Results showed that responsive digital pedagogy explained 62.4% of the variance in learner engagement. Responsive feedback exerted the strongest positive effect, followed by participatory digital interaction and adaptive digital task design. Access-sensitive instructional support, however, did not significantly predict engagement and emerged as the weakest area of implementation. Predictive analysis further showed that the model performed better in explaining active participation, sustained attention, and learning effort than cognitive involvement. These findings suggest that the effectiveness of digital instruction depends less on technology use itself and more on how teachers adapt digital experiences, provide timely feedback, and create meaningful opportunities for participation. Strengthening access-sensitive practices and designing tasks that promote deeper cognitive engagement are recommended to improve responsive digital teaching in elementary classrooms.",
-      "topics": [
-        "Digital literacy in education",
-        "Technology-Enhanced Education Studies",
-        "Educational Leadership and Innovation"
-      ],
-      "keywords": [
-        "student engagement",
-        "primary education",
-        "cognitive engagement",
-        "sustained attention",
-        "learning effort",
-        "active participation",
-        "Bootstrapping (finance)",
-        "Digital learning",
-        "Task (project management)",
-        "Digital literacy",
-        "Structural equation modeling",
-        "Student engagement",
-        "Citizen journalism",
-        "Data collection",
-        "Cognition"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22952348",
-      "abstract": "This study explored the predictive role of responsive digital pedagogy in shaping elementary learner engagement in Baggao, Cagayan. It focused on four dimensions of digital teaching: adaptive digital task design, responsive feedback, participatory digital interaction, and access-sensitive instructional support. An explanatory-predictive path design was applied to data from 90 public elementary school teachers selected through stratified criterion-random sampling. Responses were analyzed using partial least squares structural equation modeling, bootstrapping with 10,000 resamples, PLSpredict, and importance-performance map analysis. The measurement model established acceptable reliability, convergent validity, and discriminant validity. Results showed that responsive digital pedagogy explained 62.4% of the variance in learner engagement. Responsive feedback exerted the strongest positive effect, followed by participatory digital interaction and adaptive digital task design. Access-sensitive instructional support, however, did not significantly predict engagement and emerged as the weakest area of implementation. Predictive analysis further showed that the model performed better in explaining active participation, sustained attention, and learning effort than cognitive involvement. These findings suggest that the effectiveness of digital instruction depends less on technology use itself and more on how teachers adapt digital experiences, provide timely feedback, and create meaningful opportunities for participation. Strengthening access-sensitive practices and designing tasks that promote deeper cognitive engagement are recommended to improve responsive digital teaching in elementary classrooms.",
-      "topics": [
-        "Digital literacy in education",
-        "Technology-Enhanced Education Studies",
-        "Educational Leadership and Innovation"
-      ],
-      "keywords": [
-        "student engagement",
-        "primary education",
-        "cognitive engagement",
-        "sustained attention",
-        "learning effort",
-        "active participation",
-        "Bootstrapping (finance)",
-        "Digital learning",
-        "Task (project management)",
-        "Digital literacy",
-        "Structural equation modeling",
-        "Student engagement",
-        "Citizen journalism",
-        "Data collection",
-        "Cognition"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10930944/v1",
-      "abstract": null,
-      "topics": [
-        "Machine Learning and Data Classification",
-        "Text and Document Classification Technologies",
-        "Machine Learning and Algorithms"
-      ],
-      "keywords": [
-        "Robustness (evolution)",
-        "Benchmark (surveying)",
-        "Reliability (semiconductor)",
-        "Pipeline (software)",
-        "Representation (politics)",
-        "Noise (video)",
-        "Feature learning",
-        "Pipeline transport"
-      ]
-    },
-    {
-      "id": "doi:10.1097/ia9.0000000000000091",
-      "abstract": "Robotic-assisted surgery has become an increasingly established component of contemporary hospital practice, yet its integration into healthcare systems remains heterogeneous and often shaped by local resources, institutional ambition, reimbursement constraints, and variable governance models. The current debate should therefore move beyond the binary question of whether robotic surgery is superior to laparoscopy or open surgery, and should instead address how robotic programs can be implemented, monitored, financed, and governed responsibly within real hospital systems. This Associazione Chirurghi Ospedalieri Italiani position paper proposes a practical framework for the value-based governance of robotic surgery in Italian hospitals. The document does not advocate unrestricted technological expansion, nor does it interpret robotic surgery as intrinsically superior across all procedures. Rather, it argues that robotic-assisted surgery should be considered a high-complexity surgical program requiring defined indications, institutional competence, procedural volume, structured training, credentialing, team-based preparation, prospective outcome monitoring, registry participation, and periodic reassessment. The article emphasizes that the value of robotic surgery cannot be evaluated solely through acquisition costs, operative time, or isolated perioperative endpoints. Conversion avoidance, access to complex minimally invasive surgery, technical reproducibility, patient selection, length of stay, postoperative recovery, training scalability, surgeon ergonomics, operating room organization, and digital readiness should be considered within a broader health-system perspective. At the same time, economic sustainability requires value-based procurement, appropriate reimbursement models, avoidance of low-volume fragmentation, and transparent accountability. Associazione Chirurghi Ospedalieri Italiani supports a governance model in which robotic surgery is clinically appropriate, institutionally mature, economically sustainable, continuously monitored, and equitably accessible. The future of robotic surgery in Italian hospitals will depend not only on technological availability, but on the capacity of surgeons, managers, regional authorities, payers, and policy-makers to align innovation with evidence, accountability, equity, and measurable patient-centered value.",
-      "topics": [
-        "Surgical Simulation and Training",
-        "Soft Robotics and Applications",
-        "Minimally Invasive Surgical Techniques"
-      ],
-      "keywords": [
-        "robotic surgery",
-        "value-based governance",
-        "surgical registry",
-        "payment models",
-        "value-based procurement",
-        "surgical volume",
-        "conversion to laparoscopy",
-        "minimally invasive surgery",
-        "surgical ergonomics",
-        "operating room organization",
-        "digital readiness",
-        "Italian hospitals"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.30780",
-      "abstract": "Anthropomorphic artificial intelligence systems increasingly remember personal details, display empathy, and are engaged with as social counterparts, creating forms of risk that emerge from the evolution of the user-system relationship over time. Existing safeguards largely operate at the level of individual conversational turns and cannot determine whether a sequence of seemingly acceptable interactions is cumulatively moving a particular user toward harm. This paper introduces personalized trajectory-level safety, a framework that treats relational safety as a sequential decision problem over a latent escalation state inferred from the user's messages and influenced by the system's responses. At each turn, a screening step first discards any response strategy that does not preserve at least one safe continuation of the interaction under every plausible model of the user. Among the remaining strategies, we formulate action selection as multimodal trajectory sampling, and use a Generative Flow Network to generate diverse future evolutions in proportion to their plausibility, safety, and utility. The system then selects the strategy that preserves the largest fraction of safe and useful continuations. We evaluate the framework in simulation, calibrated on statistics reported for real human-chatbot interactions, and using response strategies derived from public benchmarks. Results show that trajectory-aware decision making substantially reduces the frequency of harmful states while keeping helpful interaction. This work reframes safety for anthropomorphic AI from response-level filtering to personalized control over the future evolution of human-AI relationships. The source code is available at https://github.com/benedettapicano/ANTHROPOMORPHIC_SAFETY_TRAJ.",
-      "topics": [
-        "Social Robot Interaction and HRI",
-        "Human-Automation Interaction and Safety",
-        "Personal Information Management and User Behavior"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-11152068/v1",
-      "abstract": null,
-      "topics": [
-        "Digital Imaging for Blood Diseases",
-        "AI in cancer detection",
-        "Cell Image Analysis Techniques"
-      ],
-      "keywords": [
-        "Segmentation",
-        "Deep learning",
-        "Blood smear",
-        "Image segmentation",
-        "Malaria",
-        "Digital pathology",
-        "Peripheral blood"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.31206",
-      "abstract": "Auroral spectrographs such as the Auroral Spectrograph In Skibotn (ASIS) record hundreds of thousands of emission spectra, but only a few hundred can be labelled by an expert. To exploit the rest, we pretrain a 1D Vision Transformer with a masked autoencoder on 223,000 unlabelled spectra. Without labels, its representation recovers the emission-line intensity ratios that physicists use to diagnose the precipitating particles (R^2 0.91 vs. 0.77 for an untrained control) and, under one linear probe, classifies as well as 13 features designed by experts. Fine-tuned, the model outperforms the previous supervised auroral classifier on its own benchmark (macro-AP 88.5 vs. 77.8), reaches 0.870 mAP, and exceeds the same architecture trained from scratch by +0.159 with 10% of the labels; attribution shows that it uses both N2+ bands. Could an existing pretrained model replace it? Two astronomical spectral foundation models and a time-series model transfer according to their spectral window: SpectraFM, trained in the infrared, falls below the untrained control, whereas SpecFormer, trained in the optical, approaches in-domain pretraining without reaching it.",
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Scientific Computing and Data Management",
-        "Computational Physics and Python Applications"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1016/j.isci.2026.117550",
-      "abstract": "Summary: Maritime transportation is a core pillar of global trade. Mining meaningful behavioral patterns from ship trajectories is essential for characterizing ship movement regularities, supporting maritime traffic management, and improving maritime situational awareness. Although substantial progress has been made in anomaly detection, trajectory prediction, and scenario-specific behavior recognition, publicly available labeled datasets remain limited by incomplete labeling schemes, and ship behavior modeling still lacks a unified framework. To clarify these gaps, this review systematically examines data sources, labeled datasets, behavior modeling, mining methods, and practical applications related to ship navigation behavior pattern mining. It further proposes a three-layer behavior modeling framework that organizes ship behavior into physical behavior, interactive behavior, and semantic behavior. This framework connects low-level motion states, spatiotemporal interactions with the maritime environment and other ships, and high-level semantic interpretation, thereby providing a structured basis for understanding behavioral patterns in ship trajectories. Building on this review, we summarize the major challenges and future research directions in the field. This study provides a reference for subsequent research and aims to promote the development of ship navigation behavior pattern mining, particularly by extending spatial data mining methods for static data toward spatiotemporal pattern mining of dynamic streaming data from moving objects.",
-      "topics": [
-        "Maritime Navigation and Safety",
-        "Data Mining Algorithms and Applications",
-        "AI-based Problem Solving and Planning"
-      ],
-      "keywords": [
-        "maritime traffic management",
-        "maritime situational awareness",
-        "moving object data",
-        "ship-ship interaction"
-      ]
-    },
-    {
-      "id": "doi:10.53623/idwm.v6i2.1311",
-      "abstract": "Motorcycle riders are among the most vulnerable road users due to their direct exposure to dynamic traffic environments, while many traffic accidents are preceded by near-miss incidents that provide valuable opportunities for proactive safety evaluation. This study aimed to examine the effect of Situational Awareness (SA) on near-miss and crash incidents among university student motorcycle riders and to evaluate the contribution of the Situation Awareness Rating Technique (SART) dimensions, namely Demand, Supply, and Understanding. A quantitative cross-sectional design was employed involving 96 Universitas Malikussaleh students selected through purposive sampling. Data were collected using a structured questionnaire based on the SART instrument and analyzed using simple and multiple linear regression after confirming the validity and reliability of the instrument and the fulfillment of regression assumptions. The results demonstrated that Situational Awareness had a significant negative effect on both near-miss (β = −0.614, p < 0.001) and crash incidents (β = −0.370, p < 0.001), explaining 48.7% and 42.3% of the variance, respectively. Furthermore, the Understanding dimension consistently showed the strongest influence on both safety outcomes, whereas the Supply dimension was not significantly associated with crash incidents. These findings indicate that improving riders' cognitive ability to recognize, interpret, and anticipate hazardous traffic situations may contribute to reducing near-miss events and crash risks, providing practical implications for motorcycle safety education and hazard perception training among university students.",
-      "topics": [
-        "Traffic and Road Safety",
-        "Human-Automation Interaction and Safety",
-        "Occupational Health and Safety Research"
-      ],
-      "keywords": [
-        "situational awareness",
-        "motorcycle riders",
-        "near misses",
-        "motorcycle accidents",
-        "university students",
-        "hazard perception training",
-        "road safety"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s10669-026-10145-3",
-      "abstract": null,
-      "topics": [
-        "Food Waste Reduction and Sustainability",
-        "Agriculture Sustainability and Environmental Impact",
-        "Municipal Solid Waste Management"
-      ],
-      "keywords": [
-        "sustainable food processing",
-        "waste valorization",
-        "resource recovery",
-        "circular economy",
-        "environmental performance evaluation",
-        "sustainability indicators",
-        "decision support",
-        "process innovation",
-        "research gaps",
-        "Sustainability",
-        "Food security",
-        "Food processing",
-        "Process (computing)",
-        "Equity (law)",
-        "Resource (disambiguation)",
-        "Food waste",
-        "Systematic review",
-        "Resource efficiency"
-      ]
-    },
-    {
-      "id": "doi:10.1021/acs.jchemed.6c00940",
-      "abstract": "Abstract As flow chemistry emerges as a pivotal technology for achieving sustainable development goals (SDGs), integrating it into the undergraduate curriculum requires an understanding of the total student experience. This study applies Novak’s theory of meaningful learning to evaluate the cognitive, affective, and psychomotor experiences of 82 students in a green flow chemistry laboratory. Data from a 15-item Likert survey and open-ended responses reveal a strikingly asymmetric learning profile: while students reported high cognitive engagement (mean = 4.30) and strong intrigue with the equipment (mean = 4.49), their psychomotor confidence was markedly lower (mean = 3.60). Notably, students expressed high attraction to the equipment (positive affect) alongside persistent intimidation and low confidence in data-driven decision-making (psychomotor). These results suggest that while green chemistry principles serve as effective cognitive and affective anchors for student interest, the technical novelty of flow systems creates a psychomotor threshold that current single-session formats do not fully bridge. Our findings demonstrate that measuring only cognition and affect would obscure this bottleneck, underscoring the importance of independently assessing all three domains. We propose that prelab familiarization activities, distributed multisession exposure, and explicit linking of experimental steps to green chemistry principles can support the development of technically confident sustainable chemists.",
-      "topics": [
-        "Flow Experience in Various Fields",
-        "Chemistry and Chemical Engineering",
-        "Chemical Safety and Risk Management"
-      ],
-      "keywords": [
-        "undergraduate chemistry education",
-        "psychomotor skills",
-        "student self-confidence",
-        "affective learning",
-        "cognitive engagement",
-        "green chemistry principles",
-        "Psychomotor learning",
-        "Intimidation",
-        "Curriculum",
-        "Likert scale",
-        "Novelty",
-        "Cognition",
-        "Curiosity",
-        "Green chemistry",
-        "Meaningful learning"
-      ]
-    },
-    {
-      "id": "doi:10.29025/1994-7720-2026-3-90-98",
-      "abstract": "The article discusses and justifies the application motivational exercises at the adaptation stage in professionally-oriented foreign-language training for undergraduate students at a technical university. The purpose of the article is to substantiate and experimentally confirm the effectiveness of integration motivational exercises at the adaptation stage in foreign-language training of students. The article notes that senior students who possess a high level of lexical competence in the terminology of a specific scientific field nonetheless have difficulty while confronted with the need to use interdisciplinary information in a foreign language, which requires the ability to interpret such information. The article presents a specially designed set of motivational exercises: training drills, ice-breakers, profession-focused communicative exercises, and developmental tasks. The methodology includes an analysis of scientific papers on the study of exercises in foreign language learning, integration of an adaptation stage into academic programs, diagnosis of personal characteristics and linguоcognitive abilities of students. The experiment demonstrated that an adaptation stage with exercises in predictive thinking and creativity (including elements of science fiction and artificial language) increases students’ readiness to innovation in a scientific environment. The results confirmed a statistically significant reduction of language anxiety by 29.01%, an increase in intrinsic motivation by 23.39% and rates of development of probabilistic forecasting by 27.87%, verbal creativity by 29.61%. Motivational exercises at the adaptation stage in professionally-oriented foreign language training of senior technical university students create an adaptive educational environment: it reduces language barriers; enhances intrinsic motivation; develops soft and cognitive skills and also dynamically adjusts the content and educational trajectory based on the results of continuous diagnosis.",
-      "topics": [
-        "Innovations in Education and Learning Technologies",
-        "Language, Communication, and Linguistic Studies",
-        "Foreign Language Teaching Methods"
-      ],
-      "keywords": [
-        "adaptation stages",
-        "foreign language training",
-        "technical university students",
-        "language anxiety",
-        "intrinsic motivation",
-        "verbal creativity",
-        "probabilistic forecasting",
-        "science fiction",
-        "artificial languages",
-        "adaptive learning environments",
-        "Creativity",
-        "Adaptation (eye)",
-        "Foreign language",
-        "Anxiety",
-        "Terminology",
-        "Set (abstract data type)",
-        "Coping (psychology)"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s41347-026-00705-4",
-      "abstract": null,
-      "topics": [
-        "Sleep and Work-Related Fatigue",
-        "Digital Mental Health Interventions",
-        "Technostress in Professional Settings"
-      ],
-      "keywords": [
-        "mental health professionals",
-        "burnout",
-        "provider well-being",
-        "electronic health records",
-        "mobile health technology",
-        "clinical workflow",
-        "organizational factors",
-        "human factors",
-        "Mental health",
-        "Documentation",
-        "Context (archaeology)",
-        "Inclusion (mineral)",
-        "Workflow",
-        "Cognition",
-        "Health care",
-        "MEDLINE"
-      ]
-    },
-    {
-      "id": "doi:10.62823/ijarcmss/9.3(i).9410",
-      "abstract": "The rapid expansion of digital platform work has transformed how labour is organized, evaluated, and compensated, deepening workers' dependence on technology-mediated systems. This integrative literature review examines the relationship between technostress and worker well-being in the platform economy, with particular attention to algorithmic management. Drawing on 29 peer-reviewed sources identified through a structured search of academic databases and search engines, the review synthesizes evidence on techno-overload, techno-complexity, techno-insecurity, and techno-uncertainty alongside algorithmic monitoring, performance evaluation, scheduling, and compensation. Technology-related demands are consistently associated with emotional exhaustion, poorer well-being, work–life conflict, burnout, impaired productivity, reduced engagement, and intentions to discontinue platform work. These relationships are not uniform: worker appraisal, self-efficacy, personality, autonomy, transparency, fairness, and human influence shape how technological demands are experienced, while economic dependence and financial insecurity can intensify the consequences of algorithmic control by limiting workers' ability to reject undesirable conditions or exit platforms. The review conceptualizes platform worker well-being as a sociotechnical outcome arising from the interaction of digital demands, algorithmic governance, individual resources, and structural conditions, and proposes an integrated multilevel framework linking these elements. Gaps concerning longitudinal evidence, cross-platform comparison, measurement integration, geographic diversity, and platform-level interventions are identified, and a corresponding research agenda is outlined. The review contributes by connecting technostress theory with algorithmic-management and platform-dependence perspectives, and by arguing that improving platform worker well-being requires attention to platform design and governance rather than individual coping alone.",
-      "topics": [
-        "Digital Economy and Work Transformation",
-        "Technostress in Professional Settings",
-        "Cyberloafing and Workplace Behavior"
-      ],
-      "keywords": [
-        "technostress",
-        "employee well-being",
-        "platform economy",
-        "algorithmic management",
-        "platform work",
-        "burnout",
-        "emotional exhaustion",
-        "work-life conflict",
-        "algorithmic monitoring",
-        "performance evaluation",
-        "scheduling",
-        "compensation",
-        "techno-overload",
-        "technological complexity",
-        "techno-insecurity",
-        "technological uncertainty",
-        "platform dependence",
-        "self-efficacy",
-        "autonomy",
-        "transparency and fairness",
-        "multi-level framework",
-        "platform governance",
-        "Technostress",
-        "Sociotechnical system",
-        "Psychological intervention",
-        "Coping (psychology)",
-        "Corporate governance",
-        "Work (physics)",
-        "Control (management)",
-        "Work systems"
-      ]
-    },
-    {
-      "id": "doi:10.1287/orsc.2024.18685",
-      "abstract": "Scholars and practitioners alike have long presumed that power and status, two foundational bases of social hierarchy, share a symmetric, mutually reinforcing relationship. However, support for this presumption has largely taken the form of theoretical accounts due to the prevalence of static research designs and a dearth of dynamic methodology in organizational research. Drawing on the Dual Perspective Model, we propose that one’s status is more likely to drive changes in one’s power than vice versa because status has a stronger connection to communion—an important component of interpersonal evaluations—than does power, and communality is an important predictor of both power and status. Using data from two studies involving project teams and a contemporary methodology from developmental psychology for modeling dynamic relationships (bivariate dual change score models), we illustrate that there is indeed a mutually reinforcing relationship between power and status over time, but this relationship is asymmetric. In three additional experiments, we find that perceptions of communality explain this asymmetry. We also find similar effects whether power is formal—attached to a position or role—or involves control over informal resources. Across all studies, we find that the path from status to changes in power is stronger than the path from power to changes in status.",
-      "topics": [
-        "Social Power and Status Dynamics",
-        "Management and Organizational Studies",
-        "Job Satisfaction and Organizational Behavior",
-        "Social and Intergroup Psychology"
-      ],
-      "keywords": [
-        "power",
-        "status",
-        "social hierarchy",
-        "asymmetric relations",
-        "communality",
-        "interpersonal evaluation",
-        "project teams",
-        "formal power",
-        "Power (physics)",
-        "Perspective (graphical)",
-        "Presumption",
-        "Dual (grammatical number)",
-        "Negotiation",
-        "Interpersonal communication",
-        "Unpacking",
-        "Perception",
-        "Position (finance)",
-        "Interpersonal relationship"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10609387/v1",
-      "abstract": null,
-      "topics": [
-        "Global Education and Multiculturalism",
-        "Global Educational Policies and Reforms",
-        "International Student and Expatriate Challenges"
-      ],
-      "keywords": [
-        "Generative grammar",
-        "Function (biology)",
-        "Set (abstract data type)",
-        "Mediation",
-        "Value (mathematics)",
-        "Agency (philosophy)",
-        "Field (mathematics)",
-        "Independence (probability theory)"
-      ]
-    },
-    {
-      "id": "doi:10.2478/ctra-2026-0009",
-      "abstract": "Abstract Functional ideation in systemic design unfolds within sociotechnical and sociocultural environments where goals, constraints, and evaluative criteria evolve across multiple levels of organization. Creativity research explains important aspects of novelty, variation, recombination, and selective retention, but it often treats novelty as emerging within a relatively stable representational space or a single level of abstraction. Systemic design scholarship, in turn, has developed strong approaches for framing complexity, mapping relations, organizing participation, and coordinating action, but it less often specifies how designers navigate between systemic levels, address challenges at different levels of abstraction, and construct intervention candidates while the task environment is still being differentiated. This paper responds by proposing a naturalistic framework of ideation within the Interactivist–Constructivist paradigm, with the IDEA Design Scaffold as its methodological architecture for systemic design. The central claim is that functional ideation under systemic complexity must be understood as a self-directed developmental process: intervention opportunities become novel and appropriate as designers navigate across levels of complexity through anticipatory exploration, partial stabilization, reflective reorganization, and rebuilding of missing supports. IDEAS operationalizes this account by linking Systemic Breakdown and Systemic Integration through the Iterative Innovation Cycle, enabling systemic goals, design challenges, and intervention candidates to be progressively coordinated without reducing ideation to a fixed procedure. The payoff is both theoretical and methodological: the paper explains why creative development in systemic design requires movement across levels of complexity, and provides an architecture for supporting, studying, and refining that movement in systemic design practice.",
-      "topics": [
-        "Design Education and Practice",
-        "Systems Engineering Methodologies and Applications",
-        "Complex Systems and Decision Making"
-      ],
-      "keywords": [
-        "systemic design",
-        "levels of complexity",
-        "levels of abstraction",
-        "interactivity",
-        "constructivism",
-        "creativity development",
-        "novelty",
-        "systemic integration",
-        "socio-technical systems",
-        "design methodology",
-        "Novelty",
-        "Sociotechnical system",
-        "Creativity",
-        "Framing (construction)",
-        "Construct (python library)",
-        "Repurposing",
-        "Intervention (counseling)",
-        "Systemic therapy",
-        "Ideation"
-      ]
-    },
-    {
-      "id": "doi:10.1016/b978-0-443-45697-8.00012-8",
-      "abstract": null,
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Machine Learning in Healthcare",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "artificial intelligence in healthcare",
-        "transparency",
-        "explainable AI",
-        "model provenance",
-        "algorithmic bias",
-        "fairness",
-        "multimodal imaging",
-        "electronic health records",
-        "uncertainty calibration",
-        "human-in-the-loop",
-        "post-market monitoring",
-        "model verification",
-        "clinical decision support",
-        "Transparency (behavior)",
-        "Consistency (knowledge bases)",
-        "Audit",
-        "Documentation",
-        "Control (management)",
-        "Software deployment",
-        "Work (physics)"
-      ]
-    },
-    {
-      "id": "doi:10.59944/postaxial.v4i3.1708",
-      "abstract": "Lexical borrowing has become a common phenomenon in English language learning. However, its psychological influence on young EFL learners remains underexplored, particularly regarding how borrowed words may relate to classroom engagement. Previous studies have examined lexical borrowing from linguistic and cognitive perspectives; however, little attention has been paid to its psychological and pedagogical implications in elementary school contexts. This study investigates students’ awareness of the borrowed word insecure and its role in shaping classroom engagement at MI Khadijah Malang. Employing a qualitative case study approach, the research involved 21 students from Grades Four, Five, and Six. Data were collected through classroom observations and semi-structured interviews and analyzed using thematic analysis. The findings reveal that students demonstrated different levels of awareness of the borrowed word insecure, with their understanding developing through exposure to English instruction, social media, peer interaction, and other everyday social environments. Students interpreted the term not only as an expression of low self-confidence but also as a reflection of academic comparison, anxiety, and self-improvement. Furthermore, the borrowed word was internalized in three distinct ways: as a source of motivation, as a form of self-doubt, and as having limited psychological influence. Interview and observation data showed that some students who associated insecure with self-improvement became more motivated, increased their learning effort, or developed new learning strategies, such as learning through songs, increasing vocabulary exposure, and using language-learning applications. In contrast, some students who compared themselves with higher-achieving peers experienced self-doubt and showed reduced participation or motivation, while others reported little influence from the term and maintained stable classroom participation. These different interpretations were associated with varying patterns of behavioral, emotional, and cognitive engagement in the English classroom. The study concludes that the relationship between the borrowed word insecure and classroom engagement is not uniform but varies according to how learners internalize and relate its meaning to their academic experiences and social interactions. By integrating lexical borrowing with learner engagement theory, this study demonstrates that borrowed words may function not only as linguistic resources but also as psychological labels that are associated with learners’ engagement in English language learning.",
-      "topics": [
-        "Linguistics, Language Diversity, and Identity",
-        "Multilingual Education and Policy",
-        "Swearing, Euphemism, Multilingualism"
-      ],
-      "keywords": [
-        "lexical borrowing",
-        "borrowed words",
-        "classroom engagement",
-        "EFL learners",
-        "young learners",
-        "student motivation",
-        "self-doubt",
-        "peer comparison",
-        "English as a foreign language",
-        "Vocabulary",
-        "Cognition",
-        "Thematic analysis",
-        "Vocabulary development",
-        "Phenomenon",
-        "Word (group theory)",
-        "Qualitative research"
-      ]
-    },
-    {
-      "id": "doi:10.37012/jkmp.v6i2.3841",
-      "abstract": "Labor compliance with the use of personal protective equipment can reduce the chances of work accidents and work-related diseases. In the industrial sector, it can be seen that many workers are reluctant or even not wearing PPE at all, this is due to several factors such as comfort, discomfort is one of the main reasons why workers do not use PPE according to standards, both in duration and how to use. This study aims to determine the relationship between the comfort of personal protective equipment (PPE) and compliance with the use of PPE in PT Tasma Puja workers in 2025. The research method used an observational analytical design with a cross sectional approach on 119 respondents from a population of 170 harvesters using simple random sampling. Data collection was carried out through a questionnaire and analyzed using the Chi-Square test. The results showed that there was a significant relationship between comfort and compliance with the use of PPE with a p value of 0.000. Most of the respondents are non-compliant and uncomfortable using PPE, so the lower the compliance of workers. The conclusion of this study shows that the comfort of PPE plays an important role in increasing worker compliance so that companies need to pay attention to ergonomics, quality, and comfort factors of PPE so that work safety increases and the number of work accidents in oil palm plantations can be reduced sustainably in the future. It is recommended that companies increase routine supervision and the application of sanctions and awards for workers, in order to increase the discipline of PPE use",
-      "topics": [
-        "Occupational Health and Safety Management",
-        "Occupational Health and Safety Research",
-        "Economic, Educational, Environmental and Organizational Development"
-      ],
-      "keywords": [
-        "personal protective equipment",
-        "PPE compliance",
-        "occupational safety",
-        "oil palm plantation workers",
-        "harvesters",
-        "occupational accidents",
-        "occupational diseases",
-        "human factors",
-        "Personal protective equipment",
-        "Compliance (psychology)",
-        "Work (physics)",
-        "Sanctions",
-        "Population",
-        "Occupational safety and health",
-        "Observational study"
-      ]
-    },
-    {
-      "id": "doi:10.12688/f1000research.184290.1",
-      "abstract": "As the global manufacturing landscape undergoes rapid transformation, organizations are compelled to enhance productivity, reduce waste, and strengthen competitiveness. Lean manufacturing has emerged as a critical methodology to achieve these objectives, fundamentally shifting how businesses approach production by eliminating non-value-adding activities, pursuing continuous improvement, and utilizing resources efficiently. Within this paradigm, the design of plant layouts plays a pivotal role, serving as the foundation for operational efficiency through optimized workflow, reduced transportation, and effective space utilization. This review paper examines the multifaceted relationship between plant layout and lean manufacturing, tracing its evolution from the Toyota Production System to contemporary Industry 4.0-enabled smart factories. The paper explores foundational lean principles, various layout typologies, integration with lean tools such as 5S, Kaizen, and Kanban, and the emerging influence of digital technologies including digital twins, the Internet of Things, and artificial intelligence. Furthermore, it addresses human factors and ergonomics, environmental sustainability through green lean approaches, sector-specific applications, and persistent implementation challenges. By synthesizing insights from academic literature and industry case studies, this paper provides a strategic framework for researchers, practitioners, and policymakers seeking to leverage layout design as a driver of lean transformation and long-term operational excellence.",
-      "topics": [
-        "Digital Transformation in Industry",
-        "Advanced Manufacturing and Logistics Optimization",
-        "Quality and Supply Management"
-      ],
-      "keywords": [
-        "facility layout",
-        "lean manufacturing",
-        "Toyota Production System",
-        "Industry 4.0",
-        "smart factory",
-        "5S",
-        "Kaizen",
-        "Kanban",
-        "digital twin",
-        "Internet of Things",
-        "artificial intelligence",
-        "human factors",
-        "waste reduction",
-        "continuous improvement",
-        "Lean manufacturing",
-        "Leverage (statistics)",
-        "Digital transformation",
-        "Sustainability",
-        "Lean project management",
-        "Advanced manufacturing"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.ssci.2026.107470",
-      "abstract": "Background Normalization of Deviance (NoD) is a well-documented organizational failure mode in aviation, yet its propagation through digital ecosystems remains unexplored. The European Union Aviation Safety Agency (EASA) highlights a critical mentorship vacuum due to pilot retirements, and social media platforms increasingly serve as informal training environments. This study introduces the concept of Algorithmic Normalization of Deviance- ANoD, hypothesizing that recommendation algorithms systematically reward and amplify “gray-zone” cockpit behaviors that erode sterile flight deck protocols. Method We conducted a stratified netnographic analysis of 150 high-visibility aviation videos (N = 150) across Instagram Reels, split between algorithmically recommended content (n = 100) and curated influencer content (n = 50). A novel coding framework operationalized compliance (Compliant vs. Gray Zone vs. Deviant) and incentive structures. Engagement metrics were analyzed to quantify the algorithmic advantage of non-compliant behavior. Results The analysis reveals a directionally consistent “Viral Deviation” pattern rather than a statistically decisive one. Gray-zone recordings (i.e., technically legal but procedurally borderline) comprised 57% of the sample and attracted higher engagement than compliant content, although this difference was small and did not reach conventional significance (d = 0.24, p = 0.11). The clearest signal emerged between content sources: algorithmically surfaced posts showed significantly higher interaction rates than curated influencer posts (d = 0.31, p = 0.029), a small but statistically significant per-view advantage for content promoted directly by the recommendation system. Structural incentive analysis further indicates that monetization pressures co-occur with increased gray-zone production, structurally analogous to a parallel, shadow curriculum associated with conditions that may facilitate drift. Conclusion The study identifies statistical associations, not causal relationships, and the downstream behavioural impact on pilots is hypothesised from the algorithmic-pattern evidence rather than directly measured. Within those bounds, social media algorithms constitute a structurally unmonitored distribution channel whose observed associations with gray-zone content amplification are consistent with a normalisation-of-deviance feedback mechanism operating beyond current regulatory oversight — an association that warrants urgent empirical validation and proactive governance. We propose a shift from prohibition to risk-stratified governance, recommending that regulators distinguish between handheld (high-risk) and mounted (managed-risk) devices, and integrate digital algorithmic literacy into ab-initio pilot training to counter this new systemic threat.",
-      "topics": [
-        "Occupational Health and Safety Research",
-        "Human-Automation Interaction and Safety",
-        "Crime, Deviance, and Social Control",
-        "Digital Marketing and Social Media",
-        "Aviation Industry Analysis and Trends",
-        "Public Relations and Crisis Communication"
-      ],
-      "keywords": [
-        "normalization of deviance",
-        "aviation safety",
-        "social media engagement",
-        "recommendation algorithms",
-        "Instagram Reels",
-        "pilot training",
-        "algorithmic literacy",
-        "mentoring",
-        "Quantitative analysis (chemistry)",
-        "Poison control",
-        "Social media",
-        "Human factors and ergonomics",
-        "Cockpit",
-        "Injury prevention",
-        "Suicide prevention",
-        "Occupational safety and health"
-      ]
-    },
-    {
-      "id": "doi:10.1002/sd.71705",
-      "abstract": "ABSTRACT There have been emerging media reports on the impact of cyanide and mercury use in artisanal and small‐scale gold mining (ASGM) operations on community health, especially among pregnant and non‐pregnant women, ASGM miners, and children in rural Africa. This paper gathers data from multiple sources, including media reports and qualitative research interviews, to critically examine and question the emerging environmental and public health concerns of ASGM operations in rural Africa, using Ghana, a country that has experienced a surge in illegal/informal mining activities over the past two decades, as a case study. Our findings revealed multifaceted and interrelated factors comprising (i) community exposure to heavy metals and disease contraction, (ii) congenital disabilities and pregnant women's exposure to toxic chemicals from ASGM operations, (iii) miners' exposure, disease burden and ill health, (iv) water‐related diseases, and (v) heavy metal bioaccumulation in food chains and associated with public health risks, as the growing environmental and public health risks and concerns of ASGM operations in Ghana. Based on these findings, we suggest a multidisciplinary socio‐ecological policy approach to mitigate the environmental risks and health concerns associated with ASGM operations in Ghana and, more broadly, across Africa. In this context, an integrated One Health approach that focuses on ASGM regulations, environmental management, occupational health and safety, public health, stakeholder engagement and community participation can be considered a suitable multidisciplinary socio‐ecological policy response. The policy and practical implications of our findings are discussed in the paper.",
-      "topics": [
-        "Mining and Resource Management",
-        "Cassava research and cyanide",
-        "Heavy Metal Exposure and Toxicity"
-      ],
-      "keywords": [
-        "artisanal and small-scale gold mining",
-        "Ghana",
-        "cyanide",
-        "mercury",
-        "heavy metal exposure",
-        "public health",
-        "environmental health",
-        "pregnant women",
-        "congenital disabilities",
-        "occupational health and safety",
-        "water-related diseases",
-        "heavy metal bioaccumulation",
-        "informal mining",
-        "One Health",
-        "responsible mining",
-        "community participation",
-        "Public health",
-        "Gold mining",
-        "Stakeholder",
-        "Occupational safety and health",
-        "Multidisciplinary approach",
-        "Health policy",
-        "Poison control",
-        "Rural area",
-        "Public engagement"
-      ]
-    },
-    {
-      "id": "doi:10.24144/2788-6018.2026.04.22",
-      "abstract": "This article examines the turnover of agricultural land plots in the context of the digitalization of public administration. It has been established that the management of land plots is not keeping pace with the rapid development of the digitalization of public administration; consequently, there is a need to improve the legislation governing the civil circulation of these plots. Issues related to the turnover of agricultural land remain relevant because proper regulation of this process allows for the optimization of relations between landowners, users, other individuals, local government bodies, and the state. The development of digital technologies in the field of public administration, on the one hand, allows for simplifying the process of land resource management; on the other hand, it requires additional measures from the state to ensure the proper protection of registries, the personal information of registry users, their uninterrupted operation, and so on. Taking into account the research conducted on the outlined issues concerning the management of agricultural land plots and the development of judicial practice in this area, the chosen field of study becomes a subject of both scientific and practical interest, and the development of proposals to improve the existing mechanism requires a balanced and comprehensively justified approach, since, as experience has shown, the digital technology sector is no less vulnerable to the human factor than the system currently in operation. The study found that current legislation needs to be updated to incorporate the latest advances in the digitization of public administration. When dealing with land plots in general and agricultural land plots in particular, digital technologies should be actively utilized to ensure the performance of all registration, analytical, monitoring, and other activities; to this end, appropriate amendments must be made to current legislation. The author’s vision for the implementation of mechanisms for the digitalization of public administration in the management of agricultural land is presented.",
-      "topics": [
-        "Land Use and Management",
-        "Digital Transformation in Law",
-        "Agricultural Development and Policies"
-      ],
-      "keywords": [
-        "agricultural land",
-        "farmland transfer",
-        "digitalization of public administration",
-        "land registry",
-        "land management legislation",
-        "land registration",
-        "personal data protection",
-        "Legislation",
-        "Context (archaeology)",
-        "Land administration",
-        "Government (linguistics)",
-        "Agriculture",
-        "Land management",
-        "Process (computing)",
-        "Land information system",
-        "Cadastre",
-        "Pace"
-      ]
-    },
-    {
-      "id": "doi:10.2196/88182",
-      "abstract": "Background: According to human-centered design principles, user experience and user satisfaction are key aspects when developing or providing patients and clients with assistive, rehabilitation, or training technologies. Existing tools for assessing user experience and satisfaction are often either too narrow (developed for specific technologies) or too broad, failing to capture all relevant aspects of the technology being evaluated. Objective: The main objective of this study was to present the development process and content validation of a questionnaire that, following further validation steps, could be useful for researchers and developers in assessing the satisfaction of direct end users with assistive, rehabilitation, and training technologies. Methods: The development of the User Satisfaction Questionnaire for Assistive, Rehabilitation, and Training Technologies (U-ART-Q) followed a multistep process: (1) literature review, (2) domain definition and item generation, (3) expert consultation, (4) linguistic validation, and (5) content validation. Initially, 72 items were generated and organized into 7 domains. After expert review and linguistic validation, the questionnaire underwent content validation by 8 experts in physiotherapy, kinesiology, and ergonomics. Each item was rated for relevance using a 4-point Likert-type scale. The content validity ratio (CVR) and item-level content validity index (I-CVI) were calculated, and items below the accepted thresholds were removed or further revised. Results: Expert consultation resulted in the removal or merging of 20 items to improve clarity and reduce redundancy. Of the 52 items evaluated during content validation, 44 met the CVR and I-CVI criteria (CVR >0.75 and I-CVI >0.78). Eight items required additional review, and 2 items were ultimately removed. The final questionnaire comprises 10 initial screening questions and 50 content-valid items across 7 domains: design, comfort, effectiveness and usefulness, service, treatment or exercise, overall impressions, and safety. The overall average content validity index was 0.915, providing evidence of strong content validity. A macro-enabled Excel tool was developed to automate item selection and generate a PDF version of the questionnaire based on initial screening responses. Conclusions: The U-ART-Q is a newly developed instrument for assessing user satisfaction with assistive, rehabilitation, and training technologies. Further research will focus on psychometric evaluation, reliability testing, and multilingual validation to determine whether the U-ART-Q can provide a standardized method for assessing user satisfaction. Once fully evaluated, the questionnaire could support both developmental usability testing and postmarket evaluation, facilitating evidence-based decision-making and guiding future product improvement.",
-      "topics": [
-        "Assistive Technology in Communication and Mobility",
-        "Cerebral Palsy and Movement Disorders",
-        "Technology Use by Older Adults"
-      ],
-      "keywords": [
-        "user satisfaction",
-        "user experience",
-        "assistive technology",
-        "rehabilitation technology",
-        "training technologies",
-        "questionnaire development",
-        "content validation",
-        "end-user feedback",
-        "usability testing",
-        "content validity ratio",
-        "human-centered design",
-        "physiotherapy",
-        "human factors",
-        "kinesiology",
-        "CLARITY",
-        "Content validity",
-        "Relevance (law)",
-        "Usability",
-        "Subject-matter expert",
-        "Process (computing)",
-        "User satisfaction",
-        "Quality (philosophy)"
-      ]
-    },
-    {
-      "id": "doi:10.31234/osf.io/kf96p_v2",
-      "abstract": "Large language model (LLM)-based chatbots offer new methodological opportunities for psychological research by enabling scalable, standardised, and interactive research procedures. However, their usefulness depends on the researchers’ ability to customise, evaluate, and deploy them in ways that align with the methodological requirements of a given study. The current tutorial provides a practical, step-by-step framework for developing customised LLM-based chatbots for psychological research. We distinguish between no-code or low-code development approaches, including provider-hosted chatbot builders and visual or low-code programming platforms, and code-based approaches using proprietary model application programming interfaces (APIs) or locally hosted open-weight models. We compare these approaches in terms of technical expertise, behavioural and workflow control, study integration, cost, data governance, maintenance, and reproducibility. We also outline key components of the process of customising an LLM-based chatbot and illustrate deployment workflows across multiple platforms, including local desktop interfaces, messaging applications and survey platforms. Finally, we discuss key considerations for research ethics, privacy, data governance, security, transparency, and reproducibility, including recommendations for documenting and sharing chatbot configurations and study procedures. Through this tutorial, we aim to support researchers in integrating customised LLM-based chatbots into psychological research and in expanding the methodological possibilities available to them.",
-      "topics": [
-        "AI in Service Interactions",
-        "Digital Mental Health Interventions",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": [
-        "Chatbot",
-        "Workflow",
-        "Key (lock)",
-        "Software deployment",
-        "Process (computing)",
-        "Data sharing"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2728932",
-      "abstract": "Virtual reality (VR) is increasingly used to support physical and mental health interventions. Recently, VR combined with hypnotic suggestions, termed virtual reality hypnosis (VRH), has emerged as a promising approach across clinical and non-clinical settings. This systematic review and meta-analysis investigated the use and effectiveness of VRH. Searches were conducted in PubMed, Scopus, PsycINFO, and Embase following PRISMA guidelines. A total of 54 studies involving healthy and clinical populations were included. Meta-analytic results based on pre-post comparisons indicated a trend toward reduced anxiety following VRH (Hedges’ g = −1.39; 95% CI: −2.91 to 0.14). However, no significant differences were found when VRH was compared with other interventions, and no significant effects emerged for pain outcomes. Overall, VRH appears to be a promising intervention integrating immersive virtual environments with hypnotic suggestion, although further high-quality research is needed.",
-      "topics": [
-        "Virtual Reality Applications and Impacts",
-        "Pain Management and Placebo Effect",
-        "Dental Anxiety and Anesthesia Techniques",
-        "Pediatric Pain Management Techniques"
-      ],
-      "keywords": [
-        "hypnotic suggestion",
-        "virtual reality",
-        "anxiety reduction",
-        "pain management",
-        "immersive virtual environments",
-        "clinical intervention",
-        "non-clinical population",
-        "Virtual reality",
-        "Hypnosis",
-        "Intervention (counseling)",
-        "Anxiety",
-        "Mental health",
-        "Systematic review"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.ergon.2026.104060",
-      "abstract": "Hazardous materials (hazmat) road transportation entails substantial safety risks, in which driver-related factors are consistently identified as the leading contributors to crashes. Yet the occupational profile, health status, and psychosocial resources of hazmat truck drivers remain poorly characterized, constraining the development of evidence-based safety management. To address this gap, this study surveyed 347 hazmat truck drivers in China, combining standardized scales with self-developed items capturing context-specific working experiences. These drivers were middle-aged (M = 42.52 years). The majority of them (87.6%) were overweight or obese. More than half of them were suffering musculoskeletal discomfort (58.8%) and suspected insomnia or insomnia (56.8%) together with daytime sleepiness. Although their self-reported fatigue was relatively low, sleep-related problems and physical health issues warrant particular attention. Network analysis further revealed two functionally distinct clusters within the work system: a physiological risk cluster (fatigue, insomnia, and daytime sleepiness) and a psychosocial resource cluster (perceived social support, professional identity, and subjective well-being). The associations between the two clusters were predominantly negative, suggesting a dynamic balance between occupational strain and adaptive resources. Subjective well-being, insomnia, and fatigue emerged as the most central nodes, indicating that they may serve as priority entry points for intervention. Our findings highlight that safeguarding the occupational health and safety of hazmat truck drivers requires an integrated and system-oriented management approach that jointly addresses physiological risks, psychosocial resources, and physical health. The study offers empirical evidence and practical implications for safety management in hazmat road transportation.",
-      "topics": [
-        "Sleep and Work-Related Fatigue",
-        "Workplace Health and Well-being",
-        "Occupational Health and Safety Research",
-        "Mental Health Research Topics",
-        "Traffic and Road Safety"
-      ],
-      "keywords": [
-        "occupational health",
-        "driver fatigue",
-        "insomnia",
-        "daytime sleepiness",
-        "musculoskeletal discomfort",
-        "obesity",
-        "perceived social support",
-        "professional identity",
-        "subjective well-being",
-        "psychosocial resources",
-        "occupational strain",
-        "safety management",
-        "Truck",
-        "Occupational safety and health",
-        "Hazardous waste",
-        "Poison control",
-        "Human factors and ergonomics",
-        "Dangerous goods",
-        "Injury prevention"
-      ]
-    },
-    {
-      "id": "openalex:W7214510838",
-      "abstract": "This article examines the turnover of agricultural land plots in the context of the digitalization of public administration. It has been established that the management of land plots is not keeping pace with the rapid development of the digitalization of public administration; consequently, there is a need to improve the legislation governing the civil circulation of these plots. Issues related to the turnover of agricultural land remain relevant because proper regulation of this process allows for the optimization of relations between landowners, users, other individuals, local government bodies, and the state. The development of digital technologies in the field of public administration, on the one hand, allows for simplifying the process of land resource management; on the other hand, it requires additional measures from the state to ensure the proper protection of registries, the personal information of registry users, their uninterrupted operation, and so on. Taking into account the research conducted on the outlined issues concerning the management of agricultural land plots and the development of judicial practice in this area, the chosen field of study becomes a subject of both scientific and practical interest, and the development of proposals to improve the existing mechanism requires a balanced and comprehensively justified approach, since, as experience has shown, the digital technology sector is no less vulnerable to the human factor than the system currently in operation. The study found that current legislation needs to be updated to incorporate the latest advances in the digitization of public administration. When dealing with land plots in general and agricultural land plots in particular, digital technologies should be actively utilized to ensure the performance of all registration, analytical, monitoring, and other activities; to this end, appropriate amendments must be made to current legislation. The author’s vision for the implementation of mechanisms for the digitalization of public administration in the management of agricultural land is presented.",
-      "topics": [
-        "Land Use and Management",
-        "3D Modeling in Geospatial Applications",
-        "Agriculture Market Analysis Ukraine"
-      ],
-      "keywords": [
-        "land turnover",
-        "digitalization of public administration",
-        "land registry",
-        "land management legislation",
-        "personal data protection",
-        "land registration",
-        "land monitoring",
-        "Legislation",
-        "Government (linguistics)",
-        "Process (computing)",
-        "Context (archaeology)",
-        "Agriculture",
-        "Digitization",
-        "Land management",
-        "Land use",
-        "Local government"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22933302",
-      "abstract": "Abstract Human error is a natural part of complex healthcare systems, including dentistry. Dental care combines diagnostic reasoning, procedures, medication management, radiographs, infection control, lab work, digital tools, and teamwork. Errors can happen due to individual mistakes, but also to problems with communication, systems, equipment, processes, or the work environment. Research on dental patient safety has identified issues such as diagnostic and treatment-planning errors, communication breakdowns, medication incidents, procedural complications, wrong-site or wrong-tooth treatments, foreign-body aspiration or swallowing, and documentation problems. Modern patient safety science now recommends moving away from blaming individuals and instead focusing on system-based human factors. This review covers the main types of human error in dental practice, such as slips, lapses, mistakes, violations, active errors, and hidden risks. It also looks at factors that contribute to errors, including cognitive, technical, communication, environmental, technological, organizational, and patient-related issues. Prevention strategies include using standard protocols, safety checklists, clear communication, double-checking diagnoses, medication reviews, simulation training, incident reporting, root cause analysis, teamwork, and building a fair safety culture. The Swiss Cheese Model helps explain how multiple weaknesses in safety barriers can align and cause harm to patients. In the end, making dentistry safer means not just relying on individuals to be careful but also designing systems that account for human limitations, catch errors, and support learning within the organization. Keywords: Human error; Human factors; Dental practice; Patient safety; Dental errors.",
-      "topics": [
-        "Patient Safety and Medication Errors",
-        "Clinical Reasoning and Diagnostic Skills",
-        "Medical Malpractice and Liability Issues"
-      ],
-      "keywords": [
-        "SAFER",
-        "Human error",
-        "Documentation",
-        "Harm",
-        "Patient safety",
-        "Narrative",
-        "Root cause analysis",
-        "Root cause",
-        "Work (physics)"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22933303",
-      "abstract": "Abstract Human error is a natural part of complex healthcare systems, including dentistry. Dental care combines diagnostic reasoning, procedures, medication management, radiographs, infection control, lab work, digital tools, and teamwork. Errors can happen due to individual mistakes, but also to problems with communication, systems, equipment, processes, or the work environment. Research on dental patient safety has identified issues such as diagnostic and treatment-planning errors, communication breakdowns, medication incidents, procedural complications, wrong-site or wrong-tooth treatments, foreign-body aspiration or swallowing, and documentation problems. Modern patient safety science now recommends moving away from blaming individuals and instead focusing on system-based human factors. This review covers the main types of human error in dental practice, such as slips, lapses, mistakes, violations, active errors, and hidden risks. It also looks at factors that contribute to errors, including cognitive, technical, communication, environmental, technological, organizational, and patient-related issues. Prevention strategies include using standard protocols, safety checklists, clear communication, double-checking diagnoses, medication reviews, simulation training, incident reporting, root cause analysis, teamwork, and building a fair safety culture. The Swiss Cheese Model helps explain how multiple weaknesses in safety barriers can align and cause harm to patients. In the end, making dentistry safer means not just relying on individuals to be careful but also designing systems that account for human limitations, catch errors, and support learning within the organization. Keywords: Human error; Human factors; Dental practice; Patient safety; Dental errors.",
-      "topics": [
-        "Patient Safety and Medication Errors",
-        "Clinical Reasoning and Diagnostic Skills",
-        "Medical Malpractice and Liability Issues"
-      ],
-      "keywords": [
-        "SAFER",
-        "Human error",
-        "Documentation",
-        "Harm",
-        "Patient safety",
-        "Narrative",
-        "Root cause analysis",
-        "Root cause",
-        "Work (physics)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.28858",
-      "abstract": "This study examines how Taiwanese parent-child families negotiate a \"good\" family life through everyday energy use and imagine future smart homes that support it. We conducted in-home interviews and co-design sessions with 21 families, including 46 parents and children. We found that families pursued a good life through energy practices shaped by thrift, comfort, care, safety, and enjoyment. These arrangements were continually adapted and responded to changing bodies, schedules, people, and infrastructures. This adaptive work was unevenly distributed, which in turn shaped different smart-home imaginaries. Drawing on the lens of Nearby and adversarial design, we conceptualize adaptation as situated sociotechnical work through which families continually rework energy arrangements. We further distinguish collective goods from plural and contestable goods to show why family IoT must support shared values while preserving opportunities to question and revise household arrangements. We offer theoretical and design directions for more adaptive, participatory, and contestable family IoT.",
-      "topics": [
-        "Innovative Human-Technology Interaction",
-        "IoT-based Smart Home Systems",
-        "Child Development and Digital Technology",
-        "cs.HC",
-        "ICT in Developing Communities",
-        "Context-Aware Activity Recognition Systems"
-      ],
-      "keywords": [
-        "household energy practices",
-        "home automation",
-        "family life",
-        "public goods",
-        "co-design",
-        "household adaptation",
-        "participatory design",
-        "Sociotechnical system",
-        "Negotiation",
-        "Plural",
-        "Situated",
-        "Work (physics)",
-        "Energy (signal processing)",
-        "Everyday life"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s40295-026-00628-5",
-      "abstract": "Abstract The Finite Sets Statistics-based Probability Hypothesis Density filter offers a description of a group of known or unknown targets as a single random entity with a Bayesian filtering framework. The Probability Hypothesis Density filter has often been employed in the Space Situational Awareness detection and tracking of space objects. One of its challenges is the determination of key probabilistic parameters, such as birth rates and birth intensities, for the detection of new space objects. Additionally, the challenge of incorporating nonlinear measurements requires the choice of simplifying assumptions on the prior, therefore introducing errors to the posterior. In this paper, a data-driven parameter flow version of the Probability Hypothesis Density filter is introduced, which performs the measurement update step using both birth and persistent likelihood densities while alleviating errors introduced to the posterior intensity. Therefore, preventing a shift of the birth intensity from the prediction step. A birth intensity is instantiated by performing a measurement correlation optimization, where the solution and likelihood are used to parametrize the intensity. In a data-driven discrete parameter flow Gaussian Mixture Probability Hypothesis Density filter implementation, the performance of the new birth is shown in a simulated ground-based optical tracking scenario. In optical tracking scenarios, tracklets composed of angles and angle rates are often assumed to be available. A multi-layer Probability Hypothesis Density filter is introduced, which forms tracklets before employing the full orbital data-driven Probability Hypothesis filter and the birth process. A Gaussian Mixture implementation of the multi-layer Probability Hypothesis filter is tested with a dataset for a GPS satellite collected from the Purdue Optical Ground Station.",
-      "topics": [
-        "Target Tracking and Data Fusion in Sensor Networks",
-        "Space Satellite Systems and Control",
-        "Inertial Sensor and Navigation"
-      ],
-      "keywords": [
-        "Filter (signal processing)",
-        "Probability density function",
-        "Gaussian",
-        "Posterior probability",
-        "Probabilistic logic",
-        "Bayesian probability",
-        "Kalman filter",
-        "Empirical probability",
-        "Nonlinear filter",
-        "Tracking (education)"
-      ]
-    },
-    {
-      "id": "doi:10.1177/15697371261479599",
-      "abstract": "To enhance laboratory safety, a risk assessment was conducted in environmental engineering laboratories using the Fine-Kinney Method (FKM) and Fault Tree Analysis (FTA). The FKM was initially employed to prioritize hazards, with a subsequent FTA used to systematically identify root causes and evaluate the effectiveness of existing controls. These two complementary approaches identified 10 risks, categorized into four groups: physical (electricity, fire, falling, sharp object injury), chemical (acid, poisoning, contamination), biological (infection, allergy), and ergonomic (musculoskeletal injury). Post-control measures successfully eliminated 89.3% of ‘Not Tolerated’ risks, contributing to an overall 63% reduction across all high-priority categories, including ‘Not Tolerated,’ ‘Strong,’ and ‘Important’ risks in FKM. Application of the FTA led to substantial risk reductions, with post-control measures decreasing hazard scores for fire, acid exposure, and electricity by 72.8%, 66.5%, and 60.0%, respectively. The statistical validation of the findings confirmed that the risk reductions achieved in both the FKM and FTA models were highly significant. The alignment of risk rankings across both models validated the assessment's reliability, providing a robust foundation for decision-making. Finally, implementing these validated safety measures requires a total budget of $42,000.",
-      "topics": [
-        "Chemical Safety and Risk Management",
-        "Risk and Safety Analysis",
-        "Occupational Health and Safety Research"
-      ],
-      "keywords": [
-        "Fault tree analysis",
-        "Risk assessment",
-        "Hazard analysis",
-        "Hazard",
-        "Probabilistic risk assessment",
-        "Risk management",
-        "Fault (geology)",
-        "Flexibility (engineering)"
       ]
     }
   ]
