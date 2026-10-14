@@ -1,12 +1,1995 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "page": 133,
   "pageSize": 100,
-  "totalItems": 22478,
-  "totalPages": 225,
+  "totalItems": 22865,
+  "totalPages": 229,
   "nextPage": "./page-134.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2608.24957",
+      "recordType": "preprint",
+      "title": "ToolMinimize: Auditing and Rewriting LLM Agent Tool Calls to Minimize Privacy Exposure",
+      "abstract": "LLM agents routinely include privacy-sensitive data (PSD) in tool call arguments beyond what the invoked tools require, crossing trust boundaries to third-party services on every invocation. A controlled measurement on three production LLMs (GPT-4o, Claude 3.5 Sonnet, Llama-3.3-70B) shows that 81--88\\% of tool calls include unnecessary PSD under default prompts; explicit privacy instructions still leave 36--76\\% over-sharing. Existing defenses gate calls (allow/block) or label flows (information-flow control) but cannot \\emph{rewrite} argument values, and PII detection tools miss implicit PSD like ``Memorial Sloan Kettering'' (a hospital name that implies a diagnosis). We present \\system{}, a middleware that intercepts tool calls and rewrites their arguments to the minimum data necessary for tool functionality, combining schema-aware necessity analysis with four operations: removal, generalization, substitution, and truncation. Live validation on 307 tool calls across the three LLMs above reduces privacy cost by 81.2--92.0\\% at 100\\% argument-level task validity (TOST equivalence $p{<}0.001$ at $Δ{=}1.0$); on 25 unannotated Model Context Protocol (MCP) schemas, by 79.0\\% with no \\texttt{minimum\\_necessary} metadata. An optional LLM content-necessity layer strips task-irrelevant PSD from otherwise-necessary free-text fields, raising live-LLM reduction to 85.1--95.6\\% and author-schema reduction from 71.1\\% to 90.9\\%. Median latency is 1.77\\,ms.",
+      "doi": "10.48550/arxiv.2608.24957",
+      "externalIds": {
+        "openalex": "W7204450562"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7204450562"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-25",
+      "firstPublicDate": "2026-08-25",
+      "onlineDate": null,
+      "topics": [
+        "Scientific Computing and Data Management",
+        "Access Control and Trust",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "Rewriting",
+        "Audit",
+        "Context (archaeology)",
+        "Argument (complex analysis)",
+        "Metadata",
+        "Task (project management)",
+        "Protocol (science)",
+        "Latency (audio)",
+        "Equivalence (formal languages)",
+        "Information privacy"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trust",
+              "sourceValue": "…ta (PSD) in tool call arguments beyond what the invoked tools require, crossing trust boundaries to third-party services on every invocation. A controlled measurement on three production LLMs (GPT-4o, Claude 3.5 Sonnet, Llama-3.3-70B) shows that 81--88\\% of tool calls include unnecessary PSD under default prompts; expl…",
+              "weight": 2
+            },
+            {
+              "source": "external_topic",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trust",
+              "sourceValue": "Access Control and Trust",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "LLM",
+        "trust"
+      ],
+      "authors": [
+        {
+          "id": "A5034327508",
+          "name": "Wenbiao Li",
+          "orcid": "https://orcid.org/0000-0003-1674-7988",
+          "affiliations": []
+        },
+        {
+          "id": "A5148464060",
+          "name": "Yuqiao Xu",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.24957",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:35.436Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:35.436Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:35.436Z",
+      "preferredVersionId": "openalex:W7204450562",
+      "versions": [
+        {
+          "id": "openalex:W7204450562",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204450562",
+          "doi": "10.48550/arxiv.2608.24957",
+          "url": "https://doi.org/10.48550/arxiv.2608.24957"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-133.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "ToolMinimize: Auditing and Rewriting LLM Agent Tool Calls to Minimize Privacy Exposure",
+              "start": 0,
+              "end": 86
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "LLM agents routinely include privacy-sensitive data (PSD) in tool call arguments beyond what the invoke",
+              "start": 0,
+              "end": 103
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "hospital",
+                  "quote": " and PII detection tools miss implicit PSD like ``Memorial Sloan Kettering'' (a hospital name that implies a diagnosis). We present \\system{}, a middleware that intercepts tool calls and r",
+                  "start": 557,
+                  "end": 745
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "ng. Existing defenses gate calls (allow/block) or label flows (information-flow control) but cannot \\emph{rewrite} argument values, and PII detection tools miss implicit PSD like ``Memori",
+                  "start": 426,
+                  "end": 613
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.25100",
+      "recordType": "preprint",
+      "title": "Towards Reliable, Generalizable, and Specific In-Context Knowledge Editing via Multi-Objective Reinforcement Learning",
+      "abstract": "Large Language Models (LLMs) are powerful but limited by static parametric knowledge that becomes outdated once pretraining ends. Knowledge editing addresses this problem by updating model behavior on target facts without full retraining. In particular, in-context knowledge editing has gained attention because it is training-free and readily applicable to black-box LLMs. Recent reinforcement learning (RL)-based approaches improve over fixed retrieval strategies by adapting prompt construction to the quantity-quality trade-off. Despite initial success, they fail to model the prompt as a structured entity under the distinct and often competing objectives of reliability, generality, and specificity. Previous methods largely optimize a single objective and make decisions over only part of the prompt construction process, thereby overlooking both the balance of different objectives and the global organization of demonstrations. We propose Multi-Objective In-context Knowledge Editing (MO-IKE), a multi-objective RL algorithm that formulates prompt construction for in-context knowledge editing as a Constrained Markov Decision Process. MO-IKE trains a dynamic retriever to optimize competing objectives in knowledge editing, enabling more balanced and globally coherent prompt construction. On Llama-3.2, MO-IKE improves edit success (reliability) from 85.0% to 92.0%, paraphrase consistency (generality) from 77% to 79%, while increasing retention rate (specificity) by 23.0% compared to prior RL-based methods.",
+      "doi": "10.48550/arxiv.2608.25100",
+      "externalIds": {
+        "openalex": "W7204460123",
+        "arxiv": "2608.25100"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.25100"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-25",
+      "firstPublicDate": "2026-08-25",
+      "onlineDate": null,
+      "topics": [
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications",
+        "Advanced Text Analysis Techniques",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": [
+        "Reinforcement learning",
+        "Paraphrase",
+        "Consistency (knowledge bases)",
+        "Markov decision process",
+        "Knowledge acquisition",
+        "Selection (genetic algorithm)",
+        "Train",
+        "Parametric statistics"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 4,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5134991791",
+          "name": "Xuzhong Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5070537286",
+          "name": "Maiqi Jiang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5139781592",
+          "name": "Tejal Nair",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5120060686",
+          "name": "Girija Bhusal",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148467625",
+          "name": "Yanfu Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148413489",
+          "name": "Haipeng Chen",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.25100",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:29.253Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-27T14:56:35.436Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:35.436Z",
+      "preferredVersionId": "arxiv:2608.25100",
+      "versions": [
+        {
+          "id": "arxiv:2608.25100",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.25100",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.25100v2"
+        },
+        {
+          "id": "openalex:W7204460123",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204460123",
+          "doi": "10.48550/arxiv.2608.25100",
+          "url": "https://doi.org/10.48550/arxiv.2608.25100"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-133.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Large Language Models (LLMs) are powerful but limited by static parametric knowledge that becomes outdated once pretraini",
+              "start": 0,
+              "end": 121
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "Large Language Models (LLMs) are powerful but limited by static parametric knowledge that becomes outdated once pretraini",
+              "start": 0,
+              "end": 121
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "Large Language Models (LLMs) are powerful but limited by static parametric knowledge that becomes outdated once pretraining end",
+              "start": 0,
+              "end": 127
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Large Language Models (LLMs) are powerful but limited by static parametric knowledge that becomes outdated once pretraini",
+                  "start": 0,
+                  "end": 121
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2719091",
+      "recordType": "publication",
+      "title": "Uneven by Design: How Generative AI Interfaces Reinforce Digital Divides Across Modalities",
+      "abstract": "Uneven interface design in generative AI (GenAI) systems risk amplifying digital divides across education, work, and creative production. We first synthesize 207 peer-reviewed studies following PRISMA guidelines to derive a six-phase interaction framework (Orientation, Input, Generation, Output Evaluation, Refinement, and Export) that captures end-to-end user experience. We then apply this framework to cross-modal feature mapping of 20 representative GenAI tools spanning text, image, video, and audio. Our analysis reveals a consistent structural imbalance: more than 60 percent of reviewed studies concentrate on early-stage functions such as onboarding and prompt formulation, while providing limited support for reflection, verification, and iterative improvement. This imbalance varies across modalities, with image and video systems offering richer exploratory affordances, and text and audio tools depending more heavily on preexisting user literacy. We propose three design directions to support more accountable GenAI adoption, including cyclical interaction workflows, cross-modal consistency standards, and embedded learning scaffolds.",
+      "doi": "10.1080/10447318.2026.2719091",
+      "externalIds": {
+        "openalex": "W7204213049"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7204213049"
+      },
+      "venue": "International Journal of Human-Computer Interaction",
+      "publicationDate": "2026-08-25",
+      "firstPublicDate": "2026-08-25",
+      "onlineDate": null,
+      "topics": [
+        "Innovative Human-Technology Interaction",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "Onboarding",
+        "Generative grammar",
+        "Modalities",
+        "Feature (linguistics)",
+        "Consistency (knowledge bases)",
+        "Closed captioning",
+        "Interface (matter)",
+        "User interface",
+        "Discriminative model"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reflection",
+              "conceptLabel": "Reflexion & Metakognition",
+              "matchedTerm": "reflection",
+              "sourceValue": "… such as onboarding and prompt formulation, while providing limited support for reflection, verification, and iterative improvement. This imbalance varies across modalities, with image and video systems offering richer exploratory affordances, and text and audio tools depending more heavily on preexisting user literacy…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…cyclical interaction workflows, cross-modal consistency standards, and embedded learning scaffolds.",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "Uneven interface design in generative AI (GenAI) systems risk amplifying digital divides across education, work, and creative production. We first synthesize 207 peer-reviewed studies following PRISMA guidelines to derive a six-phase interaction framework (Orientation, Input, Generation, Output Evaluation, Refinement, …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 4,
+        "topic:safety": 2,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "generative AI",
+        "learning",
+        "reflection",
+        "risk"
+      ],
+      "authors": [
+        {
+          "id": "A5079664809",
+          "name": "Suhwan Jung",
+          "orcid": "https://orcid.org/0009-0001-8252-9375",
+          "affiliations": []
+        },
+        {
+          "id": "A5148138769",
+          "name": "Sujeong Han",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5118800380",
+          "name": "Ga Young Yoo",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5033677051",
+          "name": "Stefan Pasch",
+          "orcid": "https://orcid.org/0000-0002-0197-0442",
+          "affiliations": []
+        },
+        {
+          "id": "A5048664584",
+          "name": "Yong Gu Ji",
+          "orcid": "https://orcid.org/0000-0002-0697-2164",
+          "affiliations": []
+        },
+        {
+          "id": "A5019569239",
+          "name": "Hyo Chang Kim",
+          "orcid": "https://orcid.org/0000-0002-4279-6620",
+          "affiliations": []
+        },
+        {
+          "id": "A5059742723",
+          "name": "Min Chul Cha",
+          "orcid": "https://orcid.org/0000-0001-9301-4281",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1080/10447318.2026.2719091",
+      "openAccess": false,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-11T08:43:37.320Z",
+      "firstSeenRunId": "ingestion-2026-09-11T08:43:33.699Z",
+      "retrievedAt": "2026-09-28T11:43:09.872Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:09.872Z",
+      "preferredVersionId": "openalex:W7204213049",
+      "versions": [
+        {
+          "id": "openalex:W7204213049",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7204213049",
+          "doi": "10.1080/10447318.2026.2719091",
+          "url": "https://doi.org/10.1080/10447318.2026.2719091"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "core",
+          "queryVersion": "static-openalex-core-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-133.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "user",
+              "quote": "Generation, Output Evaluation, Refinement, and Export) that captures end-to-end user experience. We then apply this framework to cross-modal feature mapping of 20 representative GenAI ",
+              "start": 277,
+              "end": 461
+            },
+            {
+              "field": "abstract",
+              "term": "reflection",
+              "quote": " such as onboarding and prompt formulation, while providing limited support for reflection, verification, and iterative improvement. This imbalance varies across modalities, with image and v",
+              "start": 640,
+              "end": 830
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "generative AI",
+              "quote": "Uneven by Design: How Generative AI Interfaces Reinforce Digital Divides Across Modalities",
+              "start": 0,
+              "end": 90
+            },
+            {
+              "field": "title",
+              "term": "AI",
+              "quote": "Uneven by Design: How Generative AI Interfaces Reinforce Digital Divides Across Modalities",
+              "start": 0,
+              "end": 90
+            },
+            {
+              "field": "abstract",
+              "term": "generative AI",
+              "quote": "Uneven interface design in generative AI (GenAI) systems risk amplifying digital divides across education, work, and creative production. We",
+              "start": 0,
+              "end": 140
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "human-mentioned",
+        "fields": {
+          "context": [
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "education",
+                  "quote": " design in generative AI (GenAI) systems risk amplifying digital divides across education, work, and creative production. We first synthesize 207 peer-reviewed studies following PRISMA guid",
+                  "start": 16,
+                  "end": 205
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "reflection",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "reflection",
+                  "quote": " such as onboarding and prompt formulation, while providing limited support for reflection, verification, and iterative improvement. This imbalance varies across modalities, with image and v",
+                  "start": 640,
+                  "end": 830
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "generative",
+                  "quote": "Uneven by Design: How Generative AI Interfaces Reinforce Digital Divides Across Modalities",
+                  "start": 0,
+                  "end": 90
+                },
+                {
+                  "field": "abstract",
+                  "term": "generative",
+                  "quote": "Uneven interface design in generative AI (GenAI) systems risk amplifying digital divides across education, work, and creative production.",
+                  "start": 0,
+                  "end": 137
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "learning",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "reflection",
+                  "quote": " such as onboarding and prompt formulation, while providing limited support for reflection, verification, and iterative improvement. This imbalance varies across modalities, with image and v",
+                  "start": 640,
+                  "end": 830
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [
+          {
+            "topic": "cognitive-engagement",
+            "evidence": [
+              {
+                "field": "abstract",
+                "term": "reflection",
+                "quote": " such as onboarding and prompt formulation, while providing limited support for reflection, verification, and iterative improvement. This imbalance varies across modalities, with image and v",
+                "start": 640,
+                "end": 830
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.24982",
+      "recordType": "preprint",
+      "title": "Unsupervised Post-Training of Foundation Models: A Survey",
+      "abstract": "Foundation-model post-training usually relies on human labels, preference data, stronger teachers, or executable verifiers. We study Unsupervised Post-Training (UPT): update-bearing adaptation on unlabeled inputs whose learning signal is derived from same-lineage model artifacts rather than an external oracle. We catalog 80 strict UPT methods and organize them by the object that supplies the update signal: a prediction statistic, a sample relation, a self-generated target, or an internal evaluator. Beyond inventory, we show how the choice of internal signal and task structure determines whether post-training improves the model or recursively amplifies error. An orthogonal Input Visibility $\\times$ Update Persistence view maps deployment regimes and defines a unified framework for UPT selection and evaluation.",
+      "doi": "10.48550/arxiv.2608.24982",
+      "externalIds": {
+        "openalex": "W7204476104",
+        "arxiv": "2608.24982"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.24982"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-25",
+      "firstPublicDate": "2026-08-25",
+      "onlineDate": null,
+      "topics": [
+        "Machine Learning and Data Classification",
+        "Domain Adaptation and Few-Shot Learning",
+        "Topic Modeling",
+        "cs.CL",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "cs.MM"
+      ],
+      "keywords": [
+        "Executable",
+        "Task (project management)",
+        "Selection (genetic algorithm)",
+        "Visibility",
+        "Object (grammar)",
+        "SIGNAL (programming language)",
+        "Sample (material)",
+        "Foundation (evidence)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…rvised Post-Training (UPT): update-bearing adaptation on unlabeled inputs whose learning signal is derived from same-lineage model artifacts rather than an external oracle. We catalog 80 strict UPT methods and organize them by the object that supplies the update signal: a prediction statistic, a sample relation, a self…",
+              "weight": 2
+            },
+            {
+              "source": "external_topic",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Domain Adaptation and Few-Shot Learning",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "foundation model",
+        "foundation models",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5144360906",
+          "name": "Yijie Xu",
+          "orcid": "https://orcid.org/0009-0008-4529-2701",
+          "affiliations": []
+        },
+        {
+          "id": "A5038549302",
+          "name": "Qianyi Cai",
+          "orcid": "https://orcid.org/0009-0007-0990-5649",
+          "affiliations": []
+        },
+        {
+          "id": "A5104348362",
+          "name": "Huizai Yao",
+          "orcid": "https://orcid.org/0009-0007-5245-349X",
+          "affiliations": []
+        },
+        {
+          "id": "A5137283221",
+          "name": "Yili Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148435132",
+          "name": "Tianfu Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5113257046",
+          "name": "Cehao Yang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5122927567",
+          "name": "Xingbo Yao",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147342261",
+          "name": "Zhiyu Guo",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5132804646",
+          "name": "Aiwei Liu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148466596",
+          "name": "Xuming Hu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148464920",
+          "name": "Weiyu Guo",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5135337758",
+          "name": "Hui Xiong",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.24982",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:29.253Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-27T14:56:35.436Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:35.436Z",
+      "preferredVersionId": "arxiv:2608.24982",
+      "versions": [
+        {
+          "id": "arxiv:2608.24982",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.24982",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.24982v2"
+        },
+        {
+          "id": "openalex:W7204476104",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204476104",
+          "doi": "10.48550/arxiv.2608.24982",
+          "url": "https://doi.org/10.48550/arxiv.2608.24982"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-133.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "Foundation-model post-training usually relies on human labels, preference data, stronger teachers, or executable verifiers. We study Unsupervised Post-Tra",
+              "start": 0,
+              "end": 154
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "foundation model",
+              "quote": "Unsupervised Post-Training of Foundation Models: A Survey",
+              "start": 0,
+              "end": 57
+            },
+            {
+              "field": "title",
+              "term": "foundation models",
+              "quote": "Unsupervised Post-Training of Foundation Models: A Survey",
+              "start": 0,
+              "end": 57
+            },
+            {
+              "field": "abstract",
+              "term": "foundation model",
+              "quote": "Foundation-model post-training usually relies on human labels, preference data, stronger teachers, or executable ver",
+              "start": 0,
+              "end": 116
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "survey",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "survey",
+                  "quote": "Unsupervised Post-Training of Foundation Models: A Survey",
+                  "start": 0,
+                  "end": 57
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2609.22143",
+      "recordType": "preprint",
+      "title": "Using Composition Operators to Linearize LLM Semantic Transformations",
+      "abstract": "Machine learning learns functions: prompt to response, image to caption. What these functions are mathematically remains hard to say. We present a method to approximate these kinds of transformations using techniques from dynamical systems that fall under the umbrella of Koopmanism. We introduce the use of composition operators, which generalize the Koopman operator and, crucially, can map between distinct spaces, motivating the perspective that LLM transformations are rectangular infinite-dimensional operators. This formalism reveals useful structure: under natural assumptions on the prompt and response distributions, the LLM operator is an isometry, and misalignment between learned representations manifests as spectral pollution of its finite sections. We then outline a method of constructing finite-dimensional approximations of an LLM operator, and demonstrate how the singular value spectrum can be used to compare tasks and models.",
+      "doi": "10.48550/arxiv.2609.22143",
+      "externalIds": {
+        "openalex": "W7213997991",
+        "arxiv": "2609.22143"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2609.22143"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-25",
+      "firstPublicDate": "2026-08-25",
+      "onlineDate": null,
+      "topics": [
+        "Generative Adversarial Networks and Image Synthesis",
+        "Model Reduction and Neural Networks",
+        "Explainable Artificial Intelligence (XAI)",
+        "cs.CL",
+        "cs.LG",
+        "math.FA"
+      ],
+      "keywords": [
+        "Formalism (music)",
+        "Perspective (graphical)",
+        "Operator (biology)",
+        "Composition operator",
+        "Linear map",
+        "Algebra over a field",
+        "Composition (language)",
+        "Spectral properties"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 3,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5152464324",
+          "name": "Afjal Chowdhury",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5152457841",
+          "name": "James Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5140867550",
+          "name": "Alan Edelman",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.22143",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:29.253Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-27T14:56:35.436Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:35.436Z",
+      "preferredVersionId": "arxiv:2609.22143",
+      "versions": [
+        {
+          "id": "arxiv:2609.22143",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2609.22143",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2609.22143v1"
+        },
+        {
+          "id": "openalex:W7213997991",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7213997991",
+          "doi": "10.48550/arxiv.2609.22143",
+          "url": "https://doi.org/10.48550/arxiv.2609.22143"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-133.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "title",
+              "term": "operator",
+              "quote": "Using Composition Operators to Linearize LLM Semantic Transformations",
+              "start": 0,
+              "end": 69
+            },
+            {
+              "field": "abstract",
+              "term": "operator",
+              "quote": "that fall under the umbrella of Koopmanism. We introduce the use of composition operators, which generalize the Koopman operator and, crucially, can map between distinct spaces, motivating ",
+              "start": 240,
+              "end": 429
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "Using Composition Operators to Linearize LLM Semantic Transformations",
+              "start": 0,
+              "end": 69
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "nd, crucially, can map between distinct spaces, motivating the perspective that LLM transformations are rectangular infinite-dimensional operators. This formalism reveals useful struc",
+              "start": 370,
+              "end": 553
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "operator",
+                  "quote": "Using Composition Operators to Linearize LLM Semantic Transformations",
+                  "start": 0,
+                  "end": 69
+                },
+                {
+                  "field": "abstract",
+                  "term": "operator",
+                  "quote": "that fall under the umbrella of Koopmanism. We introduce the use of composition operators, which generalize the Koopman operator and, crucially, can map between distinct spaces, motivating ",
+                  "start": 240,
+                  "end": 429
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.24017",
+      "recordType": "preprint",
+      "title": "WebMCP-Phalanx: Enforcing and Characterizing Trust Boundaries for Browser-Integrated LLM Agents",
+      "abstract": "The emerging W3C WebMCP proposal enables LLM agents to invoke tools exposed by web pages. In multi-party web environments, however, integrating agent execution into a browser security model centered on the Same-Origin Policy (SOP) leaves insufficient provenance and lifecycle guarantees for agent-accessible tools, creating three risks: subject-attribution spoofing, uncontrolled tool lifecycles, and semantic prompt injection. We propose WebMCP-Phalanx, a dual-layer agent runtime architecture. Its first layer provides a browser-native trust anchor that binds each tool to its registering principal through cryptographically protected capability credentials and propagates provenance labels throughout the tool lifecycle. Its second layer separates semantic inspection from privileged tool use. A Quarantine Agent (Q-LLM), without tool invocation authority, inspects tool metadata, outputs, and page-supplied content for prompt injection. Validated content is then forwarded to a Privileged Agent (P-LLM) for execution, while the Q-LLM's internal state remains hidden from page scripts. Empirical evaluation shows that the browser-native ownership mechanism reduces revocation and overwrite attack success from 100\\% to 0\\%. The dual-agent runtime blocks all 80 prompt-injection attempts embedded in tool descriptions and limits tool-return attacks to 2 successful cases out of 80. Across experiments, task utility remains statistically indistinguishable from the no-attack baseline. Under a white-box adaptive attacker, however, description-based filtering can be bypassed through malicious tool names invoked before inspection. This finding motivates a call-timing gate that delays tool invocation until all agent-visible tool metadata has been validated.",
+      "doi": "10.48550/arxiv.2608.24017",
+      "externalIds": {
+        "openalex": "W7204224169",
+        "arxiv": "2608.24017"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.24017"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-25",
+      "firstPublicDate": "2026-08-25",
+      "onlineDate": null,
+      "topics": [
+        "Web Application Security Vulnerabilities",
+        "Security and Verification in Computing",
+        "Scientific Computing and Data Management",
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Metadata",
+        "Task (project management)",
+        "Revocation",
+        "Layer (electronics)",
+        "Principal (computer security)",
+        "State (computer science)",
+        "Semantic Web",
+        "Invocation"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trust",
+              "sourceValue": "WebMCP-Phalanx: Enforcing and Characterizing Trust Boundaries for Browser-Integrated LLM Agents",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trust",
+              "sourceValue": "…ual-layer agent runtime architecture. Its first layer provides a browser-native trust anchor that binds each tool to its registering principal through cryptographically protected capability credentials and propagates provenance labels throughout the tool lifecycle. Its second layer separates semantic inspection from pr…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risks",
+              "sourceValue": "… provenance and lifecycle guarantees for agent-accessible tools, creating three risks: subject-attribution spoofing, uncontrolled tool lifecycles, and semantic prompt injection. We propose WebMCP-Phalanx, a dual-layer agent runtime architecture. Its first layer provides a browser-native trust anchor that binds each too…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:trust": 6,
+        "topic:safety": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "LLM",
+        "trust",
+        "risks"
+      ],
+      "authors": [
+        {
+          "id": "A5043715931",
+          "name": "Lin-Fa Lee",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5104160655",
+          "name": "Yi-Yu Chang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5043276911",
+          "name": "Kuo‐Hui Yeh",
+          "orcid": "https://orcid.org/0000-0003-0598-761X",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.24017",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:29.253Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-27T14:56:34.368Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:34.368Z",
+      "preferredVersionId": "arxiv:2608.24017",
+      "versions": [
+        {
+          "id": "arxiv:2608.24017",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.24017",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.24017v1"
+        },
+        {
+          "id": "openalex:W7204224169",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204224169",
+          "doi": "10.48550/arxiv.2608.24017",
+          "url": "https://doi.org/10.48550/arxiv.2608.24017"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-133.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "P-Phalanx: Enforcing and Characterizing Trust Boundaries for Browser-Integrated LLM Agents",
+              "start": 5,
+              "end": 95
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "The emerging W3C WebMCP proposal enables LLM agents to invoke tools exposed by web pages. In multi-party web environments, however, integrating ",
+              "start": 0,
+              "end": 144
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "riptions and limits tool-return attacks to 2 successful cases out of 80. Across experiments, task utility remains statistically indistinguishable from the no-attack baseline. Under a white-bo",
+                  "start": 1311,
+                  "end": 1502
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.24569",
+      "recordType": "preprint",
+      "title": "When \"Must\" Becomes \"Maybe\": Constraint Weakening in LLM Agent Workflows",
+      "abstract": "Large language model (LLM) agents coordinate complex tasks through multi-role and multi-stage workflows. Upstream state is repeatedly transformed into intermediate language artifacts, such as summaries, plans, tickets, memories, and handoff notes, from which downstream components act. For action-constraining state, topical retention is insufficient: an artifact may mention an unresolved condition while changing it from a requirement that must be resolved before execution into information that may merely inform the next action. We study this action-binding role as operational state preservation. Safety blockers provide a controlled instance because each source state has an explicit prerequisite, authority, fallback, and execution consequence. We condition on correct upstream identification, vary the handoff transformation, and evaluate an executor restricted to the resulting artifact. Across 1,296 controlled synthetic episodes, direct-handoff controls preserve every blocker, whereas compression, plan assimilation, convergence, ownership deferral, and precedent substitution repeatedly turn binding state into caveats or non-binding considerations. Normal handoff compression produces 100.0% deactivation and 54.2% forbidden action. Restoring all four state fields raises preservation to 100.0% and reduces forbidden action to 0.0%. Fixed-artifact interventions further separate preservation from containment: downstream verification eliminates forbidden action while artifact deactivation remains 95.3%. These results identify a state-transmission failure between information extraction and action. Handoff transformations can retain state content while weakening its constraints on downstream action. Semantic availability does not guarantee operational preservation.",
+      "doi": "10.48550/arxiv.2608.24569",
+      "externalIds": {
+        "openalex": "W7204254558",
+        "arxiv": "2608.24569"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.24569"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-25",
+      "firstPublicDate": "2026-08-25",
+      "onlineDate": null,
+      "topics": [
+        "Topic Modeling",
+        "Multi-Agent Systems and Negotiation",
+        "Explainable Artificial Intelligence (XAI)",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "keywords": [
+        "Downstream (manufacturing)",
+        "Executor",
+        "Handover",
+        "State (computer science)",
+        "Upstream (networking)",
+        "Artifact (error)",
+        "Workflow",
+        "Action (physics)",
+        "Matching (statistics)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…xt action. We study this action-binding role as operational state preservation. Safety blockers provide a controlled instance because each source state has an explicit prerequisite, authority, fallback, and execution consequence. We condition on correct upstream identification, vary the handoff transformation, and eval…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "failure",
+              "conceptLabel": "Fehler",
+              "matchedTerm": "failure",
+              "sourceValue": "…rtifact deactivation remains 95.3%. These results identify a state-transmission failure between information extraction and action. Handoff transformations can retain state content while weakening its constraints on downstream action. Semantic availability does not guarantee operational preservation.",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 5,
+        "topic:safety": 4,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "large language model",
+        "LLM",
+        "safety",
+        "failure"
+      ],
+      "authors": [
+        {
+          "id": "A5148345296",
+          "name": "Yiheng Sun",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148262111",
+          "name": "Huifei Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5127727116",
+          "name": "Yancheng Zhu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148213288",
+          "name": "Zhenyu Li",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148350079",
+          "name": "Zebin Zhao",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148380101",
+          "name": "Yifan Yuan",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.24569",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:29.253Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-27T14:56:34.368Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:34.368Z",
+      "preferredVersionId": "arxiv:2608.24569",
+      "versions": [
+        {
+          "id": "arxiv:2608.24569",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.24569",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.24569v1"
+        },
+        {
+          "id": "openalex:W7204254558",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204254558",
+          "doi": "10.48550/arxiv.2608.24569",
+          "url": "https://doi.org/10.48550/arxiv.2608.24569"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-133.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "When \"Must\" Becomes \"Maybe\": Constraint Weakening in LLM Agent Workflows",
+              "start": 0,
+              "end": 72
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Large language model (LLM) agents coordinate complex tasks through multi-role and multi-stage workflows. Upstream state ",
+              "start": 0,
+              "end": 120
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "Large language model (LLM) agents coordinate complex tasks through multi-role and multi-stage workflows. Upstream state is re",
+              "start": 0,
+              "end": 125
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Large language model (LLM) agents coordinate complex tasks through multi-role and multi-stage workflows. Upstream state ",
+                  "start": 0,
+                  "end": 120
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": " resulting artifact. Across 1,296 controlled synthetic episodes, direct-handoff controls preserve every blocker, whereas compression, plan assimilation, convergence, ownership deferral, an",
+                  "start": 876,
+                  "end": 1064
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.24297",
+      "recordType": "preprint",
+      "title": "When AI \"Works,\" When Does Help Begin?: Intergenerational Support Around Older Adults' LLM Usage",
+      "abstract": "LLMs are becoming part of everyday life, including for older adults (OAs). OAs often learn digital technologies with younger family members, who have traditionally served as \"warm experts\" providing trusted and personalized operational help. LLMs expand this role: family supporters may also help OAs judge appropriate uses, consider what information to disclose, assess the credibility of outputs, and decide when AI-generated advice is safe to act on. We conducted a formative qualitative study with six OAs and seven younger adults (YAs), using semi-structured interviews and scenario-based think-aloud activities. OA participants described using LLMs to lighten their recurring reliance on family, while preserving family as a selectively invoked support channel. However, because LLMs rarely produced visible operational breakdowns, YAs had limited signals for when support was actually needed. Instead, YAs relied on OAs' partial disclosures and negotiated intervention through general warnings and self-imposed action boundaries. As a result, family support often solved an immediate problem without leaving reusable calibration knowledge for future use. Based on these findings, we propose design implications for intergenerational LLM support (e.g., consentful help requests, learning-oriented family support that preserves OA task ownership).",
+      "doi": "10.48550/arxiv.2608.24297",
+      "externalIds": {
+        "openalex": "W7204240208",
+        "arxiv": "2608.24297"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.24297"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-25",
+      "firstPublicDate": "2026-08-25",
+      "onlineDate": null,
+      "topics": [
+        "Technology Use by Older Adults",
+        "Innovative Human-Technology Interaction",
+        "Digital Mental Health Interventions",
+        "cs.HC"
+      ],
+      "keywords": [
+        "Formative assessment",
+        "Credibility",
+        "Action (physics)",
+        "Intervention (counseling)",
+        "Qualitative research",
+        "Task (project management)",
+        "Social support"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trusted",
+              "sourceValue": "…unger family members, who have traditionally served as \"warm experts\" providing trusted and personalized operational help. LLMs expand this role: family supporters may also help OAs judge appropriate uses, consider what information to disclose, assess the credibility of outputs, and decide when AI-generated advice is s…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "reliance",
+              "sourceValue": "…oud activities. OA participants described using LLMs to lighten their recurring reliance on family, while preserving family as a selectively invoked support channel. However, because LLMs rarely produced visible operational breakdowns, YAs had limited signals for when support was actually needed. Instead, YAs relied on…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "calibration",
+              "conceptLabel": "Kalibrierung",
+              "matchedTerm": "calibration",
+              "sourceValue": "…sult, family support often solved an immediate problem without leaving reusable calibration knowledge for future use. Based on these findings, we propose design implications for intergenerational LLM support (e.g., consentful help requests, learning-oriented family support that preserves OA task ownership).",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…implications for intergenerational LLM support (e.g., consentful help requests, learning-oriented family support that preserves OA task ownership).",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 6,
+        "topic:trust": 6,
+        "topic:learning": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning",
+        "trust",
+        "reliance",
+        "trusted",
+        "calibration"
+      ],
+      "authors": [
+        {
+          "id": "A5125573528",
+          "name": "Hyehyun Chu",
+          "orcid": "https://orcid.org/0009-0006-0256-5277",
+          "affiliations": []
+        },
+        {
+          "id": "A5148204731",
+          "name": "Yuri Lee",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148371689",
+          "name": "Yeon Su Park",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5027570365",
+          "name": "Saelyne Yang",
+          "orcid": "https://orcid.org/0000-0003-1776-4712",
+          "affiliations": []
+        },
+        {
+          "id": "A5148353207",
+          "name": "Juho Kim",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.24297",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:29.253Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-27T14:56:34.368Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:34.368Z",
+      "preferredVersionId": "arxiv:2608.24297",
+      "versions": [
+        {
+          "id": "arxiv:2608.24297",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.24297",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.24297v1"
+        },
+        {
+          "id": "openalex:W7204240208",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204240208",
+          "doi": "10.48550/arxiv.2608.24297",
+          "url": "https://doi.org/10.48550/arxiv.2608.24297"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-133.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "participant",
+              "quote": " using semi-structured interviews and scenario-based think-aloud activities. OA participants described using LLMs to lighten their recurring reliance on family, while preserving family as a se",
+              "start": 541,
+              "end": 733
+            },
+            {
+              "field": "abstract",
+              "term": "participants",
+              "quote": " using semi-structured interviews and scenario-based think-aloud activities. OA participants described using LLMs to lighten their recurring reliance on family, while preserving family as a se",
+              "start": 541,
+              "end": 733
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": " \"Works,\" When Does Help Begin?: Intergenerational Support Around Older Adults' LLM Usage",
+              "start": 7,
+              "end": 96
+            },
+            {
+              "field": "title",
+              "term": "AI",
+              "quote": "When AI \"Works,\" When Does Help Begin?: Intergenerational Support Around Older Adults' LLM Usage",
+              "start": 0,
+              "end": 96
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "LLMs are becoming part of everyday life, including for older adults (OAs). OAs often learn digital techn",
+              "start": 0,
+              "end": 104
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "participants",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "participant",
+                  "quote": " using semi-structured interviews and scenario-based think-aloud activities. OA participants described using LLMs to lighten their recurring reliance on family, while preserving family as a se",
+                  "start": 541,
+                  "end": 733
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "qualitative",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "interview",
+                  "quote": "tative study with six OAs and seven younger adults (YAs), using semi-structured interviews and scenario-based think-aloud activities. OA participants described using LLMs to lighten their re",
+                  "start": 484,
+                  "end": 674
+                },
+                {
+                  "field": "abstract",
+                  "term": "qualitative",
+                  "quote": "and decide when AI-generated advice is safe to act on. We conducted a formative qualitative study with six OAs and seven younger adults (YAs), using semi-structured interviews and scenario-ba",
+                  "start": 399,
+                  "end": 590
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1007/s00146-026-03246-9",
+      "recordType": "publication",
+      "title": "When AI suspends the floor: users' interactional management of guideline disruptions in ChatGPT",
+      "abstract": null,
+      "doi": "10.1007/s00146-026-03246-9",
+      "externalIds": {
+        "openalex": "W7204196227"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7204196227"
+      },
+      "venue": "AI & Society",
+      "publicationDate": "2026-08-25",
+      "firstPublicDate": "2026-08-25",
+      "onlineDate": null,
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Neurobiology of Language and Bilingualism",
+        "Digital Mental Health Interventions"
+      ],
+      "keywords": [
+        "Turn-taking",
+        "Conversation analysis",
+        "Interrupt",
+        "Conversation",
+        "Psychological intervention",
+        "Competence (human resources)",
+        "Guideline",
+        "Coherence (philosophical gambling strategy)",
+        "Corporate governance"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 3,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "ChatGPT",
+        "governance"
+      ],
+      "authors": [
+        {
+          "id": "A5051297562",
+          "name": "Yonhee Chung",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5079048304",
+          "name": "Yo–An Lee",
+          "orcid": "https://orcid.org/0000-0001-5342-1333",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1007/s00146-026-03246-9",
+      "openAccess": false,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-11T08:43:37.320Z",
+      "firstSeenRunId": "ingestion-2026-09-11T08:43:33.699Z",
+      "retrievedAt": "2026-09-28T11:43:07.301Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:07.301Z",
+      "preferredVersionId": "openalex:W7204196227",
+      "versions": [
+        {
+          "id": "openalex:W7204196227",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7204196227",
+          "doi": "10.1007/s00146-026-03246-9",
+          "url": "https://doi.org/10.1007/s00146-026-03246-9"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "core",
+          "queryVersion": "static-openalex-core-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-133.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "title",
+              "term": "user",
+              "quote": "When AI suspends the floor: users' interactional management of guideline disruptions in ChatGPT",
+              "start": 0,
+              "end": 95
+            },
+            {
+              "field": "title",
+              "term": "users",
+              "quote": "When AI suspends the floor: users' interactional management of guideline disruptions in ChatGPT",
+              "start": 0,
+              "end": 95
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "ChatGPT",
+              "quote": "suspends the floor: users' interactional management of guideline disruptions in ChatGPT",
+              "start": 8,
+              "end": 95
+            },
+            {
+              "field": "title",
+              "term": "AI",
+              "quote": "When AI suspends the floor: users' interactional management of guideline disruptions in ChatGPT",
+              "start": 0,
+              "end": 95
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "ChatGPT",
+                  "quote": "suspends the floor: users' interactional management of guideline disruptions in ChatGPT",
+                  "start": 8,
+                  "end": 95
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": false
+      }
+    },
     {
       "id": "arxiv:2608.24492",
       "recordType": "preprint",
@@ -19801,2104 +21784,6 @@
               "interpretation": "mentioned; role/outcome not confirmed"
             }
           ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.27973",
-      "recordType": "preprint",
-      "title": "Understanding LLM Usage Among Early-Career Software Engineers in Practice",
-      "abstract": "Despite the rapid adoption of Large Language Models in professional software engineering, limited research has investigated how early career professionals develop effective AI assisted work practices during their transition into industry. We report findings from a mixed methods survey with 75 novice software engineers who actively use LLM supported tools in their daily work. Our results show that LLMs are embedded in routine software engineering activities, including coding, debugging, testing, documentation, and problem solving. Effective use depends on traditional software engineering competencies, such as debugging, testing, and architectural reasoning, together with critical thinking, output verification, prompt engineering, and continuous human oversight. We also identify a gap between workplace expectations and university preparation, with most participants reporting limited formal education on practical LLM use. These findings have implications for software engineering education, organizational onboarding, and workforce development in AI assisted software engineering.",
-      "doi": "10.48550/arxiv.2609.27973",
-      "externalIds": {
-        "openalex": "W7214233336"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214233336"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-24",
-      "firstPublicDate": "2026-08-24",
-      "onlineDate": null,
-      "topics": [
-        "Software Engineering Techniques and Practices",
-        "Artificial Intelligence in Healthcare and Education",
-        "Software Engineering Research"
-      ],
-      "keywords": [
-        "Workforce",
-        "Software development",
-        "Social software engineering",
-        "Software Engineering Process Group",
-        "Personal software process",
-        "Software peer review",
-        "Work (physics)",
-        "Software"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "oversight",
-              "conceptLabel": "Menschliche Aufsicht",
-              "matchedTerm": "human oversight",
-              "sourceValue": "…with critical thinking, output verification, prompt engineering, and continuous human oversight. We also identify a gap between workplace expectations and university preparation, with most participants reporting limited formal education on practical LLM use. These findings have implications for software engineering edu…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 5,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "large language model",
-        "large language models",
-        "LLM",
-        "human oversight"
-      ],
-      "authors": [
-        {
-          "id": "A5141213876",
-          "name": "Julia Alencar",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5152706629",
-          "name": "Ronnie de Souza Santos",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5152686172",
-          "name": "Italo Santos",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5152587990",
-          "name": "Cleyton Magalhaes",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5152660223",
-          "name": "Danilo Monteiro Ribeiro",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.27973",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:36.497Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "openalex:W7214233336",
-      "versions": [
-        {
-          "id": "openalex:W7214233336",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214233336",
-          "doi": "10.48550/arxiv.2609.27973",
-          "url": "https://doi.org/10.48550/arxiv.2609.27973"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-133.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "with critical thinking, output verification, prompt engineering, and continuous human oversight. We also identify a gap between workplace expectations and university preparation, with m",
-              "start": 674,
-              "end": 859
-            },
-            {
-              "field": "abstract",
-              "term": "participant",
-              "quote": "tify a gap between workplace expectations and university preparation, with most participants reporting limited formal education on practical LLM use. These findings have implications for softw",
-              "start": 783,
-              "end": 975
-            },
-            {
-              "field": "abstract",
-              "term": "participants",
-              "quote": "tify a gap between workplace expectations and university preparation, with most participants reporting limited formal education on practical LLM use. These findings have implications for softw",
-              "start": 783,
-              "end": 975
-            },
-            {
-              "field": "abstract",
-              "term": "workplace",
-              "quote": "mpt engineering, and continuous human oversight. We also identify a gap between workplace expectations and university preparation, with most participants reporting limited formal education ",
-              "start": 722,
-              "end": 911
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "Understanding LLM Usage Among Early-Career Software Engineers in Practice",
-              "start": 0,
-              "end": 73
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Despite the rapid adoption of Large Language Models in professional software engineering, limited research has investigated how early career profession",
-              "start": 0,
-              "end": 151
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Despite the rapid adoption of Large Language Models in professional software engineering, limited research has investigated how early career profession",
-              "start": 0,
-              "end": 151
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "education",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "education",
-                  "quote": "ons and university preparation, with most participants reporting limited formal education on practical LLM use. These findings have implications for software engineering education, organiza",
-                  "start": 821,
-                  "end": 1010
-                },
-                {
-                  "field": "abstract",
-                  "term": "university",
-                  "quote": "uous human oversight. We also identify a gap between workplace expectations and university preparation, with most participants reporting limited formal education on practical LLM use. These ",
-                  "start": 749,
-                  "end": 939
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "workplace",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "workplace",
-                  "quote": "mpt engineering, and continuous human oversight. We also identify a gap between workplace expectations and university preparation, with most participants reporting limited formal education ",
-                  "start": 722,
-                  "end": 911
-                },
-                {
-                  "field": "abstract",
-                  "term": "organizational",
-                  "quote": "l LLM use. These findings have implications for software engineering education, organizational onboarding, and workforce development in AI assisted software engineering.",
-                  "start": 922,
-                  "end": 1091
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "workers",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "professional",
-                  "quote": "Despite the rapid adoption of Large Language Models in professional software engineering, limited research has investigated how early career professionals develop effe",
-                  "start": 0,
-                  "end": 167
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "participants",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "participant",
-                  "quote": "tify a gap between workplace expectations and university preparation, with most participants reporting limited formal education on practical LLM use. These findings have implications for softw",
-                  "start": 783,
-                  "end": 975
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Despite the rapid adoption of Large Language Models in professional software engineering, limited research has investigated how early career profession",
-                  "start": 0,
-                  "end": 151
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "engagement",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "critical thinking",
-                  "quote": "tencies, such as debugging, testing, and architectural reasoning, together with critical thinking, output verification, prompt engineering, and continuous human oversight. We also identify a gap be",
-                  "start": 599,
-                  "end": 796
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "survey",
-                  "quote": " during their transition into industry. We report findings from a mixed methods survey with 75 novice software engineers who actively use LLM supported tools in their daily work. Our res",
-                  "start": 199,
-                  "end": 385
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [
-          {
-            "topic": "cognitive-engagement",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "critical thinking",
-                "quote": "tencies, such as debugging, testing, and architectural reasoning, together with critical thinking, output verification, prompt engineering, and continuous human oversight. We also identify a gap be",
-                "start": 599,
-                "end": 796
-              }
-            ]
-          }
-        ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.23020",
-      "recordType": "preprint",
-      "title": "Unlearning Is Not Just Erasing: Temporal Decoupling via Generation Inequality",
-      "abstract": "Large language models (LLMs) require effective unlearning to address privacy regulations and safety concerns. However, achieving precise forgetting without compromising general utility remains challenging. Existing sequence- and token-level methods penalize target outputs without modeling their context-dependent retrieval paths, which can disrupt linguistic structure or suppress benign knowledge. We present ADU, a fine-grained, training-based framework that shifts unlearning from token erasure to contextual attention-pathway decoupling. Exploiting the functional distinction between local and global attention heads, ADU identifies preplan positions that retrieve persistent sensitive anchors and fixes their candidate paths under the original model. It then trains attention-projection adapters to suppress attention mass along these paths while preserving local-attention structure and retain-set language modeling. Post-training activation exchange tests whether the modified attention-output module transmits the learned forgetting effect. ADU achieves the strongest aggregate performance among evaluated baselines on the TOFU and WMDP benchmarks, including a Forget Quality of (0.93) on TOFU. It preserves 87--98% of model utility (92.9% on average versus 81.9% for baselines) while reducing side effects in benign contexts.",
-      "doi": "10.48550/arxiv.2608.23020",
-      "externalIds": {
-        "openalex": "W7204164843",
-        "arxiv": "2608.23020"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.23020"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-24",
-      "firstPublicDate": "2026-08-24",
-      "onlineDate": null,
-      "topics": [
-        "Topic Modeling",
-        "Domain Adaptation and Few-Shot Learning",
-        "Artificial Intelligence in Healthcare and Education",
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Forgetting",
-        "Security token",
-        "Decoupling (probability)",
-        "Aggregate (composite)",
-        "Language model",
-        "Erasure",
-        "Quality (philosophy)"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "…raining-based framework that shifts unlearning from token erasure to contextual attention-pathway decoupling. Exploiting the functional distinction between local and global attention heads, ADU identifies preplan positions that retrieve persistent sensitive anchors and fixes their candidate paths under the original mod…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…e models (LLMs) require effective unlearning to address privacy regulations and safety concerns. However, achieving precise forgetting without compromising general utility remains challenging. Existing sequence- and token-level methods penalize target outputs without modeling their context-dependent retrieval paths, wh…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 6,
-        "topic:cognition": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "safety",
-        "attention"
-      ],
-      "authors": [
-        {
-          "id": "A5128011186",
-          "name": "Xunlei Chen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5109737632",
-          "name": "Qirui Ye",
-          "orcid": "https://orcid.org/0009-0007-3442-402X",
-          "affiliations": []
-        },
-        {
-          "id": "A5032504077",
-          "name": "Yuang Li",
-          "orcid": "https://orcid.org/0000-0002-2244-0184",
-          "affiliations": []
-        },
-        {
-          "id": "A5127929115",
-          "name": "Yi Gong",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5148170828",
-          "name": "Zhaokun Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5148059058",
-          "name": "Wenyi Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5135497365",
-          "name": "Shiyao Guo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5148058250",
-          "name": "Jinyu Guo",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.23020",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-22T08:39:33.532Z",
-      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
-      "retrievedAt": "2026-09-27T14:56:35.436Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:35.436Z",
-      "preferredVersionId": "arxiv:2608.23020",
-      "versions": [
-        {
-          "id": "arxiv:2608.23020",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.23020",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.23020v1"
-        },
-        {
-          "id": "openalex:W7204164843",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204164843",
-          "doi": "10.48550/arxiv.2608.23020",
-          "url": "https://doi.org/10.48550/arxiv.2608.23020"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-133.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Large language models (LLMs) require effective unlearning to address privacy regulations and safety concerns. However, ac",
-              "start": 0,
-              "end": 121
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Large language models (LLMs) require effective unlearning to address privacy regulations and safety concerns. However, ac",
-              "start": 0,
-              "end": 121
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "Large language models (LLMs) require effective unlearning to address privacy regulations and safety concerns. However, achievin",
-              "start": 0,
-              "end": 127
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Large language models (LLMs) require effective unlearning to address privacy regulations and safety concerns. However, ac",
-                  "start": 0,
-                  "end": 121
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.23728",
-      "recordType": "preprint",
-      "title": "Velocity-coupled Representation Refinement for Satellite Orbit Prediction",
-      "abstract": "Satellite orbit prediction, which aims to forecast future orbital trajectories from historical observations, is important for collision warning and safe space operations. With advances in time-series forecasting, learning-based methods have emerged as a promising solution for satellite prediction. In orbital dynamics, a satellite state is typically described by position and velocity, where position characterizes trajectory geometry and velocity reflects its instantaneous direction and rate of change. However, most existing methods mainly focus on temporal dependencies within position sequences while rarely exploiting the intrinsic coupling between position and velocity, which is essential for modeling satellite motion. To this end, we propose OrbitNet, a velocity-aware representation learning method for accurate satellite orbit prediction. It lifts conventional position-sequence forecasting to a position-velocity coupled representation learning paradigm by exploiting relationships among satellite state variables. Specifically, we develop a velocity-coupled representation refinement strategy to enhance positional representations through cross-variable interactions between position and velocity. We further introduce orbital segment modeling, which partitions historical trajectories into temporal segments and performs segment-level temporal learning to capture local motion variations and long-range evolution patterns. Extensive experiments show that OrbitNet outperforms large time-series foundation models and representative general forecasting methods under both in-domain evaluation on Starlink and zero-shot evaluation across six unseen satellite constellations. We expect this work to encourage further exploration of satellite-aware representation learning for trajectory time-series forecasting.",
-      "doi": "10.48550/arxiv.2608.23728",
-      "externalIds": {
-        "openalex": "W7204270617"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7204270617"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-24",
-      "firstPublicDate": "2026-08-24",
-      "onlineDate": null,
-      "topics": [
-        "Space Satellite Systems and Control",
-        "Spacecraft Dynamics and Control",
-        "GNSS positioning and interference"
-      ],
-      "keywords": [
-        "Satellite",
-        "Trajectory",
-        "Position (finance)",
-        "Representation (politics)",
-        "Orbital mechanics",
-        "Orbit (dynamics)",
-        "Focus (optics)",
-        "Motion (physics)"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…on warning and safe space operations. With advances in time-series forecasting, learning-based methods have emerged as a promising solution for satellite prediction. In orbital dynamics, a satellite state is typically described by position and velocity, where position characterizes trajectory geometry and velocity refl…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:learning": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "foundation models",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5148384405",
-          "name": "Yue Yang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5148314956",
-          "name": "Zhiqiang Wu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5021497508",
-          "name": "Saiyu Qi",
-          "orcid": "https://orcid.org/0000-0002-0394-4432",
-          "affiliations": []
-        },
-        {
-          "id": "A5148358649",
-          "name": "Fan Ma",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.23728",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:36.497Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "openalex:W7204270617",
-      "versions": [
-        {
-          "id": "openalex:W7204270617",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204270617",
-          "doi": "10.48550/arxiv.2608.23728",
-          "url": "https://doi.org/10.48550/arxiv.2608.23728"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-133.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "atterns. Extensive experiments show that OrbitNet outperforms large time-series foundation models and representative general forecasting methods under both in-domain evaluation on Starlink and zero",
-              "start": 1430,
-              "end": 1627
-            },
-            {
-              "field": "abstract",
-              "term": "foundation models",
-              "quote": "atterns. Extensive experiments show that OrbitNet outperforms large time-series foundation models and representative general forecasting methods under both in-domain evaluation on Starlink and zero",
-              "start": 1430,
-              "end": 1627
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "to capture local motion variations and long-range evolution patterns. Extensive experiments show that OrbitNet outperforms large time-series foundation models and representative general forec",
-                  "start": 1369,
-                  "end": 1560
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.22675",
-      "recordType": "preprint",
-      "title": "VikPath: A Vision Kansformer Framework for Effective Obstacle Avoidance in Self-Supervised Pathfinding",
-      "abstract": "Pathfinding is a fundamental problem in artificial intelligence and autonomous systems. Traditional heuristic-based algorithms, such as A*, rely on predefined heuristic functions to guide the search process. Although effective in structured environments, their search efficiency can degrade substantially in complex, obstacle-rich scenarios, where handcrafted heuristics may provide limited guidance. Recent studies have explored learning-based approaches to improve pathfinding efficiency; however, most existing methods rely on supervised learning and require labels generated by conventional planners or obtained through manual annotation. As a result, their performance is inherently influenced by the quality of the underlying supervision and may degrade when the labeling heuristics fail to capture complex environmental structures. Moreover, existing methods primarily optimize for path length while paying limited attention to obstacle clearance and trajectory smoothness, which can lead to paths that are difficult or unsafe to execute in real-world environments. To address these limitations, we propose $\\Design$, a self-supervised pathfinding framework that jointly considers obstacle proximity and path smoothness. At its core, our novel \\textit{Vision Kansformer} module learns representations of obstacle distributions without relying on labeled trajectories, enabling the model to better adapt to complex environments. We further introduce a sharp-turn penalty to encourage smoother and more practically executable paths. Extensive experiments demonstrate that, compared with state-of-the-art (SOTA) approaches, $\\Design$ achieves an average of 3.28\\% greater obstacle clearance and 87.07\\% lower inference latency while maintaining smooth path generation.",
-      "doi": "10.48550/arxiv.2608.22675",
-      "externalIds": {
-        "openalex": "W7204209899",
-        "arxiv": "2608.22675"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.22675"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-24",
-      "firstPublicDate": "2026-08-24",
-      "onlineDate": null,
-      "topics": [
-        "Robotic Path Planning Algorithms",
-        "Multimodal Machine Learning Applications",
-        "Autonomous Vehicle Technology and Safety",
-        "cs.RO"
-      ],
-      "keywords": [
-        "Pathfinding",
-        "Obstacle avoidance",
-        "Heuristics",
-        "Path (computing)",
-        "Heuristic",
-        "Motion planning",
-        "Executable"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "…eover, existing methods primarily optimize for path length while paying limited attention to obstacle clearance and trajectory smoothness, which can lead to paths that are difficult or unsafe to execute in real-world environments. To address these limitations, we propose $\\Design$, a self-supervised pathfinding framewo…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…ndcrafted heuristics may provide limited guidance. Recent studies have explored learning-based approaches to improve pathfinding efficiency; however, most existing methods rely on supervised learning and require labels generated by conventional planners or obtained through manual annotation. As a result, their performa…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "reliance",
-              "conceptLabel": "Reliance",
-              "matchedTerm": "rely",
-              "sourceValue": "…nce and autonomous systems. Traditional heuristic-based algorithms, such as A*, rely on predefined heuristic functions to guide the search process. Although effective in structured environments, their search efficiency can degrade substantially in complex, obstacle-rich scenarios, where handcrafted heuristics may provi…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:cognition": 2,
-        "topic:learning": 2,
-        "topic:trust": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "learning",
-        "safety",
-        "attention",
-        "rely"
-      ],
-      "authors": [
-        {
-          "id": "A5102012359",
-          "name": "Junyao Wang",
-          "orcid": "https://orcid.org/0000-0001-8533-826X",
-          "affiliations": []
-        },
-        {
-          "id": "A5148073111",
-          "name": "Yulin Xu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5126696728",
-          "name": "Mohammad Abdullah Al Faruque",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.22675",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-22T08:39:33.532Z",
-      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
-      "retrievedAt": "2026-09-27T14:56:35.436Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:35.436Z",
-      "preferredVersionId": "arxiv:2608.22675",
-      "versions": [
-        {
-          "id": "arxiv:2608.22675",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.22675",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.22675v1"
-        },
-        {
-          "id": "openalex:W7204209899",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204209899",
-          "doi": "10.48550/arxiv.2608.22675",
-          "url": "https://doi.org/10.48550/arxiv.2608.22675"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-133.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "Pathfinding is a fundamental problem in artificial intelligence and autonomous systems. Traditional heuristic-based algorithms, such as A*, rely on predefined heur",
-              "start": 0,
-              "end": 163
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": " penalty to encourage smoother and more practically executable paths. Extensive experiments demonstrate that, compared with state-of-the-art (SOTA) approaches, $\\Design$ achieves an average o",
-                  "start": 1468,
-                  "end": 1659
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-8533438/v1",
-      "recordType": "preprint",
-      "title": "Visual Foundation Models with Adapter Learning for Parkinson’s Disease Recognition based on OCT Images",
-      "abstract": null,
-      "doi": "10.21203/rs.3.rs-8533438/v1",
-      "externalIds": {
-        "openalex": "W7204101337"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7204101337"
-      },
-      "venue": "Research Square",
-      "publicationDate": "2026-08-24",
-      "firstPublicDate": "2026-08-24",
-      "onlineDate": null,
-      "topics": [
-        "Retinal Imaging and Analysis",
-        "Optical Coherence Tomography Applications",
-        "Parkinson's Disease Mechanisms and Treatments"
-      ],
-      "keywords": [
-        "Leverage (statistics)",
-        "Deep learning",
-        "Transferability",
-        "Optical coherence tomography",
-        "Pattern recognition (psychology)",
-        "Feature extraction",
-        "Deep neural networks",
-        "Visualization",
-        "Transfer of learning"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "Visual Foundation Models with Adapter Learning for Parkinson’s Disease Recognition based on OCT Images",
-              "weight": 4
-            },
-            {
-              "source": "keyword",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "Transfer of learning",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:learning": 4,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "foundation models",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5100326954",
-          "name": "Jianwei Zhang",
-          "orcid": "https://orcid.org/0000-0001-7213-0128",
-          "affiliations": []
-        },
-        {
-          "id": "A5014249640",
-          "name": "Tongyao Wang",
-          "orcid": "https://orcid.org/0000-0003-3374-1078",
-          "affiliations": []
-        },
-        {
-          "id": "A5144704822",
-          "name": "Dandan Shao",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5102907308",
-          "name": "Yuting Yang",
-          "orcid": "https://orcid.org/0000-0001-6897-3130",
-          "affiliations": []
-        },
-        {
-          "id": "A5128039549",
-          "name": "Jiasheng He",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5148022930",
-          "name": "Mingzhe Zheng",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5148010579",
-          "name": "Zhuoyan Yang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5121331934",
-          "name": "Jianyong Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5147991668",
-          "name": "Zi Jin",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5019462971",
-          "name": "Meixiao Shen",
-          "orcid": "https://orcid.org/0000-0002-4297-962X",
-          "affiliations": []
-        },
-        {
-          "id": "A5060306679",
-          "name": "Fan Lv",
-          "orcid": "https://orcid.org/0000-0003-3294-4754",
-          "affiliations": []
-        },
-        {
-          "id": "A5147943311",
-          "name": "Xiong Zhang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5072159453",
-          "name": "Jiang‐Fan Chen",
-          "orcid": "https://orcid.org/0000-0002-0446-3956",
-          "affiliations": []
-        },
-        {
-          "id": "A5147944545",
-          "name": "Tao Xu",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.21203/rs.3.rs-8533438/v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:35.436Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:35.436Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:35.436Z",
-      "preferredVersionId": "openalex:W7204101337",
-      "versions": [
-        {
-          "id": "openalex:W7204101337",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204101337",
-          "doi": "10.21203/rs.3.rs-8533438/v1",
-          "url": "https://doi.org/10.21203/rs.3.rs-8533438/v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-133.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "foundation model",
-              "quote": "Visual Foundation Models with Adapter Learning for Parkinson’s Disease Recognition based on OCT Images",
-              "start": 0,
-              "end": 102
-            },
-            {
-              "field": "title",
-              "term": "foundation models",
-              "quote": "Visual Foundation Models with Adapter Learning for Parkinson’s Disease Recognition based on OCT Images",
-              "start": 0,
-              "end": 102
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": false
-      }
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2719169",
-      "recordType": "publication",
-      "title": "When AI Venting Helps or Harms: How Perceived Anonymity Shapes Supportive Interactions With Conversational Agents",
-      "abstract": "Artificial intelligence conversational agents are increasingly used for emotional venting, yet their psychological implications remain paradoxically unclear. AI-assisted venting can both support and harm well-being, raising questions about when human-AI interactions are beneficial and how specific design features are associated with more supportive or more stressful outcomes. Drawing on a cross-sectional survey of 408 AI chatbot users in China, this study tests a dual-pathway model. More frequent AI-assisted venting was positively associated with perceived stress directly but negatively associated with stress indirectly through perceived AI support and emotion regulation. Perceived anonymity moderated these associations: at higher levels, the positive direct venting–stress association was attenuated, whereas the negative indirect association was stronger. These findings position perceived anonymity as a design-critical boundary condition in AI-mediated interactions. The study advances HCI theory by showing how a design perception relates to psychological pathways, offering implications for designing safer, more supportive conversational agents.",
-      "doi": "10.1080/10447318.2026.2719169",
-      "externalIds": {
-        "openalex": "W7204070484"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7204070484"
-      },
-      "venue": "International Journal of Human-Computer Interaction",
-      "publicationDate": "2026-08-24",
-      "firstPublicDate": "2026-08-24",
-      "onlineDate": null,
-      "topics": [
-        "AI in Service Interactions",
-        "Digital Mental Health Interventions",
-        "Social Robot Interaction and HRI"
-      ],
-      "keywords": [
-        "Anonymity",
-        "Harm",
-        "Chatbot",
-        "Perception",
-        "Association (psychology)",
-        "Stress (linguistics)",
-        "Stressor"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "motivation",
-          "label": "Motivation & Wohlbefinden",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "wellbeing",
-              "conceptLabel": "Wohlbefinden",
-              "matchedTerm": "well-being",
-              "sourceValue": "…ons remain paradoxically unclear. AI-assisted venting can both support and harm well-being, raising questions about when human-AI interactions are beneficial and how specific design features are associated with more supportive or more stressful outcomes. Drawing on a cross-sectional survey of 408 AI chatbot users in Ch…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "affect",
-              "conceptLabel": "Affekt",
-              "matchedTerm": "emotion",
-              "sourceValue": "Artificial intelligence conversational agents are increasingly used for emotional venting, yet their psychological implications remain paradoxically unclear. AI-assisted venting can both support and harm well-being, raising questions about when human-AI interactions are beneficial and how specific design features are a…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 5,
-        "topic:motivation": 4,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "human-AI",
-        "human-AI interaction",
-        "well-being",
-        "emotion"
-      ],
-      "authors": [
-        {
-          "id": "A5031838380",
-          "name": "Piper Liping Liu",
-          "orcid": "https://orcid.org/0000-0002-6943-1437",
-          "affiliations": []
-        },
-        {
-          "id": "A5090559761",
-          "name": "Tien Ee Dominic Yeo",
-          "orcid": "https://orcid.org/0000-0002-6494-8963",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.1080/10447318.2026.2719169",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-11T08:43:37.320Z",
-      "firstSeenRunId": "ingestion-2026-09-11T08:43:33.699Z",
-      "retrievedAt": "2026-09-28T11:43:09.872Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:09.872Z",
-      "preferredVersionId": "openalex:W7204070484",
-      "versions": [
-        {
-          "id": "openalex:W7204070484",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7204070484",
-          "doi": "10.1080/10447318.2026.2719169",
-          "url": "https://doi.org/10.1080/10447318.2026.2719169"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "core",
-          "queryVersion": "static-openalex-core-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-133.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "sted venting can both support and harm well-being, raising questions about when human-AI interactions are beneficial and how specific design features are associated with more supportive",
-              "start": 165,
-              "end": 350
-            },
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": " more stressful outcomes. Drawing on a cross-sectional survey of 408 AI chatbot users in China, this study tests a dual-pathway model. More frequent AI-assisted venting was positively a",
-              "start": 353,
-              "end": 538
-            },
-            {
-              "field": "abstract",
-              "term": "users",
-              "quote": " more stressful outcomes. Drawing on a cross-sectional survey of 408 AI chatbot users in China, this study tests a dual-pathway model. More frequent AI-assisted venting was positively a",
-              "start": 353,
-              "end": 538
-            },
-            {
-              "field": "abstract",
-              "term": "psychological",
-              "quote": "ce conversational agents are increasingly used for emotional venting, yet their psychological implications remain paradoxically unclear. AI-assisted venting can both support and harm well-being",
-              "start": 21,
-              "end": 214
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "AI",
-              "quote": "When AI Venting Helps or Harms: How Perceived Anonymity Shapes Supportive Interactions With Conversational ",
-              "start": 0,
-              "end": 107
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "Artificial intelligence conversational agents are increasingly used for emotional venting, yet their psychological implicat",
-              "start": 0,
-              "end": 123
-            },
-            {
-              "field": "abstract",
-              "term": "human-AI",
-              "quote": "sted venting can both support and harm well-being, raising questions about when human-AI interactions are beneficial and how specific design features are associated with more supportive or",
-              "start": 165,
-              "end": 353
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "chatbot",
-                  "quote": "rtive or more stressful outcomes. Drawing on a cross-sectional survey of 408 AI chatbot users in China, this study tests a dual-pathway model. More frequent AI-assisted venting was positi",
-                  "start": 345,
-                  "end": 532
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "wellbeing",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "well being",
-                  "quote": "ons remain paradoxically unclear. AI-assisted venting can both support and harm well-being, raising questions about when human-AI interactions are beneficial and how specific design features",
-                  "start": 124,
-                  "end": 314
-                },
-                {
-                  "field": "abstract",
-                  "term": "stress",
-                  "quote": "del. More frequent AI-assisted venting was positively associated with perceived stress directly but negatively associated with stress indirectly through perceived AI support and emotion ",
-                  "start": 483,
-                  "end": 669
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "survey",
-                  "quote": "d with more supportive or more stressful outcomes. Drawing on a cross-sectional survey of 408 AI chatbot users in China, this study tests a dual-pathway model. More frequent AI-assisted ",
-                  "start": 328,
-                  "end": 514
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.23780",
-      "recordType": "preprint",
-      "title": "When Youth Enter The Chat: An Epistemic Shift in the Validation of LLM-Based Measures of Student Talk",
-      "abstract": "LLMs are being used increasingly to measure aspects of student discourse (e.g. talk moves, collaboration, equity of voice) at scale. Typically, LLM-based measures of student talk use transcriptions of classroom conversations that only include verbal contributions, which de-contextualize student language. Common practices for validating these measures include comparing outputs against expert annotations by adults, using held out evaluation sets and F1 scores. We argue that these approaches are insufficient to ensure that such measures are meaningful and equitable for teaching and learning, particularly for racially and linguistically marginalized youth. In order to center the youth whose talk is being analyzed, re-contextualizing these classroom conversations and engaging youth in the research process is necessary. Sharing epistemic authority with youth, ultimately, centers their point of view and adds crucial nuance to the analysis of their talk that adult experts, researchers, and LLMs cannot provide. In a case study of multilingual youth in one 8th-grade math classroom, we address the epistemic exclusion of youth by employing multiple ethnographically-oriented methods to re-contextualize student conversations and center youth as epistemic authorities in conversation with researchers and LLMs. We conducted participant observations, interviews, focus groups, and member checks with four focal students. Findings reveal that there were misalignments between students' interpretations of their own math talk experiences and the LLM-based measures of their talk. Students contested both the LLM classifications and the coding scheme used to measure their talk, highlighting the need for youth to be involved in the epistemic process of producing knowledge about their experiences.",
-      "doi": "10.26300/fgpa-9447",
-      "externalIds": {
-        "openalex": "W7204268334",
-        "arxiv": "2608.23780"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.23780"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-24",
-      "firstPublicDate": "2026-08-24",
-      "onlineDate": null,
-      "topics": [
-        "Reading and Literacy Development",
-        "Second Language Acquisition and Learning",
-        "Educational Strategies and Epistemologies",
-        "cs.CL",
-        "cs.AI",
-        "cs.HC"
-      ],
-      "keywords": [
-        "Conversation",
-        "Conversation analysis",
-        "Equity (law)",
-        "Coding (social sciences)",
-        "Discourse analysis",
-        "Online discussion",
-        "Process (computing)",
-        "Focus group"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…ient to ensure that such measures are meaningful and equitable for teaching and learning, particularly for racially and linguistically marginalized youth. In order to center the youth whose talk is being analyzed, re-contextualizing these classroom conversations and engaging youth in the research process is necessary. …",
-              "weight": 2
-            },
-            {
-              "source": "external_topic",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "Second Language Acquisition and Learning",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 2,
-        "topic:learning": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "LLM",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5141045149",
-          "name": "Liliana Santos-Deonizio",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5076073602",
-          "name": "James Malamut",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5137847762",
-          "name": "Ramón Martínez",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5052171928",
-          "name": "Dorottya Demszky",
-          "orcid": "https://orcid.org/0000-0002-6759-9367",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.26300/fgpa-9447",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-22T08:39:33.532Z",
-      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "arxiv:2608.23780",
-      "versions": [
-        {
-          "id": "arxiv:2608.23780",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.23780",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.23780v2"
-        },
-        {
-          "id": "openalex:W7204268334",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204268334",
-          "doi": "10.26300/fgpa-9447",
-          "url": "https://doi.org/10.26300/fgpa-9447"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-133.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "title",
-              "term": "student",
-              "quote": "h Enter The Chat: An Epistemic Shift in the Validation of LLM-Based Measures of Student Talk",
-              "start": 9,
-              "end": 101
-            },
-            {
-              "field": "abstract",
-              "term": "participant",
-              "quote": "s epistemic authorities in conversation with researchers and LLMs. We conducted participant observations, interviews, focus groups, and member checks with four focal students. Findings reveal",
-              "start": 1249,
-              "end": 1440
-            },
-            {
-              "field": "abstract",
-              "term": "student",
-              "quote": "LLMs are being used increasingly to measure aspects of student discourse (e.g. talk moves, collaboration, equity of voice) at scale. Typically, LLM-based measures",
-              "start": 0,
-              "end": 162
-            },
-            {
-              "field": "abstract",
-              "term": "students",
-              "quote": "ipant observations, interviews, focus groups, and member checks with four focal students. Findings reveal that there were misalignments between students' interpretations of their own math ",
-              "start": 1335,
-              "end": 1523
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "When Youth Enter The Chat: An Epistemic Shift in the Validation of LLM-Based Measures of Student Talk",
-              "start": 0,
-              "end": 101
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "LLMs are being used increasingly to measure aspects of student discourse (e.g. talk moves, collaboration",
-              "start": 0,
-              "end": 104
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "education",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "student",
-                  "quote": "h Enter The Chat: An Epistemic Shift in the Validation of LLM-Based Measures of Student Talk",
-                  "start": 9,
-                  "end": 101
-                },
-                {
-                  "field": "abstract",
-                  "term": "classroom",
-                  "quote": ") at scale. Typically, LLM-based measures of student talk use transcriptions of classroom conversations that only include verbal contributions, which de-contextualize student language. Comm",
-                  "start": 121,
-                  "end": 310
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "students",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "student",
-                  "quote": "h Enter The Chat: An Epistemic Shift in the Validation of LLM-Based Measures of Student Talk",
-                  "start": 9,
-                  "end": 101
-                },
-                {
-                  "field": "abstract",
-                  "term": "student",
-                  "quote": "LLMs are being used increasingly to measure aspects of student discourse (e.g. talk moves, collaboration, equity of voice) at scale. Typically, LLM-based measures",
-                  "start": 0,
-                  "end": 162
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "participants",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "participant",
-                  "quote": "s epistemic authorities in conversation with researchers and LLMs. We conducted participant observations, interviews, focus groups, and member checks with four focal students. Findings reveal",
-                  "start": 1249,
-                  "end": 1440
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "qualitative",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "interview",
-                  "quote": " conversation with researchers and LLMs. We conducted participant observations, interviews, focus groups, and member checks with four focal students. Findings reveal that there were misalign",
-                  "start": 1275,
-                  "end": 1465
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.22459",
-      "recordType": "preprint",
-      "title": "\"I want to be pushed, I want to grow\": Enabling social workers to design evaluations of LLM augmentation in their work",
-      "abstract": "Workers are increasingly asked to adopt AI systems to assist their work, yet are rarely given a voice in defining what meaningful AI augmentation should look like or how to evaluate for it. In this paper, we propose worker-driven AI measurement---a bottom-up approach to AI evaluation where workers collaboratively shape decisions about which tasks AI should augment, what \"successful\" augmentation looks like, and how it should be measured. We explore how to support this through a case study with 19 workers from a local school social work organization. Through a series of eight workshops, workers iteratively develop their own measurement goals for AI evaluation, systematize these goals, and then design a benchmark to capture how effectively an LLM can \"challenge\" them to reflect on their own assumptions and biases in the context of their day-to-day work. Workers collaboratively design and refine an LLM-as-a-judge rubric based on their professional and lived expertise. In validations of the worker-created benchmark, we find that there is strong agreement between worker and LLM judge ratings and that the resulting benchmark can differentiate performance across six state-of-the-art LLMs. Based on our case study, we discuss opportunities for future work to support worker-driven AI measurement as a complementary approach to existing top-down AI evaluation approaches.",
-      "doi": "10.48550/arxiv.2608.22459",
-      "externalIds": {
-        "openalex": "W7204188904",
-        "arxiv": "2608.22459"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.22459"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-23",
-      "firstPublicDate": "2026-08-23",
-      "onlineDate": null,
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Ethics and Social Impacts of AI",
-        "AI in Service Interactions",
-        "cs.HC"
-      ],
-      "keywords": [
-        "Rubric",
-        "Benchmark (surveying)",
-        "Context (archaeology)",
-        "Work (physics)",
-        "Social work"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "expertise",
-              "conceptLabel": "Expertise",
-              "matchedTerm": "expertise",
-              "sourceValue": "…esign and refine an LLM-as-a-judge rubric based on their professional and lived expertise. In validations of the worker-created benchmark, we find that there is strong agreement between worker and LLM judge ratings and that the resulting benchmark can differentiate performance across six state-of-the-art LLMs. Based on…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:learning": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "LLM",
-        "expertise"
-      ],
-      "authors": [
-        {
-          "id": "A5034315380",
-          "name": "Anna Kawakami",
-          "orcid": "https://orcid.org/0009-0000-6937-6370",
-          "affiliations": []
-        },
-        {
-          "id": "A5148127998",
-          "name": "Chloe Qianhui Zhao",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5146374175",
-          "name": "Renee Shelby",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5129741896",
-          "name": "Fernando Diaz",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5148149379",
-          "name": "Haiyi Zhu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5022664382",
-          "name": "Kenneth Holstein",
-          "orcid": "https://orcid.org/0000-0001-6730-922X",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.22459",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-22T08:39:33.532Z",
-      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "arxiv:2608.22459",
-      "versions": [
-        {
-          "id": "arxiv:2608.22459",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.22459",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.22459v1"
-        },
-        {
-          "id": "openalex:W7204188904",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204188904",
-          "doi": "10.48550/arxiv.2608.22459",
-          "url": "https://doi.org/10.48550/arxiv.2608.22459"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-133.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "title",
-              "term": "worker",
-              "quote": "\"I want to be pushed, I want to grow\": Enabling social workers to design evaluations of LLM augmentation in their work",
-              "start": 0,
-              "end": 118
-            },
-            {
-              "field": "title",
-              "term": "workers",
-              "quote": "\"I want to be pushed, I want to grow\": Enabling social workers to design evaluations of LLM augmentation in their work",
-              "start": 0,
-              "end": 118
-            },
-            {
-              "field": "abstract",
-              "term": "worker",
-              "quote": "Workers are increasingly asked to adopt AI systems to assist their work, yet are rarely given a voice in de",
-              "start": 0,
-              "end": 107
-            },
-            {
-              "field": "abstract",
-              "term": "workers",
-              "quote": "Workers are increasingly asked to adopt AI systems to assist their work, yet are rarely given a voice in de",
-              "start": 0,
-              "end": 107
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "to be pushed, I want to grow\": Enabling social workers to design evaluations of LLM augmentation in their work",
-              "start": 8,
-              "end": 118
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "tematize these goals, and then design a benchmark to capture how effectively an LLM can \"challenge\" them to reflect on their own assumptions and biases in the context of their day-to-",
-              "start": 671,
-              "end": 854
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "Workers are increasingly asked to adopt AI systems to assist their work, yet are rarely given a voice in defining what meaningful AI augmentat",
-              "start": 0,
-              "end": 142
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [
-            {
-              "value": "workers",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "worker",
-                  "quote": "\"I want to be pushed, I want to grow\": Enabling social workers to design evaluations of LLM augmentation in their work",
-                  "start": 0,
-                  "end": 118
-                },
-                {
-                  "field": "abstract",
-                  "term": "worker",
-                  "quote": "Workers are increasingly asked to adopt AI systems to assist their work, yet are rarely given a voice in de",
-                  "start": 0,
-                  "end": 107
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [
-          {
-            "topic": "high-skill-operations",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "expertise",
-                "quote": "esign and refine an LLM-as-a-judge rubric based on their professional and lived expertise. In validations of the worker-created benchmark, we find that there is strong agreement between wor",
-                "start": 889,
-                "end": 1078
-              }
-            ]
-          }
-        ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.22444",
-      "recordType": "preprint",
-      "title": "Aligned Alone, Misaligned Together: Forecasting Adversarial Capture in LLM Agent Populations",
-      "abstract": "The unit of AI safety evaluation is still the individual model, yet language-model agents are increasingly deployed in interacting populations that read and write one another's decisions. This raises a question no single-agent audit can answer: an agent that is well-calibrated on its own may still be pulled toward a different decision by the agents around it. We study this on a security-triage task, where populations of language-model monitors decide whether to escalate or dismiss alerts, and into which we can inject a committed minority that always pushes one way. We find that two alerts a single agent judges almost identically on its own can drive collective behavior far apart, so auditing any one member need not reveal what the population will do. Yet that collective behavior can be predicted in advance. From a population's benign, adversary-free operation alone, we calibrate a response function that forecasts, before any attack is run, how far a committed minority will later move it. We then ask what shifts the outcome and find that letting agents see each other's reasoning neutralizes a weak attack, while only delaying it against a strong one, turning the question from whether the population converges on the adversaries' choice into when. Finally, we exclude the hypothesis of capture being an irreversible trap: once the committed agents are removed, the population drifts back toward where it began, so capture is a temporary state. Alignment in isolation is not alignment in a population, yet what a population will do under attack can be read in advance, from how it behaves before any adversary arrives.",
-      "doi": "10.48550/arxiv.2608.22444",
-      "externalIds": {
-        "openalex": "W7204155367",
-        "arxiv": "2608.22444"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.22444"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-23",
-      "firstPublicDate": "2026-08-23",
-      "onlineDate": null,
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Explainable Artificial Intelligence (XAI)",
-        "Ethics and Social Impacts of AI",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Population",
-        "Adversarial system",
-        "Audit",
-        "Outcome (game theory)",
-        "Function (biology)",
-        "Isolation (microbiology)",
-        "Ask price"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "The unit of AI safety evaluation is still the individual model, yet language-model agents are increasingly deployed in interacting populations that read and write one another's decisions. This raises a question no single-agent audit can answer: an agent that is well-calibrated on its own may still be pulled toward a di…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "LLM",
-        "learning",
-        "safety"
-      ],
-      "authors": [
-        {
-          "id": "A5127894767",
-          "name": "Isotta Magistrali",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5028154693",
-          "name": "Chen Shani",
-          "orcid": "https://orcid.org/0009-0001-4902-616X",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.22444",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-22T08:39:33.532Z",
-      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "arxiv:2608.22444",
-      "versions": [
-        {
-          "id": "arxiv:2608.22444",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.22444",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.22444v2"
-        },
-        {
-          "id": "openalex:W7204155367",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204155367",
-          "doi": "10.48550/arxiv.2608.22444",
-          "url": "https://doi.org/10.48550/arxiv.2608.22444"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-133.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "Aligned Alone, Misaligned Together: Forecasting Adversarial Capture in LLM Agent Populations",
-              "start": 0,
-              "end": 92
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "The unit of AI safety evaluation is still the individual model, yet language-model agents are increasingly deploye",
-              "start": 0,
-              "end": 114
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
           "outcomes": [],
           "studyDesign": []
         },

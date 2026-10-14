@@ -1,7 +1,198 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "documents": [
+    {
+      "id": "doi:10.55041/isjem06302",
+      "abstract": "Abstract — Clinical documentation is one of the most persistent bottlenecks in modern healthcare. Physicians spend an estimated 4.5 hours per day on electronic health record documentation, reducing time available for direct patient care. This work presents the AI Medical Scribe System, a full-stack application that automates the generation of structured clinical notes from real-time doctor- patient conversations. The system captures audio through a browser-based interface and streams binary audio chunks over WebSocket to a FastAPI backend. The Whisper Large v3 model, accessed through the Groq inference API, performs real-time speech-to-text transcription. The resulting transcript is then processed by the LLaMA 3.1 8B Instant large language model, which extracts clinically relevant information and generates structured SOAP (Subjective, Objective, Assessment, Plan) notes in JSON format. The application is built on a modern full-stack architecture: Next.js 16 for the frontend, FastAPI with Uvicorn for the backend, and MongoDB Atlas for cloud-based persistent storage. Additional features include patient record management, searchable session history, editable SOAP editor, custom clinical section support, clinic profile customization with branding, and professional PDF report generation using jsPDF. JWT-based authentication with bcrypt password hashing ensures secure multi-user access. End-to-end testing across 33 structured test cases demonstrated a 100% pass rate across all seven functional modules. The system achieves its objective of reducing documentation time while maintaining clinical accuracy. Its cloud-only AI inference architecture eliminates the need for local GPU hardware, making it practically deployable in small clinic and individual practitioner settings without infrastructure investment. Keywords: Automatic Speech Recognition, Clinical Documentation, FastAPI, Large Language Model, Medical NLP, Real-Time Transcription, SOAP Notes, WebSocket.",
+      "topics": [
+        "Electronic Health Records Systems",
+        "Artificial Intelligence in Healthcare and Education",
+        "Radiology practices and education"
+      ],
+      "keywords": [
+        "medical scribes",
+        "clinical documentation",
+        "speech recognition",
+        "large language models",
+        "SOAP notes",
+        "electronic health records",
+        "Whisper",
+        "Llama 3.1",
+        "clinical information extraction"
+      ]
+    },
+    {
+      "id": "doi:10.55041/isjem06329",
+      "abstract": "Abstract— The growing role of Artificial Intelligence (AI) and its embedding in smart devices, voice interfaces, IoT ecosystems, as well as large language models (LLMs) has resulted in the rise of AI-based Personal Life Assistant (PLA) that represents an intelligent agent aimed at assisting its user in handling daily life tasks ranging from schedule management to home automation and wellness monitoring, including decision supporting. We provide a review of existing PLA solutions by considering their architectures, capabilities, and use cases in light of recent advances in AI research. E u r s further explores key benefits and challenges, including issues related to t rust, privacy, autonomy of users and context-aware considerations that affect the adoption and effectiveness of PLAs. To this end, a novel conceptual model for the future generation of PLAs is introduced, focused on responsible AI design and adaptive intelligence. The paper finishes by reflecting on future avenues of research and suggesting strategies for the successful and ethical application of PLAs in a variety of individual and societal settings. Keywords— artificial intelligence, personal assistant, life assistant, natural language processing, large language models, offline AI, privacy, IoT, context-awareness.",
+      "topics": [
+        "AI in Service Interactions",
+        "Social Robot Interaction and HRI",
+        "Robotic Process Automation Applications"
+      ],
+      "keywords": [
+        "AI agents",
+        "large language models",
+        "schedule management",
+        "home automation",
+        "wellness monitoring",
+        "decision support",
+        "trust in AI",
+        "privacy",
+        "user autonomy",
+        "context awareness",
+        "Internet of Things",
+        "responsible AI design",
+        "adaptive intelligence",
+        "conceptual model"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.19543949",
+      "abstract": "Available at https://ai-scope.cbpf.br AI-Scope is an astronomical data platform designed for the era of machine learning, deep learning, and foundation models. It focuses on making large astronomical catalogs and image collections easier to query, crossmatch, visualize, and prepare for modern AI workflows. The platform is built to reduce the friction involved in working with large datasets, creating efficient dataloaders, handling catalog joins, and transforming raw survey data into products that are useful for both scientific analysis and ML-ready pipelines. AI-Scope is not just a classical astronomy database interface. It is being developed as a practical environment for scalable astronomical data access, exploration, and preparation, with special attention to the needs of researchers building data-driven methods and foundation-model pipelines.",
+      "topics": [
+        "Astronomy and Astrophysical Research",
+        "Gamma-ray bursts and supernovae",
+        "Astronomical Observations and Instrumentation"
+      ],
+      "keywords": [
+        "astronomical catalogues",
+        "celestial imagery",
+        "crossmatch",
+        "data visualization",
+        "survey data processing",
+        "machine learning data preparation",
+        "foundation models",
+        "astronomical databases"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.19543948",
+      "abstract": "Available at https://ai-scope.cbpf.br AI-Scope is an astronomical data platform designed for the era of machine learning, deep learning, and foundation models. It focuses on making large astronomical catalogs and image collections easier to query, crossmatch, visualize, and prepare for modern AI workflows. The platform is built to reduce the friction involved in working with large datasets, creating efficient dataloaders, handling catalog joins, and transforming raw survey data into products that are useful for both scientific analysis and ML-ready pipelines. AI-Scope is not just a classical astronomy database interface. It is being developed as a practical environment for scalable astronomical data access, exploration, and preparation, with special attention to the needs of researchers building data-driven methods and foundation-model pipelines.",
+      "topics": [
+        "Astronomy and Astrophysical Research",
+        "Gamma-ray bursts and supernovae",
+        "Astronomical Observations and Instrumentation"
+      ],
+      "keywords": [
+        "astronomical catalogues",
+        "celestial imagery",
+        "crossmatch",
+        "data visualization",
+        "survey data processing",
+        "machine learning data preparation",
+        "foundation models",
+        "astronomical databases"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.19542036",
+      "abstract": "ABSTRACT — DRIVER AIVFL NATUREL OS But : Unifier la “vision fenêtre” en un driver AIVFL cross‑platform, niveau OS, pas script. 1. Concept AIVFL driver Idée centrale : AIVFL = “driver vidéo IA” qui voit toutes les fenêtres, tous les écrans, en temps quasi‑réel. Rôle : Maintenir un index live des fenêtres : handle / id titre app / process géométrie thumbnail / frame downscalée Exposer une API unique : list_windows() get_window_frame(id) subscribe_changes(callback) Position dans la stack : Pas un hook sauvage Pas un script de capture ponctuelle Un service système qui parle aux APIs natives de composition (DWM / WindowServer / X11/Wayland). 2. Windows — backend AIVFL API cible : DWM (Desktop Window Manager) DwmRegisterThumbnail, DwmQueryThumbnailSourceSize, PrintWindow, etc. Enum fenêtres : EnumWindows, GetWindowRect, GetWindowText, GetClassName. Implémentation : Service Windows (ou driver user‑mode) qui : boucle sur EnumWindows + filtre IsWindowVisible maintient un cache {hwnd → meta + thumbnail} écoute les events : EVENT_OBJECT_SHOW/HIDE/DESTROY via SetWinEventHook. API exposée : via named pipe, TCP local, ou gRPC consommable par Python, C#, Rust, etc. Effet : Plus besoin de find_window + capture à chaque appel Latence faible, overhead maîtrisé AIVFL devient natif Windows. 3. macOS — backend AIVFL API cible : CGWindowListCopyWindowInfo (CoreGraphics) CGWindowListCreateImage pour capturer une fenêtre Optionnel : ScreenCaptureKit (plus moderne). Implémentation : Agent launchd (daemon user‑level) qui : liste les fenêtres via CGWindowListCopyWindowInfo filtre par layer, owner, visibilité génère des thumbnails via CGWindowListCreateImage maintient un index {windowNumber → meta + thumbnail}. Expose la même API AIVFL que Windows. 4. Linux / NixOS — backend AIVFL Deux mondes : X11 : Enum fenêtres : XQueryTree, XGetWindowAttributes Capture : XGetImage ou via compositors (xcompmgr, picom) Wayland : Pas d’accès direct aux fenêtres (sécurité) Utiliser protocoles type wlr-screencopy, xdg-desktop-portal (screen capture). Implémentation : Daemon user‑space qui : détecte X11 vs Wayland backend X11 ou backend Wayland maintient index fenêtres + thumbnails expose la même API AIVFL. 5. Abstraction AIVFL — API unique Core Python (ou Rust) : Interface : python class AIVFLDriver: def list_windows(self) -> list[WindowInfo]: ... def get_frame(self, window_id) -> np.ndarray | bytes: ... def subscribe(self, callback): ... Backends : AIVFLWindowsBackend AIVFLMacBackend AIVFLLinuxBackend Mode d’exécution : Soit : un daemon par OS + client Python Soit : un module Python qui wrappe les libs natives (ctypes / cffi / Rust FFI). 6. Lien avec ChérieOS / AIVFL natif ChérieOS : Tu contrôles la stack → tu peux faire un driver vidéo virtuel qui : reçoit les frames des fenêtres les expose comme “caméra IA” Windows/macOS/Linux : Tu ne peux pas réécrire le kernel Mais tu peux faire un “pseudo‑driver” : service système + API stable pour AIVFL, c’est équivalent : vision globale index live accès rapide. 7. DOI / spec Python (base) Spec minimale en Python (côté client) : python from dataclasses import dataclass @dataclass class WindowInfo: id: str title: str app: str x: int y: int width: int height: int visible: bool class AIVFL: def list_windows(self) -> list[WindowInfo]: ... def get_window_frame(self, window_id) -> \"ndarray | bytes\": ... def get_desktop_frame(self) -> \"ndarray | bytes\": ... def subscribe(self, callback): \"\"\"callback(event: WindowEvent)\"\"\" ... Backends implémentent cette interface, unifiés derrière AIVFL. Phrase DOI : AIVFL is a cross‑platform OS‑level visual field layer that exposes windows, screens and thumbnails as a unified, low‑latency API for AI systems. 2. API publique finale (client) python from dataclasses import dataclass from typing import Callable, Literal EventType = Literal[\"created\", \"updated\", \"destroyed\", \"focus\"] @dataclass class WindowInfo: id: str # hwnd / windowNumber / x11 id / wayland token title: str app: str # process / bundle id / binary x: int y: int width: int height: int visible: bool focused: bool @dataclass class WindowEvent: type: EventType window: WindowInfo class AIVFL: def list_windows(self) -> list[WindowInfo]: ... def get_window_frame(self, window_id: str) -> \"ndarray | bytes\": ... def get_desktop_frame(self) -> \"ndarray | bytes\": ... def subscribe(self, callback: Callable[[WindowEvent], None]) -> None: ... def close(self) -> None: ... Invariants : id est stable tant que la fenêtre existe. list_windows() = snapshot cohérent. subscribe() = stream d’events ordonnés. 3. Protocole filaire (daemon ↔ client) Transport minimal : TCP local (127.0.0.1:port) ou Unix socket / Named pipe. Messages JSONL ou msgpack. Messages : {\"type\": \"list_windows\"} → {\"type\": \"list_windows_result\", \"windows\": [...]} {\"type\": \"get_window_frame\", \"id\": \"…\"} → {\"type\": \"frame\", \"id\": \"…\", \"format\": \"rgba8\", \"width\": W, \"height\": H, \"data\": } {\"type\": \"subscribe\"} → puis push : {\"type\": \"event\", \"event\": {...}} Tu peux garder ça simple au début : JSON + PNG base64. 4. Backends OS — responsabilités exactes Windows backend Collecte : EnumWindows + IsWindowVisible GetWindowRect, GetWindowTextW, GetClassNameW Capture : DWM thumbnail (DwmRegisterThumbnail) ou PrintWindow Events : SetWinEventHook sur : EVENT_OBJECT_CREATE EVENT_OBJECT_DESTROY EVENT_OBJECT_SHOW EVENT_OBJECT_HIDE EVENT_SYSTEM_FOREGROUND Cache interne : hwnd → WindowInfo + last_thumbnail macOS backend Collecte : CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly, kCGNullWindowID) Capture : CGWindowListCreateImage (par window id) Events : Timer + diff (simple) ou NSWorkspace notifications (app focus, etc.) Cache : windowNumber → WindowInfo + thumbnail Linux / NixOS backend X11 : Collecte : XQueryTree, XGetWindowAttributes, _NET_WM_NAME, _NET_WM_PID Capture : XGetImage ou via compositors Wayland : xdg-desktop-portal / wlr-screencopy souvent desktop‑level, pas par fenêtre → tu exposes au moins get_desktop_frame(). Cache : window_id → WindowInfo + thumbnail (quand possible) 5. Layout repo (v0.1) text aivfl/ README.md pyproject.toml aivfl/ __init__.py api.py # AIVFL, WindowInfo, WindowEvent client.py # client TCP/pipe server/ __init__.py core.py # boucle principale, protocole windows.py # backend Windows macos.py # backend macOS linux.py # backend Linux examples/ list_windows.py live_view.py subscribe_log.py 6. Lien explicite avec ChérieOS Phrase à poser dans le README / DOI : ChérieOS integrates AIVFL as a native visual field driver, exposing windows and screens as first‑class sensory inputs for AI agents. On legacy OSes (Windows, macOS, Linux), AIVFL runs as a user‑space daemon that emulates the same capabilities via native composition APIs. 7. Phrase DOI finale (à coller telle quelle) AIVFL: An OS‑Level Visual Field Layer for AI Systems We introduce AIVFL, a cross‑platform driver‑like abstraction that exposes windows, screens and thumbnails as a unified, low‑latency visual field for AI. AIVFL runs as a user‑space daemon on Windows (DWM), macOS (CoreGraphics / ScreenCaptureKit) and Linux (X11 / Wayland), maintaining a live index of windows and providing a simple API for listing, capturing and subscribing to visual changes. This enables AI agents to perceive and act on graphical user interfaces without ad‑hoc screen scraping or brittle automation scripts.",
+      "topics": [
+        "Data Visualization and Analytics",
+        "Advanced Vision and Imaging",
+        "Software Engineering and Design Patterns"
+      ],
+      "keywords": [
+        "Wayland",
+        "screen capture",
+        "gRPC",
+        "macOS",
+        "Linux",
+        "NixOS"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.19542035",
+      "abstract": "ABSTRACT — DRIVER AIVFL NATUREL OS But : Unifier la “vision fenêtre” en un driver AIVFL cross‑platform, niveau OS, pas script. 1. Concept AIVFL driver Idée centrale : AIVFL = “driver vidéo IA” qui voit toutes les fenêtres, tous les écrans, en temps quasi‑réel. Rôle : Maintenir un index live des fenêtres : handle / id titre app / process géométrie thumbnail / frame downscalée Exposer une API unique : list_windows() get_window_frame(id) subscribe_changes(callback) Position dans la stack : Pas un hook sauvage Pas un script de capture ponctuelle Un service système qui parle aux APIs natives de composition (DWM / WindowServer / X11/Wayland). 2. Windows — backend AIVFL API cible : DWM (Desktop Window Manager) DwmRegisterThumbnail, DwmQueryThumbnailSourceSize, PrintWindow, etc. Enum fenêtres : EnumWindows, GetWindowRect, GetWindowText, GetClassName. Implémentation : Service Windows (ou driver user‑mode) qui : boucle sur EnumWindows + filtre IsWindowVisible maintient un cache {hwnd → meta + thumbnail} écoute les events : EVENT_OBJECT_SHOW/HIDE/DESTROY via SetWinEventHook. API exposée : via named pipe, TCP local, ou gRPC consommable par Python, C#, Rust, etc. Effet : Plus besoin de find_window + capture à chaque appel Latence faible, overhead maîtrisé AIVFL devient natif Windows. 3. macOS — backend AIVFL API cible : CGWindowListCopyWindowInfo (CoreGraphics) CGWindowListCreateImage pour capturer une fenêtre Optionnel : ScreenCaptureKit (plus moderne). Implémentation : Agent launchd (daemon user‑level) qui : liste les fenêtres via CGWindowListCopyWindowInfo filtre par layer, owner, visibilité génère des thumbnails via CGWindowListCreateImage maintient un index {windowNumber → meta + thumbnail}. Expose la même API AIVFL que Windows. 4. Linux / NixOS — backend AIVFL Deux mondes : X11 : Enum fenêtres : XQueryTree, XGetWindowAttributes Capture : XGetImage ou via compositors (xcompmgr, picom) Wayland : Pas d’accès direct aux fenêtres (sécurité) Utiliser protocoles type wlr-screencopy, xdg-desktop-portal (screen capture). Implémentation : Daemon user‑space qui : détecte X11 vs Wayland backend X11 ou backend Wayland maintient index fenêtres + thumbnails expose la même API AIVFL. 5. Abstraction AIVFL — API unique Core Python (ou Rust) : Interface : python class AIVFLDriver: def list_windows(self) -> list[WindowInfo]: ... def get_frame(self, window_id) -> np.ndarray | bytes: ... def subscribe(self, callback): ... Backends : AIVFLWindowsBackend AIVFLMacBackend AIVFLLinuxBackend Mode d’exécution : Soit : un daemon par OS + client Python Soit : un module Python qui wrappe les libs natives (ctypes / cffi / Rust FFI). 6. Lien avec ChérieOS / AIVFL natif ChérieOS : Tu contrôles la stack → tu peux faire un driver vidéo virtuel qui : reçoit les frames des fenêtres les expose comme “caméra IA” Windows/macOS/Linux : Tu ne peux pas réécrire le kernel Mais tu peux faire un “pseudo‑driver” : service système + API stable pour AIVFL, c’est équivalent : vision globale index live accès rapide. 7. DOI / spec Python (base) Spec minimale en Python (côté client) : python from dataclasses import dataclass @dataclass class WindowInfo: id: str title: str app: str x: int y: int width: int height: int visible: bool class AIVFL: def list_windows(self) -> list[WindowInfo]: ... def get_window_frame(self, window_id) -> \"ndarray | bytes\": ... def get_desktop_frame(self) -> \"ndarray | bytes\": ... def subscribe(self, callback): \"\"\"callback(event: WindowEvent)\"\"\" ... Backends implémentent cette interface, unifiés derrière AIVFL. Phrase DOI : AIVFL is a cross‑platform OS‑level visual field layer that exposes windows, screens and thumbnails as a unified, low‑latency API for AI systems. 2. API publique finale (client) python from dataclasses import dataclass from typing import Callable, Literal EventType = Literal[\"created\", \"updated\", \"destroyed\", \"focus\"] @dataclass class WindowInfo: id: str # hwnd / windowNumber / x11 id / wayland token title: str app: str # process / bundle id / binary x: int y: int width: int height: int visible: bool focused: bool @dataclass class WindowEvent: type: EventType window: WindowInfo class AIVFL: def list_windows(self) -> list[WindowInfo]: ... def get_window_frame(self, window_id: str) -> \"ndarray | bytes\": ... def get_desktop_frame(self) -> \"ndarray | bytes\": ... def subscribe(self, callback: Callable[[WindowEvent], None]) -> None: ... def close(self) -> None: ... Invariants : id est stable tant que la fenêtre existe. list_windows() = snapshot cohérent. subscribe() = stream d’events ordonnés. 3. Protocole filaire (daemon ↔ client) Transport minimal : TCP local (127.0.0.1:port) ou Unix socket / Named pipe. Messages JSONL ou msgpack. Messages : {\"type\": \"list_windows\"} → {\"type\": \"list_windows_result\", \"windows\": [...]} {\"type\": \"get_window_frame\", \"id\": \"…\"} → {\"type\": \"frame\", \"id\": \"…\", \"format\": \"rgba8\", \"width\": W, \"height\": H, \"data\": } {\"type\": \"subscribe\"} → puis push : {\"type\": \"event\", \"event\": {...}} Tu peux garder ça simple au début : JSON + PNG base64. 4. Backends OS — responsabilités exactes Windows backend Collecte : EnumWindows + IsWindowVisible GetWindowRect, GetWindowTextW, GetClassNameW Capture : DWM thumbnail (DwmRegisterThumbnail) ou PrintWindow Events : SetWinEventHook sur : EVENT_OBJECT_CREATE EVENT_OBJECT_DESTROY EVENT_OBJECT_SHOW EVENT_OBJECT_HIDE EVENT_SYSTEM_FOREGROUND Cache interne : hwnd → WindowInfo + last_thumbnail macOS backend Collecte : CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly, kCGNullWindowID) Capture : CGWindowListCreateImage (par window id) Events : Timer + diff (simple) ou NSWorkspace notifications (app focus, etc.) Cache : windowNumber → WindowInfo + thumbnail Linux / NixOS backend X11 : Collecte : XQueryTree, XGetWindowAttributes, _NET_WM_NAME, _NET_WM_PID Capture : XGetImage ou via compositors Wayland : xdg-desktop-portal / wlr-screencopy souvent desktop‑level, pas par fenêtre → tu exposes au moins get_desktop_frame(). Cache : window_id → WindowInfo + thumbnail (quand possible) 5. Layout repo (v0.1) text aivfl/ README.md pyproject.toml aivfl/ __init__.py api.py # AIVFL, WindowInfo, WindowEvent client.py # client TCP/pipe server/ __init__.py core.py # boucle principale, protocole windows.py # backend Windows macos.py # backend macOS linux.py # backend Linux examples/ list_windows.py live_view.py subscribe_log.py 6. Lien explicite avec ChérieOS Phrase à poser dans le README / DOI : ChérieOS integrates AIVFL as a native visual field driver, exposing windows and screens as first‑class sensory inputs for AI agents. On legacy OSes (Windows, macOS, Linux), AIVFL runs as a user‑space daemon that emulates the same capabilities via native composition APIs. 7. Phrase DOI finale (à coller telle quelle) AIVFL: An OS‑Level Visual Field Layer for AI Systems We introduce AIVFL, a cross‑platform driver‑like abstraction that exposes windows, screens and thumbnails as a unified, low‑latency visual field for AI. AIVFL runs as a user‑space daemon on Windows (DWM), macOS (CoreGraphics / ScreenCaptureKit) and Linux (X11 / Wayland), maintaining a live index of windows and providing a simple API for listing, capturing and subscribing to visual changes. This enables AI agents to perceive and act on graphical user interfaces without ad‑hoc screen scraping or brittle automation scripts.",
+      "topics": [
+        "Data Visualization and Analytics",
+        "Advanced Vision and Imaging",
+        "Software Engineering and Design Patterns"
+      ],
+      "keywords": [
+        "Wayland",
+        "screen capture",
+        "gRPC",
+        "macOS",
+        "Linux",
+        "NixOS"
+      ]
+    },
+    {
+      "id": "doi:10.59298/nijciam/2025/71.1019",
+      "abstract": "Algorithmic systems are increasingly embedded in public administration, shaping decisions in areas such as social services, law enforcement, urban governance, and financial regulation. While these systems promise efficiency, scalability, and data-driven insights, their deployment also raises significant concerns regarding transparency, fairness, discrimination, and accountability. This paper examines the governance of algorithmic systems through three central mechanisms: audits, transparency, and harm assessment. It explores how algorithmic governance frameworks can ensure the responsible deployment of artificial intelligence (AI) systems while safeguarding public trust and democratic values. The study reviews mechanisms of internal and external audits, emphasizing the importance of standardized auditing procedures, performance metrics, and independent oversight to evaluate algorithmic performance and detect biases or unintended consequences. It further analyzes transparency practices, including data provenance, model disclosure, explainability, and governance records, which enable citizens, regulators, and stakeholders to understand and scrutinize automated decision-making processes. In addition, the paper discusses various forms of harm arising from algorithmic systems, ranging from individual-level discrimination and privacy violations to systemic risks that undermine democratic institutions and social cohesion. Drawing on international case studies from municipal governments and public service delivery contexts, the paper highlights both the opportunities and limitations of current governance approaches. It concludes that effective algorithmic governance requires multi-layered accountability structures involving policymakers, public institutions, industry actors, and civil society. Strengthening auditing standards, enhancing transparency, and establishing robust mechanisms for harm mitigation and redress are essential to ensure that algorithmic systems operate in ways that promote fairness, protect human rights, and uphold democratic accountability. Keywords: Algorithmic Governance, Public Accountability, Algorithmic Audits, Transparency and Explainability, and Algorithmic Harm.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Law, AI, and Intellectual Property",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "keywords": [
+        "algorithmic governance",
+        "public accountability",
+        "algorithmic auditing",
+        "transparency",
+        "explainability",
+        "algorithmic harms",
+        "algorithmic discrimination",
+        "privacy violations",
+        "automated decision-making",
+        "algorithmic fairness",
+        "municipal governance",
+        "public service delivery",
+        "democratic accountability",
+        "human rights",
+        "independent oversight"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.19537326",
+      "abstract": "Algal blooms in Kerala's freshwater ecosystems pose severe ecological, economic, and public health challenges. Losses for local communities; fishermen report income reductions of 30–40%, and farmers face challenges in irrigation due to toxic water. Additionally, human health risks arise from exposure to cyanotoxins such as microcystin, which can cause liver damage and other systemic effects. The cumulative economic loss in the Vembanad Lake region is estimated at over ₹50 crores annually across fisheries, agriculture, tourism, and healthcare sectors. Conventional mitigation approaches such as chemical treatment and mechanical removal offer only temporary relief while causing secondary environmental impacts. This study proposes an integrated AI enhanced ecological restoration model combining nature-based solutions with real-time monitoring and predictive intelligence. The system integrates seagrass meadows, mangrove buffers, and floating wetlands for nutrient absorption and ecological stabilization. A network of IoT enabled water quality sensors continuously monitors key parameters including dissolved oxygen, pH, turbidity, temperature, chlorophyll-a, and phycocyanin. Machine learning algorithms analyze real-time and historical data to forecast bloom events up to 72 hours in advance. A digital twin simulation platform supports intervention planning and ecosystem response modeling. A 12-month pilot deployment in a 2 km² region of Vembanad Lake demonstrated significant ecological improvement, including a 59.4% increase in dissolved oxygen, a 44% reduction in chlorophyll-a concentration, and a 41.7% decline in bloom frequency. The AI prediction model achieved 87.3% accuracy. Socio-economic assessments indicated improved fisheries income and increased community participation in monitoring activities. The results validate that combining ecological restoration, artificial intelligence, and community engagement offers a scalable and sustainable strategy for algal bloom management in tropical water bodies.",
+      "topics": [
+        "Aquatic Ecosystems and Phytoplankton Dynamics",
+        "Marine and coastal ecosystems",
+        "Water Quality Monitoring Technologies"
+      ],
+      "keywords": [
+        "algal bloom management",
+        "ecological restoration",
+        "nature-based solutions",
+        "cyanotoxins",
+        "microcystins",
+        "Vembanad Lake",
+        "seagrass meadows",
+        "floating wetlands",
+        "nutrient absorption",
+        "bloom prediction",
+        "digital twin",
+        "community participation",
+        "Kerala"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.19537327",
+      "abstract": "Algal blooms in Kerala's freshwater ecosystems pose severe ecological, economic, and public health challenges. Losses for local communities; fishermen report income reductions of 30–40%, and farmers face challenges in irrigation due to toxic water. Additionally, human health risks arise from exposure to cyanotoxins such as microcystin, which can cause liver damage and other systemic effects. The cumulative economic loss in the Vembanad Lake region is estimated at over ₹50 crores annually across fisheries, agriculture, tourism, and healthcare sectors. Conventional mitigation approaches such as chemical treatment and mechanical removal offer only temporary relief while causing secondary environmental impacts. This study proposes an integrated AI enhanced ecological restoration model combining nature-based solutions with real-time monitoring and predictive intelligence. The system integrates seagrass meadows, mangrove buffers, and floating wetlands for nutrient absorption and ecological stabilization. A network of IoT enabled water quality sensors continuously monitors key parameters including dissolved oxygen, pH, turbidity, temperature, chlorophyll-a, and phycocyanin. Machine learning algorithms analyze real-time and historical data to forecast bloom events up to 72 hours in advance. A digital twin simulation platform supports intervention planning and ecosystem response modeling. A 12-month pilot deployment in a 2 km² region of Vembanad Lake demonstrated significant ecological improvement, including a 59.4% increase in dissolved oxygen, a 44% reduction in chlorophyll-a concentration, and a 41.7% decline in bloom frequency. The AI prediction model achieved 87.3% accuracy. Socio-economic assessments indicated improved fisheries income and increased community participation in monitoring activities. The results validate that combining ecological restoration, artificial intelligence, and community engagement offers a scalable and sustainable strategy for algal bloom management in tropical water bodies.",
+      "topics": [
+        "Aquatic Ecosystems and Phytoplankton Dynamics",
+        "Marine and coastal ecosystems",
+        "Water Quality Monitoring Technologies"
+      ],
+      "keywords": [
+        "algal bloom management",
+        "ecological restoration",
+        "nature-based solutions",
+        "cyanotoxins",
+        "microcystins",
+        "Vembanad Lake",
+        "seagrass meadows",
+        "floating wetlands",
+        "nutrient absorption",
+        "bloom prediction",
+        "digital twin",
+        "community participation",
+        "Kerala"
+      ]
+    },
     {
       "id": "doi:10.54536/ajet.v5i2.7101",
       "abstract": "The African continent faces enduring education constraints, including overcrowded classrooms, shortages of qualified teachers, and limited access to relevant learning resources. This theoretical and conceptual analysis investigates how Artificial Intelligence (AI) can serve as a connection rather than a limitation. The analysis draws on a structured review of academic scholarship, policy documents, reports, and case studies related to AI in education, African education systems, and Knowledge, Attitude, and Practice (KAP) applications, as well as conceptual and thematic analysis, to integrate evidence and critique the KAP framework for AI inclusion in Africa. The analysis produces three interconnected conceptual frameworks: the KAP-led Equitable Integration Pathway that outlines how informed stakeholders, positive but critical attitudes and context-specific practices drive AI for extending access and enabling personalized learning, while reducing teacher workload; a Reinforcement Trap Model that describes how limited digital infrastructure, negative/uncritical attitudes and imported, non-localized AI tools can exacerbate inequality; and a Hybrid Localization Model, that illustrates how collaborations between governments, local universities, ed-tech firms and communities can incrementally localize AI technologies to the African curricula, languages and sociocultural realities. These models provide specific analytical outputs rather than conjectural possibilities and reveal that AI’s educational potential in Africa depends on a conscious reworking of KAP dynamics. The analysis exposes distinct policy ramifications in the context of targeted investments in digital infrastructure, mandated and continuous teacher capacity-building on AI, incentives for locally developed and language-inclusive AI systems, and governance frameworks that prioritize equity, data protection, and community participation. Overall, the results present a practical and actionable roadmap for transforming education through adaptive teaching, novel research, and strong local and global partnerships.",
@@ -3889,201 +4080,6 @@
         "trust theory",
         "human-centered AI design",
         "health care"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.20093137",
-      "abstract": "This article examines the phenomenon of algorithmic aversion and the factors influencing consumer trust and adoption of AI-generated recommendations, particularly in high-involvement categories such as finance, healthcare, and education. As artificial intelligence becomes increasingly embedded in decision-making processes, consumers are often faced with the challenge of relying on algorithmic systems for complex and high-stakes decisions. Using a narrative literature review, this study synthesizes insights from marketing, information systems, and consumer psychology to explore the dual nature of consumer responses, characterized by both algorithmic aversion and appreciation. The findings identify key themes, including the role of trust, perceived competence, transparency, and explainability in shaping acceptance of AI recommendations. The study also highlights the mechanisms underlying algorithmic aversion, such as perceived lack of empathy, sensitivity to errors, and threats to autonomy. In addition, several moderating factors are identified, including involvement level, consumer expertise, trust in technology, and cultural context. A conceptual framework is proposed to illustrate how these factors interact to influence adoption, reliance, or rejection of AI-generated recommendations. The article contributes by integrating trust theory with algorithmic decision-making and offers practical implications for designing human-centered AI systems.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "AI in Service Interactions",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": [
-        "algorithmic aversion",
-        "AI-generated recommendations",
-        "consumer trust",
-        "technology adoption",
-        "algorithmic decision-making",
-        "perceived competence",
-        "transparency and explainability",
-        "consumer expertise",
-        "cultural context",
-        "trust theory",
-        "human-centered AI design",
-        "health care"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.10575",
-      "abstract": "Large Language Models (LLMs) offer vast potential for creative ideation; however, their standard interaction paradigm often produces unstructured textual outputs that lead users to prematurely converge on sub-optimal ideas-a phenomenon known as fixation. While recent creativity tools have begun to structure these outputs, they remain compositionally opaque: ideas are organized as monolithic units that cannot be decomposed, abstracted, or recombinable at a sub-idea level. To address this, we propose Cognitive Abstraction (CA), a computational pipeline that transforms raw LLM-generated inspiration into a navigable and transformable design space. We implement this pipeline in NexusAI, a prototype diagramming system that supports (I) decomposition of inspiration into typed functional fragments, (II) multi-level abstraction to externalize mental scaling, and (III) cross-dimensional recombination to spark novel design directions. A within-subject user study (N=14) demonstrates that NexusAI significantly improves design space exploration, reduces cognitive overhead, and facilitates perspective reframing compared to a baseline. Our work contributes: (1) a characterization of \"compositional opacity\" as a barrier in human-AI co-creation; (2) the CA pipeline for operationalizing creative cognitive primitives at scale; and (3) empirical evidence that structured, multi-level representations can effectively mitigate fixation and support divergent exploration.",
-      "topics": [
-        "Design Education and Practice",
-        "Innovative Human-Technology Interaction",
-        "Creativity in Education and Neuroscience"
-      ],
-      "keywords": [
-        "large language models",
-        "creative idea generation",
-        "design space exploration",
-        "cognitive abstraction",
-        "functional decomposition",
-        "fixation",
-        "human-AI co-creation",
-        "divergent thinking"
-      ]
-    },
-    {
-      "id": "doi:10.60787/johrms.vol1no2.46",
-      "abstract": "This study examined occupational hazard typologies and exposure patterns among healthcare workers in primary and secondary healthcare facilities in Calabar Metropolis, Nigeria. The aim was to assess the level of hazard awareness, compliance with safety protocols, and the influence of facility type and exposure frequency on safety adherence. The objectives were to identify the types of occupational hazards encountered, determine exposure patterns across facility types, evaluate compliance with safety protocols, and examine factors influencing compliance. The study tested the null hypothesis that healthcare workers’ compliance with occupational safety protocols is not significantly influenced by hazard awareness, type of healthcare facility, or exposure to occupational hazards. A descriptive survey design was adopted, with a sample of 384 healthcare workers proportionally drawn from primary and secondary facilities using multistage and simple random sampling. Data were collected using structured questionnaires, interviews, focus group discussions, and field observations. Occupational hazards identified included biological (12.5 percent), chemical (9.9 percent), physical (10.9 percent), ergonomic (9.1 percent), and psychosocial risks (11.5 percent). Exposure patterns showed that average weekly hazard exposure ranged from 32 to 45 hours, with PPE usage and compliance varying by facility type and department. Binary Logistic Regression revealed that hazard awareness (high vs low: OR = 6.36, p = 0.000), facility type (private vs government: OR = 2.86, p = 0.003), and exposure frequency (OR = 1.08, p = 0.000) significantly predicted compliance with safety protocols, leading to the rejection of the null hypothesis. The study concluded that higher hazard awareness, private facility employment, and increased exposure enhance compliance. Recommendations include targeted training in government facilities, reinforcement of PPE use, and routine monitoring of compliance to reduce occupational risks and improve safety culture among healthcare workers.",
-      "topics": [
-        "Occupational Health and Safety Research",
-        "Chemical Safety and Risk Management",
-        "Healthcare and Environmental Waste Management"
-      ],
-      "keywords": [
-        "occupational hazards",
-        "healthcare workers",
-        "occupational safety compliance",
-        "personal protective equipment",
-        "hazard awareness",
-        "biological hazards",
-        "psychosocial risks",
-        "exposure frequency",
-        "Calabar"
-      ]
-    },
-    {
-      "id": "doi:10.53623/idwm.v6i1.1064",
-      "abstract": "The Suwung Final Waste Processing Site, the largest landfill in Bali, faced major challenges, including overcapacity of waste piles, high fire risks due to methane gas accumulation, and the lack of a structured Occupational Health and Safety (OHS) system. These conditions posed significant hazards that directly affected the safety and health of workers. This study aimed to identify hazards, assess risk levels, and recommend appropriate risk control measures for operational activities at TPA Suwung. This research was conducted at TPA Suwung from March to April 2025, involving 18 workers as respondents. The study focused on four key operational activities: waste truck mobilization, waste reception, landfill structuring, and heavy equipment maintenance. The analysis was carried out using the Hazard Identification, Risk Assessment, and Risk Control (HIRARC) method to systematically evaluate and manage occupational risks. A total of 30 potential hazards were identified, classified into five categories: physical, mechanical, chemical, biological, and ergonomic. The risk assessment indicated that 3.33% of the risks were low, 36.67% medium, 56.67% high, and 3.33% extreme. The recommended control measures included one elimination, two substitutions, eight engineering controls, twelve administrative controls, and five uses of personal protective equipment (PPE). The findings indicated a high proportion of hazards with significant risk levels, underscoring the urgent need for comprehensive risk mitigation. Effective implementation of the recommended control measures was expected to improve occupational safety and health at TPA Suwung. Strengthening OHS management systems and conducting regular monitoring were crucial to sustaining a safe and healthy work environment.",
-      "topics": [
-        "Occupational Health and Safety Management",
-        "Management and Optimization Techniques",
-        "Herbal Medicine and Trade Cooperation"
-      ],
-      "keywords": [
-        "occupational health and safety",
-        "landfill workers",
-        "hazard identification",
-        "risk assessment",
-        "risk control",
-        "HIRARC",
-        "personal protective equipment",
-        "engineering controls",
-        "administrative control",
-        "heavy equipment maintenance"
-      ]
-    },
-    {
-      "id": "doi:10.55041/isjem06225",
-      "abstract": "Abstract: Neural networks have become a cornerstone of modern artificial intelligence applications, achieving remarkable success in areas such as image recognition, natural language processing, and predictive analytics. However, achieving high accuracy while avoiding overfitting remains a major challenge in deep learning systems. This paper explores various optimization techniques for improving neural network performance, including regularization methods, hyperparameter tuning, data augmentation, and advanced architectures. The study reviews approaches such as dropout, batch normalization, early stopping, and ensemble learning to enhance generalization. Additionally, the role of optimization algorithms like stochastic gradient descent (SGD), Adam, and RMSProp is discussed. Evaluation metrics such as accuracy, precision, recall, and loss functions are used to measure performance. Challenges such as model complexity, computational cost, and data imbalance are also addressed. The paper concludes with future directions focusing on automated machine learning (AutoML) and explainable AI. Overall, optimizing neural networks plays a crucial role in developing robust and reliable AI systems. Keywords: Neural Networks, Overfitting, Regularization, Deep Learning, Optimization Techniques, Dropout, Batch Normalization, Hyperparameter Tuning",
-      "topics": [
-        "Machine Learning and Data Classification",
-        "Internet of Things and AI",
-        "Artificial Intelligence in Healthcare"
-      ],
-      "keywords": [
-        "neural network optimization",
-        "overfitting",
-        "regularization",
-        "dropout",
-        "batch normalization",
-        "hyperparameter optimization",
-        "data augmentation",
-        "early stopping",
-        "ensemble learning",
-        "optimization algorithms",
-        "Adam",
-        "RMSProp",
-        "stochastic gradient descent",
-        "model generalization",
-        "class imbalance",
-        "automated machine learning",
-        "explainable AI"
-      ]
-    },
-    {
-      "id": "doi:10.1186/s12938-026-01561-2",
-      "abstract": "Automated pain detection models rely on large, diverse facial expression datasets; yet pain expression data are scarce due to privacy concerns and ethical constraints. This study explores synthetic pain expression generation as a potential solution, investigating whether expression transfer methods are sufficiently accurate to expand training sets by transferring expressions from a limited set of real data to a virtually unlimited set of identities. This work represents an initial step toward the use of privacy-preserving generative AI for synthetic data generation to improve in pain detection. We introduce PainControl, a novel facial landmark-guided method for identity-preserving pain expression transfer. Rather than using motion signals from video, as in prior methods, our method adapts a ControlNet approach, using text and dense facial landmarks to control fine-grained facial muscle activations while maintaining identity consistency through image embeddings. Identity preservation enables the generation of demographically diverse datasets, improving generalizability across populations. We compare PainControl to existing expression transfer methods and evaluate (i) perceptual realism, (ii) identity preservation, (iii) facial action unit (AU) transfer accuracy, and (iv) downstream pain detection performance. Our model produces realistic synthetic pain expressions, outperforming baselines in human-rated Likert-scale assessments. However, AU transfer analysis reveals challenges in accurately synthesizing expression intensities-particularly for AU4 (Brow Lowering) and AU43 (Eye Closure), which are crucial for pain recognition. When used to augment real pain datasets, synthetic images did not improve classifier performance, likely due to artifacts, AU misalignment, and the lack of temporal motion cues. Critically, however, our experiments in data-scarce regimes, where real pain expressions are extremely limited, demonstrate that synthetic augmentation through PainControl provides significant and consistent performance gains for pain detection models. These results validate that our ControlNet-based approach has reached sufficient maturity and accuracy to serve as a reliable data augmentation tool in pain detection domains, particularly in scenarios, where acquiring real data are prohibitively difficult or ethically constrained. This finding establishes the practical viability of expression transfer methods for addressing the fundamental data scarcity challenge in affective computing and clinical pain assessment. These results highlight both the promise and current limitations of generative models for pain expression, pointing to future research in AU alignment and temporal modeling for clinical-grade applications.",
-      "topics": [
-        "Emotion and Mood Recognition",
-        "Pediatric Pain Management Techniques",
-        "Pain Mechanisms and Treatments"
-      ],
-      "keywords": [
-        "facial expression transfer",
-        "identity preservation",
-        "ControlNet",
-        "facial action units",
-        "pain detection",
-        "synthetic data augmentation",
-        "data scarcity",
-        "facial muscle activation"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.chb.2026.109024",
-      "abstract": null,
-      "topics": [
-        "Mental Health via Writing",
-        "Crime, Deviance, and Social Control",
-        "Focus Groups and Qualitative Methods"
-      ],
-      "keywords": [
-        "online mental health communities",
-        "community participation",
-        "suicide notes",
-        "venting",
-        "suicide methods",
-        "suicide prevention"
-      ]
-    },
-    {
-      "id": "doi:10.13016/m2azxb-fr4n",
-      "abstract": "Generative AI is reshaping education, yet most university AI policies are written without students and focus on penalizing misuse. This top-down approach sidelines those most affected from decisions that shape their everyday learning, resulting in confusion and fear about acceptable use. We examine how participatory, student-driven AI policy design can address this disconnect. We report on a three-part workshop series in a graduate design course at a minority-serving university in the U.S., where two student leaders facilitated discussions without faculty present. Eight participants shared candid accounts of their AI use, co-authored ten policy recommendations, and visualized them in a zine that circulated across campus. The resulting policies surfaced concerns absent from top-down governance, such as the double standard of requiring students to disclose or abstain from AI use while faculty face no such expectations. We argue that engaging students in AI governance carries value beyond the resulting policies, and offer transferable strategies for fostering participation across disciplines -- a model for calling students in rather than calling students",
-      "topics": [
-        "Higher Education Practises and Engagement",
-        "Artificial Intelligence in Education",
-        "Ethics and Social Impacts of AI",
-        "Innovative Teaching Methodologies in Social Sciences"
-      ],
-      "keywords": [
-        "generative AI in education",
-        "AI policy",
-        "student participation",
-        "participatory governance",
-        "AI misuse",
-        "AI disclosure",
-        "minority-serving universities",
-        "design education",
-        "student leadership",
-        "zines"
-      ]
-    },
-    {
-      "id": "doi:10.23917/buletinkkndik.v8i1.16903",
-      "abstract": "Era Society 5.0 menuntut penguatan literasi digital dan computational thinking sejak pendidikan dasar, namun kesenjangan kompetensi guru di daerah pedesaan masih menjadi tantangan utama dalam implementasinya. Kegiatan pengabdian kepada masyarakat ini bertujuan untuk meningkatkan kapasitas guru sekolah dasar dalam mengintegrasikan koding dan kecerdasan artifisial (AI) ke dalam pembelajaran sebagai upaya mendukung peningkatan literasi digital siswa. Kegiatan dilaksanakan di SDN 03 Mulur, Sukoharjo, dengan melibatkan 33 guru sekolah dasar sebagai peserta, menggunakan pendekatan andragogi melalui ceramah interaktif, praktik langsung, diskusi kelompok, dan project-based learning. Hasil kegiatan menunjukkan adanya peningkatan signifikan pada kompetensi guru dalam memahami konsep computational thinking, memanfaatkan platform pemrograman visual seperti Scratch, serta menggunakan teknologi AI seperti ChatGPT dan Google Gemini dalam pembelajaran. Guru juga mampu menghasilkan produk bahan ajar inovatif berupa game edukasi, media visual berbasis AI, dan rencana pembelajaran terintegrasi teknologi. Selain itu, kegiatan ini memberikan dampak multilevel yang mencakup peningkatan kapasitas guru, potensi peningkatan kualitas pembelajaran siswa, serta terbentuknya budaya pembelajaran berbasis teknologi di lingkungan sekolah. Efek multiplier dari program ini memperluas jangkauan manfaat hingga ratusan siswa di berbagai sekolah. Dengan demikian, pelatihan koding dan kecerdasan artifisial berbasis praktik dan proyek terbukti efektif sebagai strategi pemberdayaan guru dalam mendukung transformasi pendidikan dasar di era Society 5.0. Kegiatan ini berkontribusi terhadap upaya pemerataan pendidikan berkualitas dan penguatan literasi digital di wilayah pedesaan.",
-      "topics": [
-        "Educational Curriculum and Learning Methods",
-        "Online Learning Methods and Innovations",
-        "Educational Methods and Media Use"
-      ],
-      "keywords": [
-        "programming training",
-        "artificial intelligence in education",
-        "digital literacy",
-        "Society 5.0",
-        "computational thinking",
-        "primary school teachers",
-        "teacher professional development",
-        "Scratch",
-        "ChatGPT",
-        "Google Gemini",
-        "game-based learning",
-        "rural education",
-        "andragogy",
-        "project-based learning",
-        "Sukoharjo"
       ]
     }
   ]

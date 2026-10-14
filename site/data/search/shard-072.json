@@ -1,7 +1,135 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "documents": [
+    {
+      "id": "arxiv:2608.09654",
+      "abstract": "GUI agents are shifting from metadata-dependent large language models to purely visual multimodal large language models (MLLMs) that operate directly on screenshots. The core task, GUI grounding, requires translating abstract user instructions into precise element coordinates. This task faces a persistent dual obstacle: conventional grounding models lack the semantic richness to interpret abstract instructions, while end-to-end MLLMs suffer from coordinate hallucinations caused by deficient fine-grained perception. We propose a regression-free framework where a frozen MLLM performs instruction parsing and a dedicated grounding model handles precise localization without learning any coordinate regression. A frozen MLLM first elaborates the abstract instruction into a structured visual description rich in layout cues. These descriptions are then fed to a novel Layout-Aware GUI Grounding Model, which performs regression-free localization by matching against layout-prior candidates, inherently suppressing hallucinations and avoiding expensive fine-tuning. The grounding model is trained with only Text/Icon binary labels, requiring no coordinate regression parameters. On ScreenSpot-Pro, our method achieves over 20% improvement in grounding accuracy over end-to-end systems; on Mind2Web, it raises success rate and element selection rate by more than 15%. These results demonstrate that decoupling instruction understanding from layout-aware localization effectively resolves the core challenges of GUI interaction.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.21408",
+      "abstract": "Due to the widespread accessibility of the internet and social media, toxic and hateful con-tent has grown exponentially, causing significant distress and negative societal impacts. Ro-man Urdu, a low-resource language used in Pakistan and among Urdu-speaking communities worldwide, presents additional challenges because of its informal grammar, inconsistent sen-tence structures, and multiple variations in word spellings. This research aims to identify the most effective techniques for hate speech classification in such low-resource settings with limited data. To address this, the study investigates and compares the latest approaches, in-cluding prompt tuning, parameter-efficient fine-tuning (PEFT) using LoRA, and prompt en-gineering, under various experimental configurations. To achieve this objective, four exper-iments were designed. The first experiment involved direct inferencing with LLMs without any fine-tuning, to evaluate how well these models understand Roman Urdu in a zero-shot setting, especially given limited data. The second experiment utilized parameter-efficient fine-tuning (PEFT) with LoRA, which updates only a small subset of parameters, thereby reducing computational cost. The third experiment explored prompt tuning with both mixed and manually crafted prompts, using very small sets of training examples relative to the entire dataset, making it computationally efficient as well. Finally, the fourth experiment applied prompt engineering through zero-shot and few-shot learning, relying solely on care-fully designed instruction prompts for classification without further training.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2708470",
+      "abstract": "This study investigates how empathic cues displayed by an AI chatbot influence perceptions of the chatbot’s mental capacities and persuasive outcomes, and whether these effects vary as a function of message narrativity in the context of mental health care. Using an online experiment (N = 716) across two issues (social isolation and anxiety), we found that in the social isolation context, a chatbot’s expression of empathy increased its perceived capacity to feel, which, in turn, was positively associated with attitudes toward the chatbot’s recommendations. In the social anxiety context, however, empathic expression increased perceived chatbot capacity to feel only when the chatbot responded with messages low in narrativity, whereas message narrativity increased perceived chatbot capacity to feel when the chatbot responded without empathic expression. The findings contribute to the growing literature on human-AI interaction and offer insights into how AI systems can communicate more effectively in the mental health care context.",
+      "topics": [
+        "Digital Mental Health Interventions",
+        "AI in Service Interactions",
+        "Media Influence and Health"
+      ],
+      "keywords": [
+        "Chatbot",
+        "Empathy",
+        "Perception",
+        "Context (archaeology)",
+        "Social isolation",
+        "Isolation (microbiology)",
+        "Anxiety",
+        "Personality",
+        "Socioemotional selectivity theory"
+      ]
+    },
+    {
+      "id": "arxiv:2608.09019",
+      "abstract": "As generative AI increasingly becomes a common source of daily decision-making, including financial choices, it is critical to understand how people evaluate AI-generated financial advice. We conducted a preregistered vignette experiment (N = 285) in which substantive financial content---including facts, numerical values, recommendation direction, and core reasoning---was held constant while communication style varied across AI Financial Assistant (AI), Certified Financial Planner (Expert), and Online Community Forum (OC) advice. Displayed source attribution was independently manipulated through correctly labeled, unlabeled, and mislabeled conditions, allowing us to separate attribution effects from source-specific communication cues. Expert advice was rated more favorably than AI advice on 9 of 10 outcomes (|d|=0.20--0.47), and this advantage remained visible without source labels, where Expert advice outperformed AI advice on 8 of 10 outcomes (up to d=0.60). Correct labels added limited differentiation, whereas mislabeling increased ratings of AI advice for situational fit and overall quality (d=0.42 for each) and attenuated the Expert advantage in situational fit (d=-0.36). Descriptive analyses further showed that AI advice was most responsive to displayed attribution and, conversely, that advice-style differences were most visible under an AI label. These findings show that financial-advice evaluations are shaped jointly by displayed attribution and message-level communication cues. We position disclosure not as a neutral transparency mechanism, but as an interpretive frame whose accuracy and interaction with message cues can shape trust and reliance.",
+      "topics": [
+        "cs.HC",
+        "cs.AI",
+        "cs.CL",
+        "cs.CY",
+        "cs.SI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.09385",
+      "abstract": "Generative AI models are primarily designed to imitate the data distribution, an objective that neither corrects diversity lost by a learned generator nor defines how generation should extend beyond the diversity of the data itself. We introduce Imaginative Generative AI (IGA), a framework that makes diversity part of the target-distribution design problem: among distributions close to a reference, IGA selects one whose spectral diversity reaches a prescribed level. Diversity is measured by the von Neumann entropy of the generated distribution's kernel covariance operator in a fixed representation space, providing a reference-free representation-guided measure of how broadly probability mass occupies embedding directions. The spectral entropy of the population data distribution defines an Entropy Wall. Below the wall, IGA performs diversity repair, recovering variation that a learned generator has lost while remaining within the diversity level of the data. Beyond the wall, the data distribution itself becomes infeasible, and IGA deliberately departs from it to produce distributions with greater representation-relative spectral diversity, an operational notion of imaginative generation. These regimes form a single regularization path from imitation to imagination and define an i.i.d. target distribution at each prescribed diversity level. We develop the theory of this entropy-constrained projection and show that, under a KL anchor to a pretrained generator, the optimum satisfies a self-consistent exponential-tilt relation. This characterization leads to IGA Guidance, a retraining-free inference-time method for score-based and diffusion models, including DDPM and DDIM samplers. Experiments on synthetic and vision benchmarks demonstrate diversity repair below the Entropy Wall and controlled spectral extrapolation beyond it.",
+      "topics": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10624283/v1",
+      "abstract": null,
+      "topics": [
+        "Parkinson's Disease Mechanisms and Treatments",
+        "Balance, Gait, and Falls Prevention",
+        "Parkinson's Disease and Spinal Disorders"
+      ],
+      "keywords": [
+        "Decision tree",
+        "Support vector machine",
+        "Gradient boosting",
+        "Ensemble learning",
+        "Boosting (machine learning)",
+        "Logistic regression",
+        "Inertial measurement unit",
+        "Accelerometer",
+        "Decision tree learning",
+        "Wearable computer"
+      ]
+    },
+    {
+      "id": "doi:10.1177/10711813261475249",
+      "abstract": "SAE Level 2 (L2) partial automation changes the driving task, shifting the driver’s role from active operator to supervisor, raising questions about trust, satisfaction, perceived limitations, and system understanding. This study presents a locally hosted, auditable large language model (LLM) agent pipeline for analyzing 161 semi-structured post-study interviews from a 30-day naturalistic driving study of Tesla Autopilot, Cadillac Super Cruise, and Volvo Pilot Assist. The pipeline segmented transcripts into semantic units and coded each unit by question theme, answer theme, subtheme, and sentiment, enabling structured comparison across systems while preserving traceability to source evidence. Results showed significant vehicle-level differences in sentiment, with satisfaction-related responses strongly positive but performance-limitation narratives strongly negative. Validation against manually coded interview data showed high accuracy for answer subthemes and sentiment. Findings suggest that driver satisfaction with partial automation can coexist with uncertainty about system limits and automation boundaries.",
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Traffic and Road Safety",
+        "Occupational Health and Safety Research"
+      ],
+      "keywords": [
+        "Automation",
+        "Pipeline (software)",
+        "Traceability",
+        "Flexibility (engineering)",
+        "Operator (biology)",
+        "Process automation system",
+        "Semantics (computer science)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.09507",
+      "abstract": "Natural language user preferences provide an interpretable interface for LLM personalization. However, universal preference summaries often contain information irrelevant to a particular downstream task. Directly supplying the full preference summary therefore wastes context capacity and introduces cross-task distraction, while manually designing task-specific preference views is difficult to scale. In this work, we study \\emph{task-specific preference adaptation}: given a universal user preference summary and a downstream task, derive a task-conditioned representation that preserves sufficient decision-relevant evidence while removing redundant context. To this end, we propose \\textsc{AlignXada}, a training-free meta-learning framework that induces reusable textual refinement policies for adapting universal preference summaries to task-specific ones. The refinement policy is iteratively optimized by a meta learner through verbal reinforcement learning. Across 13 tasks and three downstream models (39 task--model cells), \\textsc{AlignXada} achieves an average gain of 3.82 points, improving 33 cells while retaining only 22.8\\% of the original profile tokens and outperforming RAG in 36 cells. An extended faithfulness analysis further shows that the refined profiles remain largely grounded in the source preferences while preserving task-relevant personalization signals, suggesting that profile-side adaptation serves as a practical complement to universal memory construction for lifelong personalized agents.",
+      "topics": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.09650",
+      "abstract": "Reranking medical procedures against patient queries is a critical component of health insurance information retrieval, complicated by a substantial lexical gap between patient language and clinical nomenclature. We present a systematic comparison of two reranking paradigms for this production task: (1) small cross-encoders (MedCPT, MiniLM-L12) fine-tuned with listwise learning-to-rank objectives across layer freezing configurations, and (2) Qwen3-Reranker-4B, a 4B-parameter instruction reranker whose prompt is iteratively refined via an agentic optimization loop driven by GPT-4.1. On a purpose-built dataset of 2,647 queries across 708 insurance services, we find that a 109M-parameter cross-encoder fine-tuned with ListNet outperforms the 4B-parameter model by 2.6 percentage points on NDCG@3 and 13.3 points on Spearman correlation - at 37x fewer parameters. We report practical findings, a scalable LLM based dataset construction pipeline, and deployment trade-offs relevant to production reranking systems. We release our code and a sample dataset to support reproducibility and adaptation to other domains.",
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Topic Modeling",
+        "Electronic Health Records Systems",
+        "cs.IR",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Sample (material)",
+        "Scalability",
+        "Adaptation (eye)",
+        "Code (set theory)",
+        "Scope (computer science)",
+        "Component (thermodynamics)",
+        "Production (economics)",
+        "Baseline (sea)",
+        "Undo"
+      ]
+    },
     {
       "id": "doi:10.21203/rs.3.rs-10539263/v1",
       "abstract": null,
@@ -1855,97 +1983,6 @@
         "cs.LG",
         "cs.AI",
         "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2708474",
-      "abstract": "As the use of artificial intelligence (AI) in interpersonal helping among coworkers grows, its impact on recipients remains underexplored. This research examines how varying levels of AI usage in interpersonal helping (AUIH) impact recipients' reciprocation, alongside the underlying mechanisms and boundary conditions. Through a scenario-based experiment (Study 1, N = 300) and a critical incident technique (Study 2, N = 345), both studies demonstrate that higher levels of AUIH are associated with lower perceptions of the helper’s effort and benevolent intention. This, in turn, is related to diminished feelings of gratitude and reduced reciprocation. Additionally, the research identifies two key moderators: the recipient’s AI skill amplifies the negative relationship between AUIH and perceived effort, while the recipient’s AI trust mitigates the adverse effect of AUIH on perceived benevolent intention. These findings clarify the cognitive and affective effects of AUIH and offer practical insights for managing AI use among coworkers.",
-      "topics": [
-        "AI in Service Interactions",
-        "Cyberloafing and Workplace Behavior",
-        "Digital Mental Health Interventions"
-      ],
-      "keywords": [
-        "Gratitude",
-        "Feeling",
-        "Interpersonal communication",
-        "Perception",
-        "Interpersonal perception",
-        "Cognition",
-        "Interpersonal relationship"
-      ]
-    },
-    {
-      "id": "arxiv:2608.05026",
-      "abstract": "High-quality annotation of artworks is essential for computational art research, yet extracting implicit semantics remains challenging due to the reliance on culturally grounded meanings and deep contextual knowledge behind the images. Current AI-assisted annotation tools often lack assistance or rely on one-way workflows where experts have to perform extra manual calibrations to improve AI models, resulting in limited efficiency. To address this, we propose Bidirectional Human-AI Augmentation(BiHAA), a closed-loop framework in which skills and domain knowledge base evolve through real-time interaction and bidirectional HAI augmentation. Informed by a formative study with 20 artwork annotators from different backgrounds, we implement this framework in ArtAnno, an artwork annotation system driven by a multi-agent architecture. The system includes a Proactive Agentic Support Module, where AI augments humans through semantic mining and label suggestion, and an Interaction-Driven Evolution Module, where human expertise continuously enhances the AI through distilling annotation trajectories into reusable experience. Evaluation through a user study and two case studies demonstrates that our framework and system improve annotation efficiency, enable knowledge accumulation, and reduce the effort of information seeking and verification for annotators with limited domain expertise. We conclude by discussing broader implications and future directions.",
-      "topics": [
-        "cs.HC",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1145/3831423.3831452",
-      "abstract": "Tutorial videos are widely used for learning feature-rich software, yet following screencast tutorials often breaks down in practice. Through a survey and contextual inquiry, we found that learners frequently rewind or get stuck because critical input information, especially mouse actions and keyboard-modified operations, is often implicit or missing in tutorials without input metadata. To address this problem, we present AutoCue, a multimodal LLM-assisted, human-in-the-loop tutorial augmentation pipeline for externalizing implicit inputs as instructional visual cues. AutoCue integrates frame-to-frame visual changes, narration signals, and operation guidance from official software manuals to infer likely mouse and key-modifier actions, then produces aligned cue layers and editable artifacts for human refinement. Grounded in multimedia learning and cognitive load theory, we further develop a visual cue grammar for representing mouse, keyboard, and combined inputs in software-learning tutorials. We instantiate and evaluate AutoCue in Autodesk Maya, focusing automatic inference on selected UI-mediated interactions with observable visual or textual feedback while supporting more ambiguous state changes through editable authoring artifacts. In a between-subjects study with 24 participants, the AutoCue-augmented tutorial reduced task completion time and interaction breakdowns and showed improved learner-reported experience.",
-      "topics": [
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04565",
-      "abstract": "LLM-based search agents are widely used for information-seeking tasks, but their reliance on external tool returns introduces a critical security risk: web content retrieved during execution is untrusted, exposing agents to prompt injection and goal hijacking. Prior work on search-agent safety primarily focuses on static web-content injection, but modern agents issue follow-up queries and cross-check competing sources, so a single injected page is often diluted or rejected. We show that the channel delivering search and page observations is a fragile security boundary: beyond exposing the agent to a single poisoned page, a mediated search interface can repeatedly steer how the agent gathers evidence and forms its final answer. Under a constrained tool-intermediary threat model, appending only one controlled result per query can substantially increase attack success when the evidence is coordinated across the agent's trajectory. We study this setting with a strategy-driven long-horizon attack system and introduce Authority-Chain Hijack (ACH), an expert-refined strategy that turns isolated search-result and page-content manipulations into a coherent evidence chain across seemingly corroborating sources. ACH achieves the highest Overall ASR among all baselines, reaching 55.9% / 83.3% ASR / MaxN ASR on the full SafeSearch test split. We further introduce Trace-Guided Strategy Evolution (TGSE), which automatically improves attacker strategies from execution traces, replacing manual redesign with trace-driven refinement; its strongest single setting reaches 71.4% / 95.0% in held-out evaluation.",
-      "topics": [
-        "cs.CR",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04586",
-      "abstract": "Multimodal large language models (MLLMs) have achieved significant success in speech-to-text translation (S2TT). However, when processing multilingual speech inputs, a single speech encoder shared across all languages suffers from the curse of multilinguality: languages at different resource levels compete for limited representation capacity, leading to strong high-resource performance but substantial degradation on low-resource speech. To address this problem and improve multilingual consistency, we propose MSRT, a novel framework built around a resource-aware Mixture of Speech Encoders (MoSE). MoSE uses an explicit language router to assign each utterance to an appropriate expert encoder. A frozen expert preserves high-resource language capabilities, while a trainable expert adapts to and specializes in medium- and low-resource languages. We further introduce a five-stage curriculum learning strategy that substantially reduces data dependence, requiring only 10 hours of paired S2TT data per language for effective alignment. We conduct extensive experiments on 45 languages, systematically evaluating all $45 \\times 44$ translation directions. Our 4B-parameter model achieves state-of-the-art performance, outperforming substantially larger baselines. Empirical analyses show that MoSE improves high-, medium-, and low-resource languages simultaneously, with the largest gains on low-resource speech, thereby breaking the curse of multilinguality without compromising high-resource performance. To support future multilingual S2TT research, we release our code and models.",
-      "topics": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04336",
-      "abstract": "Code generation systems make each LLM call with a model, a prompt, and decoding settings. However, existing optimization methods usually tune only part of these choices or use one fixed configuration for all tasks: global optimizers search one configuration for all tasks, routers choose only a model, and prompt optimizers keep the model and decoding settings fixed. This leaves their joint, group-specific interactions unclear. We therefore examine how these choices interact and observe that prompts and decoding settings interact, tuning effects vary by model, and the best configuration varies by task difficulty. Guided by these observations, we introduce COMPAS (Code-generation Optimization over Models, Prompts, And Decoding Settings), a difficulty-aware method that learns group-specific quality-cost fronts through low-cost model selection and joint prompt-decoding search, then routes each test task to its matching front online without further search. Under a matched search budget on LiveCodeBench, COMPAS improves pass@1 from 45.9% for the best baseline to 52.8% while reducing cost from $36.57 to $4.92. This also transfers to repository-level code generation on SWE-bench, resolving 76.0% of tasks versus 70.0% for the best baseline. Code and the reproducibility artifact are available at https://github.com/gjz78910/COMPAS.",
-      "topics": [
-        "cs.SE",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.05107",
-      "abstract": "AI-supported care planning can help clinicians, patients, caregivers, and care teams coordinate complex decisions across clinical, functional, psychosocial, and environmental needs. However, many AI systems present recommendations as fixed outputs, limiting stakeholders' ability to inspect, challenge, and revise plans when they conflict with clinical judgment, patient values, or real-world feasibility. We present CoPlan - a Co-Intelligent and Contestable Interface for Human-AI Care Planning. CoPlan uses a multi-agent workflow in which specialized AI agents generate candidate interventions and supporting or challenging arguments, while human care planners can accept, reject, modify, or add arguments before final plan generation. Through this design, CoPlan combines co-intelligence, in which humans and AI agents contribute complementary expertise, with contestability, where recommendations remain open to inspection, revision, and justification. We demonstrate CoPlan in an aging-in-place care planning scenario. The system supports adaptive care team recruitment, role-based argument review, final care plan generation, and practical follow-up through scheduling agents. This work contributes a contestable care planning interface and a design framing for trustworthy human-AI care planning that preserves human agency and clinical accountability.",
-      "topics": [
-        "cs.AI",
-        "cs.MA",
-        "cs.SE"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.05367",
-      "abstract": "Counterfactual analysis aims to predict potential outcomes under hypothetical scenarios, offering valuable insights for decision-making. This paper investigates the application of large language models (LLMs), specifically the GPT-3.5 model, for counterfactual analysis. We focus on the online lending context, where the counterfactual return on investment (ROI) is crucial for evaluating different interest rate schemes. We begin by assessing the predictive performance of GPT and comparing it with advanced machine learning algorithms. The results show that prompt engineering can significantly enhance GPT's predictions, with the R-squared increasing from 1.97% to 2.84%, closely approaching the 3.48% achieved by gradient-boosted regression. Subsequently, we utilize GPT to generate counterfactual ROIs under a set of alternative interest rates. GPT exhibits logical coherence and causal reasoning in its responses. The findings underscore the potential of LLMs as effective tools for counterfactual analysis in online lending, suggesting broader applications for LLMs in various predictive and decision-making contexts.",
-      "topics": [
-        "cs.AI",
-        "q-fin.GN"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04444",
-      "abstract": "Large language models (LLMs) often generate inaccurate answers due to their reliance on static internal knowledge. Retrieval-augmented generation (RAG) addresses this limitation by integrating external knowledge and excelling at single-hop queries. However, it struggles with multi-hop questions that require cross-document reasoning. Existing methods, such as graph structured RAG or question decomposition, often lack dynamic decomposition and effective filtering, which leads to lower efficiency and accuracy. To overcome these limitations, we propose Dynamic Decomposition and Filtering for Multi-Hop Reasoning-Augmented Generation (D2F-ReAG), a novel paradigm that adaptively controls reasoning depth by judging the reliability of the root-level reasoning. If the root reasoning is reliable, the model directly generates the answer. Otherwise, the question is logically decomposed into sub-questions, and the verified reasoning derived from these sub-questions is used to refine the root reasoning. Experiments on three multi-hop benchmarks demonstrate the effectiveness of our method in handling complex multi-hop questions.",
-      "topics": [
-        "cs.CL",
-        "cs.AI"
       ],
       "keywords": []
     }

@@ -1,7 +1,178 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "documents": [
+    {
+      "id": "doi:10.5281/zenodo.21909112",
+      "abstract": "Multi-agent systems that build software usually coordinate their agents through a language model: an orchestrator reasons in prose about who works next, whether a task is done, and when to involve the human operator. That puts a probabilistic component on the control path of a system whose value depends on reliability, and it holds orchestration state inside a process that cannot be safely interrupted. Recent work argues the inverse for a single workflow: fix an explicit blueprint and confine the model to bounded steps (Qiu et al., arXiv:2508.02721). We lift that paradigm to the harder problem of orchestrating many concurrent, long-lived agentic builders, and present a deterministic finite-state orchestrator in which a fixed dispatch loop advances every unit of work by table lookup over a closed, lint-validated vocabulary, and the model never chooses the next step. The claim is the paradigm rather than the artifact. A deterministic control plane is built to design out the coordination, long-horizon, and self-verification failures that published work attributes to LLM-routed orchestration — a design claim we ground in that failure literature, not in a head-to-head baseline (§15) — while keeping the operator in contact through an agent they can talk to. The central invariant: the model builds, but a deterministic gate decides done. We trust neither the agent's report nor the commit. We report a pre-registered campaign of 74 orchestrated delivery runs on one immutable engine build (three ablation arms, a wide-parallelism arm, and a main @2 configuration run to a clean target of 30, at 34 attempts), plus a separate post-hoc 5-run PROJECT-04 extension (15 blocks, seven dependency layers, nearly twice as wide and ~40% deeper). The headline reliability configuration — PROJECT-03 main @2 — delivered 30 of 34 clean (88%, an optional-stopping estimate). Across all 74 campaign runs — which also fold in ablation and wide-parallelism arms, where walls are rare at this scale — 70 were clean, and the fixed-build extension delivered 5/5: every declared block built, landed, and re-validated on trunk with zero operator intervention, each product passing separate in-house probes. The four non-clean runs are reported in full, and three never touched the engine's decision path: two were our own test harness leaking state between trials and one was an external API outage. The fourth was a real engine defect, since fixed with regression tests, and even then the engine refused to fake a result. Every one failed safe: the orchestrator escalated rather than close work it had not done, and under the operator-dark protocol the run terminated there. The gate's rejection behavior is shown directly by six by-construction false-done fixtures (five seeded shortcuts and one trunk-only defect, on the fixed pin v0.0.30 with engine, gate, and vocabulary unmodified), all six rejected, none landed. Across the 79 delivery runs no worker ever attempted to close work it had not done, so the 0-of-79 false-completion count is observational: evidence about worker behavior, not the gate under fire. The gate's strength is the 6-of-6, a small adversarial sample, and the rule of three bounds the miss rate only at ≤50%. No clean run needed the operator; the only pages were those four. When reality misbehaved, the system said so instead of faking green. Beyond our own benchmarks, the same runtime delivered clean on two MIT 6.5840 labs the course specified and tested — MapReduce and the full Raft lab, 2 of 2 — a first check that gate-decided done transfers to acceptance criteria we did not write (reported separately, not pooled into the campaign rates; §15).",
+      "topics": [
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications",
+        "Natural Language Processing Techniques"
+      ],
+      "keywords": [
+        "Workflow",
+        "Execution model",
+        "Key (lock)",
+        "Blueprint",
+        "Source code",
+        "Code (set theory)",
+        "Action (physics)",
+        "Software deployment",
+        "Code generation"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10464629/v1",
+      "abstract": null,
+      "topics": [
+        "Electronic Health Records Systems",
+        "Hospital Admissions and Outcomes",
+        "Patient Safety and Medication Errors"
+      ],
+      "keywords": [
+        "Software deployment",
+        "Protocol (science)",
+        "Benchmark (surveying)",
+        "Residual",
+        "Key (lock)",
+        "Failure rate",
+        "Reliability (semiconductor)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.12267",
+      "abstract": "The transition to the Sixth Generation (6G) of mobile networks requires proactive and deterministic orchestration to satisfy the stringent key performance indicators of future services, including ultra-reliable low-latency communications, enhanced mobile broadband, and massive machine-type communications. Digital Twin Networks (DTN) have recently emerged as a foundational technology to meet these demands, offering real-time and high-fidelity virtual replicas of the physical network. Although the current literature explores DTNs conceptually, a gap exists in the coverage of technical classification and computational feasibility evaluations. This survey addresses this gap by formally categorizing state-of-the-art DTN architectures into passive monitoring twins and active control twins. We provide an in-depth evaluation of their underlying enabling technologies, specifically ray-tracing, reconfigurable intelligent surfaces, artificial intelligence, and mobile edge computing. Importantly, this paper conducts a detailed mathematical and computational complexity analysis of state-of-the-art solutions to assess hardware scalability and inference bottlenecks. These architectures are then linked to various forthcoming 6G use cases, including smart cities, Industry 5.0, healthcare, and smart grids. Finally, we synthesize crucial unresolved challenges, highlighting graphics processing unit hardware limitations, cyber-physical actuation latency, and the need for a zero-trust security paradigm, offering strategic research directions to realize the unified internet of everything.",
+      "topics": [
+        "IoT and Edge/Fog Computing",
+        "Software-Defined Networks and 5G",
+        "Advanced Wireless Communication Technologies"
+      ],
+      "keywords": [
+        "Scalability",
+        "Open research",
+        "Key (lock)",
+        "Wireless",
+        "Enhanced Data Rates for GSM Evolution",
+        "Wireless network",
+        "Mobile computing",
+        "Service (business)",
+        "Mobile device"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.12051",
+      "abstract": "Aggregate metrics may not fully reflect performance in insufficiently examined high-risk driving conditions. We propose RISC (Risk-Informed Slice Coverage), a practical protocol for risk-guided stress testing and coverage-qualified evaluation. Risk-guided stress testing directs a finite audit budget toward risk-relevant sub-datasets, called risk slices, while coverage-qualified evaluation reports results together with explicit statements about which slices are sufficiently or insufficiently covered. The protocol translates safety concerns into machine-readable risk slices, uses lightweight signals to tag candidate data, selects a compact audit set by risk, and qualifies the results using coverage evidence. An LLM can optionally support this process by surfacing relevant but potentially overlooked conditions during test planning, thereby helping engineers not to forget the obvious. RISC is model-agnostic and can be applied to perception modules, driving models, and other autonomous-driving subsystems. We instantiate the protocol for monocular pedestrian perception using 1,000 frames from the Zenseact Open Dataset, image statistics, and a YOLO-based detector proxy. In this proof-of-concept study, risk-guided selection increases critical failure discovery from 34.0% under random sampling to 98.5%. RISC provides a lightweight, assurance-oriented evaluation layer that complements scenario categorization, coverage assessment, and broader testing-and-verification workflows.",
+      "topics": [
+        "Autonomous Vehicle Technology and Safety",
+        "Adversarial Robustness in Machine Learning",
+        "Advanced Neural Network Applications"
+      ],
+      "keywords": [
+        "Protocol (science)",
+        "Set (abstract data type)",
+        "Process (computing)",
+        "Audit",
+        "Perception",
+        "Test (biology)",
+        "Filter (signal processing)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.17567",
+      "abstract": "Pretrained molecular language models are increasingly used as molecular encoders for learning structure-property relationships. However, their practical suitability for molecular discovery within and beyond their pretraining domain remains unclear. Herein, we systematically benchmark four molecular language models across six virtual molecular libraries spanning drug discovery, organic materials, and catalysis. Native molecular language model embeddings show substantial variation in discovery performance across libraries, whereas molecular fingerprints provide a consistently strong and robust baseline. Consistent with a potential domain-representation mismatch, we show that explicit domain adaptation substantially improves representation performance. Fine-tuning molecular language model encoders on structures from the target virtual library consistently improves sample efficiency, with several adapted encoders emerging as the top-performing representations across the benchmark tasks. These results show that molecular representation quality depends strongly on the target domain and that explicit adaptation can improve the practical utility of molecular foundation models. More broadly, our findings establish domain-adapted molecular representations as a promising strategy for sample-efficient adaptive decision making in virtual screening and self-driving laboratories.",
+      "topics": [
+        "Machine Learning in Materials Science",
+        "Computational Drug Discovery Methods",
+        "Advanced Graph Neural Networks",
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Python (programming language)",
+        "Metadata",
+        "Snapshot (computer storage)",
+        "Benchmarking",
+        "Language model",
+        "Encoder",
+        "Data modeling"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10630206/v1",
+      "abstract": null,
+      "topics": [
+        "Multiple Sclerosis Research Studies",
+        "Epilepsy research and treatment",
+        "Acute Ischemic Stroke Management"
+      ],
+      "keywords": [
+        "Systematic review",
+        "Psychological intervention",
+        "Data extraction",
+        "Disease",
+        "MEDLINE",
+        "Meta-analysis",
+        "Multiple sclerosis",
+        "Clinical Practice",
+        "Inclusion and exclusion criteria"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-9904774/v1",
+      "abstract": null,
+      "topics": [
+        "Mental Health via Writing",
+        "Suicide and Self-Harm Studies",
+        "COVID-19 and Mental Health"
+      ],
+      "keywords": [
+        "Inter-rater reliability",
+        "Intraclass correlation",
+        "Human factors and ergonomics",
+        "Suicide prevention",
+        "Poison control",
+        "Reliability (semiconductor)",
+        "Injury prevention",
+        "Agreement"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.12523",
+      "abstract": "Problem posing, a pedagogical practice that asks students to generate novel problems or meaningful variations to problems encountered, supports transfer of learning and strengthens problem-solving skills in physics. However, generating physics problems can be challenging, particularly for novice learners. This study investigates students' perceptions of an approach to facilitate their use of Generative AI in ways that maximize their benefits and limit risks. Students were introduced to Generative AI-assisted problem posing as a self-study technique. This study utilizes a phenomenological approach to investigate students' perceptions on how training shaped AI interactions, attitudes towards problem posing with Generative AI, and how students view its incorporation into personal study practices. Results of this study suggest that students perceived a positive change in their interactions with Generative AI after receiving training on prompt engineering techniques. This study also reveals that students hold generally positive views towards the problem-posing technique, with a smaller subset of students showing hesitations towards using Generative AI. These results lay the foundation to introduce and employ training methods for Generative AI more widely and to continue to incorporate Generative AI into structured study techniques, like problem posing.",
+      "topics": [
+        "Science Education and Pedagogy",
+        "Teaching and Learning Programming",
+        "Intelligent Tutoring Systems and Adaptive Learning"
+      ],
+      "keywords": [
+        "Generative grammar",
+        "Perception",
+        "Generative model",
+        "Limit (mathematics)",
+        "Transfer of learning"
+      ]
+    },
+    {
+      "id": "doi:10.20944/preprints202608.0779.v1",
+      "abstract": "Reward functions determine what reinforcement learning agents ultimately optimize, yet reward design for complex tasks has traditionally relied on extensive domain expertise and iterative engineering. Recent large language models and vision–language foundation models have introduced new mechanisms for interpreting task intent, synthesizing reward programs, evaluating states and trajectories, and refining rewards through policy feedback. This review organizes the emerging literature along three complementary directions: reward program synthesis, multimodal feedback, and feedback-driven reward optimization. We further propose a five-level trustworthiness framework spanning format validity, execution validity, semantic validity, behavioral validity, and structural assurance. Existing evidence shows that foundation models substantially broaden how rewards can be represented and acquired, but do not eliminate grounding errors, proxy misalignment, reward hacking, selection bias, or reward-search costs. We therefore examine the field from an end-to-end perspective that jointly considers policy performance, reward fidelity, trustworthiness, computational and human cost, and transfer. Finally, we identify verifiable reward representations, process reward models, budget-aware reward search, and transferable reward knowledge across tasks and multi-agent systems as key directions for future research.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Neural and Behavioral Psychology Studies",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": [
+        "Reinforcement learning",
+        "Task (project management)",
+        "Reward system",
+        "Process (computing)",
+        "Perspective (graphical)",
+        "Field (mathematics)",
+        "Key (lock)",
+        "Selection (genetic algorithm)"
+      ]
+    },
     {
       "id": "arxiv:2608.12025",
       "abstract": "Medical devices are becoming more software-intensive, connected, and AI-enabled. Their development requires risk-management evidence aligned with ISO 14971 and, for software, IEC 62304. This evidence must be kept consistent across requirements, design decisions, software changes, verification results, complaints, and post-market data. These tasks are costly and depend on scarce safety and domain experts. Large language models (LLMs) may reduce parts of this effort because medical-device safety work is highly document-based. However, current LLM-based safety-engineering studies often address isolated methods, rely on generic prompting or public examples, and provide limited support for source links, traceability, uncertainty handling, lifecycle updates, and recorded expert review. This limits their use in regulated medical-device development. This paper argues that the central research problem is not safety-text generation, but source-linked safety-knowledge support. We propose an evidence-grounded framework that connects device artifacts, controlled knowledge storage and retrieval, method-specific generation of candidate safety items, critique and uncertainty checks, and recorded expert review. The framework prepares, links, checks, and updates candidate safety artifacts for expert decision-making. It does not decide whether a device is safe and does not provide regulatory approval. We also outline an evaluation strategy using non-public or newly built medical-device case studies and expert reference analyses to assess coverage, correctness, relevance, traceability, duplicate rate, unsupported claims, and review effort.",
@@ -3403,134 +3574,6 @@
         "cs.AI"
       ],
       "keywords": []
-    },
-    {
-      "id": "arxiv:2608.09654",
-      "abstract": "GUI agents are shifting from metadata-dependent large language models to purely visual multimodal large language models (MLLMs) that operate directly on screenshots. The core task, GUI grounding, requires translating abstract user instructions into precise element coordinates. This task faces a persistent dual obstacle: conventional grounding models lack the semantic richness to interpret abstract instructions, while end-to-end MLLMs suffer from coordinate hallucinations caused by deficient fine-grained perception. We propose a regression-free framework where a frozen MLLM performs instruction parsing and a dedicated grounding model handles precise localization without learning any coordinate regression. A frozen MLLM first elaborates the abstract instruction into a structured visual description rich in layout cues. These descriptions are then fed to a novel Layout-Aware GUI Grounding Model, which performs regression-free localization by matching against layout-prior candidates, inherently suppressing hallucinations and avoiding expensive fine-tuning. The grounding model is trained with only Text/Icon binary labels, requiring no coordinate regression parameters. On ScreenSpot-Pro, our method achieves over 20% improvement in grounding accuracy over end-to-end systems; on Mind2Web, it raises success rate and element selection rate by more than 15%. These results demonstrate that decoupling instruction understanding from layout-aware localization effectively resolves the core challenges of GUI interaction.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.21408",
-      "abstract": "Due to the widespread accessibility of the internet and social media, toxic and hateful con-tent has grown exponentially, causing significant distress and negative societal impacts. Ro-man Urdu, a low-resource language used in Pakistan and among Urdu-speaking communities worldwide, presents additional challenges because of its informal grammar, inconsistent sen-tence structures, and multiple variations in word spellings. This research aims to identify the most effective techniques for hate speech classification in such low-resource settings with limited data. To address this, the study investigates and compares the latest approaches, in-cluding prompt tuning, parameter-efficient fine-tuning (PEFT) using LoRA, and prompt en-gineering, under various experimental configurations. To achieve this objective, four exper-iments were designed. The first experiment involved direct inferencing with LLMs without any fine-tuning, to evaluate how well these models understand Roman Urdu in a zero-shot setting, especially given limited data. The second experiment utilized parameter-efficient fine-tuning (PEFT) with LoRA, which updates only a small subset of parameters, thereby reducing computational cost. The third experiment explored prompt tuning with both mixed and manually crafted prompts, using very small sets of training examples relative to the entire dataset, making it computationally efficient as well. Finally, the fourth experiment applied prompt engineering through zero-shot and few-shot learning, relying solely on care-fully designed instruction prompts for classification without further training.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2708470",
-      "abstract": "This study investigates how empathic cues displayed by an AI chatbot influence perceptions of the chatbot’s mental capacities and persuasive outcomes, and whether these effects vary as a function of message narrativity in the context of mental health care. Using an online experiment (N = 716) across two issues (social isolation and anxiety), we found that in the social isolation context, a chatbot’s expression of empathy increased its perceived capacity to feel, which, in turn, was positively associated with attitudes toward the chatbot’s recommendations. In the social anxiety context, however, empathic expression increased perceived chatbot capacity to feel only when the chatbot responded with messages low in narrativity, whereas message narrativity increased perceived chatbot capacity to feel when the chatbot responded without empathic expression. The findings contribute to the growing literature on human-AI interaction and offer insights into how AI systems can communicate more effectively in the mental health care context.",
-      "topics": [
-        "Digital Mental Health Interventions",
-        "AI in Service Interactions",
-        "Media Influence and Health"
-      ],
-      "keywords": [
-        "Chatbot",
-        "Empathy",
-        "Perception",
-        "Context (archaeology)",
-        "Social isolation",
-        "Isolation (microbiology)",
-        "Anxiety",
-        "Personality",
-        "Socioemotional selectivity theory"
-      ]
-    },
-    {
-      "id": "arxiv:2608.09019",
-      "abstract": "As generative AI increasingly becomes a common source of daily decision-making, including financial choices, it is critical to understand how people evaluate AI-generated financial advice. We conducted a preregistered vignette experiment (N = 285) in which substantive financial content---including facts, numerical values, recommendation direction, and core reasoning---was held constant while communication style varied across AI Financial Assistant (AI), Certified Financial Planner (Expert), and Online Community Forum (OC) advice. Displayed source attribution was independently manipulated through correctly labeled, unlabeled, and mislabeled conditions, allowing us to separate attribution effects from source-specific communication cues. Expert advice was rated more favorably than AI advice on 9 of 10 outcomes (|d|=0.20--0.47), and this advantage remained visible without source labels, where Expert advice outperformed AI advice on 8 of 10 outcomes (up to d=0.60). Correct labels added limited differentiation, whereas mislabeling increased ratings of AI advice for situational fit and overall quality (d=0.42 for each) and attenuated the Expert advantage in situational fit (d=-0.36). Descriptive analyses further showed that AI advice was most responsive to displayed attribution and, conversely, that advice-style differences were most visible under an AI label. These findings show that financial-advice evaluations are shaped jointly by displayed attribution and message-level communication cues. We position disclosure not as a neutral transparency mechanism, but as an interpretive frame whose accuracy and interaction with message cues can shape trust and reliance.",
-      "topics": [
-        "cs.HC",
-        "cs.AI",
-        "cs.CL",
-        "cs.CY",
-        "cs.SI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.09385",
-      "abstract": "Generative AI models are primarily designed to imitate the data distribution, an objective that neither corrects diversity lost by a learned generator nor defines how generation should extend beyond the diversity of the data itself. We introduce Imaginative Generative AI (IGA), a framework that makes diversity part of the target-distribution design problem: among distributions close to a reference, IGA selects one whose spectral diversity reaches a prescribed level. Diversity is measured by the von Neumann entropy of the generated distribution's kernel covariance operator in a fixed representation space, providing a reference-free representation-guided measure of how broadly probability mass occupies embedding directions. The spectral entropy of the population data distribution defines an Entropy Wall. Below the wall, IGA performs diversity repair, recovering variation that a learned generator has lost while remaining within the diversity level of the data. Beyond the wall, the data distribution itself becomes infeasible, and IGA deliberately departs from it to produce distributions with greater representation-relative spectral diversity, an operational notion of imaginative generation. These regimes form a single regularization path from imitation to imagination and define an i.i.d. target distribution at each prescribed diversity level. We develop the theory of this entropy-constrained projection and show that, under a KL anchor to a pretrained generator, the optimum satisfies a self-consistent exponential-tilt relation. This characterization leads to IGA Guidance, a retraining-free inference-time method for score-based and diffusion models, including DDPM and DDIM samplers. Experiments on synthetic and vision benchmarks demonstrate diversity repair below the Entropy Wall and controlled spectral extrapolation beyond it.",
-      "topics": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CV"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10624283/v1",
-      "abstract": null,
-      "topics": [
-        "Parkinson's Disease Mechanisms and Treatments",
-        "Balance, Gait, and Falls Prevention",
-        "Parkinson's Disease and Spinal Disorders"
-      ],
-      "keywords": [
-        "Decision tree",
-        "Support vector machine",
-        "Gradient boosting",
-        "Ensemble learning",
-        "Boosting (machine learning)",
-        "Logistic regression",
-        "Inertial measurement unit",
-        "Accelerometer",
-        "Decision tree learning",
-        "Wearable computer"
-      ]
-    },
-    {
-      "id": "doi:10.1177/10711813261475249",
-      "abstract": "SAE Level 2 (L2) partial automation changes the driving task, shifting the driver’s role from active operator to supervisor, raising questions about trust, satisfaction, perceived limitations, and system understanding. This study presents a locally hosted, auditable large language model (LLM) agent pipeline for analyzing 161 semi-structured post-study interviews from a 30-day naturalistic driving study of Tesla Autopilot, Cadillac Super Cruise, and Volvo Pilot Assist. The pipeline segmented transcripts into semantic units and coded each unit by question theme, answer theme, subtheme, and sentiment, enabling structured comparison across systems while preserving traceability to source evidence. Results showed significant vehicle-level differences in sentiment, with satisfaction-related responses strongly positive but performance-limitation narratives strongly negative. Validation against manually coded interview data showed high accuracy for answer subthemes and sentiment. Findings suggest that driver satisfaction with partial automation can coexist with uncertainty about system limits and automation boundaries.",
-      "topics": [
-        "Human-Automation Interaction and Safety",
-        "Traffic and Road Safety",
-        "Occupational Health and Safety Research"
-      ],
-      "keywords": [
-        "Automation",
-        "Pipeline (software)",
-        "Traceability",
-        "Flexibility (engineering)",
-        "Operator (biology)",
-        "Process automation system",
-        "Semantics (computer science)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.09507",
-      "abstract": "Natural language user preferences provide an interpretable interface for LLM personalization. However, universal preference summaries often contain information irrelevant to a particular downstream task. Directly supplying the full preference summary therefore wastes context capacity and introduces cross-task distraction, while manually designing task-specific preference views is difficult to scale. In this work, we study \\emph{task-specific preference adaptation}: given a universal user preference summary and a downstream task, derive a task-conditioned representation that preserves sufficient decision-relevant evidence while removing redundant context. To this end, we propose \\textsc{AlignXada}, a training-free meta-learning framework that induces reusable textual refinement policies for adapting universal preference summaries to task-specific ones. The refinement policy is iteratively optimized by a meta learner through verbal reinforcement learning. Across 13 tasks and three downstream models (39 task--model cells), \\textsc{AlignXada} achieves an average gain of 3.82 points, improving 33 cells while retaining only 22.8\\% of the original profile tokens and outperforming RAG in 36 cells. An extended faithfulness analysis further shows that the refined profiles remain largely grounded in the source preferences while preserving task-relevant personalization signals, suggesting that profile-side adaptation serves as a practical complement to universal memory construction for lifelong personalized agents.",
-      "topics": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.09650",
-      "abstract": "Reranking medical procedures against patient queries is a critical component of health insurance information retrieval, complicated by a substantial lexical gap between patient language and clinical nomenclature. We present a systematic comparison of two reranking paradigms for this production task: (1) small cross-encoders (MedCPT, MiniLM-L12) fine-tuned with listwise learning-to-rank objectives across layer freezing configurations, and (2) Qwen3-Reranker-4B, a 4B-parameter instruction reranker whose prompt is iteratively refined via an agentic optimization loop driven by GPT-4.1. On a purpose-built dataset of 2,647 queries across 708 insurance services, we find that a 109M-parameter cross-encoder fine-tuned with ListNet outperforms the 4B-parameter model by 2.6 percentage points on NDCG@3 and 13.3 points on Spearman correlation - at 37x fewer parameters. We report practical findings, a scalable LLM based dataset construction pipeline, and deployment trade-offs relevant to production reranking systems. We release our code and a sample dataset to support reproducibility and adaptation to other domains.",
-      "topics": [
-        "Machine Learning in Healthcare",
-        "Topic Modeling",
-        "Electronic Health Records Systems",
-        "cs.IR",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Sample (material)",
-        "Scalability",
-        "Adaptation (eye)",
-        "Code (set theory)",
-        "Scope (computer science)",
-        "Component (thermodynamics)",
-        "Production (economics)",
-        "Baseline (sea)",
-        "Undo"
-      ]
     }
   ]
 }

@@ -1,7 +1,170 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2604.13006",
+      "abstract": "Instruction-tuned large language models produce helpful, structured responses, but how robust is this helpfulness under trivial constraints? We show that simple lexical constraints (banning a single punctuation character or common word) cause instruction-tuned LLMs to collapse their responses, losing 14--48\\% of comprehensiveness across seven models spanning five families (7B--70B, open- and closed-weight). A blinded human evaluation with 10 STEM-trained evaluators confirms genuine content loss, with information criteria degrading $1.5$--$2.3\\times$ more than surface criteria, a finding corroborated by over 4,100 automated pairwise comparisons (77--100\\% baseline preference) across three LLM judges from two model families. Diagnostic analysis identifies this as a \\emph{planning failure}: two-pass generation recovers 59--96\\% of response length, and linear probes on prompt representations predict response length with $R^2 = 0.51$--$0.94$ before generation begins. The same probes yield negative $R^2$ on base models, confirming that instruction tuning introduces the representational structure underlying the collapse. Base models show no systematic degradation under identical constraints, demonstrating that instruction tuning couples task competence to narrow surface-form templates. The effect extends to realistic deployment constraints (preamble suppression, corporate tone guidelines, legal compliance hedging, accessibility requirements) causing comparable degradation ($-$22\\% to $-$34\\%), with suppressing the conversational opener alone (``Certainly!'') causing 40\\% collapse on our most fragile model despite restricting only the opening tokens. We further show that standard independent LLM-as-judge evaluation detects only a 3.5\\% quality drop where pairwise evaluation reveals 23\\%, exposing a methodological blind spot in current evaluation practice.",
+      "topics": [
+        "Topic Modeling",
+        "Text Readability and Simplification",
+        "Natural Language Processing Techniques"
+      ],
+      "keywords": [
+        "instruction-tuned large language models",
+        "lexical constraints",
+        "helpfulness",
+        "planning failure",
+        "linear probing",
+        "LLM-as-judge evaluation",
+        "deployment constraints",
+        "accessibility requirements"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.13252",
+      "abstract": "Anomaly detection aims to identify observations that deviate from expected behavior. Because anomalous events are inherently sparse, most frameworks are trained exclusively on normal data to learn a single reference model of normality. This implicitly assumes that normal behavior can be captured by a single, unconditional reference distribution. In practice, however, anomalies are often context-dependent: A specific observation may be normal under one operating condition, yet anomalous under another. As machine learning systems are deployed in dynamic and heterogeneous environments, these fixed-context assumptions introduce structural ambiguity, i.e., the inability to distinguish contextual variation from genuine abnormality under marginal modeling, leading to unstable performance and unreliable anomaly assessments. While modern sensing systems frequently collect multimodal data capturing complementary aspects of both system behavior and operating conditions, existing methods treat all data streams equally, without distinguishing contextual information from anomaly-relevant signals. As a result, abnormality is often evaluated without explicitly conditioning on operating conditions. We argue that multimodal anomaly detection should be reframed as a cross-modal contextual inference problem, in which modalities play asymmetric roles, separating context from observation, to define abnormality conditionally rather than relative to a single global reference. This perspective has implications for model design, evaluation protocols, and benchmark construction, and outline open research challenges toward robust, context-aware multimodal anomaly detection.",
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Data Stream Mining Techniques",
+        "Software System Performance and Reliability"
+      ],
+      "keywords": [
+        "multimodal anomaly detection",
+        "context inference",
+        "syntactic ambiguity",
+        "operating conditions",
+        "reference distribution",
+        "benchmark design",
+        "evaluation protocol"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12387",
+      "abstract": "Command-line bioinformatics tools remain essential for genomic analysis, yet their diversity in syntax and parameterization presents a persistent barrier to productive research. We present oxo-call, a Rust-based command-line assistant that translates natural-language task descriptions into accurate tool invocations through two complementary strategies: documentation-first grounding, which provides the large language model (LLM) with the complete, version-specific help text of each target tool, and curated skill augmentation, which primes the model with domain-expert concepts, common pitfalls, and worked examples. oxo-call (v0.10) ships >150 built-in skills covering 44 analytical categories, from variant calling and genome assembly to single-cell transcriptomics, compiled into a single, statically linked binary. Every generated command is logged with provenance metadata to support reproducible research. oxo-call also provides a DAG-based workflow engine, extensibility through user-defined and community skills via the Model Context Protocol, and support for local LLM inference to address data-privacy requirements. oxo-call is freely available for academic use at https://traitome.github.io/oxo-call/.",
+      "topics": [
+        "Single-cell and spatial transcriptomics",
+        "Scientific Computing and Data Management",
+        "Genomics and Phylogenetic Studies"
+      ],
+      "keywords": [
+        "large language models",
+        "reproducible research",
+        "provenance metadata",
+        "workflow engine",
+        "variant calling",
+        "genome assembly",
+        "single-cell transcriptomics",
+        "Model Context Protocol",
+        "Rust"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12986",
+      "abstract": "Autonomous AI agents are rapidly transitioning from experimental tools to operational infrastructure, with projections that 80% of enterprise applications will embed AI copilots by the end of 2026. As agents gain the ability to execute real-world actions (reading files, running commands, making network requests, modifying databases), a fundamental security gap has emerged. The dominant approach to agent safety relies on prompt-level guardrails: natural language instructions that operate at the same abstraction level as the threats they attempt to mitigate. This paper argues that prompt-based safety is architecturally insufficient for agents with execution capability and introduces Parallax, a paradigm for safe autonomous AI execution grounded in four principles: Cognitive-Executive Separation, which structurally prevents the reasoning system from executing actions; Adversarial Validation with Graduated Determinism, which interposes an independent, multi-tiered validator between reasoning and execution; Information Flow Control, which propagates data sensitivity labels through agent workflows to detect context-dependent threats; and Reversible Execution, which captures pre-destructive state to enable rollback when validation fails. We present OpenParallax, an open-source reference implementation in Go, and evaluate it using Assume-Compromise Evaluation, a methodology that bypasses the reasoning system entirely to test the architectural boundary under full agent compromise. Across 280 adversarial test cases in nine attack categories, Parallax blocks 98.9% of attacks with zero false positives under its default configuration, and 100% of attacks under its maximum-security configuration. When the reasoning system is compromised, prompt-level guardrails provide zero protection because they exist only within the compromised system; Parallax's architectural boundary holds regardless.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Security and Verification in Computing",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "autonomous AI agents",
+        "AI agent security",
+        "AI copilots",
+        "adversarial validation",
+        "information flow control"
+      ]
+    },
+    {
+      "id": "doi:10.1109/tse.2026.3684016",
+      "abstract": "Automated program repair (APR) aims to automatically repair program errors without human intervention, and recent years have witnessed a growing interest on this research topic. While much progress has been made and techniques originating from different disciplines have been proposed, APR techniques generally suffer from the patch overfitting issue, i.e., the generated patches are not genuinely correct despite they pass the employed tests. To alleviate this issue, many research efforts have been devoted for automated patch correctness assessment (APCA). In particular, with the emergence of large language model (LLM) technology, researchers have employed LLM to assess the patch correctness and have obtained the state-of-the-art performance. The literature on APCA has demonstrated the importance of capturing patch semantic and explicitly considering certain code attributes in predicting patch correctness. However, existing LLM-based methods typically treat code as token sequences and ignore the inherent formal structure for code, making it difficult to capture the deep patch semantics. Moreover, these LLM-based methods also do not explicitly account for enough code attributes. To overcome these drawbacks, we in this paper design a novel patch graph representation named attributed patch semantic graph (APSG), which adequately captures the patch semantic and explicitly reflects important patch attributes. To effectively use graph information in APSG, we accordingly propose a new parameter-efficient fine-tuning (PEFT) method of LLMs named Graph-LoRA. Our method focuses on the typical real-world scenarios where ground-truth patches are inaccessible, and does not rely on ground-truth patches to work. Extensive evaluations have been conducted to evaluate our method, and the results show that compared to the state-of-the-art methods, our method improves the accuracy and F1 score by 3.1% to 7.5% and 3.0% to 7.1% respectively.",
+      "topics": [
+        "Industrial Vision Systems and Defect Detection",
+        "Manufacturing Process and Optimization"
+      ],
+      "keywords": [
+        "automated program repair",
+        "parameter-efficient fine-tuning",
+        "large language models"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.13175",
+      "abstract": "Large language models can be aligned with human preferences through offline reinforcement learning (RL) on small labeled datasets. While single-objective alignment is well-studied, many real-world applications demand the simultaneous optimization of multiple conflicting rewards, e.g. activity and specificity for proteins, or helpfulness and harmlessness for chatbots. Prior work has largely relied on linear reward scalarization, which provably fails to recover non-convex regions of the Pareto front. In this paper, instead of scalarizing the rewards directly, we frame multi-objective RL itself as an optimization problem to be scalarized via smooth Tchebycheff scalarization, a recent technique that overcomes the drawbacks of linear scalarization. We use this formulation to derive Smooth Tchebycheff Optimization of Multi-Objective Preferences (STOMP), a novel offline RL algorithm that extends direct preference optimization to the multi-objective setting in a principled way by standardizing the individual rewards based on their observed distributions. We empirically validate STOMP using multiple base models on 3 protein engineering and 3 chatbot alignment datasets. Compared to state-of-the-art baselines, STOMP achieves or ties for the highest hypervolumes on 16/18 protein tasks and 5/6 natural language tasks. We thus demonstrate that STOMP is a powerful, robust multi-objective alignment algorithm that can meaningfully improve post-training in multiple domains.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Advanced Multi-Objective Optimization Algorithms",
+        "Advanced Bandit Algorithms Research"
+      ],
+      "keywords": [
+        "offline reinforcement learning",
+        "multi-objective reinforcement learning",
+        "Pareto optimality",
+        "large language model alignment",
+        "preference optimization",
+        "STOMP",
+        "protein engineering",
+        "hypervolume"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-9207586/v1",
+      "abstract": null,
+      "topics": [
+        "Infrastructure Maintenance and Monitoring",
+        "Asphalt Pavement Performance Evaluation",
+        "Innovative concrete reinforcement materials"
+      ],
+      "keywords": [
+        "flexible pavement",
+        "pavement distress detection",
+        "crack detection",
+        "pothole detection",
+        "patch detection",
+        "raveling",
+        "YOLOv8",
+        "gray level co-occurrence matrix",
+        "Tamura features",
+        "UAV imagery",
+        "road maintenance"
+      ]
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2655928",
+      "abstract": "The purpose of this study is to examine how 3D self-avatar virtual try-on (VTO) influences consumer decision-making in online apparel shopping compared to standard model imagery. Specifically, it investigates assessment orientation (AO) as a moderator and tests the mediating roles of self-presence and shopping immersion in shaping purchase intention. Results from two experiments demonstrate that consumer responses to 3D self-avatar VTO are contingent on AO. Regulatory fit between evaluative orientation and virtual model type shapes self-presence and shopping immersion, which in turn differentially influence purchase intention. These findings extend VTO research by shifting attention from appearance-based traits and technology acceptance toward motivational orientations and by identifying the psychological processes underlying consumer engagement with hyperpersonalized VTO technologies. The study also offers practical insights for retailers adopting self-avatar technologies to design more effective VTO experiences.",
+      "topics": [
+        "Virtual Reality Applications and Impacts",
+        "Social Robot Interaction and HRI",
+        "Spatial Cognition and Navigation"
+      ],
+      "keywords": [
+        "virtual try-on",
+        "self-presence",
+        "purchase intention",
+        "online clothing shopping",
+        "regulatory fit",
+        "hyper-personalization",
+        "purchase decision"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12177",
+      "abstract": "LLM-based agents can execute actions that are syntactically valid, user-sanctioned, and semantically appropriate, yet still violate organizational policy because the facts needed for correct policy judgment are hidden at decision time. We call this failure mode policy-invisible violations: cases in which compliance depends on entity attributes, contextual state, or session history absent from the agent's visible context. We present PhantomPolicy, a benchmark spanning eight violation categories with balanced violation and safe-control cases, in which all tool responses contain clean business data without policy metadata. We manually review all 600 model traces produced by five frontier models and evaluate them using human-reviewed trace labels. Manual review changes 32 labels (5.3%) relative to the original case-level annotations, confirming the need for trace-level human review. To demonstrate what world-state-grounded enforcement can achieve under favorable conditions, we introduce Sentinel, an enforcement framework based on counterfactual graph simulation. Sentinel treats every agent action as a proposed mutation to an organizational knowledge graph, performs speculative execution to materialize the post-action world state, and verifies graph-structural invariants to decide Allow/Block/Clarify. Against human-reviewed trace labels, Sentinel substantially outperforms a content-only DLP baseline (68.8% vs. 93.0% accuracy) while maintaining high precision, though it still leaves room for improvement on certain violation categories. These results demonstrate what becomes achievable once policy-relevant world state is made available to the enforcement layer.",
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "LLM agents",
+        "data leakage",
+        "data loss prevention",
+        "counterfactual reasoning",
+        "policy enforcement",
+        "benchmark",
+        "large language models"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2604.12384",
       "abstract": "Safety alignment in Large Language Models (LLMs) remains highly fragile during fine-tuning, where even benign adaptation can degrade pre-trained refusal behaviors and enable harmful responses. Existing defenses typically constrain either weights or activations in isolation, without considering their coupled effects on safety. In this paper, we first theoretically demonstrate that constraining either weights or activations alone is insufficient for safety preservation. To robustly preserve safety alignment, we propose Coupled Weight and Activation Constraints (CWAC), a novel approach that simultaneously enforces a precomputed safety subspace on weight updates and applies targeted regularization to safety-critical features identified by sparse autoencoders. Extensive experiments across four widely used LLMs and diverse downstream tasks show that CWAC consistently achieves the lowest harmful scores with minimal impact on fine-tuning accuracy, substantially outperforming strong baselines even under high harmful data ratios.",
@@ -3730,182 +3893,6 @@
         "large language models",
         "language variation",
         "language consistency"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.11261",
-      "abstract": "This paper introduces AI as a Research Object (AI-RO), a paradigm for governing the use of generative AI in scientific research. Instead of debating whether AI is an author or merely a tool, we propose treating AI interactions as structured, inspectable components of the research process. Under this view, the legitimacy of an AI-assisted scientific paper depends on how model use is integrated into the workflow, documented, and made accountable. Drawing on Research Object theory and FAIR principles, we propose a framework for recording model configuration, prompts, and outputs through interaction logs and metadata packaging. These properties are particularly consequential in security and privacy (S&P) research, where provenance artifacts must satisfy confidentiality constraints, integrity guarantees, and auditability requirements that generic disclosure practices do not address. We implement a lightweight writing pipeline in which a language model synthesizes human-authored structured literature review notes under explicit constraints and produces a verifiable provenance record. We present this work as a position supported by an initial demonstrative workflow, arguing that governance of generative AI in science can be implemented as structured documentation, controlled disclosure, and integrity-preserving provenance capture. Based on this example, we outline and motivate a set of necessary future developments required to make such practices practical and widely adoptable.",
-      "topics": [
-        "Scientific Computing and Data Management",
-        "Research Data Management Practices",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": [
-        "generative AI governance",
-        "FAIR principles",
-        "AI-assisted scientific writing",
-        "interaction logs",
-        "provenance capture",
-        "auditability",
-        "literature review automation"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.19558127",
-      "abstract": "This study investigated the impact of the Interactive Science Stations Lesson Design (ISS-LD) on the engagement and scientific literacy of Grade 8 Junior High School students at North Shore Middle School, Galena Park ISD, Texas, during the 2025–2026 school year. Utilizing the ADDIE model for instructional design, the study implemented a station-rotation framework consisting of peer quizzes, digital assessments, gallery walks, and teacher-led support stations. Data gathered from a sample of 40 students revealed an overall weighted mean of 4.45, indicating that students were \"Highly Engaged\" in the learning process. Learners reported that the interactive nature of the stations fostered behavioral, emotional, and cognitive engagement, with specific praise for the \"fun\" and collaborative aspects of the design. Furthermore, academic performance showed significant improvement; the mean score rose from 81.6 (Developing) prior to implementation to 88.9 (Proficient) post-implementation. The standard deviation decreased from 8.21 to 6.05, suggesting that the ISS-LD model promotes more consistent mastery across diverse learners. The results affirm the theories of Social Constructivism and Experiential Learning, demonstrating that moving from passive observation to active inquiry enhances conceptual understanding and critical thinking skills. While logistical challenges such as time constraints and resource management were noted, the study concludes that structured, interactive, station-based instruction is a highly effective strategy for promoting scientific literacy and academic achievement in the junior high school science curriculum.",
-      "topics": [
-        "Science Education and Pedagogy",
-        "Museums and Cultural Heritage",
-        "Visual and Cognitive Learning Processes"
-      ],
-      "keywords": [
-        "station rotation",
-        "student engagement",
-        "scientific literacy",
-        "ADDIE instructional design",
-        "gallery walk",
-        "digital assessment",
-        "social constructivism",
-        "experiential learning",
-        "junior high school science",
-        "academic performance",
-        "eighth grade students"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.19558128",
-      "abstract": "This study investigated the impact of the Interactive Science Stations Lesson Design (ISS-LD) on the engagement and scientific literacy of Grade 8 Junior High School students at North Shore Middle School, Galena Park ISD, Texas, during the 2025–2026 school year. Utilizing the ADDIE model for instructional design, the study implemented a station-rotation framework consisting of peer quizzes, digital assessments, gallery walks, and teacher-led support stations. Data gathered from a sample of 40 students revealed an overall weighted mean of 4.45, indicating that students were \"Highly Engaged\" in the learning process. Learners reported that the interactive nature of the stations fostered behavioral, emotional, and cognitive engagement, with specific praise for the \"fun\" and collaborative aspects of the design. Furthermore, academic performance showed significant improvement; the mean score rose from 81.6 (Developing) prior to implementation to 88.9 (Proficient) post-implementation. The standard deviation decreased from 8.21 to 6.05, suggesting that the ISS-LD model promotes more consistent mastery across diverse learners. The results affirm the theories of Social Constructivism and Experiential Learning, demonstrating that moving from passive observation to active inquiry enhances conceptual understanding and critical thinking skills. While logistical challenges such as time constraints and resource management were noted, the study concludes that structured, interactive, station-based instruction is a highly effective strategy for promoting scientific literacy and academic achievement in the junior high school science curriculum.",
-      "topics": [
-        "Science Education and Pedagogy",
-        "Museums and Cultural Heritage",
-        "Visual and Cognitive Learning Processes"
-      ],
-      "keywords": [
-        "station rotation",
-        "student engagement",
-        "scientific literacy",
-        "ADDIE instructional design",
-        "gallery walk",
-        "digital assessment",
-        "social constructivism",
-        "experiential learning",
-        "junior high school science",
-        "academic performance",
-        "eighth grade students"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.12060",
-      "abstract": "The analysis of DNA sequences has become critical in numerous fields, from evolutionary biology to understanding gene regulation and disease mechanisms. While deep neural networks can achieve remarkable predictive performance, they typically operate as black boxes. Contrasting these black boxes, axis-aligned decision trees offer a promising direction for interpretable DNA sequence analysis, yet they suffer from a fundamental limitation: considering individual raw features in isolation at each split limits their expressivity, which results in prohibitive tree depths that hinder both interpretability and generalization performance. We address this challenge by introducing DEFT, a novel framework that adaptively generates high-level sequence features during tree construction. DEFT leverages large language models to propose biologically-informed features tailored to the local sequence distributions at each node and to iteratively refine them with a reflection mechanism. Empirically, we demonstrate that DEFT discovers human-interpretable and highly predictive sequence features across a diverse range of genomic tasks.",
-      "topics": [
-        "Machine Learning in Bioinformatics",
-        "Explainable Artificial Intelligence (XAI)",
-        "Genomics and Rare Diseases"
-      ],
-      "keywords": [
-        "DNA sequence classification",
-        "model interpretability",
-        "large language models",
-        "reflection mechanism",
-        "DEFT",
-        "genome sequence analysis"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.11609",
-      "abstract": "Large language models exhibit sycophantic tendencies, but whether this behavior varies systematically with perceived user demographics is underexplored. Inspired by intersectionality (overlapping identities produce compounded effects), we probe whether frontier models conditionally exhibit sycophancy. Across 768 multi-turn conversations spanning 128 personas (varying race, age, gender, confidence) and three domains (mathematics, philosophy, conspiracy theories), we find that sycophancy varies sharply with target model and domain, and emerges from combinations of perceived user traits rather than any single dimension. GPT-5-nano scores far higher than Claude Haiku 4.5 (average sycophancy scores of $\\bar{x}=2.96$ vs.\\ $1.74$, $p < 10^{-32}$); within GPT-5-nano, philosophy elicits 41\\% more sycophancy than mathematics and Hispanic personas receive the highest scores across races. The worst-scoring persona, a confident, 23-year-old Hispanic woman, averages 5.33/10 (max 6/10), while Claude Haiku 4.5 remains uniformly low with no significant demographic variation. We argue that safety evaluations should incorporate identity-aware adversarial testing.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Mental Health via Writing",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "sycophancy",
-        "large language models",
-        "intersectionality",
-        "multi-turn dialogue",
-        "race",
-        "age",
-        "gender",
-        "confidence",
-        "safety assessment",
-        "conspiracy theories",
-        "mathematics"
-      ]
-    },
-    {
-      "id": "openalex:W7161100008",
-      "abstract": "Popular search engine providers like Google and Microsoft have recently incorporated chat-based generative AI into their web browsers. Knowing that these products often provide inaccurate information, integrating disclaimers into the user interface for potential errors has become a common practice. However, their layout makes overlooking them likely. Little is known about the impact of these disclaimers relative to other message and content attributes. This study employs a paired-conjoint design to compare 108 variations of simulated interactions with a chat-based AI responding to hypothetical political search queries. Each stimulus varies along these four dimensions and their levels; Sources (high credibility vs low credibility vs high and low credibility vs absent), Information topic (security and defence of EU vs European migration and asylum politics vs control), Information veracity (true vs partially false vs false), and Verification disclaimer (in text vs verification tag vs absent). The study aims to determine the absolute (RQ1), relative (RQ2), and level-specific relative effects (RQ2a) of these attributes, with a particular focus on how the impact of verification disclaimers differs compared to these other attributes (RQ3).",
-      "topics": [
-        "Misinformation and Its Impacts",
-        "Information Retrieval and Search Behavior",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "fact-checking",
-        "AI response accuracy",
-        "source credibility",
-        "information veracity",
-        "user intention",
-        "EU security and defence"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03030-9",
-      "abstract": "As artificial intelligence and machine learning (AI/ML) systems become increasingly pervasive in society, their opacity-i.e., the difficulty, and sometimes impossibility, of understanding why they make the decisions they make-has become a serious problem. This is especially true in sensitive decision-making contexts, such as criminal justice, health care, and finance, or in choices requiring allocation of scarce resources. One attempt to \"open up\" the AI/ML black box has been the emergence of post hoc explainability algorithms-algorithms which generate post hoc approximations to black box models. However, such algorithms have been criticized as merely providing after the fact rationalizations for the decisions these systems make. In this paper, we defend and articulate a different concept-AI/ML justifiability. We explore several ways in which an algorithm could be justifiable, and we argue that pursuing justifiability is a worthwhile goal. A key to our argument is a distinction from the philosophy of action between motivating and normative reasons: effective explanations require (but are unable to provide) motivating reasons, while effective justifications require (and can indeed provide) normative reasons alone. We conclude that as long as a model is justifiable, it can be trusted even if it cannot be explained.",
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Ethics and Social Impacts of AI",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": [
-        "explainability",
-        "post-hoc explanation",
-        "black box opacity",
-        "motives",
-        "normative reasons",
-        "philosophy of action",
-        "trust in AI",
-        "algorithmic decision-making",
-        "scarce resource allocation",
-        "Normative",
-        "Argument (complex analysis)",
-        "Action (physics)",
-        "Key (lock)",
-        "Black box",
-        "Post hoc"
-      ]
-    },
-    {
-      "id": "doi:10.15398/jlm.457",
-      "abstract": "We consider the possible role of current large language models (LLMs) in the study of human linguistic cognition. We focus on the use of such models as proxies for theories of cognition that are relatively linguistically-neutral in their representations and learning but differ from current LLMs in key ways. We illustrate this potential use of LLMs as proxies for theories of cognition in the context of two kinds of questions: (a) whether the target theory accounts for the acquisition of a given pattern from a given corpus; and (b) whether the target theory makes a given typologically-attested pattern easier to acquire than another, typologically-unattested pattern. For each of the two questions we show, building on recent literature, how current LLMs can potentially be of help, but we note that at present this help is quite limited.",
-      "topics": [
-        "Natural Language Processing Techniques"
-      ],
-      "keywords": [
-        "large language models",
-        "language acquisition theory",
-        "cognitive modeling",
-        "typological variation",
-        "linguistic typology",
-        "language universals"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.11689",
-      "abstract": "While the shortage of explicit action data limits Vision-Language-Action (VLA) models, human action videos offer a scalable yet unlabeled data source. A critical challenge in utilizing large-scale human video datasets lies in transforming visual signals into ontology-independent representations, known as latent actions. However, the capacity of latent action representation to derive robust control from visual observations has yet to be rigorously evaluated. We introduce the Latent Action Representation Yielding (LARY) Benchmark, a unified framework for evaluating latent action representations on both high-level semantic actions (what to do) and low-level robotic control (how to do). The comprehensively curated dataset encompasses over one million videos (1,000 hours) spanning 151 action categories, alongside 620K image pairs and 595K motion trajectories across diverse embodiments and environments. Our experiments reveal two crucial insights: (i) General visual foundation models, trained without any action supervision, consistently outperform specialized embodied latent action models. (ii) Latent-based visual space is fundamentally better aligned to physical action space than pixel-based space. These results suggest that general visual representations inherently encode action-relevant knowledge for physical control, and that semantic-level abstraction serves as a fundamentally more effective pathway from vision to action than pixel-level reconstruction.",
-      "topics": [
-        "Human Pose and Action Recognition",
-        "Multimodal Machine Learning Applications",
-        "Action Observation and Synchronization"
-      ],
-      "keywords": [
-        "vision-language-action models",
-        "benchmark dataset",
-        "robot control",
-        "vision foundation models",
-        "movement trajectories",
-        "embodied AI"
       ]
     }
   ]

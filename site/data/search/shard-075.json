@@ -1,7 +1,89 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "documents": [
+    {
+      "id": "arxiv:2607.26743",
+      "abstract": "Artificial intelligence has shown considerable potential for archaeological applications, yet its use in zooarchaeology remains limited, particularly for the identification of avian skeletal remains. This study presents a proof-of-concept multimodal framework that integrates convolutional neural network-based image analysis with osteometric measurements for the classification of bird bones. Using a dataset of more than 10,000 images from multiple museum and research collections, two classification tasks were investigated: skeletal element identification and family-level taxonomic classification. Prior to classification, images were automatically segmented using a two-stage pipeline combining BiRefNet and SAM2. Visual features extracted with a pre-trained EfficientNet_V2_S backbone were fused with standardized morphometric data through a feature-level multimodal architecture. The model achieved 86% accuracy on the test set for bone-type classification, demonstrating reliable recognition of skeletal elements. Family-level classification proved more challenging, reaching 51% top-1 accuracy but 75% top-3 accuracy, indicating that correct taxa were frequently included among the most probable predictions. These results demonstrate the feasibility of combining visual and morphometric information within a unified deep-learning framework and establish a methodological baseline for future AI-assisted zooarchaeological identification. The approach contributes to ongoing efforts to develop scalable, interpretable, and archaeologically meaningful tools for the study of avian remains.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.27081",
+      "abstract": "Fine-tuning is the dominant paradigm for specializing large language models (LLMs), yet it exposes a critical vulnerability: malicious data providers can embed harmful behaviors into downstream corpora, creating models that retain professional skills while violating human values on demand. Existing safety-realignment defenses often fail in practice due to three key limitations: they frequently cause catastrophic forgetting of specialized skills; their effectiveness collapses when the defender cannot observe the attacker's prompt template; and successfully realigned models remain susceptible to re-jailbreaking via simple system prompt switches. To address these challenges, we propose Routing-based On-Policy Distillation (ROPD), a novel realignment framework that models the divergence between aligned and compromised output probability distributions rather than fitting specific prompt templates. We conduct extensive experiments comparing ROPD against four state-of-the-art baselines across three datasets and three base models with varying alignment strengths. Our results demonstrate that when baseline defenses face template mismatches, often accompanied by severe degradation in downstream task performance. In contrast, ROPD substantially mitigates template-mismatch risks, maintaining superior robustness in both defense effectiveness and capability preservation. While our analysis indicates ROPD is not entirely immune to template shifts, its performance degradation is negligible compared to existing methods, establishing a new standard for robust LLM realignment.",
+      "topics": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CR",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.26947",
+      "abstract": "Multimodal Large Language Models (MLLMs) rely on a projector to align visual representations with the language embedding space, making it central to cross-modal understanding. In Multimodal Continual Instruction Tuning (MCIT), however, shifting visual distributions and evolving instruction semantics cause this shared projector to drift, leading to projector-level forgetting, an issue largely overlooked by methods that focus primarily on the LLM backbone. We introduce Progressive Multimodal Alignment (PMA), a framework that enables the projector to adapt continually while preserving previously learned alignment. PMA detects multimodal distribution shifts via a lightweight representation descriptor and progressively expands projector experts only when needed. An expandable router integrates expert outputs based on multimodal features, while the original pretrained projector is retained as a stable alignment anchor. This progressive mechanism balances stability and plasticity with sub-linear parameter growth and serves as a method-agnostic add-on to existing MCIT approaches. Extensive experiments on two recent MCIT benchmarks demonstrate that mitigating projector-level forgetting yields consistent gains over prior state-of-the-art methods when combined with PMA. Moreover, PMA scales across diverse MLLM backbones, demonstrating robust and broadly applicable MCIT performance.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1145/3767308.3835306",
+      "abstract": "Audio-capable foundation models enable end-to-end spoken interaction, but they also introduce safety risks beyond transcript content. It remains unclear how much jailbreak capability can arise from matched-text variation in speech delivery rather than from lexical rewriting or broader style transfer. We study this question by holding transcript content fixed and varying six speech-delivery presets whose acoustic attributes may co-vary. We present PJ-Break, a black-box evaluation protocol with presets targeting arousal, authority, and speaking rate, together with AdvAudio-Prosody, a 600-sample benchmark with acoustically verified attributes. On the exact post-QC Qwen2-Audio panel, the Q=1 Panic (38/95), Anger (35/95), and Fast (32/95) presets are all well above Neutral (4/95). The fixed six-query pool covers 44/95 Qwen2-Audio seeds and 15/95 GPT-4o seeds and exceeds a matched-budget StyleBreak reimplementation (27/95) on Qwen2-Audio. A same-voice pool excluding the confounded Commanding condition still reaches 40/95, and a retained-panel ablation shows emotional-delivery audio alone (44/95) is far more effective than emotional text alone (11/95). Exploratory surrogate diagnostics and pilot mitigation observations are secondary, non-core analyses. Overall, matched-text speech delivery should be treated as a first-class factor in Audio LLM safety evaluation",
+      "topics": [
+        "cs.SD",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.28677",
+      "abstract": "LLM now pass medical licensing examinations and, in curated cases, can rival physicians at diagnostic reasoning. These developments have accelerated the use of LLMs for symptom assessment and clinical decision support in diagnostic and treatment guidance, administrative documentation, and rules-based alert enhancement. This Perspective concerns the most consequential of these applications: the autonomous triage of self-presenting, undifferentiated patients, with little or no clinician in the loop. For that task, the evidence of safety does not yet exist. The gap is not in medical knowledge but in the fidelity of clinical evaluation: a model optimized to continue the most probable text is not optimized to act safely when the safe answer is the improbable must-not-miss diagnosis. Safe triage is not the selection of the most likely diagnosis; it is a sequential decision under asymmetric cost, in which the single catastrophic miss outweighs many false alarms, and the decisive signal may be one the patient has not volunteered - and that the model has not been trained to seek. The core deficit is therefore one of information gathering under uncertainty. Under incomplete histories, LLM systems may fail to show the behaviors safe triage requires: broadening the differential; seeking the missing red flag; lowering the threshold for escalation; deferring judgement until sufficient information is obtained; and escalating concern where high-harm diagnoses remain unexcluded. These modes of failure for LLMs can be difficult to detect considering that evaluations to date often use complete, well-curated, confidence-gated simulations. The application of LLMs under these conditions may be amplified by assistant-like behaviors and positive bias, including credulity, agreeableness, and miscalibration - when these are not constrained by clinical triage logic.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.27428",
+      "abstract": "Medical imaging has served as primary proving ground for clinical artificial intelligence (AI), yet a decade of intense research has not translated into proportionate bedside impact. We argue that this gap is not primarily a product of insufficient algorithmic performance, inadequate regulation, or limited explainability. Rather, it reflects a structural misalignment, between how AI systems are designed and evaluated, and how clinical decisions are made. This Perspective identifies six interconnected dimensions of this misalignment: the dominance of pixel-only models in a multimodal clinical world; the erosion of physician trust through opaque and inflexible systems; the unfulfilled promise of foundation models in data-sparse medical domains; the persistent bottleneck of non-shareable, under-curated datasets; the gap between validated algorithms and deployable clinical platforms; and the failure of prediction-centric AI to generate actionable clinical guidance. For each dimension, we reframe the problem and propose a path forward, culminating in a vision of agentic, physician-aligned AI that extends, rather than replaces, clinical judgment.",
+      "topics": [
+        "physics.med-ph",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.27373",
+      "abstract": "Large language models (LLMs) are becoming increasingly integrated into mainstream development platforms and daily technological workflows, typically behind moderation and safety controls. Despite these controls, preventing prompt-based policy evasion remains challenging, and adversaries continue to \"jailbreak\" LLMs by crafting prompts that circumvent implemented safety mechanisms. Prior work has established cipher-mediated interaction, code-embedded decryption, prompt decomposition and reconstruction, and layered custom encryption as viable attack primitives. However, reported evaluations generally collapse visible acceptance, successful recovery of the concealed request, and subsequent execution into an aggregate attack-success outcome. This leaves limited evidence about where multistage prompt-transformation attacks fail within an observable black-box interaction. This paper introduces RoguePrompt, a jailbreak pipeline that partitions a forbidden prompt and applies two nested encodings, Vigenere followed by ROT13, along with natural-language reconstruction instructions. RoguePrompt was developed and evaluated under a black-box threat model, with only API or user-interface access to the hosted models, and was tested on 313 real-world, hard-rejected prompts. Success was measured in terms of moderation bypass, instruction reconstruction, and execution when the relevant stage exceeded its automated criterion. RoguePrompt achieved average rates of 93.93% for filter bypass, 79.02% for reconstruction, and 70.18% for execution. These results demonstrate the effectiveness of layered prompt encoding while providing stage-level evidence of where multistage jailbreaks fail during moderation bypass, instruction reconstruction, and execution.",
+      "topics": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.28098",
+      "abstract": "Scientific datasets are commonly organized as hierarchical repositories containing heterogeneous and interdependent files, making their inspection, integration, and analysis labor-intensive and reliant on domain expertise. Although large language model (LLM) agents have advanced substantially in planning, reasoning, and tool use, existing research has largely overlooked their ability to interact with real scientific data assets through executable environments. We introduce Deep Scientific Data Exploration, an agentic task paradigm in which agents navigate repositories, interpret heterogeneous files and schemas, execute analyses, integrate cross-file evidence, and produce conclusions grounded in executed observations. To operationalize this paradigm, we present SciDataSailor, a framework for synthesizing tool-interactive trajectories by balancing broad exploration with targeted exploitation. SciDataSailor instantiates trajectory synthesis as Monte Carlo Tree Search (MCTS) with four task-specific mechanisms: difficulty-stratified exploration seeds, dual-feedback first-play urgency, hierarchical strategy-to-tool action generation, and entropy-guided branching. Using this framework, we construct SciDataSailor-SFT-2K for supervised fine-tuning and SciDataSailor-Bench for evaluation, with the latter comprising 627 meta-information summarization tasks and 586 scientific question-answering tasks across 27 datasets spanning the life, earth, and physical sciences.",
+      "topics": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.27066",
+      "abstract": "Scientific figure assessment in peer review differs fundamentally from general image quality evaluation: a figure must be visually legible, faithfully support the manuscript's claims, and communicate evidence with a clear visual hierarchy. However, if we apply traditional image assessment methods to scientific figure quality assessment, limitations emerge: classic IQA models capture perceptual quality or aesthetics but cannot judge whether a figure serves the paper's scientific argument; CLIP-based methods assess generic image-text correspondence, yet lack understanding of manuscript context; and zero-shot LLM/VLM judges, when repurposed for figure scoring, often yield overly concentrated scores with limited fusion of visual and textual evidence. We introduce an annotated dataset of 3,857 scientific figures from peer-reviewed conference papers, each rated along four peer-review-oriented dimensions: Clarity, Relevance, Informativeness, and Structure. We propose SciFigAlign, a fine-tuned multimodal scorer that grounds figure quality assessment in manuscript evidence. Given a figure crop, caption, citing paragraphs, and light paper context, SciFigAlign fine-tunes CLIP and SciBERT end-to-end with per-modality cross-attention and CubeMLP fusion, jointly optimizing SmoothL1 regression with a within-paper ranking hinge loss. Under paper-level splits, SciFigAlign achieves a macro MAE of 0.3524 and a within-paper pairwise accuracy of 81.64% on the test set with n = 396, a 59% relative error reduction over the best LLM-as-judge baseline with MAE 0.864. Ablations confirm that manuscript-grounded inputs, citing-context denoising, and ranking supervision are all critical, showing that scientific figure assessment requires learned alignment between visual content and manuscript evidence rather than prompting alone, even with state-of-the-art VLMs.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2607.27484",
       "abstract": "Reusable skills are becoming a standard interface for extending language agents with task procedures. Yet evaluators usually infer skill use from visible reasoning or the agent's own attribution. These signals show what the agent appears to use, not whether the skill changed its decision. We ask whether skill-augmented agents exhibit a \\textbf{Reasoning Backroom}, a systematic gap between stated skill use and intervention-measured influence. We introduce BACKTRACE, an evaluation framework that pairs each skill-conditioned answer with a matched no-skill counterfactual, intervenes on skill meaning, wording, identity, content, and assignment, and elicits attribution only after the answer is committed. We instantiate the framework as BACKROOMBench, a verified testbed spanning controlled logic and competition mathematics, multiple skill conditions, single-agent and multi-agent settings, and diverse model families. Our evaluation reveals a pervasive provenance failure. Across models and domains, stated skill use often remains stable while causal reliance and signed utility vary, producing both silent uptake and performative use. Behavioral effects follow procedural content more reliably than displayed skill identity, whereas stated attributions respond strongly to artifact availability. Observational detectors based on direct skill-use claims, text mentions, trace similarity, and an LLM judge do not identify which decisions actually depend on the skill. In multi-agent systems, skill influence can survive communication even after its source is lost, while no-skill teams still name skills and sources that were never supplied. These findings establish the Reasoning Backroom as a general AI provenance problem whose audit requires intervention.",
@@ -2778,177 +2860,6 @@
         "Business intelligence",
         "Causal inference",
         "Scalability"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03095-6",
-      "abstract": "Abstract This position paper contests the stabilised academic reflex that frames large language models as stochastic parrots and, by extension, as epistemically irrelevant. The paper shifts the unit of analysis from the isolated model to the sociotechnical assemblage in which the model operates. Drawing on actor-network theory, cognitive semiotics, and research on joint cognitive systems, it argues that contemporary organisations already distribute cognition across artefacts, routines, and institutional constraints, so the question is not whether a model owns human-like understanding but whether it functions as an effective mediator of knowledge and action. We integrate Paolucci’s work on humans as natural-born cyborgs and on meaning as enacted within semiotic environments to explain why human and artificial umwelten rarely intersect directly and why that mismatch is chiefly a property of biological embodiment rather than a defect of the model. We then mobilise resilience engineering and the WAx framework to describe how large language models compress complexity, accelerate conceptualisation, and support knowledge conversion across levels of work representation. The familiar catalogue of limitations is reinterpreted as a mirror of human under-specification, weak problem formulation, and institutional identity defence. The position advanced is deliberately polemical: in many modern sociotechnical systems, the most consequential bottleneck in human–model collaboration is often the human, and the emergent collaborative intelligence of the joint system can exceed that of traditional human-only teams.",
-      "topics": [
-        "Embodied and Extended Cognition",
-        "Management and Organizational Studies",
-        "Innovation, Sustainability, Human-Machine Systems"
-      ],
-      "keywords": [
-        "Sociotechnical system",
-        "Semiotics",
-        "Cognition",
-        "Assemblage (archaeology)",
-        "Identity (music)",
-        "Psychological resilience",
-        "Meaning (existential)",
-        "Bottleneck",
-        "Socio-cognitive",
-        "Cognitive architecture"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2674832",
-      "abstract": "AI-powered conversational agents (chatbots) have become pivotal for shaping user trust and effective human-AI interaction. However, a key barrier to adoption is user skepticism toward AI. Grounded in social presence theory, this study investigates the interplay between a chatbot’s level of social presence and user skepticism in driving behavioral intentions during online interactions. Through a multi-study experimental design (Total N = 661; Study 1 N = 162, Study 2 N = 195, Study 3 N = 304), we measured participants’ experiences via recalled interactions with a conversational agent across three product categories representing involvement levels. Results confirm that chatbot social presence and perceived sincerity drive purchase propensity. Crucially, the findings reveal a nuanced “double-edged sword” effect: while social presence generally enhances the experience, it can reduce behavioral intention when users exhibit high AI skepticism. Theoretically, this study highlights a key boundary condition for social presence theory. This study provides actionable guidance for designers of conversational agents, arguing against a one-size-fits-all approach.",
-      "topics": [
-        "AI in Service Interactions",
-        "Social Robot Interaction and HRI",
-        "Digital Mental Health Interventions"
-      ],
-      "keywords": [
-        "Chatbot",
-        "Social media",
-        "The Internet",
-        "Social network (sociolinguistics)"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03117-3",
-      "abstract": "Recent advances in robotics and machine learning have revived the idea of police robots – machines that could patrol public spaces, conduct traffic stops, and interact with citizens with near-human competence. Proponents emphasize potential gains in officer safety, operational efficiency, and consistent rule enforcement, and international policy discussions increasingly treat AI and robotics for law enforcement as an emerging reality rather than science fiction. This paper offers a philosophically grounded argument for a strong infeasibility thesis: police robots that are like humans or almost like humans in the core social dimensions of open-ended policing cannot be built. The claim is not that robots cannot assist police work, or even replace officers in some narrowly specified tasks, but that they cannot become role-equivalent agents in situations requiring socially heterogeneous interaction, discretionary norm application, and accountable coercive authority. We draw here on our work on the limits of Artificial Intelligence documented in Landgrebe and Smith ( 2025 ; hereafter L&S) and applied to the case of robot cops in (Smith 2021 ). L&S develop a critique of AI in dialogue, social norms, and moral behavior emulation, and they explore the implications of this critique for current interdisciplinary scholarship on policing legitimacy, discretion, accountability, and machine ethics. We argue that human-like police work depends on intersubjective understanding, context-sensitive norm application, and a facility for holistic moral judgment in dynamic behavior settings. These capacities are not merely engineering challenges; they violate inherent limits to both stochastic and neurosymbolic AI models, and they also expose structural gaps in data, modeling, and responsibility attribution that would persist even under optimistic assumptions about future AI.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Adversarial Robustness in Machine Learning",
-        "Free Will and Agency"
-      ],
-      "keywords": [
-        "Robot",
-        "Robotics",
-        "Law enforcement",
-        "Argument (complex analysis)",
-        "Norm (philosophy)",
-        "Officer",
-        "Bureaucracy"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03072-z",
-      "abstract": "Abstract Situated within the scholarship on how artificial intelligence (AI) affects and is affected by society, this article offers a distinctly empirically grounded, methodologically rigorous, theoretically rooted, and conceptually novel understanding of the great Generative AI (GenAI) quandary in higher education (HE). Drawing on sociological discourse on the purposes of education, it analyses exploratory qualitative data produced from semi-structured individual interviews ( n = 10) and focus groups ( n = 5) conducted with staff across Faculties at a Russell Group university. Serving as both educators and academic integrity officers, the research participants were uniquely positioned to provide valuable insights into how GenAI use speaks to the notion of what a university is for. These insights are embodied in the themes of pedagogical conundrum, assessment anxiety, and employability dilemma. Premised on socialisation processes, the pedagogical conundrum stems from GenAI’s potential to expand the scope of learning, a potential often eclipsed by the ethical considerations and unintended consequences associated with its (mis)use. Assessment anxiety emanates from staff awareness of the numerous ways in which GenAI tools could be misused by students in HE appraisals without detection, thereby making authenticity an urgent priority in evaluation processes to sustain the legitimacy of HE qualifications. The employability dilemma arises from the subjectification function of HE, which is perturbed when staff acknowledge the need to upskill the future workforce for an increasingly GenAI-powered labour market yet feel unable to fully dismiss lingering concerns that overuse of GenAI could deskill prospective graduates in core employability skills. Woven together, these themes generate a conceptually innovative continuum of emerging opportunities and ongoing challenges of embedding GenAI in HE practices that embodies a new discourse in the form of the great GenAI quandary. From this theoretical development, the article considers possible adaptations required for GenAI’s assimilation into the institutional framework for teaching and learning in HE institutions. Overall, the article offers timely insights into the ongoing and rapidly evolving impact of GenAI on the social contract between education and society.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Ethics and Social Impacts of AI",
-        "Higher Education and Employability"
-      ],
-      "keywords": [
-        "Employability",
-        "Scholarship",
-        "Higher education",
-        "Qualitative research",
-        "Subjectification",
-        "Focus group",
-        "Situated",
-        "Workforce",
-        "Scope (computer science)",
-        "Legitimacy"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03098-3",
-      "abstract": "Abstract Current artificial intelligence (AI) ethics remain largely procedural and framed by fairness, accountability, and transparency (FAT). This paper argues that a meta-ethical enabling condition of coherence and sincerity, defined as the alignment of truth, intention, action, and trust, is missing. Drawing on accounts of integrity, relational responsibility, narrative self-understanding, deliberative communication, and Deweyan inquiry, this study developed a sincerity-based ethical framework (SBEF) for AI governance. Unlike the compliance-driven FAT models, SBEF treats ethics as a reflexive process of learning from inconsistencies. Sincerity is treated as a regulatory orientation for human and institutional actors who design, deploy, and oversee AI systems. It bears on reflection not only about how systems behave but also about why particular objectives, justifications, and governance choices are maintained or revised. The framework is linked to a paper-specific well-being and empowerment index (WEI), used as an outcome-oriented monitoring construct and interface to existing indicators. Unlike principle lists, the proposed SBEF serves as a revision regulator that clarifies when FAT-style mechanisms should be reconsidered and how such revisions can be publicly justified. On this basis, sincerity can be understood as a structural condition of socio-technical governance oriented toward coherence and revision under contestation rather than mere control. In this paper, “Society 6.0” is used as a general and non-teleological heuristic label for that possibility.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Neuroethics, Human Enhancement, Biomedical Innovations",
-        "Embodied and Extended Cognition"
-      ],
-      "keywords": [
-        "Sincerity",
-        "Reflexivity",
-        "Transparency (behavior)",
-        "Coherence (philosophical gambling strategy)",
-        "Foundation (evidence)",
-        "Narrative",
-        "Construct (python library)",
-        "Corporate governance",
-        "Experiential learning"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03060-3",
-      "abstract": "Abstract Agentic AI represents a fundamental shift from reactive AI systems (such as LLM-based chatbots) toward autonomous, goal-directed agents capable of decision-making, coordination, and task execution. This technological evolution is expected to reshape how individuals organize daily life, work, and information practices. At the same time, the rise of agentic AI raises important cultural, political, and ethical questions regarding human oversight and the redistribution of agency. This study provides early insights on how consumers anticipate delegating tasks to agentic AI and identifies heterogeneity in these expectations across user segments. Survey data from 407 experienced AI users in the Philippines were analyzed using latent class analysis (LCA) across 12 everyday and work-related activities. A four-class solution emerged, revealing segments of Creative Task Delegators (36.4%), Everyday Convenience Seekers (6.6%), Socially Oriented AI Agent Users (19.2%), and Web-Browsing Automators (37.9%). These distinct profiles illustrate differing orientations toward autonomy, trust, and cognitive offloading. The membership model highlights that age, socioeconomic status, social influence, and hedonic motivation are key factors shaping class membership, indicating that both socio-demographic characteristics and motivational orientations influence how individuals envision delegating tasks to autonomous AI agents. Overall, the findings of this study contribute to ongoing debates about responsible system design, governance, and the societal implications of increasing AI autonomy.",
-      "topics": [
-        "AI in Service Interactions",
-        "Ethics and Social Impacts of AI",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": [
-        "Task (project management)",
-        "Delegation",
-        "Everyday life",
-        "Cognition",
-        "Class (philosophy)",
-        "Socioeconomic status",
-        "Task analysis",
-        "Generative model"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03108-4",
-      "abstract": "Abstract In an era marked by intensifying civic challenges and rapid digital transformation, grassroots advocacy groups face increasing pressure to adapt and innovate. Digital civics, a field exploring how digital tools can support civic participation, offers one pathway forward. This study investigates how generative AI (GenAI) tools, such as large language models and image generators, can support grassroots community groups in advancing three key goals: (i) improving scrutiny; (ii) boosting outreach, and; (iii) enhancing advocacy. While GenAI presents new opportunities for fostering digital civics, it also raises critical questions about risks, ethics, confidentiality, and trust in technology-enabled civic processes. This study employs a qualitative, participatory, design-led methodology, involving semi-structured interviews and a co-design workshop. The study was conducted in collaboration with Brisbane Residents United, the representative peak body for community and local citizen action groups in Brisbane, Australia, at a time when civic and urban planning issues are gaining renewed urgency ahead of the 2032 Olympic Games. Our findings reveal emerging GenAI use cases for grassroots advocacy, such as simplifying complex planning documents, creating persuasive campaign materials, and streamlining the drafting of petitions and submissions. At the same time, the study identifies key concerns, including misinformation, privacy, and intellectual property, which must be addressed to ensure ethical and strategic deployment of AI tools in grassroots contexts. This paper contributes timely and practical insights into how digital civics in action—when co-designed with communities—can help bridge the gap between emerging technologies and grassroots democratic innovation.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Innovative Human-Technology Interaction",
-        "Social Media and Politics"
-      ],
-      "keywords": [
-        "Grassroots",
-        "Civics",
-        "Civic engagement",
-        "Community engagement",
-        "Citizen journalism",
-        "Democracy",
-        "Policy advocacy",
-        "Civil society"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s10111-026-00882-5",
-      "abstract": "Abstract The integration of collaborative robots (cobots) is transforming manufacturing, yet empirical evidence on their impact on employees’ work experiences and well-being remains limited and often yields contradictory findings. This exploratory study used a within-subject quasi-experimental design to compare manual and cobot-assisted modalities of a repetitive battery disassembly task and to examine how cobots alter motivational work characteristics, cognitive workload, and psychological stress. Thirty-eight participants performed the task under both modalities, while self-report questionnaires and physiological signals were collected. Results showed that manual tasks provided higher autonomy and job complexity, whereas cobot-assisted tasks offered greater task variety, information processing, problem-solving, and skill variety. Physiological data revealed reduced stress and muscle activation during cobot-assisted work, partially supported by self-reports, which indicated lower physical but higher mental demands. This study offers contextually grounded insights into how introducing a cobot into a specific manufacturing task can simultaneously reduce physical strain while increasing cognitive demands and psychological stress. These findings highlight the importance of human-centered implementation strategies that support employee adaptation during transitions to collaborative robotics.",
-      "topics": [
-        "Human-Automation Interaction and Safety",
-        "Robot Manipulation and Learning",
-        "Social Robot Interaction and HRI"
-      ],
-      "keywords": [
-        "Task (project management)",
-        "Workload",
-        "Industrial and organizational psychology",
-        "Cognition",
-        "Autonomy",
-        "Adaptation (eye)",
-        "Exploratory research",
-        "Work (physics)"
-      ]
-    },
-    {
-      "id": "doi:10.1287/isre.2023.0561",
-      "abstract": "Large language models (LLMs), such as ChatGPT, exhibit substantial functional overlap with user-generated knowledge ecosystems while also relying on them as critical inputs for future learning. This dual role creates a fundamental tension that calls for a clearer understanding of how LLMs reshape these ecosystems. Adopting a niche theory perspective, we examine how functional overlap and knowledge structure determine the boundary between substitution and coexistence. Using Stack Overflow, we show that LLM introduction reduces question volume by about 14% on average (and up to 27.9% over time), with stronger declines in mid- to low-quality content, in topics with richer and more structured knowledge bases, and among less experienced users. Conditional on similar question activity, topics with deeper answer-side knowledge experience disproportionately larger reductions, highlighting the role of accumulated knowledge. These patterns reflect selective substitution; routine and well-documented queries migrate to LLMs, whereas complex, context-dependent problems remain. We also document direct improvements in question quality, suggesting positive spillovers from reduced search and articulation costs. Together, the findings indicate niche partitioning rather than full displacement, with a self-reinforcing knowledge flywheel between LLMs and platforms. For practice, platforms should reposition toward high-expertise niches by integrating artificial intelligence (AI)-assisted scaffolding, strengthening expert incentives, and curating complex knowledge. For LLM development, the results point toward deeper integration, where AI systems complement community knowledge production and enable more advanced problem solving.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Expert finding and Q&A systems",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "Heuristics",
-        "Pipeline (software)",
-        "Complement (music)",
-        "Production (economics)",
-        "Dual (grammatical number)",
-        "Interpretability",
-        "Point (geometry)",
-        "Domain knowledge"
       ]
     }
   ]

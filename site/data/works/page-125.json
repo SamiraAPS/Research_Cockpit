@@ -1,12 +1,1878 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "page": 125,
   "pageSize": 100,
-  "totalItems": 22478,
-  "totalPages": 225,
+  "totalItems": 22865,
+  "totalPages": 229,
   "nextPage": "./page-126.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2609.04382",
+      "recordType": "preprint",
+      "title": "Privacy Failure in Split-LLM Training, The Returned Gradient Nullifies the Decoys",
+      "abstract": "We present a systems-security case study of a two-node split-LLM training system whose privacy evaluation passed while leaving an observable channel untested. The Trusted Local Node (TLN) sends protected activations to the Untrusted Cloud Node (UCN), the UCN returns its output, and TLN, holding the private loss, returns the output gradient. The frame the UCN receives mixes real rows with decoys, and the loss ignores the decoys. Their gradients are exactly zero, so the pattern of zeros reveals which rows were real. We measure it with a protocol fixed in advance: a leak injected at known strength to prove the instrument can see one, a shuffled-label control to prove it does not report absent leaks, and a threshold set before the runs. Across nine seeds, the zeros identified the real rows on every frame, 4,096 of 4,096 per run. An attack on the frame contents recovered about one extra token per hundred over a constant-guess baseline (+0.65 to +1.50 percentage points); the shuffled controls recovered nothing. A second set of runs repeated this on a configuration that keeps model quality within budget, so the finding is not confined to a setting nobody would deploy. On both datasets, every such run passed the forward-channel privacy check and the quality check, yet failed that same check once the returned gradient was included. Clipping and noising each row of the gradient closed the leak for about 0.01 nats of held-out cross-entropy. The system is not thereby safe: five classes of attack, including those accumulating observations across training steps, were never measured.",
+      "doi": "10.48550/arxiv.2609.04382",
+      "externalIds": {
+        "openalex": "W7211870434"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7211870434"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-03",
+      "firstPublicDate": "2026-09-03",
+      "onlineDate": null,
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Security and Verification in Computing",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": [
+        "Row",
+        "Frame (networking)",
+        "Set (abstract data type)",
+        "Node (physics)",
+        "Security token",
+        "Measure (data warehouse)",
+        "Quality (philosophy)",
+        "Channel (broadcasting)",
+        "Clipping (morphology)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "failure",
+              "conceptLabel": "Fehler",
+              "matchedTerm": "failure",
+              "sourceValue": "Privacy Failure in Split-LLM Training, The Returned Gradient Nullifies the Decoys",
+              "weight": 4
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trusted",
+              "sourceValue": "…ose privacy evaluation passed while leaving an observable channel untested. The Trusted Local Node (TLN) sends protected activations to the Untrusted Cloud Node (UCN), the UCN returns its output, and TLN, holding the private loss, returns the output gradient. The frame the UCN receives mixes real rows with decoys, and …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:safety": 4,
+        "topic:trust": 2,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning",
+        "trust",
+        "failure",
+        "trusted"
+      ],
+      "authors": [
+        {
+          "id": "A5081827840",
+          "name": "Georgios Politis",
+          "orcid": "https://orcid.org/0009-0004-4871-1757",
+          "affiliations": []
+        },
+        {
+          "id": "A5150617566",
+          "name": "Evangelos Pappas",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.04382",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:39.369Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:39.369Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:39.369Z",
+      "preferredVersionId": "openalex:W7211870434",
+      "versions": [
+        {
+          "id": "openalex:W7211870434",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7211870434",
+          "doi": "10.48550/arxiv.2609.04382",
+          "url": "https://doi.org/10.48550/arxiv.2609.04382"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-125.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "Privacy Failure in Split-LLM Training, The Returned Gradient Nullifies the Decoys",
+              "start": 0,
+              "end": 81
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "We present a systems-security case study of a two-node split-LLM training system whose privacy evaluation passed while leaving an observable channel untested. The T",
+              "start": 0,
+              "end": 164
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "njected at known strength to prove the instrument can see one, a shuffled-label control to prove it does not report absent leaks, and a threshold set before the runs. Across nine seeds, t",
+                  "start": 576,
+                  "end": 763
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.03727",
+      "recordType": "preprint",
+      "title": "Proactive Service Agents: A Unified Decision Framework, Methods, and Evaluation",
+      "abstract": "Large language model agents can plan, invoke tools, and modify external states, yet most systems still take an explicit user instruction as a fixed starting point. Proactive service moves the decision upstream: an agent must infer service opportunities from incomplete environmental and user signals, choose among remaining silent, asking, assisting, and acting, and account for interruption, misunderstanding, overreach, and privacy costs. This survey gives an operational definition centered on initiative and formulates the problem as a partially observable sequential decision process constrained by authorization and risk. The formulation represents timing, content, and delivery within one structured action, while making explicit the option value of waiting, the decision value of questions, and feedback-induced state changes. On this basis, we organize existing methods along one decision pipeline (state and need estimation, intervention gating, action construction, and feedback adaptation) and describe prescribed, predictive, model based, and return optimizing mechanisms as nonexclusive policy-construction components. We further normalize decision units and three-axis evidence descriptors across streaming dialogue, screen, video, software-engineering, and human-agent collaboration resources, and formalize metrics for triggering, timing, calibration, user burden, safety, and policy value. The synthesis shows why offline classification performance alone does not predict deployment benefit and why long-term memory is not a defining condition of proactivity. Reliable proactive service instead requires calibrated incremental intervention value, verifiable authorization, recoverable execution, and counterfactual evidence.",
+      "doi": "10.48550/arxiv.2609.03727",
+      "externalIds": {
+        "openalex": "W7208761254",
+        "arxiv": "2609.03727"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2609.03727"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-03",
+      "firstPublicDate": "2026-09-03",
+      "onlineDate": null,
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "Artificial Intelligence in Healthcare and Education",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Service (business)",
+        "Counterfactual thinking",
+        "Process (computing)",
+        "Software deployment",
+        "Pipeline (software)",
+        "Decision support system",
+        "Markov decision process",
+        "Value (mathematics)",
+        "Verifiable secret sharing"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…ources, and formalize metrics for triggering, timing, calibration, user burden, safety, and policy value. The synthesis shows why offline classification performance alone does not predict deployment benefit and why long-term memory is not a defining condition of proactivity. Reliable proactive service instead requires …",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "…rtially observable sequential decision process constrained by authorization and risk. The formulation represents timing, content, and delivery within one structured action, while making explicit the option value of waiting, the decision value of questions, and feedback-induced state changes. On this basis, we organize …",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "calibration",
+              "conceptLabel": "Kalibrierung",
+              "matchedTerm": "calibration",
+              "sourceValue": "…an-agent collaboration resources, and formalize metrics for triggering, timing, calibration, user burden, safety, and policy value. The synthesis shows why offline classification performance alone does not predict deployment benefit and why long-term memory is not a defining condition of proactivity. Reliable proactive…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:safety": 4,
+        "topic:trust": 2,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "large language model",
+        "safety",
+        "decision support",
+        "risk",
+        "calibration"
+      ],
+      "authors": [
+        {
+          "id": "A5149993046",
+          "name": "Yan Tang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5033590193",
+          "name": "Tingyu Cao",
+          "orcid": "https://orcid.org/0000-0001-5846-3217",
+          "affiliations": []
+        },
+        {
+          "id": "A5125157953",
+          "name": "Yuanbo Tang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5125223268",
+          "name": "Huaze Tang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5051162696",
+          "name": "Keer Hu",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.03727",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:38.414Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:48.490Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:48.490Z",
+      "preferredVersionId": "arxiv:2609.03727",
+      "versions": [
+        {
+          "id": "openalex:W7208761254",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7208761254",
+          "doi": "10.48550/arxiv.2609.03727",
+          "url": "https://doi.org/10.48550/arxiv.2609.03727"
+        },
+        {
+          "id": "arxiv:2609.03727",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2609.03727",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2609.03727v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-125.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "descriptors across streaming dialogue, screen, video, software-engineering, and human-agent collaboration resources, and formalize metrics for triggering, timing, calibration, user burd",
+              "start": 1193,
+              "end": 1378
+            },
+            {
+              "field": "abstract",
+              "term": "user",
+              "quote": "voke tools, and modify external states, yet most systems still take an explicit user instruction as a fixed starting point. Proactive service moves the decision upstream: an agent must",
+              "start": 40,
+              "end": 224
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Large language model agents can plan, invoke tools, and modify external states, yet most systems still take an explicit ",
+              "start": 0,
+              "end": 120
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "tutoring",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "feedback",
+                  "quote": "king explicit the option value of waiting, the decision value of questions, and feedback-induced state changes. On this basis, we organize existing methods along one decision pipeline (sta",
+                  "start": 723,
+                  "end": 911
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Large language model agents can plan, invoke tools, and modify external states, yet most systems still take an explicit ",
+                  "start": 0,
+                  "end": 120
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "survey",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "survey",
+                  "quote": " account for interruption, misunderstanding, overreach, and privacy costs. This survey gives an operational definition centered on initiative and formulates the problem as a partially ob",
+                  "start": 366,
+                  "end": 552
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1007/s00146-026-03345-7",
+      "recordType": "publication",
+      "title": "Prompting Africa, hearing the West: generative AI music, sonic data coloniality and the future of culturally accountable musical intelligence",
+      "abstract": null,
+      "doi": "10.1007/s00146-026-03345-7",
+      "externalIds": {
+        "openalex": "W7207877418"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7207877418"
+      },
+      "venue": "AI & Society",
+      "publicationDate": "2026-09-03",
+      "firstPublicDate": "2026-09-03",
+      "onlineDate": null,
+      "topics": [
+        "Music Technology and Sound Studies",
+        "Diverse Musicological Studies",
+        "Music History and Culture"
+      ],
+      "keywords": [
+        "Musical",
+        "Performing arts",
+        "Dance",
+        "Generative grammar",
+        "Cultural heritage",
+        "Popular music",
+        "Ethnomusicology",
+        "Singing"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 1,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "generative AI"
+      ],
+      "authors": [
+        {
+          "id": "A5004085981",
+          "name": "Alfred Patrick Addaquay",
+          "orcid": "https://orcid.org/0009-0004-5135-0980",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1007/s00146-026-03345-7",
+      "openAccess": false,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-11T08:43:37.320Z",
+      "firstSeenRunId": "ingestion-2026-09-11T08:43:33.699Z",
+      "retrievedAt": "2026-09-28T11:43:07.301Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:07.301Z",
+      "preferredVersionId": "openalex:W7207877418",
+      "versions": [
+        {
+          "id": "openalex:W7207877418",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7207877418",
+          "doi": "10.1007/s00146-026-03345-7",
+          "url": "https://doi.org/10.1007/s00146-026-03345-7"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "core",
+          "queryVersion": "static-openalex-core-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-125.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "generative AI",
+              "quote": "Prompting Africa, hearing the West: generative AI music, sonic data coloniality and the future of culturally accountable musical intelligence",
+              "start": 0,
+              "end": 141
+            },
+            {
+              "field": "title",
+              "term": "AI",
+              "quote": "Prompting Africa, hearing the West: generative AI music, sonic data coloniality and the future of culturally accountable musical intelligence",
+              "start": 0,
+              "end": 141
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "generative",
+                  "quote": "Prompting Africa, hearing the West: generative AI music, sonic data coloniality and the future of culturally accountable musical intelligence",
+                  "start": 0,
+                  "end": 141
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": false
+      }
+    },
+    {
+      "id": "doi:10.20944/preprints202609.0327.v1",
+      "recordType": "preprint",
+      "title": "Psy2Vec: Zero Fine-tuning Persona Vector Learning with Differentiable Soft-Label Gradient Descent and User-Defined Psychometric Scales",
+      "abstract": "Role Persona Injection is critical for improving role consistency in large language models. However, existing vector-based steering methods—such as Persona Vectors and Linear Personality—rely on statistical mean differences or linear regression, which operate at a coarse semantic granularity and struggle to precisely calibrate \"multiple-choice distributional responses\"; moreover, the optimal steering layer is often selected heuristically. To address these issues, we propose Psy2Vec, Zero Fine-tuning Persona Vector Learning with Differentiable Soft-Label Gradient Descent and User-Defined Psychometric Scales. First, we adopt a configurable \"category–dimension–item\" structured scale, which allows dimensions and items to be freely added or removed. Then, we employ a Tutor Model to output option percentages, forming soft-labels carried by the character's option probability distribution. Next, through Computed Optimal Steering Layer Selection, we compare the activation gaps between high- and low-persona conditions layer by layer to derive the optimal steering layer, thereby replacing heuristic selection. Finally, we optimize the persona vector via differentiable RMSE gradient descent, achieving zero fine-tuning throughout without modifying any model weights. Preliminary experiments comparing both approaches on the same questionnaire demonstrate that Psy2Vec achieves lower persona-consistency error.",
+      "doi": "10.20944/preprints202609.0327.v1",
+      "externalIds": {
+        "openalex": "W7211875646"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7211875646"
+      },
+      "venue": "Preprints.org",
+      "publicationDate": "2026-09-03",
+      "firstPublicDate": "2026-09-03",
+      "onlineDate": null,
+      "topics": [
+        "Persona Design and Applications",
+        "Machine Learning in Healthcare",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "Persona",
+        "Gradient descent",
+        "Differentiable function",
+        "Consistency (knowledge bases)",
+        "Heuristic",
+        "Domain (mathematical analysis)",
+        "Zero (linguistics)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Psy2Vec: Zero Fine-tuning Persona Vector Learning with Differentiable Soft-Label Gradient Descent and User-Defined Psychometric Scales",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…y. To address these issues, we propose Psy2Vec, Zero Fine-tuning Persona Vector Learning with Differentiable Soft-Label Gradient Descent and User-Defined Psychometric Scales. First, we adopt a configurable \"category–dimension–item\" structured scale, which allows dimensions and items to be freely added or removed. Then,…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "…ng vector-based steering methods—such as Persona Vectors and Linear Personality—rely on statistical mean differences or linear regression, which operate at a coarse semantic granularity and struggle to precisely calibrate \"multiple-choice distributional responses\"; moreover, the optimal steering layer is often selected…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 6,
+        "topic:trust": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "learning",
+        "rely"
+      ],
+      "authors": [
+        {
+          "id": "A5119175141",
+          "name": "Bowen Deng",
+          "orcid": "https://orcid.org/0009-0006-5713-9240",
+          "affiliations": []
+        },
+        {
+          "id": "A5150704382",
+          "name": "Li Chen",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.20944/preprints202609.0327.v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:39.369Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:39.369Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:39.369Z",
+      "preferredVersionId": "openalex:W7211875646",
+      "versions": [
+        {
+          "id": "openalex:W7211875646",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7211875646",
+          "doi": "10.20944/preprints202609.0327.v1",
+          "url": "https://doi.org/10.20944/preprints202609.0327.v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-125.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "title",
+              "term": "user",
+              "quote": "ing Persona Vector Learning with Differentiable Soft-Label Gradient Descent and User-Defined Psychometric Scales",
+              "start": 22,
+              "end": 134
+            },
+            {
+              "field": "abstract",
+              "term": "user",
+              "quote": "ing Persona Vector Learning with Differentiable Soft-Label Gradient Descent and User-Defined Psychometric Scales. First, we adopt a configurable \"category–dimension–item\" structured sc",
+              "start": 501,
+              "end": 685
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Role Persona Injection is critical for improving role consistency in large language models. However, existing vector-based steering methods—such as Persona Vectors and Linear Personality—rel",
+              "start": 0,
+              "end": 190
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "Role Persona Injection is critical for improving role consistency in large language models. However, existing vector-based steering methods—such as Persona Vectors and Linear Personality—rel",
+              "start": 0,
+              "end": 190
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "tutoring",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "tutor",
+                  "quote": "ch allows dimensions and items to be freely added or removed. Then, we employ a Tutor Model to output option percentages, forming soft-labels carried by the character's option probabili",
+                  "start": 693,
+                  "end": 878
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Role Persona Injection is critical for improving role consistency in large language models. However, existing vector-based steering methods—such as Persona Vectors and Linear Personality—rel",
+                  "start": 0,
+                  "end": 190
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "ng zero fine-tuning throughout without modifying any model weights. Preliminary experiments comparing both approaches on the same questionnaire demonstrate that Psy2Vec achieves lower persona",
+                  "start": 1205,
+                  "end": 1396
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "survey",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "questionnaire",
+                  "quote": "ny model weights. Preliminary experiments comparing both approaches on the same questionnaire demonstrate that Psy2Vec achieves lower persona-consistency error.",
+                  "start": 1255,
+                  "end": 1415
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10895060/v1",
+      "recordType": "preprint",
+      "title": "Recurrent Barium Aspiration During Fluoroscopic Swallowing Examination in Chronic Dysphagia: A Case Report with a Risk Management, Clinical Recommendations and Future Perspectives on Artificial Intelligence for Enhancing Patient Safety",
+      "abstract": null,
+      "doi": "10.21203/rs.3.rs-10895060/v1",
+      "externalIds": {
+        "openalex": "W7207849325"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7207849325"
+      },
+      "venue": "Research Square",
+      "publicationDate": "2026-09-03",
+      "firstPublicDate": "2026-09-03",
+      "onlineDate": null,
+      "topics": [
+        "Dysphagia Assessment and Management",
+        "Esophageal and GI Pathology",
+        "Cervical and Thoracic Myelopathy"
+      ],
+      "keywords": [
+        "Dysphagia",
+        "Swallowing",
+        "Fluoroscopy",
+        "Complication",
+        "Patient safety",
+        "Radiological weapon",
+        "Radiography",
+        "Aspiration pneumonia"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 8,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…ations and Future Perspectives on Artificial Intelligence for Enhancing Patient Safety",
+              "weight": 4
+            },
+            {
+              "source": "title",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "… Fluoroscopic Swallowing Examination in Chronic Dysphagia: A Case Report with a Risk Management, Clinical Recommendations and Future Perspectives on Artificial Intelligence for Enhancing Patient Safety",
+              "weight": 4
+            },
+            {
+              "source": "keyword",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Patient safety",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:safety": 8,
+        "classificationMaximum": 8
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "safety",
+        "risk"
+      ],
+      "authors": [
+        {
+          "id": "A5149730125",
+          "name": "Ana Maisuradze",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5149933431",
+          "name": "Flavien FETTAK",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5016689204",
+          "name": "Ketevan Gogilashvili",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5149742311",
+          "name": "Vazha Maisuradze",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5149923799",
+          "name": "Ketevan Oghiashvili",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5149914803",
+          "name": "Susan Moradi-Tamiji",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5149532843",
+          "name": "Teymoor Moradi",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5149428497",
+          "name": "Mélanie Robain",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5149500196",
+          "name": "Thierry Ripoton",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5149460862",
+          "name": "Charlotte Ringot",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.21203/rs.3.rs-10895060/v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:38.414Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:38.414Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:38.414Z",
+      "preferredVersionId": "openalex:W7207849325",
+      "versions": [
+        {
+          "id": "openalex:W7207849325",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7207849325",
+          "doi": "10.21203/rs.3.rs-10895060/v1",
+          "url": "https://doi.org/10.21203/rs.3.rs-10895060/v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-125.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "title",
+              "term": "patient",
+              "quote": "ecommendations and Future Perspectives on Artificial Intelligence for Enhancing Patient Safety",
+              "start": 141,
+              "end": 235
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "artificial intelligence",
+              "quote": "ort with a Risk Management, Clinical Recommendations and Future Perspectives on Artificial Intelligence for Enhancing Patient Safety",
+              "start": 103,
+              "end": 235
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "clinical",
+                  "quote": "llowing Examination in Chronic Dysphagia: A Case Report with a Risk Management, Clinical Recommendations and Future Perspectives on Artificial Intelligence for Enhancing Patient Safety",
+                  "start": 51,
+                  "end": 235
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "decisionSupport",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "recommendation",
+                  "quote": "xamination in Chronic Dysphagia: A Case Report with a Risk Management, Clinical Recommendations and Future Perspectives on Artificial Intelligence for Enhancing Patient Safety",
+                  "start": 60,
+                  "end": 235
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": false
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.04415",
+      "recordType": "preprint",
+      "title": "REFINE: LLM Refinement over Budgeted Text-Attributed Graphs for Personalized Medical Concept Representation",
+      "abstract": "Learning rich medical concept representations is essential for EHR prediction. Text-attributed knowledge graphs (TKGs) provide a natural foundation by organizing heterogeneous medical relations together with textual semantics. However, most existing encoders process concepts uniformly across patients, despite the fact that a code's meaning and predictive value depend on patient-specific clinical context and trajectory. Learning patient-personalized concept representations from TKGs introduces two key challenges: (1) deciding how much KG context to incorporate for each observed code, and (2) aligning semantic information with the patient-specific relational structure. We propose REFINE, a KG-aware budgeted LLM graph refinement framework for patient-personalized medical concept encoding. Starting from a global TKG, REFINE constructs patient-specific temporal graphs. A sequential reinforcement learning policy selects a personalized KG expansion budget for each observed code. The resulting patient graph is processed by a heterogeneous GNN to capture relation-aware structural dependencies, while a frozen LLM uses graph-aware soft prompts to semantically refine concept representations. Experiments on MIMIC-III and MIMIC-IV show that REFINE consistently improves diverse EHR backbones, outperforms strong baselines, and demonstrates robust gains across component ablation, KG selection, and data insufficiency.",
+      "doi": "10.48550/arxiv.2609.04415",
+      "externalIds": {
+        "openalex": "W7211869657",
+        "arxiv": "2609.04415"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2609.04415"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-03",
+      "firstPublicDate": "2026-09-03",
+      "onlineDate": null,
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Advanced Graph Neural Networks",
+        "Topic Modeling",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Representation (politics)",
+        "Component (thermodynamics)",
+        "Graph",
+        "Context (archaeology)",
+        "Encoder",
+        "Process (computing)",
+        "Feature learning",
+        "Reinforcement learning",
+        "Knowledge graph"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Learning rich medical concept representations is essential for EHR prediction. Text-attributed knowledge graphs (TKGs) provide a natural foundation by organizing heterogeneous medical relations together with textual semantics. However, most existing encoders process concepts uniformly across patients, despite the fact …",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Feature learning",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5092710033",
+          "name": "Mohsen Nayebi Kerdabadi",
+          "orcid": "https://orcid.org/0009-0007-5729-1565",
+          "affiliations": []
+        },
+        {
+          "id": "A5015103614",
+          "name": "Arya Hadizadeh Moghaddam",
+          "orcid": "https://orcid.org/0000-0003-0935-4756",
+          "affiliations": []
+        },
+        {
+          "id": "A5150649168",
+          "name": "Dongjie Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150625815",
+          "name": "Zijun Yao",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.04415",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:39.369Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:48.490Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:48.490Z",
+      "preferredVersionId": "arxiv:2609.04415",
+      "versions": [
+        {
+          "id": "openalex:W7211869657",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7211869657",
+          "doi": "10.48550/arxiv.2609.04415",
+          "url": "https://doi.org/10.48550/arxiv.2609.04415"
+        },
+        {
+          "id": "arxiv:2609.04415",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2609.04415",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2609.04415v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-125.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "patient",
+              "quote": "al semantics. However, most existing encoders process concepts uniformly across patients, despite the fact that a code's meaning and predictive value depend on patient-specific clinical co",
+              "start": 213,
+              "end": 401
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "REFINE: LLM Refinement over Budgeted Text-Attributed Graphs for Personalized Medical Concept Representation",
+              "start": 0,
+              "end": 107
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "e patient-specific relational structure. We propose REFINE, a KG-aware budgeted LLM graph refinement framework for patient-personalized medical concept encoding. Starting from a globa",
+              "start": 635,
+              "end": 818
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "clinical",
+                  "quote": " the fact that a code's meaning and predictive value depend on patient-specific clinical context and trajectory. Learning patient-personalized concept representations from TKGs introduces ",
+                  "start": 310,
+                  "end": 498
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "M uses graph-aware soft prompts to semantically refine concept representations. Experiments on MIMIC-III and MIMIC-IV show that REFINE consistently improves diverse EHR backbones, outperforms",
+                  "start": 1119,
+                  "end": 1310
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10281882/v1",
+      "recordType": "preprint",
+      "title": "Reliability by Design: A Shared Schema-Metadata Grounding and Catalogue-Constrained Extraction Architecture for Safe Natural-Language Access to Legacy Enterprise Systems",
+      "abstract": null,
+      "doi": "10.21203/rs.3.rs-10281882/v1",
+      "externalIds": {
+        "openalex": "W7207701655"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7207701655"
+      },
+      "venue": "Research Square",
+      "publicationDate": "2026-09-03",
+      "firstPublicDate": "2026-09-03",
+      "onlineDate": null,
+      "topics": [
+        "Web Application Security Vulnerabilities",
+        "Advanced Database Systems and Queries",
+        "Model-Driven Software Engineering Techniques"
+      ],
+      "keywords": [
+        "Audit trail",
+        "Architecture",
+        "Enterprise architecture",
+        "Legacy system",
+        "Enterprise system",
+        "SQL",
+        "Modular design",
+        "Data modeling"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 0,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [],
+      "authors": [
+        {
+          "id": "A5149627529",
+          "name": "Karan Khajuria",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5003448540",
+          "name": "Dr.R.K. Bathla",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.21203/rs.3.rs-10281882/v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:38.414Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:38.414Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:38.414Z",
+      "preferredVersionId": "openalex:W7207701655",
+      "versions": [
+        {
+          "id": "openalex:W7207701655",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7207701655",
+          "doi": "10.21203/rs.3.rs-10281882/v1",
+          "url": "https://doi.org/10.21203/rs.3.rs-10281882/v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-125.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": false
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.04022",
+      "recordType": "preprint",
+      "title": "Representational alignment yields generalizable safety in language models",
+      "abstract": "Aligning large language models (LLMs) is essential for their safe deployment. Current alignment methods mainly optimize observable responses, yet models remain vulnerable when the same harmful intent is recast in unfamiliar or adversarial forms that humans can easily recognize. Prototype theory offers an account of this adaptability. Human concepts are represented around central cases, and new instances are categorized according to their graded typicality relative to these prototypes. Here we show that such categorization of moral concepts is weakly preserved in current LLMs. Across 23 LLMs, models often failed to distinguish opposed moral categories or preserve fine-grained typicality within each category. These deficits persist across parameter sizes and alignment stages. We developed representational similarity optimization, which directly aligns the latent representations in LLMs with the categorization expressed in human moral judgements, without supervising generated responses. In matched experiments using the same 251,334 moral annotations, standard behavioral alignment learned the intended moral judgements at the response level while leaving the categorization structure largely unchanged and increasing vulnerability across adversarial evaluations. Reorganizing moral categorization produced more modest gains in explicit judgements but consistently improved adversarial robustness across model scales on diverse benchmarks and attack strategies. Our findings provide functional support for the view that prototype-based categorization contributes to behavioral adaptability. They also show that transferring this representational principle to LLMs yields generalizable safety under adversarial conditions.",
+      "doi": "10.48550/arxiv.2609.04022",
+      "externalIds": {
+        "openalex": "W7208782343",
+        "arxiv": "2609.04022"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2609.04022"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-03",
+      "firstPublicDate": "2026-09-03",
+      "onlineDate": null,
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Categorization",
+        "Adversarial system",
+        "Robustness (evolution)",
+        "Similarity (geometry)",
+        "Poison control"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Representational alignment yields generalizable safety in language models",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "… that transferring this representational principle to LLMs yields generalizable safety under adversarial conditions.",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 6,
+        "topic:safety": 6,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "large language model",
+        "large language models",
+        "LLM",
+        "learning",
+        "safety"
+      ],
+      "authors": [
+        {
+          "id": "A5150024761",
+          "name": "Lingyu Li",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150004402",
+          "name": "Yan Teng",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150033526",
+          "name": "Yingchun Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150013491",
+          "name": "Xia Hu",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.04022",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:39.369Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:48.490Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:48.490Z",
+      "preferredVersionId": "arxiv:2609.04022",
+      "versions": [
+        {
+          "id": "openalex:W7208782343",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7208782343",
+          "doi": "10.48550/arxiv.2609.04022",
+          "url": "https://doi.org/10.48550/arxiv.2609.04022"
+        },
+        {
+          "id": "arxiv:2609.04022",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2609.04022",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2609.04022v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-125.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": " when the same harmful intent is recast in unfamiliar or adversarial forms that humans can easily recognize. Prototype theory offers an account of this adaptability. Human concepts are r",
+              "start": 170,
+              "end": 356
+            },
+            {
+              "field": "abstract",
+              "term": "humans",
+              "quote": " when the same harmful intent is recast in unfamiliar or adversarial forms that humans can easily recognize. Prototype theory offers an account of this adaptability. Human concepts are r",
+              "start": 170,
+              "end": 356
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Aligning large language models (LLMs) is essential for their safe deployment. Current alignment methods mainly optimize observable",
+              "start": 0,
+              "end": 130
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "Aligning large language models (LLMs) is essential for their safe deployment. Current alignment methods mainly optimize observable",
+              "start": 0,
+              "end": 130
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "Aligning large language models (LLMs) is essential for their safe deployment. Current alignment methods mainly optimize observable respo",
+              "start": 0,
+              "end": 136
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Aligning large language models (LLMs) is essential for their safe deployment. Current alignment methods mainly optimize observable",
+                  "start": 0,
+                  "end": 130
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": " in human moral judgements, without supervising generated responses. In matched experiments using the same 251,334 moral annotations, standard behavioral alignment learned the intended moral ",
+                  "start": 930,
+                  "end": 1121
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.17605/osf.io/5z9dg",
+      "recordType": "preprint",
+      "title": "SafeDose: An Offline-First Bilingual (Arabic/English) Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors - Code, Corpus and Reproduction Package",
+      "abstract": "Research artifact for the MCAIT 2026 paper \"A Preclinical Offline-First Bilingual Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors\" (Rashad Kamsheh, Shrouq Eraqy), IEEE. SafeDose is a statically deployed, offline-first progressive web application that runs one deterministic safety engine at prescribing, dispensing and administration. The engine combines a graded look-alike/sound-alike (LASA) drug-name catalog seeded from the ISMP List of Confused Drug Names, lab-aware contraindication rules, allergy and dose-ceiling checks, and a risk-tiered secondary-verification policy; a separate Arabic-aware detector warns on confusable patient names. The interface is bilingual English/Arabic with full right-to-left rendering. This archive contains the application source, the seeded formulary and rule data, the AR-EN-PNC-231 patient-name confusability test set with its generator and per-pair labels, the baseline and large-language-model evaluation harnesses, the rule-activation profile and 100,000-case invariant fuzz, and the continuous-integration workflows. REPRODUCE.md maps every quantitative claim in the paper to the command that regenerates it; rule-provenance.md records the per-rule provenance and clinical-review status. All data is synthetic: every patient, order, name and identifier is invented, and no patient data was used or transmitted. The system is a preclinical research prototype. Its clinical rules, severity grades and override rights were author-encoded and have NOT undergone independent clinical governance review; nothing here is validated for clinical use and it must not be used to make treatment decisions. Live demonstration: https://lasa.live Licence: MIT, except the ISMP List of Confused Drug Names, which is a copyrighted compilation downloaded from the publisher at run time and neither included nor redistributed here. Cite as: R. Kamsheh and S. Eraqy, \"A Preclinical Offline-First Bilingual Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors,\" in Proc. 6th Int. Multi-Conf. on Artificial Intelligence Technology (MCAIT 2026), Madinah, Saudi Arabia, Nov. 2026. Artifact: https://doi.org/10.17605/OSF.IO/5Z9DG",
+      "doi": "10.17605/osf.io/5z9dg",
+      "externalIds": {
+        "openalex": "W7205220607"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7205220607"
+      },
+      "venue": "OSF Preprints (OSF Preprints)",
+      "publicationDate": "2026-09-03",
+      "firstPublicDate": "2026-09-03",
+      "onlineDate": null,
+      "topics": [
+        "Academic Publishing and Open Access",
+        "Academic integrity and plagiarism",
+        "Biomedical Text Mining and Ontologies"
+      ],
+      "keywords": [
+        "Artifact (error)",
+        "Identifier",
+        "Scripting language",
+        "Benchmark (surveying)",
+        "Reproduction",
+        "Barcode"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "decision",
+              "conceptLabel": "Entscheiden",
+              "matchedTerm": "decision support",
+              "sourceValue": "SafeDose: An Offline-First Bilingual (Arabic/English) Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors - Code, Corpus and Reproduction Package",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "decision",
+              "conceptLabel": "Entscheiden",
+              "matchedTerm": "decision support",
+              "sourceValue": "…tifact for the MCAIT 2026 paper \"A Preclinical Offline-First Bilingual Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors\" (Rashad Kamsheh, Shrouq Eraqy), IEEE. SafeDose is a statically deployed, offline-first progressive web application that runs one deterministic safety engine at prescri…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…deployed, offline-first progressive web application that runs one deterministic safety engine at prescribing, dispensing and administration. The engine combines a graded look-alike/sound-alike (LASA) drug-name catalog seeded from the ISMP List of Confused Drug Names, lab-aware contraindication rules, allergy and dose-c…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "…Names, lab-aware contraindication rules, allergy and dose-ceiling checks, and a risk-tiered secondary-verification policy; a separate Arabic-aware detector warns on confusable patient names. The interface is bilingual English/Arabic with full right-to-left rendering. This archive contains the application source, the se…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "participation",
+          "label": "Partizipation & Fairness",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "governance",
+              "conceptLabel": "Governance",
+              "matchedTerm": "governance",
+              "sourceValue": "…override rights were author-encoded and have NOT undergone independent clinical governance review; nothing here is validated for clinical use and it must not be used to make treatment decisions. Live demonstration: https://lasa.live Licence: MIT, except the ISMP List of Confused Drug Names, which is a copyrighted compi…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:cognition": 6,
+        "topic:safety": 4,
+        "topic:participation": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "large language model",
+        "safety",
+        "decision support",
+        "risk",
+        "governance"
+      ],
+      "authors": [
+        {
+          "id": "A5138085333",
+          "name": "Rashad Kamsheh",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5149003010",
+          "name": "Shrouq Eraqy",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.17605/osf.io/5z9dg",
+      "openAccess": false,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:38.414Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:38.414Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:38.414Z",
+      "preferredVersionId": "openalex:W7205220607",
+      "versions": [
+        {
+          "id": "openalex:W7205220607",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7205220607",
+          "doi": "10.17605/osf.io/5z9dg",
+          "url": "https://doi.org/10.17605/osf.io/5z9dg"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-125.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "patient",
+              "quote": "ndary-verification policy; a separate Arabic-aware detector warns on confusable patient names. The interface is bilingual English/Arabic with full right-to-left rendering. This archive co",
+              "start": 584,
+              "end": 771
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "for Look-Alike/Sound-Alike Medication Errors,\" in Proc. 6th Int. Multi-Conf. on Artificial Intelligence Technology (MCAIT 2026), Madinah, Saudi Arabia, Nov. 2026. Artifact: https://doi.org/10.17605/OSF.I",
+              "start": 2000,
+              "end": 2203
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "confusability test set with its generator and per-pair labels, the baseline and large-language-model evaluation harnesses, the rule-activation profile and 100,000-case invariant fuzz, and the continuo",
+              "start": 869,
+              "end": 1069
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "clinical",
+                  "quote": "SafeDose: An Offline-First Bilingual (Arabic/English) Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors - Code, Corpus and Reproduc",
+                  "start": 0,
+                  "end": 162
+                },
+                {
+                  "field": "abstract",
+                  "term": "clinical",
+                  "quote": "search artifact for the MCAIT 2026 paper \"A Preclinical Offline-First Bilingual Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors\" (Rashad Kamsheh, Shrouq Er",
+                  "start": 2,
+                  "end": 190
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "decisionSupport",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "decision support",
+                  "quote": "SafeDose: An Offline-First Bilingual (Arabic/English) Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors - Code, Corpus and Reproduction Package",
+                  "start": 0,
+                  "end": 174
+                },
+                {
+                  "field": "abstract",
+                  "term": "decision support",
+                  "quote": "tifact for the MCAIT 2026 paper \"A Preclinical Offline-First Bilingual Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors\" (Rashad Kamsheh, Shrouq Eraqy), IEEE. SafeD",
+                  "start": 11,
+                  "end": 207
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "confusability test set with its generator and per-pair labels, the baseline and large-language-model evaluation harnesses, the rule-activation profile and 100,000-case invariant fuzz, and the continuo",
+                  "start": 869,
+                  "end": 1069
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.48550/arxiv.2609.04482",
       "recordType": "preprint",
@@ -20268,1829 +22134,6 @@
                   "quote": " autonomous performance: two systems separated by only 0.3 points in autonomous accuracy (72.8% vs. 72.5%) require 39.2% versus 29.6% human review, respectively, to qualify at the same 76%",
                   "start": 1300,
                   "end": 1488
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.02268",
-      "recordType": "preprint",
-      "title": "Retrosynthesis of Synthetic Media for Explainable AI Provenance Forensics",
-      "abstract": "With the rapid proliferation of generative models on Machine Learning as a Service (MLaaS) platforms, reliably tracing the provenance of synthetic media without modifying generator architectures or parameters remains a major challenge. In this work, we propose a self-referential retrosynthesis framework for explainable AI provenance forensics under a fixed-generator setting. The framework leverages a jointly optimized encoder-decoder pair to implement a self-embedding mechanism that enables round-trip consistency verification. During inference, client inputs are first encoded and then processed by the generator to produce outputs with high visual fidelity. For forensic verification, the consistency between the resynthesized image and the query image is analyzed to determine whether the image originates from the target generative model. Our approach eliminates the need for watermark embedding or modifications to the generation process. Experimental results show that images generated from encoded inputs maintain visual quality comparable to original generator outputs, while decoded images reliably trace back to their corresponding source inputs. Furthermore, the framework provides interpretable evidence for generative content provenance, establishing a practical tool for explainable generative AI forensics.",
-      "doi": "10.48550/arxiv.2609.02268",
-      "externalIds": {
-        "openalex": "W7207756866",
-        "arxiv": "2609.02268"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2609.02268"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-02",
-      "firstPublicDate": "2026-09-02",
-      "onlineDate": null,
-      "topics": [
-        "Scientific Computing and Data Management",
-        "Generative Adversarial Networks and Image Synthesis",
-        "Digital and Cyber Forensics",
-        "cs.CR",
-        "cs.AI",
-        "cs.CV",
-        "cs.MM"
-      ],
-      "keywords": [
-        "Generator (circuit theory)",
-        "Consistency (knowledge bases)",
-        "Generative grammar",
-        "Tracing",
-        "Generative model",
-        "Malleability",
-        "TRACE (psycholinguistics)",
-        "Watermark"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 2,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "generative AI",
-        "learning",
-        "explainable ai"
-      ],
-      "authors": [
-        {
-          "id": "A5039969889",
-          "name": "Yijie Lin",
-          "orcid": "https://orcid.org/0000-0003-1746-295X",
-          "affiliations": []
-        },
-        {
-          "id": "A5149492695",
-          "name": "Ching-Chun Chang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149900532",
-          "name": "Isao Echizen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149766399",
-          "name": "Hui Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149730692",
-          "name": "Chin-Chen Chang",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.02268",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-12T09:23:39.369Z",
-      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
-      "retrievedAt": "2026-09-12T09:23:52.373Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-12T09:23:52.373Z",
-      "preferredVersionId": "arxiv:2609.02268",
-      "versions": [
-        {
-          "id": "openalex:W7207756866",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7207756866",
-          "doi": "10.48550/arxiv.2609.02268",
-          "url": "https://doi.org/10.48550/arxiv.2609.02268"
-        },
-        {
-          "id": "arxiv:2609.02268",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2609.02268",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2609.02268v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-125.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "AI",
-              "quote": "Retrosynthesis of Synthetic Media for Explainable AI Provenance Forensics",
-              "start": 0,
-              "end": 73
-            },
-            {
-              "field": "abstract",
-              "term": "generative AI",
-              "quote": "or generative content provenance, establishing a practical tool for explainable generative AI forensics.",
-              "start": 1222,
-              "end": 1326
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "is work, we propose a self-referential retrosynthesis framework for explainable AI provenance forensics under a fixed-generator setting. The framework leverages a jointly optimized e",
-              "start": 241,
-              "end": 423
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "generative",
-                  "quote": "With the rapid proliferation of generative models on Machine Learning as a Service (MLaaS) platforms, reliably tracing the provenance of synth",
-                  "start": 0,
-                  "end": 142
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.02556",
-      "recordType": "preprint",
-      "title": "RGB-to-IR image translation for infrared vehicle detection in unseen UAV domains",
-      "abstract": "Synthetic training data is crucial for developing vision AI when real-world data is scarce, as in thermal infrared (IR) aerial vehicle detection. While abundant UAV RGB imagery motivates RGB-to-IR translation for data augmentation, unobservable thermal traits (e.g., engine heat) make learning transferable mappings challenging. This work investigates whether modern generative translators can overcome this cross-modal gap to improve infrared vehicle detection on unseen UAV target domains. Translators are trained on paired RGB-IR source datasets and applied to RGB training images from held-out target datasets to generate synthetic IR data. Evaluated methods include supervised GANs, ControlNet-based diffusion models, and foundation-model editing via LoRA. The resulting synthetic IR imagery is used to train RF-DETR vehicle detectors, which are evaluated on unseen IR target test splits across five aerial datasets, with Kust4K and VTUAV serving as target domains. Synthetic IR consistently outperforms RGB and grayscale baselines. Stable Diffusion 3.5 with ControlNet yields the best results, improving mAP from 50.8 to 60.1 on Kust4K and from 25.6 to 38.4 on VTUAV compared to models trained only on source-domain IR data. Increasing output diversity via multiple seeds (+1.1 mAP) and prompt variations (+3.3 mAP) provides additional gains on VTUAV. Although a performance gap to real target IR data remains, generative RGB-to-IR translation effectively mitigates IR data scarcity and improves cross-domain aerial vehicle detection.",
-      "doi": "10.48550/arxiv.2609.02556",
-      "externalIds": {
-        "openalex": "W7207622478"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7207622478"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-02",
-      "firstPublicDate": "2026-09-02",
-      "onlineDate": null,
-      "topics": [
-        "Advanced Neural Network Applications",
-        "Generative Adversarial Networks and Image Synthesis",
-        "Image Enhancement Techniques"
-      ],
-      "keywords": [
-        "RGB color model",
-        "Translation (biology)",
-        "Grayscale",
-        "Synthetic data",
-        "Image translation",
-        "Thermal infrared",
-        "Pattern recognition (psychology)",
-        "Test data",
-        "Aerial image"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…ion for data augmentation, unobservable thermal traits (e.g., engine heat) make learning transferable mappings challenging. This work investigates whether modern generative translators can overcome this cross-modal gap to improve infrared vehicle detection on unseen UAV target domains. Translators are trained on paired…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 2,
-        "topic:learning": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5093075414",
-          "name": "Thijs A. Eker",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5071236992",
-          "name": "Ella P. Fokkinga",
-          "orcid": "https://orcid.org/0009-0008-7794-3118",
-          "affiliations": []
-        },
-        {
-          "id": "A5093080984",
-          "name": "Jan Erik van Woerden",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5134187661",
-          "name": "Elfi I. S. Hofmeijer",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5120154178",
-          "name": "Sebastiaan P. Snel",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5113660188",
-          "name": "Klamer Schutte",
-          "orcid": "https://orcid.org/0000-0002-9954-0685",
-          "affiliations": []
-        },
-        {
-          "id": "A5075373177",
-          "name": "Friso G. Heslinga",
-          "orcid": "https://orcid.org/0000-0002-8383-307X",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.02556",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-12T09:23:39.369Z",
-      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
-      "retrievedAt": "2026-09-12T09:23:39.369Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-12T09:23:39.369Z",
-      "preferredVersionId": "openalex:W7207622478",
-      "versions": [
-        {
-          "id": "openalex:W7207622478",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7207622478",
-          "doi": "10.48550/arxiv.2609.02556",
-          "url": "https://doi.org/10.48550/arxiv.2609.02556"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-125.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "aluated methods include supervised GANs, ControlNet-based diffusion models, and foundation-model editing via LoRA. The resulting synthetic IR imagery is used to train RF-DETR vehicle detectors, wh",
-              "start": 647,
-              "end": 843
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "Synthetic training data is crucial for developing vision AI when real-world data is scarce, as in thermal infrared (IR) aerial vehicle detection. While abundan",
-              "start": 0,
-              "end": 159
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "generative",
-                  "quote": "arning transferable mappings challenging. This work investigates whether modern generative translators can overcome this cross-modal gap to improve infrared vehicle detection on unseen UAV t",
-                  "start": 287,
-                  "end": 477
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.02250",
-      "recordType": "preprint",
-      "title": "RideSkill: A Hierarchical Algorithm for Generalized Ride Sharing with LLM-Driven Automatic Evolution",
-      "abstract": "Ride-sharing, which allows multiple passengers with different origin-destination (OD) pairs to share a single vehicle, is a challenging operational problem, as it requires orders with different OD pairs to be efficiently bundled and assigned to vehicles under uncertain and varying scenarios. Although multi-agent reinforcement learning (MARL) solutions have achieved promising performance, they suffer from limited generalization (adapting to different environmental scenarios), low transferability (adapting to different platform objectives), and training difficulties in large-scale systems, such as the curse of dimensionality. Recently, motivated by the scaling of large language models (LLMs), several works have incorporated LLMs into ride-hailing systems, either by employing LLMs directly as decision-making agents or using them for automatic algorithm design. However, none of these approaches support vehicle sharing, which complicates the problem by expanding both the state and action spaces exponentially. Moreover, most of them require frequent LLM calls at inference time, making them infeasible for real-time deployment. To address these issues, we propose RideSkill, a hierarchical method for ride-sharing that leverages LLM-assisted automatic algorithmic design. RideSkill consists of a combiner that assigns appropriate skills to each vehicle from a learned skill repository, enabling adaptive dispatch under varying scenarios and objectives, and a repositioner that sequentially relocates idle vehicles to emerging regions, avoiding conflicts among vehicles. Crucially, the skill repository, combiner, and repositioner are all trained by an LLM-based automatic evolutionary method, eliminating the need for LLM calls during deployment and thus ensuring high real-time performance.",
-      "doi": "10.48550/arxiv.2609.02250",
-      "externalIds": {
-        "openalex": "W7207684218",
-        "arxiv": "2609.02250"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2609.02250"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-02",
-      "firstPublicDate": "2026-09-02",
-      "onlineDate": null,
-      "topics": [
-        "Transportation and Mobility Innovations",
-        "Vehicle Routing Optimization Methods",
-        "Autonomous Vehicle Technology and Safety",
-        "cs.MA",
-        "cs.CL",
-        "cs.ET",
-        "cs.LG"
-      ],
-      "keywords": [
-        "Generalization",
-        "Software deployment",
-        "Action (physics)",
-        "Inference",
-        "Adversarial system",
-        "Training (meteorology)",
-        "Benchmark (surveying)"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 5,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "safety"
-      ],
-      "authors": [
-        {
-          "id": "A5149449347",
-          "name": "Zijian Zhao",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149532576",
-          "name": "Sen Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5049905353",
-          "name": "Xialiang Tong",
-          "orcid": "https://orcid.org/0009-0006-8153-1576",
-          "affiliations": []
-        },
-        {
-          "id": "A5149615515",
-          "name": "Mingxuan Yuan",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.02250",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-12T09:23:39.369Z",
-      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
-      "retrievedAt": "2026-09-12T09:23:52.373Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-12T09:23:52.373Z",
-      "preferredVersionId": "arxiv:2609.02250",
-      "versions": [
-        {
-          "id": "openalex:W7207684218",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7207684218",
-          "doi": "10.48550/arxiv.2609.02250",
-          "url": "https://doi.org/10.48550/arxiv.2609.02250"
-        },
-        {
-          "id": "arxiv:2609.02250",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2609.02250",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2609.02250v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-125.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "RideSkill: A Hierarchical Algorithm for Generalized Ride Sharing with LLM-Driven Automatic Evolution",
-              "start": 0,
-              "end": 100
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "ems, such as the curse of dimensionality. Recently, motivated by the scaling of large language models (LLMs), several works have incorporated LLMs into ride-hailing systems, either by employing LLMs di",
-              "start": 590,
-              "end": 791
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "ems, such as the curse of dimensionality. Recently, motivated by the scaling of large language models (LLMs), several works have incorporated LLMs into ride-hailing systems, either by employing LLMs di",
-              "start": 590,
-              "end": 791
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "ems, such as the curse of dimensionality. Recently, motivated by the scaling of large language models (LLMs), several works have incorporated LLMs into ride-hailing systems, either by employing LLMs di",
-                  "start": 590,
-                  "end": 791
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.02786",
-      "recordType": "preprint",
-      "title": "SafeEvolve: Harness-Policy Co-Evolution from Agent Experience for Safety Alignment",
-      "abstract": "The performance of LLM-based agents is jointly shaped by the base model and the harness used when interacting with the environment. This exposes them to safety risks in both harmful final responses and multi-step execution trajectories. Existing safety alignment mechanisms often rely on either external harness updates or policy optimization, yet applying either paradigm in isolation fails to bridge runtime control with intrinsic safety. We propose SafeEvolve, an experience-driven self-evolving framework for agent safety alignment. SafeEvolve leverages safety experience from completed on-policy trajectories to drive a continual loop of harness-policy co-evolution. On the harness side, SafeEvolve converts trajectory-level safety evidence into bounded, component-level updates across safety prompt and hierarchical skills, yielding auditable and reversible harness artifacts. On the policy side, SafeEvolve follows a two-stage SFT-RL paradigm, where harness-use SFT bootstraps the policy to actively leverage evolved harness artifacts, and harness-augmented RL further shapes autonomous safety behaviors during multi-step exploration via verifier-decomposed rewards. Through harness-policy co-evolution, SafeEvolve converts safety experience into an evolved runtime harness and improved policy behavior. Experiments on agentic safety benchmarks show that SafeEvolve achieves a stronger safety-utility tradeoff than existing baselines. For Qwen3.5-4B, SafeEvolve achieves a $3\\times$ ASR reduction on AgentDojo while improving benign utility from 59.79% to 61.86%.",
-      "doi": "10.48550/arxiv.2609.02786",
-      "externalIds": {
-        "openalex": "W7207787106",
-        "arxiv": "2609.02786"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2609.02786"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-02",
-      "firstPublicDate": "2026-09-02",
-      "onlineDate": null,
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Safety Systems Engineering in Autonomy",
-        "Occupational Health and Safety Research",
-        "cs.AI",
-        "cs.CR"
-      ],
-      "keywords": [
-        "Leverage (statistics)",
-        "Isolation (microbiology)",
-        "Bridge (graph theory)",
-        "System safety",
-        "Control (management)",
-        "Key (lock)"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 8,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "SafeEvolve: Harness-Policy Co-Evolution from Agent Experience for Safety Alignment",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…nd the harness used when interacting with the environment. This exposes them to safety risks in both harmful final responses and multi-step execution trajectories. Existing safety alignment mechanisms often rely on either external harness updates or policy optimization, yet applying either paradigm in isolation fails t…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risks",
-              "sourceValue": "…harness used when interacting with the environment. This exposes them to safety risks in both harmful final responses and multi-step execution trajectories. Existing safety alignment mechanisms often rely on either external harness updates or policy optimization, yet applying either paradigm in isolation fails to bridg…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "System safety",
-              "weight": 0
-            },
-            {
-              "source": "external_topic",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Safety Systems Engineering in Autonomy",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "agency",
-          "label": "Work Design & Agency",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "agency",
-              "conceptLabel": "Agency",
-              "matchedTerm": "agentic",
-              "sourceValue": "…ce into an evolved runtime harness and improved policy behavior. Experiments on agentic safety benchmarks show that SafeEvolve achieves a stronger safety-utility tradeoff than existing baselines. For Qwen3.5-4B, SafeEvolve achieves a $3\\times$ ASR reduction on AgentDojo while improving benign utility from 59.79% to 61.…",
-              "weight": 2
-            },
-            {
-              "source": "external_topic",
-              "concept": "autonomy",
-              "conceptLabel": "Autonomie",
-              "matchedTerm": "autonomy",
-              "sourceValue": "Safety Systems Engineering in Autonomy",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "reliance",
-              "conceptLabel": "Reliance",
-              "matchedTerm": "rely",
-              "sourceValue": "…d multi-step execution trajectories. Existing safety alignment mechanisms often rely on either external harness updates or policy optimization, yet applying either paradigm in isolation fails to bridge runtime control with intrinsic safety. We propose SafeEvolve, an experience-driven self-evolving framework for agent s…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:safety": 8,
-        "topic:agency": 2,
-        "topic:trust": 2,
-        "classificationMaximum": 8
-      },
-      "evidenceTerms": [
-        "LLM",
-        "learning",
-        "safety",
-        "occupational health",
-        "risks",
-        "agentic",
-        "autonomy",
-        "rely"
-      ],
-      "authors": [
-        {
-          "id": "A5149598346",
-          "name": "Qinghua Mao",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5132909617",
-          "name": "Wanying Qu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149961261",
-          "name": "Dadi Guo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5123962030",
-          "name": "Leitao Yuan",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149719776",
-          "name": "Qingyu Liu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149947156",
-          "name": "Yu Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149788892",
-          "name": "Guanxu Chen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149464773",
-          "name": "Yanwei Fu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149799460",
-          "name": "Xi Lin",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149694332",
-          "name": "Xia Hu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149883446",
-          "name": "Dongrui Liu",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.02786",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-12T09:23:39.369Z",
-      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
-      "retrievedAt": "2026-09-12T09:23:48.490Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-12T09:23:48.490Z",
-      "preferredVersionId": "arxiv:2609.02786",
-      "versions": [
-        {
-          "id": "openalex:W7207787106",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7207787106",
-          "doi": "10.48550/arxiv.2609.02786",
-          "url": "https://doi.org/10.48550/arxiv.2609.02786"
-        },
-        {
-          "id": "arxiv:2609.02786",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2609.02786",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2609.02786v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-125.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "The performance of LLM-based agents is jointly shaped by the base model and the harness used when interacting with the env",
-              "start": 0,
-              "end": 122
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "optimization, yet applying either paradigm in isolation fails to bridge runtime control with intrinsic safety. We propose SafeEvolve, an experience-driven self-evolving framework for agen",
-                  "start": 330,
-                  "end": 517
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "safety experience into an evolved runtime harness and improved policy behavior. Experiments on agentic safety benchmarks show that SafeEvolve achieves a stronger safety-utility tradeoff than ",
-                  "start": 1231,
-                  "end": 1422
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.02336",
-      "recordType": "preprint",
-      "title": "SALA: Semantic-Aware Logical Alignment for Complex Reasoning in In-Context Learning",
-      "abstract": "Effective in-context learning (ICL) for complex reasoning relies on selecting the right demonstrations. Traditional retrieval methods based on surface similarity fail to capture the underlying problem-solving logic. Recent logic-based methods address this by matching predefined reasoning steps, but the rigid rules and exact-match criteria is improper to handle flexible or diverse reasoning processes. To address the problem, we propose SALA, a Semantic-Aware Logical Alignment framework. Instead of relying on a fixed inventory, SALA automatically learns task-specific reasoning operations. It then embeds these operations into a continuous semantic space and uses dynamic time warping (DTW) to align the reasoning sequences. This approach allows for soft, flexible matching of reasoning logic while remaining highly interpretable. Experiments across four reasoning benchmarks and three LLMs demonstrate that SALA outperforms existing demonstration selection methods. Further analysis confirms the roles of the operation induction and the logical semantic alignment.",
-      "doi": "10.48550/arxiv.2609.02336",
-      "externalIds": {
-        "openalex": "W7207606453",
-        "arxiv": "2609.02336"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2609.02336"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-02",
-      "firstPublicDate": "2026-09-02",
-      "onlineDate": null,
-      "topics": [
-        "Time Series Analysis and Forecasting",
-        "Topic Modeling",
-        "Semantic Web and Ontologies",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Matching (statistics)",
-        "Case-based reasoning",
-        "Reasoning system",
-        "Automated reasoning",
-        "Deductive reasoning",
-        "Selection (genetic algorithm)",
-        "Logical consequence",
-        "Opportunistic reasoning",
-        "Logical reasoning"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 6,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "SALA: Semantic-Aware Logical Alignment for Complex Reasoning in In-Context Learning",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "Effective in-context learning (ICL) for complex reasoning relies on selecting the right demonstrations. Traditional retrieval methods based on surface similarity fail to capture the underlying problem-solving logic. Recent logic-based methods address this by matching predefined reasoning steps, but the rigid rules and …",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "reliance",
-              "conceptLabel": "Reliance",
-              "matchedTerm": "relying",
-              "sourceValue": "…blem, we propose SALA, a Semantic-Aware Logical Alignment framework. Instead of relying on a fixed inventory, SALA automatically learns task-specific reasoning operations. It then embeds these operations into a continuous semantic space and uses dynamic time warping (DTW) to align the reasoning sequences. This approach…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 2,
-        "topic:learning": 6,
-        "topic:trust": 2,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "LLM",
-        "learning",
-        "relying"
-      ],
-      "authors": [
-        {
-          "id": "A5149835477",
-          "name": "Zhao Ji",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149873138",
-          "name": "Wenqing Chen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149733630",
-          "name": "Zhixuan Chu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149952435",
-          "name": "Jianxing Yu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149468993",
-          "name": "Jingping Liu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149849296",
-          "name": "Shanhe Zhao",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5149608123",
-          "name": "Zibin Zheng",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.02336",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-12T09:23:39.369Z",
-      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
-      "retrievedAt": "2026-09-12T09:23:52.373Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-12T09:23:52.373Z",
-      "preferredVersionId": "arxiv:2609.02336",
-      "versions": [
-        {
-          "id": "openalex:W7207606453",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7207606453",
-          "doi": "10.48550/arxiv.2609.02336",
-          "url": "https://doi.org/10.48550/arxiv.2609.02336"
-        },
-        {
-          "id": "arxiv:2609.02336",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2609.02336",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2609.02336v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-125.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "ng highly interpretable. Experiments across four reasoning benchmarks and three LLMs demonstrate that SALA outperforms existing demonstration selection methods. Further analysis confir",
-              "start": 810,
-              "end": 994
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "oft, flexible matching of reasoning logic while remaining highly interpretable. Experiments across four reasoning benchmarks and three LLMs demonstrate that SALA outperforms existing demonstr",
-                  "start": 755,
-                  "end": 946
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10595811/v1",
-      "recordType": "preprint",
-      "title": "SCOPE: Rethinking Attack Analysis as Uncertainty-Aware Security Reasoning under Incomplete Observations",
-      "abstract": null,
-      "doi": "10.21203/rs.3.rs-10595811/v1",
-      "externalIds": {
-        "openalex": "W7205017168"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7205017168"
-      },
-      "venue": "Research Square",
-      "publicationDate": "2026-09-02",
-      "firstPublicDate": "2026-09-02",
-      "onlineDate": null,
-      "topics": [
-        "Information and Cyber Security",
-        "Network Security and Intrusion Detection",
-        "Software System Performance and Reliability"
-      ],
-      "keywords": [
-        "Ambiguity",
-        "Inference",
-        "Key (lock)",
-        "Generalization",
-        "Sequence (biology)",
-        "Scope (computer science)",
-        "Missing data"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 0,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [],
-      "authors": [
-        {
-          "id": "A5100324470",
-          "name": "Juyoung Lee",
-          "orcid": "https://orcid.org/0000-0002-9966-3618",
-          "affiliations": []
-        },
-        {
-          "id": "A5149048891",
-          "name": "JeongMin Oh",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5101971910",
-          "name": "Seonwoo Lee",
-          "orcid": "https://orcid.org/0000-0001-8339-1382",
-          "affiliations": []
-        },
-        {
-          "id": "A5100708875",
-          "name": "Taejin Lee",
-          "orcid": "https://orcid.org/0000-0003-3078-3459",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.21203/rs.3.rs-10595811/v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-12T09:23:39.369Z",
-      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
-      "retrievedAt": "2026-09-12T09:23:39.369Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-12T09:23:39.369Z",
-      "preferredVersionId": "openalex:W7205017168",
-      "versions": [
-        {
-          "id": "openalex:W7205017168",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7205017168",
-          "doi": "10.21203/rs.3.rs-10595811/v1",
-          "url": "https://doi.org/10.21203/rs.3.rs-10595811/v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-125.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": false
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.02292",
-      "recordType": "preprint",
-      "title": "SCX Router: Streaming Zero-Shot Model Selection with a Decoder-KV Classifier and a Real-World Task Ontology",
-      "abstract": "The rapid proliferation of large language models (LLMs) and the growing diversity of their applications presents a unique optimization opportunity: selecting the right model for the task, while optimizing for speed, cost, and quality at a per-task level. However, inference endpoints can vary widely in quality, price, latency, context support, tool use, domain expertise, and reasoning behavior. This heterogeneity makes manual heuristics difficult to maintain and unlikely to achieve consistently favorable speed--cost--quality trade-offs on their own. We introduce \\router{}, a lightweight GLiClass-based router that assigns a suitability score to each inference-time model label without autoregressive generation. The released 0.6B-parameter checkpoint combines a Qwen3 decoder with a shallow bidirectional scorer. Its decoder-KV execution path preserves a text-only key--value cache across a session, encodes only new dialogue turns, and evaluates transient candidate-label tokens without adding them to the persistent cache. The same checkpoint also predicts task type, difficulty, reasoning mode, and expected output length, and supports custom zero-shot labels. For task generation, we construct a task ontology with 23 families, 115 task types, 345 routable subtypes, 1,173 synthetic examples, and an orthogonal axis of 30 domains. Using this structure, we generate 150,000 verifier-scored tasks and 15,000 open-ended tasks. We then train the Qwen3 decoder on these tasks, while explicitly separating learned request prediction from per-task policies for attributes such as eligibility, cost, cache reuse, safety, and sovereignty. Across six LiveBench subsets, the router outperforms the mean candidate; on the selected 1,000-task subset, it achieves an aggregate top-1 score of 0.707 versus 0.696 for the strongest fixed model, with benchmark-dependent gains.",
-      "doi": "10.48550/arxiv.2609.02292",
-      "externalIds": {
-        "openalex": "W7207775301",
-        "arxiv": "2609.02292"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2609.02292"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-02",
-      "firstPublicDate": "2026-09-02",
-      "onlineDate": null,
-      "topics": [
-        "Topic Modeling",
-        "Natural Language Processing Techniques",
-        "Multimodal Machine Learning Applications",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Heuristics",
-        "Task (project management)",
-        "Classifier (UML)",
-        "Inference",
-        "Router",
-        "Reuse",
-        "Context (archaeology)",
-        "Ontology",
-        "Cache",
-        "Selection (genetic algorithm)"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "expertise",
-              "conceptLabel": "Expertise",
-              "matchedTerm": "expertise",
-              "sourceValue": "…s can vary widely in quality, price, latency, context support, tool use, domain expertise, and reasoning behavior. This heterogeneity makes manual heuristics difficult to maintain and unlikely to achieve consistently favorable speed--cost--quality trade-offs on their own. We introduce \\router{}, a lightweight GLiClass-…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…n from per-task policies for attributes such as eligibility, cost, cache reuse, safety, and sovereignty. Across six LiveBench subsets, the router outperforms the mean candidate; on the selected 1,000-task subset, it achieves an aggregate top-1 score of 0.707 versus 0.696 for the strongest fixed model, with benchmark-de…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 6,
-        "topic:learning": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "expertise",
-        "safety"
-      ],
-      "authors": [
-        {
-          "id": "A5102983479",
-          "name": "Ihor Stepanov",
-          "orcid": "https://orcid.org/0000-0002-5844-5972",
-          "affiliations": []
-        },
-        {
-          "id": "A5149555290",
-          "name": "Aleksandr Smechov",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5099380905",
-          "name": "Mykhailo Shtopko",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5126743499",
-          "name": "Dmytro Vodianytskyi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5126714099",
-          "name": "Oleksandr Lukashov",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.02292",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-12T09:23:39.369Z",
-      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
-      "retrievedAt": "2026-09-12T09:23:52.373Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-12T09:23:52.373Z",
-      "preferredVersionId": "arxiv:2609.02292",
-      "versions": [
-        {
-          "id": "openalex:W7207775301",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7207775301",
-          "doi": "10.48550/arxiv.2609.02292",
-          "url": "https://doi.org/10.48550/arxiv.2609.02292"
-        },
-        {
-          "id": "arxiv:2609.02292",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2609.02292",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2609.02292v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-125.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "The rapid proliferation of large language models (LLMs) and the growing diversity of their applications presents a unique optimization opportunity: ",
-              "start": 0,
-              "end": 148
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "The rapid proliferation of large language models (LLMs) and the growing diversity of their applications presents a unique optimization opportunity: ",
-              "start": 0,
-              "end": 148
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "The rapid proliferation of large language models (LLMs) and the growing diversity of their applications presents a unique optimization opportunity: select",
-              "start": 0,
-              "end": 154
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "The rapid proliferation of large language models (LLMs) and the growing diversity of their applications presents a unique optimization opportunity: ",
-                  "start": 0,
-                  "end": 148
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [
-          {
-            "topic": "high-skill-operations",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "expertise",
-                "quote": "s can vary widely in quality, price, latency, context support, tool use, domain expertise, and reasoning behavior. This heterogeneity makes manual heuristics difficult to maintain and unlik",
-                "start": 282,
-                "end": 471
-              }
-            ]
-          }
-        ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.02293",
-      "recordType": "preprint",
-      "title": "SEAL: Reinforcing Global Safety in Mixture-of-Experts through Shared Expert ALignment",
-      "abstract": "Mixture-of-Experts (MoE) is a scaling architecture for large language models that activates only a small subset of expert modules per token, enabling massive parameter growth with nearly constant computation. Recent Hybrid MoE architecture adds \\textit{shared experts} to capture consistently useful representations, further improving stability and generalization. MoE now powers many flagship open-source and commercial models, yet remains vulnerable to adversarial attacks. Specifically, sparse routing introduces a structural vulnerability: MoE safety hinges on which experts are activated, and adversaries can subvert this selection through jailbreak prompts, malicious fine-tuning, and weight-level pruning of safety-critical neurons. Existing defenses primarily focus on hardening the router, but an adversary may still manipulate or bypass the routing trajectory due to the routing process's nondeterministic nature, thereby collapsing the defense. To cope with this problem, we first identify theoretically and empirically that shared expert, an always-activated component containing a small proportion of safety-critical neurons, can overcome the uncertainty of sparsely activated routing path and serve as a router-independent anchor to enhance global safety alignment. Based on this insight, we propose SEAL, a training-time parameter-efficient defense that produces a plug-and-play adapter attached to shared expert, and SEAL++, a variant that adds an orthogonal constraint preserving pre-existing safety subspaces during training. We evaluate SEAL and SEAL++ across six attack scenarios that combine three adversarial inputs (harmful prompting, jailbreak, malicious fine-tuning) with and without neuron pruning. SEAL reduces attack success rate (ASR) by up to 60\\%, at a capability cost of at most 1.4\\% on a five-benchmark average. Additionally, SEAL can seamlessly integrate with router-level ......",
-      "doi": "10.48550/arxiv.2609.02293",
-      "externalIds": {
-        "openalex": "W7207545319",
-        "arxiv": "2609.02293"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2609.02293"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-02",
-      "firstPublicDate": "2026-09-02",
-      "onlineDate": null,
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Privacy-Preserving Technologies in Data",
-        "Advanced Graph Neural Networks",
-        "cs.LG",
-        "cs.AI",
-        "cs.CR"
-      ],
-      "keywords": [
-        "Adversarial system",
-        "Adversary",
-        "Routing (electronic design automation)",
-        "Focus (optics)",
-        "Component (thermodynamics)",
-        "Redundancy (engineering)",
-        "Architecture"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 8,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "SEAL: Reinforcing Global Safety in Mixture-of-Experts through Shared Expert ALignment",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…ttacks. Specifically, sparse routing introduces a structural vulnerability: MoE safety hinges on which experts are activated, and adversaries can subvert this selection through jailbreak prompts, malicious fine-tuning, and weight-level pruning of safety-critical neurons. Existing defenses primarily focus on hardening t…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "critical",
-              "conceptLabel": "Sicherheitskritisch",
-              "matchedTerm": "safety critical",
-              "sourceValue": "Mixture-of-Experts (MoE) is a scaling architecture for large language models that activates only a small subset of expert modules per token, enabling massive parameter growth with nearly constant computation. Recent Hybrid MoE architecture adds \\textit{shared experts} to capture consistently useful representations, fur…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:safety": 8,
-        "classificationMaximum": 8
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "learning",
-        "safety",
-        "safety critical"
-      ],
-      "authors": [
-        {
-          "id": "A5149879263",
-          "name": "Qingyu Meng",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5099124210",
-          "name": "Yiwei Zha",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5061075100",
-          "name": "Jiahuan Pei",
-          "orcid": "https://orcid.org/0000-0001-6951-8340",
-          "affiliations": []
-        },
-        {
-          "id": "A5149701563",
-          "name": "Koen Hindriks",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5029566823",
-          "name": "Herbert Bos",
-          "orcid": "https://orcid.org/0000-0001-6179-1510",
-          "affiliations": []
-        },
-        {
-          "id": "A5149866215",
-          "name": "Min Chen",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.02293",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-12T09:23:39.369Z",
-      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
-      "retrievedAt": "2026-09-12T09:23:52.373Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-12T09:23:52.373Z",
-      "preferredVersionId": "arxiv:2609.02293",
-      "versions": [
-        {
-          "id": "openalex:W7207545319",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7207545319",
-          "doi": "10.48550/arxiv.2609.02293",
-          "url": "https://doi.org/10.48550/arxiv.2609.02293"
-        },
-        {
-          "id": "arxiv:2609.02293",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2609.02293",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2609.02293v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-125.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Mixture-of-Experts (MoE) is a scaling architecture for large language models that activates only a small subset of expert modules per token, enabling massive parameter growth w",
-              "start": 0,
-              "end": 176
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Mixture-of-Experts (MoE) is a scaling architecture for large language models that activates only a small subset of expert modules per token, enabling massive parameter growth w",
-              "start": 0,
-              "end": 176
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "operations",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "safety critical",
-                  "quote": "n through jailbreak prompts, malicious fine-tuning, and weight-level pruning of safety-critical neurons. Existing defenses primarily focus on hardening the router, but an adversary may still mani",
-                  "start": 635,
-                  "end": 830
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Mixture-of-Experts (MoE) is a scaling architecture for large language models that activates only a small subset of expert modules per token, enabling massive parameter growth w",
-                  "start": 0,
-                  "end": 176
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [
-          {
-            "topic": "high-skill-operations",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "safety critical",
-                "quote": "n through jailbreak prompts, malicious fine-tuning, and weight-level pruning of safety-critical neurons. Existing defenses primarily focus on hardening the router, but an adversary may still mani",
-                "start": 635,
-                "end": 830
-              }
-            ]
-          }
-        ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2609.02011",
-      "recordType": "preprint",
-      "title": "Seed-Anchored Budget-Bounded Graph Rendering for Question Answering on Industry-Standard Power-Grid Information and Exchange Models",
-      "abstract": "Large language model question answering over power-grid models must respect a fixed context budget. We introduce seed-anchored graph rendering, a deterministic method that prioritizes query-local graph evidence without adding method-specific tuned or learned parameters beyond the shared hop bound and context budget. The method provides a checkable condition under which predefined seed-local answer-bearing render units are preserved in a greedy bounded-context prefix. We evaluate the approach on Common Information Model (CIM) network models exchanged through the Common Grid Model Exchange Standard (CGMES). On two budget-binding CGMES encodings, naive descriptions-first rendering retains local evidence for every single-hop item but only 0.12 and 0.00 of multi-hop items, whereas seed-anchored rendering retains all such evidence. On a preregistered fresh 100-item bank from the SmallGrid topology family, accuracy rises from 0.450 to 0.970 under a fixed 8,000-character context budget. Under a common retrieval and rendering pipeline, the standards-native seed-anchored graph matches or exceeds extracted graph representations produced by LightRAG, Microsoft GraphRAG, and HippoRAG, while avoiding LLM graph-construction tokens. The results are specific to the evaluated CIM/CGMES models, reader, and context budget; they concern budget-bounded retrieval rather than general question answering.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2609.02011"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2609.02011"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-09-02",
-      "firstPublicDate": "2026-09-02",
-      "onlineDate": "2026-09-02",
-      "topics": [
-        "eess.SY",
-        "cs.AI",
-        "cs.IR"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 2,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "large language model",
-        "LLM"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Jayakumar Manoharan",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yamini Sehgal",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2609.02011v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-12T09:23:52.373Z",
-      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
-      "retrievedAt": "2026-09-12T09:23:52.373Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-12T09:23:52.373Z",
-      "preferredVersionId": "arxiv:2609.02011",
-      "versions": [
-        {
-          "id": "arxiv:2609.02011",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2609.02011",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2609.02011v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-125.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Large language model question answering over power-grid models must respect a fixed context budget. We introduce seed-an",
-              "start": 0,
-              "end": 120
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "ntations produced by LightRAG, Microsoft GraphRAG, and HippoRAG, while avoiding LLM graph-construction tokens. The results are specific to the evaluated CIM/CGMES models, reader, and ",
-              "start": 1126,
-              "end": 1309
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Large language model question answering over power-grid models must respect a fixed context budget. We introduce seed-an",
-                  "start": 0,
-                  "end": 120
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": "nce. On a preregistered fresh 100-item bank from the SmallGrid topology family, accuracy rises from 0.450 to 0.970 under a fixed 8,000-character context budget. Under a common retrieval an",
-                  "start": 833,
-                  "end": 1021
                 }
               ],
               "interpretation": "mentioned; role/outcome not confirmed"

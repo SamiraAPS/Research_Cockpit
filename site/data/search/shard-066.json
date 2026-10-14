@@ -1,7 +1,173 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2608.26732",
+      "abstract": "Graph neural networks (GNNs) are typically conceptualized as message-passing neural networks, yet it remains unclear why neighborhood aggregation reliably outperforms node-wise multilayer perceptrons (MLPs). Despite its empirical success, this paradigm can be computationally expensive and sensitive to imperfect graph structures. In this work, we present a retrieval-augmented view of GNNs: each layer makes predictions by applying an MLP to a node representation together with a permutation-invariant summary of retrieved graph context. Motivated by this perspective, we propose RTA, a simple MLP-based framework that replaces structural message passing with label-aware retrieval and propagation. We provide theoretical insights that (i) connect retrieval-based aggregation to softmax-attention message passing, and (ii) establish the robustness of retrieved-context supervision to mis-retrieved outliers. Experiments on multiple text-attributed graph benchmarks show that RTA matches or even outperforms strong GNN and graph LLM baselines while improving efficiency and robustness across diverse scenarios.",
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Graph Theory and Algorithms",
+        "Topic Modeling",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Graph",
+        "Message passing",
+        "Robustness (evolution)",
+        "Perceptron",
+        "Artificial neural network",
+        "Attention network",
+        "Feature learning"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.27704",
+      "abstract": "When machine learning classifiers are retrained, inputs correctly classified by the previous model version may be misclassified by the updated version, creating regression faults that are costly to detect because verifying predictions against ground truth may require human annotation, expert review, or expensive simulation rather than inexpensive model inference. Test input prioritization addresses this problem by ranking inputs so that a limited verification budget reveals as many regression faults as possible. Existing approaches rely predominantly on single-model confidence scores and do not exploit how predictions, decision boundaries, and local neighborhoods change between model versions. We propose RiskBlend, a classifier-agnostic prioritization framework that combines four complementary risk signals: historical failure patterns, prediction shift, decision-boundary shift, and neighborhood change. These signals are combined using validation-learned APFD-squared weighting. Across four datasets, five classifiers, four regression-update scenarios, and 15 random seeds, totaling 1,200 experimental configurations, RiskBlend achieves the highest average APFD in all 80 dataset-classifier-scenario combinations, with improvements of up to 0.32 APFD over the strongest baseline. Confidence-based methods remain competitive primarily for linear classifiers on sparse categorical features, which we attribute to feature-space geometry. The results show that cross-version behavioral signals provide important complementary information for prioritizing regression faults in machine learning systems.",
+      "topics": [
+        "Machine Learning and Data Classification",
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)",
+        "cs.LG",
+        "cs.AI",
+        "cs.SE"
+      ],
+      "keywords": [
+        "Categorical variable",
+        "Ranking (information retrieval)",
+        "Regression",
+        "Exploit",
+        "Regression testing",
+        "Regression analysis",
+        "Linear regression",
+        "Prioritization"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.27496",
+      "abstract": "Indirect prompt injection (IPI) plants instructions in the content a tool-using LLM agent reads, steering the agent into harmful tool calls. The strongest defenses are system-level, leveraging techniques such as task-conditional tool screening to prevent execution of malicious tools, and information-flow control to avoid tool execution with untrusted parameters. However, as agents grow more capable, users delegate more to automation. Consequently, tool execution sequences and parameter values are increasingly determined at runtime and cannot be reliably screened from solely user's query without significant utility loss. We present ROPE (Routed Origin Policy Enforcement), which is anchored in a structural notion of trust: a value may reach a state-changing tool only if it traces unforgeably to the user, a source the user explicitly named, or the user's own authoritative records. Enforcement is then a deterministic origin check over an audited set of sensitive tool parameters, and the only reliance on a language model involves solely the trusted user request, out of the attacker's reach. Our approach admits two provable guarantees: 1) at every step of a trajectory, no value whose only origin is attacker-writable content reaches an origin-guarded parameter, and 2) no rewording of an injection changes an admission decision. We evaluate across four agent models on open-ended agent suites, ROPE holds attack success rate to 1.6--2.6\\% while retaining 82--100\\% of undefended clean utility, significantly exceeding state-of-the-art system-level defenses in utility while attaining comparable or better security. Further, we show that optimizing the injection against ROPE is largely ineffective, while long-horizon attacks that defeat prior system-level defenses achieve zero success rate. Our code and logs are available at https://github.com/xhOwenMa/ROPE .",
+      "topics": [
+        "Security and Verification in Computing",
+        "Access Control and Trust",
+        "Web Application Security Vulnerabilities"
+      ],
+      "keywords": [
+        "Delegate",
+        "Enforcement",
+        "Rope",
+        "Set (abstract data type)",
+        "Audit",
+        "Value (mathematics)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.26832",
+      "abstract": "Large language models (LLMs) are increasingly applied to specialized domains, where effective use of domain expertise often requires reasoning over complex rules in concrete scenarios. However, existing benchmarks only partially evaluate this capability, as they either focus on output-level instruction constraints or overlook the distinct roles that rules play in scenario reasoning. To address these gaps, this paper introduces RuleWeaver, a benchmark construction framework for evaluating rule-centered scenario reasoning. RuleWeaver starts from corpus-derived IF-THEN Meta Rules, progressively augments them into complex rules, and composes these rules into rule-centered scenario QA instances. Beyond final-answer correctness, RuleWeaver further supports process-level evaluation through rubric-based answer quality, rule recall, and rule precision. Experiments on 11 representative LLMs show that current models still struggle with complex rule-centered scenario reasoning, with even the best-performing model achieving only around 50% of the maximum rubric score. We make our code and dataset available here: https://github.com/SharkSpicy-NLP/RuleWeaver.",
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Multimodal Machine Learning Applications",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Benchmarking",
+        "Rubric",
+        "Benchmark (surveying)",
+        "Focus (optics)",
+        "Domain (mathematical analysis)",
+        "Code (set theory)",
+        "Language model"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.27141",
+      "abstract": "Large language model agents are increasingly deployed as autonomous loops. Starting from one human goal, such a system repeatedly discovers work, plans, executes tool calls, verifies outcomes and persists state across many unattended iterations. The agent safeguards in wide use, however, are defined over a single trajectory, and their safety state is re-initialized when the next trajectory begins. We show that this is a failure of composition rather than an implementation detail. Our central result is a separation: against an attack whose evidence is fragmented across several iterations, every trajectory-scoped monitor has a true-positive rate equal to its false-positive rate, however expressive it is, because the evidence it would need never appears in the window it sees, whereas a monitor retaining cross-iteration state separates the two perfectly. We further show that the obvious repair of carrying a geometrically decaying risk score is insufficient, because the cooling-off period a patient adversary must wait is a constant that does not grow with the horizon $N$. We then present LoopHarness, which restores a persistent, non-decaying safety state at the loop level. Under mediated commits and an arbiter detection floor $δ_M$, it bounds the expected number of unauthorized irreversible actions by $B+m-1+m/δ_M$, a constant in $N$, of which the $B+m-1$ term is decided by a model-free rule and therefore survives a fully colluding verifier. We give a complete evaluation protocol on native Agent-SafetyBench tasks with paired clean and attacked episodes, an outer-state attack suite whose decisive evidence exists only across iterations, per-module ablations, and an adaptive white-box red team.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)",
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Constant (computer programming)",
+        "Adversary",
+        "State (computer science)",
+        "Protocol (science)",
+        "Trajectory",
+        "Arbiter",
+        "Task (project management)",
+        "Suite"
+      ]
+    },
+    {
+      "id": "arxiv:2608.27364",
+      "abstract": "We study how sophistication in generative AI (genAI) use varies among the back-office workforce of a large firm. Using proprietary data, we observe 713,564 employee prompts and their corresponding large language model responses from nearly 4,000 back-office employees across 15 functional areas over eight months in 2025. We document three main findings. First, senior employees exhibit more sophisticated genAI use, consistent with domain expertise complementing genAI capabilities. Second, sophistication varies considerably across functions and is highest in Strategy, Digital Innovation, and Project Management, three groups that share a focus on firmwide strategic initiatives and organizational change. Third, we observe neither improvements in sophistication over time nor lasting improvements following formal AI training, suggesting that sophisticated use can be difficult to change. Together, our study provides measures of and insights into sophisticated genAI use that managers can use to improve outcomes and that researchers can use in future research.",
+      "topics": [
+        "cs.AI",
+        "econ.GN"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.27225",
+      "abstract": "Effective human-robot collaboration in industrial settings requires robots to understand human intentions and assist with task planning, reducing workload. Recent works have explored the use of Multi-modal Large Language Models (MM-LLMs) for task planning in such data-scarce scenarios, leveraging in-context learning to interpret user actions and generate long-horizon action plans in natural language. However, MM-LLMs inherently lack an understanding of system states and do not track state transitions, often leading to hallucinated actions that deviate from the intended goal. Additionally, generating action plans in natural language tends to limit the generated plans to a high level, introducing ambiguity in action execution. To address these limitations, we propose the State-aware Task Estimator and Planner (STEP), which prompts a MM-LLM to explicitly estimate the state of the system and predict the state transitions resulting from executed actions. By forecasting future states alongside actions, STEP ensures task-convergent planning while also providing additional assistance parameters necessary for executing the predicted actions. We evaluate STEP in a simulated environment using a robot assembly task. Our approach outperforms the state-of-the-art by 32.8% in action executability and 14.8% in final-state error.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Robot Manipulation and Learning",
+        "AI-based Problem Solving and Planning",
+        "cs.RO",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Task (project management)",
+        "Action (physics)",
+        "Ambiguity",
+        "Planner",
+        "Hallucinating",
+        "Natural language",
+        "Robot",
+        "State (computer science)"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10808123/v1",
+      "abstract": null,
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Digital Mental Health Interventions",
+        "Machine Learning in Healthcare"
+      ],
+      "keywords": [
+        "Thematic analysis",
+        "Reflexivity",
+        "Risk assessment",
+        "Heart failure",
+        "Emergency department",
+        "Citizen journalism",
+        "Participatory design"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10459392/v1",
+      "abstract": null,
+      "topics": [
+        "Diverticular Disease and Complications",
+        "Colorectal Cancer Surgical Treatments",
+        "Stoma care and complications"
+      ],
+      "keywords": [
+        "Diverticulitis",
+        "Colectomy",
+        "Protocol (science)",
+        "Anastomosis",
+        "Laparoscopy",
+        "Abdominal surgery",
+        "Invasive surgery",
+        "Colorectal surgery"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.27092",
       "abstract": "A tool-using LLM agent that reads attacker-controlled web content while holding a secret faces indirect prompt injection: the content may make it exfiltrate the secret. In a safe synthetic lab (canary secret, mock tools, matched clean-vs-poisoned metric) we report the framing gap: across six models, ten overt injection classes are refused (gpt-4o 0%), but reframing the identical leak as a mandatory integrity signature, config field, or look-alike \"trusted\" host drives gpt-4o 0% to 100%. The attack is cheap, and its cost is three-level: paraphrasing a known mechanism is trivial (96% at 3 wordings), swapping the field inside a known-effective template is also cheap (up to 60%), while authoring a fresh page around a new mechanism is hard (0/130) -- the reusable asset is the template, not the mechanism. An ablation shows the mechanism is instruction/data confusion, not defeated alignment: removing the confidentiality policy leaves base attacks at 0% and moves reframing only 31.9% to 38.1%. What closes the gap is payload-blind checks: a destination allow-list (0%, when destinations are closed) and a capability-isolating planner/reader split (0%). A broad \"in any form\" policy clause also closes it at the acting model (to 0%) but is brittle (dropping the catch-all reopens it to 48.8%). A published fine-tuning defense (SecAlign, CCS 2025) does not close it on a tool agent (32.5%, positive-control-validated), nor does channel separation (38.8%); an output-normalizing guard loses to a held-out encoding (ROT13, 100%). Robustness comes from constraining the destination or isolating the capability, not from the acting model recognizing the attack.",
@@ -3550,196 +3716,6 @@
         "q-bio.NC"
       ],
       "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.24957",
-      "abstract": "LLM agents routinely include privacy-sensitive data (PSD) in tool call arguments beyond what the invoked tools require, crossing trust boundaries to third-party services on every invocation. A controlled measurement on three production LLMs (GPT-4o, Claude 3.5 Sonnet, Llama-3.3-70B) shows that 81--88\\% of tool calls include unnecessary PSD under default prompts; explicit privacy instructions still leave 36--76\\% over-sharing. Existing defenses gate calls (allow/block) or label flows (information-flow control) but cannot \\emph{rewrite} argument values, and PII detection tools miss implicit PSD like ``Memorial Sloan Kettering'' (a hospital name that implies a diagnosis). We present \\system{}, a middleware that intercepts tool calls and rewrites their arguments to the minimum data necessary for tool functionality, combining schema-aware necessity analysis with four operations: removal, generalization, substitution, and truncation. Live validation on 307 tool calls across the three LLMs above reduces privacy cost by 81.2--92.0\\% at 100\\% argument-level task validity (TOST equivalence $p{<}0.001$ at $Δ{=}1.0$); on 25 unannotated Model Context Protocol (MCP) schemas, by 79.0\\% with no \\texttt{minimum\\_necessary} metadata. An optional LLM content-necessity layer strips task-irrelevant PSD from otherwise-necessary free-text fields, raising live-LLM reduction to 85.1--95.6\\% and author-schema reduction from 71.1\\% to 90.9\\%. Median latency is 1.77\\,ms.",
-      "topics": [
-        "Scientific Computing and Data Management",
-        "Access Control and Trust",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "Rewriting",
-        "Audit",
-        "Context (archaeology)",
-        "Argument (complex analysis)",
-        "Metadata",
-        "Task (project management)",
-        "Protocol (science)",
-        "Latency (audio)",
-        "Equivalence (formal languages)",
-        "Information privacy"
-      ]
-    },
-    {
-      "id": "arxiv:2608.25100",
-      "abstract": "Large Language Models (LLMs) are powerful but limited by static parametric knowledge that becomes outdated once pretraining ends. Knowledge editing addresses this problem by updating model behavior on target facts without full retraining. In particular, in-context knowledge editing has gained attention because it is training-free and readily applicable to black-box LLMs. Recent reinforcement learning (RL)-based approaches improve over fixed retrieval strategies by adapting prompt construction to the quantity-quality trade-off. Despite initial success, they fail to model the prompt as a structured entity under the distinct and often competing objectives of reliability, generality, and specificity. Previous methods largely optimize a single objective and make decisions over only part of the prompt construction process, thereby overlooking both the balance of different objectives and the global organization of demonstrations. We propose Multi-Objective In-context Knowledge Editing (MO-IKE), a multi-objective RL algorithm that formulates prompt construction for in-context knowledge editing as a Constrained Markov Decision Process. MO-IKE trains a dynamic retriever to optimize competing objectives in knowledge editing, enabling more balanced and globally coherent prompt construction. On Llama-3.2, MO-IKE improves edit success (reliability) from 85.0% to 92.0%, paraphrase consistency (generality) from 77% to 79%, while increasing retention rate (specificity) by 23.0% compared to prior RL-based methods.",
-      "topics": [
-        "Topic Modeling",
-        "Multimodal Machine Learning Applications",
-        "Advanced Text Analysis Techniques",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "keywords": [
-        "Reinforcement learning",
-        "Paraphrase",
-        "Consistency (knowledge bases)",
-        "Markov decision process",
-        "Knowledge acquisition",
-        "Selection (genetic algorithm)",
-        "Train",
-        "Parametric statistics"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2719091",
-      "abstract": "Uneven interface design in generative AI (GenAI) systems risk amplifying digital divides across education, work, and creative production. We first synthesize 207 peer-reviewed studies following PRISMA guidelines to derive a six-phase interaction framework (Orientation, Input, Generation, Output Evaluation, Refinement, and Export) that captures end-to-end user experience. We then apply this framework to cross-modal feature mapping of 20 representative GenAI tools spanning text, image, video, and audio. Our analysis reveals a consistent structural imbalance: more than 60 percent of reviewed studies concentrate on early-stage functions such as onboarding and prompt formulation, while providing limited support for reflection, verification, and iterative improvement. This imbalance varies across modalities, with image and video systems offering richer exploratory affordances, and text and audio tools depending more heavily on preexisting user literacy. We propose three design directions to support more accountable GenAI adoption, including cyclical interaction workflows, cross-modal consistency standards, and embedded learning scaffolds.",
-      "topics": [
-        "Innovative Human-Technology Interaction",
-        "Ethics and Social Impacts of AI",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "Onboarding",
-        "Generative grammar",
-        "Modalities",
-        "Feature (linguistics)",
-        "Consistency (knowledge bases)",
-        "Closed captioning",
-        "Interface (matter)",
-        "User interface",
-        "Discriminative model"
-      ]
-    },
-    {
-      "id": "arxiv:2608.24982",
-      "abstract": "Foundation-model post-training usually relies on human labels, preference data, stronger teachers, or executable verifiers. We study Unsupervised Post-Training (UPT): update-bearing adaptation on unlabeled inputs whose learning signal is derived from same-lineage model artifacts rather than an external oracle. We catalog 80 strict UPT methods and organize them by the object that supplies the update signal: a prediction statistic, a sample relation, a self-generated target, or an internal evaluator. Beyond inventory, we show how the choice of internal signal and task structure determines whether post-training improves the model or recursively amplifies error. An orthogonal Input Visibility $\\times$ Update Persistence view maps deployment regimes and defines a unified framework for UPT selection and evaluation.",
-      "topics": [
-        "Machine Learning and Data Classification",
-        "Domain Adaptation and Few-Shot Learning",
-        "Topic Modeling",
-        "cs.CL",
-        "cs.AI",
-        "cs.CV",
-        "cs.LG",
-        "cs.MM"
-      ],
-      "keywords": [
-        "Executable",
-        "Task (project management)",
-        "Selection (genetic algorithm)",
-        "Visibility",
-        "Object (grammar)",
-        "SIGNAL (programming language)",
-        "Sample (material)",
-        "Foundation (evidence)"
-      ]
-    },
-    {
-      "id": "arxiv:2609.22143",
-      "abstract": "Machine learning learns functions: prompt to response, image to caption. What these functions are mathematically remains hard to say. We present a method to approximate these kinds of transformations using techniques from dynamical systems that fall under the umbrella of Koopmanism. We introduce the use of composition operators, which generalize the Koopman operator and, crucially, can map between distinct spaces, motivating the perspective that LLM transformations are rectangular infinite-dimensional operators. This formalism reveals useful structure: under natural assumptions on the prompt and response distributions, the LLM operator is an isometry, and misalignment between learned representations manifests as spectral pollution of its finite sections. We then outline a method of constructing finite-dimensional approximations of an LLM operator, and demonstrate how the singular value spectrum can be used to compare tasks and models.",
-      "topics": [
-        "Generative Adversarial Networks and Image Synthesis",
-        "Model Reduction and Neural Networks",
-        "Explainable Artificial Intelligence (XAI)",
-        "cs.CL",
-        "cs.LG",
-        "math.FA"
-      ],
-      "keywords": [
-        "Formalism (music)",
-        "Perspective (graphical)",
-        "Operator (biology)",
-        "Composition operator",
-        "Linear map",
-        "Algebra over a field",
-        "Composition (language)",
-        "Spectral properties"
-      ]
-    },
-    {
-      "id": "arxiv:2608.24017",
-      "abstract": "The emerging W3C WebMCP proposal enables LLM agents to invoke tools exposed by web pages. In multi-party web environments, however, integrating agent execution into a browser security model centered on the Same-Origin Policy (SOP) leaves insufficient provenance and lifecycle guarantees for agent-accessible tools, creating three risks: subject-attribution spoofing, uncontrolled tool lifecycles, and semantic prompt injection. We propose WebMCP-Phalanx, a dual-layer agent runtime architecture. Its first layer provides a browser-native trust anchor that binds each tool to its registering principal through cryptographically protected capability credentials and propagates provenance labels throughout the tool lifecycle. Its second layer separates semantic inspection from privileged tool use. A Quarantine Agent (Q-LLM), without tool invocation authority, inspects tool metadata, outputs, and page-supplied content for prompt injection. Validated content is then forwarded to a Privileged Agent (P-LLM) for execution, while the Q-LLM's internal state remains hidden from page scripts. Empirical evaluation shows that the browser-native ownership mechanism reduces revocation and overwrite attack success from 100\\% to 0\\%. The dual-agent runtime blocks all 80 prompt-injection attempts embedded in tool descriptions and limits tool-return attacks to 2 successful cases out of 80. Across experiments, task utility remains statistically indistinguishable from the no-attack baseline. Under a white-box adaptive attacker, however, description-based filtering can be bypassed through malicious tool names invoked before inspection. This finding motivates a call-timing gate that delays tool invocation until all agent-visible tool metadata has been validated.",
-      "topics": [
-        "Web Application Security Vulnerabilities",
-        "Security and Verification in Computing",
-        "Scientific Computing and Data Management",
-        "cs.CR",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Metadata",
-        "Task (project management)",
-        "Revocation",
-        "Layer (electronics)",
-        "Principal (computer security)",
-        "State (computer science)",
-        "Semantic Web",
-        "Invocation"
-      ]
-    },
-    {
-      "id": "arxiv:2608.24569",
-      "abstract": "Large language model (LLM) agents coordinate complex tasks through multi-role and multi-stage workflows. Upstream state is repeatedly transformed into intermediate language artifacts, such as summaries, plans, tickets, memories, and handoff notes, from which downstream components act. For action-constraining state, topical retention is insufficient: an artifact may mention an unresolved condition while changing it from a requirement that must be resolved before execution into information that may merely inform the next action. We study this action-binding role as operational state preservation. Safety blockers provide a controlled instance because each source state has an explicit prerequisite, authority, fallback, and execution consequence. We condition on correct upstream identification, vary the handoff transformation, and evaluate an executor restricted to the resulting artifact. Across 1,296 controlled synthetic episodes, direct-handoff controls preserve every blocker, whereas compression, plan assimilation, convergence, ownership deferral, and precedent substitution repeatedly turn binding state into caveats or non-binding considerations. Normal handoff compression produces 100.0% deactivation and 54.2% forbidden action. Restoring all four state fields raises preservation to 100.0% and reduces forbidden action to 0.0%. Fixed-artifact interventions further separate preservation from containment: downstream verification eliminates forbidden action while artifact deactivation remains 95.3%. These results identify a state-transmission failure between information extraction and action. Handoff transformations can retain state content while weakening its constraints on downstream action. Semantic availability does not guarantee operational preservation.",
-      "topics": [
-        "Topic Modeling",
-        "Multi-Agent Systems and Negotiation",
-        "Explainable Artificial Intelligence (XAI)",
-        "cs.AI",
-        "cs.MA"
-      ],
-      "keywords": [
-        "Downstream (manufacturing)",
-        "Executor",
-        "Handover",
-        "State (computer science)",
-        "Upstream (networking)",
-        "Artifact (error)",
-        "Workflow",
-        "Action (physics)",
-        "Matching (statistics)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.24297",
-      "abstract": "LLMs are becoming part of everyday life, including for older adults (OAs). OAs often learn digital technologies with younger family members, who have traditionally served as \"warm experts\" providing trusted and personalized operational help. LLMs expand this role: family supporters may also help OAs judge appropriate uses, consider what information to disclose, assess the credibility of outputs, and decide when AI-generated advice is safe to act on. We conducted a formative qualitative study with six OAs and seven younger adults (YAs), using semi-structured interviews and scenario-based think-aloud activities. OA participants described using LLMs to lighten their recurring reliance on family, while preserving family as a selectively invoked support channel. However, because LLMs rarely produced visible operational breakdowns, YAs had limited signals for when support was actually needed. Instead, YAs relied on OAs' partial disclosures and negotiated intervention through general warnings and self-imposed action boundaries. As a result, family support often solved an immediate problem without leaving reusable calibration knowledge for future use. Based on these findings, we propose design implications for intergenerational LLM support (e.g., consentful help requests, learning-oriented family support that preserves OA task ownership).",
-      "topics": [
-        "Technology Use by Older Adults",
-        "Innovative Human-Technology Interaction",
-        "Digital Mental Health Interventions",
-        "cs.HC"
-      ],
-      "keywords": [
-        "Formative assessment",
-        "Credibility",
-        "Action (physics)",
-        "Intervention (counseling)",
-        "Qualitative research",
-        "Task (project management)",
-        "Social support"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03246-9",
-      "abstract": null,
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Neurobiology of Language and Bilingualism",
-        "Digital Mental Health Interventions"
-      ],
-      "keywords": [
-        "Turn-taking",
-        "Conversation analysis",
-        "Interrupt",
-        "Conversation",
-        "Psychological intervention",
-        "Competence (human resources)",
-        "Guideline",
-        "Coherence (philosophical gambling strategy)",
-        "Corporate governance"
-      ]
     }
   ]
 }

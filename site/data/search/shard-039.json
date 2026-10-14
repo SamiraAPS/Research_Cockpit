@@ -1,7 +1,152 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.34099",
+      "abstract": "Constrained nonconvex optimization has seen increasing application in modern machine learning, such as safe LLM alignment/finetuning, transfer learning and rank-constrained continual learning. The commonly used approach is Projected SGD which requires projection at every iteration. However, projection onto a functional constraint can cost substantially more than a stochastic first-order update. We study whether this operation can be deferred until the end of nonconvex stochastic optimization, and only do it once. For weakly convex, possibly nonsmooth objectives with regular convex constraints, we give a penalized proximal method that uses $\\widetilde O(ε^{-4})$ stochastic subgradients and one projection onto the constraint set. The returned point is exactly feasible and has a small Moreau-envelope stationarity measure; for smooth objectives, the same algorithm controls the projected-gradient mapping. For smooth nonconvex constraints, we assume a global lower bound on the infeasible constraint slope which permits arbitrary, possibly infeasible initialization. An exact-penalty variant attains the same stochastic-oracle order and returns an exactly feasible point within $O(ε)$ of an $ε$-KKT point. All intermediate updates use only projections onto a simple Euclidean ball. These are oracle-complexity guarantees: the cost of the single terminal projection is separate, and no efficient projection algorithm for a general nonconvex set is assumed to follow from regularity.",
+      "topics": [
+        "Stochastic Gradient Optimization Techniques",
+        "Sparse and Compressive Sensing Techniques",
+        "Advanced Bandit Algorithms Research"
+      ],
+      "keywords": [
+        "stochastic optimization",
+        "nonsmooth optimization",
+        "Moreau envelope",
+        "exact penalty function",
+        "KKT points",
+        "oracle complexity",
+        "LLM alignment"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.35266",
+      "abstract": "Large language model (LLM)-based repository auditors are increasingly deployed as security controls within continuous integration (CI) pipelines, where their findings admit, block, or delay software changes. As Agentic Software Development Life Cycle (SDLC) Security Controls, their non-deterministic behaviour changes the evidence, while organisational risk appetite and jurisdictional or data-sovereignty policy change its interpretation. Point-in-time audits therefore cannot maintain current assurance for merge decisions. We propose the Policy-Evidence-Execution Separation Pattern, implemented by the Trustworthy AI Posture (TAIP) Assurance Engine and operated as Continuous Control Posture Assurance (CCPA). By separating policy from stable execution and binding admitted evidence to a versioned Posture Tree, the same assurance logic operates across models, environments, and policy profiles. We evaluate the approach using unmodified RepoAudit on a fixed Python Null Pointer Dereference benchmark. The retained evidence repository contains 80 RepoAudit executions across two OpenAI model configurations, gpt-4o-mini and gpt-4.1. TAIP recomputes assurance posture after policy, evidence, and model-context changes and is evaluated across increasing numbers of independent Decision Gateway contexts. The maximum observed policy-to-posture latency was 1.1 ms across three policy-class cycles in one execution. At 1,000 independent assurance contexts, full policy-triggered recomputation with one worker recorded a maximum aggregate refresh of 1.62 s, below the predeclared 5 s Decision Gateway budget. These single-host measurements concern assurance over retained evidence and exclude RepoAudit execution and provider inference.",
+      "topics": [
+        "Security and Verification in Computing",
+        "Advanced Software Engineering Methodologies",
+        "Scientific Computing and Data Management"
+      ],
+      "keywords": [
+        "continuous integration pipelines",
+        "continuous assurance",
+        "data sovereignty",
+        "null pointer dereference"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.35540",
+      "abstract": "Long-horizon large language model (LLM) agents commonly retain their complete interaction history until compaction is triggered at a predefined threshold. We study Continuous Context Management (CCM), which performs compaction at every turn to prevent interaction history from accumulating in the active prompt. At each turn, a CCM agent emits an updated memory together with an environment action; its next prompt contains the original task, retained memory, and newest observation rather than the complete transcript. We first evaluate CCM without fine-tuning on TerminalBench-2 using Claude Sonnet 4.6, Claude Opus 4.6, GLM-5, and Kimi K3. CCM substantially reduces cumulative input usage and active-prompt size, although it lowers task success for most models while preserving performance for Kimi K3. We use GRPO with privileged full-history distillation to improve CCM in open-weight models. A frozen copy of the student's initial model scores each sampled student action under the complete history reconstructed from that student's rollout, providing dense action-token supervision without a separate teacher rollout or reference solution. On WebShop, this objective substantially improves CCM over GRPO at both evaluated model scales and surpasses full-history GRPO for Qwen3-4B-Instruct, though not for Qwen3-8B. On Endless Terminals, the augmented method provides a modest improvement over GRPO, with both CCM policies outperforming the untrained full-history baseline. These results demonstrate that CCM is a viable inference paradigm for agents operating with substantially reduced retained context and that its performance can be improved through reinforcement learning with privileged full-history distillation.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Topic Modeling",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "memory management",
+        "Group Relative Policy Optimization",
+        "open-weight models",
+        "WebShop"
+      ]
+    },
+    {
+      "id": "doi:10.3389/fdata.2026.1938137",
+      "abstract": "Large language model agents that persist across sessions, tools, users, and changing environments do more than answer isolated prompts; they accumulate state. When new evidence arrives, the central question is where that change should live: transient context, external memory, tool or workflow definitions, activation states, or model parameters. Recent benchmarks compare update mechanisms and assess memory over time, while emerging architectures coordinate multiple memory types. In this Perspective, we examine how a decision layer should select among update substrates and evaluate whether its choices remain appropriate. A controlled update is not merely a successful edit or a recalled fact; it is a decision to alter the least invasive substrate sufficient for the claim's scope, expected persistence, and evidentiary strength, including when the correct action is not to write persistent state. We propose a substrate-aware view of controlled knowledge updating organized by three principles: substrate proportionality, temporal defeasibility, and auditable continuity. This framing treats knowledge updating as a longitudinal control problem and motivates evaluation criteria that include update selection, temporal consistency, interference, reversibility, efficiency, and robustness. The resulting agenda connects memory, knowledge editing, agent evolution, and benchmarking under a single practical question: how should an agent decide what to change so that future behavior improves without accumulating uncontrolled state?",
+      "topics": [
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "keywords": [
+        "Recall",
+        "Workflow",
+        "Framing (construction)",
+        "Benchmarking",
+        "Control (management)",
+        "Comprehension"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34313",
+      "abstract": "How much of a running workflow should a language model agent revise? ControlScope compares continuing generated code, editing the next tool call's data arguments, and replacing the unfinished workflow from the same public execution state. The nested permissions separate available repairs from the actions an agent selects. We evaluate one-time and repeated reviews across filesystem tasks, ALFWorld, and AppWorld. Across two source programs per task and three reasoning-reviewer draws on 20 filesystem tasks, FULL completes 15-16 tasks versus 13 for KEEP; across four fast draws it completes 10-13 versus 13. Fresh student-record confirmation reproduces a batch-read repair. ALFWorld fast panels yield KEEP/ARG/FULL scores of 85/86/87 on 87 tasks across 52 scenes and 134/134/127 on 134 tasks across four scenes; reasoning on the 87-task cohort also yields 85/86/87 with substantial review cost. An AppWorld V1 official-test panel of 585 task instances from 195 scenario templates shows small net differences. Frozen replays expose viable agent-written replacements interrupted by later revision in two failed file-organization runs. An offline source-trajectory midpoint comparison shows later reviews completing an insufficient repair. Five-call protection saves 19.4% of logged model output and loses one success across 20 fresh source runs. An argument-only shortcut shows that the broader sampled policy can overlook a cheaper successful edit available in both operation sets. These outcomes tie repair access to actual choices and subsequent execution.",
+      "topics": [
+        "Scientific Computing and Data Management",
+        "Software Engineering Research",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "keywords": [
+        "LLM agents",
+        "code repair",
+        "agent reliability",
+        "ALFWorld"
+      ]
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2721911",
+      "abstract": "Traffic interactions between vehicles and pedestrians are inherently uncertain due to the dynamic nature of the interaction partners’ behavior. Resolutions require mutual understanding of the situation and each other’s intention, typically achieved through explicit and implicit communication. Assistance systems with internal or external HMIs can reduce uncertainty for drivers or pedestrians, but joint resolution requires combining both types with reasoning mechanisms to coordinate them. We propose a cooperative system that coordinates traffic interactions by communicating to both driver and pedestrian. The system analyzes the traffic situation, calculates cooperative behavior options, derives recommendations for each partner, and harmonizes external and internal signals. We evaluated the system in a multiplayer virtual reality experiment, pairing pedestrians and drivers in unsignalized crossing situations. Results showed significantly more interactions resolved by pedestrian crossing first, with drivers showing stronger, earlier yielding cues that let pedestrians initiate crossing faster. Additionally, the external HMI enhanced perceived driver yielding.",
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Traffic and Road Safety",
+        "Autonomous Vehicle Technology and Safety",
+        "Traffic control and management"
+      ],
+      "keywords": [
+        "human-machine interaction",
+        "driver-pedestrian interaction",
+        "cooperative driving",
+        "yield behavior",
+        "pedestrian crossings",
+        "intention understanding",
+        "virtual reality experiments"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34383",
+      "abstract": "Product attribute value extraction (AVE) is a fundamental task in e-commerce, aiming to identify specific values of predefined attributes from multimodal product profiles such as text and images. While multimodal large language models (MLLMs) have shown promise for AVE, they face challenges in extracting implicit attributes that require joint reasoning over visual and textual cues, often confusing semantically similar values. However, existing methods often fail to resolve such ambiguities because the correct value often depends on subtle multimodal cues that are easy to miss or override. To address this challenge, we propose Correcting to Predict (C2P), a framework that treats attribute extraction as a correction process. Given an initial pseudo-value such as a retrieved candidate or placeholder, the model learns to correct it using multimodal evidence. During training, diverse pseudo-values help the model learn evidence-based correction behavior, and a self-consistency refinement stage further reduces sensitivity to pseudo-value perturbations. At inference, a fixed placeholder triggers the learned correction behavior, enabling efficient single-pass prediction without online retrieval or iterative refinement. We evaluate C2P on a public benchmark and a large-scale industrial dataset. Offline results show that C2P outperforms strong baselines, with notable gains on ambiguous attributes. Online A/B tests on AliExpress further show consistent improvements in seller adoption, attribute completeness, and user engagement, validating C2P's effectiveness and efficiency in real-world deployment.",
+      "topics": [
+        "Sentiment Analysis and Opinion Mining",
+        "Topic Modeling",
+        "Text and Document Classification Technologies"
+      ],
+      "keywords": [
+        "multimodal large language models"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34449",
+      "abstract": "Large language models are trained on heterogeneous data mixtures, where different knowledge domains require both shared knowledge and specialization. Existing modular approaches typically impose explicit components or discover modules through interpretability analysis after training. In this work, we propose CORTEX, a learning dynamics-inspired framework that learns internal modularization within dense language models. CORTEX partitions trainable matrices into parameter groups and learns module assignments from domain-conditioned gradient and cross-domain gradient similarity. We introduce the selective lesion score and module-domain mutual information to characterize the target-domain lesion effects and alignment, and analyze how module assignment affects the trade-off between assignment bias and update magnitude. Experiments with 160M, Qwen3-8B, and Qwen3-32B backbone models show that CORTEX achieves the highest synthetic-domain exact match and largest average perplexity reduction, while remaining competitive on real-domain evaluations and forming identifiable modules.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Topic Modeling",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "keywords": [
+        "modularization",
+        "Qwen3"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34790",
+      "abstract": "LLM agents operate in persistent collaborative environments involving multiple users, communities, memories, files, and tools. Community boundaries may remain fixed or evolve with changes in membership, roles, composition, and relationships. Agents must complete legitimate tasks and prevent unauthorized disclosure of protected information. Existing evaluations do not fully examine these risks in agent systems. We introduce \\textbf{CoSec}, an executable benchmark for evaluating privacy and authorization enforcement in LLM agent systems operating within and across communities. CoSec contains 208 canonical scenarios spanning fixed and evolving boundaries, protected information belonging to the agent owner or other participants, and attacks through dialogue, environmental content, persistent memory, and composed workflows. CoSec executes complete agent systems with persistent sessions, memory, files and tools. It verifies information flows against the active authorization state using execution traces and artifacts. Across harness and model configurations, agents frequently complete benign tasks but violate privacy and authorization boundaries. Privacy behavior varies across harnesses, attack surfaces, and community states, revealing how memory, files, tools, and workflows can carry protected information beyond its authorized scope. These findings show that task utility does not imply privacy or authorization compliance and that authorization in community settings remains an unresolved security challenge for persistent LLM agents.",
+      "topics": [
+        "Access Control and Trust",
+        "Mobile Agent-Based Network Management",
+        "Multi-Agent Systems and Negotiation"
+      ],
+      "keywords": [
+        "LLM agents",
+        "agent security",
+        "privacy enforcement",
+        "benchmarking",
+        "persistent memory",
+        "information leakage",
+        "community membership",
+        "agent cooperation",
+        "attack scenarios",
+        "execution traces"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2609.34581",
       "abstract": "Temporal video grounding is a key capability of advanced Multimodal Large Language Models (MLLMs) for the thorough understanding of video events, which is however often limited by repeated actions and visually similar contexts in long videos. In this paper, we study this issue from the perspective of On-policy distillation (OPD) and propose a new training regime for MLLMs termed Counterfactual Attention Policy Distillation (CAPD). In particular, OPD is a viable solution for MLLMs via providing dense teacher supervision on student-generated trajectories. But its next-token based teacher-student distillation is hard to identify the specific video segments supporting each predicted timestamp, which is critical for temporal grounding. In this case, CAPD measures how masking each temporal group changes the teacher's output distribution. The resulting counterfactual influence calibrates the teacher's attention and weights token-level distillation, allowing the student to learn the temporal evidence that affects boundary prediction. To validate CAPD, we trained it on Qwen3-VL-8B-Instruct using only 2,500 samples for one epoch, and evaluated it on the TimeLens and multiple general video benchmarks. Experimental results show that CAPD improves average recall by 12.0% relative to GRPO on TimeLens while preserving general video understanding, achieving comparable accuracy to the base model.",
@@ -3552,160 +3697,6 @@
         "Topic Modeling",
         "Reinforcement Learning in Robotics",
         "Domain Adaptation and Few-Shot Learning"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.35262",
-      "abstract": "LLM personalization aims to generate responses aligned with individual users' preferences and needs. User-specific rubrics make these expectations explicit, providing direct supervision on what a satisfactory answer should cover. Existing rubric-guided approaches, however, exploit such guidance only at a coarse granularity, either by using rubrics to supervise the prediction of relevant aspects for subsequent generation or by reducing aspect coverage to a single response-level reward for reinforcement learning. This leaves a gap between specifying what a personalized answer should contain and teaching the model how to generate it. To bridge this gap, we propose GRASP, a rubric-aware on-policy self-distillation framework for LLM personalization that turns user-specific rubric aspects into fine-grained, token-level supervision. Specifically, GRASP pairs a rubric-free student with a rubric-informed teacher that additionally receives the target user-specific rubrics. By aligning their next-token distributions along on-policy trajectories generated by the student, GRASP transfers the teacher's rubric-conditioned guidance into the student, translating user-specific semantic requirements into dense token-level supervision. Since rubric-informed teachers can still produce inadequate supervision, we further introduce Rubric-based Teacher Validation (RTV), which retains only instances where the teacher sufficiently covers the target aspects, improving both supervision quality and training efficiency. Experiments on the LaMP-QA benchmark for personalized question answering demonstrate that GRASP achieves state-of-the-art performance across multiple backbones, supporting the effectiveness of rubric-guided token-level supervision for personalization. To ensure reproducibility, our code is available at https://github.com/SnowCharmQ/GRASP.",
-      "topics": [
-        "Topic Modeling",
-        "Recommender Systems and Techniques",
-        "Intelligent Tutoring Systems and Adaptive Learning"
-      ],
-      "keywords": [
-        "LLM personalization",
-        "self-distillation",
-        "on-policy learning",
-        "token-level supervision",
-        "teacher validation",
-        "GRASP"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.35739",
-      "abstract": "Rerankers decide which documents users and LLMs see, yet their standard metric, nDCG, relies on human relevance labels that are costly, sparse, noisy, and discretely graded. As rerankers approach each other in quality, nDCG on these labels therefore increasingly fails to separate them. LLM judges could supply dense labels. Relative judgments within one query tell even close candidates apart, yet their scores share no scale across queries. Absolute grades share one scale but are too coarse to distinguish documents of similar relevance. We propose Rubric-Calibrated Preferences (RCP), which combine both kinds of judgment. A listwise Bradley-Terry tournament orders each query's documents, and a rubric of yes/no criteria of increasing stringency provides an absolute standard. Item Response Theory (IRT), which scores test-takers based on their answers to common questions, then uses the shared criteria to put all queries' tournament scores on one scale. RCP's retrieval metric, RCP-nDCG, replaces nDCG's discrete labels with the resulting calibrated relevance probabilities. Against blind grades from 46 external annotators, calibration raises the correlation between a query's mean score and its mean human grade from 0.538 to 0.795. The probabilities rank a useful document above a non-useful one with probability 0.910 (AUC, chance 0.5), versus 0.651 for the benchmark labels. When the annotators' grades prefer one of two rerankers and exactly one metric agrees, that metric is RCP-nDCG in 72.4% of 185 comparisons (chance about 53%). On TREC-DL, RCP-nDCG sides with NIST assessors' grades on every reranker pair that these grades separate significantly. RCP-nDCG also resolves many of nDCG's ties and separates 1.9 times as many reranker pairs on NanoBEIR. Rubric calibration thus turns relative LLM judgments into dense relevance labels that are comparable across queries and agree with human judgment.",
-      "topics": [
-        "Information Retrieval and Search Behavior",
-        "Expert finding and Q&A systems",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "information retrieval evaluation",
-        "item response theory",
-        "NDCG"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.34268",
-      "abstract": "Large language models (LLMs) are now the default cognitive core of embodied household agents, yet the plans they emit are rarely checked against a grounded model of the environment before execution, and the task-success they report is often measured on benchmarks so saturated that no method can be separated from another. We present SAGE (Symbolic Action-Gating and Editing), a single-LLM planner built from two lightweight mechanisms: a domain-agnostic symbolic gate (~250 lines of Python, zero tokens, $O(|π|)$) that blocks precondition-violating actions with typed reasons as a runtime safety monitor, and a local edit that regenerates only the failed sub-goal's suffix, keeping completed and untouched work intact; a hybrid seed+live memory store supports cold-start coverage. We evaluate under a leak-free protocol (leave-one-out retrieval) over five open-weight models and a 75-task AI2-THOR benchmark. On the standard benchmark goal-completeness saturates (52% of instances trivially solved) and SAGE ties strong hierarchical baselines. On a harder, method-agnostic multi-goal composition, SAGE's completeness lead re-emerges large (+0.06 to +0.23 across four models). Under injected mid-execution failures, SAGE recovers as reliably as whole-plan replanners at 2.4-3.3x fewer LLM calls. As a verify-before-execute gate, the symbolic monitor blocks unsafe actions before actuation and raises simulator-reported step-success for every planner tested (up to +0.11), a signal the verifier never sees (non-circular). Because the gate calls no model (0.008 ms/plan), it is a safety layer that runs essentially free on the edge: SAGE planning reproduces its quality on a Jetson AGX Orin, where small-model verification helps most. We release the benchmark, the leak-free protocol, the recovery and safety-gate harnesses, and a verifier-portability study (auto-induced on ALFWorld, 0.89 held-out).",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "AI-based Problem Solving and Planning",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "edge deployment",
-        "Jetson AGX Orin"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.34247",
-      "abstract": "Full-duplex speech large language models (LLMs) enable low-latency, natural voice interaction. However, real-world agents must also use tools and perform deliberative reasoning-operations whose variable latency and computational cost conflict with the stringent timing requirements of real-time conversation. To reconcile these demands, we propose SALMONN-duo, an adaptive dual-system voice agent inspired by dual-process theories of cognition. SALMONN-duo separates real-time interaction from deliberative computation by pairing an always-on, fast-thinking full-duplex speech LLM (system 1) with a powerful asynchronous slow-thinking LLM agent (system 2). Beyond handling real-time interaction, system 1 learns when to answer directly and when to delegate, remaining responsive during backend execution and seamlessly integrating returned information into the ongoing dialogue without exposing tool traces or losing conversational context. Evaluations on single-turn spoken question answering (QA) and multi-turn conversations demonstrate that adaptive delegation substantially improves accuracy on knowledge-intensive and multi-hop reasoning questions, while knowledge-boundary-aware training avoids unnecessary system 2 invocations. On a customized version of $τ$-Voice, SALMONN-duo further demonstrates its ability to complete environment-grounded, policy-constrained tasks through multi-turn interactions in realistic business scenarios. Finally, cost-aware reinforcement learning further enhances the trade-off between task performance and backend usage across the QA and conversation tasks, while improving task success and response safety on $τ$-Voice with an acceptable increase in the delegation rate.",
-      "topics": [
-        "Topic Modeling",
-        "Speech and dialogue systems",
-        "AI in Service Interactions"
-      ],
-      "keywords": [
-        "dual-process theory",
-        "System 1 and System 2",
-        "deliberative reasoning",
-        "tool use",
-        "spoken question answering",
-        "multi-turn dialogue"
-      ]
-    },
-    {
-      "id": "doi:10.4321/s0465-546x2026000300004",
-      "abstract": "Objective: To examine the magnitude and direction of the relationship between institutional occupational health management and work performance among permanent workers of the District Municipality of Comas, Lima, during the COVID-19 health emergency in 2020. Method: Observational, cross-sectional, correlational study. The population comprised 435 permanent workers; 205 participants were selected by simple random sampling (95% CI; 5% sampling error). Data were collected using two self-administered questionnaires with four-point Likert scales, both previously validated by expert judgment: the Health Management Questionnaire (HMQ; α = 0.87; social management and safety management dimensions) and the Work Performance Questionnaire (WPQ; α = 0.91; leadership, professional training, motivation, and responsibility dimensions). Inferential analysis used Spearman’s rho coefficient (IBM SPSS v.24; α = 0.05). Results: All three null hypotheses were rejected. The overall correlation between health management and work performance was positive and significant (ρ = 0.326; p < 0.001). The social management dimension showed the strongest association with performance (ρ = 0.896; p < 0.001). Safety management showed a very weak positive correlation, statistically significant but of negligible practical relevance (ρ = 0.044; p = 0.044). 43.0% of workers rated institutional health management favourably, a figure that fell to 32.6% among supervisors. Conclusions: Occupational health management is positively and significantly associated with work performance in the studied municipal context. Social management factors—internal risk communication, staff participation, and perceived organisational support—showed the greatest effect on performance. Peruvian local governments are encouraged to prioritise the participatory and communicational component of their preventive health strategies.",
-      "topics": [
-        "Educational and Organizational Development",
-        "Stress and Burnout Research",
-        "Social impacts of COVID-19"
-      ],
-      "keywords": [
-        "occupational health management",
-        "employee performance",
-        "municipal employees",
-        "COVID-19 pandemic",
-        "social management",
-        "safety management",
-        "employee participation",
-        "perceived organizational support",
-        "coma"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23021535",
-      "abstract": "AI risk registers commonly record a harmful event, likelihood, severity, owner, and listed controls. This structure supports accountability, but it can leave a critical question unanswered: whether the stated controls actually address the mechanism likely to produce the event. This paper argues that control adequacy is a causal hypothesis requiring evidence, not a label. Using a routing-error case study, it shows that identical harmful events can arise through human-performance or model-behavior mechanisms, requiring different control families and different evidence of effectiveness. The resulting gap is not merely a documentation defect. Because governance operates through the artifacts it requires organizations to create, review, and audit, a register schema that does not require mechanism-control-evidence traceability can permit mitigation claims that cannot be tested for adequacy.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Explainable Artificial Intelligence (XAI)",
-        "Artificial Intelligence in Law"
-      ],
-      "keywords": [
-        "AI governance",
-        "causal mechanisms",
-        "risk mitigation",
-        "traceability",
-        "accountability",
-        "Traceability",
-        "Documentation",
-        "Corporate governance",
-        "Control (management)",
-        "Schema (genetic algorithms)",
-        "Mechanism (biology)"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23021534",
-      "abstract": "AI risk registers commonly record a harmful event, likelihood, severity, owner, and listed controls. This structure supports accountability, but it can leave a critical question unanswered: whether the stated controls actually address the mechanism likely to produce the event. This paper argues that control adequacy is a causal hypothesis requiring evidence, not a label. Using a routing-error case study, it shows that identical harmful events can arise through human-performance or model-behavior mechanisms, requiring different control families and different evidence of effectiveness. The resulting gap is not merely a documentation defect. Because governance operates through the artifacts it requires organizations to create, review, and audit, a register schema that does not require mechanism-control-evidence traceability can permit mitigation claims that cannot be tested for adequacy.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Explainable Artificial Intelligence (XAI)",
-        "Artificial Intelligence in Law"
-      ],
-      "keywords": [
-        "AI governance",
-        "causal mechanisms",
-        "risk mitigation",
-        "traceability",
-        "accountability",
-        "Traceability",
-        "Documentation",
-        "Corporate governance",
-        "Control (management)",
-        "Schema (genetic algorithms)",
-        "Mechanism (biology)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.35707",
-      "abstract": "Recent progress in machine learning is driven by large-scale foundation models, where scaling laws and finding optimal scaling prescriptions for architecture, data, and hyperparameters are key in advancing the state-of-the-art. Therefore, it is surprising that no systematic study evaluates the methodology to obtain scaling laws and prescriptions across different model types. To shed light on this crucial blind spot and facilitate future research, we introduce the surrogate benchmarks ScAn-Bench-LLM and ScAn-Bench-VLM based on 4524 and 8024 checkpoints of language and vision-language model pipelines. On our benchmarks, we perform the first systematic evaluation of both data acquisition and extrapolation methodology for scaling analysis across different data modalities.",
-      "topics": [
-        "Machine Learning and Data Classification",
-        "Multimodal Machine Learning Applications",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "scaling laws",
-        "scaling analysis",
-        "benchmarking",
-        "large language models",
-        "vision-language models",
-        "extrapolation",
-        "data acquisition",
-        "foundation models"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.36201",
-      "abstract": "Computer-use agents (CUAs), while capable of completing computer tasks in everyday and professional workflows, can cause unintended harm even under benign instructions and environments. However, detecting such harm remains challenging. First, it requires careful, task-specific reasoning: verifiers guided only by general safety criteria often overlook many important but subtle harmful behaviors. Second, it requires active investigation: past trajectory screenshots show what the agent did but not always what actually changed in the environment, so LLM-as-a-judge verifiers that rely on screenshots alone may be unable to determine the actual consequences of actions. To address these challenges, we introduce SCOUT, a two-stage agentic safety verifier that synergizes reasoning-intensive rubric generation with tool-intensive evidence gathering. First, our SCOUT rubric generator extensively reasons over the task and the agent's trajectory to determine what successful and safe execution should entail, generating task-specific completion and safety rubrics. Then, our SCOUT probing agent follows these rubrics to interact with the post-execution environment and collect grounded evidence for final safety and completion judgments. We evaluate our framework on two computer-use safety benchmarks. On AutoElicit-Bench, SCOUT achieves 75.4 unsafe F1 and 74.5 completion F1, outperforming LLM-as-a-judge verifiers and naive tool-use verifiers. SCOUT leads on OS-Blind with 76.4% unsafe detection accuracy. Test-time reflection reduces final unsafe execution rates from 30.2% to 17.2% on AutoElicit-Bench. Ablations and analysis show that tool-free rubric generation in SCOUT elicits substantially more reasoning and is crucial for safety detection across verifier backbones, especially non-frontier ones. A preliminary extension to coding tasks shows that SCOUT can support safety verification beyond computer-use.",
-      "topics": [
-        "Safety Systems Engineering in Autonomy",
-        "Adversarial Robustness in Machine Learning",
-        "Security and Verification in Computing"
       ],
       "keywords": []
     }

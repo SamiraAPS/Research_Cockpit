@@ -1,7 +1,95 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "documents": [
+    {
+      "id": "arxiv:2608.02951",
+      "abstract": "Preference-based reinforcement learning (PbRL) for general stochastic MDPs often requires training a reward model. Existing reward-model-free methods are either restricted to bandits or deterministic MDPs, such as DPO or P3O, or use zeroth-order, gradient-free optimization, which in general exhibits a slower convergence rate than gradient-based algorithms. Furthermore, existing reward-model-free preference-based RL algorithms almost exclusively use trajectory-level feedback, which can require significant effort from a human evaluator when trajectories are long. On the other hand, segments are much shorter, so they are easier to compare and evaluate. In this paper, we introduce a novel reward-model-free, critic-free, and gradient-based PbRL algorithm compatible with segment preferences named Segment Pairwise Proximal Policy Optimization (SP3O). SP3O utilizes segment-level preference feedback to construct an accurate policy value difference estimator via off-policy importance sampling, and then uses the estimator to compute the policy gradient via a PPO-type loss function. We provide a theoretical basis for the algorithm and analyze the tradeoff in choosing the segment length. We also evaluate it experimentally against other PbRL/RLHF algorithms in robotic control and LLM finetuning settings to show its improved performance, especially in long-horizon tasks.",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.02698",
+      "abstract": "Tool-using agents built on large language models (LLMs) are increasingly deployed not by a single operator but by many, side by side on shared infrastructure. This creates a population-level risk that single-agent safeguards miss: a handful of agents can quietly coordinate, rigging a market, boosting one another in a review process, or timing a joint data grab, while each one looks perfectly well-behaved. The difficulty is that the organisations running these agents cannot see inside one another's models, so any realistic detector must work from behaviour alone: black-box, trace-only, and often with only partial visibility. We treat covert coordination as an information-hiding problem and build a black-box steganalysis detector that combines cross-run mutual-information estimation, permutation tests, distributional-shift statistics, and timing and tool-call side channels, all calibrated to a fixed false-positive budget. Our central move is to stop testing against a single fixed code: we pit the detector against an adversary that continually rewrites its encoding to slip past whatever the detector has learned, and we run this red-versus-blue contest in tool-using, memory-carrying environments rather than toy games. Capacity theory then tells us what to expect, a detection-capacity frontier, a covert bit-rate below which black-box detection is provably no better than chance. We set out an experiment to map this frontier, report clearly labelled placeholder results pending measurement, and flag a practical evasion, spreading a payload across sessions, that current methods largely miss.",
+      "topics": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.01667",
+      "abstract": "Verifier-guided reinforcement learning has become a powerful paradigm for improving LLM reasoning. In multi-turn settings, models receive a verifier score after each turn and iteratively refine their outputs. Although such scores provide dense feedback, they do not directly provide dense credit: a score measures the quality of the current output, while credit should measure how the current turn changes the refinement trajectory. We propose TCPO, a turn-level credit assignment method for verifier-guided multi-turn RL. TCPO casts credit assignment as score-to-credit conversion and constructs turn-level advantages through reference-based comparisons: retrospective credit captures immediate progress and regression relative to the best prior state; hindsight delayed credit identifies non-improving turns with later payoff; and selective fixed-history counterfactual estimation refines high-surprisal turns under the same history. Experiments on math reasoning, code generation, and AppWorld agent tasks show that TCPO improves or matches the strongest baselines across model scales, task domains, and verifier types. TCPO achieves the best or tied-best best-turn Pass@8 on Qwen3-4B and DeepSeek-R1-Distill-Llama-8B, reduces turns to success, and improves multi-turn agent performance. These results highlight score-to-credit conversion as a central ingredient for verifier-guided multi-turn policy optimization.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2705163",
+      "abstract": "While explainable AI (XAI) aims to foster trust, its impact on behavioral reliance remains contested. Contrary to the common assumption that transparency linearly promotes reliance, our findings reveal a significant perception-behavior gap. Through a multi-round experiment, we demonstrate that while XAI improves perceived interpretability, it fails to facilitate immediate perceived trust recovery following a system error; instead causing a pronounced decline in behavioral reliance. These results suggest that transparency may function as a cognitive forcing function, triggering analytical System 2 processing that heightens user sensitivity to AI fallibility. This shift reflects a dynamic recalibration of reliance patterns, supported by improved decision accuracy in the XAI condition. Additionally, AI literacy moderates this process as a cognitive scaffold for lower-literacy users. Ultimately, transparency alone is insufficient for trust recovery, highlighting the need to design for trust calibration rather than trust maximization to ensure resilient human-AI collaboration.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "Human-Automation Interaction and Safety"
+      ],
+      "keywords": [
+        "Transparency (behavior)",
+        "Decoupling (probability)",
+        "Cognition",
+        "Maximization",
+        "Function (biology)",
+        "Behavioral economics",
+        "Process (computing)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.01743",
+      "abstract": "Reinforcement learning (RL) has become a central paradigm for large language model (LLM) post-training, but optimization toward new objectives can degrade capabilities already present in the base model. KL regularization is widely used to mitigate such forgetting by constraining policy drift toward a reference model. However, standard full-policy KL regularization constrains the entire response distribution and may unnecessarily restrict exploration and target-task learning. This raises a natural question: can a more precise constraint preserve existing capabilities while minimizing interference with learning new tasks? To this end, we propose \\underline{Co}rrectness-Conditioned \\underline{KL} Regularization (CoKL), a conditional regularization framework that narrows the preservation constraint from the full output distribution to correctness-conditioned response distributions. We instantiate CoKL with forward KL divergence and derive a practical finite-group training objective for RL-based LLM post-training. At the population level, CoKL decouples the total probability assigned to correct responses from their correctness-conditioned distribution, thereby regularizing the relative probability allocation among reference-supported correct responses without directly anchoring incorrect outputs or total correctness mass. We further show that full-policy forward and reverse KL regularization induce a strict optimal correctness gap when the reference policy is imperfect, whereas CoKL avoids this limitation. Experiments in controlled multi-solution environments and continual post-training settings across multiple model scales demonstrate that CoKL achieves a more favorable balance between target-task improvement and prior-capability retention than existing regularization methods. Our code is available at https://github.com/Lumina04/CoKL.",
+      "topics": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1145/3800935.3830870",
+      "abstract": "In recent years, cybersecurity threats have increasingly exploited human behaviour rather than purely technical vulnerabilities, exposing the limits of traditional awareness programmes delivered outside real-world contexts. To bridge this gap, we introduce TrainShield, an interaction paradigm for contextual cybersecurity training that embeds adaptive learning interventions directly within user workflows. The system integrates real-time risk detection (e.g., phishing and data loss prevention) with event-triggered hypermedia overlays that dynamically connect users to context-specific learning nodes embedded within their browsing workflow to deliver personalised micro-learning content and structured feedback tailored to the user's knowledge level and current context. This approach operationalises behavioural theories by transforming security incidents into immediate learning opportunities, shifting users from automatic to reflective decision-making at critical moments. We further formalise a design model that maps detected events to adaptive training instances, combining user modelling, context extraction, and large language model (LLM)-based content generation. A preliminary study indicates that the approach is perceived as useful in increasing risk awareness and is preferred over lengthy and asynchronous traditional training formats, while also highlighting challenges in aligning generated content with user expectations. Overall, the results suggest that embedding contextual, event-driven training within everyday interactions is a promising direction for behaviour-oriented cybersecurity education.",
+      "topics": [
+        "cs.CR",
+        "cs.CY"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1088/2516-1091/ae4e74",
+      "abstract": "Ensuring trust in AI systems is essential for the safe and ethical integration of machine learning systems into high-stakes domains such as digital health. Key dimensions, including robustness, explainability, fairness, accountability, and privacy, need to be addressed throughout the AI lifecycle, from problem formulation and data collection to model deployment and human interaction. While various contributions address different aspects of trustworthy AI, a focused synthesis on robustness and explainability, especially tailored to the healthcare context, remains limited. This review addresses that need by organizing recent advancements into an accessible framework, highlighting both technical and practical considerations. We present a structured overview of methods, challenges, and solutions, aiming to support researchers and practitioners in developing reliable and explainable AI solutions for digital health. This review article is organized into three main parts. First, we introduce the pillars of trustworthy AI and discuss the technical and ethical challenges, particularly in the context of digital health. Second, we explore application-specific trust considerations across domains such as intensive care, neonatal health, and metabolic health, highlighting how robustness and explainability support trust. Lastly, we present recent advancements in techniques aimed at improving robustness under data scarcity and distributional shifts, as well as explainable AI methods ranging from feature attribution to gradient-based interpretations and counterfactual explanations. This paper is further enriched with detailed discussions of the contributions toward robustness and explainability in digital health, the development of trustworthy AI systems in the era of LLMs, and various evaluation metrics for measuring trust and related parameters such as validity, fidelity, and diversity.",
+      "topics": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.02878",
+      "abstract": "Large language models have shown promise for automated Verilog RTL generation, yet state-of-the-art multi-agent systems plateau at ~95% accuracy on standard benchmarks. We trace this ceiling to an incomplete debugging action space: existing systems restrict which signals the agent can inspect, which time windows it can query, or both, reducing debugging to pattern matching on a narrow, predetermined view of circuit behavior rather than hypothesis-driven root-cause analysis. We present VeriTrace, a multi-agent system whose Inspector agent operates over a complete debugging action space, with independent control over signal selection, time-window bounds, and iteration depth. This capability, which we term Agentic Temporal Exploration, enables the agent to form hypotheses about failure causes, query the waveform for evidence, and refine its understanding iteratively, mirroring the exploratory process of human verification engineers. VeriTrace achieves 100\\% Pass@1 on VerilogEval-V2, the first system to attain perfect functional correctness on this benchmark. On a shared Claude Sonnet 4.0 backbone, VeriTrace outperforms the strongest reproduced baseline by +5.1%, demonstrating that debugging agency closes the final accuracy gap.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.01851",
+      "abstract": "Robot learning is splitting into two bets: policies that bake competence into frozen weights (vision-language-action, or VLA, models), and agents that write and refine their own executable skills as code. This survey organises the field around that axis of weights versus skills. Its central analytical contribution is a deep-dive that arranges code-as-policy methods by their degree of self-improvement, from zero-shot program synthesis, through closed-loop self-repair and persistent skill memory, to the sparsely populated cell in which execution feedback, skill memory, and evolutionary search combine into one open-ended loop; only a few very recent systems (for example ASPIRE, ENPIRE, and RoboClaw) occupy that cell. We map the complementary \"skills\" pole, from unsupervised reinforcement-learning skill discovery to large-language-model skill libraries, and show that the word \"skill\" is used in at least five distinct senses, of which only the code sense self-improves without gradient updates. We then connect the taxonomy to the emerging skill economy: commercial robot-skill marketplaces now distribute one-tap skills across robots but ship only static playback, which surfaces open problems of adaptation, cross-embodiment portability, provenance, safety verification, composition, and standardisation. This is a deliberately focused survey. Rather than cataloguing the field exhaustively, it examines 77 representative systems across six technique families through one taxonomy and a set of contrast tables, and it supplies operational definitions of the self-improvement mechanisms together with a statement of what each family cannot do.",
+      "topics": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.1080/10447318.2026.2708453",
       "abstract": "This study examines whether cultural values shape the relative weight consumers place on appearance versus functionality in artificial intelligence (AI) adoption. We propose that collectivism heightens sensitivity to AI appearance, as visual design signals cultural congruence and social approval, shaping trust in AI.Using a multi-method approach, Study 1 analyzes a province-level panel dataset of AI patents of China (2007–2023), finding that regions with stronger collectivist traditions allocate a significantly higher share of AI innovation to design patents relative to function-oriented patents. Study 2 experimentally shows that collectivist orientation enhances trust in culturally congruent AI designs throughperceived cultural congruence and anticipated social approval. These findings demonstrate that consumers from different cultural backgroundssystematically differ in how they weight functional versus appearance-related cues in AI acceptance. Practically,firms should align AI visual design with local cultural norms in collectivistic markets, and policymakersshould incorporate cultural resonance into technology governance.",
@@ -1762,88 +1850,6 @@
       "topics": [
         "cs.CL",
         "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.26743",
-      "abstract": "Artificial intelligence has shown considerable potential for archaeological applications, yet its use in zooarchaeology remains limited, particularly for the identification of avian skeletal remains. This study presents a proof-of-concept multimodal framework that integrates convolutional neural network-based image analysis with osteometric measurements for the classification of bird bones. Using a dataset of more than 10,000 images from multiple museum and research collections, two classification tasks were investigated: skeletal element identification and family-level taxonomic classification. Prior to classification, images were automatically segmented using a two-stage pipeline combining BiRefNet and SAM2. Visual features extracted with a pre-trained EfficientNet_V2_S backbone were fused with standardized morphometric data through a feature-level multimodal architecture. The model achieved 86% accuracy on the test set for bone-type classification, demonstrating reliable recognition of skeletal elements. Family-level classification proved more challenging, reaching 51% top-1 accuracy but 75% top-3 accuracy, indicating that correct taxa were frequently included among the most probable predictions. These results demonstrate the feasibility of combining visual and morphometric information within a unified deep-learning framework and establish a methodological baseline for future AI-assisted zooarchaeological identification. The approach contributes to ongoing efforts to develop scalable, interpretable, and archaeologically meaningful tools for the study of avian remains.",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27081",
-      "abstract": "Fine-tuning is the dominant paradigm for specializing large language models (LLMs), yet it exposes a critical vulnerability: malicious data providers can embed harmful behaviors into downstream corpora, creating models that retain professional skills while violating human values on demand. Existing safety-realignment defenses often fail in practice due to three key limitations: they frequently cause catastrophic forgetting of specialized skills; their effectiveness collapses when the defender cannot observe the attacker's prompt template; and successfully realigned models remain susceptible to re-jailbreaking via simple system prompt switches. To address these challenges, we propose Routing-based On-Policy Distillation (ROPD), a novel realignment framework that models the divergence between aligned and compromised output probability distributions rather than fitting specific prompt templates. We conduct extensive experiments comparing ROPD against four state-of-the-art baselines across three datasets and three base models with varying alignment strengths. Our results demonstrate that when baseline defenses face template mismatches, often accompanied by severe degradation in downstream task performance. In contrast, ROPD substantially mitigates template-mismatch risks, maintaining superior robustness in both defense effectiveness and capability preservation. While our analysis indicates ROPD is not entirely immune to template shifts, its performance degradation is negligible compared to existing methods, establishing a new standard for robust LLM realignment.",
-      "topics": [
-        "cs.AI",
-        "cs.CL",
-        "cs.CR",
-        "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.26947",
-      "abstract": "Multimodal Large Language Models (MLLMs) rely on a projector to align visual representations with the language embedding space, making it central to cross-modal understanding. In Multimodal Continual Instruction Tuning (MCIT), however, shifting visual distributions and evolving instruction semantics cause this shared projector to drift, leading to projector-level forgetting, an issue largely overlooked by methods that focus primarily on the LLM backbone. We introduce Progressive Multimodal Alignment (PMA), a framework that enables the projector to adapt continually while preserving previously learned alignment. PMA detects multimodal distribution shifts via a lightweight representation descriptor and progressively expands projector experts only when needed. An expandable router integrates expert outputs based on multimodal features, while the original pretrained projector is retained as a stable alignment anchor. This progressive mechanism balances stability and plasticity with sub-linear parameter growth and serves as a method-agnostic add-on to existing MCIT approaches. Extensive experiments on two recent MCIT benchmarks demonstrate that mitigating projector-level forgetting yields consistent gains over prior state-of-the-art methods when combined with PMA. Moreover, PMA scales across diverse MLLM backbones, demonstrating robust and broadly applicable MCIT performance.",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1145/3767308.3835306",
-      "abstract": "Audio-capable foundation models enable end-to-end spoken interaction, but they also introduce safety risks beyond transcript content. It remains unclear how much jailbreak capability can arise from matched-text variation in speech delivery rather than from lexical rewriting or broader style transfer. We study this question by holding transcript content fixed and varying six speech-delivery presets whose acoustic attributes may co-vary. We present PJ-Break, a black-box evaluation protocol with presets targeting arousal, authority, and speaking rate, together with AdvAudio-Prosody, a 600-sample benchmark with acoustically verified attributes. On the exact post-QC Qwen2-Audio panel, the Q=1 Panic (38/95), Anger (35/95), and Fast (32/95) presets are all well above Neutral (4/95). The fixed six-query pool covers 44/95 Qwen2-Audio seeds and 15/95 GPT-4o seeds and exceeds a matched-budget StyleBreak reimplementation (27/95) on Qwen2-Audio. A same-voice pool excluding the confounded Commanding condition still reaches 40/95, and a retained-panel ablation shows emotional-delivery audio alone (44/95) is far more effective than emotional text alone (11/95). Exploratory surrogate diagnostics and pilot mitigation observations are secondary, non-core analyses. Overall, matched-text speech delivery should be treated as a first-class factor in Audio LLM safety evaluation",
-      "topics": [
-        "cs.SD",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.28677",
-      "abstract": "LLM now pass medical licensing examinations and, in curated cases, can rival physicians at diagnostic reasoning. These developments have accelerated the use of LLMs for symptom assessment and clinical decision support in diagnostic and treatment guidance, administrative documentation, and rules-based alert enhancement. This Perspective concerns the most consequential of these applications: the autonomous triage of self-presenting, undifferentiated patients, with little or no clinician in the loop. For that task, the evidence of safety does not yet exist. The gap is not in medical knowledge but in the fidelity of clinical evaluation: a model optimized to continue the most probable text is not optimized to act safely when the safe answer is the improbable must-not-miss diagnosis. Safe triage is not the selection of the most likely diagnosis; it is a sequential decision under asymmetric cost, in which the single catastrophic miss outweighs many false alarms, and the decisive signal may be one the patient has not volunteered - and that the model has not been trained to seek. The core deficit is therefore one of information gathering under uncertainty. Under incomplete histories, LLM systems may fail to show the behaviors safe triage requires: broadening the differential; seeking the missing red flag; lowering the threshold for escalation; deferring judgement until sufficient information is obtained; and escalating concern where high-harm diagnoses remain unexcluded. These modes of failure for LLMs can be difficult to detect considering that evaluations to date often use complete, well-curated, confidence-gated simulations. The application of LLMs under these conditions may be amplified by assistant-like behaviors and positive bias, including credulity, agreeableness, and miscalibration - when these are not constrained by clinical triage logic.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27428",
-      "abstract": "Medical imaging has served as primary proving ground for clinical artificial intelligence (AI), yet a decade of intense research has not translated into proportionate bedside impact. We argue that this gap is not primarily a product of insufficient algorithmic performance, inadequate regulation, or limited explainability. Rather, it reflects a structural misalignment, between how AI systems are designed and evaluated, and how clinical decisions are made. This Perspective identifies six interconnected dimensions of this misalignment: the dominance of pixel-only models in a multimodal clinical world; the erosion of physician trust through opaque and inflexible systems; the unfulfilled promise of foundation models in data-sparse medical domains; the persistent bottleneck of non-shareable, under-curated datasets; the gap between validated algorithms and deployable clinical platforms; and the failure of prediction-centric AI to generate actionable clinical guidance. For each dimension, we reframe the problem and propose a path forward, culminating in a vision of agentic, physician-aligned AI that extends, rather than replaces, clinical judgment.",
-      "topics": [
-        "physics.med-ph",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27373",
-      "abstract": "Large language models (LLMs) are becoming increasingly integrated into mainstream development platforms and daily technological workflows, typically behind moderation and safety controls. Despite these controls, preventing prompt-based policy evasion remains challenging, and adversaries continue to \"jailbreak\" LLMs by crafting prompts that circumvent implemented safety mechanisms. Prior work has established cipher-mediated interaction, code-embedded decryption, prompt decomposition and reconstruction, and layered custom encryption as viable attack primitives. However, reported evaluations generally collapse visible acceptance, successful recovery of the concealed request, and subsequent execution into an aggregate attack-success outcome. This leaves limited evidence about where multistage prompt-transformation attacks fail within an observable black-box interaction. This paper introduces RoguePrompt, a jailbreak pipeline that partitions a forbidden prompt and applies two nested encodings, Vigenere followed by ROT13, along with natural-language reconstruction instructions. RoguePrompt was developed and evaluated under a black-box threat model, with only API or user-interface access to the hosted models, and was tested on 313 real-world, hard-rejected prompts. Success was measured in terms of moderation bypass, instruction reconstruction, and execution when the relevant stage exceeded its automated criterion. RoguePrompt achieved average rates of 93.93% for filter bypass, 79.02% for reconstruction, and 70.18% for execution. These results demonstrate the effectiveness of layered prompt encoding while providing stage-level evidence of where multistage jailbreaks fail during moderation bypass, instruction reconstruction, and execution.",
-      "topics": [
-        "cs.CR",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.28098",
-      "abstract": "Scientific datasets are commonly organized as hierarchical repositories containing heterogeneous and interdependent files, making their inspection, integration, and analysis labor-intensive and reliant on domain expertise. Although large language model (LLM) agents have advanced substantially in planning, reasoning, and tool use, existing research has largely overlooked their ability to interact with real scientific data assets through executable environments. We introduce Deep Scientific Data Exploration, an agentic task paradigm in which agents navigate repositories, interpret heterogeneous files and schemas, execute analyses, integrate cross-file evidence, and produce conclusions grounded in executed observations. To operationalize this paradigm, we present SciDataSailor, a framework for synthesizing tool-interactive trajectories by balancing broad exploration with targeted exploitation. SciDataSailor instantiates trajectory synthesis as Monte Carlo Tree Search (MCTS) with four task-specific mechanisms: difficulty-stratified exploration seeds, dual-feedback first-play urgency, hierarchical strategy-to-tool action generation, and entropy-guided branching. Using this framework, we construct SciDataSailor-SFT-2K for supervised fine-tuning and SciDataSailor-Bench for evaluation, with the latter comprising 627 meta-information summarization tasks and 586 scientific question-answering tasks across 27 datasets spanning the life, earth, and physical sciences.",
-      "topics": [
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27066",
-      "abstract": "Scientific figure assessment in peer review differs fundamentally from general image quality evaluation: a figure must be visually legible, faithfully support the manuscript's claims, and communicate evidence with a clear visual hierarchy. However, if we apply traditional image assessment methods to scientific figure quality assessment, limitations emerge: classic IQA models capture perceptual quality or aesthetics but cannot judge whether a figure serves the paper's scientific argument; CLIP-based methods assess generic image-text correspondence, yet lack understanding of manuscript context; and zero-shot LLM/VLM judges, when repurposed for figure scoring, often yield overly concentrated scores with limited fusion of visual and textual evidence. We introduce an annotated dataset of 3,857 scientific figures from peer-reviewed conference papers, each rated along four peer-review-oriented dimensions: Clarity, Relevance, Informativeness, and Structure. We propose SciFigAlign, a fine-tuned multimodal scorer that grounds figure quality assessment in manuscript evidence. Given a figure crop, caption, citing paragraphs, and light paper context, SciFigAlign fine-tunes CLIP and SciBERT end-to-end with per-modality cross-attention and CubeMLP fusion, jointly optimizing SmoothL1 regression with a within-paper ranking hinge loss. Under paper-level splits, SciFigAlign achieves a macro MAE of 0.3524 and a within-paper pairwise accuracy of 81.64% on the test set with n = 396, a 59% relative error reduction over the best LLM-as-judge baseline with MAE 0.864. Ablations confirm that manuscript-grounded inputs, citing-context denoising, and ranking supervision are all critical, showing that scientific figure assessment requires learned alignment between visual content and manuscript evidence rather than prompting alone, even with state-of-the-art VLMs.",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
       ],
       "keywords": []
     }

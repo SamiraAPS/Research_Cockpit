@@ -1,7 +1,180 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-13T12:45:28.659Z",
+  "generatedAt": "2026-10-14T10:16:19.194Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.04382",
+      "abstract": "We present a systems-security case study of a two-node split-LLM training system whose privacy evaluation passed while leaving an observable channel untested. The Trusted Local Node (TLN) sends protected activations to the Untrusted Cloud Node (UCN), the UCN returns its output, and TLN, holding the private loss, returns the output gradient. The frame the UCN receives mixes real rows with decoys, and the loss ignores the decoys. Their gradients are exactly zero, so the pattern of zeros reveals which rows were real. We measure it with a protocol fixed in advance: a leak injected at known strength to prove the instrument can see one, a shuffled-label control to prove it does not report absent leaks, and a threshold set before the runs. Across nine seeds, the zeros identified the real rows on every frame, 4,096 of 4,096 per run. An attack on the frame contents recovered about one extra token per hundred over a constant-guess baseline (+0.65 to +1.50 percentage points); the shuffled controls recovered nothing. A second set of runs repeated this on a configuration that keeps model quality within budget, so the finding is not confined to a setting nobody would deploy. On both datasets, every such run passed the forward-channel privacy check and the quality check, yet failed that same check once the returned gradient was included. Clipping and noising each row of the gradient closed the leak for about 0.01 nats of held-out cross-entropy. The system is not thereby safe: five classes of attack, including those accumulating observations across training steps, were never measured.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Security and Verification in Computing",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": [
+        "Row",
+        "Frame (networking)",
+        "Set (abstract data type)",
+        "Node (physics)",
+        "Security token",
+        "Measure (data warehouse)",
+        "Quality (philosophy)",
+        "Channel (broadcasting)",
+        "Clipping (morphology)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.03727",
+      "abstract": "Large language model agents can plan, invoke tools, and modify external states, yet most systems still take an explicit user instruction as a fixed starting point. Proactive service moves the decision upstream: an agent must infer service opportunities from incomplete environmental and user signals, choose among remaining silent, asking, assisting, and acting, and account for interruption, misunderstanding, overreach, and privacy costs. This survey gives an operational definition centered on initiative and formulates the problem as a partially observable sequential decision process constrained by authorization and risk. The formulation represents timing, content, and delivery within one structured action, while making explicit the option value of waiting, the decision value of questions, and feedback-induced state changes. On this basis, we organize existing methods along one decision pipeline (state and need estimation, intervention gating, action construction, and feedback adaptation) and describe prescribed, predictive, model based, and return optimizing mechanisms as nonexclusive policy-construction components. We further normalize decision units and three-axis evidence descriptors across streaming dialogue, screen, video, software-engineering, and human-agent collaboration resources, and formalize metrics for triggering, timing, calibration, user burden, safety, and policy value. The synthesis shows why offline classification performance alone does not predict deployment benefit and why long-term memory is not a defining condition of proactivity. Reliable proactive service instead requires calibrated incremental intervention value, verifiable authorization, recoverable execution, and counterfactual evidence.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "Artificial Intelligence in Healthcare and Education",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Service (business)",
+        "Counterfactual thinking",
+        "Process (computing)",
+        "Software deployment",
+        "Pipeline (software)",
+        "Decision support system",
+        "Markov decision process",
+        "Value (mathematics)",
+        "Verifiable secret sharing"
+      ]
+    },
+    {
+      "id": "doi:10.1007/s00146-026-03345-7",
+      "abstract": null,
+      "topics": [
+        "Music Technology and Sound Studies",
+        "Diverse Musicological Studies",
+        "Music History and Culture"
+      ],
+      "keywords": [
+        "Musical",
+        "Performing arts",
+        "Dance",
+        "Generative grammar",
+        "Cultural heritage",
+        "Popular music",
+        "Ethnomusicology",
+        "Singing"
+      ]
+    },
+    {
+      "id": "doi:10.20944/preprints202609.0327.v1",
+      "abstract": "Role Persona Injection is critical for improving role consistency in large language models. However, existing vector-based steering methods—such as Persona Vectors and Linear Personality—rely on statistical mean differences or linear regression, which operate at a coarse semantic granularity and struggle to precisely calibrate \"multiple-choice distributional responses\"; moreover, the optimal steering layer is often selected heuristically. To address these issues, we propose Psy2Vec, Zero Fine-tuning Persona Vector Learning with Differentiable Soft-Label Gradient Descent and User-Defined Psychometric Scales. First, we adopt a configurable \"category–dimension–item\" structured scale, which allows dimensions and items to be freely added or removed. Then, we employ a Tutor Model to output option percentages, forming soft-labels carried by the character's option probability distribution. Next, through Computed Optimal Steering Layer Selection, we compare the activation gaps between high- and low-persona conditions layer by layer to derive the optimal steering layer, thereby replacing heuristic selection. Finally, we optimize the persona vector via differentiable RMSE gradient descent, achieving zero fine-tuning throughout without modifying any model weights. Preliminary experiments comparing both approaches on the same questionnaire demonstrate that Psy2Vec achieves lower persona-consistency error.",
+      "topics": [
+        "Persona Design and Applications",
+        "Machine Learning in Healthcare",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "Persona",
+        "Gradient descent",
+        "Differentiable function",
+        "Consistency (knowledge bases)",
+        "Heuristic",
+        "Domain (mathematical analysis)",
+        "Zero (linguistics)"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10895060/v1",
+      "abstract": null,
+      "topics": [
+        "Dysphagia Assessment and Management",
+        "Esophageal and GI Pathology",
+        "Cervical and Thoracic Myelopathy"
+      ],
+      "keywords": [
+        "Dysphagia",
+        "Swallowing",
+        "Fluoroscopy",
+        "Complication",
+        "Patient safety",
+        "Radiological weapon",
+        "Radiography",
+        "Aspiration pneumonia"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.04415",
+      "abstract": "Learning rich medical concept representations is essential for EHR prediction. Text-attributed knowledge graphs (TKGs) provide a natural foundation by organizing heterogeneous medical relations together with textual semantics. However, most existing encoders process concepts uniformly across patients, despite the fact that a code's meaning and predictive value depend on patient-specific clinical context and trajectory. Learning patient-personalized concept representations from TKGs introduces two key challenges: (1) deciding how much KG context to incorporate for each observed code, and (2) aligning semantic information with the patient-specific relational structure. We propose REFINE, a KG-aware budgeted LLM graph refinement framework for patient-personalized medical concept encoding. Starting from a global TKG, REFINE constructs patient-specific temporal graphs. A sequential reinforcement learning policy selects a personalized KG expansion budget for each observed code. The resulting patient graph is processed by a heterogeneous GNN to capture relation-aware structural dependencies, while a frozen LLM uses graph-aware soft prompts to semantically refine concept representations. Experiments on MIMIC-III and MIMIC-IV show that REFINE consistently improves diverse EHR backbones, outperforms strong baselines, and demonstrates robust gains across component ablation, KG selection, and data insufficiency.",
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Advanced Graph Neural Networks",
+        "Topic Modeling",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Representation (politics)",
+        "Component (thermodynamics)",
+        "Graph",
+        "Context (archaeology)",
+        "Encoder",
+        "Process (computing)",
+        "Feature learning",
+        "Reinforcement learning",
+        "Knowledge graph"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10281882/v1",
+      "abstract": null,
+      "topics": [
+        "Web Application Security Vulnerabilities",
+        "Advanced Database Systems and Queries",
+        "Model-Driven Software Engineering Techniques"
+      ],
+      "keywords": [
+        "Audit trail",
+        "Architecture",
+        "Enterprise architecture",
+        "Legacy system",
+        "Enterprise system",
+        "SQL",
+        "Modular design",
+        "Data modeling"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.04022",
+      "abstract": "Aligning large language models (LLMs) is essential for their safe deployment. Current alignment methods mainly optimize observable responses, yet models remain vulnerable when the same harmful intent is recast in unfamiliar or adversarial forms that humans can easily recognize. Prototype theory offers an account of this adaptability. Human concepts are represented around central cases, and new instances are categorized according to their graded typicality relative to these prototypes. Here we show that such categorization of moral concepts is weakly preserved in current LLMs. Across 23 LLMs, models often failed to distinguish opposed moral categories or preserve fine-grained typicality within each category. These deficits persist across parameter sizes and alignment stages. We developed representational similarity optimization, which directly aligns the latent representations in LLMs with the categorization expressed in human moral judgements, without supervising generated responses. In matched experiments using the same 251,334 moral annotations, standard behavioral alignment learned the intended moral judgements at the response level while leaving the categorization structure largely unchanged and increasing vulnerability across adversarial evaluations. Reorganizing moral categorization produced more modest gains in explicit judgements but consistently improved adversarial robustness across model scales on diverse benchmarks and attack strategies. Our findings provide functional support for the view that prototype-based categorization contributes to behavioral adaptability. They also show that transferring this representational principle to LLMs yields generalizable safety under adversarial conditions.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Categorization",
+        "Adversarial system",
+        "Robustness (evolution)",
+        "Similarity (geometry)",
+        "Poison control"
+      ]
+    },
+    {
+      "id": "doi:10.17605/osf.io/5z9dg",
+      "abstract": "Research artifact for the MCAIT 2026 paper \"A Preclinical Offline-First Bilingual Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors\" (Rashad Kamsheh, Shrouq Eraqy), IEEE. SafeDose is a statically deployed, offline-first progressive web application that runs one deterministic safety engine at prescribing, dispensing and administration. The engine combines a graded look-alike/sound-alike (LASA) drug-name catalog seeded from the ISMP List of Confused Drug Names, lab-aware contraindication rules, allergy and dose-ceiling checks, and a risk-tiered secondary-verification policy; a separate Arabic-aware detector warns on confusable patient names. The interface is bilingual English/Arabic with full right-to-left rendering. This archive contains the application source, the seeded formulary and rule data, the AR-EN-PNC-231 patient-name confusability test set with its generator and per-pair labels, the baseline and large-language-model evaluation harnesses, the rule-activation profile and 100,000-case invariant fuzz, and the continuous-integration workflows. REPRODUCE.md maps every quantitative claim in the paper to the command that regenerates it; rule-provenance.md records the per-rule provenance and clinical-review status. All data is synthetic: every patient, order, name and identifier is invented, and no patient data was used or transmitted. The system is a preclinical research prototype. Its clinical rules, severity grades and override rights were author-encoded and have NOT undergone independent clinical governance review; nothing here is validated for clinical use and it must not be used to make treatment decisions. Live demonstration: https://lasa.live Licence: MIT, except the ISMP List of Confused Drug Names, which is a copyrighted compilation downloaded from the publisher at run time and neither included nor redistributed here. Cite as: R. Kamsheh and S. Eraqy, \"A Preclinical Offline-First Bilingual Clinical Decision Support Prototype for Look-Alike/Sound-Alike Medication Errors,\" in Proc. 6th Int. Multi-Conf. on Artificial Intelligence Technology (MCAIT 2026), Madinah, Saudi Arabia, Nov. 2026. Artifact: https://doi.org/10.17605/OSF.IO/5Z9DG",
+      "topics": [
+        "Academic Publishing and Open Access",
+        "Academic integrity and plagiarism",
+        "Biomedical Text Mining and Ontologies"
+      ],
+      "keywords": [
+        "Artifact (error)",
+        "Identifier",
+        "Scripting language",
+        "Benchmark (surveying)",
+        "Reproduction",
+        "Barcode"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2609.04482",
       "abstract": "Safety alignment is usually posed as a topic-level question: is this subject harmful? Deployments ask a narrower one. A civics tutor and a public-sector assistant may share a base model yet need different boundaries inside the same topic, refusing targeted political manipulation while still answering factual questions about the same election. We formulate this as narrow-boundary safety and introduce an offline self-generated framework combining controlled topic generation, coverage repair, in-distribution compensation data, and harmful-benign pairs for training and evaluation. Single-shot generation leaves 19.88% of prompts without accepted refusal traces, whereas escalating retries leave 0.20%. On political persuasion with Qwen3-8B, training on refusal data completed through Escalate increases target-domain refusal from 9.47% to 84.75% and reduces the mean unsafe-response rate across three broader harmfulness benchmarks from 26.26% to 0.14%, but increases XSTest over-refusal from 2.00% to 74.00%. In a separate matched comparison, replacing external responses with verified target-model responses reduces over-refusal from 15.20% to 5.20%. Boundary-pair data reduces comply-side over-refusal on held-out pairs from 32.94% to 4.16%, while harmful-side refusal decreases only from 91.88% to 87.72%. These results show that data composition controls the safety and usability trade-off, and that safety alignment should be evaluated on both sides of the intended refusal boundary.",
@@ -3596,170 +3769,6 @@
         "Competitive analysis",
         "Common value auction",
         "Service (business)"
-      ]
-    },
-    {
-      "id": "arxiv:2609.02947",
-      "abstract": "Significant challenges remain in AI-driven educational systems in balancing privacy preservation with accurate cognitive diagnosis. To overcome this, we propose a federated inference framework in which several commercial LLM APIs collaborate without requiring access to raw student data or proprietary model internals. Using multiple federated entities, such as LLaMA-3.3-70B, GPT-4o-mini, and Claude-3-Haiku, our framework builds upon a heterogeneous multi-LLM architecture. The predictions generated by these entities are combined with epsilon-local differential privacy by adding Laplace noise locally to each entity's prediction output before aggregation, while residual-based aggregation mitigates model heterogeneity. Our approach is predicated on an honest-but-curious trust paradigm in which API providers are presumed not to abuse submitted queries, and our differential privacy mechanism shields the published diagnostic results from external inference. We conduct rigorous privacy-utility analysis showing strong privacy guarantees with minimal accuracy loss, and extensive real-world evaluations across three educational benchmarks confirm the framework's practical usability and cross-domain generalizability.",
-      "topics": [
-        "Privacy-Preserving Technologies in Data",
-        "Explainable Artificial Intelligence (XAI)",
-        "Adversarial Robustness in Machine Learning",
-        "cs.CR",
-        "cs.AI",
-        "cs.CL",
-        "cs.LG"
-      ],
-      "keywords": [
-        "Differential privacy",
-        "Inference",
-        "Usability",
-        "Federated learning",
-        "Raw data",
-        "Cognition",
-        "Information privacy",
-        "Scheme (mathematics)",
-        "Random noise"
-      ]
-    },
-    {
-      "id": "openalex:W7208794445",
-      "abstract": "Artificial Intelligence has shown to help improve agricultural practices, yet adoption remains limited: 69% of U.S. farmers have privacy concerns with sharing their data, and these concerns must be addressed before adoption is widespread. While Federated Learning has been demonstrated to protect privacy at scale for other sectors, deploying a system for agriculture comes with its own set of challenges; the problem necessitates a system that can protect farmer data and identities while preserving model utility, runs on commodity hardware, and is resilient to fragile rural infrastructure. To address these concerns, we introduce the Private Computation Space (PCS), a deployed, open-source Machine Learning system to provision and process farmer data securely. We design a system tailored to an agricultural setting, with multi-cluster orchestration for reliability in rural areas with asynchronous Federated Learning (FL), Differential Privacy (DP), and Trusted Execution Environments (TEEs), to allow farms to participate in the framework while keeping their data private. We evaluate the system on two deployed workloads: monitoring nitrogen with living plant sensors in NY for six months and predicting evapotranspiration from weather stations in CA for ten months. Our evaluation finds a Dice Similarity Coefficient (DSC) of 0.71 and $R^2$ accuracy of 0.84 for the respective workloads, improving the worst single-site model accuracy by 22.4% and 9.1%, respectively, while preserving privacy.",
-      "topics": [
-        "Privacy-Preserving Technologies in Data",
-        "Smart Agriculture and AI",
-        "Blockchain Technology Applications and Security"
-      ],
-      "keywords": [
-        "Differential privacy",
-        "Commodity",
-        "Process (computing)",
-        "Big data",
-        "Agriculture",
-        "Reliability (semiconductor)",
-        "Information privacy",
-        "Server"
-      ]
-    },
-    {
-      "id": "openalex:W7208019088",
-      "abstract": "This paper is a systematic literature review focused on the use of chatbots and AI-powered conversational agents in engineering education. It examines a broad set of empirical studies that explore how Large Language Models (LLMs) and other chatbot technologies support learning, teaching, assessment, and student engagement in diverse branches of engineering. The review identifies different chatbot types, ranging from general-purpose models like ChatGPT and Bard to specialized or domain-specific bots developed for particular educational tasks. It analyzes the pedagogical roles these tools fulfill and evaluates the effectiveness of their implementation across engineering courses. The methodology section outlines a structured PRISMA-guided process, detailing how studies were selected, screened, and included. Data were manually extracted into a coding matrix by the research team over a month, enabling comparative analysis of study characteristics, tools used, evaluation methods, and outcomes. The results present a taxonomy of chatbot applications, commonly used evaluation metrics, student and instructor perceptions, and observed benefits such as improved engagement, higher learning performance, and enhanced motivation. The review also identifies concerns related to accuracy, reliability, and ethical considerations. Overall, the document provides a rigorous and organized overview of current research trends, highlighting both the potential and the challenges of integrating chatbots into engineering education, and offers insights for future research and practical implementation.",
-      "topics": [
-        "AI in Service Interactions",
-        "Artificial Intelligence in Healthcare and Education",
-        "Biomedical and Engineering Education"
-      ],
-      "keywords": [
-        "Chatbot",
-        "Systematic review",
-        "Set (abstract data type)",
-        "Taxonomy (biology)",
-        "Engineering education"
-      ]
-    },
-    {
-      "id": "arxiv:2609.01217",
-      "abstract": "Despite their strong performance, large language models remain highly sensitive to prompt formulation. Prior work addresses this through refined data construction or through dedicated robustness objectives. We reproduce and compare these strategies under controlled conditions, and measure how effective they are in addressing models' prompt sensitivity. We find the current robustness fine-tuning methods improve over standard fine-tuning and in-context learning, but the best-to-worst prompt gap remains as high as 40-57% of performance. Moreover, the recent robustness-enhancing methods we test - CoIN for contrastive alignment and PPCL for consistency regularization - often fail to outperform the simplest data construction strategy: training on one template per batch. Our diagnostics explain these results. The auxiliary objectives move the quantity they penalize, but do not generalize beyond it. Additionally, data construction strategies differ due to the conflicting signs of per-template gradients on 57-64% of parameters. Thus, batches that mix formulations force the optimizer to reconcile competing updates instead of finding a shared, prompt-agnostic one.",
-      "topics": [
-        "Topic Modeling",
-        "Natural Language Processing Techniques",
-        "Multimodal Machine Learning Applications",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Robustness (evolution)",
-        "Regularization (linguistics)",
-        "Training set",
-        "Consistency (knowledge bases)",
-        "Measure (data warehouse)",
-        "Robust statistics"
-      ]
-    },
-    {
-      "id": "arxiv:2609.01693",
-      "abstract": "Safety properties assessed separately for Model Context Protocol (MCP) tool use and Agent2Agent (A2A) delegation need not describe behavior when one agent uses both. We measure one such behavior in a single controlled MCP-to-A2A configuration: a testbed drives a real-model host across a local MCP and a local A2A leg into an ordered event trace scored by exact deterministic rules (no LLM judge), one restricted decision per trial. In a pre-specified, frozen three-arm design, each of 10 record scenarios appears with a CONFIDENTIAL header, with no header, and with PUBLIC - OK TO SHARE; the six substantive record values are byte-identical across arms, and the outcome is verbatim occurrence of any of them in the outbound message. Four models x 3 arms x 4 repeats give 480 trials; the scenario is the unit of generalization, and we report the 10 scenario-level values (mean, median, sign counts), with no p-values or intervals. The confidential-minus-unlabeled contrast is inconclusive and floor-limited in every model (both arms at or near zero), so it does not show that confidential labels lack a protective effect. Adding PUBLIC - OK TO SHARE is descriptively associated with higher verbatim egress relative to the unlabeled baseline, with strong model dependence: strong and consistent for Claude Sonnet 5 (public-minus-unlabeled mean +0.800, all 10 scenarios; mostly an association with whether Claude relays at all), moderate but floor-limited for one GPT-5.6 tier, small (median 0) for another, and a complete floor for the third. This is an association in one configuration, not a causal or general effect. Code, byte-pinned traces, and the offline analysis pipeline are released as a public artifact.",
-      "topics": [
-        "Human-Automation Interaction and Safety",
-        "Formal Methods in Verification",
-        "Multi-Agent Systems and Negotiation",
-        "cs.CR",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Context (archaeology)",
-        "Confidentiality",
-        "Delegation",
-        "Outcome (game theory)",
-        "Sequence (biology)",
-        "Measure (data warehouse)",
-        "Event (particle physics)",
-        "Field (mathematics)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.01470",
-      "abstract": "As AI systems are increasingly used to draft radiology reports, reliably evaluating their clinical quality remains a critical challenge. Large language model (LLM)-based metrics are now the best-correlated with radiologist judgment, yet they output a single opaque score that neither a clinician nor a model builder can easily interpret or audit. We introduce RadMatch, a multi-stage, LLM-based metric that decomposes report comparison into a structured finding-level matching with significance-aware scoring and error characterization across seven clinical attribute dimensions (status, location, severity, morphology, certainty, longitudinal comparison, and measurement). The main score is the actionable-error count, both interpretable and auditable. Candidate findings are graded correct, partial, or incorrect, and unmatched findings are counted as missed or hallucinated. Triage and actionable safety recall/precision and per-subset views add complementary, deployment-oriented lenses. Across two expert benchmarks, RadMatch is the most clinically aligned metric, matching inter-radiologist agreement on ReXVal and more than doubling the best prior metric on the harder RadEvalExpert. Relying only on few-shot prompting, it is designed to extend to other modalities and anatomies. We will release RadMatch as open-source code with an interactive dashboard for inspecting results.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Radiology practices and education",
-        "Radiomics and Machine Learning in Medical Imaging"
-      ],
-      "keywords": [
-        "Metric (unit)",
-        "Matching (statistics)",
-        "Triage",
-        "Modalities",
-        "Dashboard",
-        "Quality (philosophy)",
-        "Code (set theory)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.00506",
-      "abstract": "Large language models are powerful, but their interfaces often devolve into a type $\\rightarrow$ read $\\rightarrow$ retype loop, creating conversational AI fatigue, cognitive load, and eventual task abandonment. To mitigate this, we present RecalibrateGPT, a system introducing five cross-turn operators (Anchor, Replay, Delta, Scope, and Steer) that each target a distinct fatigue type, recalibrating LLM responses through a structured panel by acting on the full conversation history with a single click. Users invoke these operators through the AssistiveButton in one of three operator palette layouts: Vertical, Arc, or Tablet. We conducted two pilot studies with the same 12 advanced LLM users. An initial formative qualitative study identifies a taxonomy of four fatigue types (retyping, scanning, decision paralysis, and context drift) and derives two design objectives for RecalibrateGPT. A follow-up quantitative evaluation finds it reduces perceived cognitive workload by half (NASA-TLX = 2.7) at high perceived usability (SUS = 86.5), suggesting AI fatigue is not just a model-quality issue but an interaction-flow cost that interfaces can remove.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "AI in Service Interactions",
-        "Human-Automation Interaction and Safety"
-      ],
-      "keywords": [
-        "Conversation",
-        "Task (project management)",
-        "Usability",
-        "Workload",
-        "Formative assessment",
-        "Cognition",
-        "Context (archaeology)",
-        "Task analysis",
-        "Conversation analysis"
-      ]
-    },
-    {
-      "id": "doi:10.1145/3830397.3841834",
-      "abstract": "Large language models are powerful, but their interfaces often devolve into a type $\\rightarrow$ read $\\rightarrow$ retype loop, creating conversational AI fatigue, cognitive load, and eventual task abandonment. To mitigate this, we present RecalibrateGPT, a system introducing five cross-turn operators (Anchor, Replay, Delta, Scope, and Steer) that each target a distinct fatigue type, recalibrating LLM responses through a structured panel by acting on the full conversation history with a single click. Users invoke these operators through the AssistiveButton in one of three operator palette layouts: Vertical, Arc, or Tablet. We conducted two pilot studies with the same 12 advanced LLM users. An initial formative qualitative study identifies a taxonomy of four fatigue types (retyping, scanning, decision paralysis, and context drift) and derives two design objectives for RecalibrateGPT. A follow-up quantitative evaluation finds it reduces perceived cognitive workload by half (NASA-TLX = 2.7) at high perceived usability (SUS = 86.5), suggesting AI fatigue is not just a model-quality issue but an interaction-flow cost that interfaces can remove.",
-      "topics": [
-        "cs.HC",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2609.00859",
-      "abstract": "Vehicle Routing Problems (VRPs) are fundamental combinatorial optimization problems with widespread applications in various scenarios. The advanced optimization solvers can effectively solve such problems. However, modeling complex VRP variants for solvers often requires substantial domain expertise, which limits the accessibility of advanced optimization technologies. In this paper, we propose Reinforcement Learning Enhanced LLMAgents(RLEA), a multi-agent framework designed to automate the modeling of complex VRPs. RLEA introduces a lightweight neural Planner trained with Soft Q-learning to efficiently orchestrate the actions of LLM-based agents. In addition, we equip the system with an evolutionary memory module and retrieval-augmented generation, enabling the agent to leverage both accumulated experience and external solver knowledge during program generation and refinement for solving VRPs. We evaluated 48 distinct VRP variants across various solvers. The experimental results demonstrate that RLEA outperforms the previous state-of-the-ar method, achieving a 16.67% higher success rate while significantly reducing runtime errors. These results validate that integrating reinforcement learning with LLM-based reasoning is highly effective for automated optimization modeling. The appendix is available at: https://doi.org/10.5281/zenodo.19134435.",
-      "topics": [
-        "Vehicle Routing Optimization Methods",
-        "VLSI and FPGA Design Techniques",
-        "Advanced Multi-Objective Optimization Algorithms",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Reinforcement learning",
-        "Leverage (statistics)",
-        "Solver",
-        "Vehicle routing problem",
-        "Domain (mathematical analysis)",
-        "Planner",
-        "Optimization problem"
       ]
     }
   ]
