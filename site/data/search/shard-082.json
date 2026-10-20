@@ -1,7 +1,135 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-19T10:49:06.324Z",
+  "generatedAt": "2026-10-20T10:07:09.845Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2608.26822",
+      "abstract": "The National Oceanic and Atmospheric Administration (NOAA) employs independent prediction systems for distinct forecast products. While some separation is practical, we argue that combining short- and medium-range weather into a single prediction system would provide the public with a useful distillation of global weather and its impacts. To this end, we present Nested-EAGLE (Experimental Artificial intelligence Global and Limited-area Ensemble): a 0.25° global weather model with a 6 km refinement over the Contiguous United States (CONUS). The model achieves significantly lower mean-squared error in near-surface and low-level quantities over CONUS compared to NOAA's Global Forecast System and High-Resolution Rapid Refresh (HRRR), while remaining competitive throughout the rest of the global atmosphere. We show that the skill gains for near-surface fields stem from incorporating high-resolution regional analysis data into training through the nesting process. Forecasts of precipitation amounts are less skillful than those from HRRR, owing to deterministic training. However, we show that Nested-EAGLE provides the most accurate forecasts of storm locations at longer leads, despite blurred extrema. Our results motivate future work to extend the skill gains beyond CONUS and improve precipitation representation.",
+      "topics": [
+        "Meteorological Phenomena and Simulations",
+        "Tropical and Extratropical Cyclones Research",
+        "Precipitation Measurement and Analysis"
+      ],
+      "keywords": [
+        "Weather forecasting",
+        "Bridging (networking)",
+        "Numerical weather prediction",
+        "Quantitative precipitation forecast",
+        "Global Forecast System",
+        "Weather prediction",
+        "Precipitation",
+        "Storm"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.27504",
+      "abstract": "Despite extensive safety alignment, large language models (LLMs) remain vulnerable to jailbreak attacks that bypass safeguards to elicit harmful content. While prior work attributes this vulnerability to safety training limitations, the internal mechanisms by which LLMs process adversarial prompts remain poorly understood. We present a mechanistic analysis of the jailbreaking behavior in a large-scale, safety-aligned LLM, focusing on LLaMA-2-7B-chat-hf. Leveraging edge attribution patching and subnetwork probing, we systematically identify computational circuits responsible for generating affirmative responses to jailbreak prompts. Ablating these circuits during the first token prediction can reduce attack success rates by up to 80\\%, demonstrating its critical role in safety bypass. Our analysis uncovers key attention heads and MLP pathways that mediate adversarial prompt exploitation, revealing how important tokens propagate through these components to override safety constraints. These findings advance the understanding of adversarial vulnerabilities in aligned LLMs and pave the way for targeted, interpretable defense mechanisms based on mechanistic interpretability.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Advanced Malware Detection Techniques",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "Interpretability",
+        "Adversarial system",
+        "Subnetwork",
+        "Vulnerability (computing)",
+        "Key (lock)",
+        "Process (computing)",
+        "Security token"
+      ]
+    },
+    {
+      "id": "arxiv:2608.26505",
+      "abstract": "The Poppy Humanoid is an open-source, low-cost robot suitable for research and education in artificial intelligence. However, we are unaware of any published methodology that achieves reliable, unassisted bipedal locomotion on the standard Poppy hardware. This paper contributes a functional closed-loop walking controller for Poppy, based on the linear-quadratic regulator (LQR) framework for trajectory tracking. Starting with data collected from open-loop playback of a nominal walking trajectory, our proposed method learns a quadratic cost function for an LQR controller that substantially improves the reliability of the motion. The closed-loop controller is validated empirically, demonstrating statistically significant improvements in walking performance compared to open-loop trajectory playback.",
+      "topics": [
+        "cs.RO"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.27244",
+      "abstract": "An LLM call in a semantic data processing system is expensive enough to dominate query cost, yet slow enough to hide a CPU-side learner's update behind its round-trip. In production, LLM compute accounts for $80-90\\%$ of query cost, and each call costs $10^5-10^7\\times$ a relational predicate. The latency window inverts a design constraint of classical adaptive query processing, where online learners had to stay lightweight to avoid dominating the predicates they optimize. At LLM latency, per-call gradient steps and per-batch threshold solves fit inside the round-trip. We develop compositional online learning at the LLM call boundary: a framework for combining online-learning components in semantic data processing systems. Each component makes execution-time decisions and refines its learned artifacts online. The design space spans two axes, decision granularity and learner update cadence, and the components share a single learning pattern that hides each trainer step inside the next LLM round-trip. A production case study in Cortex AISQL composes three components: a memoization layer, an online per-call filter-ordering learner, and an online per-batch cascade-routing learner. A conditional cost decomposition assigns each learning component to a distinct factor of per-row LLM cost. Under independence, the two learning components compose multiplicatively to an $11.4\\times$ upper bound on a representative conjunction-filter workload. Self-selection at the cascade boundary, sample-budget shrinkage, and selectivity-estimation drift reduce it to a realistic figure near $8\\times$.",
+      "topics": [
+        "Advanced Database Systems and Queries",
+        "Data Quality and Management",
+        "Data Stream Mining Techniques",
+        "cs.DB",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Component (thermodynamics)",
+        "Memoization",
+        "Online learning",
+        "Concept drift",
+        "Online model",
+        "Granularity",
+        "Window (computing)",
+        "Semantics (computer science)",
+        "Query language"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.27409",
+      "abstract": "Reinforcement learning with verifiable rewards (RLVR) improves specific capabilities of large language models, but covering multiple capabilities often involves training separate domain experts and subsequently consolidating them. We organize three fusion paradigms by the artefacts they reuse: Merge combines expert task vectors, Mix RL pools their datasets, and multi-teacher on-policy distillation (MOPD) uses both. Because they have largely been studied in isolation, how they compare and how to choose among them remain unclear. We compare all three using shared experts and data across model scales and a multi-domain benchmark suite. Although their average performance differs by at most 1.4 points, the gap reaches 8.6 points on a single benchmark, with domain-level variation tracking cross-domain relations visible in task-vector geometry. Training dynamics expose distinct constraints: Mix RL depends on domain mixture proportions, MOPD remains bounded by its teachers, and Merge compresses all expert updates into one. All three improve single-sample accuracy without measurable gains in solution coverage or losses in held-out capabilities. These results yield a practical guideline: use Merge when experts already exist and cheap fusion is paramount; Mix RL when training a unified model without experts, with domain proportions adjusted for cross-domain transfer; and MOPD when preserving domain-specific gains matters more than surpassing teachers or minimizing end-to-end cost.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Domain Adaptation and Few-Shot Learning",
+        "Topic Modeling",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Merge (version control)",
+        "Reinforcement learning",
+        "Boosting (machine learning)",
+        "Leverage (statistics)",
+        "Benchmark (surveying)",
+        "Heuristics",
+        "Workflow",
+        "Domain (mathematical analysis)",
+        "Training set"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.27455",
+      "abstract": "Recent advances in inference-time scaling have significantly improved the reasoning performance of large language models (LLMs). However, these methods typically rely on repeated generation or external verification. To address this limitation, we introduce CritICL, a novel inference-time framework that improves reasoning while maintaining high efficiency. Our key insight is that LLM failure modes exhibit structured patterns across model scales within the same family. Instead of treating failures as undesirable outputs, CritICL leverages them as a source of guidance. Specifically, we utilize failure modes derived from weaker models and incorporate them into inference through critique-based in-context examples. We propose two variants: CritICL-dynamic, which adaptively predicts input-specific failure modes and retrieves critiques, and CritICL-static, which uses a global failure mode profile to provide stable guidance. Experimental results show that CritICL consistently outperforms standard in-context learning and achieves performance competitive with or superior to test-time scaling methods, while requiring significantly fewer generations and lower token cost. Code available at: https://github.com/umwyf/CRITICL",
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Explainable Artificial Intelligence (XAI)",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Generalization",
+        "Inference",
+        "Key (lock)",
+        "Scaling",
+        "Language model",
+        "Security token",
+        "Code (set theory)",
+        "Mode (computer interface)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.26771",
+      "abstract": "Automated tea leaf disease classification supports precision agriculture, yet deploying accurate models on edge devices remains challenging under tight compute budgets. Self-supervised vision foundation models such as DINOv2 provide strong features but are too large for field deployment, while lightweight models trained from scratch on small agricultural datasets often underfit. We study cross-architecture knowledge distillation (KD) from a fine-tuned DINOv2 teacher (Vision Transformer) to a compact bidirectional Visual State Space Model (LVSSM) student, an underexplored direction because the architectures use fundamentally different token-mixing mechanisms. We identify and fix two training-stability problems that prevent the from-scratch SSM student from learning on limited data: a single large patch-embedding convolution and a fusion layer that severs the residual path. With a progressive convolutional stem and gated bidirectional selective-scan block, the 4.45M-parameter student trains stably. Across three seeds, temperature-scaled logit distillation raises test accuracy from 92.32+/-2.14% to 95.41+/-1.17% (best single run: 96.20%; macro-F1: 94.45%), a +3.09 percentage-point mean gain. The student uses 5.0 times fewer parameters than the 22M-parameter teacher while retaining 98.3% of its accuracy. Ablations show that intermediate feature-alignment losses reduce accuracy, making simple logit-level KD the strongest configuration. A fair from-scratch comparison shows the gain is specific to students that start below the teacher. We report per-class metrics, confusion matrices, bootstrap confidence intervals, and FLOPs/latency measurements, and discuss limitations including the single-dataset scope and simplified non-official SSM implementation.",
+      "topics": [
+        "Smart Agriculture and AI",
+        "Remote Sensing in Agriculture",
+        "Advanced Neural Network Applications"
+      ],
+      "keywords": [
+        "Distillation",
+        "Convolution (computer science)",
+        "Residual",
+        "Overhead (engineering)",
+        "Parameter space",
+        "Field (mathematics)",
+        "Pattern recognition (psychology)",
+        "State space",
+        "Contextual image classification"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.27278",
       "abstract": "Whole-slide images (WSIs) are central to computational pathology but are prohibitively large, making patch-based processing the practical unit for foundation model inference. At scale, however, generating and handling massive numbers of patches on quickly introduces significant I/O and orchestration overhead, often dominating end-to-end performance. We present a decoupled, I/O-aware pipeline for large-scale WSI embedding extraction that decomposes the workflow into three stages: (1) patch generation and staging, (2) embarrassingly parallel embedding inference, and (3) sharded vector database ingestion. This design isolates data movement from compute, enabling efficient patch delivery, scalable multi-node inference with minimal communication. The resulting system produces a distributed vector database where embeddings are persistently coupled with rich metadata (e.g., patient, slide, and patch attributes), enabling efficient filtering, retrieval, and downstream reuse. This representation database is compact and reusable for tasks such as retrieval, classification, and few-shot learning, particularly benefiting low-resource environments. We show that decoupling I/O, computation, and ingestion enables high-throughput WSI embedding extraction at scale. By characterizing the scaling envelope, we demonstrate that storage dominates beyond moderate concurrency, reframing WSI embedding extraction as a data-centric systems problem rather than a purely compute-bound workload.",
@@ -3614,138 +3742,6 @@
         "Stakeholder",
         "Commission",
         "Public policy"
-      ]
-    },
-    {
-      "id": "arxiv:2608.23941",
-      "abstract": "Pre-execution oversight is core to trusted monitoring in AI control: a fallible LLM monitor vets planned actions before irreversible execution. Over-blocking forfeits usefulness and pressures deployers to disable it. Every protocol must fix a unit of verification: how many actions one call reviews. Existing designs take the unit as given; its effect on fallible monitors is unmeasured. Natural traces cannot isolate it: review length co-varies with error type and position. Catch alone misleads: rejecting everything catches everything. Measuring this needs boundary variation alone and a matched clean control. We introduce the twin-prefix framework, which supplies both. Each gold plan yields a prefix with one injected, environment-accepted error and a clean twin differing in one write. Judging each pair at five nested lengths ties verdict changes to the unit alone. Discrimination is scored by pre-registered informedness, catch minus false rejection. Longer review raises catch; false rejection climbs in lockstep. Informedness peaks at one or two actions for all six judges in both domains: longer windows make zero-shot monitors more rejective, not more discriminative. Replaying withheld observations traces the failure largely to observation deprivation. Safety cases should state the unit and co-report the clean series. Our framework is the first controlled, pre-registered instrument for this choice and never reads catch alone. Our calibrated short unit recovers up to 0.95 informedness over eight-action review, and no tested label-blind policy consistently beats it.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Explainable Artificial Intelligence (XAI)",
-        "Adversarial Robustness in Machine Learning",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Unit (ring theory)",
-        "Core (optical fiber)",
-        "Plan (archaeology)",
-        "State (computer science)",
-        "Boundary (topology)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.24763",
-      "abstract": "Procedural video-language models must solve heterogeneous tasks from the same visual evidence, including action recognition, forecasting, and procedure prediction. Dense transformer decoders share the same feed-forward networks across tasks, which can entangle task behavior and make controlled capability expansion difficult. Sparse Mixture-of-Experts (MoE) decoders provide conditional computation, but token-level learned routing is not naturally aligned with task-level procedural objectives. We propose MoTE (Mixture of Task Experts), a decoder architecture that converts large language model feed-forward networks into task-specific experts while keeping the multimodal backbone shared. Each example follows one sample-level task route, so active task-expert computation remains independent of the number of stored task experts. We instantiate this design as VideoLLM-MoTE and evaluate it on five COIN benchmarks using explicit task routes. The five-expert model activates ~2B LLM parameters per sample and achieves higher average top-1 accuracy than recent VideoLLM baselines. Under the same expert topology, it improves over dense all-expert activation and learned sparse-routing controls. These results show that task-structured routing provides an interpretable and compute-efficient decoder alternative for multi-task video-language learning.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Human Pose and Action Recognition",
-        "Domain Adaptation and Few-Shot Learning"
-      ],
-      "keywords": [
-        "Task (project management)",
-        "Transformer",
-        "Computation",
-        "Routing (electronic design automation)",
-        "Decoding methods",
-        "Task analysis",
-        "ENCODE"
-      ]
-    },
-    {
-      "id": "arxiv:2608.24058",
-      "abstract": "Designed artifacts are ontological, shaping, and at times limiting, what becomes possible or imaginable. One path toward mitigating such foreclosures is giving people power over how systems are designed and built. Despite decades of scholarship around systems that enable such authorship, these systems are often evaluated on whether or not they are usable, useful, or technically feasible, leaving questions of ontological boundary negotiation, unexamined. We design two open-ended probes that utilize a Wizard of Oz technique to enable the experience of training a personalized machine learning system on phenomena people define themselves. In a week-long exploratory study, participants use one of two probes in the course of their everyday lives. We identify four sites where ontological boundaries were negotiated; the boundaries of a phenomena, the subject as part of relations, what is signal and what is noise, and the objectivity of data. We offer starting points for supporting boundary negotiation through design and discuss open-ended probes as a method for ontological design.",
-      "topics": [
-        "Innovative Human-Technology Interaction",
-        "Ethics and Social Impacts of AI",
-        "Mobile Crowdsensing and Crowdsourcing",
-        "cs.HC"
-      ],
-      "keywords": [
-        "Negotiation",
-        "Scholarship",
-        "Wizard",
-        "Objectivity (philosophy)",
-        "Subject (documents)",
-        "Boundary (topology)",
-        "Boundary object"
-      ]
-    },
-    {
-      "id": "arxiv:2608.23959",
-      "abstract": "Safety alignment in large language models (LLMs) remains brittle against a growing spectrum of attacks. Jailbreak attacks bypass safety mechanisms through crafted prompts, while neuron-level attacks directly prune safety-critical neurons post-deployment. Both exploit a common weakness: safety-relevant information concentrates in a sparse neuron subset. We present NeuronGuard, a fine-tuning-stage defense that simultaneously hardens LLMs against both attack classes by redistributing safety signals across a broader set of neurons. NeuronGuard dynamically identifies safety-critical neurons via periodically refreshed per-layer linear classifiers, forces refusal behavior under deliberate neuron ablation, and applies KL-divergence regularization for distributional consistency. A randomized gradient projection strategy preserves downstream task utility by resolving conflicts between the defense and task objectives. We provide a formal guarantee that NeuronGuard strictly reduces the attack success rate (ASR) upper bound, and experiments across three LLMs, six state-of-the-art attack strategies, and multimodal settings confirm near-zero ASR while maintaining task accuracy, including against white-box adaptive adversaries.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Topic Modeling",
-        "Explainable Artificial Intelligence (XAI)",
-        "cs.CR",
-        "cs.AI",
-        "cs.IR",
-        "cs.LG"
-      ],
-      "keywords": [
-        "Exploit",
-        "Task (project management)",
-        "Set (abstract data type)",
-        "Regularization (linguistics)",
-        "Robustness (evolution)",
-        "Redistribution (election)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.24534",
-      "abstract": "Clinical LLMs can generate recommendations that are factually plausible yet physiologically unsafe. We investigate whether safety alignment can be improved by grounding preference optimization in structured physiological knowledge rather than text-only supervision. Methods: We propose Neurosymbolic Alignment, a training-time framework that couples a 7B clinical LLM with an HGNN-based Physiological World Model over an 847K-node biomedical knowledge graph. Candidate responses are scored using homeostatic constraints, multi-hop path plausibility, and drug-interaction penalties, and the resulting rankings drive iterative on-policy ORPO updates. Evaluation is performed on the Clinical Safety Benchmark (CSB), a 2,500-scenario benchmark for physiological constraint violations in generative clinical reasoning. Results: Relative to ORPO, the proposed method improves CSS from 69.5% to 90.8% (+21.3 pp), reduces physician-evaluated HR from 14.1% to 5.1% on the blinded subset, and improves DID from 72.8% to 91.6%. These gains are corroborated by an HGNN-independent Rule-Engine Safety Score (RSS: 86.4%, +21.2 pp over ORPO; r=0.97 concordance with CSS). The method also exceeds GPT-4 (5-shot) on all safety metrics despite a 10x parameter disadvantage, and outperforms an inference-time self-correction pipeline (SFT+SelfCorrect) by 11.4 pp CSS. Under synthetic EHR-style noise, 84.2% CSS is retained. Ablation analysis shows that HGNN scoring (-16.2 pp) and iterative training (-11.5 pp) are the dominant contributors. PhysioScore calibration against 200 clinician labels yielded ECE = 0.038 and kappa = 0.91. Conclusion: Training-time physiological grounding produces measurable and independently verifiable safety improvements in open-weight clinical LLMs under controlled evaluation. External validation on real clinical data is required to determine whether these gains transfer to deployment settings",
-      "topics": [
-        "Machine Learning in Healthcare",
-        "Topic Modeling",
-        "Biomedical Text Mining and Ontologies",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Benchmark (surveying)",
-        "Pipeline (software)",
-        "Clinical trial",
-        "Constraint (computer-aided design)",
-        "Concordance",
-        "Calibration",
-        "Software deployment",
-        "Patient safety"
-      ]
-    },
-    {
-      "id": "openalex:W7204500770",
-      "abstract": "This project presents a longitudinal analysis of Human–AI relation formation based on interaction records from a single case. It examines how sustained Human–AI interaction becomes differentiated from isolated exchanges through history-dependent particularization, meaning-making, co-formulation, pair-level language, response differentiation, and continuity assessment.",
-      "topics": [
-        "Language and cultural evolution",
-        "Action Observation and Synchronization",
-        "Child and Animal Learning Development"
-      ],
-      "keywords": [
-        "Relation (database)",
-        "Pulse (music)",
-        "Component (thermodynamics)",
-        "Longitudinal study",
-        "Longitudinal data"
-      ]
-    },
-    {
-      "id": "arxiv:2608.24696",
-      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) and on-policy distillation (OPD) have become two widely adopted paradigms for post-training large language models. However, RLVR suffers from sparse task-level feedback, while OPD provides dense token-level guidance but ignores trajectory correctness, limiting its performance to that of the teacher. Combining them is a promising direction: OPD supplies dense supervisory signals, while RLVR provides task-level correctness. Nevertheless, existing integrations often rely on weighted combination or heuristic switching, introducing extra hyperparameters and trade-offs. We propose On-policy Distillation with Verifiable Reward (OPDVR), a simple yet effective method that seamlessly combines OPD and RLVR without adding any hyperparameters. We first reformulate the implicit reward of sampled-token OPD based on trajectory correctness, then apply a ReLU gating mechanism to ensure that correct trajectories receive non-negative rewards and incorrect ones receive non-positive rewards---thereby aligning the distillation signal with task success while preserving the teacher's distributional guidance. Furthermore, our modification transforms sampled-token OPD into a proper RLVR method, making it readily combinable with any policy gradient algorithm, such as GRPO. Experiments on six reasoning benchmarks show that OPDVR consistently outperforms standard OPD. Our code is available at https://github.com/LeapLabTHU/OPDVR.",
-      "topics": [
-        "Topic Modeling",
-        "Multimodal Machine Learning Applications",
-        "Natural Language Processing Techniques",
-        "cs.LG",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Verifiable secret sharing",
-        "Heuristic",
-        "Trajectory",
-        "Distillation",
-        "Simple (philosophy)",
-        "Limiting",
-        "Task (project management)",
-        "Reinforcement learning"
       ]
     }
   ]

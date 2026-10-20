@@ -1,7 +1,118 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-19T10:49:06.324Z",
+  "generatedAt": "2026-10-20T10:07:09.845Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.09294",
+      "abstract": "Rapid progress in AI agents has brought growing attention to agent safety, with extensive evaluation focused on digital environments. As agents move into the physical world, embodied safety becomes increasingly important: failures can cause human injury and costly hardware damage. Beyond selecting safe actions, embodied agents must also operate under real-time constraints: the physical world does not pause while an agent reasons. As pedestrians move and vehicles approach during inference, an action that appears safe at observation time may become unsafe before execution. Real-time embodied safety therefore depends on both decision quality and decision latency. We introduce RT-SAFE, a simulated urban benchmark for evaluating embodied-agent safety under real-time constraints. RT-SAFE combines navigation tasks with moving actors, environmental hazards, and traffic rules, while allowing the world to evolve throughout inference and action execution. Across eight VLMs, agents achieve high task completion yet almost never complete safely: in the hardest setting, only 0.7% of episodes finish without a safety event. More strikingly, matched static and real-time evaluations yield task completion rates of 91.3% and 94.1%, respectively, while real-time execution increases collisions by $12.3\\times$. These results reveal that standard task success can mask substantial safety failures, and that decision latency itself can become a source of physical risk. Finally, we show that RT-SAFE can support offline RL training and substantially reduce collision rates while achieving strong task completion.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Robot Manipulation and Learning",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": [
+        "real-time constraints",
+        "decision time",
+        "vision-language models",
+        "navigation",
+        "collision avoidance",
+        "offline reinforcement learning",
+        "dynamic environments",
+        "traffic rules"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.09660",
+      "abstract": "Automatic Short Answer Scoring (ASAS) requires models that can score student responses against question-specific criteria while remaining efficient and transferable across rubric sets. We propose RUSPAN, a rubric-conditioned ASAS framework that treats rubric descriptions as semantic label representations. RUSPAN serialises the question context, student answer, and all candidate rubric levels into a single sequence, then scores the levels listwise from the rubric-span and whole-sequence representations produced in a single LM pass. We further introduce RUSPAN-RIM, in which a Rubric-Independent Mask prevents rubric spans from attending to one another, making rubric representations depend only on the answer and question context and preventing overfitting to rubric patterns during training for zero-shot transfer. On six ASAS benchmarks spanning English, German, and Portuguese, RUSPAN improves mono-benchmark scoring over discriminative and generative baselines, while RIM with position reindexing delivers consistent and substantial gains on PT-ASAG, the held-out benchmark with the strongest combined language and rubric-structure shift.",
+      "topics": [
+        "Educational Technology and Assessment",
+        "Topic Modeling",
+        "Intelligent Tutoring Systems and Adaptive Learning"
+      ],
+      "keywords": [
+        "rubric-based assessment",
+        "zero-shot transfer",
+        "student response evaluation"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.09600",
+      "abstract": "Safety interpretability advances the study of Large Language Model (LLM) alignment from behavioral constraints driven by data or algorithms towards a deeper understanding of internal mechanisms. However, existing works have focused primarily on safety-related representations, attention heads, or neurons after alignment, while largely overlooking the safety mechanisms in pretrained-only models and their evolution across alignment checkpoints. To address this, we propose SafeEvo, an interpretability framework from the circuit (sparse subgraphs of an LLM) perspective. SafeEvo first applies an optimization-based extraction algorithm to identify weak refusal circuits in pretrained base LLMs that can independently express refusal behavior. Causally ablating these circuits completely eliminates the base model's refusal of harmful inputs. SafeEvo then traces the evolution of refusal circuits across successive alignment checkpoints and finds that their structures change progressively, suggesting that the alignment tax may result from refusal-circuit updates affecting utility-related parameters. To validate this, SafeEvo introduces Safety Circuit Alignment (SCA), which confines safety updates to the refusal circuits. Experiments across three LLMs and two alignment algorithms show that, on average, SCA outperforms vanilla alignment in three aspects: \\textbf{(1) stronger alignment}, lowering harmfulness score by 63.21\\%; \\textbf{(2) less over-refusal}, yielding a 58.44\\% decrease in refusal rates for benign queries; and \\textbf{(3) better utility}, retaining 99.58\\% of the original model capabilities.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "over-refusal",
+        "utility preservation"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.09665",
+      "abstract": "On-policy post-training can improve large language models by learning from their own trajectories, but requires costly rollout generation. We ask whether fixed demonstrations can support competitive off-policy learning through better supervision. Our premise is that their usefulness depends not only on the training trajectories, but also on whether supervision provides informative preferences among continuations and connects this guidance to the reasoning decision being learned. We introduce Step-Aligned Privileged Distillation (SAPD), a rollout-free self-distillation method that turns demonstrations into step-aligned distributional supervision. Its key insight is to use the known progression of a reference solution to associate each reasoning transition with targeted privileged guidance, rather than treating the solution as undifferentiated context. On mathematical reasoning benchmarks, SAPD outperforms supervised fine-tuning and label smoothing on average while remaining competitive with on-policy reinforcement learning and self-distillation. Analyses support both the value of context-dependent distributional guidance and the benefit of aligning privileged information with the current step. SAPD also largely preserves out-of-domain coding performance and achieves approximately 2x training-loop speedups over the on-policy baselines. These findings suggest that carefully constructed supervision can make fully off-policy post-training a competitive and computationally efficient alternative. Our code is available at https://github.com/Miaow-Lab/SAPD.",
+      "topics": [
+        "Topic Modeling",
+        "Domain Adaptation and Few-Shot Learning",
+        "Machine Learning and Algorithms"
+      ],
+      "keywords": [
+        "self-distillation",
+        "demonstrations",
+        "mathematical reasoning",
+        "large language models",
+        "label smoothing"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.09382",
+      "abstract": "Scribble-based interaction provides a lightweight and intuitive way for users to specify image editing intents in interactive editing tools. However, current image editing models based on VLMs or LLMs struggle to understand and execute edits based solely on scribble inputs. To systematically study this problem, we construct a new benchmark, ScribbleEdit, that evaluates the ability of image editing models to perform image editing conditioned on scribbles. This task requires both a deep understanding of the intention of the scribble and an accurate interpretation of its spatial information. In ScribbleEdit, we design an automated data construction pipeline and introduce a dedicated evaluation protocol that explicitly measures intention alignment. Our analysis reveals that existing VLM/LLM-based editing models fail to accurately capture scribble intentions. To guide future progress on scribble-only image editing, we propose a simple yet effective soft-token baseline, which enhances the model's understanding of scribble semantics and outperforms standard image editing models on our benchmark. Our evaluation and baseline together provide a concrete foundation for assessing and improving the scribble-driven image editing.",
+      "topics": [
+        "Generative Adversarial Networks and Image Synthesis",
+        "Multimodal Machine Learning Applications",
+        "Advanced Neural Network Applications"
+      ],
+      "keywords": [
+        "vision-language models",
+        "large language models",
+        "interactive image editing"
+      ]
+    },
+    {
+      "id": "doi:10.69849/qmd37f54",
+      "abstract": "Public safety increasingly requires police institutions to combine visible policing, intelligence, community prevention, technology, and permanent response capacity. In the context of the Pará Military Police (PMPA), the state’s vast territory, regional differences, the dynamics of property and violent crime, and the physical and psychological demands of police work make isolated or exclusively reactive responses insufficient. This study aims to analyze recent evidence related to public safety in Pará and to propose a strategic matrix applicable to both operational and administrative activities of the PMPA, integrating territorial diagnosis, focused visible policing, community prevention, interinstitutional coordination, occupational health, and performance monitoring. This is an applied, descriptive, and exploratory qualitative study based on bibliographic review and documentary analysis. The corpus comprised scientific articles published between 2025 and 2026, institutional documents from the Government of Pará, PMPA, SEGUP-PA and municipal agencies, as well as the Brazilian Federal Constitution and reference works on citizen-centered public safety. Thematic analysis identified five recurring axes: intelligence and territorial crime analysis; evidence-oriented operational deployment; prevention and community proximity; physical and psychological readiness of police personnel; and governance supported by technology, indicators, and continuous review. As an applied result, the study proposes the Integrated Public Safety and Operational Readiness Matrix for the PMPA (MISPRO-PMPA), organized around cycles of diagnosis, decision, execution, personnel protection, and evaluation. It concludes that institutional effectiveness tends to improve when crime data, police health, social prevention, and technology are no longer treated as separate agendas and are integrated into measurable, territorialized, and continuously evaluated objectives.",
+      "topics": [
+        "Policing Practices and Perceptions",
+        "Criminal Justice and Penology",
+        "Crime Patterns and Interventions"
+      ],
+      "keywords": [
+        "Pará Military Police",
+        "strategic matrix",
+        "territorial policing",
+        "community-based prevention",
+        "operational readiness",
+        "police intelligence",
+        "crime analysis",
+        "inter-institutional coordination",
+        "performance monitoring",
+        "crime statistics",
+        "police technology",
+        "Pará"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.09981",
+      "abstract": "LLM routers pick a cheap or expensive model per request by its content, and many gateways and some cloud platforms can log that choice with content logging off. We measure this privacy channel beyond token counts, accounting for noisy labels and repeated prompts. We run pre-registered studies on 1.7 million real requests (WildChat-1M, LMSYS-Chat-1M) with two cost/quality routers and a domain router, survey eleven systems' logging, and test post-processing defenses. At matched length, the shift's direction depends on category and router. For RouteLLM at the 50% operating point, harassment and self-harm requests reach the strong model 19 points less often than comparable ones on prompts unseen in exploration, medical requests (exploratory: LLM labels failed their gate) 31 points less often on distinct prompts (both post hoc), and sexual requests 10 points more often (secondary); the other router's four are negative. Twenty RouteLLM decisions separate frequent medical askers with AUC 0.71, exploratory and below the pre-registered primary endpoint's 0.75 (domain router: 0.92, an upper estimate). Per-category length-matched parity with accurate labels removes the gap on real traffic, costing at most 0.2 accuracy points on RouterBench (post hoc), where routers' gaps on sensitive subjects (13-42 points, pre-registered) exceed those of an oracle routing by realized accuracy gain (1-11, post hoc). Per-conversation stickiness, per-user budget bands, and pooled parity fail, the last as categories' shifts differ in size or sign. A post hoc exact per-user rate hides only even-prefix strong counts and forfeits most self-assessed routing value; it preserves odd-position decisions, from which a post hoc log attack reaches AUC 0.73 after 20 RouteLLM requests (exploratory).",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Privacy, Security, and Data Protection",
+        "Internet Traffic Analysis and Secure E-voting"
+      ],
+      "keywords": [
+        "privacy leakage"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2610.09611",
       "abstract": "Large neural networks often acquire capabilities that small models fail to learn. Does this stem from large models learning more representative features, or from being more robust to unaccounted-for adverse effects introduced during training? We define and quantify one such adverse effect, primacy bias, as the extent to which exposure to early data distributions impairs later learning. We show that small models can allocate learning capacity inefficiently toward early distributions, whereas sufficiently overparameterized models are robust to this effect. This inefficiency is particularly consequential in pretraining, where foundation models often encounter heterogeneous data distributions sequentially rather than jointly. As a result, small foundation models can struggle to learn distributions encountered late in training, which is particularly harmful when later data emphasizes desirable capabilities such as code, mathematics, and reasoning. Motivated by these findings, we introduce Exposure Therapy (ET), a simple regularization that promotes more efficient allocation of learning capacity during sequential pretraining. We demonstrate that ET improves foundation models' performance on late data distributions as well as overall capability in models up to the billion-parameter scale. Overall, our results suggest that some benefits of large foundation models may arise from greater robustness to adverse training effects, rather than from learning more representative features, and that improved training algorithms can recover some of these advantages in smaller models.",
@@ -3034,102 +3145,6 @@
         "Technology Adoption and User Behaviour",
         "FinTech, Crowdfunding, Digital Finance",
         "Financial Literacy and Behavior"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.64336/001c.172151",
-      "abstract": "Artificial intelligence is reshaping genetic healthcare through increasingly sophisticated approaches to variant interpretation, disease prediction, biomarker discovery, gene editing, and precision therapeutics. Yet these applications remain fragmented, often treating genomic and clinical information as static observations rather than components of biological systems that evolve during disease. This review connects current AI capabilities with a next-generation model of adaptive genomic medicine integrating longitudinal multi-omics, clinical and environmental data, explainable AI, federated learning, network-level biomarkers, and continuous outcome feedback. We extend this framework beyond conventional genomic prediction by considering pathway interactions, compensatory biological redundancy, network reorganization, and cross-system changes as potentially informative features of disease progression. We further propose longitudinal approaches for tracking changing biological relationships and resilience before conventional biomarkers become abnormal. Together, these concepts reposition genomic AI from a collection of predictive tools toward a dynamic systems-level framework capable of learning how disease evolves, anticipating state transitions, and supporting increasingly individualized clinical intervention.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Genomics and Rare Diseases",
-        "Machine Learning in Healthcare"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.62486/sai2026103",
-      "abstract": "Introduction: artificial intelligence (AI) is reshaping how diseases are diagnosed, treated and monitored, integrating machine learning, deep learning and natural language processing into the analysis of large volumes of clinical data. Objective: to comprehensively analyze the impact of artificial intelligence on medicine, examining its main diagnostic, therapeutic and clinical-management applications, as well as the challenges, limitations and ethical considerations that condition its safe, equitable and patient-centered integration. Development: AI has matured most in medical imaging, oncology and precision medicine, complementing rather than replacing clinical judgment; randomized evidence in cardiology shows improved workflow efficiency and reduced adverse events, including all-cause mortality. Implementation nonetheless faces technical, organizational and social barriers—data quality and interoperability, lack of explainability, algorithmic bias, and gaps in clinician training—alongside ethical and regulatory challenges regarding privacy, accountability and informed consent. Conclusions: AI offers considerable potential to reduce costs, increase diagnostic accuracy, personalize care and expand access to quality services, provided its deployment overcomes technical, ethical and regulatory barriers through proactive, adaptive and patient-centered governance.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Artificial Intelligence in Healthcare",
-        "Artificial Intelligence Applications"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.18794/aams/240194",
-      "abstract": "The evolution of artificial intelligence (AI) and large language models (LLMs) is updating medical and neurosurgical education. This narrative review provides an updated synthesis of recent applications of AI in neurosurgical education, with particular emphasis on LLMs, knowledge assessment, simulation-based training, automated competency evaluation, and implementation risks. Through machine learning, deep learning, and virtual reality systems, AI enables personalized, adaptive learning pathways, 24/7 on-demand academic assistance, and objective, data-driven competency evaluations in risk-free environments. In neurosurgery, intelligent surgical simulators and automated 3D spatial planning tools optimize technical execution and track procedural metrics. Generative AI streamlines curriculum design, literature synthesis, and examination drafting. However, the adoption of foundation models introduces critical limitations and risks. These systems remain vulnerable to hallucinations, logic confabulations, and fabricated bibliographic citations, which pose risks in high-stakes clinical contexts. Excessive dependence on AI can cause cognitive fatigue, diminish independent critical thinking, and elevate risks related to academic plagiarism, algorithmic bias, and data privacy. To address these challenges, continuous human verification is required. AI should function as a supportive, transparent assistant of human clinical judgment, ensuring that technological innovation reinforces core values of medical practice and patient safety.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Surgical Simulation and Training",
-        "Artificial Intelligence in Education"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23187945",
-      "abstract": "Abstract: Artificial intelligence (AI) has emerged as one of the most transformative forces in contemporary education, reshaping how knowledge is delivered, assessed, and personalized. This literature review examines the evolution, applications, benefits, and challenges of AI in teaching and learning contexts. Drawing on peer-reviewed research and institutional reports published between 2016 and 2024, the review identifies four principal areas of AI application: intelligent tutoring systems, automated assessment and feedback mechanisms, learning analytics, and generative AI for content creation. The findings reveal that AI holds significant promise for enhancing personalized learning, improving student engagement, and reducing educator workloads. However, critical challenges persist, including concerns about data privacy, algorithmic bias, the digital divide, and the potential erosion of the teacher-student relationship. The review concludes that while AI is unlikely to replace human educators, its thoughtful integration can substantially enrich educational outcomes when guided by ethical frameworks and pedagogical best practices.",
-      "topics": [
-        "Artificial Intelligence in Education",
-        "Intelligent Tutoring Systems and Adaptive Learning",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.12688/openreseurope.23500.2",
-      "abstract": "The rapid integration of artificial intelligence (AI) tools into English language education has created new demands on teachers, who must navigate both the potential and limitations of these technologies. This exploratory descriptive survey examines English as a Foreign Language (EFL) teachers’ perceptions of AI tools, focusing on usage practices, perceived opportunities, challenges, and professional development needs. Drawing on the Technology Acceptance Model and an AI-TPACK perspective, a questionnaire was distributed to 28 EFL teachers working across multiple educational levels and international contexts. Closed ended items addressed AI use, perceived educational value, confidence, training, and concerns, while three open ended questions elicited explanations of perceived benefits, challenges, and support needs. The findings show that teachers overwhelmingly use ChatGPT (89.3 percent) and value AI primarily for lesson planning efficiency and learning personalization, with about two-thirds agreeing that AI makes planning more efficient and supports tailored activities. At the same time, substantial proportions report concerns about ethical issues, student overreliance on AI, and the accuracy of AI-generated content, each cited by roughly two-thirds of respondents. Although most participants reported confidence in using AI tools, fewer considered the training they had received sufficient, indicating a descriptive discrepancy between reported confidence and perceived training adequacy. The qualitative analysis highlights a dual identity in teacher discourse, where AI is framed both as a powerful productivity assistant and as a potential threat to pedagogical autonomy and student creativity. TAM and AI-TPACK are used as complementary interpretive perspectives rather than as models tested by the study. It offers practical implications for AI-focused professional development, institutional policy, and the design of teacher-centered AI integration frameworks.",
-      "topics": [
-        "Artificial Intelligence in Education",
-        "English Language Learning and Teaching",
-        "EFL/ESL Teaching and Learning"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.20944/preprints202609.0069.v1",
-      "abstract": "Background: Antimicrobial resistance (AMR) is a major global health threat, while conventional diagnostic, stewardship, dosing, and drug-development strategies remain limited by diagnostic delays, population-level decision-making, and a shrinking antibiotic pipeline. Artificial intelligence (AI) may help address these gaps by integrating complex clinical, microbiological, genomic, pharmacological, and chemical data. Methods: We conducted a narrative review of English-language publications issued between January 2010 and March 2026. PubMed/MEDLINE, Scopus, and Web of Science were searched using terms related to AI, machine learning, AMR, antimicrobial stewardship, diagnosis, susceptibility prediction, antibiotic dosing, pharmacokinetics, pharmacodynamics, and antibiotic discovery. ClinicalTrials.gov, the World Health Organization International Clinical Trials Registry Platform, and ISRCTN were additionally searched on 27 August 2026 for prospective interventional studies registered or publicly available by 31 March 2026. Results: AI-based systems demonstrated promising performance in differentiating bacterial from viral infections, predicting bacteremia and sepsis, enhancing matrix-assisted laser desorption/ionization time-of-flight interpretation, estimating antimicrobial susceptibility, supporting individualized empirical therapy, optimizing antibiotic dosing, and accelerating compound discovery. However, external and temporal validation frequently produced substantially poorer performance than internal validation. In representative resistance-prediction studies, AUROC declined from 0.94 internally to 0.55 during temporally independent external validation and by 0.10–0.25 over 18 months. Moreover, only six eligible prospective interventional studies were identified across the four domains examined: two concerning AI-assisted diagnosis or antibiotic-use decisions, three concerning resistance prediction or stewardship, one concerning model-informed precision dosing, and none concerning AI-assisted antibiotic discovery. Conclusions: Current evidence demonstrates that AI can generate technically promising predictions, but it does not yet establish consistent clinical or economic benefit. Discrimination alone is insufficient to demonstrate clinical usefulness. Prospective multicenter trials, clinically meaningful outcome measures, external validation, continuous monitoring for model drift, and formal implementation and cost-effectiveness evaluations are required before widespread adoption.",
-      "topics": [
-        "Antibiotic Use and Resistance",
-        "Artificial Intelligence in Healthcare and Education",
-        "Bacterial Identification and Susceptibility Testing",
-        "Sepsis Diagnosis and Treatment",
-        "Computational Drug Discovery Methods"
-      ],
-      "keywords": [
-        "antimicrobial resistance",
-        "artificial intelligence",
-        "machine learning",
-        "antimicrobial susceptibility prediction",
-        "precision dosing",
-        "pharmacokinetics",
-        "pharmacodynamics",
-        "antibiotic discovery",
-        "antimicrobial stewardship",
-        "sepsis prediction",
-        "bacteremia",
-        "bacterial versus viral infection differentiation",
-        "empirical treatment",
-        "external validation",
-        "model drift",
-        "cost-effectiveness",
-        "Antibiotic resistance",
-        "Antibiotics",
-        "Clinical microbiology",
-        "Antimicrobial",
-        "MEDLINE",
-        "Narrative review",
-        "Clinical trial"
-      ]
-    },
-    {
-      "id": "doi:10.1201/9781003542834-1",
-      "abstract": "Artificial Intelligence (AI) is revolutionizing mental health care by enhancing diagnosis and treatment processes. AI-driven tools leverage machine learning, natural language processing (NLP), and predictive analytics to identify mental health conditions with improved accuracy and efficiency. These technologies analyse data from diverse sources, such as electronic health records, patient self-reports, voice patterns, and wearable devices, to detect signs of conditions like depression, anxiety, and bipolar disorder. By interpreting subtle patterns often imperceptible to clinicians, AI can facilitate early intervention and personalized treatment plans. Virtual mental health assistants, powered by AI, provide real-time support through conversational interfaces, offering therapy techniques such as cognitive-behavioural interventions. Furthermore, AI models help optimize pharmacological treatments by predicting individual responses to medications, reducing the trial-and-error process commonly associated with psychopharmacology. AI also aids in remote monitoring, allowing clinicians to track patient progress and intervene proactively in cases of relapse risk. Despite its promise, integrating AI into mental health care raises ethical and practical challenges, including data privacy, algorithmic bias, and the need for clinical validation. Moreover, AI should complement, not replace, human empathy and professional judgment, as the therapeutic alliance remains critical in mental health care. As AI technologies continue to evolve, their potential to transform mental health diagnosis and treatment is immense, promising greater accessibility, precision, and efficacy in addressing the global mental health crisis. Collaborative efforts between technologists, clinicians, and policymakers are essential to ensure responsible deployment and equitable access to these innovative tools. It is essential to understand the difference between a few terminologies that we will use in this chapter, Artificial Intelligence (AI) which is a broad field of computer science focused on creating systems that are capable of performing functions or tasks that typically require human intelligence. Machine Learning (ML) is a subset of AI that enables machines to learn from data and improve their performance over time without being explicitly programmed. Deep Learning (DL), in turn, is a specialized branch of ML that uses neural networks with multiple layers to model complex patterns in large datasets, such as image and speech recognition. In essence, DL ⊂ ML ⊂ AI, with each field becoming more focused and data-intensive.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Digital Mental Health Interventions",
-        "Artificial Intelligence in Healthcare"
       ],
       "keywords": []
     }

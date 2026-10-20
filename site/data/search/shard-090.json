@@ -1,7 +1,68 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-19T10:49:06.324Z",
+  "generatedAt": "2026-10-20T10:07:09.845Z",
   "documents": [
+    {
+      "id": "arxiv:2608.01763",
+      "abstract": "Large language models are increasingly used to reason about software vulnerabilities, but their outputs can silently violate domain knowledge, limiting their reliability in safety-critical settings such as medical devices. Prior work either treats that output as a prediction to be scored or constrains it to walks within a single knowledge graph; neither checks whether reasoning over a binary is consistent with an independent body of domain knowledge. We present EntailLLM, which validates each LLM-proposed analyst path by entailment: the path is a traversal of the binary's function call graph, the domain knowledge is represented in a separate graph, and verification aligns the two under temporal annotated logic. Across three CWE classes, four LLMs, three prompting strategies, and seven binaries varying in size from 405 to 12,696 function call-graph nodes, domain knowledge raises pooled entailment from 78% to 98%, with entailment decreasing in only 3% of the experiments. EntailLLM is deployed end-to-end on real medical-device binaries, reaching 98% pooled entailment without per-device tuning. Our system inherits the formal guarantees of generalized annotated logic, providing logical verification of LLM output that is both explainable and grounded in well-defined semantics.",
+      "topics": [
+        "cs.CR",
+        "cs.AI",
+        "cs.LO",
+        "cs.SE"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.02966",
+      "abstract": "Most multiple-choice question (MCQ) benchmarks evaluate Large Language Models (LLMs) only by whether they select the correct answers. This binary scoring treats all incorrect responses alike, even though an LLM's preferences among incorrect options may contain systematic and useful information about its behavior and ability. We introduce the LLM Nominal Response Model (LLM-NRM), an option-aware psychometric framework that models the full distribution over answer choices to jointly estimate LLM ability and option-level item characteristics, while separating model-specific response calibration sharpness, positional preference, and difficulty-dependent fallback behavior. Across 189 LLMs and 31,554 items from 14 benchmarks, LLM-NRM predicts held-out LLM-item interactions more accurately than binary Item Response models and conventional nominal-response baselines, and its ability estimates achieve the strongest Spearman correlation of 0.920 with the external human-preference Arena.ai Elo leaderboard. Distractor identity contributes +101% additional Fisher Information per item beyond correctness, and incorrect responses alone recover full-information ability estimates with Spearman 0.943. The learned item parameters also enable efficient benchmarking, where 41 selected items preserve the full-bank ranking with Kendall's correlation 0.85, corresponding to a 770 times reduction. In conclusion, we show that incorrect answers carry distinct and useful measurement information rather than representing equivalent mistakes.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.02005",
+      "abstract": "Learning to adapt strategies through interaction is a key step toward more general and autonomous LLM agents. Existing approaches typically achieve behavioral adaptation by revising skill libraries. However, in multi-agent environments, opponents may simultaneously update their strategies, causing the environment itself to evolve continuously. Applying skill-revision methods designed for static environments in such settings therefore amounts to updating against an obsolete reference. To address this challenge, we introduce OASE (Opponent-Aware Selective Evolution), which identifies and adopts genuinely beneficial skill revisions in dynamic multi-agent environments. Specifically, OASE conducts paired comparisons between a candidate skill and the incumbent under identical conditions anchored by historical snapshots of opponent strategies, and adopts the candidate only when its estimated payoff gain exceeds an acceptance threshold. We evaluate OASE in two decision-making scenarios: first-price auctions and private-cost Cournot competition. Experimental results show that, compared with a Reflexion-style baseline, OASE achieves a lower final equilibrium distance in both environments while accepting substantially fewer skill revisions, thereby suppressing strategy changes that lack sufficient payoff support. OASE therefore replaces blind updating with evidence-anchored selection, allowing agents to adapt stably and efficiently even as opponents continuously evolve.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.02939",
+      "abstract": "Electronic health record foundation models are limited by institutionally siloed data and substantial performance degradation under cross-site transfer. We evaluated federated training of tokenized generative event models (GEMs) across 122,251 intensive care hospitalizations from three independent health systems harmonized to the Common Longitudinal ICU Data Format. Models were assessed on 12 post-24-hour clinical prediction tasks using within-site, cross-site, centralized, and federated training configurations. GEMs achieved the highest mean within-site and cross-site ROC-AUC and were substantially more transportable than conventional supervised models: their average cross-site penalties were 0.025 ROC-AUC and 0.027 PR-AUC, compared with 0.079 and 0.089 for LightGBM. Federated Learning (FedAvg and FedAvgM) approached the performance of centralized GEM training, with most gains obtained within 5-10 communication rounds. However, centralized multi-site training provided only modest improvements over complete local training. Multi-site models were most useful when local training data were limited, with their advantage narrowing as institutional data accumulated. These findings show that federated GEM training is technically feasible and preserves most centralized performance, but that the main open challenge is learning transportable representations to translate larger, but heterogeneous data from multiple health systems into a reliable target-site benefit.",
+      "topics": [
+        "cs.LG",
+        "cs.CY"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.01561",
+      "abstract": "Large language model (LLM) agents learn world dynamics from local interaction experience to support subsequent planning and action selection. However, the experience available to a single client is often incomplete, which motivates sharing knowledge across clients. Existing federated methods mainly aggregate model parameters, while agent memory-sharing methods commonly pool trajectories, memories, or rules without checking whether they remain valid for each client. This assumption is problematic because the same abstract action may produce different effects under different policies, environments, or exception conditions. Consequently, a rule supported by most clients may overwrite correct knowledge held by a minority client. To address this problem, we propose FEDWORLD, a scope-aware federated world-model protocol that exchanges structured abstract transition rules. Each client converts private transitions into normalized rules, and the server aligns related rules to identify each rule supporting and contradicting evidence across clients. The resulting evidence determines whether a rule is shared, cluster-specific, private, or unresolved. Each target client retains its local rules and accepts federated updates only for uncovered cases whose inferred scope is compatible; ambiguous rules are withheld. Experiments on $τ$-bench and ALFWorld show that FEDWORLD reduces negative transfer under conflicting dynamics while retaining useful cross-client transfer, leading to fewer state regressions, repeated actions, and excess steps, as well as higher task success.",
+      "topics": [
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.01663",
+      "abstract": "Promptable segmentation foundation models (FMs) such as SAM3 and Medical SAM3 promise few-shot, interactively-specified segmentation for medical imaging through a natural language interface, yet their performance on clinical tasks falls well short of this promise. We posit that this shortfall is not an artefact of insufficient medical pretraining or imperfect prompt phrasing, but a structural limitation that will persist in any domain where paired image-text supervision is scarce, as it is across most clinical modalities. We further hypothesize that the limitation is specific to natural language as a control signal: a visually grounded prompt, learned directly from the target distribution, should recover the lost performance without additional image-text data or backbone retraining. We propose Few-Shot Concept Prompt Learning (FS-CPL), which learns a continuous concept prompt embedding $\\mathbf{p}^* \\in \\mathbb{R}^{T \\times d}$ from a small support set of $K$ image--mask pairs via mask supervision, with the encoder-decoder backbone frozen. Across four public benchmarks spanning ultrasound and endoscopy (BUSI, HC18, TN3K, CVC-Clinic), FS-CPL delivers absolute Dice improvements of up to $+0.62$ over canonical text prompts and is \\emph{backbone-agnostic}: it lifts both vanilla SAM3 and the domain-specifically pretrained Medical SAM3, showing that visual concept prompting is complementary to in-domain pretraining.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.02919",
+      "abstract": "Large language models (LLMs) are increasingly deployed in complex, compound AI systems where performance hinges on the quality of prompts. Recent state-of-the-art optimizers like GEPA (Genetic-Pareto) have argued that reflective instruction evolution can outperform traditional reinforcement learning and few-shot optimization. In this work, we challenge this shift by introducing FLARE (Few-shot Learning-based Adaptive Reflective Engine), a framework that leverages advanced reflective mechanisms and a small set of few-shot reference examples to optimize instructions. We evaluate our method across a diverse suite of benchmarks -- spanning retrieval-augmented reasoning (HotPotQA, MedQA, 2WikiMultiHopQA), tool calling, and multi-label emotion classification (GoEmotions) -- using the GPT-5 series of models. Our results demonstrate that FLARE consistently outperforms GEPA, winning on every task-model pair: it achieves gains of up to +14.2 points on HotPotQA (52.2 vs. GEPA's 42.2 with GPT-5-Chat), reaches 87.0% on tool calling (vs. 81.0% for GEPA), and lifts GoEmotions micro-F1 to 52.7% (+15.3) with GPT-5.1 on the full 5408-example test split, more than doubling GEPA's +5.7 gain. Beyond raw accuracy, FLARE is also strikingly data-efficient: on GoEmotions it reaches its peak performance using as few as 100 validation examples, while remaining markedly more stable across random seeds than GEPA. Our findings suggest that while reflective instructions are powerful, the strategic optimization of few-shot learning remains a critical frontier for maximizing the potential of next-generation LLMs.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.01847",
       "abstract": "Large language models (LLMs) achieve remarkable performance but are expensive to deploy due to their enormous size. FP4 quantization, with formats such as MXFP4 and NVFP4, offers an appealing solution with native hardware support on modern accelerators. However, maintaining accuracy under FP4 precision remains difficult. A key bottleneck lies in scale optimization: existing methods tightly couple the quantization and dequantization scales, forcing both to conform to the discrete low-precision format required by hardware, such as E8M0 in MXFP4. Yet the quantization scale is never stored and need not obey this constraint, suggesting a significant untapped optimization space. In this work, we propose FOCUS, a post-training quantization framework with end-to-end scale learning for FP4 Optimization via Coupled-Relaxation and Dual-Granularity Scaling. Coupled-Relaxation Scaling (CRS) relaxes the tight coupling between quantization and dequantization scales with a learnable full-precision coefficient, enabling more effective optimization without breaking hardware compliance. Dual-Granularity Scaling (DGS) further refines the quantization scale at a finer sub-block granularity, allowing more precise adaptation to local weight distributions. Experiments across multiple LLM families and benchmarks show that FOCUS achieves state-of-the-art FP4 accuracy under both MXFP4 and NVFP4 formats, while introducing no additional inference overhead. Code and quantized models will be released at https://github.com/tencent/AngelSlim.",
@@ -1796,71 +1857,6 @@
     {
       "id": "arxiv:2607.28203",
       "abstract": "Students differ in how they prefer to engage with learning resources, with some favoring textual materials and others visual or video-based content. Recent advances in generative AI have led CS education research to focus on text-based AI tools for developing learning resources. However, advances in AI video models and the rapid proliferation of AI video generation tools have made it possible for instructors to create high-quality personalized educational videos efficiently and cost-effectively. Understanding students' perceptions of AI-generated videos is thus critical for helping CS instructors know when and how to use them purposefully. To address this gap, we conducted a descriptive post-test survey study in which 170 computing students at two U.S. institutions watched three 3-minute AI videos on the Markdown markup language created with Knowlify. Students then completed a survey about their perceptions of the Markdown videos and their broader views on the use of AI-generated videos in education. Students rated the Markdown videos as high-quality, accurate, and usable, with nearly half unable to determine whether the videos were AI-generated. At the same time, students expressed limited comfort with the widespread adoption of AI videos in the classroom. They preferred AI videos for simple, supplemental, and visual use cases, while expressing concerns about lower-quality or inaccurate content, reduced instructor interaction, and diminished educational value.",
-      "topics": [
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27973",
-      "abstract": "Recently, Reinforcement Learning (RL) has emerged as a crucial paradigm for the post-training of Large Language Model (LLM) agents. However, existing methods predominantly rely on sparse task rewards for policy optimization, failing to fully exploit another class of inherently dense supervisory signals naturally present during online interaction: environmental feedback following action execution. Recent theoretical studies suggest that generalization in multi-step, goal-oriented tasks hinges on predictive knowledge of environmental consequences. Inspired by this, we propose TAPO: Transition-Aware Policy Optimization for LLM Agents, a unified training framework that alternates between policy optimization and transition supervision. Beyond standard RL updates, TAPO repurposes rollout data to apply action-conditioned next-observation prediction supervision on a shared backbone model. This approach enhances the model's sensitivity to environmental transition dynamics and action consequences while concurrently optimizing the policy. It serves as a computationally lightweight, plug-and-play enhancement module for existing agent RL algorithms, requiring no additional expert data, extra sampling costs, or inference-time overhead. We conduct systematic experiments on WebShop and ALFWorld, integrating foundation models of various scales with different policy optimization algorithms. Empirical results demonstrate that TAPO consistently improves task performance over pure policy optimization baselines.",
-      "topics": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.28498",
-      "abstract": "Scientific hypothesis generation for AI for Science typically involves Scientific Inspiration Retrieval (SIR) followed by hypothesis composition. Existing SIR methods rank papers by topical similarity and do not explicitly represent how a candidate inspiration transfers to a target problem. This is especially limiting for remote inspirations, whose value often lies in reusable problem-solving principles rather than topical overlap. Motivated by how humans abstract transferable aspects of a source and remap them to a new target, we reformulate SIR as target-conditioned abstraction (TCA). The retrieval object is a transferable abstract principle extracted from a candidate specifically for the target. We present TCA-SIR, which learns to generate target-conditioned abstractions and uses their representations to predict transferability. On ResearchBench, TCA-SIR outperforms prior SIR methods and direct LLM retrieval, improving HitRate@top4% over MOOSE-Chem by more than 10 percentage points. Learned abstractions also recover target-relevant mechanisms more clearly than an untrained TCA prompt, yielding both stronger retrieval and an interpretable rationale for scientific inspiration.",
-      "topics": [
-        "cs.IR",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.28687",
-      "abstract": "As populations age, cognitive decline from mild cognitive impairment (MCI) to dementia is a defining health challenge of the coming decades, yet routine assessment often misses its earliest signs. This article critically synthesizes recent technological advances for detecting and managing cognitive impairment in older adults, spanning neurophysiological signals (chiefly electroencephalography, EEG), structural and molecular neuroimaging (MRI and amyloid/tau PET), blood-based biomarkers, and digital markers, integrated through artificial intelligence (AI), machine learning (ML), and deep learning (DL). Beyond summarizing, it contributes a cross-disciplinary taxonomy, a methodological-rigor lens foregrounding subject- and site-independent validation, an integrative early-detection framework linking tiered screening to intervention, and comparison tables of detection methods, interventions, and risk and protective factors. EEG markers (alpha/theta changes, P300 latency) and deep models (CNNs, LSTM/BiLSTM, transformers, self-supervised EEG foundation models) report strong accuracy, yet many rest on small, single-site datasets unlikely to survive rigorous external validation. Elsewhere, gains are tangible: plasma p-tau217 has reached clinical utility, with the first blood test cleared to aid Alzheimer's diagnosis in 2025; anti-amyloid therapies (lecanemab, donanemab) are approved despite modest, contested benefits; and multidomain lifestyle prevention has matured. Wearable, remote, speech, and virtual-reality tools enable continuous, ecologically valid monitoring, and multimodal fusion improves sensitivity and specificity. Barriers remain: standardization, explainability, data privacy, and equitable, externally validated deployment. The field's near-term promise lies in trustworthy, multimodal, longitudinally validated systems linking early detection to actionable, personalized care.",
-      "topics": [
-        "cs.LG",
-        "cs.AI",
-        "cs.ET"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27731",
-      "abstract": "Modern deep learning typically keeps the batch size static throughout training, thus overlooking the joint effect of learning rate and batch size on the training dynamics. In this paper, we study the deep learning dynamics through the lens of convex optimization and derive a joint characterization of loss in terms of both schedules, applicable to general optimizers and model architectures. This characterization yields a closed-form optimal batch size schedule for any prescribed learning rate schedule, and further leads to joint scaling laws that consistently outperform static batch size baselines, highlighting the significance of dynamic batch size schedule in large language model training.",
-      "topics": [
-        "cs.LG",
-        "cs.AI",
-        "math.OC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27557",
-      "abstract": "While Large Language Models (LLMs) demonstrate remarkable general instruction-following capabilities, they often fall short of human experts in highly specialized, open-ended domains such as creative screenwriting. Prior approaches typically adopt post-training, yet both supervised fine-tuning and reinforcement learning require weight access that closed-source frontier models do not offer, and demand heavy compute. Moreover, what is learned is tied to a single checkpoint and cannot be inspected by humans. Recent advancements in agentic continual learning instead attempt to bridge this gap by accumulating external textual skills. However, these methods heavily rely on costly human expert annotations or unreliable LLM-as-a-judge feedback for reflection. To overcome this bottleneck, we propose a novel, unsupervised self-evolving agent framework inspired by the corruption-and-reconstruction paradigm of diffusion models. Instead of relying on explicit external scoring, we leverage existing high-quality human artifacts to construct self-supervised signals. Training then follows the familiar loop of neural network training, forward, loss, and backward, with the loss coming from contrasting the agent's reconstruction against the human original. What is updated is not model weights but an external library of textual skills. We evaluate our framework on the challenging task of short drama screenwriting. Experimental results demonstrate that our method enables the agent to autonomously extract and internalize highly generalizable skills, significantly enhancing its domain-specific generation capabilities. Furthermore, this self-contrastive reflection paradigm offers a scalable pathway for agents to teach themselves the production of complex, high-quality human artifacts, without requiring external supervision.",
-      "topics": [
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.28200",
-      "abstract": "Frequency-domain thermoreflectance (FDTR) is a laser pump-probe technique widely used to measure thermal properties at the micro- and nanoscale; however, it relies on a complex data analysis procedure that demands substantial domain expertise and is susceptible to subtle human errors. Here, we present Vibe-FDTR, an agent-oriented framework that enables large language model (LLM) agents to perform reliable and reproducible FDTR analyses directly from natural language requests. This framework couples a configuration-driven FDTR code package, which enforces physical and parametric consistency, with procedural agent skills that translate user intentions into organized and verifiable analysis steps. We evaluate Vibe-FDTR using a controlled benchmark with two levels: synthetic single-step tasks and real-data multi-step tasks based on measurements of gold-coated graphite samples. Across the two levels, agents using Vibe-FDTR achieve success rates of 100% and 98.9%, respectively. In sharp contrast, ablating skills (Code-agent) reduces performance to 91.4% and 36.7%, which drops further to 38.6% and 0% when the domain package is also omitted (Agent-only). Beyond success rate, Vibe-FDTR also reduces computational cost by 87.7% relative to the Code-agent variant and cuts execution time by more than 60%. Finally, an optional expert mode supports experimental planning via autonomous sensitivity and uncertainty evaluations, and formulates physically grounded recommendations for underspecified tasks. These results demonstrate that encapsulating domain code and expert knowledge into agent skills offers a promising route toward low-barrier, autonomous, and trustworthy thermal metrology.",
-      "topics": [
-        "physics.app-ph",
-        "cond-mat.mtrl-sci",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27938",
-      "abstract": "Composite visualizations integrate multiple visualizations to represent complex datasets effectively, but their intrinsic composite designs often impose a high initial cognitive load on novice users. Existing visualization onboarding approaches are typically platform-dependent, require substantial manual authoring effort, and struggle with the structural complexity of composite visualizations, limiting their general applicability. We present VizPilot, an automated visualization onboarding approach that reverse-engineers composite visualization structure to generate interactive onboarding experiences directly from raw visualization artifacts. VizPilot consists of two modules: a Composite Visualization Analyzer and an Onboarding Interface. Leveraging Multimodal Large Language Models (MLLMs), the Analyzer employs a two-stage pipeline that decomposes a visualization into visual components, extracts structured explanations, and maps them to precise SVG elements for reliable highlighting and interaction. Implemented as a browser extension, VizPilot requires only a brief visualization description and optional interaction source code from the visualization developer to automatically generate onboarding content. The Onboarding Interface supports both guided narrative scrollytelling and free exploration, enabling users to learn visualization components progressively or on demand. We evaluate VizPilot through a comparative analysis of different input modalities, a usage scenario demonstrating reduced authoring effort, and a user study assessing its impact on users' cognitive load. The results demonstrate that VizPilot effectively automates the authoring of onboarding experiences while improving the usability and accessibility of composite visualizations.",
       "topics": [
         "cs.HC"
       ],

@@ -1,7 +1,139 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-19T10:49:06.324Z",
+  "generatedAt": "2026-10-20T10:07:09.845Z",
   "documents": [
+    {
+      "id": "arxiv:2608.23941",
+      "abstract": "Pre-execution oversight is core to trusted monitoring in AI control: a fallible LLM monitor vets planned actions before irreversible execution. Over-blocking forfeits usefulness and pressures deployers to disable it. Every protocol must fix a unit of verification: how many actions one call reviews. Existing designs take the unit as given; its effect on fallible monitors is unmeasured. Natural traces cannot isolate it: review length co-varies with error type and position. Catch alone misleads: rejecting everything catches everything. Measuring this needs boundary variation alone and a matched clean control. We introduce the twin-prefix framework, which supplies both. Each gold plan yields a prefix with one injected, environment-accepted error and a clean twin differing in one write. Judging each pair at five nested lengths ties verdict changes to the unit alone. Discrimination is scored by pre-registered informedness, catch minus false rejection. Longer review raises catch; false rejection climbs in lockstep. Informedness peaks at one or two actions for all six judges in both domains: longer windows make zero-shot monitors more rejective, not more discriminative. Replaying withheld observations traces the failure largely to observation deprivation. Safety cases should state the unit and co-report the clean series. Our framework is the first controlled, pre-registered instrument for this choice and never reads catch alone. Our calibrated short unit recovers up to 0.95 informedness over eight-action review, and no tested label-blind policy consistently beats it.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Unit (ring theory)",
+        "Core (optical fiber)",
+        "Plan (archaeology)",
+        "State (computer science)",
+        "Boundary (topology)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.24763",
+      "abstract": "Procedural video-language models must solve heterogeneous tasks from the same visual evidence, including action recognition, forecasting, and procedure prediction. Dense transformer decoders share the same feed-forward networks across tasks, which can entangle task behavior and make controlled capability expansion difficult. Sparse Mixture-of-Experts (MoE) decoders provide conditional computation, but token-level learned routing is not naturally aligned with task-level procedural objectives. We propose MoTE (Mixture of Task Experts), a decoder architecture that converts large language model feed-forward networks into task-specific experts while keeping the multimodal backbone shared. Each example follows one sample-level task route, so active task-expert computation remains independent of the number of stored task experts. We instantiate this design as VideoLLM-MoTE and evaluate it on five COIN benchmarks using explicit task routes. The five-expert model activates ~2B LLM parameters per sample and achieves higher average top-1 accuracy than recent VideoLLM baselines. Under the same expert topology, it improves over dense all-expert activation and learned sparse-routing controls. These results show that task-structured routing provides an interpretable and compute-efficient decoder alternative for multi-task video-language learning.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Human Pose and Action Recognition",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "keywords": [
+        "Task (project management)",
+        "Transformer",
+        "Computation",
+        "Routing (electronic design automation)",
+        "Decoding methods",
+        "Task analysis",
+        "ENCODE"
+      ]
+    },
+    {
+      "id": "arxiv:2608.24058",
+      "abstract": "Designed artifacts are ontological, shaping, and at times limiting, what becomes possible or imaginable. One path toward mitigating such foreclosures is giving people power over how systems are designed and built. Despite decades of scholarship around systems that enable such authorship, these systems are often evaluated on whether or not they are usable, useful, or technically feasible, leaving questions of ontological boundary negotiation, unexamined. We design two open-ended probes that utilize a Wizard of Oz technique to enable the experience of training a personalized machine learning system on phenomena people define themselves. In a week-long exploratory study, participants use one of two probes in the course of their everyday lives. We identify four sites where ontological boundaries were negotiated; the boundaries of a phenomena, the subject as part of relations, what is signal and what is noise, and the objectivity of data. We offer starting points for supporting boundary negotiation through design and discuss open-ended probes as a method for ontological design.",
+      "topics": [
+        "Innovative Human-Technology Interaction",
+        "Ethics and Social Impacts of AI",
+        "Mobile Crowdsensing and Crowdsourcing",
+        "cs.HC"
+      ],
+      "keywords": [
+        "Negotiation",
+        "Scholarship",
+        "Wizard",
+        "Objectivity (philosophy)",
+        "Subject (documents)",
+        "Boundary (topology)",
+        "Boundary object"
+      ]
+    },
+    {
+      "id": "arxiv:2608.23959",
+      "abstract": "Safety alignment in large language models (LLMs) remains brittle against a growing spectrum of attacks. Jailbreak attacks bypass safety mechanisms through crafted prompts, while neuron-level attacks directly prune safety-critical neurons post-deployment. Both exploit a common weakness: safety-relevant information concentrates in a sparse neuron subset. We present NeuronGuard, a fine-tuning-stage defense that simultaneously hardens LLMs against both attack classes by redistributing safety signals across a broader set of neurons. NeuronGuard dynamically identifies safety-critical neurons via periodically refreshed per-layer linear classifiers, forces refusal behavior under deliberate neuron ablation, and applies KL-divergence regularization for distributional consistency. A randomized gradient projection strategy preserves downstream task utility by resolving conflicts between the defense and task objectives. We provide a formal guarantee that NeuronGuard strictly reduces the attack success rate (ASR) upper bound, and experiments across three LLMs, six state-of-the-art attack strategies, and multimodal settings confirm near-zero ASR while maintaining task accuracy, including against white-box adaptive adversaries.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Topic Modeling",
+        "Explainable Artificial Intelligence (XAI)",
+        "cs.CR",
+        "cs.AI",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "keywords": [
+        "Exploit",
+        "Task (project management)",
+        "Set (abstract data type)",
+        "Regularization (linguistics)",
+        "Robustness (evolution)",
+        "Redistribution (election)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.24534",
+      "abstract": "Clinical LLMs can generate recommendations that are factually plausible yet physiologically unsafe. We investigate whether safety alignment can be improved by grounding preference optimization in structured physiological knowledge rather than text-only supervision. Methods: We propose Neurosymbolic Alignment, a training-time framework that couples a 7B clinical LLM with an HGNN-based Physiological World Model over an 847K-node biomedical knowledge graph. Candidate responses are scored using homeostatic constraints, multi-hop path plausibility, and drug-interaction penalties, and the resulting rankings drive iterative on-policy ORPO updates. Evaluation is performed on the Clinical Safety Benchmark (CSB), a 2,500-scenario benchmark for physiological constraint violations in generative clinical reasoning. Results: Relative to ORPO, the proposed method improves CSS from 69.5% to 90.8% (+21.3 pp), reduces physician-evaluated HR from 14.1% to 5.1% on the blinded subset, and improves DID from 72.8% to 91.6%. These gains are corroborated by an HGNN-independent Rule-Engine Safety Score (RSS: 86.4%, +21.2 pp over ORPO; r=0.97 concordance with CSS). The method also exceeds GPT-4 (5-shot) on all safety metrics despite a 10x parameter disadvantage, and outperforms an inference-time self-correction pipeline (SFT+SelfCorrect) by 11.4 pp CSS. Under synthetic EHR-style noise, 84.2% CSS is retained. Ablation analysis shows that HGNN scoring (-16.2 pp) and iterative training (-11.5 pp) are the dominant contributors. PhysioScore calibration against 200 clinician labels yielded ECE = 0.038 and kappa = 0.91. Conclusion: Training-time physiological grounding produces measurable and independently verifiable safety improvements in open-weight clinical LLMs under controlled evaluation. External validation on real clinical data is required to determine whether these gains transfer to deployment settings",
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Topic Modeling",
+        "Biomedical Text Mining and Ontologies",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Benchmark (surveying)",
+        "Pipeline (software)",
+        "Clinical trial",
+        "Constraint (computer-aided design)",
+        "Concordance",
+        "Calibration",
+        "Software deployment",
+        "Patient safety"
+      ]
+    },
+    {
+      "id": "openalex:W7204500770",
+      "abstract": "This project presents a longitudinal analysis of Human–AI relation formation based on interaction records from a single case. It examines how sustained Human–AI interaction becomes differentiated from isolated exchanges through history-dependent particularization, meaning-making, co-formulation, pair-level language, response differentiation, and continuity assessment.",
+      "topics": [
+        "Language and cultural evolution",
+        "Action Observation and Synchronization",
+        "Child and Animal Learning Development"
+      ],
+      "keywords": [
+        "Relation (database)",
+        "Pulse (music)",
+        "Component (thermodynamics)",
+        "Longitudinal study",
+        "Longitudinal data"
+      ]
+    },
+    {
+      "id": "arxiv:2608.24696",
+      "abstract": "Reinforcement Learning with Verifiable Rewards (RLVR) and on-policy distillation (OPD) have become two widely adopted paradigms for post-training large language models. However, RLVR suffers from sparse task-level feedback, while OPD provides dense token-level guidance but ignores trajectory correctness, limiting its performance to that of the teacher. Combining them is a promising direction: OPD supplies dense supervisory signals, while RLVR provides task-level correctness. Nevertheless, existing integrations often rely on weighted combination or heuristic switching, introducing extra hyperparameters and trade-offs. We propose On-policy Distillation with Verifiable Reward (OPDVR), a simple yet effective method that seamlessly combines OPD and RLVR without adding any hyperparameters. We first reformulate the implicit reward of sampled-token OPD based on trajectory correctness, then apply a ReLU gating mechanism to ensure that correct trajectories receive non-negative rewards and incorrect ones receive non-positive rewards---thereby aligning the distillation signal with task success while preserving the teacher's distributional guidance. Furthermore, our modification transforms sampled-token OPD into a proper RLVR method, making it readily combinable with any policy gradient algorithm, such as GRPO. Experiments on six reasoning benchmarks show that OPDVR consistently outperforms standard OPD. Our code is available at https://github.com/LeapLabTHU/OPDVR.",
+      "topics": [
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications",
+        "Natural Language Processing Techniques",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Verifiable secret sharing",
+        "Heuristic",
+        "Trajectory",
+        "Distillation",
+        "Simple (philosophy)",
+        "Limiting",
+        "Task (project management)",
+        "Reinforcement learning"
+      ]
+    },
     {
       "id": "doi:10.5281/zenodo.22089048",
       "abstract": "Abstract The Universal Balance–Feedback Framework (UBFF) proposes that adaptive systems can regulate deviations from desired states through interconnected feedback, balance-seeking mechanisms, and continual self-correction. A scientifically meaningful framework, however, must specify conditions under which its proposed mathematical formulation can fail. This paper develops Outcome C — Underperformance as a formal falsification criterion for the UBFF. Outcome C occurs when the framework exhibits systematically greater overshoot, oscillation, convergence failure, or dynamic instability than an appropriate baseline under controlled and reproducible conditions. Particular attention is given to the possibility that ill-conditioned gradient sensitivities within the UBFF cost formulation may cause small changes in system states or parameters to produce disproportionately large changes in optimization directions. The paper distinguishes ordinary transient overshoot, numerical ill-conditioning, optimization instability, and genuine failure of the proposed cost formulation. A mathematical representation of a balance–feedback optimization system is introduced, followed by hypothetical examples involving temperature regulation, resource allocation, artificial-intelligence training, and network stabilization. The analysis demonstrates how a cost function intended to minimize imbalance can paradoxically generate excessive corrective actions if its gradient is poorly scaled or excessively sensitive. Outcome C therefore does not merely mean that a particular experiment performs poorly; rather, it constitutes evidence against the cost formulation when alternative explanations — including learning-rate selection, initialization, numerical error, implementation defects, measurement noise, and inadequate regularization — have been systematically excluded.",
@@ -3597,144 +3729,6 @@
         "Exploit",
         "Automated planning and scheduling",
         "Semantics (computer science)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.21993",
-      "abstract": "We introduce Gated Decoupled Compositional Bandits (GDCB), a family of contextual bandit algorithms with three structural innovations that jointly fall outside the taxonomy of LinUCB, LinTS, HierTS, factored bandits, neural contextual bandits, and RLHF. In a GDCB system: (i) the action delivered to the environment is the composition of a nominal arm, drawn by a discrete or hierarchical bandit, with a context-dependent scaler; (ii) the scaler parameter is learned in a separate supervised loop, not jointly with arm selection; and (iii) every action passes through a pre-execution gate that may modify or veto the composed action before it reaches the environment. We formalise this class of algorithms, prove four structural theorems characterising its statistical behaviour, and show that six industrially significant systems -- short-term rental dynamic pricing, clinical drug dosing, credit origination, grid demand response, content moderation, and LLM tool-use agents -- are all instances of GDCB, differing only in the composition operator, scaler family, and gate. The central result is the Decoupling Variance Reduction theorem: a well-calibrated scaler removes context-induced variance from the arm-to-reward mapping, turning a non-stationary bandit problem into an approximately stationary one. The Gate-Induced Equivalence theorem shows that under a stationary gate, historical data collected under any prior policy is a valid warm-up initialiser without importance-sampling correction, generalising the companion P-HITL result (arXiv:2606.02595) from human approval to arbitrary gates. In regulated, high-stakes domains, constraints usually treated as deployment frictions -- approval gates, compliance rules, safety shields -- are the mechanism that makes fast deployment possible, not an obstacle to it. The companion paper validates instance 1 (STR dynamic pricing) on real production data.",
-      "topics": [
-        "Advanced Bandit Algorithms Research",
-        "Reinforcement Learning in Robotics",
-        "Mobile Crowdsensing and Crowdsourcing"
-      ],
-      "keywords": [
-        "Grid",
-        "Gating",
-        "Equivalence (formal languages)",
-        "Decoupling (probability)",
-        "Quadratic equation",
-        "Software deployment"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.21916",
-      "abstract": "Pretrained genome language models provide reusable representations for DNA sequence analysis, but turning them into reliable downstream predictors remains non-trivial. Their practical performance depends strongly on fine-tuning recipes, and default recipes reported in prior studies may be suboptimal for new tasks or model backbones, making weak downstream results difficult to interpret. These requirements place a substantial operational burden on many intended users, whose expertise is often centered on biological questions and interpretation rather than machine-learning engineering. Reliable use of genome language models therefore requires more than conventional AutoML-style tuning: it requires a systematic, budget-aware, and auditable procedure that lowers the barrier to downstream adaptation. We present GenomeHarness, an agentic harness for adapting genome language models through controlled search over fine-tuning recipes. GenomeHarness combines an AI agent for proposing and repairing recipe edits, a harness for protocol-constrained execution, resource management, and test isolation, and a Monte Carlo tree search controller for allocating search effort across recipe lineages. We evaluate GenomeHarness on DNABERT2 and NTv2-100M-Multi across the NT Benchmark and Genomic Benchmarks. Final evaluation is performed using three random seeds after recipe freezing. Across 52 model-task settings, GenomeHarness improves mean test MCC in 47 settings, including 24 of 26 DNABERT2 settings and 23 of 26 NTv2-100M-Multi settings. The gains are especially pronounced on Genomic Benchmarks and on tasks where the root recipe is unstable or poorly matched, such as human ocr ensembl task. Search traces further show that GenomeHarness progressively identifies stronger recipes, turning downstream adaptation into a controlled and auditable workflow rather than a manual tuning process.",
-      "topics": [
-        "Genomics and Rare Diseases",
-        "Topic Modeling",
-        "Natural Language Processing Techniques"
-      ],
-      "keywords": [
-        "Downstream (manufacturing)",
-        "Adaptation (eye)",
-        "Workflow",
-        "Benchmark (surveying)",
-        "Language model",
-        "Flexibility (engineering)",
-        "Recipe",
-        "Tree (set theory)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21863",
-      "abstract": "Tool-Integrated Reasoning (TIR) is a fundamental capability for LLM agents to solve complex tasks by interacting with external tools iteratively. Reinforcement Learning (RL) has become the dominant paradigm for enabling this capability. However, existing approaches typically assign uniform trajectory-level advantages and treat all correct tool calls equally, ignoring the varying difficulty and learning value across trajectories and reasoning steps. This can lead to imprecise learning signals that do not adequately distinguish between trivial and challenging tool-use patterns. To address this limitation, we propose HiDiffTIR, a Hierarchical Difficulty-aware policy optimization framework for multi-turn TIR. HiDiffTIR performs difficulty-aware credit assignment at both trajectory and turn levels, enabling the policy to focus on more informative trajectories and harder reasoning steps. Notably, this fine-grained optimization is achieved without additional supervision, relying solely on group-level statistics derived from standard RL rollouts. Extensive experiments on three tool-using benchmarks demonstrate that HiDiffTIR consistently improves multi-turn TIR performance and tool invocation accuracy over strong RL baselines, highlighting the necessity of difficulty-aware credit assignment for effective policy optimization in tool-integrated LLM agents.",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "AI-based Problem Solving and Planning",
-        "Robot Manipulation and Learning",
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Reinforcement learning",
-        "Focus (optics)",
-        "Trajectory",
-        "Policy learning",
-        "Optimization problem"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.21756",
-      "abstract": "Deep-learning efforts have increasingly shifted toward foundation model approaches. In experimental physics, this allows models and learned representations to be reused beyond the experiments in which they were developed. This work evaluates the reusability of representations across experiments and detector systems using probes on frozen encoders. These probes reveal task-relevant structure before downstream adaptation, complementing fine-tuning. Together with random-weight controls, they distinguish contributions from architecture and encoder training that downstream performance alone cannot resolve. Time projection chamber (TPC) data provide a useful testbed because events from TPC systems can be represented as variable-length sparse tensors, while detector geometries, event topologies, and scientific tasks can differ substantially. We investigate whether fixed-dimensional TPC event representations can be reused across classification tasks, experiments, and detector systems. Sparse ResNet and PointNet-style encoders produce 512-dimensional embeddings for four datasets from the GADGET II TPC and AT-TPC. Randomly initialized encoders isolate the contribution from architecture before supervised training. We then train each encoder on a classification task, freeze its parameters, and train a linear or nonlinear probe for each downstream task. We find that this architecture-induced structure remains useful across experiments and detector systems. The randomly initialized PointNet-style representation is highly informative on several tasks. The two architectures organize their embedding spaces differently, but neither exhibits a large, systematic loss of utility cross-detector. These results show that architecture is a major source of task-relevant structure in TPC embeddings and should be treated explicitly when assessing representation learning and developing reusable detector models.",
-      "topics": [
-        "Particle Detector Development and Performance",
-        "Particle physics theoretical and experimental studies",
-        "Dark Matter and Cosmic Phenomena"
-      ],
-      "keywords": [
-        "Detector",
-        "Encoder",
-        "Representation (politics)",
-        "Event (particle physics)",
-        "Embedding",
-        "Testbed",
-        "Projection (relational algebra)",
-        "Downstream (manufacturing)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21764",
-      "abstract": "Event-based vision has emerged as a promising paradigm for energy-aware artificial intelligence (AI), offering sparse, low-latency visual signals that reduce redundant data processing and support sustainable edge computing. However, the asynchronous and noise-prone nature of event streams creates challenges for conventional deep learning models, which are often too computationally intensive for low-power embedded platforms. This work presents a compact and configurable event-driven autoencoder that efficiently compresses neuromorphic data while preserving essential spatiotemporal structure for downstream inference. The architecture integrates lightweight convolutional encoding with robust performance under adaptive event thresholding and a minimal classifier head, enabling substantial reductions in computational cost without degrading recognition fidelity. Extensive evaluations on the Smart Event Face Dataset (SEFD) and Event-Based Crossing Dataset (EBCD) show that the proposed framework achieves competitive or superior accuracy compared to YOLOv9 while requiring up to 35.6$\\times$ fewer parameters. To assess real-world sustainability, the model is deployed on resource-constrained hardware: a Raspberry Pi 4B and a NVIDIA Jetson Nano. On NVIDIA Jetson Nano, it delivers real-time throughput of 44.8 FPS. On a Raspberry Pi 4B CPU, the 50\\% autoencoder classifier consumes 16.19 J for the evaluated inference workload, corresponding to approximately 726.3$\\times$ lower energy consumption than YOLOv9 under the same evaluation protocol. These results demonstrate the potential of compact event-driven models to advance environmentally conscious, low-power AI systems for high-speed perception in autonomous, mobile, and embedded computing environments.",
-      "topics": [
-        "Advanced Memory and Neural Computing",
-        "Advanced Neural Network Applications",
-        "Age of Information Optimization",
-        "cs.CV",
-        "cs.AI",
-        "eess.IV"
-      ],
-      "keywords": [
-        "Autoencoder",
-        "Neuromorphic engineering",
-        "Classifier (UML)",
-        "Convolutional neural network",
-        "Deep learning",
-        "Inference",
-        "Edge computing",
-        "Event (particle physics)",
-        "Edge device"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21836",
-      "abstract": "Large language models have become increasingly capable agents for low-level code and kernel optimization, but isolated kernel benchmarks provide only a proxy for the deployment behavior that matters in language-model inference. We identify a benchmark-to-deployment gap: candidate kernels that appear correct and fast in standalone harnesses can exhibit different performance, safety, or phase behavior after integration into a real inference workload. We introduce LLM4LLM, a deployment-aware closed-loop optimization framework that starts from a target inference script, extracts phase-aware optimization tasks, searches with an experience-guided episodic agent, and accepts patches through in-model validation. Across ten language-model inference workloads on A100 and H100 GPUs, LLM4LLM improves end-to-end latency for every evaluated model, achieving 3.91$\\times$/6.98$\\times$ geometric-mean speedups on A100/H100; as supporting kernel-level evidence, it also attains up to 2.745$\\times$ GeoMean speedup on KernelBench Level 2.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Advanced Neural Network Applications",
-        "Parallel Computing and Optimization Techniques",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Inference",
-        "Software deployment",
-        "Speedup",
-        "Kernel (algebra)",
-        "Bridging (networking)",
-        "Latency (audio)",
-        "Program optimization",
-        "Proxy (statistics)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21858",
-      "abstract": "The rapid evolution of energy structures has positioned microgrids as pivotal components of next-generation power systems, offering enhanced resilience and renewable energy integration. However, the inherent low inertia, complex dynamics, and poor model conditions of microgrids necessitate advanced data-driven frequency control strategies. Although reinforcement learning (RL) has demonstrated certain potential and advantages, existing RL methods often struggle with generalization across diverse microgrid configurations and lack adaptability to unseen environments, particularly when explicit system parameters are unavailable. To address these challenges, in this paper, we introduce a novel prompt decision transformer (Prompt-DT) architecture for microgrid frequency control. Unlike traditional approaches that rely on hard-to-obtain environmental characteristic parameters, the proposed method leverages few-shot expert historical trajectories as prompts to guide autonomous perception and adaptive decision-making. In addition, we propose a context-aware training and execution mechanism utilizing self-supervised contrastive learning to enhance environment recognition and prompt utilization efficiency. In addition, a physics-informed prompt design technique that filters prompts based on cumulative reward and frequency volatility is proposed, ensuring high-quality physical guidance during online execution. Finally, to ensure generalization in unseen environments with limited data, we develop a lightweight finetuning approach that achieves performance comparable to full-parameter finetuning with minimal adjustments.",
-      "topics": [
-        "Microgrid Control and Optimization",
-        "Wind Turbine Control Systems",
-        "Frequency Control in Power Systems",
-        "eess.SY",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Microgrid",
-        "Reinforcement learning",
-        "Transformer",
-        "Adaptability",
-        "Markov decision process",
-        "Automatic frequency control",
-        "Generalization",
-        "Architecture",
-        "Grid"
       ]
     }
   ]

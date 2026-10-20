@@ -1,7 +1,129 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-19T10:49:06.324Z",
+  "generatedAt": "2026-10-20T10:07:09.845Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.34372",
+      "abstract": "The profile of a role-playing agent usually depends on the pre-defined personality in a system prompt, whereas its memory processing pipeline, including prioritisation of stored memories and subsequent retrieval, remains independent of this personality. This separation causes the agent's memory processing to be inconsistent with the pre-defined personality, and makes it difficult to validate whether agent behaviours follow this personality. In this paper, we propose Personality-Integrated Memory (PersMem), which integrates personality into the agent's memory processing pipeline, making it consistently personality-dependent. PersMem processes memory using four steps, where the personality is mapped to operation-specific parameters controlling: (i) affective appraisal annotating emotion states of the user input; (ii) retention of previously stored memories along with the current input; (iii) passive affect-driven memory retrieval exploring memories similar to user input in semantics and personality-guided emotions; and (iv) active goal-driven memory retrieval that refines and selects passively retrieved memories for the reply. Consequently, consistency with the pre-defined personality can be examined by inspecting memory-processing traces during human-agent interactions. We evaluate these personality-dependent differences in attachment and Big Five settings. PersMem exceeds the chance baseline for four-way attachment classification by 23.1 percentage points. In Big Five dialogue comparisons, PersMem achieves 67.5% accuracy, 6.7 percentage points above a baseline using uniformly sampled memories. On CoSER, PersMem achieves an average score of 66.13, with scores of 69.33 for Character Fidelity and 84.33 for Storyline Quality. Together, these results show that PersMem produces distinguishable personality-related memory-processing patterns.",
+      "topics": [
+        "Emotion and Mood Recognition",
+        "Mental Health via Writing",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "role-playing agents",
+        "LLM agents",
+        "emotional appraisal",
+        "emotion annotation",
+        "personality consistency",
+        "Big Five personality traits",
+        "attachment classification"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.35036",
+      "abstract": "Persona prompting is widely used to construct user simulations with large language models (LLMs), yet it relies on a largely untested assumption: specifying one user attribute should change that attribute alone. We test this assumption and identify a systematic failure of selective control: across all eight black-box LLMs we audit, changing a target attribute also shifts responses on unspecified, non-target attributes. For example, describing a user as more risk-seeking shifts color choices, even though the prompt never mentions color; we term this cross-attribute influence. Semantic, contextual, and internal analyses collectively suggest that models treat a persona prompt as evidence about the user and extend the inferred profile to unspecified preferences, a process we call trait-conditioned completion. We next ask whether explicitly specifying non-target attributes restores selective control. When a non-target attribute is assigned a clear direction, models generally follow the declaration and suppress the target attribute's influence. However, when the same attribute is declared neutral, the target continues to affect choices across all five open-weight checkpoints, even when the model correctly reports the declared state. This disparity, the neutrality gap, demonstrates that successful persona following does not imply selective persona control, which additionally requires keeping non-target attributes stable. We operationalize this distinction with a three-state diagnostic that leaves the non-target attribute unspecified or declares it directional or neutral; because directional tests can be passed by simply following the stated persona, the neutral state reveals failures they miss. In a post hoc analysis of independent items, neutral declarations leave 51-81% of items target-sensitive, against at most 1 of 320 item-pole comparisons under directional ones.",
+      "topics": [
+        "Persona Design and Applications",
+        "Social Robot Interaction and HRI",
+        "AI in Service Interactions"
+      ],
+      "keywords": [
+        "persona prompting",
+        "user simulation",
+        "large language models",
+        "selective control",
+        "personality traits"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34571",
+      "abstract": "Controlling persona in large language models (LLMs) at inference time is important for role-playing, personalized dialogue, and social simulation. Recent methods extract persona vectors from the model's activation space and apply Euclidean operations---addition, scaling, and linear interpolation---under the linear representation hypothesis. However, these methods themselves report systematic failures: non-orthogonal trait dimensions, asymmetric ceiling and resistance effects, and significant deviations in multi-trait composition, suggesting that the linear isotropic assumption does not hold. We propose PersonaManifold, a framework that models persona representations as points on a curved, low-dimensional Riemannian submanifold in activation space. We estimate the manifold's intrinsic geometry---local metric tensors, geodesic distances, and Ollivier-Ricci curvature---and introduce geodesic steering, which interpolates between personas along manifold geodesics rather than Euclidean straight lines. We also propose the Behavioral Similarity Triplet (BST) benchmark, which automatically generates situational questions grounded in six established psychological constructs and defines persona similarity through behavioral responses rather than self-report questionnaires. Experiments on three open-source LLMs show that persona activations form a manifold with heterogeneous curvature, geodesic distance predicts behavioral similarity more accurately than Euclidean alternatives with independent contributions from anisotropy and curvature, and geodesic steering produces more coherent intermediate personas on both our BST benchmark and external evaluations, with the advantage concentrated in high-deviation regions where the manifold deviates most from flatness.",
+      "topics": [
+        "Persona Design and Applications",
+        "Social Robot Interaction and HRI",
+        "Multimodal Machine Learning Applications"
+      ],
+      "keywords": [
+        "large language models",
+        "activation space",
+        "Ollivier-Ricci curvature",
+        "linear representation hypothesis",
+        "behavioral similarity",
+        "personality traits",
+        "role play",
+        "personalized dialogue",
+        "geodesic distance",
+        "manifold geometry"
+      ]
+    },
+    {
+      "id": "doi:10.13140/rg.2.2.21286.08009",
+      "abstract": null,
+      "topics": [
+        "Pharmaceutical Practices and Patient Outcomes",
+        "Patient Safety and Medication Errors",
+        "Safe Handling of Antineoplastic Drugs"
+      ],
+      "keywords": [
+        "human factors",
+        "pharmacy management",
+        "medication errors",
+        "pharmacist workload",
+        "Pharmacist",
+        "Administration (probate law)",
+        "Pharmacy",
+        "Pharmacy practice",
+        "Drug administration",
+        "Clinical pharmacy"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.36087",
+      "abstract": "Clinicians and neuroscientists have long analyzed intracranial electroencephalography (iEEG) through directly measurable physiological characteristics, which carry much of the information that downstream tasks depend on. Recent iEEG foundation models learn by reconstructing or predicting their inputs, which leaves the retention of these characteristics implicit. They are also evaluated mainly on cognitive decoding and a narrow clinical task, i.e., seizure detection. On a broad, clinically relevant benchmark such as Omni-iEEG, they remain below task-specific models when used frozen. We introduce PHASE, a physiology-guided foundation model that makes these characteristics explicit learning targets, pairing them with masked latent prediction in a temporal stage (PHASE-T) within each channel and a spatiotemporal stage (PHASE-ST) across synchronized channels. PHASE is pretrained on heterogeneous recordings from 222 participants at nine clinical sites. On all five Omni-iEEG clinical tasks, frozen PHASE-T outperforms every evaluated foundation model by up to 31\\%, and fine-tuned PHASE-T surpasses the task-specific models, setting a new state of the art. PHASE-T benefits from physiological supervision, outperforming variants trained with latent prediction alone or auxiliary waveform reconstruction on every task in matched ablations. PHASE-T generalizes to unseen institutions, outperforming the compared models with few or no local labels. PHASE-ST further improves seizure-onset-zone identification over PHASE-T and, when frozen, decodes sound volume and pitch on BrainTreebank better than published models. Beyond task performance, PHASE learns to encapsulate the physiological characteristics clinicians recognize, from seizure onset and its propagation to anatomical region identity, even though its pretraining contains no ictal recordings or anatomical labels.",
+      "topics": [
+        "EEG and Brain-Computer Interfaces",
+        "Functional Brain Connectivity Studies",
+        "Epilepsy research and treatment"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34466",
+      "abstract": "Physiological foundation models encode how a signal was recorded alongside the physiology it reflects. When recording conditions are associated with diagnosis, this acquisition provenance can become a shortcut, yet the usual evidence, shifted transfer and provenance decodability, does not show whether a predictor uses it. We introduce PhysioTRACE, a four-axis behavioral audit for frozen encoders that separates what a probe can decode from what a fixed task head relies on. Recover scores how decodable provenance is; Stress reverses only the provenance-target association on the same held-out records; Intervene removes a train-localized provenance component; and Verify certifies that removal only if it beats matched random projections within a declared utility margin. Each audit thus ends in one of three verdicts: no reliance, or reliance with the remedy certified or refused. Across EEG and ECG, five training objectives, and five frozen foundation models, the relation between Recover's calibrated score and out-of-distribution utility changes sign between datasets, so neither can stand in for a reliance test. On paired EEG views where the shortcut is known by construction, the audit detects it (the exposed head loses about 0.2 AUROC when the association is reversed, while a control head is unaffected) and certifies removal of a rank-two component that restores control-level behavior without measurable utility loss, for both encoder objectives tested. On real ECG device metadata it returns all three verdicts: it certifies a remedy that removes 91% of one model's excess vulnerability, finds no reliance where device and diagnosis are barely associated, and refuses the remedy for a second model whose localized direction also carries task signal. Robustness to how inputs were recorded therefore needs a behavioral test, and PhysioTRACE provides one that can pass, fail, or refuse a remedy.",
+      "topics": [
+        "EEG and Brain-Computer Interfaces",
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "shortcut learning",
+        "stress testing",
+        "frozen encoder",
+        "EEG",
+        "ECG",
+        "certified robustness",
+        "model interpretability"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.35366",
+      "abstract": "LLM agents solve complex tasks by iteratively changing files, invoking local tools, and interacting with remote services, which modifies state across their local environment and remote services. Today, agents and users must manage these changes explicitly, whether reverting exploratory actions or recovering from erroneous ones. Doing so safely requires coordinated actions, yet current agent harnesses lack unified abstractions and mechanisms for managing local and remote state consistently and efficiently. We describe Planarian, an agent runtime with state management that enables agents and users to recover from erroneous actions and explore alternative executions over consistent local and remote environment state. Planarian introduces the abstraction of agent statepoints, which are consistent, restorable point-in-time versions of the environment state. Planarian exposes three state-management primitives to agents and users: (i) snapshot creates a new statepoint spanning local and remote state without requiring external services to support checkpoints: it relies on efficient incremental process and file system snapshotting to capture local sandboxed state, and transparently records compensating actions to undo remote state changes; (ii) rollback restores the environment to a previous statepoint by reverting to a prior local checkpoint and replaying compensating actions for remote state changes; and (iii) fork creates multiple isolated branches from a statepoint, enabling the agent to explore alternatives in parallel. We show that Planarian enables agents to undo mistakes and explore alternatives in parallel, improving task quality by up to 15x, and allows users to recover from erroneous actions with only 3% overhead.",
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Mobile Agent-Based Network Management",
+        "Advanced Software Engineering Methodologies"
+      ],
+      "keywords": [
+        "LLM agents",
+        "state management",
+        "checkpointing",
+        "snapshotting",
+        "rollback",
+        "fork",
+        "sandboxed execution"
+      ]
+    },
     {
       "id": "doi:10.1016/j.ssci.2026.107479",
       "abstract": "The regulatory regime governing the Norwegian petroleum sector changed significantly in response to new geopolitical conditions following the war in Ukraine and the sabotage of the Nord Stream I and II pipelines. New legal security requirements and security risk logics were introduced into a sector whose traditional regulatory regime and risk logic had been intrinsically oriented toward safety. This shift altered the balance between safety and security considerations within the sector. This article explores the implications for regulatory regimes and risk logics when transitioning from safety-oriented to security-oriented regulatory models. Our ambition is primarily conceptual and theoretical, with the Norwegian petroleum industry serving as an illustrative case. The article analyses the emerging interface between safety and security, emphasizing the ontological, epistemological, and procedural divergences that complicate the integration of security concerns − focused on intentional, adversarial threats − into established safety regimes that manage unintentional harm. Anchored in a polycentric governance framework, the article examines how geopolitical developments have created tensions between rule-based and risk-based regulatory models, and the implications for organizational practices, regulatory oversight, and tripartite cooperation. It concludes by proposing a model of enforced self-regulation that reconciles safety and security logics, highlighting the need for adaptive, resilient, and knowledge-driven approaches to risk management in complex and evolving threat landscapes.",
@@ -3541,125 +3663,6 @@
         "Product (mathematics)",
         "Function (biology)",
         "Embodied cognition"
-      ]
-    },
-    {
-      "id": "doi:10.63447/jikti.v3i2.2057",
-      "abstract": "The development of Agentic Artificial Intelligence (Agentic AI) presents new challenges in cybersecurity due to its ability to plan, adapt, and act autonomously. This study aims to analyze the threat of social engineering based on Agentic AI and to formulate mitigation strategies using the Zero Trust approach. The research method employs literature review and threat modeling to identify attack vectors, user vulnerabilities, and potential impacts. The analysis shows that Agentic AI can enhance the personalization, scale, speed, and effectiveness of social engineering attacks. This study develops a conceptual framework for mitigating social engineering attacks based on Agentic AI by applying Zero Trust principles as a layered defense approach that places identity, context, and risk at the center of security decision-making.",
-      "topics": [
-        "COVID-19 Digital Contact Tracing",
-        "Information Retrieval and Data Mining",
-        "Legal and Policy Analysis in Indonesia"
-      ],
-      "keywords": [
-        "Social engineering (security)",
-        "Zero (linguistics)",
-        "Work (physics)",
-        "Sociotechnical system",
-        "Center (category theory)"
-      ]
-    },
-    {
-      "id": "doi:10.46729/ijstm.v7i5.1477",
-      "abstract": "The plug welding activity on Wheel Hub Rear components in the welding division of PT SSC Works Surabaya is performed repetitively under working postures that may impose physical demands on operators. This study aimed to analyze musculoskeletal complaints using the Nordic Body Map (NBM), evaluate working posture risks using the Rapid Entire Body Assessment (REBA) and Rapid Upper Limb Assessment (RULA), and formulate ergonomic improvement recommendations. A descriptive case study approach was applied to seven plug welding operators. The NBM questionnaire was administered to all operators, while REBA and RULA assessments were conducted on Operator 1 based on the availability of adequate postural documentation. The NBM results showed that all operators experienced musculoskeletal complaints, with total scores ranging from 50 to 79. Two operators were classified as having a high level of complaints, while five were classified as moderate. The most prominent complaint was found in the right wrist, with a total score of 27, followed by the right upper arm, right lower arm, and right hand, each with a score of 25. The postural assessment of Operator 1 resulted in a REBA score of 11, indicating a very high risk requiring immediate action, and a RULA score of 7, indicating the need for immediate investigation and changes. Based on these findings, the proposed ergonomic improvements include an Adjustable foot platform, cable hanger, and active rest. The Adjustable foot platform is designed using D5 anthropometric data with an adjustable height mechanism to help reduce the need for trunk flexion during the welding process.",
-      "topics": [
-        "Musculoskeletal pain and rehabilitation",
-        "Ergonomics and Musculoskeletal Disorders",
-        "Occupational Health and Safety Management"
-      ],
-      "keywords": [
-        "musculoskeletal symptoms",
-        "work posture",
-        "plug welding",
-        "Nordic Body Map",
-        "REBA",
-        "RULA",
-        "ergonomic improvement",
-        "active rest",
-        "trunk flexion",
-        "Welding",
-        "Work (physics)",
-        "Trunk",
-        "Anthropometry",
-        "Process (computing)"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22999196",
-      "abstract": "A trapped-user eval for AI support agents. Research phase: threat model, hypotheses H1–H5, related work and citation metadata. No code yet; the evaluation harness is built from October 2026.",
-      "topics": [
-        "AI in Service Interactions",
-        "Ethics and Social Impacts of AI",
-        "Social Robot Interaction and HRI"
-      ],
-      "keywords": [
-        "Code (set theory)",
-        "Trap (plumbing)",
-        "Work (physics)",
-        "Key (lock)"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22999197",
-      "abstract": "A trapped-user eval for AI support agents. Research phase: threat model, hypotheses H1–H5, related work and citation metadata. No code yet; the evaluation harness is built from October 2026.",
-      "topics": [
-        "AI in Service Interactions",
-        "Ethics and Social Impacts of AI",
-        "Social Robot Interaction and HRI"
-      ],
-      "keywords": [
-        "Code (set theory)",
-        "Trap (plumbing)",
-        "Work (physics)",
-        "Key (lock)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33371",
-      "abstract": "Tool-using large language model (LLM) agents turn credential hygiene from a storage problem into an execution-security problem. A key pasted into a prompt, or embedded in a system prompt or tool configuration, crosses from an authentication boundary into a data pipeline, where it may persist in conversation history, logs, memory stores, generated code, and error payloads. Prompt injection and excessive agency then convert passive disclosure into unauthorized action. This paper formalizes the credential-exposure threat chain for agentic systems; synthesizes evidence from a platform secret-store incident, vendor-reported secret-sprawl measurement, and OWASP and NIST guidance; and describes a vault-mediated execution architecture in which the model selects a connector identifier while a trusted request boundary supplies authentication. We evaluate a production implementation, Corvic Security Vault, in two controlled black-box experiments. Across 16 probes spanning seven control domains, every probe met its expected outcome: an authenticated GitHub API request succeeded while the credential stayed absent from process environment values, caller-visible request headers, tested filesystem locations, three third-party echo services, and two unrelated API origins; both cloud instance-metadata endpoints were unreachable. We also report a negative result, a connector whose stored header mapping did not satisfy its provider's authentication contract, showing that centralized custody does not by itself guarantee correct configuration. Vault mediation removes several disclosure paths but is necessary rather than sufficient: least privilege, deterministic action authorization, human approval, telemetry redaction, and rotation remain independently required. The study is purposive and small, a functional security evaluation rather than a certification.",
-      "topics": [
-        "Security and Verification in Computing",
-        "Software System Performance and Reliability",
-        "Mobile Agent-Based Network Management"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.52957/2221-3260-2026-8-126-139",
-      "abstract": "The purpose of the study is to identify the mechanisms through which artificial intelligence (AI) influences regional globalization processes in the CIS and to substantiate the potential of individual countries of the region to act as flagships in the formation of a macro-regional AI contour. The study proceeds from the hypothesis that AI can strengthen the economic subjectivity of the Commonwealth not by itself, but only if supported by an energy, computing, transport and logistics, human-capital and regulatory base. The empirical basis of the research includes data from the IMF, UNCTAD, the WTO, the World Bank, the International Telecommunication Union, the International Energy Agency, the Government AI Readiness Index 2024, as well as official strategies, concepts and regulatory documents of the countries of the region. The methodological framework combines comparative, systemic and institutional analysis, analytical grouping of countries, and the comparison of quantitative and qualitative indicators of AI readiness. The article shows that the impact of AI on regional globalization is realized through productivity growth, the reduction of transaction and trade costs, the development of digital services, changes in the structure of value added, and the formation of new infrastructural dependencies, primarily in the fields of data, computing and energy supply. Priority areas for AI implementation in the CIS are identified: public administration, transport and logistics, industry, the agro-industrial complex, healthcare, education and energy. A three-level classification of CIS countries according to their AI leadership potential is proposed: systemic flagships – Russia, Kazakhstan and Uzbekistan; specialized flagships – Armenia, Azerbaijan and Belarus; prospective participants – Tajikistan, Kyrgyzstan and Turkmenistan. It is concluded that the formation of a sovereign macro-regional AI contour is possible not through fragmented national projects, but through compatible infrastructure for data, computing, human-capital development and regulation.",
-      "topics": [
-        "Regional Economic Development and Innovation",
-        "Digital Economy and Transformation",
-        "Global Political and Economic Relations"
-      ],
-      "keywords": [
-        "Globalization",
-        "Government (linguistics)",
-        "Commonwealth",
-        "Value (mathematics)",
-        "Productivity",
-        "Empirical research",
-        "Developing country",
-        "Artificial general intelligence"
-      ]
-    },
-    {
-      "id": "doi:10.36948/ijfmr.2026.v08i05.88532",
-      "abstract": "AI is transforming accounting by automating processes such as financial reporting, data analysis, and decision-making. It improves accounting operations by leveraging a variety of technologies such as computer vision, natural language processing, and machine learning. These systems automate data entry, tax filing, and spending tracking. Accountants use AI predictive analytics to get insights into future business performance and optimize financial strategy. Neural networks are computer models inspired by the human brain that are made up of interconnected layers of nodes, known as \"neurons.\" These networks analyze and recognize patterns in massive datasets. In accounting, neural networks can help with tasks like fraud detection, financial forecasting, and risk assessment. . In most businesses, accounting departments employ simple software to handle financial records, which assists accountants. Artificial intelligence (AI) is transforming tax preparation and filing as technology advances. Artificial intelligence improves accuracy by automating data entry, evaluating financial information, detecting errors, and guaranteeing compliance with ever-changing tax requirements, making the process faster, more efficient, and less prone to human error. Bookkeeping automation is gaining traction in India, with AI-powered applications simplifying crucial activities like transaction classification, invoice production, and tax compliance. These AI-driven technologies are revolutionizing the accounting business, and future advances are projected to have an even greater impact. AI's ability to generate personalized information will revolutionize the construction of financial statements, including as income statements and balance sheets, making data-driven decision-making easier for stakeholders. This article highlights the importance of using AI in Accounting",
-      "topics": [
-        "Financial Reporting and XBRL",
-        "Impact of AI and Big Data on Business and Society",
-        "Robotic Process Automation Applications"
-      ],
-      "keywords": [
-        "Bookkeeping",
-        "Analytics",
-        "Automation",
-        "Financial transaction",
-        "Artificial neural network",
-        "Big data",
-        "Accounting information system",
-        "Software"
       ]
     }
   ]

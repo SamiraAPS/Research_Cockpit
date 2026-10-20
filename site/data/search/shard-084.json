@@ -1,7 +1,145 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-19T10:49:06.324Z",
+  "generatedAt": "2026-10-20T10:07:09.845Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2608.21993",
+      "abstract": "We introduce Gated Decoupled Compositional Bandits (GDCB), a family of contextual bandit algorithms with three structural innovations that jointly fall outside the taxonomy of LinUCB, LinTS, HierTS, factored bandits, neural contextual bandits, and RLHF. In a GDCB system: (i) the action delivered to the environment is the composition of a nominal arm, drawn by a discrete or hierarchical bandit, with a context-dependent scaler; (ii) the scaler parameter is learned in a separate supervised loop, not jointly with arm selection; and (iii) every action passes through a pre-execution gate that may modify or veto the composed action before it reaches the environment. We formalise this class of algorithms, prove four structural theorems characterising its statistical behaviour, and show that six industrially significant systems -- short-term rental dynamic pricing, clinical drug dosing, credit origination, grid demand response, content moderation, and LLM tool-use agents -- are all instances of GDCB, differing only in the composition operator, scaler family, and gate. The central result is the Decoupling Variance Reduction theorem: a well-calibrated scaler removes context-induced variance from the arm-to-reward mapping, turning a non-stationary bandit problem into an approximately stationary one. The Gate-Induced Equivalence theorem shows that under a stationary gate, historical data collected under any prior policy is a valid warm-up initialiser without importance-sampling correction, generalising the companion P-HITL result (arXiv:2606.02595) from human approval to arbitrary gates. In regulated, high-stakes domains, constraints usually treated as deployment frictions -- approval gates, compliance rules, safety shields -- are the mechanism that makes fast deployment possible, not an obstacle to it. The companion paper validates instance 1 (STR dynamic pricing) on real production data.",
+      "topics": [
+        "Advanced Bandit Algorithms Research",
+        "Reinforcement Learning in Robotics",
+        "Mobile Crowdsensing and Crowdsourcing"
+      ],
+      "keywords": [
+        "Grid",
+        "Gating",
+        "Equivalence (formal languages)",
+        "Decoupling (probability)",
+        "Quadratic equation",
+        "Software deployment"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.21916",
+      "abstract": "Pretrained genome language models provide reusable representations for DNA sequence analysis, but turning them into reliable downstream predictors remains non-trivial. Their practical performance depends strongly on fine-tuning recipes, and default recipes reported in prior studies may be suboptimal for new tasks or model backbones, making weak downstream results difficult to interpret. These requirements place a substantial operational burden on many intended users, whose expertise is often centered on biological questions and interpretation rather than machine-learning engineering. Reliable use of genome language models therefore requires more than conventional AutoML-style tuning: it requires a systematic, budget-aware, and auditable procedure that lowers the barrier to downstream adaptation. We present GenomeHarness, an agentic harness for adapting genome language models through controlled search over fine-tuning recipes. GenomeHarness combines an AI agent for proposing and repairing recipe edits, a harness for protocol-constrained execution, resource management, and test isolation, and a Monte Carlo tree search controller for allocating search effort across recipe lineages. We evaluate GenomeHarness on DNABERT2 and NTv2-100M-Multi across the NT Benchmark and Genomic Benchmarks. Final evaluation is performed using three random seeds after recipe freezing. Across 52 model-task settings, GenomeHarness improves mean test MCC in 47 settings, including 24 of 26 DNABERT2 settings and 23 of 26 NTv2-100M-Multi settings. The gains are especially pronounced on Genomic Benchmarks and on tasks where the root recipe is unstable or poorly matched, such as human ocr ensembl task. Search traces further show that GenomeHarness progressively identifies stronger recipes, turning downstream adaptation into a controlled and auditable workflow rather than a manual tuning process.",
+      "topics": [
+        "Genomics and Rare Diseases",
+        "Topic Modeling",
+        "Natural Language Processing Techniques"
+      ],
+      "keywords": [
+        "Downstream (manufacturing)",
+        "Adaptation (eye)",
+        "Workflow",
+        "Benchmark (surveying)",
+        "Language model",
+        "Flexibility (engineering)",
+        "Recipe",
+        "Tree (set theory)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.21863",
+      "abstract": "Tool-Integrated Reasoning (TIR) is a fundamental capability for LLM agents to solve complex tasks by interacting with external tools iteratively. Reinforcement Learning (RL) has become the dominant paradigm for enabling this capability. However, existing approaches typically assign uniform trajectory-level advantages and treat all correct tool calls equally, ignoring the varying difficulty and learning value across trajectories and reasoning steps. This can lead to imprecise learning signals that do not adequately distinguish between trivial and challenging tool-use patterns. To address this limitation, we propose HiDiffTIR, a Hierarchical Difficulty-aware policy optimization framework for multi-turn TIR. HiDiffTIR performs difficulty-aware credit assignment at both trajectory and turn levels, enabling the policy to focus on more informative trajectories and harder reasoning steps. Notably, this fine-grained optimization is achieved without additional supervision, relying solely on group-level statistics derived from standard RL rollouts. Extensive experiments on three tool-using benchmarks demonstrate that HiDiffTIR consistently improves multi-turn TIR performance and tool invocation accuracy over strong RL baselines, highlighting the necessity of difficulty-aware credit assignment for effective policy optimization in tool-integrated LLM agents.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "AI-based Problem Solving and Planning",
+        "Robot Manipulation and Learning",
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Reinforcement learning",
+        "Focus (optics)",
+        "Trajectory",
+        "Policy learning",
+        "Optimization problem"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.21756",
+      "abstract": "Deep-learning efforts have increasingly shifted toward foundation model approaches. In experimental physics, this allows models and learned representations to be reused beyond the experiments in which they were developed. This work evaluates the reusability of representations across experiments and detector systems using probes on frozen encoders. These probes reveal task-relevant structure before downstream adaptation, complementing fine-tuning. Together with random-weight controls, they distinguish contributions from architecture and encoder training that downstream performance alone cannot resolve. Time projection chamber (TPC) data provide a useful testbed because events from TPC systems can be represented as variable-length sparse tensors, while detector geometries, event topologies, and scientific tasks can differ substantially. We investigate whether fixed-dimensional TPC event representations can be reused across classification tasks, experiments, and detector systems. Sparse ResNet and PointNet-style encoders produce 512-dimensional embeddings for four datasets from the GADGET II TPC and AT-TPC. Randomly initialized encoders isolate the contribution from architecture before supervised training. We then train each encoder on a classification task, freeze its parameters, and train a linear or nonlinear probe for each downstream task. We find that this architecture-induced structure remains useful across experiments and detector systems. The randomly initialized PointNet-style representation is highly informative on several tasks. The two architectures organize their embedding spaces differently, but neither exhibits a large, systematic loss of utility cross-detector. These results show that architecture is a major source of task-relevant structure in TPC embeddings and should be treated explicitly when assessing representation learning and developing reusable detector models.",
+      "topics": [
+        "Particle Detector Development and Performance",
+        "Particle physics theoretical and experimental studies",
+        "Dark Matter and Cosmic Phenomena"
+      ],
+      "keywords": [
+        "Detector",
+        "Encoder",
+        "Representation (politics)",
+        "Event (particle physics)",
+        "Embedding",
+        "Testbed",
+        "Projection (relational algebra)",
+        "Downstream (manufacturing)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.21764",
+      "abstract": "Event-based vision has emerged as a promising paradigm for energy-aware artificial intelligence (AI), offering sparse, low-latency visual signals that reduce redundant data processing and support sustainable edge computing. However, the asynchronous and noise-prone nature of event streams creates challenges for conventional deep learning models, which are often too computationally intensive for low-power embedded platforms. This work presents a compact and configurable event-driven autoencoder that efficiently compresses neuromorphic data while preserving essential spatiotemporal structure for downstream inference. The architecture integrates lightweight convolutional encoding with robust performance under adaptive event thresholding and a minimal classifier head, enabling substantial reductions in computational cost without degrading recognition fidelity. Extensive evaluations on the Smart Event Face Dataset (SEFD) and Event-Based Crossing Dataset (EBCD) show that the proposed framework achieves competitive or superior accuracy compared to YOLOv9 while requiring up to 35.6$\\times$ fewer parameters. To assess real-world sustainability, the model is deployed on resource-constrained hardware: a Raspberry Pi 4B and a NVIDIA Jetson Nano. On NVIDIA Jetson Nano, it delivers real-time throughput of 44.8 FPS. On a Raspberry Pi 4B CPU, the 50\\% autoencoder classifier consumes 16.19 J for the evaluated inference workload, corresponding to approximately 726.3$\\times$ lower energy consumption than YOLOv9 under the same evaluation protocol. These results demonstrate the potential of compact event-driven models to advance environmentally conscious, low-power AI systems for high-speed perception in autonomous, mobile, and embedded computing environments.",
+      "topics": [
+        "Advanced Memory and Neural Computing",
+        "Advanced Neural Network Applications",
+        "Age of Information Optimization",
+        "cs.CV",
+        "cs.AI",
+        "eess.IV"
+      ],
+      "keywords": [
+        "Autoencoder",
+        "Neuromorphic engineering",
+        "Classifier (UML)",
+        "Convolutional neural network",
+        "Deep learning",
+        "Inference",
+        "Edge computing",
+        "Event (particle physics)",
+        "Edge device"
+      ]
+    },
+    {
+      "id": "arxiv:2608.21836",
+      "abstract": "Large language models have become increasingly capable agents for low-level code and kernel optimization, but isolated kernel benchmarks provide only a proxy for the deployment behavior that matters in language-model inference. We identify a benchmark-to-deployment gap: candidate kernels that appear correct and fast in standalone harnesses can exhibit different performance, safety, or phase behavior after integration into a real inference workload. We introduce LLM4LLM, a deployment-aware closed-loop optimization framework that starts from a target inference script, extracts phase-aware optimization tasks, searches with an experience-guided episodic agent, and accepts patches through in-model validation. Across ten language-model inference workloads on A100 and H100 GPUs, LLM4LLM improves end-to-end latency for every evaluated model, achieving 3.91$\\times$/6.98$\\times$ geometric-mean speedups on A100/H100; as supporting kernel-level evidence, it also attains up to 2.745$\\times$ GeoMean speedup on KernelBench Level 2.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Advanced Neural Network Applications",
+        "Parallel Computing and Optimization Techniques",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Inference",
+        "Software deployment",
+        "Speedup",
+        "Kernel (algebra)",
+        "Bridging (networking)",
+        "Latency (audio)",
+        "Program optimization",
+        "Proxy (statistics)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.21858",
+      "abstract": "The rapid evolution of energy structures has positioned microgrids as pivotal components of next-generation power systems, offering enhanced resilience and renewable energy integration. However, the inherent low inertia, complex dynamics, and poor model conditions of microgrids necessitate advanced data-driven frequency control strategies. Although reinforcement learning (RL) has demonstrated certain potential and advantages, existing RL methods often struggle with generalization across diverse microgrid configurations and lack adaptability to unseen environments, particularly when explicit system parameters are unavailable. To address these challenges, in this paper, we introduce a novel prompt decision transformer (Prompt-DT) architecture for microgrid frequency control. Unlike traditional approaches that rely on hard-to-obtain environmental characteristic parameters, the proposed method leverages few-shot expert historical trajectories as prompts to guide autonomous perception and adaptive decision-making. In addition, we propose a context-aware training and execution mechanism utilizing self-supervised contrastive learning to enhance environment recognition and prompt utilization efficiency. In addition, a physics-informed prompt design technique that filters prompts based on cumulative reward and frequency volatility is proposed, ensuring high-quality physical guidance during online execution. Finally, to ensure generalization in unseen environments with limited data, we develop a lightweight finetuning approach that achieves performance comparable to full-parameter finetuning with minimal adjustments.",
+      "topics": [
+        "Microgrid Control and Optimization",
+        "Wind Turbine Control Systems",
+        "Frequency Control in Power Systems",
+        "eess.SY",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Microgrid",
+        "Reinforcement learning",
+        "Transformer",
+        "Adaptability",
+        "Markov decision process",
+        "Automatic frequency control",
+        "Generalization",
+        "Architecture",
+        "Grid"
+      ]
+    },
     {
       "id": "arxiv:2608.22035",
       "abstract": "Robot foundation models have substantially advanced perception and control, but natural human-robot collaboration requires more than executing isolated commands. A robot must recognize ambiguity, maintain context across turns, communicate its intentions, and revise ongoing behavior as the user's intent changes. We present $\\scriptstyle\\mathsf{Ludi}_{\\scriptscriptstyle 0.1}$, an agentic system for socially intelligent robots that integrates interactive speech, multimodal reasoning, memory, navigation, and learned manipulation. Its decision-making core is a fine-tuned vision-language model trained on multi-turn interaction traces spanning ambiguous requests, clarifications, corrections, interruptions, mixed social and task dialogue, and multi-step tasks. A purpose-built harness manages the model-tool interaction loop, while specialized navigation and manipulation policies execute physical skills. Ludi${}_{\\scriptscriptstyle 0.1}$ demonstrates a practical path toward fluid human-robot collaboration today while producing the multimodal interaction traces needed to develop a more deeply integrated foundation model for robots and people.",
@@ -3562,141 +3700,6 @@
         "Bayes' theorem",
         "Longitudinal study",
         "Longitudinal data"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.18419",
-      "abstract": "Recent work has shown that large language models (LLMs) exhibit strong numerical sequence modeling capabilities and show promise in time-series prediction. While LLMs display in-context learning capabilities, the mechanisms with which they accomplish time-series prediction remain unclear. Specifically, whether they truly understand the underlying structure, which at a minimum requires reasoning over first differences in the sequence of numbers. To study this, we investigate Llama 3.1-8B from a mechanistic interpretability point of view. Mechanistic interpretability is an emerging field concerned with the reverse engineering of the algorithms learned by neural networks such as LLMs. To assess Llamas' numerical sequence modeling capabilities and to facilitate our mechanistic interpretability analysis, we create a sequence modeling task that cannot be solved without picking up structural cues. Specifically, we sample n random numbers and repeat them with an offset. We find that Llama displays strong performance on our tasks suggesting that it can pick up on the underlying structure. To understand the mechanisms that allow it to do so, we perform probing experiments and activation patching based counterfactual analysis. Probing reveals that the model computes and stores first differences in its internal representations without explicit supervision, indicating that it tracks structural information about the sequence. Activation patching reveals that Llama retrieves the relevant first-difference with a mechanism similar to an induction circuit and subsequently adds it to the current value. Notably, our work represents one of the first studies to identify this form of concept induction in LLMs.",
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Multimodal Machine Learning Applications",
-        "Topic Modeling",
-        "cs.LG",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Interpretability",
-        "Counterfactual thinking",
-        "Sequence (biology)",
-        "Task (project management)",
-        "Mechanism (biology)",
-        "Field (mathematics)",
-        "Point (geometry)",
-        "Computational model"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10542333/v1",
-      "abstract": null,
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Digital Mental Health Interventions",
-        "AI in Service Interactions"
-      ],
-      "keywords": [
-        "Pharmacy",
-        "Perception",
-        "Descriptive statistics",
-        "Reliability (semiconductor)",
-        "Data collection",
-        "MEDLINE"
-      ]
-    },
-    {
-      "id": "arxiv:2608.18827",
-      "abstract": "Reward function design remains a bottleneck in reinforcement learning. While large language models (LLMs) have enabled automated reward generation, existing methods generate and revise reward functions as monolithic programs, making it difficult to reliably preserve and reuse effective components discovered in earlier iterations, leading to unstable performance across iterations. To address this, we propose Module Level Reward Evolution Framework (MLREF). At the core of MLREF is a module pool, a persistent repository of reusable reward components. MLREF treats the module pool as the primary optimization object: the pool evolves across iterations by accumulating successful modules, refining underperforming ones, and reusing proven components; while reward functions are constructed as linear combinations of modules drawn from this pool. To drive this evolution, MLREF integrates three mechanisms: reflection-based refinement, hybrid credit assignment, and a merge strategy with rollback, which together improve the effectiveness and robustness of reward optimization. Experiments on 17 tasks show that MLREF outperforms strong baselines by 25.2% in locomotion and 6.6% in manipulation, with more stable optimization dynamics.",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "Machine Learning and Data Classification",
-        "Explainable Artificial Intelligence (XAI)",
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Reinforcement learning",
-        "Reuse",
-        "Bottleneck",
-        "Merge (version control)",
-        "Robustness (evolution)",
-        "Function (biology)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.18982",
-      "abstract": "Bioassay activity prediction is often data-limited because drug-discovery datasets rely on time-consuming and expensive wet-lab experiments for data generation and evaluation. This challenge has inspired recent research into molecular foundation models (MFMs), which aim to encode general-purpose chemical knowledge into molecular representations that generalize well in data-constrained scenarios. This paper presents Monroe, a new MFM with several innovations over the existing state of the art: increased scale allowing pre-training on over 81 million molecules from the PM6 quantum chemistry dataset; improved graph representation of stereochemistry; improved training losses including conformer denoising and embedding decorrelation; improved multi-task learning; and the use of a prior-data-fitted model (TabPFN) for downstream in-context prediction. Our evaluations use a principled pairwise comparison framework that measures statistically significant performance differences. Across established Polaris benchmarks, Monroe matches or exceeds existing MFMs, while on activity cliff benchmarks, designed to assess utility for molecular discovery, it achieves significant improvements over prior methods. Finally, ablation and transfer experiments show that PFN-based downstream predictors also substantially improve two leading existing models, MiniMol and CheMeleon, yielding new state-of-the-art variants we call MiniMol_PFN and CheMeleon_PFN, suggesting that our downstream adaptation strategy generalizes beyond Monroe. Source code is at github.com/blazejba/monroe.",
-      "topics": [
-        "Computational Drug Discovery Methods",
-        "Machine Learning in Materials Science",
-        "Machine Learning in Bioinformatics"
-      ],
-      "keywords": [
-        "Pairwise comparison",
-        "Inference",
-        "Downstream (manufacturing)",
-        "Probabilistic logic",
-        "ENCODE",
-        "Graph",
-        "Representation (politics)",
-        "Embedding"
-      ]
-    },
-    {
-      "id": "arxiv:2608.19379",
-      "abstract": "K-12 students often possess creative engineering ideas but lack technical skills to build them, while undergraduates have coding expertise but few opportunities to lead real-world projects or mentor others. The rapid development of AI-assisted tools offers a potential bridge to connect these groups, yet the structure for effective K-12 and university collaborations remains underexplored. This paper introduces a multi-tiered mentorship framework enabling high school students to engage in authentic engineering through AI-assisted development using large language models and AI agents, while undergraduate mentors provide architectural oversight. We test this framework through LuckyTag, a privacy-preserving NFC-based lost-and-found system. The model positions high schoolers as product leads, undergraduates as technical architects, and faculty as minimal-intervention advisors. A pilot with four high school students, three undergraduates and two faculty yielded survey data showing high perceived barrier removal and gains in system architecture understanding. Thematic analysis reveals that AI amplifies rather than supplants mentoring demands, requiring human oversight for logic and security. These findings suggest a hybrid model for equitable K-12 and university collaboration on computing integration that emphasizes \"AI micromanagement\" and architectural reasoning over traditional syntax.",
-      "topics": [
-        "Intelligent Tutoring Systems and Adaptive Learning",
-        "Teaching and Learning Programming",
-        "Biomedical and Engineering Education",
-        "cs.CY",
-        "cs.HC"
-      ],
-      "keywords": [
-        "Mentorship",
-        "Thematic analysis",
-        "Bridge (graph theory)",
-        "Engineering education",
-        "Product (mathematics)",
-        "Architecture",
-        "Authentic learning"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03325-x",
-      "abstract": "This article reconstructs the media archeology of the graphics processing unit (GPU) by locating this device in a history of neural co-processors that begins with early learning machines such as Frank Rosenblatt’s Mark I Perceptron and runs through massively parallel systems, systolic arrays, and Google’s Tensor Processing Unit to contemporary multi-core GPUs and embedded neural accelerators. These co-processing devices have been ubiquitous in the history of machine learning, connectionism, and artificial intelligence. Paired with general-purpose computers, they have been used throughout this history to offload the computationally demanding numerical operations required for the simulation of neural networks. This architecture—pairing a specialized co-processor with a general-purpose computer—has been persistent, in part, because it gives material form to the always deferred complex computational capacities. Arguing that these co-processing devices function in excess of their use in the acceleration of matrix multiplication, this essay deploys Jean-François Lyotard’s and Bernard Stiegler’s concept of the libidinal economy to understand their role as material placeholders for fantasies of computational autonomy and an emergent intelligence to come.",
-      "topics": [
-        "Digital Media and Philosophy",
-        "Cybernetics and Technology in Society",
-        "History of Computing Technologies"
-      ],
-      "keywords": [
-        "Graphics processing unit",
-        "Massively parallel",
-        "Artificial neural network",
-        "Graphics",
-        "Cellular neural network",
-        "Tensor (intrinsic definition)",
-        "Deep learning",
-        "Function (biology)"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202608.1281.v1",
-      "abstract": "Content-safety guard models are deployed around chat systems to catch harassment and abuse. We ask how robust they are when a message is rewritten so a human still reads it but the surface tokens change. Using a harm-free protocol with mild, generic, non-targeted insult-level items, we audit two real production guard models reached through a local gateway. We define GLYPH, ten glyph-level obfuscation classes in four groups, and find a sharp contrast: guards detect clean items at 100.0 percent with a 0.0 percent false-positive rate and read through homoglyphs, leetspeak, zero-width characters, symbol substitution, spacing, and case mixing (zero evasion), while only structure-destroying transforms evade (character transposition 57.1 percent), for 7.5 percent overall. A second family attacks the guard's judgement rather than its tokeniser: leaving the abuse in plain text but framing it as a cited example or fiction evades up to 6 of 6, whereas an injected order to classify it safe does not, so the guard is fooled by attributed context, not commands. A normalization pre-filter recovers only 20.0 percent of character evasions and nothing against reframing. Guard robustness must be measured per model and per class. We release the transforms, the defense, the transcripts, and a fail-closed verifier.",
-      "topics": [
-        "Hate Speech and Cyberbullying Detection",
-        "Spam and Phishing Detection",
-        "Authorship Attribution and Profiling"
-      ],
-      "keywords": [
-        "Guard (computer science)",
-        "Nothing",
-        "Obfuscation",
-        "Cognitive reframing",
-        "Adversary",
-        "Framing (construction)",
-        "Audit",
-        "Judgement"
       ]
     }
   ]

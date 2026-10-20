@@ -1,12 +1,1815 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-10-19T10:49:06.324Z",
+  "generatedAt": "2026-10-20T10:07:09.845Z",
   "page": 110,
   "pageSize": 100,
-  "totalItems": 27130,
-  "totalPages": 272,
+  "totalItems": 27909,
+  "totalPages": 280,
   "nextPage": "./page-111.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2609.35568",
+      "recordType": "preprint",
+      "title": "From Experience to Expertise: Adoption-Aware Memory Learning for Data-Scarce NPU Kernel Synthesis",
+      "abstract": "High-performance kernels underpin efficient accelerator execution but require expert tuning and lengthy manual optimization cycles. LLM coding agents promise automation, yet their CUDA knowledge transfers poorly to data-scarce domain-specific architectures (DSAs) such as NPUs, whose execution models and memory hierarchies differ substantially from those of GPUs. To address this transfer gap, post-training methods adapt LLMs to NPU programming but depend on scarce expert data and substantial training compute. Memory-learning agents instead adapt through external memory, but their uniform credit assignment gives adopted and unused experiences the same reward target, potentially biasing subsequent retrieval rankings. Moreover, when learned values guide only retrieval, high-value experiences that generalize across operators must be retrieved repeatedly rather than retained in context, thereby increasing retrieval overhead and weakening cross-task guidance. We therefore present SAGE, a persistent self-improving agent for NPU kernel synthesis. Adoption-Traced Utility estimation (ATU) combines explicit adoption records with kernel evaluation outcomes for adoption-aware credit assignment. Utility-Gated Consolidation (UGC) uses positive utility and repeated adoption across operators to select and abstract reusable rules into a bounded resident context. On NPUKernelBench, SAGE achieves a 95.5% execution rate versus 84.1% for the strongest controlled baseline, with 86.9% of solved operators outperforming torch_npu. With GLM-5.3, SAGE achieves a 43.99x speedup over the torch_npu reference on sparse flash attention. These results show that adoption-aware credit assignment and selective consolidation enable agents to accumulate and reuse hardware-specific knowledge across tasks.",
+      "doi": "10.48550/arxiv.2609.35568",
+      "externalIds": {
+        "openalex": "W7214807286"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214807286"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-28",
+      "firstPublicDate": "2026-09-28",
+      "onlineDate": null,
+      "topics": [
+        "Parallel Computing and Optimization Techniques",
+        "Advanced Neural Network Applications",
+        "Machine Learning in Materials Science"
+      ],
+      "keywords": [
+        "LLM coding agents",
+        "domain-specific architectures",
+        "external memory",
+        "credit assignment",
+        "learning and memory",
+        "knowledge consolidation",
+        "memory hierarchy"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 10,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "From Experience to Expertise: Adoption-Aware Memory Learning for Data-Scarce NPU Kernel Synthesis",
+              "weight": 4
+            },
+            {
+              "source": "title",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "From Experience to Expertise: Adoption-Aware Memory Learning for Data-Scarce NPU Kernel Synthesis",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…mming but depend on scarce expert data and substantial training compute. Memory-learning agents instead adapt through external memory, but their uniform credit assignment gives adopted and unused experiences the same reward target, potentially biasing subsequent retrieval rankings. Moreover, when learned values guide o…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "learning and memory",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "attention",
+              "conceptLabel": "Aufmerksamkeit",
+              "matchedTerm": "attention",
+              "sourceValue": "….3, SAGE achieves a 43.99x speedup over the torch_npu reference on sparse flash attention. These results show that adoption-aware credit assignment and selective consolidation enable agents to accumulate and reuse hardware-specific knowledge across tasks.",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:learning": 10,
+        "topic:cognition": 2,
+        "classificationMaximum": 10
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning",
+        "expertise",
+        "attention"
+      ],
+      "authors": [
+        {
+          "id": "A5140357828",
+          "name": "Longxiao Fan",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153504323",
+          "name": "Tao Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153482999",
+          "name": "Han Yan",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153405027",
+          "name": "Jiajun Li",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5000111354",
+          "name": "Mingcong Song",
+          "orcid": "https://orcid.org/0009-0002-5289-685X",
+          "affiliations": []
+        },
+        {
+          "id": "A5103437255",
+          "name": "Guoping Long",
+          "orcid": "https://orcid.org/0009-0006-3176-7572",
+          "affiliations": []
+        },
+        {
+          "id": "A5004222682",
+          "name": "Hongjie Si",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153427769",
+          "name": "Weiwei Sun",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.35568",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:36.788Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-10-01T11:38:43.275Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-10-01T11:38:43.275Z",
+      "preferredVersionId": "openalex:W7214807286",
+      "versions": [
+        {
+          "id": "openalex:W7214807286",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7214807286",
+          "doi": "10.48550/arxiv.2609.35568",
+          "publicationDate": "2026-09-28",
+          "url": "https://doi.org/10.48550/arxiv.2609.35568"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-110.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "operator",
+              "quote": "rned values guide only retrieval, high-value experiences that generalize across operators must be retrieved repeatedly rather than retained in context, thereby increasing retrieval overhead",
+              "start": 742,
+              "end": 931
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "tor execution but require expert tuning and lengthy manual optimization cycles. LLM coding agents promise automation, yet their CUDA knowledge transfers poorly to data-scarce domain-s",
+              "start": 52,
+              "end": 235
+            },
+            {
+              "field": "abstract",
+              "term": "automation",
+              "quote": "expert tuning and lengthy manual optimization cycles. LLM coding agents promise automation, yet their CUDA knowledge transfers poorly to data-scarce domain-specific architectures (DSAs) such",
+              "start": 78,
+              "end": 268
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "operator",
+                  "quote": "rned values guide only retrieval, high-value experiences that generalize across operators must be retrieved repeatedly rather than retained in context, thereby increasing retrieval overhead",
+                  "start": 742,
+                  "end": 931
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "automation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "automation",
+                  "quote": "expert tuning and lengthy manual optimization cycles. LLM coding agents promise automation, yet their CUDA knowledge transfers poorly to data-scarce domain-specific architectures (DSAs) such",
+                  "start": 78,
+                  "end": 268
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [
+          {
+            "topic": "high-skill-operations",
+            "evidence": [
+              {
+                "field": "title",
+                "term": "expertise",
+                "quote": "From Experience to Expertise: Adoption-Aware Memory Learning for Data-Scarce NPU Kernel Synthesis",
+                "start": 0,
+                "end": 97
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34994",
+      "recordType": "preprint",
+      "title": "From One-Shot Generation to Incremental Music Composition: Adapting a General-Purpose Instruction LLM for Persistent Symbolic Editing",
+      "abstract": "Most music-generation systems are still framed and evaluated primarily as producers of complete outputs, whereas composition often proceeds through successive revisions to a shared musical artifact. This paper studies a different use of a general-purpose instruction-following large language model: not as a one-shot music generator, but as a reusable operator over an evolving symbolic score. We formulate incremental composition as a sequence of operation-aware state transitions over persistent ABC notation, with explicit requirements on what each operation may change and what it must preserve. The interaction includes two artifact-initialization variants and three editing operations -- chord addition, inpainting, and transposition. We instantiate the formulation by adapting Llama 3.1 8B Instruct with Low-Rank Adaptation (LoRA) on 496,038 operation-aware dialogue records derived from Irish traditional music. The comparison with the unadapted model is used to test the feasibility of learning this interaction contract, not to claim novelty for fine-tuning itself. Across 500 dialogues per model (1,750 attempted output states), checker admission rises from 29.37% to 99.37%, while compliance conditional on admission rises from 0.7205 to 0.9798. Strict eligibility for reference-relative musical-feature analysis increases from 14 to 1,548 outputs, and Longest Common Subsequence analysis does not show a systematic increase in high-overlap sequences relative to held-out baselines under the specified protocol. The results support the technical feasibility of persistent, operation-aware symbolic editing with a general-purpose instruction LLM. They do not establish superior musical quality or human-AI co-creativity, which remain questions for musician-centered evaluation.",
+      "doi": "10.48550/arxiv.2609.34994",
+      "externalIds": {
+        "openalex": "W7214754139"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214754139"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-28",
+      "firstPublicDate": "2026-09-28",
+      "onlineDate": null,
+      "topics": [
+        "Music Technology and Sound Studies",
+        "Music and Audio Processing",
+        "Artificial Intelligence in Games"
+      ],
+      "keywords": [
+        "ABC notation",
+        "low-rank adaptation",
+        "inpainting",
+        "transposition",
+        "Irish folk music",
+        "state transitions",
+        "Llama 3.1",
+        "human-AI co-creation"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…sic. The comparison with the unadapted model is used to test the feasibility of learning this interaction contract, not to claim novelty for fine-tuning itself. Across 500 dialogues per model (1,750 attempted output states), checker admission rises from 29.37% to 99.37%, while compliance conditional on admission rises …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 5,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "human-AI",
+        "large language model",
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5087217130",
+          "name": "ANDRE RICARDO DUCCA FERNANDES",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5053890837",
+          "name": "Jean-Pierre Briot",
+          "orcid": "https://orcid.org/0000-0003-1621-6335",
+          "affiliations": []
+        },
+        {
+          "id": "A5027812149",
+          "name": "Simone Diniz Junqueira Barbosa",
+          "orcid": "https://orcid.org/0000-0002-0044-503X",
+          "affiliations": []
+        },
+        {
+          "id": "A5000881869",
+          "name": "Hélio Lopes",
+          "orcid": "https://orcid.org/0000-0003-4584-1455",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.34994",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:35.617Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-10-01T11:38:42.264Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-10-01T11:38:42.264Z",
+      "preferredVersionId": "openalex:W7214754139",
+      "versions": [
+        {
+          "id": "openalex:W7214754139",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7214754139",
+          "doi": "10.48550/arxiv.2609.34994",
+          "publicationDate": "2026-09-28",
+          "url": "https://doi.org/10.48550/arxiv.2609.34994"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-110.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "eral-purpose instruction LLM. They do not establish superior musical quality or human-AI co-creativity, which remain questions for musician-centered evaluation.",
+              "start": 1628,
+              "end": 1788
+            },
+            {
+              "field": "abstract",
+              "term": "operator",
+              "quote": "wing large language model: not as a one-shot music generator, but as a reusable operator over an evolving symbolic score. We formulate incremental composition as a sequence of operation-aw",
+              "start": 272,
+              "end": 460
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "ration to Incremental Music Composition: Adapting a General-Purpose Instruction LLM for Persistent Symbolic Editing",
+              "start": 18,
+              "end": 133
+            },
+            {
+              "field": "abstract",
+              "term": "human-AI",
+              "quote": "eral-purpose instruction LLM. They do not establish superior musical quality or human-AI co-creativity, which remain questions for musician-centered evaluation.",
+              "start": 1628,
+              "end": 1788
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": ". This paper studies a different use of a general-purpose instruction-following large language model: not as a one-shot music generator, but as a reusable operator over an evolving symbolic score. We ",
+              "start": 197,
+              "end": 397
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "operator",
+                  "quote": "wing large language model: not as a one-shot music generator, but as a reusable operator over an evolving symbolic score. We formulate incremental composition as a sequence of operation-aw",
+                  "start": 272,
+                  "end": 460
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": ". This paper studies a different use of a general-purpose instruction-following large language model: not as a one-shot music generator, but as a reusable operator over an evolving symbolic score. We ",
+                  "start": 197,
+                  "end": 397
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.65620/1j0kwb92",
+      "recordType": "publication",
+      "title": "From Perception to Prevention: Preserving Safety-Signal Integrity Across Cognitive and Organisational Gaps in Near-Miss Learning",
+      "abstract": "Near-miss reporting is an important component of proactive safety management, yet the reliability of near-miss information depends on more than the availability of reporting systems. This Perspective argues that a critical but often overlooked source of information loss occurs between hazard experience, perception, recognition, and reporting. Safety systems frequently assume that workers consistently recognise and classify hazardous events, although human perception is influenced by experience, familiarity, attention, task context, and the visibility and complexity of hazards. Consequently, some safety-significant experiences may remain unrecognised, while others may be recognised but not reported, limiting the completeness of near-miss information used for prevention. Drawing on safety science, human factors, and occupational psychology, this Perspective conceptualises near-miss reporting as an information pathway in which cognitive and organisational gaps can progressively reduce safety-signal visibility. It highlights the importance of context-based hazard-recognition training, accessible reporting mechanisms, and organisational conditions that enable workers to convert safety experiences into usable information. The article proposes a perception-to-prevention perspective in which improving the integrity of safety signals requires connecting human recognition with inclusive reporting and organisational learning.",
+      "doi": "10.65620/1j0kwb92",
+      "externalIds": {
+        "openalex": "W7214599080"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214599080"
+      },
+      "venue": "Safety Science",
+      "publicationDate": "2026-09-28",
+      "firstPublicDate": "2026-09-28",
+      "onlineDate": null,
+      "topics": [
+        "Occupational Health and Safety Research",
+        "Safety Warnings and Signage",
+        "Human-Automation Interaction and Safety"
+      ],
+      "keywords": [
+        "near-miss reporting",
+        "hazard identification",
+        "human perception",
+        "information loss",
+        "organizational learning",
+        "reporting mechanisms",
+        "proactive safety management",
+        "occupational safety"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 8,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "From Perception to Prevention: Preserving Safety-Signal Integrity Across Cognitive and Organisational Gaps in Near-Miss Learning",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Near-miss reporting is an important component of proactive safety management, yet the reliability of near-miss information depends on more than the availability of reporting systems. This Perspective argues that a critical but often overlooked source of information loss occurs between hazard experience, perception, rec…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "hazard",
+              "sourceValue": "… that a critical but often overlooked source of information loss occurs between hazard experience, perception, recognition, and reporting. Safety systems frequently assume that workers consistently recognise and classify hazardous events, although human perception is influenced by experience, familiarity, attention, ta…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "hazard",
+              "sourceValue": "hazard identification",
+              "weight": 0
+            },
+            {
+              "source": "keyword",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "proactive safety management",
+              "weight": 0
+            },
+            {
+              "source": "external_topic",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Occupational Health and Safety Research",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…g Safety-Signal Integrity Across Cognitive and Organisational Gaps in Near-Miss Learning",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…quires connecting human recognition with inclusive reporting and organisational learning.",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "organizational learning",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "attention",
+              "conceptLabel": "Aufmerksamkeit",
+              "matchedTerm": "attention",
+              "sourceValue": "…ous events, although human perception is influenced by experience, familiarity, attention, task context, and the visibility and complexity of hazards. Consequently, some safety-significant experiences may remain unrecognised, while others may be recognised but not reported, limiting the completeness of near-miss inform…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "participation",
+          "label": "Partizipation & Fairness",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "inclusion",
+              "conceptLabel": "Inklusion",
+              "matchedTerm": "inclusive",
+              "sourceValue": "…ving the integrity of safety signals requires connecting human recognition with inclusive reporting and organisational learning.",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 7,
+        "topic:safety": 8,
+        "topic:learning": 6,
+        "topic:cognition": 2,
+        "topic:participation": 2,
+        "classificationMaximum": 8
+      },
+      "evidenceTerms": [
+        "learning",
+        "safety",
+        "human factors",
+        "occupational health",
+        "hazard",
+        "attention",
+        "inclusive"
+      ],
+      "authors": [
+        {
+          "id": "A5137365252",
+          "name": "Satchidananda Mishra",
+          "orcid": "https://orcid.org/0000-0001-9257-2572",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.65620/1j0kwb92",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:28.472Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-10-03T10:26:02.574Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-10-03T10:26:02.574Z",
+      "preferredVersionId": "openalex:W7214599080",
+      "versions": [
+        {
+          "id": "openalex:W7214599080",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7214599080",
+          "doi": "10.65620/1j0kwb92",
+          "publicationDate": "2026-09-28",
+          "url": "https://doi.org/10.65620/1j0kwb92"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-factors"
+        }
+      ],
+      "pagePath": "./works/page-110.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-factors"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "ume that workers consistently recognise and classify hazardous events, although human perception is influenced by experience, familiarity, attention, task context, and the visibility an",
+              "start": 374,
+              "end": 559
+            },
+            {
+              "field": "abstract",
+              "term": "worker",
+              "quote": ", perception, recognition, and reporting. Safety systems frequently assume that workers consistently recognise and classify hazardous events, although human perception is influenced by ex",
+              "start": 303,
+              "end": 490
+            },
+            {
+              "field": "abstract",
+              "term": "workers",
+              "quote": ", perception, recognition, and reporting. Safety systems frequently assume that workers consistently recognise and classify hazardous events, although human perception is influenced by ex",
+              "start": 303,
+              "end": 490
+            },
+            {
+              "field": "abstract",
+              "term": "human factors",
+              "quote": "teness of near-miss information used for prevention. Drawing on safety science, human factors, and occupational psychology, this Perspective conceptualises near-miss reporting as an information",
+              "start": 727,
+              "end": 920
+            }
+          ],
+          "ai": [],
+          "domain": [
+            {
+              "field": "abstract",
+              "term": "human factors",
+              "quote": "teness of near-miss information used for prevention. Drawing on safety science, human factors, and occupational psychology, this Perspective conceptualises near-miss reporting as an information",
+              "start": 727,
+              "end": 920
+            }
+          ],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "worker",
+                  "quote": ", perception, recognition, and reporting. Safety systems frequently assume that workers consistently recognise and classify hazardous events, although human perception is influenced by ex",
+                  "start": 303,
+                  "end": 490
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.35375",
+      "recordType": "preprint",
+      "title": "From Pixel to Poses: Object-centric Tool Manipulation Learning from Human Demonstrations",
+      "abstract": "Scaling up robotic manipulation is primarily bottlenecked by the scarcity of real-world robot data. While recent approaches leverage human video demonstrations to mitigate this shortage, they remain computationally expensive and still rely on paired human-robot data for domain alignment. Although current state-of-the-arts excel at long-horizon tasks, they struggle with the delicate and precise control required for complex tool manipulation. To overcome these limitations, we introduce P2P-T, from Pixel to Poses for Tool Manipulation, a data-efficient, object-centric framework that learns tool use directly from human demonstrations. P2P-T bridges the cognitive and physical execution gap through a two-stage approach. First, pretraining an object-centric world model to extract stable pose priors; second, integrating these priors into an efficient, pose-aware low-level policy. By utilizing a robust automated data processing pipeline powered by modern foundation models, P2P-T completely bypasses the need for human-robot aligned data. This reduces overall training overhead drastically. With minimal per-task fine-tuning, our framework achieves a 73% improvement over the previous state of the art in execution performance on complex, real-world tool manipulation tasks that currently remain out of reach for standard large-scale pretrained models.",
+      "doi": "10.48550/arxiv.2609.35375",
+      "externalIds": {
+        "openalex": "W7214758482"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214758482"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-28",
+      "firstPublicDate": "2026-09-28",
+      "onlineDate": null,
+      "topics": [
+        "Robot Manipulation and Learning",
+        "Human Pose and Action Recognition",
+        "Reinforcement Learning in Robotics"
+      ],
+      "keywords": [
+        "tool handling",
+        "robotic manipulation",
+        "human demonstrations",
+        "pose priors",
+        "data-efficient learning",
+        "foundation models"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "From Pixel to Poses: Object-centric Tool Manipulation Learning from Human Demonstrations",
+              "weight": 4
+            },
+            {
+              "source": "keyword",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "data-efficient learning",
+              "weight": 0
+            },
+            {
+              "source": "external_topic",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Robot Manipulation and Learning",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "…ions to mitigate this shortage, they remain computationally expensive and still rely on paired human-robot data for domain alignment. Although current state-of-the-arts excel at long-horizon tasks, they struggle with the delicate and precise control required for complex tool manipulation. To overcome these limitations,…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:learning": 4,
+        "topic:trust": 2,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "foundation model",
+        "foundation models",
+        "learning",
+        "rely"
+      ],
+      "authors": [
+        {
+          "id": "A5091894790",
+          "name": "Bangjun Wang",
+          "orcid": "https://orcid.org/0000-0002-1762-1757",
+          "affiliations": []
+        },
+        {
+          "id": "A5068357910",
+          "name": "Longyan Wu",
+          "orcid": "https://orcid.org/0009-0008-1350-5178",
+          "affiliations": []
+        },
+        {
+          "id": "A5153458718",
+          "name": "Yukun Wei",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153524532",
+          "name": "Shenghe Shao",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5066687393",
+          "name": "Chaoyi Huang",
+          "orcid": "https://orcid.org/0009-0004-6928-2277",
+          "affiliations": []
+        },
+        {
+          "id": "A5122357953",
+          "name": "Wenze Cui",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153517685",
+          "name": "Zetong Xu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153526868",
+          "name": "Hanlin Wu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153530501",
+          "name": "Long Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153457369",
+          "name": "Yi Ma",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153423103",
+          "name": "Hongyang Li",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.35375",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:35.617Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-10-01T11:38:42.264Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-10-01T11:38:42.264Z",
+      "preferredVersionId": "openalex:W7214758482",
+      "versions": [
+        {
+          "id": "openalex:W7214758482",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7214758482",
+          "doi": "10.48550/arxiv.2609.35375",
+          "publicationDate": "2026-09-28",
+          "url": "https://doi.org/10.48550/arxiv.2609.35375"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-110.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "title",
+              "term": "human",
+              "quote": "From Pixel to Poses: Object-centric Tool Manipulation Learning from Human Demonstrations",
+              "start": 0,
+              "end": 88
+            },
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "cked by the scarcity of real-world robot data. While recent approaches leverage human video demonstrations to mitigate this shortage, they remain computationally expensive and still rel",
+              "start": 53,
+              "end": 238
+            },
+            {
+              "field": "abstract",
+              "term": "human robot",
+              "quote": "e this shortage, they remain computationally expensive and still rely on paired human-robot data for domain alignment. Although current state-of-the-arts excel at long-horizon tasks, they str",
+              "start": 170,
+              "end": 361
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "foundation model",
+              "quote": "icy. By utilizing a robust automated data processing pipeline powered by modern foundation models, P2P-T completely bypasses the need for human-robot aligned data. This reduces overall training ove",
+              "start": 880,
+              "end": 1077
+            },
+            {
+              "field": "abstract",
+              "term": "foundation models",
+              "quote": "icy. By utilizing a robust automated data processing pipeline powered by modern foundation models, P2P-T completely bypasses the need for human-robot aligned data. This reduces overall training ove",
+              "start": 880,
+              "end": 1077
+            },
+            {
+              "field": "abstract",
+              "term": "human robot",
+              "quote": "e this shortage, they remain computationally expensive and still rely on paired human-robot data for domain alignment. Although current state-of-the-arts excel at long-horizon tasks, they str",
+              "start": 170,
+              "end": 361
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "automation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "automated",
+                  "quote": "se priors into an efficient, pose-aware low-level policy. By utilizing a robust automated data processing pipeline powered by modern foundation models, P2P-T completely bypasses the need fo",
+                  "start": 827,
+                  "end": 1016
+                },
+                {
+                  "field": "abstract",
+                  "term": "robot",
+                  "quote": "up robotic manipulation is primarily bottlenecked by the scarcity of real-world robot data. While recent approaches leverage human video demonstrations to mitigate this shortage, they r",
+                  "start": 8,
+                  "end": 193
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "e-arts excel at long-horizon tasks, they struggle with the delicate and precise control required for complex tool manipulation. To overcome these limitations, we introduce P2P-T, from Pix",
+                  "start": 317,
+                  "end": 504
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34679",
+      "recordType": "preprint",
+      "title": "From Preference to Reciprocity: Decentralized Matching with Empirically Grounded LLM-agent Based Modeling",
+      "abstract": "Bipartite matching is a fundamental problem in game theory and market design. Classical approaches such as Gale--Shapley assume complete preferences and centralized computation, whereas many real-world matching processes are decentralized, asynchronous, and shaped by sequential interaction under limited information. We propose a dynamic bipartite matching framework that combines large language model (LLM) agents with contextual bandits. In a simulated Chinese marriage market, economically grounded LLM agents evaluate locally encountered candidates, while agent-specific Logistic-UCB models learn reciprocal acceptance from realized proposal outcomes. The mechanism therefore separates two decisions---\\emph{whom do I like?} and \\emph{who is likely to like me back?}---without requiring ex ante market-wide preference rankings. We first validate LLM-induced mate preferences against the empirical conditional-logit reference across multiple LLM backbones. In the $50\\times50$ matching experiment, Bandit-UCB achieves the highest mean mutual welfare (56.01 versus 54.87 for Gale--Shapley), a smaller gender rank gap than the classical baselines, and the fewest blocking pairs among the LLM-ABM policies. Learned acceptance models show economically interpretable gender-differentiated associations, while counterfactual setups reveal no systematic unilateral advantage from prior search knowledge. Overall, these results support the advantages of decentralized matching with LLM-based behavioral modeling and online learning under incomplete information for economic simulation and computational social science research.",
+      "doi": "10.48550/arxiv.2609.34679",
+      "externalIds": {
+        "openalex": "W7214807948"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214807948"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-28",
+      "firstPublicDate": "2026-09-28",
+      "onlineDate": null,
+      "topics": [
+        "Game Theory and Voting Systems",
+        "Auction Theory and Applications",
+        "Advanced Bandit Algorithms Research"
+      ],
+      "keywords": [
+        "decentralized matching",
+        "bipartite matching",
+        "LLM agents",
+        "contextual bandits",
+        "umbilical cord blood",
+        "marriage market",
+        "incomplete information",
+        "gender gap",
+        "blocking pairs",
+        "agent-based modeling",
+        "conditional logit model",
+        "online learning",
+        "computational social science"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…antages of decentralized matching with LLM-based behavioral modeling and online learning under incomplete information for economic simulation and computational social science research.",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "online learning",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "large language model",
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5139300080",
+          "name": "Wangxuan Fan",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5000961497",
+          "name": "Xiaoyu Nie",
+          "orcid": "https://orcid.org/0000-0003-3408-1630",
+          "affiliations": []
+        },
+        {
+          "id": "A5153430656",
+          "name": "Zhoutian Shi",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153505909",
+          "name": "Xiangcheng Meng",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5028488951",
+          "name": "Shipei Zeng",
+          "orcid": "https://orcid.org/0009-0006-8145-4929",
+          "affiliations": []
+        },
+        {
+          "id": "A5056556016",
+          "name": "Pin Gao",
+          "orcid": "https://orcid.org/0000-0001-7434-7902",
+          "affiliations": []
+        },
+        {
+          "id": "A5153531924",
+          "name": "Yan Hu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5064034052",
+          "name": "Zhongxiang Dai",
+          "orcid": "https://orcid.org/0000-0003-4963-6141",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.34679",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:36.788Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-10-01T11:38:43.275Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-10-01T11:38:43.275Z",
+      "preferredVersionId": "openalex:W7214807948",
+      "versions": [
+        {
+          "id": "openalex:W7214807948",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7214807948",
+          "doi": "10.48550/arxiv.2609.34679",
+          "publicationDate": "2026-09-28",
+          "url": "https://doi.org/10.48550/arxiv.2609.34679"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-110.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "rom Preference to Reciprocity: Decentralized Matching with Empirically Grounded LLM-agent Based Modeling",
+              "start": 1,
+              "end": 105
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "ed information. We propose a dynamic bipartite matching framework that combines large language model (LLM) agents with contextual bandits. In a simulated Chinese marriage market, economically grounded",
+              "start": 302,
+              "end": 502
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "pose a dynamic bipartite matching framework that combines large language model (LLM) agents with contextual bandits. In a simulated Chinese marriage market, economically grounded LLM ",
+              "start": 324,
+              "end": 507
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "ed information. We propose a dynamic bipartite matching framework that combines large language model (LLM) agents with contextual bandits. In a simulated Chinese marriage market, economically grounded",
+                  "start": 302,
+                  "end": 502
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "nal-logit reference across multiple LLM backbones. In the $50\\times50$ matching experiment, Bandit-UCB achieves the highest mean mutual welfare (56.01 versus 54.87 for Gale--Shapley), a smal",
+                  "start": 910,
+                  "end": 1100
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1007/s13753-026-00767-1",
+      "recordType": "publication",
+      "title": "From Prohibition to Protection: A Governance Framework for Asbestos Remediation in Vulnerable Settlements",
+      "abstract": "Abstract Legacy asbestos in low-income housing remains a persistent environmental health risk that regulatory prohibitions and occupational standards alone cannot effectively address. Despite established hazards, comprehensive governance frameworks for large-scale asbestos remediation in vulnerable settlements remain underexplored. Here, we analyze an asbestos remediation implementation framework developed for state-funded housing and embedded within South Africa’s Programme on Rectification of Pre-1994 Residential Properties, using policy design analysis and literature synthesis, and derive an analytically abstracted Risk-Governed Housing Remediation Framework. This framework integrates risk appraisal, multi-level institutional coordination, engineering standards, occupational health safeguards, procurement design, fiscal oversight, and community participation into a coherent implementation model. The analysis shows that effective remediation is fundamentally a governance challenge requiring deliberate orchestration across regulatory, financial, professional, and social domains. This approach demonstrates how environmental rights can be operationalized and offers lessons transferable to the management of legacy environmental risks in vulnerable settlements worldwide.",
+      "doi": "10.1007/s13753-026-00767-1",
+      "externalIds": {
+        "openalex": "W7214666121"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214666121"
+      },
+      "venue": "International Journal of Disaster Risk Science",
+      "publicationDate": "2026-09-28",
+      "firstPublicDate": "2026-09-28",
+      "onlineDate": null,
+      "topics": [
+        "Occupational and environmental lung diseases",
+        "Environmental Justice and Health Disparities",
+        "Arsenic contamination and mitigation"
+      ],
+      "keywords": [
+        "low-income housing",
+        "housing governance",
+        "environmental health risk",
+        "risk governance",
+        "environmental rights",
+        "community participation",
+        "multi-level governance",
+        "South Africa"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "participation",
+          "label": "Partizipation & Fairness",
+          "score": 8,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "governance",
+              "conceptLabel": "Governance",
+              "matchedTerm": "governance",
+              "sourceValue": "From Prohibition to Protection: A Governance Framework for Asbestos Remediation in Vulnerable Settlements",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "participation",
+              "conceptLabel": "Partizipation",
+              "matchedTerm": "participation",
+              "sourceValue": "…pational health safeguards, procurement design, fiscal oversight, and community participation into a coherent implementation model. The analysis shows that effective remediation is fundamentally a governance challenge requiring deliberate orchestration across regulatory, financial, professional, and social domains. Thi…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "governance",
+              "conceptLabel": "Governance",
+              "matchedTerm": "governance",
+              "sourceValue": "…ds alone cannot effectively address. Despite established hazards, comprehensive governance frameworks for large-scale asbestos remediation in vulnerable settlements remain underexplored. Here, we analyze an asbestos remediation implementation framework developed for state-funded housing and embedded within South Africa…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "governance",
+              "conceptLabel": "Governance",
+              "matchedTerm": "governance",
+              "sourceValue": "housing governance",
+              "weight": 0
+            },
+            {
+              "source": "keyword",
+              "concept": "participation",
+              "conceptLabel": "Partizipation",
+              "matchedTerm": "participation",
+              "sourceValue": "community participation",
+              "weight": 0
+            },
+            {
+              "source": "external_topic",
+              "concept": "fairness",
+              "conceptLabel": "Fairness",
+              "matchedTerm": "justice",
+              "sourceValue": "Environmental Justice and Health Disparities",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "…Legacy asbestos in low-income housing remains a persistent environmental health risk that regulatory prohibitions and occupational standards alone cannot effectively address. Despite established hazards, comprehensive governance frameworks for large-scale asbestos remediation in vulnerable settlements remain underexplo…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "environmental health risk",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 5,
+        "topic:participation": 8,
+        "topic:safety": 2,
+        "classificationMaximum": 8
+      },
+      "evidenceTerms": [
+        "occupational health",
+        "governance",
+        "participation",
+        "justice",
+        "risk"
+      ],
+      "authors": [
+        {
+          "id": "A5115721488",
+          "name": "David Lefutso",
+          "orcid": "https://orcid.org/0009-0001-0820-4409",
+          "affiliations": []
+        },
+        {
+          "id": "A5084293689",
+          "name": "Abiodun Akintunde Ogundeji",
+          "orcid": "https://orcid.org/0000-0001-7356-5668",
+          "affiliations": []
+        },
+        {
+          "id": "A5068495951",
+          "name": "Yong Sebastian Nyam",
+          "orcid": "https://orcid.org/0000-0001-7175-2873",
+          "affiliations": []
+        },
+        {
+          "id": "A5153208400",
+          "name": "Nonhlanhla B. C. Buthelezi",
+          "orcid": "https://orcid.org/0009-0001-8203-0857",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1007/s13753-026-00767-1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:29.843Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-10-03T10:26:02.574Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-10-03T10:26:02.574Z",
+      "preferredVersionId": "openalex:W7214666121",
+      "versions": [
+        {
+          "id": "openalex:W7214666121",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7214666121",
+          "doi": "10.1007/s13753-026-00767-1",
+          "publicationDate": "2026-09-28",
+          "url": "https://doi.org/10.1007/s13753-026-00767-1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-factors"
+        }
+      ],
+      "pagePath": "./works/page-110.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-factors"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "professional",
+              "quote": "ance challenge requiring deliberate orchestration across regulatory, financial, professional, and social domains. This approach demonstrates how environmental rights can be operationalized and",
+              "start": 983,
+              "end": 1175
+            }
+          ],
+          "ai": [],
+          "domain": [
+            {
+              "field": "abstract",
+              "term": "occupational health",
+              "quote": " risk appraisal, multi-level institutional coordination, engineering standards, occupational health safeguards, procurement design, fiscal oversight, and community participation into a coherent imple",
+              "start": 696,
+              "end": 895
+            }
+          ],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "professional",
+                  "quote": "ance challenge requiring deliberate orchestration across regulatory, financial, professional, and social domains. This approach demonstrates how environmental rights can be operationalized and",
+                  "start": 983,
+                  "end": 1175
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.36145",
+      "recordType": "preprint",
+      "title": "From Sharp Eyes to Expert Mind: Internalizing Expert Knowledge in MLLMs for Tampered Text Detection",
+      "abstract": "Tampered Text Detection (TTD) is essential for safeguarding document authenticity in security-critical workflows. Existing expert models are effective at capturing subtle manipulation traces but often generalize poorly across diverse document domains, while Multimodal Large Language Models (MLLMs) offer stronger semantic understanding and transferability yet remain insensitive to fine-grained forensic artifacts. This complementarity motivates us to investigate how expert forensic perception can be internalized into an MLLM rather than merely accessed through an external module. We identify a fundamental Double Mismatch that hinders this goal: a Spatial Precision Mismatch between coarse visual tokens and tiny tampered regions, and a Perceptual Granularity Mismatch between semantics-oriented pre-training and low-level forensic perception. To address these challenges, we propose Expert Knowledge Internalization (EKI), a progressive two-stage framework that transfers forensic expertise into the MLLM itself. In Stage 1, Text-Focused and Image-Focused strategies establish precise spatial focus on small text regions. In Stage 2, the proposed Forensic-General Representation Alignment (FGRA) loss aligns shallow LLM representations with those of a pre-trained forensic expert, enabling the model to acquire fine-grained artifact perception before such cues are diluted by deeper semantic abstraction. Extensive experiments on multiple in-domain and cross-domain benchmarks demonstrate that EKI achieves state-of-the-art performance and stronger generalization than existing expert-model-based and MLLM-based methods. Moreover, the expert is required only during training, allowing the resulting MLLM to maintain inference efficiency nearly identical to the vanilla model without relying on any external expert at inference.",
+      "doi": "10.48550/arxiv.2609.36145",
+      "externalIds": {
+        "openalex": "W7214911883"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214911883"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-28",
+      "firstPublicDate": "2026-09-28",
+      "onlineDate": null,
+      "topics": [
+        "Digital Media Forensic Detection",
+        "Handwritten Text Recognition Techniques",
+        "Topic Modeling"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "…nternalization (EKI), a progressive two-stage framework that transfers forensic expertise into the MLLM itself. In Stage 1, Text-Focused and Image-Focused strategies establish precise spatial focus on small text regions. In Stage 2, the proposed Forensic-General Representation Alignment (FGRA) loss aligns shallow LLM r…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "relying",
+              "sourceValue": "… to maintain inference efficiency nearly identical to the vanilla model without relying on any external expert at inference.",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:learning": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "expertise",
+        "relying"
+      ],
+      "authors": [
+        {
+          "id": "A5153617980",
+          "name": "Kaiqing Lin",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153626932",
+          "name": "Songze Li",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153652982",
+          "name": "Shen Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153654106",
+          "name": "Yunfei Guo",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5008630718",
+          "name": "Xiaoye Qiu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153585767",
+          "name": "Haodong Li",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5033773467",
+          "name": "Taiping Yao",
+          "orcid": "https://orcid.org/0000-0002-2359-1523",
+          "affiliations": []
+        },
+        {
+          "id": "A5153621004",
+          "name": "Bo Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153622744",
+          "name": "Youchang Xiao",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153671781",
+          "name": "Bin Li",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153629425",
+          "name": "Shouhong Ding",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.36145",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-01T11:38:43.275Z",
+      "firstSeenRunId": "ingestion-2026-10-01T11:38:21.874Z",
+      "retrievedAt": "2026-10-01T11:38:43.275Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-10-01T11:38:43.275Z",
+      "preferredVersionId": "openalex:W7214911883",
+      "versions": [
+        {
+          "id": "openalex:W7214911883",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7214911883",
+          "doi": "10.48550/arxiv.2609.36145",
+          "publicationDate": "2026-09-28",
+          "url": "https://doi.org/10.48550/arxiv.2609.36145"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-110.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "s but often generalize poorly across diverse document domains, while Multimodal Large Language Models (MLLMs) offer stronger semantic understanding and transferability yet remain insensitive to fine-gr",
+              "start": 189,
+              "end": 390
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "s but often generalize poorly across diverse document domains, while Multimodal Large Language Models (MLLMs) offer stronger semantic understanding and transferability yet remain insensitive to fine-gr",
+              "start": 189,
+              "end": 390
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "e proposed Forensic-General Representation Alignment (FGRA) loss aligns shallow LLM representations with those of a pre-trained forensic expert, enabling the model to acquire fine-gra",
+              "start": 1142,
+              "end": 1325
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "s but often generalize poorly across diverse document domains, while Multimodal Large Language Models (MLLMs) offer stronger semantic understanding and transferability yet remain insensitive to fine-gr",
+                  "start": 189,
+                  "end": 390
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "rception before such cues are diluted by deeper semantic abstraction. Extensive experiments on multiple in-domain and cross-domain benchmarks demonstrate that EKI achieves state-of-the-art pe",
+                  "start": 1341,
+                  "end": 1532
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [
+          {
+            "topic": "high-skill-operations",
+            "evidence": [
+              {
+                "field": "abstract",
+                "term": "expertise",
+                "quote": "nternalization (EKI), a progressive two-stage framework that transfers forensic expertise into the MLLM itself. In Stage 1, Text-Focused and Image-Focused strategies establish precise spati",
+                "start": 907,
+                "end": 1096
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.1002/eco.70277",
       "recordType": "publication",
@@ -19668,1525 +21471,6 @@
             ]
           }
         ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.34372",
-      "recordType": "preprint",
-      "title": "PersMem: Internalizing Personality into Dual-Pathway Memory for LLM Agents",
-      "abstract": "The profile of a role-playing agent usually depends on the pre-defined personality in a system prompt, whereas its memory processing pipeline, including prioritisation of stored memories and subsequent retrieval, remains independent of this personality. This separation causes the agent's memory processing to be inconsistent with the pre-defined personality, and makes it difficult to validate whether agent behaviours follow this personality. In this paper, we propose Personality-Integrated Memory (PersMem), which integrates personality into the agent's memory processing pipeline, making it consistently personality-dependent. PersMem processes memory using four steps, where the personality is mapped to operation-specific parameters controlling: (i) affective appraisal annotating emotion states of the user input; (ii) retention of previously stored memories along with the current input; (iii) passive affect-driven memory retrieval exploring memories similar to user input in semantics and personality-guided emotions; and (iv) active goal-driven memory retrieval that refines and selects passively retrieved memories for the reply. Consequently, consistency with the pre-defined personality can be examined by inspecting memory-processing traces during human-agent interactions. We evaluate these personality-dependent differences in attachment and Big Five settings. PersMem exceeds the chance baseline for four-way attachment classification by 23.1 percentage points. In Big Five dialogue comparisons, PersMem achieves 67.5% accuracy, 6.7 percentage points above a baseline using uniformly sampled memories. On CoSER, PersMem achieves an average score of 66.13, with scores of 69.33 for Character Fidelity and 84.33 for Storyline Quality. Together, these results show that PersMem produces distinguishable personality-related memory-processing patterns.",
-      "doi": "10.48550/arxiv.2609.34372",
-      "externalIds": {
-        "openalex": "W7214731960"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214731960"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-28",
-      "firstPublicDate": "2026-09-28",
-      "onlineDate": null,
-      "topics": [
-        "Emotion and Mood Recognition",
-        "Mental Health via Writing",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "role-playing agents",
-        "LLM agents",
-        "emotional appraisal",
-        "emotion annotation",
-        "personality consistency",
-        "Big Five personality traits",
-        "attachment classification"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "motivation",
-          "label": "Motivation & Wohlbefinden",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "affect",
-              "conceptLabel": "Affekt",
-              "matchedTerm": "affect",
-              "sourceValue": "…ere the personality is mapped to operation-specific parameters controlling: (i) affective appraisal annotating emotion states of the user input; (ii) retention of previously stored memories along with the current input; (iii) passive affect-driven memory retrieval exploring memories similar to user input in semantics a…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "affect",
-              "conceptLabel": "Affekt",
-              "matchedTerm": "emotion",
-              "sourceValue": "emotion annotation",
-              "weight": 0
-            },
-            {
-              "source": "external_topic",
-              "concept": "affect",
-              "conceptLabel": "Affekt",
-              "matchedTerm": "emotion",
-              "sourceValue": "Emotion and Mood Recognition",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:motivation": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "LLM",
-        "affect",
-        "emotion"
-      ],
-      "authors": [
-        {
-          "id": "A5101525861",
-          "name": "Hanzhong Zhang",
-          "orcid": "https://orcid.org/0000-0002-8850-0047",
-          "affiliations": []
-        },
-        {
-          "id": "A5100871013",
-          "name": "Ziwei Xiang",
-          "orcid": "https://orcid.org/0009-0004-1787-0798",
-          "affiliations": []
-        },
-        {
-          "id": "A5153474599",
-          "name": "Weicheng Xie",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5129647997",
-          "name": "Shizhe Liu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153483217",
-          "name": "Siyang Song",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.34372",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:35.617Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-10-01T11:38:42.264Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-01T11:38:42.264Z",
-      "preferredVersionId": "openalex:W7214731960",
-      "versions": [
-        {
-          "id": "openalex:W7214731960",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214731960",
-          "doi": "10.48550/arxiv.2609.34372",
-          "publicationDate": "2026-09-28",
-          "url": "https://doi.org/10.48550/arxiv.2609.34372"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-110.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "fined personality can be examined by inspecting memory-processing traces during human-agent interactions. We evaluate these personality-dependent differences in attachment and Big Five ",
-              "start": 1184,
-              "end": 1369
-            },
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "arameters controlling: (i) affective appraisal annotating emotion states of the user input; (ii) retention of previously stored memories along with the current input; (iii) passive aff",
-              "start": 730,
-              "end": 914
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "PersMem: Internalizing Personality into Dual-Pathway Memory for LLM Agents",
-              "start": 0,
-              "end": 74
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": "3.1 percentage points. In Big Five dialogue comparisons, PersMem achieves 67.5% accuracy, 6.7 percentage points above a baseline using uniformly sampled memories. On CoSER, PersMem achieve",
-                  "start": 1458,
-                  "end": 1646
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.35036",
-      "recordType": "preprint",
-      "title": "Persona Following Is Not Selective Control: The Neutrality Gap in LLM User Simulation",
-      "abstract": "Persona prompting is widely used to construct user simulations with large language models (LLMs), yet it relies on a largely untested assumption: specifying one user attribute should change that attribute alone. We test this assumption and identify a systematic failure of selective control: across all eight black-box LLMs we audit, changing a target attribute also shifts responses on unspecified, non-target attributes. For example, describing a user as more risk-seeking shifts color choices, even though the prompt never mentions color; we term this cross-attribute influence. Semantic, contextual, and internal analyses collectively suggest that models treat a persona prompt as evidence about the user and extend the inferred profile to unspecified preferences, a process we call trait-conditioned completion. We next ask whether explicitly specifying non-target attributes restores selective control. When a non-target attribute is assigned a clear direction, models generally follow the declaration and suppress the target attribute's influence. However, when the same attribute is declared neutral, the target continues to affect choices across all five open-weight checkpoints, even when the model correctly reports the declared state. This disparity, the neutrality gap, demonstrates that successful persona following does not imply selective persona control, which additionally requires keeping non-target attributes stable. We operationalize this distinction with a three-state diagnostic that leaves the non-target attribute unspecified or declares it directional or neutral; because directional tests can be passed by simply following the stated persona, the neutral state reveals failures they miss. In a post hoc analysis of independent items, neutral declarations leave 51-81% of items target-sensitive, against at most 1 of 320 item-pole comparisons under directional ones.",
-      "doi": "10.48550/arxiv.2609.35036",
-      "externalIds": {
-        "openalex": "W7214764785"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214764785"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-28",
-      "firstPublicDate": "2026-09-28",
-      "onlineDate": null,
-      "topics": [
-        "Persona Design and Applications",
-        "Social Robot Interaction and HRI",
-        "AI in Service Interactions"
-      ],
-      "keywords": [
-        "persona prompting",
-        "user simulation",
-        "large language models",
-        "selective control",
-        "personality traits"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…s on unspecified, non-target attributes. For example, describing a user as more risk-seeking shifts color choices, even though the prompt never mentions color; we term this cross-attribute influence. Semantic, contextual, and internal analyses collectively suggest that models treat a persona prompt as evidence about th…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "failure",
-              "conceptLabel": "Fehler",
-              "matchedTerm": "failure",
-              "sourceValue": "… change that attribute alone. We test this assumption and identify a systematic failure of selective control: across all eight black-box LLMs we audit, changing a target attribute also shifts responses on unspecified, non-target attributes. For example, describing a user as more risk-seeking shifts color choices, even …",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "motivation",
-          "label": "Motivation & Wohlbefinden",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "affect",
-              "conceptLabel": "Affekt",
-              "matchedTerm": "affect",
-              "sourceValue": "…. However, when the same attribute is declared neutral, the target continues to affect choices across all five open-weight checkpoints, even when the model correctly reports the declared state. This disparity, the neutrality gap, demonstrates that successful persona following does not imply selective persona control, w…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 6,
-        "topic:safety": 4,
-        "topic:motivation": 2,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "risk",
-        "failure",
-        "affect"
-      ],
-      "authors": [
-        {
-          "id": "A5125729239",
-          "name": "Jiashen Ren",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153407628",
-          "name": "Wenlin Zhang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153530507",
-          "name": "Bohan Zhang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5026532411",
-          "name": "Xiaopeng Li",
-          "orcid": "https://orcid.org/0000-0003-4916-1131",
-          "affiliations": []
-        },
-        {
-          "id": "A5153447699",
-          "name": "Zichuan Fu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153474069",
-          "name": "Wanyu Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153455437",
-          "name": "Junyi Jessy Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153508972",
-          "name": "Xiangyu Zhao",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.35036",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:36.788Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-10-01T11:38:42.264Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-01T11:38:42.264Z",
-      "preferredVersionId": "openalex:W7214764785",
-      "versions": [
-        {
-          "id": "openalex:W7214764785",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214764785",
-          "doi": "10.48550/arxiv.2609.35036",
-          "publicationDate": "2026-09-28",
-          "url": "https://doi.org/10.48550/arxiv.2609.35036"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-110.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "title",
-              "term": "user",
-              "quote": "Persona Following Is Not Selective Control: The Neutrality Gap in LLM User Simulation",
-              "start": 0,
-              "end": 85
-            },
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "Persona prompting is widely used to construct user simulations with large language models (LLMs), yet it relies on a largely untested assumption: spec",
-              "start": 0,
-              "end": 150
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "Persona Following Is Not Selective Control: The Neutrality Gap in LLM User Simulation",
-              "start": 0,
-              "end": 85
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Persona prompting is widely used to construct user simulations with large language models (LLMs), yet it relies on a largely untested assumption: specifying one user attribute should change",
-              "start": 0,
-              "end": 189
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Persona prompting is widely used to construct user simulations with large language models (LLMs), yet it relies on a largely untested assumption: specifying one user attribute should change",
-              "start": 0,
-              "end": 189
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Persona prompting is widely used to construct user simulations with large language models (LLMs), yet it relies on a largely untested assumption: specifying one user attribute should change",
-                  "start": 0,
-                  "end": 189
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "control",
-                  "quote": "Persona Following Is Not Selective Control: The Neutrality Gap in LLM User Simulation",
-                  "start": 0,
-                  "end": 85
-                },
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "e alone. We test this assumption and identify a systematic failure of selective control: across all eight black-box LLMs we audit, changing a target attribute also shifts responses on uns",
-                  "start": 203,
-                  "end": 390
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.34571",
-      "recordType": "preprint",
-      "title": "PersonaManifold: Revealing and Exploiting Curved Geometry in LLM Persona Representations",
-      "abstract": "Controlling persona in large language models (LLMs) at inference time is important for role-playing, personalized dialogue, and social simulation. Recent methods extract persona vectors from the model's activation space and apply Euclidean operations---addition, scaling, and linear interpolation---under the linear representation hypothesis. However, these methods themselves report systematic failures: non-orthogonal trait dimensions, asymmetric ceiling and resistance effects, and significant deviations in multi-trait composition, suggesting that the linear isotropic assumption does not hold. We propose PersonaManifold, a framework that models persona representations as points on a curved, low-dimensional Riemannian submanifold in activation space. We estimate the manifold's intrinsic geometry---local metric tensors, geodesic distances, and Ollivier-Ricci curvature---and introduce geodesic steering, which interpolates between personas along manifold geodesics rather than Euclidean straight lines. We also propose the Behavioral Similarity Triplet (BST) benchmark, which automatically generates situational questions grounded in six established psychological constructs and defines persona similarity through behavioral responses rather than self-report questionnaires. Experiments on three open-source LLMs show that persona activations form a manifold with heterogeneous curvature, geodesic distance predicts behavioral similarity more accurately than Euclidean alternatives with independent contributions from anisotropy and curvature, and geodesic steering produces more coherent intermediate personas on both our BST benchmark and external evaluations, with the advantage concentrated in high-deviation regions where the manifold deviates most from flatness.",
-      "doi": "10.48550/arxiv.2609.34571",
-      "externalIds": {
-        "openalex": "W7214754760"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214754760"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-28",
-      "firstPublicDate": "2026-09-28",
-      "onlineDate": null,
-      "topics": [
-        "Persona Design and Applications",
-        "Social Robot Interaction and HRI",
-        "Multimodal Machine Learning Applications"
-      ],
-      "keywords": [
-        "large language models",
-        "activation space",
-        "Ollivier-Ricci curvature",
-        "linear representation hypothesis",
-        "behavioral similarity",
-        "personality traits",
-        "role play",
-        "personalized dialogue",
-        "geodesic distance",
-        "manifold geometry"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "failure",
-              "conceptLabel": "Fehler",
-              "matchedTerm": "failures",
-              "sourceValue": "… representation hypothesis. However, these methods themselves report systematic failures: non-orthogonal trait dimensions, asymmetric ceiling and resistance effects, and significant deviations in multi-trait composition, suggesting that the linear isotropic assumption does not hold. We propose PersonaManifold, a framew…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 5,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "failures"
-      ],
-      "authors": [
-        {
-          "id": "A5153512142",
-          "name": "Rui Xu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153493985",
-          "name": "Yinghui Xu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153491781",
-          "name": "Libo Wu",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.34571",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:35.617Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-10-01T11:38:42.264Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-01T11:38:42.264Z",
-      "preferredVersionId": "openalex:W7214754760",
-      "versions": [
-        {
-          "id": "openalex:W7214754760",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214754760",
-          "doi": "10.48550/arxiv.2609.34571",
-          "publicationDate": "2026-09-28",
-          "url": "https://doi.org/10.48550/arxiv.2609.34571"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-110.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "psychological",
-              "quote": "which automatically generates situational questions grounded in six established psychological constructs and defines persona similarity through behavioral responses rather than self-report ques",
-              "start": 1078,
-              "end": 1271
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "PersonaManifold: Revealing and Exploiting Curved Geometry in LLM Persona Representations",
-              "start": 0,
-              "end": 88
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Controlling persona in large language models (LLMs) at inference time is important for role-playing, personalized dialogue, and social simulatio",
-              "start": 0,
-              "end": 144
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Controlling persona in large language models (LLMs) at inference time is important for role-playing, personalized dialogue, and social simulatio",
-              "start": 0,
-              "end": 144
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Controlling persona in large language models (LLMs) at inference time is important for role-playing, personalized dialogue, and social simulatio",
-                  "start": 0,
-                  "end": 144
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "similarity through behavioral responses rather than self-report questionnaires. Experiments on three open-source LLMs show that persona activations form a manifold with heterogeneous curvatur",
-                  "start": 1203,
-                  "end": 1394
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "questionnaire",
-                  "quote": "defines persona similarity through behavioral responses rather than self-report questionnaires. Experiments on three open-source LLMs show that persona activations form a manifold with heterogen",
-                  "start": 1187,
-                  "end": 1381
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.13140/rg.2.2.21286.08009",
-      "recordType": "publication",
-      "title": "Pharmacist Cognitive-Load Mapping: A Human- Factors Framework for Pharmacy Administration and Medication-Use Safety",
-      "abstract": null,
-      "doi": "10.13140/rg.2.2.21286.08009",
-      "externalIds": {
-        "openalex": "W7214616458"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214616458"
-      },
-      "venue": null,
-      "publicationDate": "2026-09-28",
-      "firstPublicDate": "2026-09-28",
-      "onlineDate": null,
-      "topics": [
-        "Pharmaceutical Practices and Patient Outcomes",
-        "Patient Safety and Medication Errors",
-        "Safe Handling of Antineoplastic Drugs"
-      ],
-      "keywords": [
-        "human factors",
-        "pharmacy management",
-        "medication errors",
-        "pharmacist workload",
-        "Pharmacist",
-        "Administration (probate law)",
-        "Pharmacy",
-        "Pharmacy practice",
-        "Drug administration",
-        "Clinical pharmacy"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "load",
-              "conceptLabel": "Kognitive Belastung",
-              "matchedTerm": "cognitive load",
-              "sourceValue": "Pharmacist Cognitive-Load Mapping: A Human- Factors Framework for Pharmacy Administration and Medication-Use Safety",
-              "weight": 4
-            },
-            {
-              "source": "keyword",
-              "concept": "load",
-              "conceptLabel": "Kognitive Belastung",
-              "matchedTerm": "workload",
-              "sourceValue": "pharmacist workload",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…ping: A Human- Factors Framework for Pharmacy Administration and Medication-Use Safety",
-              "weight": 4
-            },
-            {
-              "source": "external_topic",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Patient Safety and Medication Errors",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:cognition": 4,
-        "topic:safety": 4,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "cognitive load",
-        "safety",
-        "human factors",
-        "workload"
-      ],
-      "authors": [
-        {
-          "id": "A5153256550",
-          "name": "David Gettman",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.13140/rg.2.2.21286.08009",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:29.843Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-10-03T10:26:02.574Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-03T10:26:02.574Z",
-      "preferredVersionId": "openalex:W7214616458",
-      "versions": [
-        {
-          "id": "openalex:W7214616458",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7214616458",
-          "doi": "10.13140/rg.2.2.21286.08009",
-          "publicationDate": "2026-09-28",
-          "url": "https://doi.org/10.13140/rg.2.2.21286.08009"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-110.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-factors"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "title",
-              "term": "human",
-              "quote": "Pharmacist Cognitive-Load Mapping: A Human- Factors Framework for Pharmacy Administration and Medication-Use Safety",
-              "start": 0,
-              "end": 115
-            },
-            {
-              "field": "title",
-              "term": "human factors",
-              "quote": "Pharmacist Cognitive-Load Mapping: A Human- Factors Framework for Pharmacy Administration and Medication-Use Safety",
-              "start": 0,
-              "end": 115
-            }
-          ],
-          "ai": [],
-          "domain": [
-            {
-              "field": "title",
-              "term": "human factors",
-              "quote": "Pharmacist Cognitive-Load Mapping: A Human- Factors Framework for Pharmacy Administration and Medication-Use Safety",
-              "start": 0,
-              "end": 115
-            }
-          ],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "workload",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "cognitive load",
-                  "quote": "Pharmacist Cognitive-Load Mapping: A Human- Factors Framework for Pharmacy Administration and Medication-Use Safety",
-                  "start": 0,
-                  "end": 115
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": false
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.36087",
-      "recordType": "preprint",
-      "title": "PHASE: A Physiology-Guided Hierarchical Foundation Model for Intracranial EEG",
-      "abstract": "Clinicians and neuroscientists have long analyzed intracranial electroencephalography (iEEG) through directly measurable physiological characteristics, which carry much of the information that downstream tasks depend on. Recent iEEG foundation models learn by reconstructing or predicting their inputs, which leaves the retention of these characteristics implicit. They are also evaluated mainly on cognitive decoding and a narrow clinical task, i.e., seizure detection. On a broad, clinically relevant benchmark such as Omni-iEEG, they remain below task-specific models when used frozen. We introduce PHASE, a physiology-guided foundation model that makes these characteristics explicit learning targets, pairing them with masked latent prediction in a temporal stage (PHASE-T) within each channel and a spatiotemporal stage (PHASE-ST) across synchronized channels. PHASE is pretrained on heterogeneous recordings from 222 participants at nine clinical sites. On all five Omni-iEEG clinical tasks, frozen PHASE-T outperforms every evaluated foundation model by up to 31\\%, and fine-tuned PHASE-T surpasses the task-specific models, setting a new state of the art. PHASE-T benefits from physiological supervision, outperforming variants trained with latent prediction alone or auxiliary waveform reconstruction on every task in matched ablations. PHASE-T generalizes to unseen institutions, outperforming the compared models with few or no local labels. PHASE-ST further improves seizure-onset-zone identification over PHASE-T and, when frozen, decodes sound volume and pitch on BrainTreebank better than published models. Beyond task performance, PHASE learns to encapsulate the physiological characteristics clinicians recognize, from seizure onset and its propagation to anatomical region identity, even though its pretraining contains no ictal recordings or anatomical labels.",
-      "doi": "10.48550/arxiv.2609.36087",
-      "externalIds": {
-        "openalex": "W7214894154"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214894154"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-28",
-      "firstPublicDate": "2026-09-28",
-      "onlineDate": null,
-      "topics": [
-        "EEG and Brain-Computer Interfaces",
-        "Functional Brain Connectivity Studies",
-        "Epilepsy research and treatment"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "… a physiology-guided foundation model that makes these characteristics explicit learning targets, pairing them with masked latent prediction in a temporal stage (PHASE-T) within each channel and a spatiotemporal stage (PHASE-ST) across synchronized channels. PHASE is pretrained on heterogeneous recordings from 222 part…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:learning": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "foundation models",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5153643506",
-          "name": "Yipeng Zhang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153647715",
-          "name": "Chenda Duan",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5009559597",
-          "name": "Yuanyi Ding",
-          "orcid": "https://orcid.org/0009-0006-5566-675X",
-          "affiliations": []
-        },
-        {
-          "id": "A5153553410",
-          "name": "Tianyi Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5017169492",
-          "name": "Atsuro Daida",
-          "orcid": "https://orcid.org/0000-0003-1350-7700",
-          "affiliations": []
-        },
-        {
-          "id": "A5153625129",
-          "name": "Masaki Izumi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5068986878",
-          "name": "Yuta Tanoue",
-          "orcid": "https://orcid.org/0000-0002-0005-0468",
-          "affiliations": []
-        },
-        {
-          "id": "A5126413352",
-          "name": "Naoto Kuroda",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5028623947",
-          "name": "Shaun A. Hussain",
-          "orcid": "https://orcid.org/0000-0001-6947-8852",
-          "affiliations": []
-        },
-        {
-          "id": "A5153668426",
-          "name": "Nishant Sinha",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153626463",
-          "name": "Eishi Asano. Hiroki Nariai",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153565917",
-          "name": "Vwani Roychowdhury",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.36087",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-01T11:38:43.275Z",
-      "firstSeenRunId": "ingestion-2026-10-01T11:38:21.874Z",
-      "retrievedAt": "2026-10-01T11:38:43.275Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-01T11:38:43.275Z",
-      "preferredVersionId": "openalex:W7214894154",
-      "versions": [
-        {
-          "id": "openalex:W7214894154",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214894154",
-          "doi": "10.48550/arxiv.2609.36087",
-          "publicationDate": "2026-09-28",
-          "url": "https://doi.org/10.48550/arxiv.2609.36087"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-110.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "participant",
-              "quote": "synchronized channels. PHASE is pretrained on heterogeneous recordings from 222 participants at nine clinical sites. On all five Omni-iEEG clinical tasks, frozen PHASE-T outperforms every eval",
-              "start": 844,
-              "end": 1036
-            },
-            {
-              "field": "abstract",
-              "term": "participants",
-              "quote": "synchronized channels. PHASE is pretrained on heterogeneous recordings from 222 participants at nine clinical sites. On all five Omni-iEEG clinical tasks, frozen PHASE-T outperforms every eval",
-              "start": 844,
-              "end": 1036
-            },
-            {
-              "field": "abstract",
-              "term": "clinician",
-              "quote": "Clinicians and neuroscientists have long analyzed intracranial electroencephalography (iEEG) through directly ",
-              "start": 0,
-              "end": 110
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "foundation model",
-              "quote": "PHASE: A Physiology-Guided Hierarchical Foundation Model for Intracranial EEG",
-              "start": 0,
-              "end": 77
-            },
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "hich carry much of the information that downstream tasks depend on. Recent iEEG foundation models learn by reconstructing or predicting their inputs, which leaves the retention of these characteris",
-              "start": 153,
-              "end": 350
-            },
-            {
-              "field": "abstract",
-              "term": "foundation models",
-              "quote": "hich carry much of the information that downstream tasks depend on. Recent iEEG foundation models learn by reconstructing or predicting their inputs, which leaves the retention of these characteris",
-              "start": 153,
-              "end": 350
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "healthcare",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "clinical",
-                  "quote": "ics implicit. They are also evaluated mainly on cognitive decoding and a narrow clinical task, i.e., seizure detection. On a broad, clinically relevant benchmark such as Omni-iEEG, they re",
-                  "start": 351,
-                  "end": 539
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "clinicians",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "clinician",
-                  "quote": "Clinicians and neuroscientists have long analyzed intracranial electroencephalography (iEEG) through directly ",
-                  "start": 0,
-                  "end": 110
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "participants",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "participant",
-                  "quote": "synchronized channels. PHASE is pretrained on heterogeneous recordings from 222 participants at nine clinical sites. On all five Omni-iEEG clinical tasks, frozen PHASE-T outperforms every eval",
-                  "start": 844,
-                  "end": 1036
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "task performance",
-                  "quote": "es sound volume and pitch on BrainTreebank better than published models. Beyond task performance, PHASE learns to encapsulate the physiological characteristics clinicians recognize, from seizure o",
-                  "start": 1550,
-                  "end": 1746
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.34466",
-      "recordType": "preprint",
-      "title": "PhysioTRACE: Provenance-Aware Stress Tests for Physiological Foundation Models",
-      "abstract": "Physiological foundation models encode how a signal was recorded alongside the physiology it reflects. When recording conditions are associated with diagnosis, this acquisition provenance can become a shortcut, yet the usual evidence, shifted transfer and provenance decodability, does not show whether a predictor uses it. We introduce PhysioTRACE, a four-axis behavioral audit for frozen encoders that separates what a probe can decode from what a fixed task head relies on. Recover scores how decodable provenance is; Stress reverses only the provenance-target association on the same held-out records; Intervene removes a train-localized provenance component; and Verify certifies that removal only if it beats matched random projections within a declared utility margin. Each audit thus ends in one of three verdicts: no reliance, or reliance with the remedy certified or refused. Across EEG and ECG, five training objectives, and five frozen foundation models, the relation between Recover's calibrated score and out-of-distribution utility changes sign between datasets, so neither can stand in for a reliance test. On paired EEG views where the shortcut is known by construction, the audit detects it (the exposed head loses about 0.2 AUROC when the association is reversed, while a control head is unaffected) and certifies removal of a rank-two component that restores control-level behavior without measurable utility loss, for both encoder objectives tested. On real ECG device metadata it returns all three verdicts: it certifies a remedy that removes 91% of one model's excess vulnerability, finds no reliance where device and diagnosis are barely associated, and refuses the remedy for a second model whose localized direction also carries task signal. Robustness to how inputs were recorded therefore needs a behavioral test, and PhysioTRACE provides one that can pass, fail, or refuse a remedy.",
-      "doi": "10.48550/arxiv.2609.34466",
-      "externalIds": {
-        "openalex": "W7214726273"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214726273"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-28",
-      "firstPublicDate": "2026-09-28",
-      "onlineDate": null,
-      "topics": [
-        "EEG and Brain-Computer Interfaces",
-        "Adversarial Robustness in Machine Learning",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "shortcut learning",
-        "stress testing",
-        "frozen encoder",
-        "EEG",
-        "ECG",
-        "certified robustness",
-        "model interpretability"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "reliance",
-              "conceptLabel": "Reliance",
-              "matchedTerm": "reliance",
-              "sourceValue": "…in a declared utility margin. Each audit thus ends in one of three verdicts: no reliance, or reliance with the remedy certified or refused. Across EEG and ECG, five training objectives, and five frozen foundation models, the relation between Recover's calibrated score and out-of-distribution utility changes sign betwee…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 5,
-        "topic:trust": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "foundation model",
-        "foundation models",
-        "learning",
-        "reliance"
-      ],
-      "authors": [
-        {
-          "id": "A5045311041",
-          "name": "Ayana Mussabayeva",
-          "orcid": "https://orcid.org/0000-0002-5303-199X",
-          "affiliations": []
-        },
-        {
-          "id": "A5084200651",
-          "name": "Anuar Aimoldin",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5038718481",
-          "name": "Olivier Oullier",
-          "orcid": "https://orcid.org/0009-0007-6271-5019",
-          "affiliations": []
-        },
-        {
-          "id": "A5153530625",
-          "name": "Xue Liu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153438079",
-          "name": "Kun Zhang",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.34466",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:35.617Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-10-01T11:38:42.264Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-01T11:38:42.264Z",
-      "preferredVersionId": "openalex:W7214726273",
-      "versions": [
-        {
-          "id": "openalex:W7214726273",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214726273",
-          "doi": "10.48550/arxiv.2609.34466",
-          "publicationDate": "2026-09-28",
-          "url": "https://doi.org/10.48550/arxiv.2609.34466"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-110.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "foundation model",
-              "quote": "PhysioTRACE: Provenance-Aware Stress Tests for Physiological Foundation Models",
-              "start": 0,
-              "end": 78
-            },
-            {
-              "field": "title",
-              "term": "foundation models",
-              "quote": "PhysioTRACE: Provenance-Aware Stress Tests for Physiological Foundation Models",
-              "start": 0,
-              "end": 78
-            },
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "Physiological foundation models encode how a signal was recorded alongside the physiology it reflects. When recording conditions ar",
-              "start": 0,
-              "end": 131
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "he exposed head loses about 0.2 AUROC when the association is reversed, while a control head is unaffected) and certifies removal of a rank-two component that restores control-level behav",
-                  "start": 1211,
-                  "end": 1398
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "wellbeing",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "stress",
-                  "quote": "PhysioTRACE: Provenance-Aware Stress Tests for Physiological Foundation Models",
-                  "start": 0,
-                  "end": 78
-                },
-                {
-                  "field": "abstract",
-                  "term": "stress",
-                  "quote": "m what a fixed task head relies on. Recover scores how decodable provenance is; Stress reverses only the provenance-target association on the same held-out records; Intervene removes a t",
-                  "start": 441,
-                  "end": 627
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.35366",
-      "recordType": "preprint",
-      "title": "Planarian: Managing Agent State with Statepoints",
-      "abstract": "LLM agents solve complex tasks by iteratively changing files, invoking local tools, and interacting with remote services, which modifies state across their local environment and remote services. Today, agents and users must manage these changes explicitly, whether reverting exploratory actions or recovering from erroneous ones. Doing so safely requires coordinated actions, yet current agent harnesses lack unified abstractions and mechanisms for managing local and remote state consistently and efficiently. We describe Planarian, an agent runtime with state management that enables agents and users to recover from erroneous actions and explore alternative executions over consistent local and remote environment state. Planarian introduces the abstraction of agent statepoints, which are consistent, restorable point-in-time versions of the environment state. Planarian exposes three state-management primitives to agents and users: (i) snapshot creates a new statepoint spanning local and remote state without requiring external services to support checkpoints: it relies on efficient incremental process and file system snapshotting to capture local sandboxed state, and transparently records compensating actions to undo remote state changes; (ii) rollback restores the environment to a previous statepoint by reverting to a prior local checkpoint and replaying compensating actions for remote state changes; and (iii) fork creates multiple isolated branches from a statepoint, enabling the agent to explore alternatives in parallel. We show that Planarian enables agents to undo mistakes and explore alternatives in parallel, improving task quality by up to 15x, and allows users to recover from erroneous actions with only 3% overhead.",
-      "doi": "10.48550/arxiv.2609.35366",
-      "externalIds": {
-        "openalex": "W7214763355"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214763355"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-28",
-      "firstPublicDate": "2026-09-28",
-      "onlineDate": null,
-      "topics": [
-        "Multi-Agent Systems and Negotiation",
-        "Mobile Agent-Based Network Management",
-        "Advanced Software Engineering Methodologies"
-      ],
-      "keywords": [
-        "LLM agents",
-        "state management",
-        "checkpointing",
-        "snapshotting",
-        "rollback",
-        "fork",
-        "sandboxed execution"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 1,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "LLM"
-      ],
-      "authors": [
-        {
-          "id": "A5011390095",
-          "name": "Jinnan Guo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153503869",
-          "name": "Hao Mark Chen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5011779401",
-          "name": "Kapil Vaswani",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5010807871",
-          "name": "Andrew Paverd",
-          "orcid": "https://orcid.org/0000-0003-2188-5285",
-          "affiliations": []
-        },
-        {
-          "id": "A5078842469",
-          "name": "Peter R. Pietzuch",
-          "orcid": "https://orcid.org/0000-0002-6963-5640",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.35366",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:35.617Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-10-01T11:38:42.264Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-01T11:38:42.264Z",
-      "preferredVersionId": "openalex:W7214763355",
-      "versions": [
-        {
-          "id": "openalex:W7214763355",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214763355",
-          "doi": "10.48550/arxiv.2609.35366",
-          "publicationDate": "2026-09-28",
-          "url": "https://doi.org/10.48550/arxiv.2609.35366"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-110.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "ies state across their local environment and remote services. Today, agents and users must manage these changes explicitly, whether reverting exploratory actions or recovering from erro",
-              "start": 133,
-              "end": 318
-            },
-            {
-              "field": "abstract",
-              "term": "users",
-              "quote": "ies state across their local environment and remote services. Today, agents and users must manage these changes explicitly, whether reverting exploratory actions or recovering from erro",
-              "start": 133,
-              "end": 318
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "LLM agents solve complex tasks by iteratively changing files, invoking local tools, and interacting wit",
-              "start": 0,
-              "end": 103
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
         "finding": null,
         "findingStatus": "requires-reading",
         "abstractAvailable": true
