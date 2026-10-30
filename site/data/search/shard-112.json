@@ -1,7 +1,150 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-29T11:33:54.800Z",
+  "generatedAt": "2026-10-30T11:26:56.346Z",
   "documents": [
+    {
+      "id": "arxiv:2608.18027",
+      "abstract": "Humans continuously learn from experience, whereas conventional large language model (LLM) evaluations ignore the models' ability to improve through inference-time interaction. In this paper, we study how LLMs learn from iterative experience at test time, a setting we refer to as Chain-of-Experience (CoE), where models accumulate experiential traces through iterative interactions with self or environmental feedback to form a continual improvement loop beyond zero-shot inference. We instantiate CoE with diverse feedback mechanisms, including model self-feedback and environmental signals such as correctness or public coding test pass rates, and evaluate across math, coding, and knowledge domains using 8 LLMs, including GPT-5, Gemini-2.5 Pro, Claude-4.5 Sonnet. Our study shows that leveraging iterative experience consistently outperforms feedback-free baselines, achieving substantial gains with self feedback alone, alongside a 5.6% overall improvement and 19% lower API cost across tasks and models. We further show that combining complementary feedback channels (e.g., model and correctness signals) yields additional gains, and that CoE delivers higher accuracy per token than existing test-time strategies. We observe a positive correlation between LLM base ability and improvement capacity, and show that models remain robust under weak or spurious feedback, with different feedback contributing to distinct improvement aspects and most gains emerging early in the iterations.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10651935/v1",
+      "abstract": null,
+      "topics": [
+        "Online Learning and Analytics",
+        "Artificial Intelligence in Healthcare and Education",
+        "E-Learning and COVID-19"
+      ],
+      "keywords": [
+        "Higher education",
+        "Information and Communications Technology",
+        "Quality (philosophy)",
+        "Sample (material)",
+        "Population",
+        "Perception"
+      ]
+    },
+    {
+      "id": "arxiv:2608.17253",
+      "abstract": "Reinforcement learning (RL) has emerged as a powerful approach for improving reasoning in language and vision-language models, yet its strongest successes still depend heavily on ground-truth supervision (e.g., verifiable reward). Such annotations are costly to obtain and become increasingly scarce as reasoning capabilities advance beyond what humans can reliably evaluate. Self-rewarding RL reduces this dependence by enabling models to derive reward signals from their own completions. However, training solely on self-generated feedback can reinforce existing biases and suboptimal behaviors, reduce response diversity, and ultimately lead to homogenized responses and training collapse. In this work, we show that unsupervised reasoning can emerge through cooperative multi-agent training. We introduce Co-RL, a framework in which multiple decoupled models, sharing no parameters, are simultaneously optimized through RL using rewards derived from their peers. We further show that increasing cohort diversity, through heterogeneous model families, sizes, and rephrased training samples, reduces the correlated errors that drive self-reinforcing feedback loops. This diversity consistently improves reasoning performance, maintains behavioral diversity, and mitigates training collapse. Across text-only and multimodal domains, Co-RL consistently outperforms the base models and prior label-free approaches, while matching or surpassing supervised methods, without access to any ground-truth labels. Concretely, Co-RL yields average gains of 3.0-8.6% across seven text-only benchmarks for LLMs and 2.3-7.2% across four multimodal benchmarks for VLMs. Code is available at https://github.com/DrStranded/Co-RL.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Reinforcement Learning in Robotics",
+        "Explainable Artificial Intelligence (XAI)",
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "keywords": [
+        "Matching (statistics)",
+        "Reinforcement learning",
+        "Code (set theory)",
+        "Diversity (politics)",
+        "Predictive coding",
+        "Base (topology)",
+        "Verifiable secret sharing"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.26094",
+      "abstract": "Multi-step causal reasoning requires chaining inferences where each step constrains the next. An early error propagates silently, and a correct answer reached via flawed logic evades outcome-level detection. In specialized domains, teacher LLMs err on intermediate steps, safety constraints restrict cloud distillation, and shifting conditions demand adaptation, leaving self-evolution as the practical route. Naive self-evolution can collapse: outcome-only rewards let the model exploit distributional shortcuts, and weak self-evaluation reinforces spurious paths into stable failure patterns. We exploit a key asymmetry: generating a correct chain is hard, but verifying a single step is easy. Many high-stakes domains admit a deterministic, queryable oracle, a physics simulator or rule engine over codified constraints. It checks asserted steps without teacher-level ability and abstains beyond its rules; it can check what the model asserts, never replace it. This enables CoEvo, an oracle-grounded self-evolution framework where a single model alternates between Proposer and Solver. As Solver, the model generates competing chains; intra-group debate exposes disagreement steps, a proxy for the capability boundary, and the oracle adjudicates them into process-level supervision. As Proposer, the same model constructs progressively harder scenarios inside oracle constraints, steering the curriculum toward deep multi-hop chains. Both roles are updated jointly, so training pressure co-evolves with the model. On industrial, clinical, and legal multi-step causal reasoning benchmarks, CoEvo enables an 8B LLM to sustain self-evolution, surpassing distillation baselines and the strongest proprietary reference on path correctness (82.1% vs. 71.4%). The trained model generalizes to unseen categories and systems, preserving root-cause accuracy.",
+      "topics": [
+        "AI-based Problem Solving and Planning",
+        "Machine Learning in Healthcare",
+        "Logic, Reasoning, and Knowledge"
+      ],
+      "keywords": [
+        "Exploit",
+        "Correctness",
+        "Spurious relationship",
+        "Oracle",
+        "Forward chaining",
+        "Causal model",
+        "Chaining",
+        "Backward chaining"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.17234",
+      "abstract": "Multimodal large language models (MLLMs) are increasingly used to interact with screenshots, scanned documents, diagrams, and other visually grounded inputs. This shift introduces a new safety risk: in many multimodal jailbreaks, neither the prompt nor the image is harmful in isolation. Unsafe behavior emerges only when the model binds an apparently benign operation, such as summarizing, translating, or following, to a localized visual target. This reveals a structural weakness in current multimodal defenses, which largely moderate the prompt-image pair as a whole even though the true security-relevant unit is the grounded operation-target pair produced during dereference. In this work, we identify and analyze this reference-dependent failure mode and show that existing defenses degrade when harmful semantics are localized, activated only after grounding, and dependent on visual reference resolution. To address this problem, we propose COMIC (Context-Operation-Modality-Image-Classifier), a reference-aware pre-generation safety gate for MLLMs. COMIC first infers the requested operation and reference type, constructs candidate targets from OCR and open-vocabulary proposals, grounds plausible referents, and evaluates safety over explicit operation-target pairs. To handle ambiguity conservatively, COMIC combines max-risk aggregation with quality-aware routing before deciding whether to forward or block a request. We evaluate COMIC across multiple open-source MLLMs, localized and broader multimodal jailbreak benchmarks, and benign reference-sensitive settings. The results show that COMIC consistently improves robustness while preserving benign utility and practical efficiency. More broadly, our findings suggest that multimodal safety cannot be enforced reliably without modeling the requested operation, the visual target to which it applies, and the confidence of that grounding.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Topic Modeling",
+        "Adversarial Robustness in Machine Learning",
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Grounded theory",
+        "Harm",
+        "Process (computing)",
+        "Visual language",
+        "Point (geometry)",
+        "Vulnerability (computing)"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10336041/v1",
+      "abstract": null,
+      "topics": [
+        "Surgical Simulation and Training",
+        "Innovations in Medical Education",
+        "Medical Education and Admissions"
+      ],
+      "keywords": [
+        "Likert scale",
+        "Educational measurement",
+        "Curriculum",
+        "Teaching method",
+        "Dreyfus model of skill acquisition",
+        "MEDLINE",
+        "Scale (ratio)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.21441",
+      "abstract": "Automated training of surgeons is one of the most crucial factors that significantly minimize surgical training risks and expenses. With recent advances in artificial intelligence (AI) knowledge and available data from various surgeries, AI's involvement in surgical training is becoming very promising. It is recommended that at the early stages of AI development, it interferes in the surgery as a third agent alongside the trainer. As trust in AI increases, this process will lead to an AI agent acting as a trainer in the future. The first phase in which AI can intervene in the training process is to suggest an improved surgical path to the trainer. A platform must be constructed in the first step, to accomplish this task and to enhance the movement path of trainee surgeons. This paper introduces this platform along with an annotated capsulorhexis surgery dataset called the ARAS-Farabi dataset. In this research, a deep convolutional neural network is pre-trained with JIGSAWS and ARAS-Farabi surgical datasets that can extract surgical skill characteristics from surgery tool tip motion data. The proposed platform develops a reference model from the feature space of an expert surgeon's movement trajectory and proposes an improved path to enhance the skill of a novice surgeon. An optimization with two loss functions is utilized to create a path that raises the skill level of the novice surgeon's path while simultaneously predicting and preserving his/her intent. The results of this study reveal that, with the assistance of an AI agent, the trainee surgeon's movement path can be enhanced by at least 20 percent while maintaining his intentional objective. In addition to the recommended deep network, various tangible indicators have also been developed in this research to verify the level of trainee improvement.",
+      "topics": [
+        "Surgical Simulation and Training",
+        "Soft Robotics and Applications",
+        "Artificial Intelligence in Healthcare and Education",
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": [
+        "Path (computing)",
+        "Process (computing)",
+        "Trainer",
+        "Trajectory",
+        "Feature (linguistics)",
+        "Task (project management)",
+        "Convolutional neural network",
+        "Motion planning"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.17776",
+      "abstract": "We demonstrate that RL finetuning an LLM using debate, a two-player adversarial game between a generator and a critic adjudicated by a weaker LLM judge, reduces reward hacking compared to a reinforcement learning from AI feedback (RLAIF) baseline. Reward hacking is a central obstacle in RLAIF: as training progresses, the policy learns to exploit systematic errors in its AI judge, degrading task performance, a problem that worsens precisely when the judge is weaker than the policy, the setting most relevant to overseeing increasingly capable AI systems. We study mathematics tasks, where final-answer correctness is verifiable, allowing us to measure reward hacking dynamics. We train a Gemini~2.5 Flash-class policy with a frozen, weaker Gemini~2.5 Flash Lite judge, comparing a single-player RLAIF baseline against debate. While the baseline quickly hacks the judge, debate maintains judge performance throughout training, leading to a higher peak validation accuracy (45\\% performance gap recovered) that persists through many RL steps. Additional experiments show that: 1) further weakening the judge leads to faster hacking, but this can be compensated by adding an additional debate round; 2) debate incentives override prompted misalignment; 3) RL using an LLM judge has a smaller train/validation reward gap than RL from verifiable rewards; 4) learning to critique to convince the judge using ground truth labels is possible but slow. Taken together, our results are a positive update on the feasibility of debate, while highlighting that balancing multi-agent training is critical: without player constraints, adversarial training risks defaulting to critic judge-hacking. We show that critique word limits (effective up to 150 words) successfully balance the game and avoid judge hacking, though this introduces a trade-off by restricting critic expressive clarity.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Reinforcement Learning in Robotics",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "Hacker",
+        "Exploit",
+        "Reinforcement learning",
+        "Task (project management)",
+        "Incentive",
+        "Baseline (sea)",
+        "Adversarial system",
+        "Correctness"
+      ]
+    },
     {
       "id": "arxiv:2608.18294",
       "abstract": "An increasing number of scholars use AI to measure variables they subsequently include in downstream analyses. Although AI-measured variables are often analyzed as if observed without error, ignoring prediction errors in automated measurement leads to substantial bias and invalid confidence intervals in downstream analyses, even if AI measurement accuracy is high, e.g., above 90%. Existing solutions, such as design-based supervised learning and prediction-powered inference, combine error-prone AI-based measurements with gold-standard labels, which may be costly and difficult to obtain in some application areas. In this paper, we propose debiased inference with multiple imperfect measurements (DMM), a framework that combines multiple error-prone AI measurements to enable valid downstream inference without gold-standard labels. Building on the established results on CP decomposition, DMM assumes that these measurements are independent conditional on the latent true label and observed unit-level features, such as text features represented by embeddings. This framework allows for unknown misclassification rates to vary across annotation methods (e.g., large language models) and across units of annotation (e.g., texts). Under this assumption, we use semiparametric inference theory to prove that the DMM estimator is consistent and asymptotically normal, enabling valid inference for a wide range of downstream statistical analyses common in the social sciences. Our simulation results show that DMM yields valid inference and that adding accurate, though imperfect, measurements can improve efficiency. Focusing on common applications of large language model annotations, we also develop diagnostics to assess the conditional independence assumption.",
@@ -3542,133 +3685,6 @@
         "Representation (politics)",
         "Forcing (mathematics)",
         "Uncertainty quantification"
-      ]
-    },
-    {
-      "id": "arxiv:2608.15424",
-      "abstract": "The rapid adoption of large language models has enabled the development of clinical multi-agent systems (MAS) capable of integrating multimodal patient data and supporting increasingly complex clinical decision-making. However, the deployment of these systems in real-world healthcare settings raises critical ethical concerns related to safety, fairness, accountability, transparency, and patient trust. While numerous organizations, including the World Health Organization, the National Academy of Medicine, and the FUTURE-AI consortium, have proposed ethical frameworks and governance principles for healthcare AI, these efforts remain largely conceptual. To address this challenge, we present ETHOS (Ethics and Trust through Hierarchical Oversight System), a modular ethics framework designed as a governance meta-agent that can be integrated with any existing multi-agent system without requiring changes to its underlying architecture. ETHOS translates stakeholder-informed ethical requirements into executable runtime oversight through a layered governance approach consisting of deterministic checks, contextual reviews, and a final ethics critic. These components continuously evaluate intermediate reasoning steps and final outputs, enabling the system to identify ethical risks, request revisions, or suppress responses that fail predefined safety and trustworthiness criteria. We demonstrate ETHOS within a hepatology clinical decision-support MAS. Results show that ETHOS improves decision reliability by detecting incomplete, inconsistent, or out-of-scope evidence and appropriately increasing abstention when safe recommendations cannot be supported. By embedding ethical governance directly into system operation, ETHOS provides a practical and auditable mechanism for transforming high-level AI ethics principles into deployable safeguards.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Ethics and Social Impacts of AI",
-        "Explainable Artificial Intelligence (XAI)",
-        "cs.MA",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "keywords": [
-        "Ethos",
-        "Corporate governance",
-        "Modular design",
-        "Executable",
-        "Ethical code",
-        "Health care",
-        "Patient safety",
-        "Research ethics"
-      ]
-    },
-    {
-      "id": "arxiv:2608.15071",
-      "abstract": "Learning from experience is critical for developing capable, self-improving large language model (LLM) agents. Existing methods typically extract knowledge from accumulated trajectories via reflection, memory, rules, or skills. However, agents in realistic environments continuously encounter novel tasks, often offering only a one-shot opportunity to improve. These executions yield rich but highly noisy contexts, entangling broadly useful lessons with task-specific artifacts. Critically, prior works rarely validate their effectiveness on complex real-world tasks or isolate the underlying drivers of improvement. To address these gaps, we formulate online harness learning, where a frozen agent improves by continually updating a structured harness across sequential tasks. This formulation enables a systematic study of key self-improvement factors through our proposed Evo-Harness. At its core, context-to-harness skill compilation distills noisy, single-shot executions into reusable skill harnesses for cross-domain and topic-level adaptation. To demonstrate the efficacy of one-shot skill compilation, we evaluate across five realistic benchmarks (TerminalBench2, SWE-bench, CL-Bench, -bench, WebArena-Infinity). Our extensive analysis demonstrates the effectiveness of Evo-Harness and provides a principled understanding of how LLM agents can effectively learn on the fly. Our code is available at https://github.com/A-EVO-Lab/a-evolve/tree/release/evo-harness.",
-      "topics": [
-        "Domain Adaptation and Few-Shot Learning",
-        "Topic Modeling",
-        "Artificial Intelligence in Healthcare and Education",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Key (lock)",
-        "Code (set theory)",
-        "Action (physics)",
-        "Software",
-        "Source code"
-      ]
-    },
-    {
-      "id": "openalex:W7203656049",
-      "abstract": "This paper introduces the concept of frame-exchange polylogue as a novel epistemological mechanism for cognitive emergence in the context of human-AI interaction. Drawing on Fillmore’s frame semantics, Vygotsky’s zone of proximal development, and Kierkegaard’s anthropological turn, we propose a model of reflective role-playing AI agents (Socratic, Gödelian, Piagetian) that collectively scaffold the subject’s cognitive expansion. Through a case study of a real-time polylogue between a human subject and a generative language model, we demonstrate how cognitive emergence — defined as a non-additive, phase-transitional leap in semantic structuring — arises from the cross-interference of multiple framing perspectives. We further link this process to the neuroconstructivist competence introduced by Ivanov (2025), arguing that polylogical interaction with AI constitutes a core operational practice of 21st-century education. The paper concludes with implications for educational design, epistemic agency, and the status of the human subject in the age of artificial intelligence.",
-      "topics": [
-        "Embodied and Extended Cognition",
-        "Innovative Education and Learning Practices",
-        "Educational Leadership and Innovation"
-      ],
-      "keywords": [
-        "Cognition",
-        "Structuring",
-        "Generative grammar",
-        "Framing (construction)",
-        "Mechanism (biology)",
-        "Competence (human resources)",
-        "Image schema",
-        "Subject (documents)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.15163",
-      "abstract": "Visual brain decoding reconstructs visual content perceived by a person from neural measurements such as fMRI, providing a computational approach to studying how visual information is represented in the brain. Recent multimodal representations and diffusion priors have improved reconstruction realism. However, visually plausible reconstructions may contain incorrect objects, attributes, or relations because a strong generative prior can complete content not sufficiently specified by the decoded representation. Conventional reconstruction metrics mainly assess the final image and may therefore obscure such semantic errors. We propose ConceptAlign, a counterfactual semantic alignment framework for visual brain decoding. ConceptAlign pools decoded visual tokens and projects them into a frozen text-embedding space, aligning the representation with the ground-truth caption while separating it from scene-preserving near-miss alternatives. Generated offline by an LLM, these alternatives modify one critical object, attribute, or relation while retaining the scene. A margin-based objective learns fine-grained semantic boundaries between the observed stimulus and plausible but incorrect interpretations without requiring LLM calls during inference. We introduce a systematic three-level semantic evaluation framework covering foundational discriminability, counterfactual description discrimination, and representational geometry. Experiments on the Natural Scenes Dataset show that ConceptAlign improves reconstruction measures, counterfactual semantic discrimination, and representational alignment over the MindEye2 backbone. Matched negative-source ablations, independent LLM and human-written alternatives, and human evaluation support the effectiveness and robustness of the supervision, with favorable patterns in fine-grained conflicts, limited-data decoding, and cross-subject structure.",
-      "topics": [
-        "cs.CV",
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.15004",
-      "abstract": "Lung cancer remains one of the leading causes of cancer-related mortality worldwide, and Computed Tomography (CT) is a primary imaging tool for screening and followup assessment. After pulmonary nodule detection, radiologists manually assess anatomical location, diameter, margin characteristics, and attenuation type to support risk assessment and clinical decision-making. However, this post-detection workflow is time-consuming and can be affected by inter-observer variability. Existing Artificial Intelligence methods often focus on isolated tasks, limiting their use as a unified, clinically grounded interpretation framework. This study presents FZ-VLM, a two-stage Florence-Zephyr Vision Language Model framework for unified structured pulmonary nodule characterization in lung CT. The framework uses a fine-tuned Florence-2 model to extract radiological attributes from expert-annotated 2D axial CT slices, while a Zephyr-7B model uses these attributes to generate nodule descriptions, follow-up recommendations, and longitudinal analyses. Results showed that the Stage 1 model achieved 77.18\\% accuracy for anatomical location, 67.96\\% accuracy for margin characteristics, and 79.13\\% accuracy for attenuation type, with a Mean Absolute Error of 2.58 mm for diameter estimation, outperforming evaluated GPT-4-based baselines as well as the human baseline. Expert radiologist evaluation of Stage 2 showed 93.9\\% accuracy, 98.6\\% completeness score, 76.1\\% clinical relevance, and an overall score of 89.5\\%. Safety analysis showed that most outputs were clinically safe, although some follow-up recommendations still required expert review. To the best of our knowledge, this study presents the first two-stage Vision-Language Model framework for structured nodule characterization and clinical decision-making.",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2609.27758",
-      "abstract": "Safety alignment in large language models is trained primarily in English, and recent work reports that the underlying harmfulness representation survives translation: English-trained probes separate harmful from harmless prompts almost as well in low-resource languages as in English. This has been taken as evidence that cross-lingual refusal failures mainly reflect calibration rather than representation quality. We show that this conclusion depends on the choice of negative examples. Across nine languages spanning three resource tiers, we replicate near-perfect transfer (AUROC > 0.98) when harmless prompts come from an unrelated distribution (easy negatives). With XSTest contrast prompts, which are benign but surface-similar to harmful requests (hard negatives), transfer collapses in low-resource languages while remaining largely stable in high-resource languages. On Qwen2.5-7B-Instruct, mean AUROC drop increases from 0.003 in English to 0.017 in high-resource, 0.042 in mid-resource, and 0.276 in low-resource languages. The pattern replicates on Aya Expanse. Back-translation chrF controls and a matched-chrF comparison across three languages reduce the likelihood that translation quality explains the effect. The collapse remains after controlling for chrF (partial r = 0.70, p = 0.03). Tokenizer fertility correlates with the collapse and explains part of the resource-tier effect, but not all of it. The results show that easy-negative transfer can coexist with substantial degradation under hard negatives. Easy-negative evaluation alone therefore cannot establish that the harmfulness representation survives translation.",
-      "topics": [
-        "Topic Modeling",
-        "Natural Language Processing Techniques",
-        "Neurobiology of Language and Bilingualism",
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Representation (politics)",
-        "Replicate",
-        "Resource (disambiguation)",
-        "Negative",
-        "Contrast (vision)",
-        "Quality (philosophy)"
-      ]
-    },
-    {
-      "id": "doi:10.1145/3774905.3793124",
-      "abstract": "Large Language Models (LLMs) are notorious for struggling with assessing their own uncertainty, detecting knowledge conflicts, or recognizing when problems exceed their expertise; such limitations inevitably undermine reliability and trust in LLMs. In this paper, we present the first implementation of a metacognitive framework for ensembles of LLMs that addresses these challenges through explicit monitoring and control mechanisms. Our system computes a Metacognitive State Vector (MSV) quantifying self-awareness for monitoring across five dimensions derived from cognitive psychology: Emotional Response, Correctness Evaluation, Experiential Match, Conflicting Information, and Problem Importance. MSV values also provide self-regulation for control, automatically switching between System 1 (fast, single- or multi-node) and System 2 (deliberative, multi-node) processing based on query complexity. For System 2 execution, graph-theoretic algorithms control the assignment of specialized roles (Domain Expert, Critic, Evaluator, Synthesizer, and Generalist) to ensemble nodes according to their MSV-quantified metacognitive states. Our implementation allows users to explore how different query types trigger distinct processing modes. The Proof-of-Concept (PoC) demo showcases the framework with illustrative examples showing appropriate System 1/System 2 routing and helps visualize the metacognitive process via real-time radar charts and decision indicators. This PoC implementation demonstrates the feasibility of creating a framework for metacognitive self-awareness and self-regulation in LLM systems.",
-      "topics": [
-        "cs.AI",
-        "cs.MA"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.15448",
-      "abstract": "Large language models increasingly rely on sampling as a driver of their own improvement, making the fidelity of their learned distributions more critical than ever. Yet, not all distributions are equally easy to learn. In this work, we identify a curse of ambiguity: in large language models, and more broadly in all neural networks that produce discrete probability distributions, the more ambiguous a next-token distribution is, the harder it is to learn accurately. Through an extensive theoretical analysis, we trace this curse to architectural and learning roots. More ambiguous distributions require more capacity to be stored, larger embeddings to be represented, more steps to be fitted, and amplify token-sampling noise. We validate these findings on synthetic tasks with controlled ground truth and observe the same signatures in language models trained on real data. Our results provide a new perspective on the statistical capabilities of large language models and a practical framework for when to trust their output distribution.",
-      "topics": [
-        "Generative Adversarial Networks and Image Synthesis",
-        "Topic Modeling",
-        "Artificial Intelligence in Healthcare and Education",
-        "cs.CL",
-        "cs.LG",
-        "cs.NE"
-      ],
-      "keywords": [
-        "Ambiguity",
-        "Curse",
-        "TRACE (psycholinguistics)",
-        "Language model",
-        "Fidelity",
-        "Perspective (graphical)",
-        "Probability distribution",
-        "Natural language"
       ]
     }
   ]

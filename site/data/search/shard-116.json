@@ -1,7 +1,78 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-29T11:33:54.800Z",
+  "generatedAt": "2026-10-30T11:26:56.346Z",
   "documents": [
+    {
+      "id": "arxiv:2608.04472",
+      "abstract": "The development of foundation models (FMs) is crucial for advancing endoscopic image analysis. However, existing endoscopy FMs mainly rely on self-supervised learning from uni-modal images or videos, overlooking the rich semantic knowledge contained in clinical reports. Furthermore, effectively leveraging these records is hindered by a fundamental modality gap: structured anatomical descriptions are not naturally mapped to specific frames within the high-redundancy, uncurated visual streams. In this paper, we present EndoVLM, a novel vision-language FM pre-trained on over 348K endoscopic examinations, each pairing a clinical report with its corresponding image collection. An Anatomy-Guided Sparse Pooling mechanism utilizes textual descriptions as queries to drive sparse attention, efficiently aggregating semantically salient frames into anatomy-specific visual representations across redundant image-sets. Next, a Progressive Semantic-Aware Alignment strategy models clinical taxonomy (anatomy and pathological status) via structured soft targets, bridging the gap from global patient-level matching to fine-grained localized alignment. Finally, a Semantic-Concentrated Masked Autoencoder is applied exclusively to these semantic-rich frames, integrating low-level visual precision with robust high-level semantic representation. Extensive experiments across various downstream tasks demonstrate that EndoVLM outperforms existing foundation models and remains competitive with task-specific methods. Remarkably, EndoVLM also exhibits robust zero-shot generalization capabilities, highlighting its potential for broader clinical application.",
+      "topics": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.05411",
+      "abstract": "Large language models (LLMs) are increasingly used as AI tutors, but a correct answer is not always a pedagogically appropriate one. In classroom learning, effective help depends not only on correctness, but also on whether a response matches the learner's current foundation, the course sequence, and the timing of concept introduction. Existing evaluations focus mainly on answer quality, leaving this instructional fit under-measured. We present the Pedagogical Suitability Index (PSI), a composite metric of six theory-informed sub-scores that evaluates how well LLM-generated tutoring responses align with learner readiness and curricular progression, and we further use PSI as a structured feedback signal for response improvement. We evaluate four LLM tutors (ChatGPT, Gemini, Gemma4, and Qwen3) across 240 scenario-based evaluations using paired standard and defective prompts, then apply a PSI-guided regeneration protocol to 62 weak-performing cases. Baseline differences across the four tested models were modest overall (PSI range: 0.557 to 0.638), and open-weight and closed models did not exhibit a clear separation in pedagogical fit. Under the tested prompt perturbations, overall PSI remained largely stable (Delta = -0.002), though sub-score trade-offs emerged. More importantly, PSI-guided feedback substantially improved weak-performing cases: 51 of 62 cases improved (82.3%). Focused manual evaluation of the 62 PSI-selected weak cases provides initial evidence that the identified weaknesses are instructionally meaningful and that many PSI-guided regenerations correspond to human-judged improvement. These results suggest that learner- and curriculum-aware alignment may matter more for effective tutoring than model category alone, and that such alignment is both measurable and improvable.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.04646",
+      "abstract": "Large language models (LLMs) have recently shown strong performance on Theory of Mind (ToM) tests, prompting debate about the nature and validity of the underlying capabilities. At the same time, reasoning-oriented LLMs trained via reinforcement learning with verifiable rewards have demonstrated notable improvements across a range of benchmarks. In this work, we examine the behavior of such reasoning models in ToM tasks using novel adaptations of machine psychological experiments together with results from established benchmarks. We observe that reasoning models consistently exhibit increased robustness to prompt variations and task perturbations. Our analysis suggests these gains come at least partly from models being more robust at reaching the correct answer under prompt and task variation. We read this as evidence for a robustness-based account rather than for a new ToM-specific ability.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.18653/v1/2026.findings-acl.1671",
+      "abstract": "Confidence estimation is essential when LLMs are used for classification, indicating when predictions can be trusted. However, common approaches such as verbalization produce extremely sparse outputs. For instance, Qwen3-32B verbalizes only eight unique confidence values on SST-2, with over half being exactly 95%, a pattern we observe consistently across four datasets and two LLMs. Besides limiting practical utility, we show that this sparsity critically affects evaluation: the choice of interpolation in area under the accuracy-rejection curve (AUARC) dramatically alters rankings, with consistency sampling dropping from best to worst under stepwise versus linear interpolation. We advocate for standardizing stepwise interpolation for a fairer comparison. Under such a fair evaluation, we find that weighting verbalized digits by token probabilities, a method we term verbalization logprobs, addresses sparsity and achieves the best AUARC (+2.3 points over vanilla verbalization) without incurring additional inference cost.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.05446",
+      "abstract": "Long-horizon LLM agents increasingly rely on external execution support to maintain state, track progress, invoke tools, verify outcomes, and reuse experience across interactions. However, effective harness use raises two coupled challenges: state formation from noisy interaction traces and runtime control over external-state access. Existing agents usually handle both through prompts, heuristics, or domain-specific conventions, leaving the external workspace and its usage policy manually engineered. To address this, we study the problem of harness policy learning, where agents learn harness policies offline and deploy them to construct and update external harness state online during runtime task execution. We introduce EvoHarness-RL, which exposes Belief, Progress, and Experience (BPE) as policy-facing harness state. Supervised harness fine-tuning teaches the base agent the harness action space and how to construct useful external state, while cost-aware GRPO explores coordination policies to selectively read, update, and consolidate that state during long-horizon interaction. Instantiated on ALFWorld with a Qwen3-8B LLM, EvoHarness-RL reaches 96.9% success and reveals two key dynamics: harness annealing, where training internalizes recurring harness-use patterns into the model policy and shifts the agent from frequent harness calls toward selective external-state access, and harness evolution, where progress updates and experience consolidation refine the harness into a compact, task-adaptive state substrate. These results suggest that long-horizon agents benefit from trainable policies for constructing and coordinating with external harness workspaces, beyond simply adding stronger tools or larger memories.",
+      "topics": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.04892",
+      "abstract": "Artificial intelligence systems that adapt instruction to individual learners are increasingly deployed in K-12 classrooms, yet empirical evidence on their effects in authentic elementary settings remains limited, particularly for students with mathematics learning difficulties. This dissertation examines AI-powered personalized learning during primary school fraction instruction, a domain that is foundational to later mathematics and STEM achievement. The first manuscript presents a systematic review of research on artificial intelligence in mathematics education published between 2020 and 2024. The second manuscript reports a quasi-experimental study evaluating Mathbot, a chatbot-based personalized learning platform, against business-as-usual classroom instruction. Repeated measures ANOVA was used to assess change in fraction comprehension and situational interest across time points. Results indicated modest improvements in fraction comprehension for students using Mathbot relative to traditional instruction, while changes in situational interest were not statistically significant. Findings suggest that automated personalization did not displace the instructional role of the teacher and that teacher decision-making remained central to student outcomes. The work contributes classroom-based evidence to ongoing discussion about the capabilities and limits of adaptive AI systems in elementary mathematics, and about accessibility and equity considerations when such systems are used with students with disabilities.",
+      "topics": [
+        "cs.CY",
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.05235",
+      "abstract": "Research agents increasingly conduct multi-round machine-learning experiments in industrial recommendation settings and retain the resulting trajectories to guide later decisions. Yet a completed trajectory is not automatically evidence: generated artifacts may be unsupported or incomplete, executed rounds may be invalid or confounded, and later modifications may obscure earlier findings. We study \\textbf{trajectory-to-evidence conversion}, asking what a completed research process has actually established. We introduce an evidence-grounded framework that couples bounded verification of consequential artifacts with post-execution claim qualification. A context-isolated generate--verify--repair process checks artifacts for evidence violations and missing downstream requirements before release. After execution, validity and attribution checks consolidate evidence across rounds, qualify intervention-level claims as actionable repairs, diagnostic guards, or withheld findings, and preserve admitted claims as auditable records with explicit provenance and applicability boundaries. A hybrid LLM-assisted controller subsequently applies, defers, or rejects records based on available target evidence. Record audits characterize which claims survive qualification, while downstream diagnostics identify affirmative applicability judgment as a bottleneck for the tested controller. Across paper-to-target adaptations, later rounds often improve on the first, while final rounds frequently underperform an earlier best, exposing non-monotonic trajectory evolution. Candidates produced through the complete workflow also yielded positive online lifts relative to deployed baselines.",
+      "topics": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.05045",
+      "abstract": "Released aligned large language models remain vulnerable to malicious downstream finetuning. Existing defenses are largely designed for the fine-tuning-as-a-service (FTaaS) paradigm or rely on downstream users to follow additional safety procedures, and therefore do not directly address the setting we study: a provider controlled partially protected open-weight (PPOW) release setting in which most weights remain trainable while a small safety-critical component is preserved at release. We propose a Unidirectional Safety Gate (USG), instantiated as a Null Space Cubic Layer together with an Inverse Adapter inserted after the final Transformer layer. During downstream fine-tuning, the cubic layer suppresses or blocks gradients from harmful samples whose hidden states fall in a calibrated protected region, while the Inverse Adapter restores the base model's forward behavior. In practice, we calibrate a threshold using defender-held harmful data, allowing protection to generalize to nearby in-distribution harmful samples. Across six evaluated model-dataset settings, USG keeps post-finetuning attack success rate close to the pre-release level under a fixed release threshold, while maintaining high safe-pass rates on easier settings and exhibiting a clearer safety-utility trade-off on unsafe samples from BeaverTails. These results suggest that release-time representation-space blocking can raise the cost of malicious downstream adaptation without requiring downstream cooperation. The code is available at https://github.com/OpenCausaLab/Gradient-Immunity.",
+      "topics": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.05063",
       "abstract": "The semiconductor industry is undergoing a dual revolution: the shift toward heterogeneous 2.5D chiplet systems and the integration of Large Language Models (LLMs) into Electronic Design Automation (EDA) flows. While these paradigms offer unprecedented benefits in yield, modularity, design productivity, etc., they radically expand the hardware attack surface. This paper provides a unified analysis of these frontiers, ranging from attacks on chiplet systems (including hardware stacks for LLM acceleration) across architectural, logical, and physical levels, to various exploits against LLM-driven EDA pipelines. To secure chiplet systems, we review a powerful defense approach that leverages 2.5D split manufacturing and active interposers for physically isolated Root of Trust (RoT) architectures. To secure LLM-driven EDA pipelines, we first identify native threats and then review state-of-the-art defense techniques. Finally, we discuss how LLM systems can advance hardware security efforts for modern systems, including chiplets.",
@@ -1815,74 +1886,6 @@
         "cs.LG",
         "cs.AI",
         "q-bio.GN"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01437",
-      "abstract": "Multimodal Continual Instruction Tuning (MCIT) enables multimodal large language models to acquire new tasks sequentially while retaining previously learned capabilities. Many recent methods maintain task-specific LoRA experts and route each input to one or more experts at inference. Yet the task-identification problem underlying expert routing remains under-explored. We show that routing is nearly saturated on widely used MCIT benchmarks. Textual fingerprints that leak task identity and short 4--10-task sequences with few competing experts jointly obscure the long-horizon routing problem. To expose this challenge, we introduce FLEX (Fingerprint-reduced Long-horizon Expert eXamination), a 34-task long-horizon MCIT benchmark with weakened textual fingerprints. FLEX groups tasks with similar instruction and answer formats but diverse visual and knowledge domains, normalizes their outer templates, and evaluates routing over a substantially larger expert pool. Crucially, we formulate progressive-LoRA routing as soft task-as-class Multimodal Class-Incremental Learning (MCIL): each task defines an incremental routing class, whose complete score distribution supplies the LoRA mixture weights, with hard routing as a discrete special case. FLEX exposes this expanding task-identification challenge, while the MCIL formulation provides a principled interface for transferring CIL methods to expert routing. We instantiate PureLoRA as a controlled baseline and adapt four CIL methods to four MCIT frameworks without modifying their LoRA experts or generation pipelines. Our plug-in routers improve strict LoRA matching by up to 16.3 percentage points and overall MacroScore by up to 4.6 points. Code is available at: https://github.com/RINC-CL/FLEX",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.14668",
-      "abstract": "LLM-based multi-agent systems (LLM-MAS) solve complex tasks through specialized collaboration, but inter-agent dependencies can propagate hallucinated or malicious outputs into system-level failures. Auditor agents mitigate these risks, yet existing strategies face an efficiency dilemma: end-only auditing reviews long trajectories and final outputs, potentially weakening audit effectiveness and enlarging rollback scope, while auditing every agent each round improves detection and localization at high token cost. How can guard performance be preserved while minimizing token cost? To address this problem, we propose BRA-Audit, a budget-aware runtime auditing framework that models MAS execution as a dynamic dependency graph and formulates audit scheduling as audit-point placement under a fixed audit-call budget to minimize cumulative unchecked exposure. Its greedy scheduler prioritizes influential and long-unaudited regions, while trusted audit points enable localized recovery. Across structured coordination, complex reasoning, and open-ended tasks, BRA-Audit restores performance close to the clean setting, remains competitive with heavy guard methods and reduces end-to-end token consumption by \\(17.2\\%\\)--\\(40.6\\%\\).",
-      "topics": [
-        "cs.MA",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01319",
-      "abstract": "Recent meta-reasoning frameworks improve LLM reasoning by wrapping chain-of-thought generation in an iterative control loop, allowing more effective backtracking, termination of reasoning loops, and injection of promising reasoning patterns, among other strategy adjustments. Despite promising results, methods often rely on backward-looking reward functions, utilize coarse search actions, or require additional reasoning controller training requiring many-shot supervision. We introduce Cognitive Demand Steering (CDS), a training-free meta-reasoning framework equipped with residual demand assessment: at each step, an LLM-based progress evaluator characterizes the residual reasoning required to arrive at a solution rather than merely evaluating the previous step. This allows a meta-controller to select reasoning interventions comprising both general-purpose exemplars and actions (e.g., general guidance for quantitative reasoning) that directly tackle this forward-looking demand signal. This shift eliminates the need for any trained component while enabling zero-shot transfer across models and tasks with no adaptation. Rather than relying on coarse characterizations, we employ cognitive scales to both design interventions as well as profile initial problem complexity and residual demand signal over 16 dimensions motivated by cognitive science (e.g., attention and scan, learning and abstraction, spatio-physical reasoning), giving the controller a fine-grained vocabulary for diagnosing. Averaged across three frontier LLMs and six reasoning benchmarks, CDS improves accuracy by $21.9\\%$ over direct calls and $9\\%$ over standard CoT reasoning, with the largest gains on difficult mathematics and coding tasks.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.00964",
-      "abstract": "This rapid evidence review examines 89 articles about artificial intelligence (AI) and book publishing published from November 1, 2025 through August 1, 2026. The purposive corpus spans English-, Chinese-, German-, French-, Spanish-, Portuguese-, Italian-, and Japanese-language publishing coverage; major-newspaper book coverage; and specialist technology commentators. Each item was coded for topic, stance, technical depth, and dominant voice. The press is neither silent nor simply hostile: 30% of items are risk-framed, 42% mixed, and 28% opportunity-framed. Chinese coverage is markedly operational and opportunity-oriented; specialist commentary is substantially deeper than trade reporting. Yet the corpus still clusters around rights, licensing, governance, reader trust, workflow adoption, and product announcements. Only ten items offer sustained technical scrutiny, and none centers a direct interview with a frontier-lab researcher or evaluation engineer. The central gap is reporting that connects model architecture and evaluation to publishing decisions: capability elicitation, RAG, prompt injection, agent reliability, inference economics, model drift, provenance, reader research, and reproducible workflow evaluation. The report recommends a standing AI beat, recurring lab interviews, a claims ledger, shared test protocols, reader panels, and technical columnists. The supplement supplies the full coded corpus, claim ledger, glossary, and BibTeX database.",
-      "topics": [
-        "cs.CY"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01377",
-      "abstract": "Large language models can now generate fluent and complete stories, yet many outputs still feel formulaic and unnatural because of cliches, over-explanation, linear causal progression, and stereotyped endings, an immediately recognizable AI flavor. Existing detection and evaluation methods often stop at source labels or holistic scores, while revision methods typically target predefined issues through localized edits, limiting their ability to support multiple plausible revision strategies or guide story-wide changes in information release, causal organization, and ending treatment. We introduce CraftAlign, a framework that aligns AI stories with the craft of human storytelling by both assessing Human/AI writing patterns and providing revision guidance. CraftAlign comprises two learned modules and an inference-time guidance pipeline. A feature estimator built on Qwen3.5-9B predicts 304 explicit writing features spanning style and narrative. A class-conditional energy model scores the resulting feature configuration against Human and AI writing patterns, conditioning on the original writing prompt when available. At inference time, CraftAlign applies schema-valid structured perturbations, selects changes that move the feature configuration toward the Human writing pattern, and converts them into natural-language guidance for a separate editor to rewrite the full story. Experiments show that CraftAlign accurately distinguishes Human and AI writing patterns and that its guidance outperforms revision baselines across editors and in a human study.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01055",
-      "abstract": "Multimodal Large Language Models (MLLMs) are increasingly expected to solve structured perception tasks that require visual recognition, language-to-object binding, object cardinality preservation, and precisely localized grounding and segmentation outputs. However, existing group-relative reinforcement learning methods provide only response-level supervision, creating a granularity mismatch for structured multi-object prediction: a single advantage is broadcast to all tokens in a response, without distinguishing individual box contributions. To address this mismatch, we propose MCR-GRPO, a marginal contribution assignment framework that derives box-level credit directly from each sampled response. Specifically, Marginal Contribution Reward (MCR) estimates each predicted box's contribution through a leave-one-out comparison, measuring how the matched set value changes when the box is removed from the response. After within-response normalization, records that improve the set value receive positive credit, while redundant or harmful ones are suppressed. To make marginal attribution stable and informative, we further introduce a Continuous Matched Set Value Evaluator that integrates permutation-invariant matching, count-aware normalization, and graded localization. MCR-GRPO maps normalized box-level marginal advantages to the token spans that generated each box, preserving GRPO's response-level comparison while enabling box-aware optimization of structured multi-object grounding. Experiments across REC, DOD, segmentation, and counting benchmarks show state-of-the-art performance over prior GRPO-based baselines.",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01046",
-      "abstract": "The rapid spread of large language models (LLMs) across the web raises concerns about misinformation, academic integrity, automated content manipulation, and risks to vulnerable online communities. Existing transformer-based detectors, such as GPT-Sentinel, show promise but struggle to generalize to diverse model outputs and paraphrasing attacks, limiting their role in building trustworthy web ecosystems. This work introduces DeBERTa-Sentinel, a responsible AI-generated text detection framework leveraging DeBERTa-v3's disentangled attention to capture subtle structural irregularities in synthetic content. A central design principle is transparency: unlike black-box commercial detectors, DeBERTa-Sentinel exposes token-level explanations of its decisions, enabling affected stakeholders journalists, educators, and platform trust and safety teams to audit, challenge, and contextualize detection outcomes. Using the GLC-AIText dataset of 28,057 human and LLM-generated samples (GPT, LLaMA, and Claude) with a 60-20-20 split, DeBERTa-Sentinel achieves 98.21\\% validation accuracy and surpasses the RoBERTa-Sentinel baseline from NeurIPS 2025, achieving 97.53\\% test accuracy, 95.89\\% precision, 99.33\\% recall, and 99.53\\% ROC-AUC, and maintaining a 0.665\\% false negative rate. The model's interpretability reveals linguistic markers such as academic phrasing and formal transitions associated with synthetic text, directly supporting stakeholder needs for verifiable, auditable content-authenticity decisions. By advancing responsible detection methods that reduce bias and enhance explainability, DeBERTa-Sentinel promotes trustworthy, ethical, and human-centric AI systems. Code and data are available at https://github.com/Galileo-Galili/HUMAN-VS-AI-TEXT-DETECTION.",
-      "topics": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01540",
-      "abstract": "This experimental study investigates how people rely on different sources of advice when detecting AI-generated fake news (deepfake news). In a laboratory deepfake detection task, student participants identified the proportion of human-written (non-AI-generated) content in synthetic deepfake news articles and received advice from ChatGPT (GPT-4), human peers, or linguistic experts. The results show that participants rely more on ChatGPT than on human peers when detecting GPT-2-generated deepfake news. Participants also rely more on linguistic experts than on peers, while the relative reliance on experts versus ChatGPT is mixed across experimental waves, potentially reflecting time trends in beliefs about AI-based detection. Importantly, in the additional experiment conducted in 2025 under the same experimental procedure, participants relied more on linguistic experts than on ChatGPT. Moreover, performance improvements reflect the joint role of reliance and advice quality, arising primarily when participants rely on high-quality advice. Overall, relying on AI to detect AI-generated deepfakes can improve detection outcomes, but only when AI-based detection tools are of sufficiently high quality. These findings highlight the dual role of GAI as both a source of deepfakes and a tool for mitigating related risks.",
-      "topics": [
-        "econ.GN",
-        "cs.CY"
       ],
       "keywords": []
     }

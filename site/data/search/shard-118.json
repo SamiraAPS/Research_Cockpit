@@ -1,7 +1,105 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-29T11:33:54.800Z",
+  "generatedAt": "2026-10-30T11:26:56.346Z",
   "documents": [
+    {
+      "id": "arxiv:2607.26604",
+      "abstract": "Knowledge-base construction and querying are typically optimized in isolation: retrieval-augmented agents operate over a fixed, externally maintained index, whereas construction receives no signal from downstream use. We present WikiLoop, a feedback-coupled framework that jointly learns to build and navigate an agent-native Wiki, a persistent linked-page knowledge base designed for machine navigation. A role-conditioned shared policy supports two interfaces: a Navigator retrieves evidence from the Wiki to answer queries, and a Builder proposes structured edits evaluated through downstream navigation. The Navigator follows a sufficiency-before-efficiency objective that applies retrieval-cost penalties only after full evidence has been collected. The Builder learns from utility differences: a frozen Navigator scores each candidate edit by its change in downstream performance, while a guard penalty discourages regressions on unrelated queries. Training combines sequential role-specific optimization with a final joint stage over role-homogeneous batches. With Qwen3.5-9B as the common backbone, WikiLoop reaches 62.6 aggregate Answer Correctness on AuthTrace, 6.3 points above LLM-Wiki, base, with the largest gains on multi-document queries. Controlled comparisons support the intended effects of both objectives, and the learned edits remain useful to a held-out Navigator. Paired comparisons indicate that the final shared policy largely retains both role-specific capabilities, improves Navigator and end-to-end Answer Correctness by 0.4 points relative to the corresponding specialist references, and consolidates both interfaces into one model. Without dataset-specific training, WikiLoop also improves over the same-backbone LLM-Wiki, base on HotpotQA and MuSiQue.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.25415",
+      "abstract": "Production LLM agents are increasingly assembled from a frozen model wrapped in a harness: a prompt template, a tool set, a memory/retrieval layer, a planning strategy, and a verification policy. Two 2026 systems, Meta-Harness (Lee et al., 2026) and HyperAgents (Meta AI, 2026), show that this harness can itself be optimized or even self-rewritten by an agentic proposer -- at the cost of either an expensive code-search loop or unconstrained self-modifying code, neither of which is auditable or usable with a fully black-box model API. We take a narrower, more constrained position: treat the harness as a small, fixed, human-legible action space and learn a policy over it online with classic sample-efficient reinforcement learning (an $ε$-greedy contextual bandit and REINFORCE), scored against a multi-objective reward (task success, verifier score, policy compliance, cost, latency, and an unsupported-claim penalty). We instantiate this control system with DSPy (Khattab et al., 2024) as both the context assembler and the source of the strongest non-adaptive baseline (a DSPy BootstrapFewShot static prompt), and evaluate it across three verifiable task domains -- tool-use workflows, code generation (HumanEval), and multi-hop retrieval QA (HotpotQA) -- and two model providers (a local Ollama model and AWS Bedrock). We release the harness-control-system code, the cross-domain verifiable task suite, the full trajectory/reward-decomposition logs from training, and a provider-agnostic deployment recipe for applying this to a new organization's domain and verification setup.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.25497",
+      "abstract": "Pathology foundation models encode non-biological variation introduced by tissue preparation, staining and scanning, enabling shortcut learning that undermines generalisation across institutions. The Robustness Index (RI) was proposed to assess whether local representation geometry is dominated by biological or non-biological variation. However, its construction suffers from structural limitations that make cross-model comparison unreliable, calling for a more principled metric. We introduce the Cross-confounder Robustness Margin (CRoMa), a signed, per-sample margin that measures whether samples sharing the same biology but different confounder lie closer than samples sharing the same confounder but different biology. It is defined for every sample, allowing models to be compared on the same cohort and robustness to be analysed as a distribution rather than reduced to a single pooled score. We evaluated CRoMa across 20 tile-level encoders on three benchmarks. Rankings by median CRoMa were highly consistent across benchmarks (Spearman rho ~ 0.90), yet every encoder retained confounder-dominated samples, whose prevalence and severity varied markedly. Similar patterns emerged for four slide-level encoders evaluated on a separate benchmark, extending the analysis beyond tile-level representations. Higher median CRoMa was associated with smaller shortcut-induced performance losses in downstream linear probes, supporting its use as a representation-level indicator of shortcut susceptibility.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2706907",
+      "abstract": "Generative AI (GenAI) is increasingly integrated with storytelling to cultivate children’s emotion competence. However, most GenAI storytelling practices remain limited to passive content delivery, lacking scaffolded questions that encourage emotional reflection, and the role of parents in collaborating with GenAI is overlooked. This study examined how different GenAI-supported storytelling models influence first-graders’ emotion competence in the context of separation anxiety. Seventy-five first-graders were randomly assigned to three groups: Standard Storytelling GenAI (n = 25), Dialogic Storytelling GenAI (n = 25), and Parent-Assisted Dialogic Storytelling GenAI (n = 25). Data were collected through an emotion competence observation scale and records of child–GenAI dialogues and interactions. Results indicated that the Parent-Assisted Dialogic group significantly outperformed the other two groups in emotion perception and identification, understanding, and regulation. These findings underscore the critical role of parental scaffolding, categorized into four types: emotional support, cognitive scaffolding, translation and clarification, and emotion labeling.",
+      "topics": [
+        "Child Development and Digital Technology",
+        "Educational and Psychological Assessments",
+        "Social Robot Interaction and HRI"
+      ],
+      "keywords": [
+        "Storytelling",
+        "Dialogic",
+        "Perception",
+        "Competence (human resources)",
+        "Generative grammar",
+        "Cognition",
+        "Context (archaeology)"
+      ]
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2702693",
+      "abstract": "Technology equipped with Artificial Intelligence (AI) has advanced rapidly, enabling it to perform complex tasks previously considered impossible. This progress has popularized the concept of human–AI team (HAT) in dynamic environments such as emergency response, healthcare, and military operations, where AI functions as a team member rather than a tool. In both human teams and HAT, situation awareness (SA) is a critical factor for team harmony, which depends on effective communication and coordination. SA becomes more complex in teams, where individuals must not only be aware of information required for their own tasks (Team SA) but also understand what other members need and their responsibilities (shared SA). Given the importance of SA in HAT, this review examines approaches used to assess SA, categorizing them as subjective, objective, performance-based, physiological-based, and multimodal. Finally, the review highlights challenges in assessing SA in HAT and suggests future directions for team-level SA assessment.",
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Team Dynamics and Performance",
+        "Personal Information Management and User Behavior"
+      ],
+      "keywords": [
+        "Situation awareness",
+        "Human intelligence",
+        "Situational ethics",
+        "Applications of artificial intelligence",
+        "Team effectiveness",
+        "Military intelligence",
+        "Teamwork"
+      ]
+    },
+    {
+      "id": "arxiv:2607.26300",
+      "abstract": "AI agents are increasingly adept at tackling complex, long-running tasks. With the rapid surge of autonomous capabilities, human oversight is systematically lagging behind due to limited human-centered interfacing. Aiming to address this, we introduce AgentGUI, a user-friendly, locally hosted GUI for seamlessly observing and steering AI agents amid multiple concurrent, long-running sessions. AgentGUI features 1) rich agent trajectory visualizations, 2) effective manual and automated steering, and 3) integration with and coordination between open-source and frontier agent frameworks. A controlled user study demonstrates statistically significant reduction in the time it takes to identify key elements from agent traces (38% faster, p = 0.023). In a preliminary experiment, AgentGUI's automated drift prevention feature raises the task completion rate of small local agents by as high as 34pp across a 0.8B--9B model ladder (N=50 runs per model). AgentGUI is publicly available through its project website (https://agent-gui-project.github.io) and open-source repository (https://github.com/eth-medical-ai-lab/agent-gui), along with a demo video (https://youtube.com/watch?v=GSDyxN1gTF0).",
+      "topics": [
+        "cs.CL",
+        "cs.AI",
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.18132",
+      "abstract": "Multimodal large language models (MLLMs) are typically built through a multi-stage pipeline consisting of cross-modal alignment, supervised fine-tuning (SFT), and preference optimization. This pipeline assumes that adapting an LLM to a new modality requires extensive task-specific supervision. However, pretrained LLMs already possess strong reasoning and instruction-following abilities. As LLMs evolve rapidly, an important question remains: can we efficiently transfer these capabilities to a new modality with minimal intervention, and is alignment alone sufficient for building a multimodal model? We introduce an Instruction-Free Alignment-Only large audio-language model (LALM) that keeps both the audio encoder and the LLM fully frozen, learning only a lightweight projector. Borrowing insights from AzeroS [1], we train on (audio, response) pairs from Self-Generated Data Construction, where an LLM expands captions into free-form responses without explicit task instructions. Across MMAU, MMAR, MMSU, and MMAU-Pro, our approach matches or surpasses heavily post-trained baselines using substantially less data. By keeping the LLM frozen, our model preserves its native instruction-following competence and can port seamlessly across model generations. Our results suggest that competitive MLLM can emerge from alignment alone, reducing multimodal extension to a lightweight projector-training problem that generalizes across modalities and adapts rapidly to each new LLM release.",
+      "topics": [
+        "cs.CL",
+        "cs.SD",
+        "eess.AS"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2703334",
+      "abstract": "Disorientation during endoscopy is a major challenge for novice operators. This study examined how no prompt, visualization prompts, and AI-assisted prompts affect simulated endoscopic navigation under normal and visually occluded conditions, while also assessing dependence on AI guidance. 32 medical students and interns with basic endoscopic knowledge completed navigation tasks. Accuracy, completion time, situation awareness, cognitive load, user preference, and errors induced by AI false alarms were measured. AI prompts improved navigation accuracy, whereas visualization prompts better supported for situation awareness. Although participantsgenerally preferred AI prompts, false-alarm responses revealed a clear risk of overreliance. The study also introduced a confidence-ring design to communicate AI confidence and uncertainty. Structured AI prompts can support directional decision-making in novice endoscopy training, but their benefits should be balanced against possible reductions in situation awareness and increased dependence. These findings inform the design of intelligent endoscopic navigation support systems for novice users.",
+      "topics": [
+        "Surgical Simulation and Training",
+        "Artificial Intelligence in Healthcare and Education",
+        "Augmented Reality Applications"
+      ],
+      "keywords": [
+        "Visualization",
+        "Cognition",
+        "Endoscopy",
+        "Occlusion",
+        "Creative visualization",
+        "Affect (linguistics)"
+      ]
+    },
     {
       "id": "arxiv:2607.25527",
       "abstract": "Unifying visual understanding and generation in one model holds immense promise, but remains challenging and expensive due to heavy compute and data demands and conflicts between the visual features needed for these two capabilities. To address these challenges, we present Argus-Unified, a compact, effective and unified multimodal model built with low demand on computation and data. Instead of aligning modalities from scratch, Argus-Unified effectively leverages pretrained vision-language models (VLMs) that provide strong multimodal priors. Specifically, we introduce hybrid visual tokens that preserve continuous tokens for understanding while learning discrete tokens for generation from a frozen unified vision encoder. Our training pipeline includes two stages: the first stage learns a quantizer and image decoder on top of the frozen vision encoder, the second stage trains the LLM initialized from a pretrained VLM for the unified multimodal modeling. Using by far the least amount of data (15.6M) and the lowest cost (~$2,000), we demonstrate that unified multimodal models can be trained economically while achieving strong performance in both understanding and generation. Notably, our model attains state-of-the-art multimodal understanding on GQA, POPE, and VQAv2, and competitive generation quality compared to models with dedicated vision encoders (e.g., Janus, Janus-Pro), all at ~10x lower cost and with ~5x less data. We envision Argus-Unified as a useful baseline that lowers the development barrier for unified models.",
@@ -2993,161 +3091,6 @@
         "normative concepts",
         "target population",
         "human-centered AI"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-9929298/v1",
-      "abstract": null,
-      "topics": [
-        "Human-Automation Interaction and Safety",
-        "Emotion and Mood Recognition",
-        "Psychiatry, Mental Health, Neuroscience"
-      ],
-      "keywords": [
-        "human digital twin",
-        "mental workload",
-        "state transition modeling",
-        "state-space model",
-        "multimodal sensing",
-        "cognitive digital twin",
-        "virtual reality",
-        "reference architecture",
-        "concept drift",
-        "interpretability",
-        "human-centered systems"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2606.07756",
-      "abstract": "Accurate distance estimation for small drones in long-range imagery is important for tracking and situational awareness, yet remains challenging due to extreme target scale variation, background clutter, and noisy visual cues. This paper studies monocular drone distance estimation using image crops together with bounding-box geometry, a practical setting in which a detector provides a candidate drone region and the model predicts range from appearance and box-derived features. We evaluate a Droneranger-style baseline, and introduce a new DroneDAR (Drone Detection And Ranging) model that combines a convolutional backbone with explicit bounding-box cues through a lightweight gating mechanism. Experiments analyze how backbone capacity, crop resolution, and regression loss functions affect performance across distance regimes. We further examine common failure modes at long distances, including sensitivity to bounding-box noise and reduced texture detail in the crop. The results provide guidance for designing and training range estimators that remain robust under real-world long-range conditions and highlight directions for improving reliability when drones occupy only a few pixels.",
-      "topics": [
-        "Advanced Neural Network Applications",
-        "Video Surveillance and Tracking Methods",
-        "Advanced Vision and Imaging"
-      ],
-      "keywords": [
-        "monocular vision",
-        "drone detection",
-        "range estimation",
-        "gating mechanism",
-        "regression loss function",
-        "background clutter",
-        "failure modes"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2676765",
-      "abstract": "Immersive analytics uses augmented reality (AR) to integrate data analysis and authoring within physical environments. However, extensive text entry required for immersive analytics authoring remains a fundamental challenge in AR, as popular natural user interfaces often hinder expressive input. We present the Body-Supported Keyboard (BSK), an ergonomic system that allows the mobile use of Bluetooth keyboards in AR. We conducted a study with 20 participants to compare the BSK with a standing desk during text transcription and a mobile AR scenario. We found slightly higher error rates but comparable task completion times. Participants reported comfort improvements during mobile use and positive usability ratings (mean SUS = 74.5). With BSK, users move freely and maintain stable postures while authoring in AR. The findings provide evidence that body-supported input can enhance expressive and ergonomic workflows in immersive analytics and emphasize the importance of comfort and mobility in the design of AR authoring tools.",
-      "topics": [
-        "Interactive and Immersive Displays",
-        "Augmented Reality Applications",
-        "Ergonomics and Musculoskeletal Disorders"
-      ],
-      "keywords": [
-        "immersive analytics",
-        "text entry",
-        "mobile AR",
-        "user comfort"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202606.0532.v1",
-      "abstract": "The paper focusses upon the challenge of uptake and scaling of sustainable housing development models for the UK. It introduces a newly created Place Building System as an emergent framework designed to challenge the dominant, volume-led practices of national housebuilders and support the transition towards more socially equitable, environmentally regenerative, and economically resilient forms of development. The Place Building System was developed through a transdisciplinary, participatory methodology, engaging a Steering Group of senior UK development stakeholders. This co-creation arena enabled iterative learning, critical interrogation, and the evolution of both the Place Building System and its supporting infrastructure: the Regional Building Foundation. Framed through Geels’ Multi-Level Perspective (MLP) of sociotechnical transitions, the Place Building System is understood as a niche innovation searching for traction, with the capacity to challenge and reconfigure entrenched regime logics within the housing development sector. Mobilising the MLP framework, the paper demonstrates how systemic change in housing development may unfold through the interaction of niche innovations, landscape pressures, and regime destabilisation and reorientation, while recognising the institutional, cultural, and structural shifts required for such a transition to take root. In doing so, it specifies how regime-level lock-ins associated with finance, planning, and project governance condition niche maturation and shape the pathways through which regime reconfiguration may occur. Empirical illustrations show how place building principles operate as niche practices offering alternative sociotechnical configurations. By integrating empirical insight with transition theory, this paper contributes a novel conceptualisation of place building for sustainability as a systemic intervention and considers how it might be scaled to gain traction and reshape the future of the housing development sector in the UK.",
-      "topics": [
-        "Sustainability and Climate Change Governance",
-        "Collaborative and Sustainable Housing Initiatives",
-        "Sustainable Building Design and Assessment"
-      ],
-      "keywords": [
-        "sustainable housing development",
-        "socio-technical transitions",
-        "multi-level perspective",
-        "niche innovation",
-        "co-creation",
-        "systemic change",
-        "housing finance",
-        "planning regulation",
-        "project governance",
-        "England"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-9577512/v1",
-      "abstract": null,
-      "topics": [
-        "Flood Risk Assessment and Management",
-        "Landslides and related hazards",
-        "Synthetic Aperture Radar (SAR) Applications and Techniques"
-      ],
-      "keywords": [
-        "tropical cyclones",
-        "cloud cover",
-        "flood inundation mapping",
-        "landslide hazard",
-        "compound hazards",
-        "Sentinel-1 SAR",
-        "random forest",
-        "disaster response",
-        "situational awareness",
-        "Sri Lanka"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03118-2",
-      "abstract": "Abstract The ethical governance of AI in defence confronts a paradox: principles proliferate while implementation falters. This systematic review of 1085 publications exposes why frameworks flounder where ethical governance matters most. We identify seven barriers—governance and structural, conceptual, strategic, operational, relational and cultural, technical and data, and resource constraints—that operate as an interconnected system. Governance and structural barriers dominate the literature. This prominence may reflect their visibility rather than their primacy; technical, operational, and cultural dynamics remain harder to trace but are equally consequential. The challenges created by these seven barriers are severe but not insurmountable. We propose three strategic interventions: establishing authoritative, interoperable governance architectures that transcend organisational and national boundaries; building institutional capacity through dedicated resources and interdisciplinary expertise; and integrating ethical governance as core capability throughout the AI lifecycle rather than as compliance retrofit. This systemic analysis advances scholarship beyond principle enumeration and towards understanding the institutional, structural, and technical conditions under which ethical governance of AI in the defence domain can acquire operational traction in contested strategic environments.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Neuroethics, Human Enhancement, Biomedical Innovations",
-        "Cybersecurity and Cyber Warfare Studies"
-      ],
-      "keywords": [
-        "Corporate governance",
-        "Scholarship",
-        "Interoperability",
-        "Viewpoints",
-        "Information governance",
-        "Diversity (politics)"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-9671815/v1",
-      "abstract": null,
-      "topics": [
-        "Usability and User Interface Design",
-        "Healthcare Technology and Patient Monitoring",
-        "Electronic Health Records Systems"
-      ],
-      "keywords": [
-        "ventilators",
-        "intensive care unit",
-        "usability",
-        "heuristic evaluation",
-        "human-computer interaction",
-        "patient safety",
-        "error prevention",
-        "cognitive load",
-        "interface design",
-        "safety-critical systems",
-        "clinician experience"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.apergo.2026.104831",
-      "abstract": null,
-      "topics": [
-        "Ergonomics and Musculoskeletal Disorders",
-        "Human Pose and Action Recognition",
-        "Context-Aware Activity Recognition Systems"
-      ],
-      "keywords": [
-        "vision-language models",
-        "manual material handling",
-        "work-related musculoskeletal disorders",
-        "task classification",
-        "temporal segmentation",
-        "hand configuration",
-        "RGB video",
-        "workplace ergonomics"
       ]
     }
   ]

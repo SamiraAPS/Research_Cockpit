@@ -1,7 +1,150 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-29T11:33:54.800Z",
+  "generatedAt": "2026-10-30T11:26:56.346Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2608.23131",
+      "abstract": "Cross-Domain Sequential Recommendation (CDSR) predicts the next item a user will interact with based on their historical interaction sequences across multiple domains. Recent approaches leverage Large Language Models (LLMs) finetuned on textual representations of cross-domain user sequences to retrieve the recommended items, referred to as LLMRec. However, LLMRec primarily models the autoregressive patterns of token-level item texts, while overlooking item-level collaborative signals. This semantic misalignment often leads to distorted knowledge transfer across domains-termed negative transfer degrading performance in the CDSR task. To address this issue, we propose a novel LLM-based CDSR model, DuELRec: Domain-Gated Dual Experts with LLMs for Cross-Domain Sequential Recommendation. We propose a domain-gated dual-expert framework, equipped with an item-aware attention transformation module, which aggregates textual subtokens into item-level representations and enforces block-level attention masking. The single-domain expert restricts autoregressive attention to items within the same domain, while the cross-domain expert allows it across all domains. A gating mechanism adaptively fuses their outputs, using single-domain signals to reduce cross-domain noise that causes negative transfer. Second, we introduce a dual-sampling token-to-item contrastive learning objective that allows LLMs to capture the item-level collaborative signals from both single- and cross-domains. This is achieved by transforming token-level item texts into item-level representations and applying stochastic negative sampling from both single- and cross-domain item pools for contrastive learning. Extensive experiments on two real-world datasets across ten domains show that our model outperforms 26 state-of-the-art methods in recommendation performance.",
+      "topics": [
+        "Recommender Systems and Techniques",
+        "Topic Modeling",
+        "Machine Learning in Healthcare"
+      ],
+      "keywords": [
+        "Leverage (statistics)",
+        "Collaborative filtering",
+        "Negative transfer",
+        "Noise (video)",
+        "Semantics (computer science)",
+        "Autoregressive model",
+        "Transfer of learning",
+        "Transfer (computing)"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10265338/v1",
+      "abstract": null,
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Research Data Management Practices",
+        "Data Quality and Management"
+      ],
+      "keywords": [
+        "Upload",
+        "USable",
+        "Data anonymization",
+        "Python (programming language)",
+        "Software",
+        "Download",
+        "Information privacy",
+        "Scalability"
+      ]
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2717491",
+      "abstract": "Cultural heritage exploration for blind and low vision (BLV) users requires coordinated multimodal support rather than isolated sensory substitution. We developed an accessible mixed reality (MR) system integrating tactile exploration, navigation support, and an LLM-based conversational agent, and conducted a counterbalanced mixed-methods study with 20 BLV participants across three interaction modes. Tactile-grounded semantic interaction was associated with stronger aesthetic engagement, greater perceived autonomy, higher flow, and longer artifact-centered exploration without increasing cognitive load. These findings suggest that interaction coherence, rather than modality accumulation, better explains accessible heritage exploration in this site-specific setting, subject to the constraints of current head-mounted MR systems.",
+      "topics": [
+        "Tactile and Sensory Interactions",
+        "Virtual Reality Applications and Impacts",
+        "Multisensory perception and integration"
+      ],
+      "keywords": [
+        "Mixed reality",
+        "Augmented reality",
+        "Modality (human–computer interaction)",
+        "Cognition",
+        "Subject (documents)",
+        "Cultural heritage",
+        "Perception"
+      ]
+    },
+    {
+      "id": "arxiv:2608.22994",
+      "abstract": "Training large language models is costly. How low a loss the same compute can ultimately reach depends on how each step's gradient is converted into a weight update; the rule that performs this conversion is the optimizer. From SGD and AdamW to the recent Muon, effective update rules have mostly been shaped by engineering intuition and then selected on benchmarks. Muon semi-orthogonalizes the momentum matrix before applying the update and has kept breaking records on public training benchmarks; yet why the semi-orthogonalized direction works, and over how long a history the momentum should average, are two questions at present answered mainly by experience. Here we treat the weight matrix during training as a responsive medium with memory and build a physical model for it, in which both questions find answers: the semi-orthogonalized direction is the maximally dissipative response under an output-side safety budget, which explains why it works; momentum is the internal stress accumulated by the medium; how long it should average is set by the relaxation of this stress, and a real medium relaxes on more than one timescale, the simplest form being one fast and one slow. On this basis we propose the Bi-Maxwell optimizer. The framework further yields a testable consequence: gradient directions change fast early in training and more slowly later, so the optimal memory length should grow with training stage; step-by-step measurements of a proxy for it by a read-only probe across 8 independent training trajectories are consistent with this consequence. Replacing the memory kernel alone, from a single timescale to two, brings training to the target loss in noticeably fewer steps on a public large-language-model optimizer benchmark.",
+      "topics": [
+        "Computational Physics and Python Applications",
+        "Muon and positron interactions and applications",
+        "Neutrino Physics Research",
+        "cs.LG",
+        "cond-mat.dis-nn",
+        "cond-mat.stat-mech",
+        "cs.AI",
+        "physics.comp-ph"
+      ],
+      "keywords": [
+        "Dissipative system",
+        "Momentum (technical analysis)",
+        "Intuition",
+        "Muon",
+        "Relaxation (psychology)",
+        "Kernel (algebra)"
+      ]
+    },
+    {
+      "id": "openalex:W7204418173",
+      "abstract": null,
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Cognitive Abilities and Testing",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "Sample (material)",
+        "Association (psychology)",
+        "Generative grammar",
+        "Generative model",
+        "Feature (linguistics)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.26193",
+      "abstract": "Multimodal large language models (MLLMs) achieve strong performance on VQA and scene understanding, yet affective reasoning remains vulnerable to shortcut behavior. Models may predict correct answers while neglecting people-centric cues such as micro expressions and body language, which weakens traceability and external verification. Prior reinforcement learning approaches mainly reward context or logical coherence without explicitly enforcing attention to human evidence. In addition, LLM as a Judge scoring often suffers from score clustering, which reduces reward discriminability. We propose AffectOmni, a GRPO trained framework for verifiable affective reasoning. AffectOmni introduces People Focus and Temporal Order rewards to encourage people-centric evidence selection and temporally structured reasoning, and it adopts within-group comparative scoring to produce more stable and discriminative reward signals. For verification, a Thinking Summarizer converts free form rationales into executable evidence instructions, which are grounded into pixel level evidence regions via SAM3 to provide an externally auditable interface outside the training loop. Experiments on IntentBench, Daily Omni, and WorldSense show consistent improvements over open source 7B scale baselines, including gains of 4.66% on emotion recognition and +14.29% on temporally sensitive tasks. Code is available at https://github.com/eliot127825-rgb/AffectOmni_nobody.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.22868",
+      "abstract": "LLM agents increasingly read untrusted content, invoke external tools, access private data, and delegate work to other agents. Harm often arises not from a single unsafe action but from the flow of sensitive data across a sequence of otherwise plausible steps. We present AgentFlow, a flow-centric policy language and runtime enforcement model for specifying where data may travel in agent systems. Policies are defined over labeled runtime edges and constrain which tools may receive sensitive fields, which sinks may receive released data, and what authority may cross delegation boundaries. The language supports flow and path rules, task-scoped capabilities, controlled release, and stateful taint semantics. A runtime reference monitor mediates agent actions, and a bounded SMT-based verifier checks safety properties for a structured policy fragment. We evaluate AgentFlow on multiple agent benchmarks. In our prototype, seven safety properties verify in under 0.5 seconds each, and the verifier catches all seeded unsafe policy variants in our study. On 949 AgentDojo injected cases across four suites, AgentFlow reduces confirmed compromise from 33.0\\% to 0.0\\% while improving aggregate utility from 46.7\\% to 63.3\\%. On a 200-case AgentDyn Dailylife benchmark, it reduces confirmed compromise from 73.5\\% to 0.0\\% while preserving near-baseline utility (44.5\\% to 43.5\\%). Breadth checks across ASB, InjecAgent, BIPIA, AgentHarm, and MCPTox replays suggest that the configured policies block the benchmark-specified policy-visible attacker flows; in ASB's direct-prompt-injection harness, attack success is 0/1{,}200. These results are preliminary and scoped to the modeled policy-visible agent behaviors and evaluated benchmarks.",
+      "topics": [
+        "Security and Verification in Computing",
+        "Advanced Malware Detection Techniques",
+        "Access Control and Trust"
+      ],
+      "keywords": [
+        "Compromise",
+        "Delegate",
+        "Delegation",
+        "Enforcement",
+        "Stateful firewall",
+        "Block (permutation group theory)",
+        "Oracle",
+        "Adversary",
+        "Security policy",
+        "Harm"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.23688",
+      "abstract": "Unusual light-curve morphologies can point to rare physical configurations or new phenomena, but automatic searches for anomalies are often dominated by artifacts. Separating genuine anomalies from false positives has traditionally required manual vetting, which does not scale to modern surveys. We present an active learning framework for detecting anomalies in samples of periodic variable stars, with the vetting delegated to multimodal large language model agents. The initial ranking comes from isolation forests trained on DINOv2 ViT-g/14 embeddings of phase-folded light curves. The agents iteratively review the light-curve images of the top-ranked candidates and assign relevance scores, which are propagated through the embedding space to prioritize the next targets. A logistic regression step then extends the search beyond label propagation, and a multi-agent consensus review filters false positives. Using Gemini~3 Flash agents, we applied the pipeline to $373\\,646$ periodic variables from ASAS-SN Sky Patrol V2.0. Across $51$ iterations, the agents labeled ${\\sim}1\\%$ of the sample in roughly $3$ hours at a cost of ${\\approx}$ $$40$, yielding our final catalog of $24$ anomalies ($18$ newly reported) and $153$ potentially interesting objects. The anomalies include eclipsing binaries with extremely deep primary eclipses, high-amplitude contact binaries and pulsators, and a symbiotic nova in outburst for over two decades. At the same labeling budget, the initial ranking would have recovered only $30\\%$ of our catalog, while reaching its lowest-ranked anomaly would have required ${\\sim}70$ times the budget. These results demonstrate the feasibility of agentic active learning for anomaly detection in existing and upcoming photometric surveys.",
+      "topics": [
+        "Stellar, planetary, and galactic studies",
+        "Gamma-ray bursts and supernovae",
+        "Astronomy and Astrophysical Research"
+      ],
+      "keywords": [
+        "Vetting",
+        "Active learning (machine learning)",
+        "Variable (mathematics)",
+        "Ranking (information retrieval)",
+        "Anomaly detection",
+        "Flagging",
+        "Anomaly (physics)",
+        "False positive paradox",
+        "Embedding"
+      ]
+    },
     {
       "id": "arxiv:2608.23642",
       "abstract": "AI agents pose significant risks as they are granted increasing autonomy. A commonly proposed solution is human oversight and keeping a ''human in the loop'', but this is not a simple solution: Not only do current approaches to AI agent design impede effective human oversight, but the cognitive capacities required for it are also themselves degraded by extended use of AI systems. This position paper argues that current approaches to the development and deployment of AI agent systems do not support effective human oversight -- they contribute to its degradation. To address this, a top priority in the advancement of AI agents should be supporting the situated goals and cognitive requirements of effective human oversight, treating the human needs of overseers at the same level of importance as AI agent capability. To put this idea into practice, we connect work on automation and human-computer interaction to AI agent processes, outlining design-level affordances and organizational protocols that (1) support overseers in exercising critical judgement and (2) counteract the skill atrophy that arises from extended use of automation. We urge developers and deployers to adopt these or similar approaches. Without explicit support for the cognitive demands of effective human-agent interaction, AI agent systems will continue to passively incentivize the degradation of the very human skills they rely on.",
@@ -3577,152 +3720,6 @@
         "Domain knowledge",
         "Benchmark (surveying)",
         "Precision and recall"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202608.1538.v1",
-      "abstract": "Although large language models (LLMs) have the capacity to produce test cases rapidly, the accuracy of the test cases relies heavily on the specification given to the model. In this paper, we present Mirror Effect: an LLM is likely to reflect any level of clarity or ambiguity in natural-language requirements in subsequent test artifacts. For a comparative within-subjects experiment with five expert QA engineers, three commercial LLMs, four core requirements cases, and a five-domain transfer learning test, for each of the four core requirements, vague and measurable cases were formulated without altering the function, and then the two sets of prompts were compared against their human-generated baselines. As a result, four vague requirement prompts produced 127 test cases, 68% of which contained assumptions not present in the requirement statement, while four clear requirements produced 42 test cases with a hallucination rate of 12%. Coverage completeness improved from 42% to 92%, and mean QA review time reduced from 240 min to 85 min. As for the cross-domain experiments, the vague-prompt hallucination rate ranged from 68% to 88%, while for clear-requirement prompts, it ranged from 8% to 22%. Our findings are descriptive in nature due to the small sample size but demonstrate a consistent trend across all models and domains. In our contribution, we provide a definition of test hallucination using traceability, empirical evidence of ambiguity propagation, and a pre-prompt requirement gate.",
-      "topics": [
-        "Software Testing and Debugging Techniques",
-        "Software Engineering Research",
-        "Software Engineering Techniques and Practices"
-      ],
-      "keywords": [
-        "Hallucinating",
-        "Ambiguity",
-        "Test (biology)",
-        "Completeness (order theory)",
-        "Equating",
-        "CLARITY",
-        "Sample (material)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21317",
-      "abstract": "The European Union (EU) has emerged as a leading regulatory body in the development of sustainability and privacy regulations. While new regulation requirements vary, many include a documentation artifact to ensure compliance. Notably, the Ecodesign for Sustainable Products Regulation (ESPR) introduces Digital Product Passports (DPPs) for life cycle transparency, while the General Data Protection Regulation (GDPR) mandates Data Protection Impact Assessments (DPIAs) to mitigate privacy risks. Creating these compliance artifacts, however, is challenging. Industrial data, which often exists in heterogeneous formats and is scattered across company and supplier systems, is required for DPPs and can be difficult to extract into compliant DPP formatting. Furthermore, DPIA documents require interdisciplinary expertise and follow no standardized format, making development difficult for novel systems. To address the particular complexity of compliance artifact creation for both regulations, researchers have proposed the use of LLMs in the generation process; however, the impact of the aforementioned problems on the output of these systems is largely unaddressed. This work investigates the existing research gap by exploring how data extraction instructions and regulatory vagueness impact the quality and consistency of LLM-produced compliance artifacts. The resulting artifacts are evaluated by benchmarking different models against manually created ground-truth schemas. The results reveal that less strict guidelines, such as DPIA formatting, require higher context prompts to maintain consistency and completeness. Stricter guidelines, such as formatting for Digital Battery Passports (DBP), result in consistent results regardless of prompt context, but may lead to more hallucinations in the output",
-      "topics": [
-        "Privacy, Security, and Data Protection",
-        "Green IT and Sustainability",
-        "Safety Systems Engineering in Autonomy",
-        "cs.AI"
-      ],
-      "keywords": [
-        "General Data Protection Regulation",
-        "Consistency (knowledge bases)",
-        "Vagueness",
-        "Context (archaeology)",
-        "European union",
-        "Benchmarking",
-        "Data Protection Act 1998",
-        "Documentation",
-        "Quality (philosophy)",
-        "Sustainability"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21177",
-      "abstract": "Large Language Models (LLMs) deployed through Conversational User Interfaces (CUIs) are transforming health information-seeking by offering immediate, interactive experiences compared to traditional search engines like Google. However, how trust is influenced by both the types of search agents and the interface used to disseminate the information remains underexplored. This research integrates two mixed-methods studies (lab sessions and interviews) to comprehensively explore trust perceptions in health information across different search agents and dissemination interfaces. In Study 1 (N=21), we investigated trust in health information sourced from ChatGPT and Google across three types of health-related search tasks. Results showed significantly higher trust in health information from ChatGPT, highlighting the promise of LLM-powered conversational search. Building on this, Study 2 (N=20) extended the investigation to explore how the dissemination interface influences trust in LLM-sourced health information by comparing three interfaces: text-based, speech-based, and embodied, all sourcing from the same LLM. Findings revealed significant trust variations across the dissemination interfaces. Interviews from both studies revealed key factors influencing trust in LLM-powered conversational search, including source credibility, participants' search autonomy, and prior knowledge as well as the interaction style and modality. Our findings highlight the potential of LLM-powered conversational search to transform health information-seeking, underscoring the interplay between the credible search agents and the thoughtfully designed dissemination interfaces in shaping trust. These insights are crucial for developing effective, trustworthy LLM-powered health tools to enhance the health information-seeking experience.",
-      "topics": [
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.21156",
-      "abstract": "LLMs have evolved from language generators to autonomous agents capable of complex, long-horizon tasks. This evolution has produced paradigms including Prompt Engineering to elicit model capabilities, Context Engineering to manage information access, Harness Engineering to organize external tools and resources, and Loop Engineering to support continual reflection and self-improvement. Yet as tasks grow more complex, individual intelligence faces a fundamental limit: many tasks require heterogeneous expertise, interdependent subtasks, parallel execution, independent verification, and persistent state, exceeding any single agent's organizational capacity. Augmenting one agent's capabilities or context cannot resolve this architectural mismatch; intelligence must instead be distributed across specialized agents and organized at the system level. We call this System Intelligence: an agent system's ability to organize and coordinate multiple intelligent components into a coherent, adaptive whole pursuing a shared objective. Achieving it requires more than adding agents; it demands explicit structures to organize work, coordinate heterogeneous agents, and maintain evolving execution states. We introduce Graph Engineering, an emerging paradigm for next-generation agent systems. Unlike prior paradigms that mainly optimize individual interactions or agent-level behavior, Graph Engineering constructs explicit, dynamic, evolving graph structures representing tasks, agents, and system states. These abstractions provide a unified foundation for organizing complex objectives, orchestrating heterogeneous agents, modeling system dynamics, and enabling scalable agent evolution. We systematically review the principles, methodologies, and applications of Graph Engineering for LLM agents. Related papers, open-source data, and projects are collected at https://github.com/DEEP-JLU/Awesome-Graph-Engineering.",
-      "topics": [
-        "Graph Theory and Algorithms",
-        "Model-Driven Software Engineering Techniques",
-        "Multi-Agent Systems and Negotiation",
-        "cs.IR",
-        "cs.AI",
-        "cs.ET"
-      ],
-      "keywords": [
-        "Graph",
-        "Scalability",
-        "Context (archaeology)",
-        "Interdependence",
-        "Multi-agent system",
-        "Graph rewriting"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21157",
-      "abstract": "High-performance GPU kernels underpin modern deep learning and scientific computing. As workloads become increasingly diverse and GPU hardware evolves rapidly, developing efficient methods for automated GPU kernel generation and optimization has become increasingly important. Existing LLM-based methods typically optimize within a fixed implementation space, limiting either optimization flexibility or search efficiency. We propose \\textsc{HIERA}, a hierarchical search-space planning framework for GPU kernel optimization. \\textsc{HIERA} constructs contract-augmented task specifications, selects an appropriate implementation space across PyTorch operators, CUDA libraries, and custom CUDA kernels, and uses profiling feedback and expert knowledge to guide structured iterative refinement. Experiments on KernelBench across multiple various workload levels and base LLMs show that \\textsc{HIERA} delivers stronger overall implementation validity, sample efficiency, and optimization performance than existing training-free methods, while remaining competitive with the training-based CUDA-L1 without additional model training. A case study on a specialized stencil operator from scientific computing further achieves a \\(1.53\\times\\) speedup over cuDNN, demonstrating the potentiality of the general framework beyond standard machine-learning workloads.",
-      "topics": [
-        "Parallel Computing and Optimization Techniques",
-        "Advanced Neural Network Applications",
-        "Stochastic Gradient Optimization Techniques",
-        "cs.DC",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Stencil",
-        "CUDA",
-        "Speedup",
-        "General-purpose computing on graphics processing units",
-        "Kernel (algebra)",
-        "Workload",
-        "Limiting",
-        "Supercomputer"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.21298",
-      "abstract": "Background. Requirements inspection (RI) is a well-established practice for detecting potential defects in requirements artifacts early in the software lifecycle. Recent advances in large language models (LLMs) have stimulated interest in their potential to support requirements engineering (RE) tasks. However, empirical evidence on the effects of LLMs when used as collaborative assistants in human-performed RI remains scarce. Aims. We aim to investigate the impact of LLM support on human-performed RI, considering inspection effectiveness in terms of smell identification and severity classification (i.e., nocuous vs innocuous), as well as inspection duration. Method. We conducted a controlled crossover design experiment with 34 participants, who inspected textual specifications with and without LLM support, identifying and classifying requirements smells while recording inspection time. We analyzed the data using one Bayesian regression model per outcome variable, accounting for validity threats induced by the crossover design as well as covariates and mediators. Results. Results show that LLM support negatively affects smell detection accuracy but has no significant effect on smell classification or task duration. A learning effect is present across experimental periods, but reduced when RI is first performed with LLM support. Conclusions. Our findings provide empirical evidence that LLM support does not necessarily improve performance and may, instead, hinder it for novice inspectors. Moreover, the results suggest that learning RI with LLM-support from the beginning may slow down the skill acquisition process, implying threats for LLM-supported learning.",
-      "topics": [
-        "Software Engineering Techniques and Practices",
-        "Software Engineering Research",
-        "Advanced Software Engineering Methodologies"
-      ],
-      "keywords": [
-        "Identification (biology)",
-        "Task (project management)",
-        "Crossover",
-        "Empirical research",
-        "Covariate",
-        "Empirical evidence",
-        "Learning effect",
-        "Specification"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10767945/v1",
-      "abstract": null,
-      "topics": [
-        "Air Traffic Management and Optimization",
-        "Human-Automation Interaction and Safety",
-        "Aviation Industry Analysis and Trends"
-      ],
-      "keywords": [
-        "Automation",
-        "Situation awareness",
-        "Aviation",
-        "Decision support system",
-        "NIST",
-        "Air traffic control",
-        "Protocol (science)",
-        "Control (management)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.20822",
-      "abstract": "This study examined how learner characteristics affect motivation, learning outcomes, and overall evaluation in three types of dialogue-based lessons---(1) teacher--student, (2) student--student, and (3) teacher--teacher---generated using a large language model (LLM) and Text-to-Speech (TTS) technology. In particular, we focused on the interaction effects between dialogue format and learners' experiential learning style (the Concrete Experience factor, CE; and the factor of active experimentation through reflective observation and abstract conceptualization, RCE) and critical thinking disposition. Using a repeated-measures design with 222 first-year high school students, we analyzed the data with linear mixed-effects models. The results showed a significant interaction between learner characteristics and dialogue format for ARCS-based motivation. Specifically, the effect of the CE factor on motivation was more strongly positive in the teacher--teacher format than in the teacher--student format, whereas the positive effect of the RCE factor was relatively weaker in the teacher--teacher format. For learning outcomes, the interactions between dialogue format and both the CE and RCE factors showed a trend toward significance. No significant interaction emerged for overall evaluation; however, the overall evaluation of the teacher--teacher format was significantly lower than that of the teacher--student format, a pattern that diverged from the positive effect observed for motivation. These results suggest that dialogue format should be selected according to learner characteristics in TTS dialogue-based lessons. Because the effect sizes of the significant interactions were all small to medium, however, the findings of this study should be regarded as preliminary evidence for the design of personalized learning.",
-      "topics": [
-        "EFL/ESL Teaching and Learning",
-        "Innovative Teaching and Learning Methods",
-        "Visual and Cognitive Learning Processes",
-        "cs.CY"
-      ],
-      "keywords": [
-        "Experiential learning",
-        "Interaction",
-        "Affect (linguistics)",
-        "Factor (programming language)",
-        "Style (visual arts)",
-        "Main effect",
-        "Language acquisition"
       ]
     }
   ]

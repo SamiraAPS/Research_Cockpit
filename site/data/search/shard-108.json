@@ -1,7 +1,158 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-29T11:33:54.800Z",
+  "generatedAt": "2026-10-30T11:26:56.346Z",
   "documents": [
+    {
+      "id": "arxiv:2608.29616",
+      "abstract": "Criminal judgment prediction requires models to infer statutory articles, charges, and sentencing outcomes from case facts. Unlike standard classification tasks, it involves a structured reasoning process in which statutes should be matched with facts, charges should be justified by statutes, and sentencing outcomes should remain consistent with charges. Existing approaches optimize final labels, and while some have attempted to evaluate reasoning quality, their evaluations are indirect, often relying on LLM-generated rubrics that reflect model-internal preferences rather than the inherent logical structure of legal adjudication. We propose Juris Policy Optimization (JPO), a post-training framework for structured legal reasoning in Chinese criminal judgment prediction. JPO first uses teacher-generated rationales to supervise a standardized four-step reasoning process, and then applies reinforcement learning with a composite reward over legal prediction quality, reasoning structure completeness, and cross-step consistency. JPO further introduces token-level advantage reweighting and adaptive clipping for legally salient reasoning segments. Experiments on multiple open-source language models and three Chinese legal benchmarks show that JPO consistently improves both judgment prediction and reasoning quality over supervised fine-tuning and reinforcement learning baselines.",
+      "topics": [
+        "Artificial Intelligence in Law",
+        "Law, Economics, and Judicial Systems",
+        "Jury Decision Making Processes",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Rubric",
+        "Case-based reasoning",
+        "Process (computing)",
+        "Statute",
+        "Reinforcement learning",
+        "Statutory law",
+        "Adjudication",
+        "Quality (philosophy)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.29494",
+      "abstract": "Much of human health and function unfolds beyond the clinic, through the movements of everyday life. Wrist-worn accelerometers capture these movements continuously, yet their rich signals are often reduced to a small set of predefined behavioural summary measures. Here, we present Sensori, a self-supervised foundation model that learns general-purpose health representations directly from 24 hours of raw tri-axial wrist movement. We developed and evaluated the model across four population-based cohorts from the United Kingdom, China and the United States, comprising 122,640 participants contributing 683,617 person-days of free-living recordings. Sensori condensed each day of movement into a representation that captured diverse movement behaviours, demographic characteristics, health axes and physical function. Evaluation in independent cohorts showed that these representations generalised across populations and measurement settings without retraining. When added to common clinical covariates, Sensori significantly improved prevalent disease classification for 52 of 102 eligible conditions (median delta AUROC, 0.060; range, 0.012-0.242) and incident disease risk prediction for 26 of 87 eligible conditions (median delta Uno's C-index, 0.064; range, 0.025-0.172), with the largest gains for neurological and psychiatric disorders. These findings establish 24-hour wrist movement as a rich and scalable source of health information, with the potential to support passive health monitoring and disease prediction at population scale.",
+      "topics": [
+        "Emotion and Mood Recognition",
+        "Balance, Gait, and Falls Prevention",
+        "Physical Activity and Health"
+      ],
+      "keywords": [
+        "Wrist",
+        "Disease",
+        "Movement (music)",
+        "Population",
+        "Set (abstract data type)",
+        "Accelerometer",
+        "Representation (politics)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.29517",
+      "abstract": "Large language models (LLMs) are increasingly used as essay graders in learning analytics, evaluated almost exclusively with agreement statistics. Educational measurement warns that raters also differ in severity, show halo, and drift as instruments. We treat LLM judges as raters and run a pre-registered rater-effects battery (many-facet Rasch severity, residual halo, generalizability/decision studies, cross-version shifts, differential functioning) on public corpora in two languages (ENEM/Essay-BR; ASAP): 2,377 essays, 12 judges, 4 providers, 5 version contrasts, replicated cells, released as a score tensor. Judge severity spans 219 points on ENEM's 0-1000 scale; on ASAP the panel spread is 15-33% of the score range against a between-trained-human gap near 1%. Judge-human correlations sit in an undiscriminating .47-.56 band. All five version contrasts shift severity beyond a family-wise permutation null (up to 133 points), and one judge was deprecated mid-study, caught by identity canaries. Two pre-registered tests returned honest nulls: severity-adjusted leaderboard reversals did not survive a permutation null, and \"silent drift\" was refuted: agreement moved with severity in four of five contrasts. Replication yields self-consistency (phi>=.80 at k<=2) but not human-level accuracy, and a same-instrument check overturned our own halo comparison: matched on instrument and calibration, we find no credible evidence that judge halo exceeds the trained-human range.",
+      "topics": [
+        "Computational and Text Analysis Methods",
+        "Second Language Acquisition and Learning",
+        "Text Readability and Simplification",
+        "cs.CL",
+        "cs.CY"
+      ],
+      "keywords": [
+        "Rasch model",
+        "Permutation (music)",
+        "Audit",
+        "Test (biology)",
+        "Inter-rater reliability",
+        "Vignette",
+        "Margin (machine learning)",
+        "Differential item functioning",
+        "Test score"
+      ]
+    },
+    {
+      "id": "arxiv:2608.29612",
+      "abstract": "Sustained scientific work requires a knowledge substrate that carries interpretation across tasks and preserves paths to source evidence. We call this process \\emph{scientific knowledge compilation} and implement it in ASKS, the \\emph{Agent-Driven Scientific Knowledge System}. For each source, an LLM produces a readable Wiki view and machine-facing semantics. Deterministic checks convert the latter into a document-local GraphDelta, and embedding geometry together with explicit graph rules integrates the proposed changes into persistent state. Each ingest is an inspectable state transition over accumulated knowledge, with compiled Wiki and graph views linked to the preserved source record. We examine this process by chronologically compiling 56 published papers from one research program. Branch survival, cross-paper support, lineage, coverage, and churn yield a source-traceable author research portrait centered on tensor-network methods, with branches into quantum many-body research, tensor-network machine learning, and quantum-AI-oriented directions. In this run, higher-level Hub organization remains stable and low-churn. Canonical-node growth is predominantly additive. Graph-level measurements and navigation paths retain links to the source records from which they were compiled.",
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Machine Learning in Materials Science",
+        "Scientific Computing and Data Management",
+        "cs.AI",
+        "cs.DL",
+        "cs.IR"
+      ],
+      "keywords": [
+        "Embedding",
+        "Knowledge graph",
+        "Interpretation (philosophy)",
+        "Sociology of scientific knowledge",
+        "Graph",
+        "Process (computing)",
+        "State (computer science)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.29539",
+      "abstract": "As context lengths scale, attention increasingly becomes a primary computational bottleneck in large language models. Standard Transformers remain powerful but computationally inefficient, as they allocate the same attention budget to every token regardless of its contextual demand. Existing local-global hybrids provide a more efficient alternative by mixing restricted- and full-context attention, but they typically allocate span statically across layers or heads. To address these limitations, we propose LoGo, a token-level dynamic local-global attention mechanism that uses attention span as a direct proxy for attention budget allocation. Each LoGo layer contains coupled local and global branches: all tokens receive efficient local attention over a restricted context window, while a learned gate activates global attention with full-context access only for tokens requiring long-range information. A threshold-based budget controller maintains a target global ratio without auxiliary losses, and a progressive masking schedule stabilizes training before sparse routing takes effect. We further implement query-sparse Triton kernels that convert reduced global-attention computation into practical speedups. Extensive experiments validate LoGo's effectiveness, showing that it preserves the scaling behavior of full-attention Transformers across model sizes. In controlled comparisons, LoGo improves over the full-attention Transformer and matched-budget static local-global hybrids, with clear gains on long-range retrieval. Analysis further shows that LoGo learns interpretable span allocation patterns. These results suggest that learned token-level span allocation is an effective and scalable way to improve the long-context performance-compute trade-off.",
+      "topics": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2609.00063",
+      "abstract": "The growing use of large language models (LLMs) for search and information retrieval underscores the need to evaluate their reliability in high-stakes domains such as healthcare. Although LLMs can effectively answer questions about diseases, symptoms, and treatments, their ability to accurately assess causal relationships and ground their conclusions in verified scientific evidence remains unclear. Here, we present a preliminary, small-scale study that investigates the accuracy of LLMs in evaluating causal medical claims and supporting them with peer-reviewed research. We propose an evaluation framework for causal hypothesis verification that can be used to systematically track the performance of existing and future LLMs. We assess the performance of eight LLMs on 17 medical causal hypotheses to evaluate whether they can reliably verify these hypotheses using scientific evidence from the literature. We systematically annotate the scientific evidence they provide according to six criteria (a total of 1,067 annotation points) and assess them with nine evaluation metrics. Our analysis shows that while LLMs exhibit strong recall, they often perform poorly at providing valid scientific articles and evidence for support and at rejecting unsupported hypotheses. These findings highlight a critical limitation of current LLMs, as they cannot yet be trusted fully to verify causal relationships from the biomedical literature. This work underscores the need for rigorous evaluation before using LLMs for search and retrieval in healthcare settings.",
+      "topics": [
+        "Topic Modeling",
+        "Machine Learning in Healthcare",
+        "Artificial Intelligence in Healthcare and Education",
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Causality (physics)",
+        "Causal model",
+        "Reliability (semiconductor)",
+        "Scientific evidence",
+        "Causal inference",
+        "Key (lock)",
+        "Work (physics)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.30065",
+      "abstract": "Large language models (LLMs) demonstrate strong Helpfulness, Harmlessness, and Honesty (3H) alignment in English-centric settings, but these gains transfer poorly to low-resource languages due to cultural mismatches. Existing multilingual 3H benchmarks rely predominantly on automated translation or LLM based synthesis, propagating source-language biases while sacrificing local relevance. To address this gap, we introduce Pak3H1, the first human-validated, culturally contextualized Urdu benchmark suite for 3H alignment, comprising PakAlpaca (helpfulness), PakBeaverTails (harmlessness), and PakTruthfulQA (honesty). Our multi-stage pipeline integrates manual cultural adaptation and dictionary-guided post editing to prioritize native speaker judgment, ensuring both semantic fidelity and contextual authenticity. Zero-shot evaluations across multiple open and proprietary LLM architectures reveal systematic cross-lingual alignment gaps: helpfulness win rates decline under localized contexts, harmlessness guardrails break down against regional safety risks, and composite honesty metrics degrade substantially due to localized factual constraints. These findings expose structural limitations in current alignment approaches, underscoring the necessity of human-guided localization for equitable multilingual evaluation.",
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Artificial Intelligence in Healthcare and Education",
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Benchmark (surveying)",
+        "Honesty",
+        "Pipeline (software)",
+        "Fidelity",
+        "Adaptation (eye)",
+        "Multilingualism",
+        "Semantics (computer science)",
+        "Suite",
+        "Language translation"
+      ]
+    },
+    {
+      "id": "arxiv:2608.29965",
+      "abstract": "Large language models can convert medical documents into structured data, but plausible output may still be unsupported by the source. Persisting such output in a longitudinal health record, a record that accumulates patient information over time, therefore creates an integrity risk: unverified data may influence later summaries, trends, or preventive-care computations. We introduce an evidence-gated trust-promotion model that keeps generated data provisional until a deterministic monitor verifies it against the source document. The monitor admits a candidate for a specified downstream use only when the source contains a unique supporting quotation, the relevant fields occur within the same laboratory row, and the required provenance is preserved. The generator cannot approve its own output, missing or ambiguous evidence causes refusal, and refused candidates remain available for human review rather than being silently discarded. We implement the model in Medical DataCloud, a personal health-record application, and evaluate it through automated tests and a replay of saved extraction outputs. All 22 conformance and mutation tests pass. The replay covers nine historical laboratory PDF reports containing 102 manually labelled rows. The reports produce 97 numeric candidates: schema validation accepts all 97, an earlier packet-level evidence check accepts 94, and the hardened quotation- and row-level policy admits 72 while retaining 25 for review. The study evaluates system integrity rather than clinical correctness or clinical safety. The results demonstrate the technical feasibility of an enforceable boundary that prevents generated claims from authorizing their own reuse in a longitudinal health record.",
+      "topics": [
+        "Scientific Computing and Data Management",
+        "Artificial Intelligence in Healthcare and Education",
+        "Topic Modeling",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Correctness",
+        "Reuse",
+        "Data integrity",
+        "Generator (circuit theory)",
+        "Schema (genetic algorithms)",
+        "Documentation",
+        "Medical record"
+      ]
+    },
     {
       "id": "arxiv:2608.30005",
       "abstract": "Rubric-based reinforcement learning extends RL beyond tasks with exact answers or rule-based verifiers by scoring responses against instance-specific criteria. However, this makes reward computation expensive: training requires repeated rubric judging, often with proprietary APIs or local generative LLM judges with 7B parameters or more. We study whether smaller language models can serve as efficient and reliable rubric-based judges. To make this question measurable, we construct PointRubric and RaR-Science-Static, two pointwise rubric-based evaluation datasets with instance-specific criteria and itemwise satisfaction labels. We compare three ways of extracting criterion-level judgments from small models: Generative verdicts, Yes/No Logprob margins, and Probe judges. Across both datasets, the Qwen3-1.7B Probe judge achieves the strongest criterion-level agreement among these methods, outperforming Generative and Logprob judges. Used as a GRPO reward model, it trains a policy from 0.232 to 0.643 on RaR-Science rubric score, compared with 0.594 for an 8B Generative judge baseline, while the baseline requires 10.7$\\times$ more reward-judge time. Task and domain transfer experiments further suggest that Probe judges preserve criterion-level reward structure across settings.",
@@ -3523,159 +3674,6 @@
         "Action (physics)",
         "Authorization",
         "Object (grammar)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.27382",
-      "abstract": "Generative AI is transforming how people access information, challenging traditional advertising mechanisms built around predefined slots. Towards generation-native advertising, we propose the Latent Advertiser Mixture Auction (LAMA), a token-level advertising mechanism that embeds advertiser influence directly into the generation process. Advertisers report local continuation values that induce advertiser-specific next-token policies, from which the platform decodes through a latent mixture while updating an allocation posterior. We show that LAMA satisfies Markov DSIC and IR, and achieves near-optimal KL-regularized welfare. We further develop a learning-based implementation that reconstructs the required reports online from learned local advantages and root values. Proof-of-concept experiments on real-world commercial-search query splits show that LAMA improves platform welfare and revenue while maintaining user-facing response quality, providing initial evidence for the feasibility of generation-native advertising.",
-      "topics": [
-        "Consumer Market Behavior and Pricing",
-        "Advanced Bandit Algorithms Research",
-        "Auction Theory and Applications"
-      ],
-      "keywords": [
-        "Revenue",
-        "Online advertising",
-        "Click-through rate",
-        "Generative model",
-        "Markov chain",
-        "Generative grammar",
-        "Mechanism (biology)",
-        "Markov process"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10343432/v1",
-      "abstract": null,
-      "topics": [
-        "Computational Drug Discovery Methods",
-        "Molecular spectroscopy and chirality",
-        "Metabolomics and Mass Spectrometry Studies"
-      ],
-      "keywords": [
-        "Interpretability",
-        "Bottleneck",
-        "Benchmark (surveying)",
-        "Similarity (geometry)",
-        "Evidential reasoning approach",
-        "Calibration"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2705666",
-      "abstract": "Chinese OTT variety-show post-production requires balancing creativity, technical execution, regulations, and platform algorithms under tight schedules. Drawing on UTAUT2, this study incorporates AI trust (AITR), AI anxiety (AIA), and algorithmic dependence (AD) in an explanatory sequential mixed-methods design. PLS-SEM of 443 responses shows that performance expectancy and effort expectancy enhance AITR; AITR promotes behavioral intention, which facilitates use behavior; use behavior then contributes to AD. Social influence and hedonic motivation increase behavioral intention, while facilitating conditions affect use behavior. AIA weakens the performance expectancy–AITR relationship but strengthens the effort expectancy–AITR relationship. Twenty interviews indicate AITR is grounded in interpretability, controllability, and verifiability, with controllability especially critical in fast-paced production. Trust and resistance may coexist when ease of use is perceived to threaten professional value. The study extends UTAUT2 beyond adoption by positioning AD as a post-adoption outcome and informs deployment compatible with human judgment, responsibility, and occupational sustainability.",
-      "topics": [
-        "Virtual Reality Applications and Impacts",
-        "AI in Service Interactions",
-        "Digital Economy and Work Transformation"
-      ],
-      "keywords": [
-        "Expectancy theory",
-        "Software deployment",
-        "Affect (linguistics)",
-        "Social influence",
-        "Resistance (ecology)",
-        "Controllability",
-        "Outcome (game theory)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.27448",
-      "abstract": "Recent prominent post-training methods, such as Reinforcement Learning (RL) and On-Policy Self-Distillation (OPSD), have driven rapid progress in mathematical reasoning for large language models, yet their reliance on ground-truth labels precludes test-time training (TTT). Replacing ground truth with majority-vote pseudo-labels is a natural alternative, yet it is fragile: an incorrect vote corrupts the teacher and misleads every token. We observe that this failure mode is asymmetric: rollouts that disagree with the pseudo-label are typically wrong regardless of whether the vote itself is correct. Building on this observation, we propose Test-Time Policy Optimization (TTPO), an asymmetric objective that distills agreeing rollouts via OPSD and penalizes disagreeing rollouts with Grouped RL. Token-level selection further refines both branches: distillation down-weights already-converged positions, while RL penalizes only confident errors. Both updates remain well-grounded even under frequent pseudo-label errors, and majority-vote routing yields tighter self-supervision as the model improves. Without any labels, TTPO matches label-supervised OPSD on five competition-level benchmarks, raises Qwen3-1.7B from 38.0% to 45.2% in TTT, yields +25.2% to +36.4% without thinking, and shows strong cross-task generalization.",
-      "topics": [
-        "Topic Modeling",
-        "Reinforcement Learning in Robotics",
-        "Machine Learning and Data Classification",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Reinforcement learning",
-        "Selection (genetic algorithm)",
-        "Work (physics)",
-        "Mode (computer interface)",
-        "Variety (cybernetics)",
-        "Matching (statistics)",
-        "Outcome (game theory)",
-        "Natural (archaeology)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.27070",
-      "abstract": "To mitigate catastrophic forgetting in downstream continual learning (CL) for large language models (LLMs), existing methods typically constrain parameter updates or introduce task-specific adaptation modules. However, these methods often rely on explicit task boundaries during training, limiting their applicability to realistic task-free scenarios. In this paper, we propose a \\textbf{Fi}sher-guided \\textbf{uni}fied (\\textbf{FiUni}) framework for batch-level task detection and parameter-efficient continual adaptation. FiUni is motivated by a key observation about the Fisher information matrix (FIM) of pre-trained models: the orthogonality among the principal subspaces of its Kronecker-Factored Approximate Curvature (K-FAC) approximation, estimated from a small number of downstream task samples, can reflect the similarity between different tasks. Based on this observation, FiUni constructs FIM-derived frozen subspaces to guide low-rank adaptation (LoRA), while matching the Fisher principal subspace of each incoming batch window with historical subspaces. This enables FiUni to adaptively determine whether to reuse existing knowledge, expand a related subspace, or create a new subspace, dynamically balancing knowledge sharing and task isolation. Experiments show that FiUni can effectively infer latent batch-level task affiliations and achieve competitive performance against advanced task-aware CL methods with fewer trainable parameters.",
-      "topics": [
-        "Domain Adaptation and Few-Shot Learning",
-        "Face recognition and analysis",
-        "Multimodal Machine Learning Applications",
-        "cs.LG",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Task (project management)",
-        "Adaptation (eye)",
-        "Forgetting",
-        "Key (lock)",
-        "Subspace topology",
-        "Orthogonality",
-        "Constraint (computer-aided design)",
-        "Principal (computer security)",
-        "Matching (statistics)",
-        "Relevance (law)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.26722",
-      "abstract": "Text-guided drone geo-localization aims to identify a target region in a large-scale image gallery from a natural-language description. Existing methods mainly formulate this task as direct matching between an open-ended text query and candidate images. However, incomplete queries and highly similar candidates often make global cross-modal matching insufficient for reliable fine-grained localization. We propose UniGeo, a unified multimodal large language model (MLLM) for text-guided drone geo-localization. Built on a shared vision-language framework, UniGeo jointly supports geo-semantic understanding, cross-view semantic generation, and candidate-level verification. Specifically, it establishes stable correspondences among local scene elements, spatial relations, and language descriptions through geo-semantic learning, and further models semantic mappings between drone and satellite views through cross-view generation. Based on these capabilities, a plug-and-play verification module performs fine-grained discrimination among highly confusable candidates. We further introduce a multi-stage training strategy that progressively learns geo-semantic understanding, cross-view generation, and candidate verification, improving adaptation to text-guided geo-localization. Experiments demonstrate consistent improvements across multiple retrieval backbones. On GeoText-1652, UniGeo improves R@10 and mAP by 13.59 and 2.83 percentage points, respectively, validating its effectiveness for fine-grained text-guided drone geo-localization.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Advanced Image and Video Retrieval Techniques",
-        "Robotics and Sensor-Based Localization"
-      ],
-      "keywords": [
-        "Drone",
-        "Matching (statistics)",
-        "Task (project management)",
-        "Language model",
-        "Semantics (computer science)",
-        "Semantic mapping",
-        "Semantic matching",
-        "Adaptation (eye)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.27456",
-      "abstract": "Multimodal large language models (MLLMs) can interpret a street view, but urban agency depends on whether such local evidence remains useful after the agent starts to move. In this paper, we investigate how far current MLLM agents can turn local urban perception into reliable action in a complicated real-scale city. We propose UrbanGround, the first sandbox to make this question testable in a physically constrained replica of Hong Kong built from territory-wide 3D geospatial data. UrbanGround supports closed-loop interaction from a first-person view and provides an interactive map for navigation. Agents can directly enter the 3D city and explore from a first-person view. Our analysis follows the growth of the spatial problem through three research questions. We first test whether an agent can ground a local scene well enough to answer spatial questions after active observation. Then we ask whether that grounding supports navigation as destinations become farther away and less explicit. Finally, we examine whether the resulting behavior survives changes in route availability and pedestrian motion. Contemporary MLLM agents usually show useful atomic abilities in visual recognition and short-range spatial reasoning, while orientation and pedestrian-aware movement remain unreliable. Their central failure emerges over extended exploration, where local abilities do not compose into sustained goal-directed behavior and errors accumulate without effective correction. We hope UrbanGround will support broader study of how far current MLLM agents can explore reliably in complex, open-ended urban environments.",
-      "topics": [
-        "Spatial Cognition and Navigation",
-        "Multimodal Machine Learning Applications",
-        "Human Mobility and Location-Based Analysis"
-      ],
-      "keywords": [
-        "Perception",
-        "Agency (philosophy)",
-        "Action (physics)",
-        "Geospatial analysis",
-        "Orientation (vector space)",
-        "Ask price",
-        "Gentrification",
-        "Test (biology)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.27065",
-      "abstract": "On-policy self-distillation (OPSD) has recently emerged as an effective post-training paradigm that improves policy optimization through dense token-level supervision from a privileged self-teacher. Despite its promise, OPSD remains largely underexplored for Video Large Language Models (Video-LLMs). Existing methods typically construct privileged teachers by augmenting their context with additional information while keeping the primary input unchanged for both teacher and student. Video reasoning, however, offers a distinct source of privileged supervision within the primary input itself: long videos contain substantial temporal redundancy, and only a small subset of frames provides the evidence necessary to answer a question. Building on this observation, we present $\\textbf{Video-OPSD}$, an OPSD framework that exploits privileged visual evidence for both self-teacher construction and knowledge transfer. First, our Evidence-Grounded Self-Teacher conditions the teacher exclusively on annotated evidence frames while the student continues to reason over the complete video. This focused visual input enables the teacher to provide more informative supervision. Second, our Evidence-Guided Token Optimization adaptively weights token-level distillation according to each reasoning token's reliance on privileged visual evidence, thereby emphasizing perceptually grounded reasoning. Experiments across video understanding and reasoning benchmarks show that $\\textbf{Video-OPSD}$ consistently improves upon Standard OPSD across multiple backbones and achieves performance comparable to GRPO while requiring substantially less training time, establishing an effective and efficient post-training approach for Video-LLMs.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Domain Adaptation and Few-Shot Learning",
-        "Generative Adversarial Networks and Image Synthesis"
-      ],
-      "keywords": [
-        "Exploit",
-        "Context (archaeology)",
-        "Construct (python library)",
-        "Visual reasoning",
-        "Language model",
-        "Security token",
-        "Question answering"
       ]
     }
   ]

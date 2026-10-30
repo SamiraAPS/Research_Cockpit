@@ -1,7 +1,125 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-10-29T11:33:54.800Z",
+  "generatedAt": "2026-10-30T11:26:56.346Z",
   "documents": [
+    {
+      "id": "doi:10.5281/zenodo.23543780",
+      "abstract": "Federated learning allows crop-disease classifiers to be trained across farms without centralising leaf imagery, but the non-IID structure of farm data and the noise added for differential privacy interact in ways that are poorly characterised for agricultural deployment. The analysis characterises the operating characteristics of the design under a declared variance structure with between-cluster standard deviation 6.0, residual standard deviation 4.5 and intraclass correlation 0.64, using 2000 replications per design cell across cluster counts of 8, 16, 24 and 32 and effect sizes of 3, 5 and 8 percentage points. The results show that 54 clusters are required to detect a 5 percentage point effect at 80 percent power under this variance structure, and that the minimum detectable effect falls steeply as clusters increase from 8 to 32. The contribution is a design-level account of when differential-privacy noise overwhelms the between-farm signal that federated crop-disease detection depends on, together with a cluster-count rule that practitioners can apply before committing to a federation.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Smart Agriculture and AI",
+        "Machine Learning and Data Classification"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.23546225",
+      "abstract": "Federated learning allows agricultural disease-detection models to be trained across farms without centralising raw imagery, but the differential-privacy noise added to protect each farm's updates degrades the very accuracy that motivates the collaboration. the present analysis formalises that trade-off for heterogeneous farm data silos and evaluates it computationally. A federated averaging protocol with per-client Gaussian mechanism is specified, and a utility model is derived that separates the privacy budget, the number of participating silos and the heterogeneity of local label distributions into distinct terms. The model is then evaluated in a replication-based computational study: 2000 replications per design cell across cluster counts of 8, 16, 24 and 32 and effect sizes of 3, 5 and 8 percentage points, under a declared variance structure with between-cluster SD 6.0, residual SD 4.5 and intraclass correlation 0.64. The contribution is a design-theoretic account of when differential-privacy noise in federated agricultural learning remains compatible with disease-detection accuracy, and a specification of the cluster counts and privacy budgets under which that compatibility holds.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Smart Agriculture and AI",
+        "Machine Learning and Data Classification"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.23542378",
+      "abstract": "Federated learning promises to train clinical prediction models across Ugandan health facilities without centralising patient records, yet its statistical behaviour under the conditions that actually prevail in the country's referral system remains poorly characterised. the present analysis treats the problem as one of design analysis rather than empirical deployment: it formalises federated averaging as a distributed estimator whose risk decomposes into a non-IID client-drift term, a label-sparsity term, and a privacy-noise term, and it derives the conditions under which each dominates. Under moderate distribution shift the drift term scales with the squared heterogeneity of local optima and is bounded by a communication-round budget, whereas under sparse labels the variance term grows as the inverse of the per-client effective sample size, producing a regime in which additional privacy noise is nearly free but additional clients are not. A before-after-control-impact design with an intraclass correlation of 0.64, between-cluster SD of 6.0 and residual SD of 4.5 is used to characterise the operating characteristics of a cluster-level evaluation, and the design requires 54 clusters to detect a 5-percentage-point effect at 80% power. The contribution is a set of propositions that link heterogeneity, label density and privacy budget to achievable model quality, together with a design template for evaluating federated clinical models in low-resource referral networks.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Machine Learning and Data Classification",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.23542208",
+      "abstract": "Multi-site tuberculosis drug resistance prediction with federated learning faces a structural tension: asynchronous aggregation accommodates heterogeneous laboratory information systems but may systematically disadvantage sites whose data arrive late or infrequently, producing treatment-initiation recommendations that are less accurate for the patients those sites serve. We define a federated optimisation problem with staleness-dependent aggregation weights, derive a convergence bound that separates the contribution of data heterogeneity from that of staleness, and propose an equity-auditing procedure that compares per-site treatment-initiation error under synchronous and asynchronous aggregation. The framework is evaluated through a replication-based design study: no observational data are used or claimed. Operating characteristics are characterised under a declared variance structure (between-cluster SD = 6.0, residual SD = 4.5, intraclass correlation = 0.64) across 2000 replications per design cell, with cluster counts of 8, 16, 24 and 32 and effect sizes of 3, 5 and 8 percentage points. The analysis identifies the conditions under which asynchronous aggregation preserves treatment-initiation equity and the conditions under which it does not, and it specifies the audit statistics that a deployment should report. The contribution is a design-evaluation framework, not an empirical finding about any particular tuberculosis programme.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Tuberculosis Research and Epidemiology",
+        "Machine Learning in Healthcare"
+      ],
+      "keywords": [
+        "privacy-preserving federated learning",
+        "asynchronous aggregation",
+        "data staleness",
+        "data heterogeneity",
+        "convergence bounds",
+        "aggregation weights",
+        "laboratory information systems"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.23543576",
+      "abstract": "Split learning enables privacy-preserving collaborative training of crop disease classifiers by partitioning a neural network between resource-constrained rural devices and a remote aggregation server, yet its feasibility under intermittent connectivity remains unquantified. The analysis characterises the operating characteristics of the design under a declared variance structure (between-cluster SD = 6.0, residual SD = 4.5, intraclass correlation = 0.640), with power estimated across 2000 design cells. Results indicate that the intraclass correlation of 0.64 substantially inflates the cluster count required to detect small accuracy differences, with 54 clusters needed for 5 percentage-point effects at 80% power. The findings establish boundary conditions under which split learning is communication-viable for rural plant disease diagnosis and identify the split-layer position that minimises uplink cost without degrading accuracy beyond a specified tolerance.",
+      "topics": [
+        "Smart Agriculture and AI",
+        "Privacy-Preserving Technologies in Data",
+        "IoT and Edge/Fog Computing"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.30363",
+      "abstract": "Activation probes are computed directions in a language model's residual stream, used both to detect safety-relevant behaviours and, by adding their direction back into the stream, to steer them. We explore how the main design choices behind such probes interact, within one pipeline, on one model (Llama-3.1-8B-Instruct), and across three behaviours: deception, high-stakes awareness and sycophancy. The pipeline crosses two estimators (difference-of-means and logistic regression) with three token-pooling schemes (last, mean and learned attention), selects appropriate layers to detect or steer a behaviour, and evaluates every direction twice: as a detector of the behaviour, and as a steering vector to push outputs towards the behaviour. Prior work read together suggests a read/write dissociation, in which logistic regression reads (detects) best but difference-of-means directions write (steer) best. We find that it holds for deception and high-stakes but not for sycophancy, where the pattern reverses. The reversal appears to follow partially from the data rather than from the estimators. The best pooling technique and the layer choice depend on the behaviour and data, and the layer that steers best can sit well before the layer that detects best. The right steering metric to use between changing a model's perception and eliciting behaviour depends on the task - and the two can disagree outright. The exported probes and directions power an interactive interface through which a user can score and steer text directly.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Adversarial Robustness in Machine Learning",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "residual stream",
+        "steering vectors",
+        "deception detection",
+        "sycophancy",
+        "large language models",
+        "Llama-3.1-8B-Instruct",
+        "mean difference",
+        "logistic regression",
+        "layer selection"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.29367",
+      "abstract": "EEG foundation models are advancing at an unprecedented pace, yet their evaluation is driven by downstream accuracy, which reveals little about whether their predictions rely on physiologically interpretable signal structure. We introduce a set of perturbation probes in two grounding axes: spatial grounding in channel identity and topographic locality, and spectral grounding in oscillatory content and waveform morphology. We apply these probes to five published EEG foundation models across motor-imagery and seizure recordings. Our experiments reveal differences in both representational sensitivity and downstream reliance. Electrode identity may be encoded without influencing downstream classification: permuting LaBraM's positional codes heavily displaced its embeddings yet reduced motor-imagery accuracy by only 1.2 points, while spectral details may be discriminable without producing specific responses to simulated clinical markers, as only REVE exceeded a spectral baseline on this task. These dissociations are hidden in common benchmarks, demonstrating how grounding probes can complement performance-based evaluation by revealing what EEG foundation models encode and what their predictions depend on.",
+      "topics": [
+        "EEG and Brain-Computer Interfaces",
+        "Emotion and Mood Recognition",
+        "Machine Learning in Healthcare"
+      ],
+      "keywords": [
+        "EEG foundation models",
+        "spatial grounding",
+        "waveform morphology",
+        "motor imagery classification",
+        "seizure classification",
+        "model evaluation"
+      ]
+    },
+    {
+      "id": "doi:10.36948/ijfmr.2026.v08i05.90161",
+      "abstract": "Labour contractors play a significant role in supplying and managing manpower across various sectors, including construction, manufacturing, agriculture, transportation, and other industrial activities. They act as intermediaries between employers and workers by recruiting labourers, arranging employment, supervising work, and facilitating wage payments. Despite their important contribution to economic development and employment generation, labour contractors face several challenges related to working conditions, wage administration, labour welfare, occupational safety, legal compliance, and the management of employer–employee relationships. The present study aims to examine the problems and prospects associated with the working conditions of labour contractors, with particular emphasis on their employment practices, income levels, working hours, job security, occupational health and safety, access to social security benefits, and relationships with employers and workers. The study also seeks to identify the major difficulties faced by labour contractors in meeting the changing demands of the labour market, complying with labour laws, and ensuring fair and transparent employment practices. The findings of the study are expected to contribute to a better understanding of the role of labour contractors in the labour market and provide useful recommendations for improving employment practices, protecting workers’ rights, and promoting sustainable industrial relations.",
+      "topics": [
+        "Labor Law and Work Dynamics",
+        "Employment, Labor, and Gender Studies",
+        "Legal and Labor Studies"
+      ],
+      "keywords": [
+        "working conditions",
+        "wage management",
+        "employee welfare",
+        "occupational safety",
+        "labor law compliance",
+        "employer-employee relations",
+        "job security",
+        "working hours",
+        "social security benefits",
+        "employment practices",
+        "workers' rights",
+        "labor relations"
+      ]
+    },
     {
       "id": "doi:10.71085/sss.05.04.633",
       "abstract": "Students at the university are constantly exposed to high levels of cognitive workload, assessment pressure, and the cognitive load needed to be able to perform in an academic setting, which can cause direct attention fatigue and academic distress. The quantitative descriptive study used a quantitative approach, and it was based on the Attention Restoration Theory (ART), which explores university students' perceptions of psychologically restorative university environments and their cognitive resilience. To obtain a sample of 300 undergraduate and graduate students across six academic departments of the University of Sargodha, Punjab, Pakistan, multistage stratified sampling was used. Data were gathered using a 35-item semi-structured questionnaire made up of the Psychologically Restorative University Environment (PRE) scale (20 items, α=.860) and Cognitive Resilience (CR) scale (15 items, α=.899). Descriptive analysis showed that the overall rating for the campus environment was moderately restorative (M=3.535, SD=1.043); the functional study areas (M=3.797, SD=0.934) and spatial adequacy (M=3.760, SD=0.972) received the highest ratings, while quiet restorative refuges from daily campus crowds received lower ratings (M=3.333, SD=1.045). The students' cognitive resilience was in the moderate range (M=3.578), with behavioral persistence when studying difficult tasks being in the high range (M=3.903, SD=0.933) and generating alternative study strategies in the somewhat lower range (M=3.307, SD=1.142). The results highlight the need to consider both restorative environmental affordances (noise-buffered quiet spaces, biophilic green spaces) and coping support workshops to ensure students' learning processes continue.",
@@ -3003,111 +3121,6 @@
         "occupational health",
         "employment equity",
         "institutional legitimacy"
-      ]
-    },
-    {
-      "id": "doi:10.37034/residu.v4i3.215",
-      "abstract": "This study aims to describe the profile of non-academic giftedness in a university student who demonstrates outstanding abilities in graphic design. The research employed a qualitative approach using a single case study design. Data were collected through in-depth interviews, portfolio observations, and documentation of organizational activities. The findings reveal that the subject exhibits giftedness characterized by high visual-spatial cognitive ability, strong creativity, high intrinsic motivation and task commitment, well-developed socio-emotional skills, and refined psychomotor abilities. These findings support Clark’s multidimensional model of giftedness, emphasizing that non-academic giftedness can develop optimally when supported by personal motivation and a conducive environment. The study highlights the importance of recognizing and nurturing creative talents in higher education settings.",
-      "topics": [
-        "Education, Achievement, and Giftedness",
-        "Creativity in Education and Neuroscience",
-        "Art Education and Development"
-      ],
-      "keywords": [
-        "visuospatial ability",
-        "graphic design students",
-        "creativity",
-        "intrinsic motivation",
-        "socioemotional skills",
-        "psychomotor skills"
-      ]
-    },
-    {
-      "id": "doi:10.12688/f1000research.190994.1",
-      "abstract": "Background The emergence of Generative Artificial Intelligence (GenAI), particularly ChatGPT, offers new possibilities for mathematics learning in higher education. Although ChatGPT can provide explanations, examples, guiding questions, and feedback, its use in Abstract Algebra courses has largely been limited to answering questions and verifying mathematical answers or proofs. This study analyses pre-service mathematics teachers’ mathematical communication when interacting with ChatGPT through seven indicators, including: interpreting formal definitions; using mathematical terms, symbols, variables, and notation appropriately; constructing examples, non-examples, and counter-examples; explaining relationships between algebraic objects and their properties; justifying arguments or proofs; evaluating the validity of mathematical responses; and formulating coherent conclusions. Method A qualitative case study involved 18 pre-service mathematics teachers enrolled in an Abstract Algebra course in the department of mathematics education at a public university in Bandung City, West Java, Indonesia. Data comprised written dialogues between the pre-service mathematics teachers and ChatGPT while solving Abstract Algebra problems and were analysed using the seven indicators. Results The findings indicate that the pre-service mathematics teachers’ mathematical communication generally ranged from developing to adequate. They performed relatively well in using terminology and notation, constructing examples or counter-examples, and explaining relationships among algebraic objects and properties. However, justification, critical evaluation of ChatGPT responses, and independent conclusion-making remained weak. While some pre-service mathematics teachers accepted inaccurate AI responses, others identified and connected them. Conclusion The findings suggest that GenAI should serve as a dialogue partner and scaffolding, rather than an authority on mathematical truth. Mathematics course should emphasise verification, justification, critical evaluation, and argument reconstruction to foster independent mathematical communication skills.",
-      "topics": [
-        "Mathematics Education and Teaching Techniques",
-        "Artificial Intelligence in Education",
-        "Mathematics Education and Pedagogy"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-11061868/v1",
-      "abstract": null,
-      "topics": [
-        "Multi-Criteria Decision Making",
-        "Fuzzy and Soft Set Theory",
-        "Educational Technology and Pedagogy"
-      ],
-      "keywords": [
-        "artificial intelligence in education",
-        "fuzzy decision making",
-        "complex fuzzy sets",
-        "aggregation operators",
-        "multi-attribute group decision making",
-        "educational technology evaluation"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.27565",
-      "abstract": "Recent multimodal LLM (MLLM)-based anomaly detection (AD) methods can generate textual explanations that help interpret their predictions. However, reliably and efficiently evaluating these explanations remains challenging. While LLM judges can assess explanations through structured rubrics, they often require substantial token generation, making evaluation costly and difficult to scale. We instead propose to anchor evaluation in the available ground truth by extracting verifiable claims from each explanation and verifying them against the corresponding annotations. We instantiate this idea as AnomalyJev, a lightweight framework that extracts verifiable claims from contextualised representations using ground-truth-defined queries and pointer based heads, without token generation. The claims are then verified against the ground truth to score faithfulness and completeness. For evaluation, we construct a human-annotated set of 640 explanations with over 1,600 expert ratings across in-domain and cross-dataset settings. Despite its compact design, AnomalyJev achieves stronger agreement with human annotators than most open MLLM judges and approaches that of flagship MLLM judges, at a fraction of their runtime and resources.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Explainable Artificial Intelligence (XAI)",
-        "Anomaly Detection Techniques and Applications"
-      ],
-      "keywords": [
-        "image anomaly detection",
-        "explanation evaluation",
-        "multimodal large language models"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23513742",
-      "abstract": "This study was on Application of Chemistry Achievement Test for Secondary School Students Developed Using ChatGPT Artificial intelligence and Traditional methods. Three research questions and were formulated to guide the study. The instrumentation research design was used for the study. The population of the study consisted of all 11,594 Senior Secondary School Two (SSII) students from all the 187 public secondary schools in Akwa Ibom State. Multistage sampling procedure was used for the study. The sample of 387 SSII Students was used for the study. Data was collected using two researcher developed instruments named, “Chemistry Achievement Test On Chemical Equilibrium Developed using ChatGPT Method (CATCEDCM) and Chemistry Achievement Test On Chemical Equilibrium Developed using Traditional Method (CATCEDTM)”. The reliability coefficients of CATCEDCM and CATCEDTM were .992 and .971 determined using Split Half Method of reliability determination. The research questions were answered mean and standard deviation statistics while the independent t-test statistics was used to test the formulated null hypotheses at .05 alpha level. The findings of the study revealed that Students had higher achievement scores on Chemistry Achievement Test on Chemical Equilibrium developed using ChatGPT Artificial Intelligence than same test developed using traditional method. It was also revealed male and female Students had the same achievement scores on Chemistry Achievement Test on Chemical Equilibrium developed using ChatGPT Artificial Intelligence. Recommendations were made among others that Chemistry teachers should always make use ChatGPT artificial intelligence over the traditional method when developing a test since it could produce a test that appropriately assess students’ academic achievement.",
-      "topics": [
-        "Artificial Intelligence in Education",
-        "Educational Technology and Assessment",
-        "Educational Assessment and Pedagogy"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.18178/jaai.2026.4.4.200-222",
-      "abstract": "Artificial Intelligence (AI) is increasingly applied to microbial bioremediation to manage complex relationships among microorganisms, pollutants and environmental conditions. This critical narrative review examines peer-reviewed literature published from 1 January 2020 to the final search date of 21 September 2026 and evaluates AI across a pathway extending from microorganism and enzyme selection to pollutant-removal prediction, process optimization, experimental validation and real-world translation. Recent studies show that machine learning can identify microbial indicators, predict attenuation and removal of heavy metals and organic contaminants, optimize petroleum-, phenol- and PCB-degrading systems, and mine genomic or metagenomic data for candidate enzymes. However, the evidence base remains uneven because datasets are often heterogeneous, models may overfit, external validation is limited, and computational associations do not necessarily establish biological causation. The review therefore distinguishes computational prediction from biochemical, whole-cell, consortium, realistic-matrix and field validation. It argues that the most useful future pathway is an iterative prediction-validation-optimization framework in which AI prioritizes biological candidates and operating conditions, experiments confirm or reject predictions, and monitoring or field observations refine models. AI should consequently be viewed as a decision-support layer that strengthens, rather than replaces, microbiological understanding and experimental validation.",
-      "topics": [
-        "Microbial bioremediation and biosurfactants",
-        "Enzyme-mediated dye degradation",
-        "Microbial Fuel Cells and Bioremediation"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23496721",
-      "abstract": "Conventional noise monitoring reports sound levels but not their sources, while dedicated sensor networks are costly. This paper presents a low-cost pipeline, from smartphone recording to noise-source classification and web-based monitoring, together with the results of a small-scale pilot in Hanoi. The data comprise 14 GPS-tagged recordings (14.7 minutes in total, 9 recording sessions) covering 8 source classes, including sounds specific to Vietnamese cities such as waste-collection gongs and street-vendor calls. Labels were taken from file names and verified by listening to 111 sample clips, with no labelling error found. Each recording was split in time: the first 70% for training and the last 30% for testing, with data augmentation applied to the training part only. Five models from three families were compared: SVM and Random Forest on MFCC features, a compact CNN on log-Mel spectrograms, and two classifiers on embeddings from the pretrained YAMNet model. On 113 test clips cut from the end of each recording (E1), four models reached accuracies of 0.956–0.991. However, when tested on recordings entirely unseen during training (E2, leave-one-recording-out), the MFCC-based models dropped to 0.363–0.467, whereas the YAMNet-based models retained 0.730-0.779. The CNN trained from scratch did not converge on this amount of data (E1 accuracy 0.204). The YAMNet + Dense model was integrated into a monitoring prototype (FastAPI, SQLite, a browser-based recording page and dashboard). Replaying the 113 test clips through the system API yielded an accuracy of 0.956, identical to the offline result, with a mean processing time of 76.7 ms per clip on a laptop without a GPU. The results show the feasibility of the pipeline and the advantage of transfer learning with little data, and highlight that evaluation within the same recordings is markedly optimistic compared with evaluation on new recordings.",
-      "topics": [
-        "Music and Audio Processing",
-        "Noise Effects and Management",
-        "Speech Recognition and Synthesis"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.27790",
-      "abstract": "Large language models (LLMs) exhibit both knowledge of language, rendered by, for example, grammatical judgment ability, and abilities to perform tasks through language, such as math-word problem solving. Motivated by neurolinguistic studies of their neural dissociation in human brains, in this study, we investigate the overlap of their circuits in large language models (LLMs). Specifically, we examine the overlap and causal effects between the circuits extracted for linguistic and arithmetic tasks, using controlled materials and circuit discovery methods from the mechanistic interpretability field. Our experiments with five LLMs show that circuit similarity is mostly explained by task domains (linguistic vs. arithmetic), rather than by their input and output vocabularies or by the syntactic similarities between natural-language sentences and arithmetic expressions. This finding suggests that LLMs may process linguistic and arithmetic information using largely separate neural circuits, highlighting an ability-based modular organization of circuits within these models.",
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Topic Modeling",
-        "Natural Language Processing Techniques"
-      ],
-      "keywords": [
-        "large language models",
-        "arithmetic circuits",
-        "mathematical word problem solving",
-        "grammaticality judgment",
-        "mechanistic interpretability",
-        "circuit discovery"
       ]
     }
   ]
