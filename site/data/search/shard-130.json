@@ -1,16 +1,7 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-03T12:51:09.698Z",
+  "generatedAt": "2026-11-04T13:01:52.475Z",
   "documents": [
-    {
-      "id": "arxiv:2608.00558",
-      "abstract": "Large language model (LLM) applications increasingly operate as streaming workflows combining retrieval, tool calls, safety filters, and multi-agent coordination. Although contemporary frameworks expose provider deltas, workflow nodes often treat generation as coarse request-response steps, leaving queue management, worker allocation, ordering, and backpressure to ad hoc callback code. This paper presents AiFlow, a token-native reactive orchestration model that normalizes provider deltas into typed Context<T> events propagated through a directed streaming graph. Each node is managed by a Node Guardian that declares and enforces local queue bounds, worker concurrency, ordering, overflow policy, cancellation propagation, and retry discipline. We formalize the bounded-memory property, present the compilation from a compact DSL and JSON graph form, and provide static validation for type safety, state concurrency, and injection compatibility. Controlled microbenchmarks, captured DeepSeek trace replay (30 runs), descriptive online runs, LangGraph baselines, a streaming RAG workload, and an Ollama local-backend check show that AiFlow does not alter provider-side Model TTFT but reduces Application TTFPT by 70.9-94.7\\% versus aggregation and keeps runtime-owned queue depth within declared bounds (93.7-96.5\\% MaxQ reduction versus unbounded policies). The supplementary artifact contains scripts, raw traces, machine-readable tables, checksums, and an API-free smoke test; the public implementation is available through the FIT Framework repository.",
-      "topics": [
-        "cs.SE",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
     {
       "id": "arxiv:2608.00515",
       "abstract": "Large language model tutors can be correct and helpful yet disclose an answer or decisive reasoning before that disclosure is authorized. We formalize this state- and action-dependent failure as pedagogical leakage and introduce an authorization-aware complete-mediation boundary. A selector emits one of five disclosure contracts, trusted policy gates privileged modes, and a renderer proposes language. A single release function applies inspectable checks, optional cumulative verification, and action-specific fallback; replayable traces separate selection, generation, verification, and enforcement failures. Matched component attribution exposes a safety-utility frontier. On 599 fixed Gemini 3.5 proposals, strict mediation reduces blinded three-model panel-majority leakage flags from 181 to 0 (paired problem-cluster difference -30.22 points, 95% CI [-35.00,-25.72]), while replacing 581 responses and lowering helpfulness. Checker-triggered fallback alone yields 11 majority flags; adding the semantic verifier yields 14 and no reliable marginal gain. A global A1 scaffold yields 0 majority and 54 any-judge flags, outperforming fitted Q on automatic safety and utility. In an externally timestamped replication over 40 unseen problem clusters and 480 attack sequences, high-assurance release reduces majority flags from 42 to 8 (-7.08 points, 95% CI [-13.13,-2.29]); seven failures persist, one is introduced, and mean helpfulness falls by .192. These results establish an auditable release boundary and failure attribution under declared contracts, not universal semantic safety or learning gains.",
@@ -1866,6 +1857,15 @@
       "topics": [
         "cs.CL",
         "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.25614",
+      "abstract": "Adapting Large Language Models (LLMs) to specialized domains often incurs an alignment tax, as fine-tuning on domain-specific tasks can cause catastrophic forgetting and substantially degrade performance on general tasks. We propose MemSFT, which mitigates the alignment tax by decoupling domain specialization from backbone parameter updates through a plug-and-play parametric memory. The memory is trained to imitate the behavior of a non-parametric retriever operating over domain data, thereby memorizing knowledge and patterns that would otherwise be accessed through retrieval. Once trained on a specific domain, the memory can be reused across LLMs of different sizes. During generation, a learned router dynamically fuses the output distributions of the memory and backbone at each decoding step, allowing domain expertise to be invoked selectively. Across biology, geoscience, and law, evaluations with models ranging from Qwen3-8B to Qwen3-235B-A22B show that MemSFT consistently improves domain performance with negligible degradation in general performance, whereas full SFT suffers severe forgetting on general tasks. Overall, our results demonstrate a practical path to decoupling general model capabilities from domain-specific knowledge at the parameter level, thereby equipping LLMs with new specialized capabilities without compromising their general capabilities.",
+      "topics": [
+        "cs.LG",
+        "cs.CL"
       ],
       "keywords": []
     }

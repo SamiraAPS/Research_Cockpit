@@ -1,268 +1,12 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-03T12:51:09.698Z",
+  "generatedAt": "2026-11-04T13:01:52.475Z",
   "page": 72,
   "pageSize": 100,
-  "totalItems": 40401,
-  "totalPages": 405,
+  "totalItems": 40400,
+  "totalPages": 404,
   "nextPage": "./page-073.json",
   "items": [
-    {
-      "id": "doi:10.5281/zenodo.22833930",
-      "recordType": "publication",
-      "title": "Agent-friendly Provenance Capture with con-duct",
-      "abstract": "Agent-friendly Provenance Capture with con-duct Presenters Austin Macdonald , ORCID 0000-0002-8124-807X Cody C. Baker , ORCID 0000-0002-0829-4790 John A. Lee , ORCID 0000-0001-5884-4247 Yaroslav O. Halchenko , ORCID 0000-0003-3456-2493 All: Center for Open Neuroscience, Department of Psychological and Brain Sciences, Dartmouth College Keywords agentic workflows, provenance, reproducibility, resource monitoring, HPC Abstract Whether trying out a new tool, testing pipelines, or meticulously analyzing data for research, the daily work of RSEs and their agents depends on keeping context lean but relevant. The terminal outputs of tools and scripts frequently hold the necessary information, but they are often either bloating an agent’s context window, or forgotten after a human’s terminal scrolls past the buffer. con-duct is a lightweight, Python-based command line tool with no third-party dependencies: just use duct instead of to run a command. A wrapped run leaves a trail: full stdout and stderr streamed to disk (or skipped, for sensitive output); resource usage sampled across the command’s process tree; and a record of the invocation, wall clock time, peak memory, exit code, and system and environment details. Workflow managers and experiment trackers produce richer records (the poster compares them); con-duct collects basic provenance with so little effort it can be used on everything, producing uniform records. In daily work, humans and agents now execute commands side by side. Using con-duct, the full record stays out of the context window until it is needed. Even better, multiple runs can be filtered and grepped, ready for the questions nobody knew to ask. When did our tests start having that warning? Did this run take longer? con-duct ls makes the answers discoverable, filtering on any captured field with a Python expression: con-duct ls -e \"message==' '\" retrieves runs tagged at capture time with duct -m \" \". con-duct ls -e \"exit_code != 0\" lists failures. con-duct ls -e \"peak_rss > 8e9\" finds runs that exceeded a memory budget. At the tool level, projects can adopt con-duct internally rather than reinventing per-tool monitoring: ReproNim’s containers [5] and ReproStim [6] both offer it already, and the same con-duct ls queries read their records. For research, the record stops being a convenience, and starts being a part of the provenance chain [4]. Pairing con-duct with datalad (git-based version control for data)[2] is an easy win for rigor. datalad run \"duct ...\" completes the execution and then commits the diff (including the duct logs). On HPC, last month’s measured wall time and peak memory are already recorded, and can help inform tomorrow’s SLURM request. When an expensive job fails, the bug-report evidence is already on disk, no re-run necessary to file an issue. con-duct is on PyPI (pip install con-duct), conda-forge, registered as RRID:SCR_025436, and developed openly [1]. The poster shows three real cases: an fMRIPrep run on a SLURM cluster, its five hours of CPU and memory plotted from the record; a Kubernetes upgrade worked deploy by deploy, with every attempt’s command, exit code, and wall time kept by con-duct; and duct wrapped around duct to measure its own overhead. Keeping agents’ work auditable will take more than one tool; con-duct is one small piece: a wrapper that makes the agent’s work, like the human’s, leave a trace. Acknowledgments We thank the broader ReproNim and OpenNeuro communities for ongoing feedback on con-duct’s design and use. con-duct’s resource-monitoring approach is based on brainlife’s smon [3]. AI disclosure (per IEEE policy): Prose in the Abstract and Connection-to-Mission sections was drafted with assistance from Anthropic’s Claude; the authors specified the content, edited the text, and verified all technical claims, commands, and references. The con-duct software itself is developed with AI assistance, and with human review of all merged code. References con-duct. Center for Open Neuroscience. https://github.com/con/duct. RRID:SCR_025436. DataLad. https://www.datalad.org/. RRID:SCR_003931. brainlife smon. https://github.com/brainlife/abcd-spec/blob/master/hooks/smon Hoffstaedter, F. ds000007-mriqc (duct logs in logs/duct/). https://cerebra.fz-juelich.de/f.hoffstaedter/ds000007-mriqc/src/branch/base/logs/duct/ ReproNim/containers. https://github.com/ReproNim/containers. RRID:SCR_018467. ReproStim. https://github.com/ReproNim/reprostim. https://doi.org/10.5281/zenodo.4416842 Connection to Mission, Goals, & Interests of US-RSE Community con-duct was built by RSEs at the Center for Open Neuroscience to record provenance for neuroimaging pipelines. The dev-side payoff (reaching back into outputs that would otherwise be gone) was an unexpected bonus. As LLM agents take on more of the executing (writing throwaway pipelines, exploring datasets, calling tools), the volume of unrecorded work explodes: more commands, more parallel streams, results produced faster than anyone reads them. RSEs are the people who decide whether that work remains auditable: who preserve the context, make it discoverable, and keep capture cheap enough that nobody skips the step. Integrating at the tool level saves each project from building its own monitoring and logging, and keeps the records uniform across tools, so the collection stays queryable as a whole.",
-      "doi": "10.5281/zenodo.22833930",
-      "externalIds": {
-        "openalex": "W7213631281"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7213631281"
-      },
-      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-      "publicationDate": "2026-10-19",
-      "firstPublicDate": "2026-10-19",
-      "onlineDate": null,
-      "topics": [
-        "Scientific Computing and Data Management",
-        "Research Data Management Practices",
-        "Distributed and Parallel Computing Systems"
-      ],
-      "keywords": [
-        "provenance capture",
-        "command-line tool",
-        "agentic workflows",
-        "reproducibility",
-        "resource usage monitoring",
-        "experiment tracking",
-        "high-performance computing",
-        "LLM agents"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "agency",
-          "label": "Work Design & Agency",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "agency",
-              "conceptLabel": "Agency",
-              "matchedTerm": "agentic",
-              "sourceValue": "…nce, Department of Psychological and Brain Sciences, Dartmouth College Keywords agentic workflows, provenance, reproducibility, resource monitoring, HPC Abstract Whether trying out a new tool, testing pipelines, or meticulously analyzing data for research, the daily work of RSEs and their agents depends on keeping cont…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "agency",
-              "conceptLabel": "Agency",
-              "matchedTerm": "agentic",
-              "sourceValue": "agentic workflows",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "failure",
-              "conceptLabel": "Fehler",
-              "matchedTerm": "failures",
-              "sourceValue": "… tagged at capture time with duct -m \" \". con-duct ls -e \"exit_code != 0\" lists failures. con-duct ls -e \"peak_rss > 8e9\" finds runs that exceeded a memory budget. At the tool level, projects can adopt con-duct internally rather than reinventing per-tool monitoring: ReproNim’s containers [5] and ReproStim [6] both offe…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:agency": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "LLM",
-        "agentic",
-        "failures"
-      ],
-      "authors": [
-        {
-          "id": "A5055368045",
-          "name": "Austin Macdonald",
-          "orcid": "https://orcid.org/0000-0002-8124-807X",
-          "affiliations": []
-        },
-        {
-          "id": "A5146643610",
-          "name": "Cody Baker",
-          "orcid": "https://orcid.org/0000-0002-0829-4790",
-          "affiliations": []
-        },
-        {
-          "id": "A5071316937",
-          "name": "John Anthony Lee",
-          "orcid": "https://orcid.org/0000-0001-5884-4247",
-          "affiliations": []
-        },
-        {
-          "id": "A5074058957",
-          "name": "Yaroslav O. Halchenko",
-          "orcid": "https://orcid.org/0000-0003-3456-2493",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.5281/zenodo.22833930",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-19T10:48:38.084Z",
-      "firstSeenRunId": "ingestion-2026-10-19T10:48:31.100Z",
-      "retrievedAt": "2026-10-22T10:14:04.251Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-22T10:14:04.251Z",
-      "preferredVersionId": "openalex:W7213631281",
-      "versions": [
-        {
-          "id": "openalex:W7213631281",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7213631281",
-          "doi": "10.5281/zenodo.22833930",
-          "publicationDate": "2026-10-19",
-          "url": "https://doi.org/10.5281/zenodo.22833930"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-072.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": " they are often either bloating an agent’s context window, or forgotten after a human’s terminal scrolls past the buffer. con-duct is a lightweight, Python-based command line tool with ",
-              "start": 697,
-              "end": 882
-            },
-            {
-              "field": "abstract",
-              "term": "humans",
-              "quote": " effort it can be used on everything, producing uniform records. In daily work, humans and agents now execute commands side by side. Using con-duct, the full record stays out of the cont",
-              "start": 1369,
-              "end": 1555
-            },
-            {
-              "field": "abstract",
-              "term": "psychological",
-              "quote": "ko , ORCID 0000-0003-3456-2493 All: Center for Open Neuroscience, Department of Psychological and Brain Sciences, Dartmouth College Keywords agentic workflows, provenance, reproducibility, reso",
-              "start": 205,
-              "end": 398
-            },
-            {
-              "field": "abstract",
-              "term": "people",
-              "quote": " parallel streams, results produced faster than anyone reads them. RSEs are the people who decide whether that work remains auditable: who preserve the context, make it discoverable, and",
-              "start": 4952,
-              "end": 5138
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "ing back into outputs that would otherwise be gone) was an unexpected bonus. As LLM agents take on more of the executing (writing throwaway pipelines, exploring datasets, calling tool",
-              "start": 4706,
-              "end": 4889
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": " use. con-duct’s resource-monitoring approach is based on brainlife’s smon [3]. AI disclosure (per IEEE policy): Prose in the Abstract and Connection-to-Mission sections was drafted ",
-              "start": 3526,
-              "end": 3708
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "tutoring",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "feedback",
-                  "quote": "owledgments We thank the broader ReproNim and OpenNeuro communities for ongoing feedback on con-duct’s design and use. con-duct’s resource-monitoring approach is based on brainlife’s smon ",
-                  "start": 3413,
-                  "end": 3601
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "t of the provenance chain [4]. Pairing con-duct with datalad (git-based version control for data)[2] is an easy win for rigor. datalad run \"duct ...\" completes the execution and then comm",
-                  "start": 2365,
-                  "end": 2552
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "ak memory, exit code, and system and environment details. Workflow managers and experiment trackers produce richer records (the poster compares them); con-duct collects basic provenance with",
-                  "start": 1169,
-                  "end": 1359
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
     {
       "id": "doi:10.59256/indjcst.20260503039",
       "recordType": "publication",
@@ -364,7 +108,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.254Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222925272",
       "versions": [
@@ -660,7 +404,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222967565",
       "versions": [
@@ -891,7 +635,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222971686",
       "versions": [
@@ -1083,7 +827,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222941367",
       "versions": [
@@ -1316,7 +1060,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222939423",
       "versions": [
@@ -1616,7 +1360,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222982997",
       "versions": [
@@ -1899,7 +1643,7 @@
       "firstSeenAt": "2026-10-19T10:48:38.084Z",
       "firstSeenRunId": "ingestion-2026-10-19T10:48:31.100Z",
       "retrievedAt": "2026-10-28T11:22:55.277Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-28T11:22:55.277Z",
       "preferredVersionId": "openalex:W7213745303",
       "versions": [
@@ -2224,7 +1968,7 @@
       "firstSeenAt": "2026-10-19T10:48:38.084Z",
       "firstSeenRunId": "ingestion-2026-10-19T10:48:31.100Z",
       "retrievedAt": "2026-10-22T10:14:04.251Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:04.251Z",
       "preferredVersionId": "openalex:W7222873672",
       "versions": [
@@ -2538,7 +2282,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222946754",
       "versions": [
@@ -2896,7 +2640,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222932665",
       "versions": [
@@ -3253,7 +2997,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222941900",
       "versions": [
@@ -3564,7 +3308,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222974655",
       "versions": [
@@ -3747,7 +3491,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222958722",
       "versions": [
@@ -4005,7 +3749,7 @@
       "firstSeenAt": "2026-10-23T10:06:58.172Z",
       "firstSeenRunId": "ingestion-2026-10-23T10:06:42.806Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223193710",
       "versions": [
@@ -4256,7 +4000,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222979386",
       "versions": [
@@ -4458,7 +4202,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222981652",
       "versions": [
@@ -4656,7 +4400,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222965411",
       "versions": [
@@ -4890,7 +4634,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.254Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:04.251Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:04.251Z",
       "preferredVersionId": "openalex:W7222913670",
       "versions": [
@@ -5106,7 +4850,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222931324",
       "versions": [
@@ -5248,7 +4992,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222926552",
       "versions": [
@@ -5504,7 +5248,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.254Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:04.251Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:04.251Z",
       "preferredVersionId": "openalex:W7155586579",
       "versions": [
@@ -5744,7 +5488,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222959856",
       "versions": [
@@ -6051,7 +5795,7 @@
       "firstSeenAt": "2026-10-21T10:12:39.737Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-24T09:34:40.571Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
       "preferredVersionId": "openalex:W7222986032",
       "versions": [
@@ -6417,7 +6161,7 @@
       "firstSeenAt": "2026-10-19T10:48:38.084Z",
       "firstSeenRunId": "ingestion-2026-10-19T10:48:31.100Z",
       "retrievedAt": "2026-10-22T10:14:04.251Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:04.251Z",
       "preferredVersionId": "openalex:W7222900632",
       "versions": [
@@ -6782,7 +6526,7 @@
       "firstSeenAt": "2026-10-22T10:14:16.152Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:40.571Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
       "preferredVersionId": "openalex:W7223009319",
       "versions": [
@@ -7009,7 +6753,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222960107",
       "versions": [
@@ -7242,7 +6986,7 @@
       "firstSeenAt": "2026-10-23T10:06:58.172Z",
       "firstSeenRunId": "ingestion-2026-10-23T10:06:42.806Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223165503",
       "versions": [
@@ -7506,7 +7250,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222944782",
       "versions": [
@@ -7706,7 +7450,7 @@
       "firstSeenAt": "2026-10-23T10:06:58.172Z",
       "firstSeenRunId": "ingestion-2026-10-23T10:06:42.806Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223100438",
       "versions": [
@@ -7862,7 +7606,7 @@
       "firstSeenAt": "2026-10-22T10:14:17.846Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223053544",
       "versions": [
@@ -8021,7 +7765,7 @@
       "firstSeenAt": "2026-10-19T10:48:38.084Z",
       "firstSeenRunId": "ingestion-2026-10-19T10:48:31.100Z",
       "retrievedAt": "2026-10-22T10:14:04.251Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:04.251Z",
       "preferredVersionId": "openalex:W7222867751",
       "versions": [
@@ -8165,7 +7909,7 @@
       "firstSeenAt": "2026-10-22T10:14:17.846Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223031888",
       "versions": [
@@ -8361,7 +8105,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222942111",
       "versions": [
@@ -8562,7 +8306,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222975695",
       "versions": [
@@ -8769,7 +8513,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222949510",
       "versions": [
@@ -8961,7 +8705,7 @@
       "firstSeenAt": "2026-10-22T10:14:17.846Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223056209",
       "versions": [
@@ -9199,7 +8943,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222944071",
       "versions": [
@@ -9386,7 +9130,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222987511",
       "versions": [
@@ -9632,7 +9376,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222940713",
       "versions": [
@@ -9767,7 +9511,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222967464",
       "versions": [
@@ -10032,7 +9776,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222953410",
       "versions": [
@@ -10267,7 +10011,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222930292",
       "versions": [
@@ -10531,7 +10275,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222956900",
       "versions": [
@@ -10754,7 +10498,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222987361",
       "versions": [
@@ -11149,7 +10893,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222953170",
       "versions": [
@@ -11432,7 +11176,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222983911",
       "versions": [
@@ -11692,7 +11436,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.254Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:04.251Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:04.251Z",
       "preferredVersionId": "openalex:W7222917928",
       "versions": [
@@ -11880,7 +11624,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.254Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222918682",
       "versions": [
@@ -12113,7 +11857,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222949586",
       "versions": [
@@ -12324,7 +12068,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222954997",
       "versions": [
@@ -12582,7 +12326,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222948356",
       "versions": [
@@ -12845,7 +12589,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.254Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222920742",
       "versions": [
@@ -13106,7 +12850,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222927209",
       "versions": [
@@ -13388,7 +13132,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222977902",
       "versions": [
@@ -13619,7 +13363,7 @@
       "firstSeenAt": "2026-10-11T11:25:58.044Z",
       "firstSeenRunId": "ingestion-2026-10-11T11:25:46.728Z",
       "retrievedAt": "2026-10-22T10:14:04.251Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:04.251Z",
       "preferredVersionId": "openalex:W7221356715",
       "versions": [
@@ -13934,7 +13678,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.254Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222925008",
       "versions": [
@@ -14254,7 +13998,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222977772",
       "versions": [
@@ -14472,7 +14216,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222947935",
       "versions": [
@@ -14693,7 +14437,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222965800",
       "versions": [
@@ -15021,7 +14765,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222939188",
       "versions": [
@@ -15255,7 +14999,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222970744",
       "versions": [
@@ -15413,7 +15157,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-24T09:34:40.571Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
       "preferredVersionId": "openalex:W7222943802",
       "versions": [
@@ -15604,7 +15348,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:30.942Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:30.942Z",
       "preferredVersionId": "openalex:W7222946222",
       "versions": [
@@ -15836,7 +15580,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222930140",
       "versions": [
@@ -16008,7 +15752,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222956438",
       "versions": [
@@ -16279,7 +16023,7 @@
       "firstSeenAt": "2026-10-19T10:48:38.084Z",
       "firstSeenRunId": "ingestion-2026-10-19T10:48:31.100Z",
       "retrievedAt": "2026-10-22T10:14:04.251Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:04.251Z",
       "preferredVersionId": "openalex:W7213512566",
       "versions": [
@@ -16487,7 +16231,7 @@
       "firstSeenAt": "2026-10-25T09:50:49.351Z",
       "firstSeenRunId": "ingestion-2026-10-25T09:50:32.324Z",
       "retrievedAt": "2026-10-27T10:38:15.863Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-27T10:38:15.863Z",
       "preferredVersionId": "openalex:W7223268066",
       "versions": [
@@ -16742,7 +16486,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222966773",
       "versions": [
@@ -17055,7 +16799,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222985525",
       "versions": [
@@ -17243,7 +16987,7 @@
       "firstSeenAt": "2026-10-21T10:12:39.737Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-24T09:34:40.571Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
       "preferredVersionId": "openalex:W7222980271",
       "versions": [
@@ -17453,7 +17197,7 @@
       "firstSeenAt": "2026-10-21T10:12:33.569Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-28T11:22:55.277Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-28T11:22:55.277Z",
       "preferredVersionId": "openalex:W7167787003",
       "versions": [
@@ -17694,7 +17438,7 @@
       "firstSeenAt": "2026-10-22T10:14:17.846Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223041272",
       "versions": [
@@ -17979,7 +17723,7 @@
       "firstSeenAt": "2026-10-22T10:14:17.846Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223065576",
       "versions": [
@@ -18199,7 +17943,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222977388",
       "versions": [
@@ -18508,7 +18252,7 @@
       "firstSeenAt": "2026-10-21T10:12:39.737Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-24T09:34:40.571Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
       "preferredVersionId": "openalex:W7222982591",
       "versions": [
@@ -18745,7 +18489,7 @@
       "firstSeenAt": "2026-10-22T10:14:17.846Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223068639",
       "versions": [
@@ -19013,7 +18757,7 @@
       "firstSeenAt": "2026-10-21T10:12:33.569Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-28T11:22:55.277Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-28T11:22:55.277Z",
       "preferredVersionId": "openalex:W7222967651",
       "versions": [
@@ -19251,7 +18995,7 @@
       "firstSeenAt": "2026-10-22T10:14:07.092Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222930346",
       "versions": [
@@ -19454,7 +19198,7 @@
       "firstSeenAt": "2026-10-22T10:14:16.152Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:40.571Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
       "preferredVersionId": "openalex:W7222995582",
       "versions": [
@@ -19801,7 +19545,7 @@
       "firstSeenAt": "2026-10-22T10:14:17.846Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223056839",
       "versions": [
@@ -20057,7 +19801,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222959624",
       "versions": [
@@ -20265,7 +20009,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222984598",
       "versions": [
@@ -20568,7 +20312,7 @@
       "firstSeenAt": "2026-10-22T10:14:16.152Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:40.571Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
       "preferredVersionId": "openalex:W7223018252",
       "versions": [
@@ -20713,7 +20457,7 @@
       "firstSeenAt": "2026-10-21T10:12:39.737Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-24T09:34:40.571Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
       "preferredVersionId": "openalex:W7222981728",
       "versions": [
@@ -20942,7 +20686,7 @@
       "firstSeenAt": "2026-10-22T10:14:16.152Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:40.571Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
       "preferredVersionId": "openalex:W7223002437",
       "versions": [
@@ -21121,7 +20865,7 @@
       "firstSeenAt": "2026-10-22T10:14:16.152Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:40.571Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
       "preferredVersionId": "openalex:W7223010726",
       "versions": [
@@ -21423,7 +21167,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222979988",
       "versions": [
@@ -21751,7 +21495,7 @@
       "firstSeenAt": "2026-10-22T10:14:17.846Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223041230",
       "versions": [
@@ -22007,7 +21751,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.254Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222920472",
       "versions": [
@@ -22269,7 +22013,7 @@
       "firstSeenAt": "2026-10-23T10:06:59.891Z",
       "firstSeenRunId": "ingestion-2026-10-23T10:06:42.806Z",
       "retrievedAt": "2026-11-02T13:33:26.641Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-11-02T13:33:26.641Z",
       "preferredVersionId": "openalex:W7223195184",
       "versions": [
@@ -22512,7 +22256,7 @@
       "firstSeenAt": "2026-10-21T10:12:32.298Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:32.298Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:32.298Z",
       "preferredVersionId": "openalex:W7222981886",
       "versions": [
@@ -22686,7 +22430,7 @@
       "firstSeenAt": "2026-10-22T10:14:07.092Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222938952",
       "versions": [
@@ -22918,7 +22662,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222973679",
       "versions": [
@@ -23135,7 +22879,7 @@
       "firstSeenAt": "2026-10-22T10:14:17.846Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223024189",
       "versions": [
@@ -23279,7 +23023,7 @@
       "firstSeenAt": "2026-10-21T10:12:33.569Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-28T11:22:55.277Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-28T11:22:55.277Z",
       "preferredVersionId": "openalex:W7222923110",
       "versions": [
@@ -23446,7 +23190,7 @@
       "firstSeenAt": "2026-10-21T10:12:30.942Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-22T10:14:07.092Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-22T10:14:07.092Z",
       "preferredVersionId": "openalex:W7222940892",
       "versions": [
@@ -23707,7 +23451,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222972082",
       "versions": [
@@ -23860,7 +23604,7 @@
       "firstSeenAt": "2026-10-21T10:12:31.654Z",
       "firstSeenRunId": "ingestion-2026-10-21T10:12:25.521Z",
       "retrievedAt": "2026-10-21T10:12:31.654Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-21T10:12:31.654Z",
       "preferredVersionId": "openalex:W7222954015",
       "versions": [
@@ -24055,7 +23799,7 @@
       "firstSeenAt": "2026-10-22T10:14:17.846Z",
       "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
       "retrievedAt": "2026-10-24T09:34:41.498Z",
-      "dataStatus": "current",
+      "dataStatus": "stale",
       "lastVerifiedAt": "2026-10-24T09:34:41.498Z",
       "preferredVersionId": "openalex:W7223028650",
       "versions": [
@@ -24157,6 +23901,190 @@
               "interpretation": "mentioned; role/outcome not confirmed"
             }
           ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.25788",
+      "recordType": "preprint",
+      "title": "Can LLM User-Proxies Stand In for Humans in Reliance Measurement? Replicating Rel-A.I. with Simulated Users",
+      "abstract": "Can language-model user proxies reproduce human reliance on an AI answer across contexts? Published simulated-user studies do not establish validity for this partial-answer decision, and Rel-A.I.'s released human record omits trial-level choices. We audit its 90 printed questions and 15 domain-by-marker reliance rates using sampled decisions and counterbalanced A/B probabilities from open models through 72B parameters. A matched crossover varies the printed agent specialty within each question, separating question content, label averages, and their interaction. Mistral Small's strong-marker math-minus-law label marginal is -0.4 percentage points, yet matching the agent label to the question domain raises reliance by 13.3 points on average across the five domains. The best A/B proxy has 22.5-point absolute-rate error and 8.3-point domain-effect error against the human table. A two-sample independent-binomial human replication has 3.5-point expected domain-effect error under the stated working model. The interaction is model dependent, and inference layout changes identical-prompt probabilities. This single-study audit does not establish proxy validity for human effect sizes or general directional screening.",
+      "doi": "10.48550/arxiv.2610.25788",
+      "externalIds": {
+        "openalex": "W7223018854"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7223018854"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-10-19",
+      "firstPublicDate": "2026-10-19",
+      "onlineDate": null,
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "simulated users",
+        "large language models",
+        "human-AI interaction"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "reliance",
+              "sourceValue": "Can LLM User-Proxies Stand In for Humans in Reliance Measurement? Replicating Rel-A.I. with Simulated Users",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "reliance",
+              "sourceValue": "Can language-model user proxies reproduce human reliance on an AI answer across contexts? Published simulated-user studies do not establish validity for this partial-answer decision, and Rel-A.I.'s released human record omits trial-level choices. We audit its 90 printed questions and 15 domain-by-marker reliance rates …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 8,
+        "topic:trust": 6,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "human-AI",
+        "large language model",
+        "large language models",
+        "LLM",
+        "reliance",
+        "safety",
+        "human-AI interaction"
+      ],
+      "authors": [
+        {
+          "id": "A5159124032",
+          "name": "Shuai Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5083665930",
+          "name": "Rui Hua Hu",
+          "orcid": "https://orcid.org/0000-0001-7799-5198",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2610.25788",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-22T10:14:16.152Z",
+      "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
+      "retrievedAt": "2026-10-24T09:34:40.571Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-24T09:34:40.571Z",
+      "preferredVersionId": "openalex:W7223018854",
+      "versions": [
+        {
+          "id": "openalex:W7223018854",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7223018854",
+          "doi": "10.48550/arxiv.2610.25788",
+          "publicationDate": "2026-10-19",
+          "url": "https://doi.org/10.48550/arxiv.2610.25788"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-072.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "title",
+              "term": "human",
+              "quote": "Can LLM User-Proxies Stand In for Humans in Reliance Measurement? Replicating Rel-A.I. with Simulated Users",
+              "start": 0,
+              "end": 107
+            },
+            {
+              "field": "title",
+              "term": "humans",
+              "quote": "Can LLM User-Proxies Stand In for Humans in Reliance Measurement? Replicating Rel-A.I. with Simulated Users",
+              "start": 0,
+              "end": 107
+            },
+            {
+              "field": "title",
+              "term": "user",
+              "quote": "Can LLM User-Proxies Stand In for Humans in Reliance Measurement? Replicating Rel-A.I. with Simulated Users",
+              "start": 0,
+              "end": 107
+            },
+            {
+              "field": "title",
+              "term": "users",
+              "quote": "tand In for Humans in Reliance Measurement? Replicating Rel-A.I. with Simulated Users",
+              "start": 22,
+              "end": 107
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "Can LLM User-Proxies Stand In for Humans in Reliance Measurement? Replicating Rel-A.I. with Simulated Users",
+              "start": 0,
+              "end": 107
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "Can language-model user proxies reproduce human reliance on an AI answer across contexts? Published simulated-user studies do not establish validity for this partial",
+              "start": 0,
+              "end": 165
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
         },
         "personalFit": [],
         "finding": null,

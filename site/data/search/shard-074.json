@@ -1,22 +1,7 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-03T12:51:09.698Z",
+  "generatedAt": "2026-11-04T13:01:52.475Z",
   "documents": [
-    {
-      "id": "doi:10.48550/arxiv.2610.06679",
-      "abstract": "Tabular foundation models perform in-context learning (ICL) by conditioning predictions on labeled training examples provided as context. Unlike traditional models that separate training from inference, these models must process all training examples in every forward pass, making each prediction expensive. Restricting the number of training examples reduces this cost but substantially degrades performance. Instead of discarding context, we propose activation alignment, a method that leverages the full context to teach a model how to behave when seeing only a subset. This is achieved by training a lightweight linear transformation on synthetic unlabeled data to map the intermediate activations of a data-constrained \"student\" (using partial context) toward those of a full-context \"teacher\" (using all data). Training the aligner requires no GPU and converges in seconds to minutes on commodity hardware. We evaluate on 38 classification datasets from the TabArena benchmark using the leading two tabular foundation models, TabPFN-3 and TabFM. Across all context budgets, the aligned student yields broad, statistically significant improvements over the unaligned baseline for both models. In low-data regimes, alignment recovers nearly half of the teacher's predictive advantage. The method provides a practical, low-overhead approach to achieving the inference speed of compact contexts while closing a significant fraction of the performance gap to the full-context teacher.",
-      "topics": [
-        "Domain Adaptation and Few-Shot Learning",
-        "Machine Learning and Data Classification",
-        "Neural Networks and Applications"
-      ],
-      "keywords": [
-        "tabular foundation models",
-        "knowledge distillation",
-        "TabPFN",
-        "inference efficiency"
-      ]
-    },
     {
       "id": "doi:10.48550/arxiv.2610.07446",
       "abstract": "Large language models (LLMs) have become increasingly capable of generating code. However, achieving stronger code-generation performance still often relies on costly model adaptation, i.e., fine-tuning pretrained model parameters. Prior studies have shown correspondence between human code processing and neural models' attention or internal computation. Human-aligned learning approaches use cognitive signals to guide training, but typically adapt a large portion of the model, leaving training costs largely unchanged. Human cognitive signals may indicate not only what the model must learn from, but also where adaptation is most useful. We investigate whether human responses during code reading correspond to code-model behavior and can guide selective adaptation without sacrificing performance. We present CogAdapt, a cognition-informed framework for task-dependent sparse adaptation of code models. CogAdapt first learns transferable program-level and token-level priors from human Electroencephalography (EEG) and attention data, then combines these priors with the frozen model's response to each coding task to determine how much adaptation to allocate and which transformer blocks should receive updates. During fine-tuning, only the selected blocks are updated, while no new human recordings are required for inference. Across Qwen and GLM, we find consistent correspondence between human reading behavior and Mixture-of-Experts (MoE) computation. CogAdapt achieves the best pass@1 across both LiveCodeBench and BigCodeBench, including gains of 10.86 and 6.29 percentage points over matched regular fine-tuning on LiveCodeBench, while reducing gradient-eligible adaptation parameters by 86.21-87.21%. These results suggest that human comprehension signals can provide useful guidance for making code-model adaptation both more selective and more effective.",
@@ -3088,6 +3073,21 @@
         "preclinical training",
         "human factors",
         "vascular surgery training"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.06844",
+      "abstract": "Multimodal Diffusion Transformers (MM-DiTs) jointly process visual and textual representations throughout generation. These models repeatedly update the text tokens through multimodal attention, forming dynamic contextual tokens whose function is not well understood. In this work, we introduce a framework for reading this contextual space through natural-language interrogation. We train a lightweight bottleneck network that maps intermediate contextual tokens into the input space of a frozen Large Language Model (LLM), allowing the LLM to answer questions about the emerging image directly from these hidden representations. Our reader reveals that contextual tokens encode a rich, global representation of the emerging scene: generation-specific semantics, including attributes left underspecified by the prompt, are accessible surprisingly early in denoising, while increasingly fine-grained details become readable over time. Remarkably, this information remains decodable even when the MM-DiT receives an empty prompt, showing that contextual tokens accumulate substantial image-specific information from the evolving visual representation itself. We further find that generations with more readable contextual representations tend to receive higher human-preference scores. Building on these observations, we introduce Contextual Alignment, a training technique that explicitly reinforces the visual-semantic information encoded in the contextual tokens, improving generation quality and distributional coverage. Together, our results establish contextual tokens as both an interpretable view into the internal dynamics of MM-DiTs and an effective target for improving generative models.",
+      "topics": [
+        "Generative Adversarial Networks and Image Synthesis",
+        "Multimodal Machine Learning Applications",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": [
+        "text-to-image generation",
+        "bottleneck networks",
+        "interpretability",
+        "contextual alignment"
       ]
     }
   ]
