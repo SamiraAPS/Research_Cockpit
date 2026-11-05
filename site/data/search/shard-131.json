@@ -1,7 +1,25 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-04T13:01:52.475Z",
+  "generatedAt": "2026-11-05T13:14:50.634Z",
   "documents": [
+    {
+      "id": "arxiv:2609.20252",
+      "abstract": "High-quality representations are essential for a wide range of downstream tasks. Dedicated embedding models are explicitly optimized for representation learning, yet their training data are often more limited in scale and diversity than the massive corpora used to pretrain modern large language models and multimodal large language models. Large-scale pretraining and instruction following enable autoregressive models to select relevant evidence, integrate multimodal information, and infer semantics under different task perspectives, creating a distinctive opportunity for training-free representation learning. However, our analysis reveals that existing semantic-elicitation methods do not reliably orient the extracted states toward the semantic perspective required by the downstream task. Consequently, the resulting representations often remain dominated by salient input content. We characterize this problem as semantic perspective misalignment and propose Lens, a training-free framework that makes representation readout task-directed. Semantic Perspective Anchoring associates the task-required perspective with a task-specific readout phrase, specifying the interpretive role of the positions later used for extraction. Contextualized Phrase Readout places the same phrase after the complete input and aggregates its token states, combining full-context access with the anchored perspective. The resulting representation reflects task-conditioned evidence integration and inference rather than a generic summary of salient content. Without parameter updates, architectural modification, or reranking, Lens achieves an overall Precision@1 of 63.9 across all 36 MMEB datasets, outperforming the closest same-backbone training-free embedding baseline by 10.2 points.",
+      "topics": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.25614",
+      "abstract": "Adapting Large Language Models (LLMs) to specialized domains often incurs an alignment tax, as fine-tuning on domain-specific tasks can cause catastrophic forgetting and substantially degrade performance on general tasks. We propose MemSFT, which mitigates the alignment tax by decoupling domain specialization from backbone parameter updates through a plug-and-play parametric memory. The memory is trained to imitate the behavior of a non-parametric retriever operating over domain data, thereby memorizing knowledge and patterns that would otherwise be accessed through retrieval. Once trained on a specific domain, the memory can be reused across LLMs of different sizes. During generation, a learned router dynamically fuses the output distributions of the memory and backbone at each decoding step, allowing domain expertise to be invoked selectively. Across biology, geoscience, and law, evaluations with models ranging from Qwen3-8B to Qwen3-235B-A22B show that MemSFT consistently improves domain performance with negligible degradation in general performance, whereas full SFT suffers severe forgetting on general tasks. Overall, our results demonstrate a practical path to decoupling general model capabilities from domain-specific knowledge at the parameter level, thereby equipping LLMs with new specialized capabilities without compromising their general capabilities.",
+      "topics": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2607.26094",
       "abstract": "Reinforcement Learning from Human Feedback (RLHF) is the standard approach for aligning large language models with human preferences, but its quality is limited by static, task-agnostic reward models. This mismatch leads to sparse learning signals and suboptimal alignment. We introduce MeRLa (Meta-Learned Reward Shaping), a principled framework that meta-learns a task-aware shaping function $Φ(x,y;φ)$ across auxiliary tasks before RLHF training. The learned shaping produces a composite reward that preserves policy optimality while providing task-specific learning signals. Our meta-objective combines task discrimination, entropy regularization, and potential-based conservation for stable convergence. We provide theoretical guarantees for policy invariance, analyze representation drift sensitivity, and formally address incentive misalignment from entropy maximization. Experiments on LLaMA-3-8B across four benchmarks show consistent improvements over PPO, DPO, GRPO, and DAPO, achieving a 90.8% length-controlled win rate on AlpacaEval 2.0 and a score of 9.14 on MT-Bench, with 41% less training instability. MeRLa retains its benefits when combined with process-based and rubric-based enhanced rewards.",
@@ -3449,41 +3467,6 @@
         "cognitive engagement",
         "assessment instruments",
         "theoretical framework"
-      ]
-    },
-    {
-      "id": "doi:10.1145/3810199",
-      "abstract": "Applying Vision-Language Models (VLMs) to pervasive personal videos introduces profound privacy risks. This paper addresses the critical yet unexplored inferential privacy threat, specifically the risk of inferring sensitive personal attributes from seemingly benign data. To address this gap, we crowdsourced a dataset of 508 everyday personal videos from 58 individuals, and benchmarked VLM inference capabilities against human performance. Our findings reveal three key insights: (1) VLMs surpass recruited human evaluators in inferential accuracy, analyzing temporal behavioral patterns rather than relying solely on object recognition. (2) Inferential risk is strongly correlated with specific video characteristics and prompting strategies. (3) VLM-driven explanation towards the inference is unreliable, as we observe a disconnect between the model's reasoning and evidential impact, where ubiquitous objects often serve as misleading confounders.",
-      "topics": [
-        "Privacy-Preserving Technologies in Data",
-        "Privacy, Security, and Data Protection",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "vision-language models",
-        "personal video",
-        "sensitive attribute inference",
-        "crowdsourced data",
-        "prompting strategies"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2606.16009",
-      "abstract": "Machine interpreting (MI), the live, real-time application of speech translation, has achieved remarkable progress on standard benchmarks, with some systems approaching human parity on textual fidelity. Yet the user experience remains far inferior to interpreter-mediated communication, revealing what we term the accuracy illusion: systems that appear accurate on paper but fail in practice to support smooth, goal-oriented interaction. This paper defines MI as a distinct subfield of speech translation, with its own characteristics and the need for evaluation methods grounded in communicative effectiveness rather than isolated fidelity metrics. Drawing on insights from interpreting studies, we identify critical dimensions of professional interpreting practice that are overlooked by current systems, and consolidate them into three interdependent design priorities for future MI: agency (context-sensitive initiative and repair), grounding (multimodal and discourse-level situational awareness), and experience (adaptive improvement through real interaction). Together, these priorities chart a path toward closing the usability gap and enabling systems that can sustain authentic multilingual communication in real time.",
-      "topics": [
-        "Translation Studies and Practices",
-        "Natural Language Processing Techniques",
-        "Speech and dialogue systems"
-      ],
-      "keywords": [
-        "machine interpreting",
-        "speech translation",
-        "usability",
-        "interpreting studies",
-        "communication effectiveness",
-        "agency",
-        "grounding",
-        "discourse awareness"
       ]
     }
   ]

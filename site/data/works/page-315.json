@@ -1,12 +1,405 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-04T13:01:52.475Z",
+  "generatedAt": "2026-11-05T13:14:50.634Z",
   "page": 315,
   "pageSize": 100,
-  "totalItems": 40400,
-  "totalPages": 404,
+  "totalItems": 40402,
+  "totalPages": 405,
   "nextPage": "./page-316.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2604.07609",
+      "recordType": "preprint",
+      "title": "Blink: CPU-Free LLM Inference by Delegating the Serving Stack to GPU and SmartNIC",
+      "abstract": "Large Language Model (LLM) inference is rapidly becoming a core datacenter service, yet current serving stacks keep the host CPU on the critical path for orchestration and token-level control. This makes LLM performance sensitive to CPU interference, undermining application colocation and forcing operators to reserve CPU headroom, leaving substantial capacity unutilized. We introduce Blink, an end-to-end serving architecture that removes the host CPU from the steady-state inference path by redistributing responsibilities across a SmartNIC and a GPU. Blink offloads request handling to the SmartNIC, which delivers inputs directly into GPU memory via RDMA, and replaces host-driven scheduling with a persistent GPU kernel that performs batching, scheduling, and KV-cache management without CPU involvement. Evaluated against TensorRT-LLM, vLLM, and SGLang, Blink outperforms all baselines even in isolation, reducing pre-saturation P99 TTFT by up to 8.47$\\times$ and P99 TPOT by up to 3.40$\\times$, improving decode throughput by up to 2.1$\\times$, and reducing energy per token by up to 48.6$\\%$. Under CPU interference, Blink maintains stable performance, while existing systems degrade by up to two orders of magnitude.",
+      "doi": "10.48550/arxiv.2604.07609",
+      "externalIds": {
+        "openalex": "W7153101745"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7153101745"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-04-08",
+      "firstPublicDate": "2026-04-08",
+      "onlineDate": null,
+      "topics": [
+        "Parallel Computing and Optimization Techniques",
+        "Cloud Computing and Resource Management",
+        "Software System Performance and Reliability"
+      ],
+      "keywords": [
+        "large language model inference",
+        "SmartNIC",
+        "GPU offloading",
+        "RDMA",
+        "KV cache management",
+        "token throughput",
+        "energy efficiency"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 2,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "LLM"
+      ],
+      "authors": [
+        {
+          "id": "A5001439830",
+          "name": "Mohammad Siavashi",
+          "orcid": "https://orcid.org/0000-0002-2600-9025",
+          "affiliations": []
+        },
+        {
+          "id": "A5089462139",
+          "name": "Mariano Scazzariello",
+          "orcid": "https://orcid.org/0000-0002-9780-873X",
+          "affiliations": []
+        },
+        {
+          "id": "A5058057533",
+          "name": "Gerald Q. Maguire",
+          "orcid": "https://orcid.org/0000-0002-6066-746X",
+          "affiliations": []
+        },
+        {
+          "id": "A5048036382",
+          "name": "Dejan Kostić",
+          "orcid": "https://orcid.org/0000-0002-1256-1070",
+          "affiliations": []
+        },
+        {
+          "id": "A5058517041",
+          "name": "Marco Chiesa",
+          "orcid": "https://orcid.org/0000-0002-9675-9729",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2604.07609",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-22T10:14:26.489Z",
+      "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
+      "retrievedAt": "2026-10-22T10:14:26.489Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-22T10:14:26.489Z",
+      "preferredVersionId": "openalex:W7153101745",
+      "versions": [
+        {
+          "id": "openalex:W7153101745",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7153101745",
+          "doi": "10.48550/arxiv.2604.07609",
+          "publicationDate": "2026-04-08",
+          "url": "https://doi.org/10.48550/arxiv.2604.07609"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-315.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "operator",
+              "quote": "e sensitive to CPU interference, undermining application colocation and forcing operators to reserve CPU headroom, leaving substantial capacity unutilized. We introduce Blink, an end-to-end",
+              "start": 218,
+              "end": 407
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "Blink: CPU-Free LLM Inference by Delegating the Serving Stack to GPU and SmartNIC",
+              "start": 0,
+              "end": 81
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Large Language Model (LLM) inference is rapidly becoming a core datacenter service, yet current serving stacks keep the ",
+              "start": 0,
+              "end": 120
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "Large Language Model (LLM) inference is rapidly becoming a core datacenter service, yet current serving stacks keep the host ",
+              "start": 0,
+              "end": 125
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "operator",
+                  "quote": "e sensitive to CPU interference, undermining application colocation and forcing operators to reserve CPU headroom, leaving substantial capacity unutilized. We introduce Blink, an end-to-end",
+                  "start": 218,
+                  "end": 407
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Large Language Model (LLM) inference is rapidly becoming a core datacenter service, yet current serving stacks keep the ",
+                  "start": 0,
+                  "end": 120
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "stacks keep the host CPU on the critical path for orchestration and token-level control. This makes LLM performance sensitive to CPU interference, undermining application colocation and f",
+                  "start": 104,
+                  "end": 291
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.07606",
+      "recordType": "preprint",
+      "title": "Bootstrapping Sign Language Annotations with Sign Language Models",
+      "abstract": "AI-driven sign language interpretation is limited by a lack of high-quality annotated data. New datasets including ASL STEM Wiki and FLEURS-ASL contain professional interpreters and 100s of hours of data but remain only partially annotated and thus underutilized, in part due to the prohibitive costs of annotating at this scale. In this work, we develop a pseudo-annotation pipeline that takes signed video and English as input and outputs a ranked set of likely annotations, including time intervals, for glosses, fingerspelled words, and sign classifiers. Our pipeline uses sparse predictions from our fingerspelling recognizer and isolated sign recognizer (ISR), along with a K-Shot LLM approach, to estimate these annotations. In service of this pipeline, we establish simple yet effective baseline fingerspelling and ISR models, achieving state-of-the-art on FSBoard (6.7% CER) and on ASL Citizen datasets (74% top-1 accuracy). To validate and provide a gold-standard benchmark, a professional interpreter annotated nearly 500 videos from ASL STEM Wiki with sequence-level gloss labels containing glosses, classifiers, and fingerspelling signs. These human annotations and over 300 hours of pseudo-annotations are being released in supplemental material.",
+      "doi": "10.48550/arxiv.2604.07606",
+      "externalIds": {
+        "openalex": "W7153121805"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7153121805"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-04-08",
+      "firstPublicDate": "2026-04-08",
+      "onlineDate": null,
+      "topics": [
+        "Hand Gesture Recognition Systems",
+        "Hearing Impairment and Communication",
+        "Handwritten Text Recognition Techniques"
+      ],
+      "keywords": [
+        "sign language annotation",
+        "pseudo-annotation",
+        "bootstrapping",
+        "American Sign Language",
+        "fingerspelling recognition",
+        "isolated sign recognition",
+        "sign language interpreting"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 1,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "LLM"
+      ],
+      "authors": [
+        {
+          "id": "A5088537496",
+          "name": "Colin Lea",
+          "orcid": "https://orcid.org/0000-0001-7068-3351",
+          "affiliations": []
+        },
+        {
+          "id": "A5070704852",
+          "name": "Vasileios Baltatzis",
+          "orcid": "https://orcid.org/0000-0001-7748-4152",
+          "affiliations": []
+        },
+        {
+          "id": "A5111742750",
+          "name": "Connor J. Gillis",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5084374376",
+          "name": "Raja Kushalnagar",
+          "orcid": "https://orcid.org/0000-0002-0493-413X",
+          "affiliations": []
+        },
+        {
+          "id": "A5024847494",
+          "name": "Lorna C. Quandt",
+          "orcid": "https://orcid.org/0000-0002-0032-1918",
+          "affiliations": []
+        },
+        {
+          "id": "A5031744461",
+          "name": "Leah Findlater",
+          "orcid": "https://orcid.org/0000-0002-5619-4452",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2604.07606",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-22T10:14:26.489Z",
+      "firstSeenRunId": "ingestion-2026-10-22T10:13:51.313Z",
+      "retrievedAt": "2026-10-22T10:14:26.489Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-22T10:14:26.489Z",
+      "preferredVersionId": "openalex:W7153121805",
+      "versions": [
+        {
+          "id": "openalex:W7153121805",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7153121805",
+          "doi": "10.48550/arxiv.2604.07606",
+          "publicationDate": "2026-04-08",
+          "url": "https://doi.org/10.48550/arxiv.2604.07606"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-315.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "l gloss labels containing glosses, classifiers, and fingerspelling signs. These human annotations and over 300 hours of pseudo-annotations are being released in supplemental material.",
+              "start": 1077,
+              "end": 1260
+            },
+            {
+              "field": "abstract",
+              "term": "professional",
+              "quote": "ity annotated data. New datasets including ASL STEM Wiki and FLEURS-ASL contain professional interpreters and 100s of hours of data but remain only partially annotated and thus underutilized, ",
+              "start": 72,
+              "end": 264
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "ngerspelling recognizer and isolated sign recognizer (ISR), along with a K-Shot LLM approach, to estimate these annotations. In service of this pipeline, we establish simple yet effec",
+              "start": 607,
+              "end": 790
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "AI-driven sign language interpretation is limited by a lack of high-quality annotated data. New datase",
+              "start": 0,
+              "end": 102
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "professional",
+                  "quote": "ity annotated data. New datasets including ASL STEM Wiki and FLEURS-ASL contain professional interpreters and 100s of hours of data but remain only partially annotated and thus underutilized, ",
+                  "start": 72,
+                  "end": 264
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "g state-of-the-art on FSBoard (6.7% CER) and on ASL Citizen datasets (74% top-1 accuracy). To validate and provide a gold-standard benchmark, a professional interpreter annotated nearly 50",
+                  "start": 843,
+                  "end": 1031
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.48550/arxiv.2604.07398",
       "recordType": "preprint",
@@ -23949,452 +24342,6 @@
             }
           ],
           "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.1287/isre.2023.0493",
-      "recordType": "publication",
-      "title": "Less Is Not Always More: The Impact of Social Media Block Intensity and Immediacy on Work Time",
-      "abstract": "Social media use during work hours is a persistent concern for workplace productivity. Many current blocking policies are designed under the assumption that greater restriction will always produce better outcomes. However, our four-week randomized field experiment with 217 U.S. participants challenges this assumption. We compared different blocker designs along two dimensions: the degree of control (partial versus complete blocking) and the immediacy of implementation (gradual versus immediate rollout). The results show that complete blocking can backfire, reducing time spent working, whereas partial blocking increases it. In addition, gradually introducing restrictions proved more effective than imposing them immediately, particularly during periods when users historically engaged more with social media. Assuming a typical eight-hour workday, complete blocking corresponds to an estimated loss of about 20.3 productive workdays per year, whereas partial blocking is associated with a gain of roughly 6.2 productive workdays annually. Partial blocking also increased the duration of uninterrupted work sessions, indicating improved sustained focus. These findings suggest a clear implication for practice and policy; rather than adopting all-or-nothing bans, organizations, app developers, and policymakers should implement calibrated, adaptive, and phased controls that reduce distractions without triggering behavioral backlash.",
-      "doi": "10.1287/isre.2023.0493",
-      "externalIds": {
-        "openalex": "W7151774866"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7151774866"
-      },
-      "venue": "Information Systems Research",
-      "publicationDate": "2026-04-08",
-      "firstPublicDate": "2026-04-08",
-      "onlineDate": null,
-      "topics": [
-        "Cyberloafing and Workplace Behavior",
-        "Personal Information Management and User Behavior",
-        "Technostress in Professional Settings"
-      ],
-      "keywords": [
-        "social media blocking",
-        "labor productivity",
-        "working hours",
-        "gradual implementation",
-        "work interruptions"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 0,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [],
-      "authors": [
-        {
-          "id": "A5005708878",
-          "name": "Zenan Chen",
-          "orcid": "https://orcid.org/0000-0002-9455-9256",
-          "affiliations": []
-        },
-        {
-          "id": "A5102005690",
-          "name": "Jason Chan",
-          "orcid": "https://orcid.org/0000-0002-0092-2377",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.1287/isre.2023.0493",
-      "openAccess": false,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-02T11:07:43.298Z",
-      "firstSeenRunId": "ingestion-2026-10-02T11:07:34.369Z",
-      "retrievedAt": "2026-10-02T11:07:43.298Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-02T11:07:43.298Z",
-      "preferredVersionId": "openalex:W7151774866",
-      "versions": [
-        {
-          "id": "openalex:W7151774866",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7151774866",
-          "doi": "10.1287/isre.2023.0493",
-          "publicationDate": "2026-04-08",
-          "url": "https://doi.org/10.1287/isre.2023.0493"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "core",
-          "queryVersion": "static-search-5.0.0:core:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-315.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "participant",
-              "quote": "tter outcomes. However, our four-week randomized field experiment with 217 U.S. participants challenges this assumption. We compared different blocker designs along two dimensions: the degree ",
-              "start": 199,
-              "end": 391
-            },
-            {
-              "field": "abstract",
-              "term": "participants",
-              "quote": "tter outcomes. However, our four-week randomized field experiment with 217 U.S. participants challenges this assumption. We compared different blocker designs along two dimensions: the degree ",
-              "start": 199,
-              "end": 391
-            },
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "more effective than imposing them immediately, particularly during periods when users historically engaged more with social media. Assuming a typical eight-hour workday, complete blocki",
-              "start": 686,
-              "end": 871
-            },
-            {
-              "field": "abstract",
-              "term": "users",
-              "quote": "more effective than imposing them immediately, particularly during periods when users historically engaged more with social media. Assuming a typical eight-hour workday, complete blocki",
-              "start": 686,
-              "end": 871
-            }
-          ],
-          "ai": [],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "workplace",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "workplace",
-                  "quote": "Social media use during work hours is a persistent concern for workplace productivity. Many current blocking policies are designed under the assumption that greater restric",
-                  "start": 0,
-                  "end": 172
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "participants",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "participant",
-                  "quote": "tter outcomes. However, our four-week randomized field experiment with 217 U.S. participants challenges this assumption. We compared different blocker designs along two dimensions: the degree ",
-                  "start": 199,
-                  "end": 391
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "tion. We compared different blocker designs along two dimensions: the degree of control (partial versus complete blocking) and the immediacy of implementation (gradual versus immediate ro",
-                  "start": 314,
-                  "end": 501
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "randomized",
-                  "quote": "greater restriction will always produce better outcomes. However, our four-week randomized field experiment with 217 U.S. participants challenges this assumption. We compared different block",
-                  "start": 157,
-                  "end": 347
-                },
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "on will always produce better outcomes. However, our four-week randomized field experiment with 217 U.S. participants challenges this assumption. We compared different blocker designs along ",
-                  "start": 174,
-                  "end": 364
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "openalex:W7215620224",
-      "recordType": "publication",
-      "title": "Leveraging Enterprise Analytics Interfaces and Interactive Panels for Instant Strategic Insights",
-      "abstract": "The increasing complexity of organizational data ecosystems has necessitated the adoption of advanced analytics interfaces and interactive visualization platforms to facilitate real-time strategic decision-making. This paper investigates the role of enterprise analytics interfaces and interactive panels in enabling instant strategic insights, focusing on their architectural foundations, functional mechanisms, and organizational implications. The study integrates theoretical perspectives from data analytics, information systems, and decision science while synthesizing insights from existing literature on digital dashboards, social network analytics, cybersecurity intelligence, and AI-driven systems. The research identifies key challenges in traditional decision-making environments, including latency in data processing, fragmented information systems, and limited user interactivity. In response, enterprise analytics interfaces—characterized by dynamic dashboards, real-time data streaming, and user-centric design—have emerged as transformative tools that bridge the gap between data generation and actionable intelligence. Interactive panels enhance this capability by providing customizable visualizations, predictive analytics integration, and adaptive feedback mechanisms. Drawing upon the referenced literature, the paper critically examines the evolution of analytics platforms, highlighting their convergence with artificial intelligence, big data infrastructures, and cybersecurity frameworks. The study further explores how these systems support strategic agility in domains such as public administration, digital governance, and enterprise management. Special emphasis is placed on real-time decision-making frameworks, including the integration of platforms such as Kibana-like visualization systems and enterprise resource planning dashboards (Gondi et al., 2026). The findings reveal that organizations leveraging advanced analytics interfaces achieve improved decision accuracy, reduced response time, and enhanced situational awareness. However, challenges related to data security, system complexity, and user adaptability persist. The paper concludes by proposing a conceptual framework for optimizing enterprise analytics environments and outlines future research directions in intelligent decision support systems.",
-      "doi": null,
-      "externalIds": {
-        "openalex": "W7215620224"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7215620224"
-      },
-      "venue": "Ethiopian International Journal of Multidisciplinary Research",
-      "publicationDate": "2026-04-08",
-      "firstPublicDate": "2026-04-08",
-      "onlineDate": null,
-      "topics": [
-        "Big Data and Business Intelligence",
-        "Competitive and Knowledge Intelligence",
-        "Data Visualization and Analytics"
-      ],
-      "keywords": [
-        "digital dashboard",
-        "real-time decision making",
-        "strategic decision support",
-        "predictive analytics",
-        "data latency",
-        "situational awareness",
-        "strategic agility",
-        "Kibana",
-        "social network analytics",
-        "data security",
-        "user-centered design"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "awareness",
-              "conceptLabel": "Situation Awareness",
-              "matchedTerm": "situational awareness",
-              "sourceValue": "…erfaces achieve improved decision accuracy, reduced response time, and enhanced situational awareness. However, challenges related to data security, system complexity, and user adaptability persist. The paper concludes by proposing a conceptual framework for optimizing enterprise analytics environments and outlines fut…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision making",
-              "sourceValue": "The increasing complexity of organizational data ecosystems has necessitated the adoption of advanced analytics interfaces and interactive visualization platforms to facilitate real-time strategic decision-making. This paper investigates the role of enterprise analytics interfaces and interactive panels in enabling ins…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision making",
-              "sourceValue": "real-time decision making",
-              "weight": 0
-            },
-            {
-              "source": "keyword",
-              "concept": "awareness",
-              "conceptLabel": "Situation Awareness",
-              "matchedTerm": "situational awareness",
-              "sourceValue": "situational awareness",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "participation",
-          "label": "Partizipation & Fairness",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "governance",
-              "conceptLabel": "Governance",
-              "matchedTerm": "governance",
-              "sourceValue": "…ems support strategic agility in domains such as public administration, digital governance, and enterprise management. Special emphasis is placed on real-time decision-making frameworks, including the integration of platforms such as Kibana-like visualization systems and enterprise resource planning dashboards (Gondi e…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 1,
-        "topic:cognition": 4,
-        "topic:participation": 2,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "situational awareness",
-        "decision making",
-        "governance"
-      ],
-      "authors": [
-        {
-          "id": "A5130001022",
-          "name": "Arjun Mehta",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://eijmr.org/index.php/eijmr/article/view/5988/7285",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-12T13:12:30.476Z",
-      "firstSeenRunId": "ingestion-2026-10-12T13:12:04.843Z",
-      "retrievedAt": "2026-10-12T13:12:30.476Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-12T13:12:30.476Z",
-      "preferredVersionId": "openalex:W7215620224",
-      "versions": [
-        {
-          "id": "openalex:W7215620224",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7215620224",
-          "doi": null,
-          "publicationDate": "2026-04-08",
-          "url": "https://eijmr.org/index.php/eijmr/article/view/5988/7285"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-315.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "cluding latency in data processing, fragmented information systems, and limited user interactivity. In response, enterprise analytics interfaces—characterized by dynamic dashboards, re",
-              "start": 794,
-              "end": 978
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "mines the evolution of analytics platforms, highlighting their convergence with artificial intelligence, big data infrastructures, and cybersecurity frameworks. The study further explores how these syste",
-              "start": 1353,
-              "end": 1556
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "n digital dashboards, social network analytics, cybersecurity intelligence, and AI-driven systems. The research identifies key challenges in traditional decision-making environments,",
-              "start": 609,
-              "end": 791
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "workplace",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "organizational",
-                  "quote": "The increasing complexity of organizational data ecosystems has necessitated the adoption of advanced analytics interfaces and interactive visu",
-                  "start": 0,
-                  "end": 143
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "tutoring",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "feedback",
-                  "quote": "ing customizable visualizations, predictive analytics integration, and adaptive feedback mechanisms. Drawing upon the referenced literature, the paper critically examines the evolution of ",
-                  "start": 1188,
-                  "end": 1376
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "decisionSupport",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "decision support",
-                  "quote": "e analytics environments and outlines future research directions in intelligent decision support systems.",
-                  "start": 2240,
-                  "end": 2345
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": "rganizations leveraging advanced analytics interfaces achieve improved decision accuracy, reduced response time, and enhanced situational awareness. However, challenges related to data sec",
-                  "start": 1915,
-                  "end": 2103
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
           "studyDesign": []
         },
         "personalFit": [],

@@ -1,7 +1,41 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-04T13:01:52.475Z",
+  "generatedAt": "2026-11-05T13:14:50.634Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.17528",
+      "abstract": "Training recipes are tuned by hand for one model, cluster and workload, and every new model, accelerator, framework version or dataset means tuning again. Automated tuners search a fixed space of knobs and check only that a job runs, yet a configuration can run to completion while it silently changes training. ATTUNE is a single coding agent that tunes any working recipe for the workload and stack at hand, unattended, within a GPU-hour budget the user sets. It diagnoses each run and changes one lever at a time, guided by a catalog of lessons from past campaigns, and ships a recipe only if it passes a correctness gate: a configuration check against objective-changing settings and known stack defects, and a convergence check of its loss curve against the baseline's. On four held-out models at 64-128 GPUs, ATTUNE raises mean throughput over the strongest public recipe run on our stack by 6.7% on Llama-3.1-405B (best campaign 11.9%) and 33.9% on GLM-4.5 (54.7%), whose public recipe was written for H100. It keeps Mixtral-8x22B's recipe, where nothing it finds clears the noise band. Under a common GPU-hour budget it beats OptiCo, Bayesian optimization and random search on GLM-4.5 and MiniMax-M2; on GLM-4.5 its mean gain is more than four times the best alternative's at less than half the GPU-hours, and on both models its tuning pays for itself within a day of training. The gate rejects no legitimate run and catches 16 of 24 faulty runs, missing only ones that barely move the 20-step loss. Ablations tie its best campaigns to one of its search rules: retrying an out-of-memory layout with recomputation. We release ATTUNE's code and TrainingThroughputBench, a leaderboard of the fastest known recipes for MoE models up to 744B parameters on up to 256 GPUs, each with its throughput, cost per million tokens and a passed correctness check, at https://github.com/amazon-science/attune.",
+      "topics": [
+        "Machine Learning and Data Classification",
+        "Parallel Computing and Optimization Techniques",
+        "Stochastic Gradient Optimization Techniques"
+      ],
+      "keywords": [
+        "large language model training",
+        "loss curves",
+        "MoE models"
+      ]
+    },
+    {
+      "id": "doi:10.1186/s41747-026-00822-y",
+      "abstract": "OBJECTIVES: This study aimed to validate a segmentation pipeline for the extraction of volumetric thigh muscle data, investigate the influence of demographics on segmentation performance, and investigate the influence of low-quality segmentations on quantitative performance and downstream metrics. MATERIALS AND METHODS: Manual thigh muscle segmentations on axial T1-weighted spin echo thigh images of 364 (106 training and validation; 258 testing) participants of the Osteoarthritis Initiative (OAI) were used. A trained YOLO (You Only Look Once) object detection model generated labels and box predictions, that were passed to a fine-tuned foundation model (Segment Anything, Meta), which generated muscle segmentations. The quality of segmentations was assessed by two radiologists (none, minor, major issue), and Dice scores and mean bias versus manual segmentations were calculated in the testing dataset. Linear regression was used to calculate the associations of age, sex, and BMI with Dice scores. RESULTS: Dice scores ranged between 0.97 (quadriceps) and 0.89 (adductors). Exclusion of erroneous segmentations decreased mean bias by 0.06 mL across muscle groups; mean Dice of segmentations with versus without major issues was 0.90 versus 0.94. Female sex was associated with marginally lower Dice scores (beta -0.01, 95% CI: -0.02, -0.01, p < 0.001), while no other demographic feature showed significant associations. CONCLUSION: Foundation models can be fine-tuned on a modest task-specific dataset to achieve segmentation accuracy comparable to bespoke networks, without training a dedicated architecture from scratch. Visually erroneous segmentations introduce only negligible degradation of quantitative performance and downstream metrics and may thus be challenging to identify by data-driven detection strategies. KEY POINTS: Question Foundation models can be efficiently leveraged for robust segmentation on complex thigh muscle anatomy Findings Radiologist-identified erroneous segmentations introduced only negligible degradation of summary quantitative performance and are thus difficult to identify using statistical methods. Relevance statement Human-in-the-loop quality assurance post-validation adds limited value to improve downstream volumetric muscle metrics in foundation-model-based thigh segmentation. These findings carry implications for both research and potential clinical applications of muscle volume quantification, e.g., personalized therapeutic regimens.",
+      "topics": [
+        "Medical Image Segmentation Techniques",
+        "Medical Imaging and Analysis",
+        "Advanced Neural Network Applications"
+      ],
+      "keywords": [
+        "foundation models",
+        "Segment Anything",
+        "YOLO",
+        "segmentation quality",
+        "quadriceps",
+        "adductors",
+        "Osteoarthritis Initiative",
+        "quality assurance",
+        "human-in-the-loop validation"
+      ]
+    },
     {
       "id": "doi:10.5281/zenodo.23340239",
       "abstract": "Abstract—Contemporary enterprise Security Operations Centers (SOCs) are on the brink of systemic collapse driven by three converging factors: exponential alert fatigue (>25,000 uninvestigated alerts daily per enterprise), acute global cybersecurity workforce shortages, and the emergence of automated, machine-speed cyber threats executing multi-stage Advanced Persistent Threats (APTs) in sub-minute time horizons. Traditional Security Orchestration, Automation, and Response (SOAR) platforms rely on brittle, rigid, hard-coded linear playbooks that fail when adversaries deviate slightly from known MITRE ATT&CK patterns. The paradigm of the Autonomous AI-Driven SOC (Autonomous SOC) establishes a transformative architecture that replaces rigid rule engines with specialized collaborative Multi-Agent Systems (MAS) powered by fine-tuned Large Language Models (LLMs) and Graph Neural Networks (GNNs). In an Autonomous SOC, decentralized cognitive agents autonomously triage alerts, execute deep forensic graph correlation, synthesize non-linear incident playbooks, isolate compromised endpoints via zero-trust API invocations, and conduct automated counter-adversarial negotiations. However, deploying autonomous agentic execution in mission-critical defensive infrastructure exposes severe risks: catastrophic hallucination loops during remediation, prompt injection propagation across defensive pipelines, decision deadlock, and unauthorized disruption of legitimate enterprise operations. This paper presents an exhaustive, mathematically formal technical investigation and empirical benchmark of Autonomous SOC architectures. We formalize incident response as a decentralized Partially Observable Markov Decision Process (Dec-POMDP) under dynamic threat uncertainty, model consensus verification over cryptographic remediation DAGs, and establish a dual-tier human-on-the-loop (HOTL) safety gating mechanism. Furthermore, we construct an enterprise SOC evaluation testbed spanning 10,000 multi-stage attack scenarios across real-world enterprise topologies. Our empirical findings demonstrate that our multi-agent autonomous framework slashes Mean Time to Detect (MTTD) from 18.4 minutes to 4.2 seconds and Mean Time to Remediate (MTTR) from 42.6 minutes to 18.2 seconds (a 99.3% reduction) while preserving a 99.6% remediation accuracy against MITRE ATT&CK kill chains. Finally, we formulate open challenges in adversarial prompt-injection resilience, continuous defensive co-evolution, and liability attribution under international cyber law. Index Terms—Autonomous SOC, Security Operations Center, Multi-Agent Systems (MAS), SOAR, Incident Response, MITRE ATT&CK, Dec-POMDP, Defensive AI, Alert Fatigue, Cyber Threat Intelligence.",
@@ -3047,34 +3081,6 @@
         "deontology",
         "AI ethics"
       ]
-    },
-    {
-      "id": "doi:10.30546/2521-6341.8.2024.018",
-      "abstract": "The innovation ecosystem is expressed in the form of a network system that plays an important role in the economic development of countries in the 21st century.It is necessary to consider the innovation ecosystem in a way as an innovative environment in creation of which all sides implementing innovative work and service processes-governmental and non-governmental organizations, commercial associations and, most importantly, human capital are involved.Human capital, which refers to the skills, knowledge, experience and creativity of individuals within society, is a key driver of innovation and a fundamental element in fostering a dinamic and sustainable innovation ecosystem.The human factor encourages the generation of ideas, entrepreneurship, collaboration and knowledge creation, contributing to the development of innovative solutions and the economic and social progress of a region or country.The research study investigated the role and importance of human capital in the innovation ecosystem, which is a particularly important factor in the modern world of information and digitization, where the main focus is on the \"brain product\".The result of researchers who have studied the mentioned topic before, are analyzed during the research, and the statistical data is used as the main data supporting the hypothesis.",
-      "topics": [
-        "University-Industry-Government Innovation Models",
-        "Labor Market and Education",
-        "Economic Development and Digital Transformation"
-      ],
-      "keywords": [
-        "human capital",
-        "innovation ecosystems",
-        "national innovation system",
-        "entrepreneurship",
-        "knowledge production",
-        "economic development",
-        "digitization"
-      ]
-    },
-    {
-      "id": "doi:10.30546/2521-6341.2026.01.6094",
-      "abstract": "The purpose of the research -This article examines human capital assessment through the integration of heterogeneous data and artificial intelligence in the context of the digital economy.The study aims to identify the interrelationships among artificial intelligence, digital transformation, and human capital, and to empirically evaluate how these factors influence productivity. Research methodology -The research applies analysis, comparison, systematization, grouping, and generalization methods.Its empirical part is based on panel data covering the period 2010-2024 and obtained from open international statistical databases.The analytical framework includes descriptive statistics, correlation analysis, unit root tests, cointegration analysis, multivariate regression modeling, and Granger causality testing.This methodological approach allows a comprehensive assessment of the interaction between artificial intelligence, digital transformation, human capital, and productivity.Results of the research -The findings show that artificial intelligence has a significant positive impact on productivity, while human capital strongly reinforces this effect.Digital transformation also contributes positively through better data processing and resource allocation.The results confirm long-run relationships among the variables and identify artificial intelligence and human capital as major drivers of productivity growth.Originality and scientific novelty of the research -The study offers an integrated and multidimensional framework for evaluating human capital in the digital economy.",
-      "topics": [
-        "Digital Economy and Transformation",
-        "Economic Growth and Productivity",
-        "Economic Development and Digital Transformation"
-      ],
-      "keywords": []
     }
   ]
 }

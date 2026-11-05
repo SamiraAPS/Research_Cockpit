@@ -1,7 +1,33 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-04T13:01:52.475Z",
+  "generatedAt": "2026-11-05T13:14:50.634Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.40945",
+      "abstract": "On-policy reinforcement learning for large language models assumes that training responses are sampled from the current policy. In practice, an inference engine samples the responses and a separate trainer computes the gradients, and the \\textbf{training-inference mismatch} between the two makes the training data off-policy. The mismatch has two sources, the numerics of the engine and the stale weights of asynchronous sampling, and a correction that stabilizes training under one source can fail under the other. \\textit{We ask which property of a mismatch source decides the correction it needs.} Evaluating the trainer at the sampler's weights splits each sampled-token error exactly into a \\textit{numerical discrepancy} of the engine and a \\textit{policy lag} of the trainer, and we follow both through training. The numerical discrepancy stays approximately constant, so it biases the updates by a nearly fixed amount, and centering the score at each prefix removes its leading bias. The policy lag is produced by the trainer's own updates: the bias it leaves enters the next update, which enlarges the next lag and closes a feedback loop. Importance weighting cuts this loop only while the lag ratio stays concentrated, and on Qwen3-1.7B it fails at the step where the effective sample size of the ratio falls below one half. From this account we derive the \\textbf{discrepancy-lag correction} (DLC), which centers the numerical discrepancy, clips the lag ratio against the sampler's weights and resynchronizes the sampler when this effective sample size falls below one half. Under a stale sampler, DLC keeps the KL divergence from on-policy training within twice the KL between two independent on-policy trainings on Qwen3-0.6B and Qwen3-1.7B, and its resynchronization prevents collapses that the per-token corrections leave and that a KL measured on the sampler's prefixes does not detect.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Topic Modeling",
+        "Natural Language Processing Techniques"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.39264",
+      "abstract": "While frontier vision-language models demonstrate strong capabilities in user interface (UI) navigation, their high inference costs prohibit everyday use. Conversely, smaller models trained via supervised fine-tuning (SFT) or offline reinforcement learning often memorize static trajectories, leading to brittle execution and an inability to recover from errors. To address these limitations, we propose a novel online reinforcement learning framework that trains UI navigation agents directly on live iOS applications. Our framework decouples the agent into two specialized components: a Planning agent and a UI Grounding model. We rely on an LLM-as-a-Judge to provide comprehensive reward signals, combining dense, step-level feedback to evaluate intermediate progress with a terminal reward for overall task completion. To effectively leverage this dual reward structure, we optimize the agent using Proximal Policy Optimization (PPO) with step-level advantage estimation. Furthermore, we introduce GiGPPO, a novel neighbor-conditioned value estimation method that improves critic stability by leveraging reward signals from visually similar states across concurrent trajectories. To support this online training paradigm at scale, we introduce an efficient infrastructure that orchestrates hundreds of concurrent virtual iOS devices. Evaluations on rigorous benchmarks, including UINavBench, iOSWorld, and AndroidWorld, demonstrate that our online RL trained agents substantially outperform both SFT and terminal-only RL baselines while accelerating training convergence. Notably, our 8B RL agents achieve nearly a sevenfold improvement over the SFT baseline in out-of-distribution generalization to Android environments, while outperforming Gemini-3.5-Flash and tying with Gemini-3.1-Pro on real iOS applications.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Software Testing and Debugging Techniques",
+        "Web Data Mining and Analysis"
+      ],
+      "keywords": [
+        "online reinforcement learning",
+        "LLM-as-a-judge",
+        "proximal policy optimization",
+        "iOS app",
+        "out-of-distribution generalization"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2610.40287",
       "abstract": "Large language model serving is limited by facility power. Energy per token determines how many tokens a datacenter can serve, while a latency target bounds how quickly each user receives them. During decode, every weight is read from memory for every generated token. Batching amortizes this read across users but makes no individual user faster. Speculative decoding does: a drafter proposes several future tokens, and the target model verifies them in a single forward pass that reuses the same weight read. Because every drafted token must be verified whether or not it is accepted, the energy speculation saves depends on how many drafted tokens are accepted. This saving is hard to pin down. It varies across target models from different attention families and across drafting schemes, and it depends on the text being served. Every drafter we evaluate accepts fewer tokens on conversation than on code, and every trained drafter accepts fewer on Romansh, a low-resource language, than on English. We measure speculative decoding under production serving conditions (SGLang, CUDA graphs enabled) on H100 and H200 GPUs, at batch sizes up to 64 across 5 corpora. On dense models, verification, not drafting, dominates the energy cost. The saving shrinks as the batch grows, because batching has already shared the weight read that speculation would divide among the accepted tokens. At large batch sizes, block drafters push verification past the balance point between arithmetic and memory traffic into the compute-bound regime, where the saving becomes a loss, and a drafter with low acceptance raises energy per token. Meeting a tighter latency target with speculation then costs additional energy. Larger batches lower energy per token without speculation. Speculation adds to that saving only when acceptance is high, and on the model we tested it leaves little headroom for latency-preserving DVFS.",
@@ -2775,26 +2801,6 @@
         "Artificial Intelligence in Education",
         "Intelligent Tutoring Systems and Adaptive Learning",
         "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.4324/9781003780700-6",
-      "abstract": "If a student uses artificial intelligence (AI) to assist in their work, does that necessarily make the work less “original”? This chapter focuses on the notion of originality and argues for a critical examination of its meaning in a time when AI grows more integrated into students’ work processes. The chapter begins by tracing the historical roots of originality, unpacking how its embedded value orientations around individualism have shaped—and continue to influence—current assessment standards and policies in higher education. It then discusses how these traditional understandings of original work not only are becoming untenable but may also be inadequate for preparing students for a future where AI will significantly shape their way of learning, working, and living. The chapter concludes with several pathways to reimagine originality in higher education assessment, highlighting the need for a more inclusive environment for students to produce meaningful work.",
-      "topics": [
-        "Academic integrity and plagiarism",
-        "Artificial Intelligence in Education",
-        "Digital Education and Society"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.4324/9781003780700-3",
-      "abstract": "The challenge of generative artificial intelligence (GenAI) provoked a renewed interest in assessment in higher education and how it might need to change. The problems of assessment and the need for repair existed well before AI appeared on the scene, but they are more pressing now. This chapter focuses on the necessary requirements of assessment regardless of the conditions in which it occurs: assessment for assurance; assessment to guide learning; and assessment to build students’ capacity to make evaluative judgements. It examines these purposes and discusses the implications of the rise of GenAI for each. It considers both policies and practices and concludes that, whatever else needs to be done, a priority is to strengthen students’ capacities to make effective evaluative judgements both about their substantive work and about the use of any AI applications that may aid them.",
-      "topics": [
-        "Student Assessment and Feedback",
-        "Artificial Intelligence in Education",
-        "Educational Assessment and Pedagogy"
       ],
       "keywords": []
     }

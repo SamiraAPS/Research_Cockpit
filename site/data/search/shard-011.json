@@ -1,7 +1,47 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-04T13:01:52.475Z",
+  "generatedAt": "2026-11-05T13:14:50.634Z",
   "documents": [
+    {
+      "id": "doi:10.1007/s10462-026-11737-w",
+      "abstract": "Abstract The Architecture, Engineering, and Construction (AEC) industry is undergoing a profound digital transformation driven by the urgent need to integrate fragmented, heterogeneous data into actionable intelligence. This paper provides a systematic review of 76 representative studies to examine how Large Language Models (LLMs) enable spatial intelligence across the entire building lifecycle. A layered spatial intelligence framework is proposed, encompassing the dimensions of design, construction, operation, as well as research and education. The review demonstrates that LLMs are evolving from passive text processors into active cognitive partners capable of semantic interpretation, spatial reasoning, and complex decision-making. Key findings highlight the effectiveness of LLMs in requirement translation, multimodal design generation, regulatory compliance, and lifecycle Building Information Modeling (BIM) integration. Despite these advancements, significant challenges persist regarding spatial reasoning accuracy, the lack of physical embodiment, and institutional data governance. This research outlines a strategic roadmap toward embodied intelligence, AEC-specific world models, and enhanced human-AI collaboration, providing a structured foundation for the advancement of LLM-driven spatial intelligence in professional practice.",
+      "topics": [
+        "BIM and Construction Integration",
+        "Architecture and Computational Design",
+        "Artificial Intelligence Applications"
+      ],
+      "keywords": [
+        "large language models",
+        "spatial ability",
+        "AEC industry",
+        "building life cycle",
+        "spatial reasoning",
+        "building information modeling",
+        "embodied AI",
+        "human-AI collaboration",
+        "regulatory compliance",
+        "data governance",
+        "world models"
+      ]
+    },
+    {
+      "id": "doi:10.1109/esm.2026.3717261",
+      "abstract": "As electric grids integrate more renewable generation, distributed resources, and data-driven control, sustainability increasingly depends on reliable communication and high-quality measurement data. Modern smart grids rely on continuous streams from devices, such as phasor measurement units (PMUs), to support real-time monitoring, renewable integration, energy efficiency, and grid stability. However, communication failures and cyberattacks can delay, corrupt, or interrupt critical measurements, degrading situational awareness and forcing more conservative operation. In renewable-rich grids, this loss of visibility can reduce the effective use of flexible and low-carbon resources. This article explores a sustainable and resilient smart grid intelligence architecture that combines programmable networking with federated learning. The Programming Protocol-Independent Packet Processors (P4) language enables the network to observe and react to selected traffic behaviors in real time, while federated learning improves models across distributed sites without transferring all measurement data to a central location. Together, they provide responsiveness, adaptability, and data locality for future smart grid communication systems. We use PMU missing-data recovery as a representative case study. A central controller coordinates model distribution and aggregation across 12 PMU measurement sites, while each site fine-tunes the shared model using local PMU data. This design preserves data locality, enables early awareness of communication-side disruptions, and supports collaborative model improvement. Experimental results show that the federated learning neural network (FLNN) achieves lower recovery errors than comparison methods, particularly for longer continuous gaps. More reliable PMU continuity can support state estimation, event detection, earlier corrective action, and more confident integration of variable renewable generation. Overall, this article shows how programmable data planes and distributed learning can support measurement continuity, communication resilience, and sustainable smart grid operation.",
+      "topics": [
+        "Smart Grid and Power Systems",
+        "Power System Optimization and Stability",
+        "Smart Grid Security and Resilience"
+      ],
+      "keywords": [
+        "smart grid",
+        "programmable networking",
+        "federated learning",
+        "phasor measurement units",
+        "missing data recovery",
+        "power system monitoring",
+        "data privacy"
+      ]
+    },
     {
       "id": "doi:10.63090/ijitrs/3139.3209.0038",
       "abstract": "Estimates of the energy used by artificial intelligence are widely quoted and rarely agree with one another. This review examines why. We separate what is counted (training or inference, operational or embodied emissions, carbon or water) from how it is counted (meters, software trackers, calculators, retrospective estimates, life cycle assessment), and then set published figures side by side with their scope. The best-known early number, an outside estimate for one architecture search, was later put by the operator at one eighty-eighth of that value. One measured study that drew its boundary wider found idle power and manufacturing roughly doubling the footprint of a training run. Inference energy per thousand queries spans three orders of magnitude across tasks. At data-centre scale the AI-specific figures are scenarios built on analyst estimates, and their author says so. We then review mitigation through smaller models, better hardware, scheduling by place and hour, and reporting, and we look at the rebound argument. The article is a review of published work. No new measurement or experiment is reported, and each number is attributed to the source that produced it.",
@@ -2707,32 +2747,6 @@
         "Adversarial Robustness in Machine Learning"
       ],
       "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.40945",
-      "abstract": "On-policy reinforcement learning for large language models assumes that training responses are sampled from the current policy. In practice, an inference engine samples the responses and a separate trainer computes the gradients, and the \\textbf{training-inference mismatch} between the two makes the training data off-policy. The mismatch has two sources, the numerics of the engine and the stale weights of asynchronous sampling, and a correction that stabilizes training under one source can fail under the other. \\textit{We ask which property of a mismatch source decides the correction it needs.} Evaluating the trainer at the sampler's weights splits each sampled-token error exactly into a \\textit{numerical discrepancy} of the engine and a \\textit{policy lag} of the trainer, and we follow both through training. The numerical discrepancy stays approximately constant, so it biases the updates by a nearly fixed amount, and centering the score at each prefix removes its leading bias. The policy lag is produced by the trainer's own updates: the bias it leaves enters the next update, which enlarges the next lag and closes a feedback loop. Importance weighting cuts this loop only while the lag ratio stays concentrated, and on Qwen3-1.7B it fails at the step where the effective sample size of the ratio falls below one half. From this account we derive the \\textbf{discrepancy-lag correction} (DLC), which centers the numerical discrepancy, clips the lag ratio against the sampler's weights and resynchronizes the sampler when this effective sample size falls below one half. Under a stale sampler, DLC keeps the KL divergence from on-policy training within twice the KL between two independent on-policy trainings on Qwen3-0.6B and Qwen3-1.7B, and its resynchronization prevents collapses that the per-token corrections leave and that a KL measured on the sampler's prefixes does not detect.",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "Topic Modeling",
-        "Natural Language Processing Techniques"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.39264",
-      "abstract": "While frontier vision-language models demonstrate strong capabilities in user interface (UI) navigation, their high inference costs prohibit everyday use. Conversely, smaller models trained via supervised fine-tuning (SFT) or offline reinforcement learning often memorize static trajectories, leading to brittle execution and an inability to recover from errors. To address these limitations, we propose a novel online reinforcement learning framework that trains UI navigation agents directly on live iOS applications. Our framework decouples the agent into two specialized components: a Planning agent and a UI Grounding model. We rely on an LLM-as-a-Judge to provide comprehensive reward signals, combining dense, step-level feedback to evaluate intermediate progress with a terminal reward for overall task completion. To effectively leverage this dual reward structure, we optimize the agent using Proximal Policy Optimization (PPO) with step-level advantage estimation. Furthermore, we introduce GiGPPO, a novel neighbor-conditioned value estimation method that improves critic stability by leveraging reward signals from visually similar states across concurrent trajectories. To support this online training paradigm at scale, we introduce an efficient infrastructure that orchestrates hundreds of concurrent virtual iOS devices. Evaluations on rigorous benchmarks, including UINavBench, iOSWorld, and AndroidWorld, demonstrate that our online RL trained agents substantially outperform both SFT and terminal-only RL baselines while accelerating training convergence. Notably, our 8B RL agents achieve nearly a sevenfold improvement over the SFT baseline in out-of-distribution generalization to Android environments, while outperforming Gemini-3.5-Flash and tying with Gemini-3.1-Pro on real iOS applications.",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "Software Testing and Debugging Techniques",
-        "Web Data Mining and Analysis"
-      ],
-      "keywords": [
-        "online reinforcement learning",
-        "LLM-as-a-judge",
-        "proximal policy optimization",
-        "iOS app",
-        "out-of-distribution generalization"
-      ]
     }
   ]
 }

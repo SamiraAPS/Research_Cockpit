@@ -1,7 +1,45 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-04T13:01:52.475Z",
+  "generatedAt": "2026-11-05T13:14:50.634Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.28963",
+      "abstract": "Group-based reinforcement learning (RL) methods, such as GRPO and its variants, have become a leading paradigm for training reasoning and agentic large language models (LLMs). While their group-normalized advantage estimation is reliable at the response level, it becomes systematically biased at the step level, since coarse-grained trajectory-level advantages are hard to accurately reflect the contribution of individual steps (i.e, failed trajectories may contain valuable steps). Revisiting the foundational RL definition, we notice that GRPO's success on single-turn tasks stems from its advantage estimation strategy, which adheres to the basic definition: the mean reward of multiple actions sampled from the same state constitutes a credible state-value estimate. Extending the faithful estimation to step-level would in principle demand sampling multiple actions from each intermediate state, which is too costly on a per-state basis. To mitigate this issue, we propose a Graph-based Faithful sTep-level credit-assignment framework (GRAFT) that grafts all rollout trajectories into a trajectory graph, recovering node state-values via Bellman iteration on the graph, and assigning credit to each edge by the node value difference. Theoretically, the estimated step-level advantage faithfully adheres to the basic advantage definition in RL. To further ensure the reliability of step-level advantage estimation, we further propose Graph GAE, which extends GAE to the trajectory graph for reducing the impact of state-value estimation bias. Experiments across a range of multi-turn agentic benchmarks show consistent gains over GRPO and superior performance compared to recent agentic RL algorithms. Code will be available at https://github.com/xcyao00/GRAFT.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Multimodal Machine Learning Applications",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "Reinforcement learning",
+        "Trajectory",
+        "Graph",
+        "Node (physics)",
+        "Code (set theory)",
+        "Reliability (semiconductor)",
+        "Range (aeronautics)",
+        "Notice"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.29371",
+      "abstract": "This paper presents BanglaTurn, a corpus for end-of-turn detection in Bangla conversational speech, and a model trained on it. The corpus holds 35,374 samples of 3 to 15 s of podcast speech, labelled for turn state by combining speaker diarization with an LLM pass, with every label then checked by a human annotator. The model pairs a Whisper encoder with task-specific classification heads. On a class-balanced test set drawn from a held-out podcast, it reaches 84.33% accuracy (95% CI 80.3 to 88.1) against 69.28% for the Smart-Turn v3 baseline, and lowers the false negative rate from 51.57% to 7.55% at the cost of a higher false positive rate. We report what encoder layer fine-tuning, multi-scale pooling and INT8 quantization each contribute, and latency stays within 165 to 191 ms end to end on CPU.",
+      "topics": [
+        "Speech Recognition and Synthesis",
+        "Phonetics and Phonology Research",
+        "Interpreting and Communication in Healthcare"
+      ],
+      "keywords": [
+        "Quantization (signal processing)",
+        "Pooling",
+        "Encoder",
+        "Bengali",
+        "Benchmark (surveying)",
+        "Test set",
+        "Voice activity detection",
+        "Set (abstract data type)"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2609.29798",
       "abstract": "This paper presents an end-to-end study of automatic speech recognition (ASR) for adolescent health communication in three Ghanaian languages (Twi, Dagbani, and Ewe). The work proceeds in three connected stages; First, we benchmark five ASR systems (three language-specific Wav2Vec2 models and two multimodal LLMs, Gemma 3n and Gemma 4) on a general-domain Bible corpus and a Youth Adolescent Sexual and Reproductive Health (ASRH) Domain ASR dataset, using Character and Word Error Rate (CER, WER). Second, guided by the benchmark, we perform supervised domain adaptation: although Gemma 4 was the strongest zero-shot candidate, fine-tuning it proved computationally infeasible, so we pivoted to the compact Qwen3-ASR-0.6B, fine-tuned on a large Ghana Bible corpus (~90k samples) and evaluated strictly on held-out human-collected in-domain audio. Fine-tuning reduced WER on every language, most dramatically for Ewe (WER from 109.3% to 64.8%, a drop of 44.5 pp; CER from 65.1% to 24.9%). Third, we validate the work through KasaHealth, a live voice-first ASRH application deployed in all three languages, complemented by Senti-Check, a technical evaluation harness. KasaHealth was tested by 50 community respondents and achieved a 100% chat-approval rate, a 72% Good-or-Excellent translation rating, and a 92% would-recommend rate, while surfacing the domain gaps that most constrain real-world use. Across all three stages the evidence converges: for these languages the binding constraint is validated in-domain data, not model capability or computation.",
@@ -4035,32 +4073,6 @@
         "Adapter (computing)",
         "Levenshtein distance",
         "Parity (physics)"
-      ]
-    },
-    {
-      "id": "doi:10.1145/3785651.3831560",
-      "abstract": "Digital systems continue to govern accounts, devices, data, and recovery channels after an account holder dies, leaving survivors to manage digital remains through mechanisms built around a living user. We examine post-mortem digital governance as a sociotechnical problem of cooperative and contested work, focusing on who acts when the user is gone, what claims they make, and what barriers shape recovery, preservation, closure, and protection. We conducted a content analysis of $800$ Reddit posts about post-mortem digital privacy and security, coding posts across assets, actors, actions, privacy tensions, access barriers, policy gaps, emotional contexts, and risks. Findings show that phones/devices often act as gateways to other digital remains, socially connected actors make most claims, and data loss emerges as a central harm. We synthesize these findings into a Post-Mortem Digital Governance Framework for designing mechanisms that support survivor coordination while limiting access by purpose, asset, actor, and context.",
-      "topics": [
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1213/ane.0000000000008348",
-      "abstract": "BACKGROUND: Staff scheduling is pervasive in healthcare and has profound ramifications for safety, efficiency, and morale. Resident block scheduling is particularly demanding, requiring simultaneous satisfaction of regulatory requirements, evolving clinical eligibility, programmatic priorities, and individual preferences. Despite the availability of mature and superior optimization methods, such schedules are commonly produced by hand. METHODS: We modeled the clinical base year deployment at one anesthesiology residency and solved it using the CP-SAT solver from Google's OR-Tools, under a weighted objective function over elective and vacation preferences. We retrospectively compared solver-generated schedules against the schedule manually produced and deployed for academic year 2022-2023 (AY22-23) on preference satisfaction, distribution of strenuous rotations, and timing of formative rotations. We then prospectively deployed the system for three subsequent academic years (AY23-24 to AY25-26), characterized the structure of the solution space by enumeration, and assessed large language model (LLM) assistance for input specification. RESULTS: Our framework produced valid schedules in a median of 39 seconds (interquartile range [IQR], 22-67 seconds). Compared with the manually constructed AY22-23 schedule, which required 10 to 20 hours and violated several constraints, solver-generated schedules granted a median of 1.5 more \"top priority\" elective requests per resident (95% confidence interval [CI], 0.5-2.0; P < .001) and, by construction, precluded triplets of consecutive strenuous rotations-which occurred in an average of 8% of three-block windows under manual scheduling (bootstrapped 95% CI, 7-10). The solver-generated schedule deployed all 26 residents to a formative rotation within the required window (vs 23 of 26 in the manual schedule). Across 3 years of prospective use, new and evolving requirements-ranging from a delayed-visa contingency to a phased surgical intensive care unit (SICU) rotation structure-were accommodated by configuration-file changes alone in most cases; only two reusable constraint primitives required additions to the solver code. LLM-assisted configuration of AY26-27 was feasible but depended on active human review. Approximately 4.4 × 1018 valid schedules exist per resident, yet 76% (95% CI, 73-79) of a resident's assignments admitted no valid alternatives. We term this property \"schedule gridlock.\" CONCLUSIONS: An expressive constraint-specification language kept combinatorial optimization ergonomic across 3 years of evolving program requirements. Schedule gridlock-local rigidity in spite of global flexibility-helps explain why automated generation of schedules is so much more effective. The barrier to wider adoption has not been solver efficacy, which is well-established, but the burden of encoding and maintaining institutional requirements in a form amenable to optimization. This study addresses that burden.",
-      "topics": [
-        "Scheduling and Timetabling Solutions",
-        "Healthcare Operations and Scheduling Optimization",
-        "Hospital Admissions and Outcomes"
-      ],
-      "keywords": [
-        "Scheduling (production processes)",
-        "Block scheduling",
-        "Workload",
-        "Schedule",
-        "Formative assessment",
-        "Confidence interval",
-        "Software deployment"
       ]
     }
   ]

@@ -1,7 +1,45 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-04T13:01:52.475Z",
+  "generatedAt": "2026-11-05T13:14:50.634Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.01030",
+      "abstract": "Price extraction from websites is a key task for market monitoring, price comparison, and business analytics in e-commerce. Existing approaches can be broadly divided into four groups, and understanding their trade-offs in accuracy and scalability is essential for selecting suitable extraction strategies. Classical methods rely on manually written wrappers and rule induction from labeled pages, offering high accuracy but adapting poorly to structural changes and requiring considerable maintenance effort. Browser-based methods, using tools such as Selenium and Puppeteer, handle dynamic JavaScript content but consume large computational resources and scale poorly. Browserless approaches retrieve HTML directly via HTTP requests, offering significant gains in speed and cost, but rely on rules calibrated for specific sites. Methods based on machine learning and large language models offer adaptability but require training data and substantial computation. Our main contribution is an adaptive browserless price extraction system that improves robustness to structural differences between websites. We implemented a baseline architecture combining HTML page fragmentation with syntactic, semantic, and frequency rules, and extended it in two ways: a Bayesian approach that dynamically updates rule weights, and a genetic algorithm that optimizes the system's global parameters. This hybrid scheme increased precision from 77.2% to 87.3% and reduced average per-page processing time by approximately 14% relative to the baseline, confirming it as a competitive alternative to manually tuned browserless solutions and to more resource-intensive browser- or LLM-based methods, offering high extraction accuracy at low computational cost.",
+      "topics": [
+        "Web Data Mining and Analysis",
+        "Web Application Security Vulnerabilities",
+        "Spam and Phishing Detection"
+      ],
+      "keywords": [
+        "Scalability",
+        "Adaptability",
+        "Robustness (evolution)",
+        "Analytics",
+        "JavaScript",
+        "Key (lock)",
+        "Bayesian probability",
+        "Task (project management)"
+      ]
+    },
+    {
+      "id": "arxiv:2609.01455",
+      "abstract": "Benign fine-tuning severely weakens the safety alignment of large language models (LLMs), so we study why refusal behavior is so fragile. While prior work often attributes this failure to gradient conflict, we propose a fundamentally different Fisher-geometric explanation: safety Fisher is low-rank, and alignment makes the safety geometry flatter while preserving an output-routing pathway. After 100 benign fine-tuning examples, this pathway is selectively re-sharpened in output-side MLP modules, explaining the asymmetric fragility: safety can collapse to high attack success rates, while general utility degrades mildly. The routing view also explains why few safety examples can restore refusal behavior, indicating that internal safety-relevant representations are preserved. Finally, we show that LoRA and ASAM mitigate early collapse by suppressing output-side sharpness, but their protection weakens at larger fine-tuning scales. Overall, safety failure is best understood as a disruption of a low-rank output-routing mechanism",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)",
+        "Topic Modeling",
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Fragility",
+        "Routing (electronic design automation)",
+        "Mechanism (biology)",
+        "Work (physics)",
+        "Component (thermodynamics)",
+        "Rare events"
+      ]
+    },
     {
       "id": "arxiv:2609.00510",
       "abstract": "Artificial intelligence systems increasingly enact market-facing promises through chatbots, recommendation systems, automated decisions, and generative interfaces. Their failures, misuse, and misrepresentation raise a question that conventional brand-crisis models do not fully specify: how do stakeholders assign responsibility when technical causation, customer-facing control, and governance duties are distributed across an AI system, developer, deployer, vendor, and user? This conceptual paper develops a sociotechnical process theory from a structured, federated scoping synthesis of verified academic and primary sources. It distinguishes an AI/algorithmic incident from an AI-related organisational crisis and, in turn, from an AI-related organisational scandal. The framework proposes that incident configuration shapes actor-specific attribution; attribution informs capability, integrity, fairness, and relationship appraisals; and public moralisation may, but need not, escalate an incident into scandal. The theory offers a reconciliation of findings that algorithm involvement can buffer negative brand reactions in some settings while robot and chatbot failures can redirect responsibility to an associated firm in others. It introduces accountable transparency as a proposed response configuration that combines timely notice, an intelligible account, role-responsibility acknowledgement, remedy, evidence of correction, and recourse. The evidence supports conditional, proximal inferences about blame, trust, satisfaction, firm evaluation, and communication credibility more strongly than claims about durable reputation, brand equity, or market performance.",
@@ -3653,46 +3691,6 @@
         "Phenomenon",
         "Training set",
         "Training (meteorology)"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03294-1",
-      "abstract": "Abstract Artificial intelligence (AI) systems increasingly mediate how learners obtain explanations, synthesise sources, receive feedback and judge the quality of academic work. This critical-integrative review argues that the central educational question is not whether learners rely on AI, but whether that reliance preserves or displaces the epistemic work through which judgement develops. The review purposively bridges artificial intelligence in education, human–AI interaction, epistemic cognition, information behaviour, cognitive offloading, and social epistemology, while engaging a recent literature on epistemic authority, agency, infrastructure and over-reliance. It conceptualises epistemic dependence as reliance on AI for knowledge-related tasks and differentiates productive reliance from harmful dependence through six diagnostic criteria: contestability, recoverability, transfer, traceability, distributed responsibility and epistemic plurality. Four sociotechnical pathways are then analysed: fluent authority, frictionless delegation, opaque synthesis and institutionalised dependence. These pathways may affect verification, evaluative and disciplinary judgement, understanding, uncertainty tolerance, learner identity and epistemic justice, but the review does not assume that AI uniquely or uniformly causes these outcomes. It proposes relational epistemic agency as the normative aim: the capacity to question, verify, compare, justify and take responsibility for knowledge claims within human, technological and institutional relations. Design, pedagogical, assessment and governance implications are developed accordingly.",
-      "topics": [
-        "Educational Strategies and Epistemologies",
-        "Digital Education and Society",
-        "Educational Theory and Curriculum Studies"
-      ],
-      "keywords": [
-        "Normative",
-        "Agency (philosophy)",
-        "Judgement",
-        "Philosophy of science",
-        "Social epistemology",
-        "Identity (music)",
-        "Social learning",
-        "Quality (philosophy)",
-        "Discipline"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.29168",
-      "abstract": "The LLM-as-a-Judge paradigm has emerged as a scalable alternative to human evaluation. However, single-model judges are limited by their inherent model biases, while multi-agent evaluation protocols that mitigate this through diverse deliberation are prohibitively expensive at inference time. To this end, we propose \\textbf{\\modelname}, which equips a compact \\underline{Judge} model with multi-agent \\underline{Panel} deliberation capability. Specifically, we first train on panel deliberation traces from an ensemble of strong evaluators, capturing structured patterns of discussion, disagreement, and resolution. To further improve judgment quality beyond SFT, we introduce \\textit{AdaReward}, an adaptive multi-reward RL algorithm that dynamically rebalances reward component weights as different objectives saturate at different rates during RL training. For practical deployment, we further design a lightweight domain specialization module for rapid adaptation to new evaluation domains with few hundred labeled samples. As a result, (i) \\textit{Novel}: the first framework to equip a single compact judge with multi-agent panel deliberation capability at single-model inference cost; (ii) \\textit{Effective \\& Reliable}: JudgePanel with a 14B backbone outperforms judge-specialized models up to 70B across four evaluation benchmarks, demonstrates strong position consistency, and rapidly specializes to new domains with few hundred samples.",
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Ethics and Social Impacts of AI",
-        "Advanced Graph Neural Networks",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Deliberation",
-        "Reinforcement learning",
-        "Inference",
-        "Component (thermodynamics)",
-        "Scalability",
-        "Quality (philosophy)",
-        "Adaptation (eye)",
-        "Domain (mathematical analysis)"
       ]
     }
   ]
