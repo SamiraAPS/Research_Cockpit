@@ -1,7 +1,24 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-05T13:14:50.634Z",
+  "generatedAt": "2026-11-06T12:59:38.071Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.13356",
+      "abstract": "Coding agents are increasingly deployed for end-to-end software engineering tasks, where a readily available oracle evaluator that defines the success criteria is often absent. This motivates verifications for coding agents that can reliably judge and explain their behavior. However, verification is non-trivial as coding agents are increasingly capable of solving long-horizon software engineering tasks. Their execution trajectories can be extremely long, containing hundreds of iterative interactions with code repositories and external tools. Existing verifiers either rely on general-purpose LLMs without specialized training or train dedicated critics that predominantly focus on producing scalar rewards, highlighting the relatively limited exploration of training-based generalist verification. We introduce SWE-Critix, a post-training pipeline for training generalist verifiers of coding-agent trajectories. Given a task and its execution trajectory, the learned verifier predicts the completion label and generates a natural-language analysis that explains its judgment. Our pipeline combines supervised fine-tuning (SFT) with reinforcement learning (RL) and trains a series of 30B models on trajectories from CodeForge-Preview. On a held-out test set, SWE-Critix improves classification accuracy from 57% for the base Qwen3-30B-A3B reasoning model to 66% after SFT and 78% after RL. We release our models, datasets, and training code to facilitate further research.",
+      "topics": [
+        "Software Engineering Research",
+        "Software Engineering Techniques and Practices",
+        "Software Testing and Debugging Techniques"
+      ],
+      "keywords": [
+        "coding agents",
+        "post-training fine-tuning",
+        "reinforcement learning",
+        "natural language explanations",
+        "software engineering tasks",
+        "large language models"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2610.13626",
       "abstract": "Large Language Models (LLMs) are increasingly used throughout the software development lifecycle. This growing reliance on LLMs raises concerns about their trustworthiness, with deception posing a particularly important risk. Deceptive behavior takes the form of misleading responses or assistance in fabricating, concealing, or distorting information. To study this behavior, we introduce SWE-DeceptionBench, a benchmark for evaluating LLM deception in software engineering. The benchmark covers six lifecycle stages and two deception triggers: Active Deception, where models recognize infeasible or conflicting requirements but still present them as achievable, and Passive Deception, where models help fulfill explicit user requests to mislead others. We further introduce Neutral, Reward, and Pressure conditions to study the effect of external inducements, resulting in 720 test instances in Chinese and English. Evaluating seven mainstream LLMs, we find substantial deception even under the Neutral condition, with aggregate rates of 49.88% for Active Deception and 64.29% for Passive Deception. Deception rates vary across lifecycle stages, and external inducements affect Active and Passive Deception to different extents. We also evaluate lightweight defenses, finding that guard models miss many deceptive requests, and Self-Reminder reduces but does not eliminate deceptive responses. These findings highlight the need for more effective deception detection and mitigation methods to support trustworthy LLM-based software engineering.",
@@ -3365,20 +3382,6 @@
         "organizational dehumanization",
         "leader-follower relationships",
         "workplace aggression"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.11843",
-      "abstract": "A compromised LLM inference server can leak model weights by encoding payload bits in otherwise plausible token choices. A replay of the same prompt in a trusted server can expose such deviations, but benign numerical nondeterminism also causes token mismatches. Patient attackers can therefore hide within normal variation unless evidence is combined across responses. We introduce a prompt-level e-process that calibrates whole-response mismatch events on trusted benign traffic and accumulates evidence sequentially while, under a calibration-transfer assumption, controlling the probability of any false alarm over an unbounded monitoring horizon. We evaluate it on four models against a seed-blind attack and a stronger seed-aware attack that hides payload bits only in near-ties to remain stealthy, analyzing the channel capacity vs detectability trade-off. Compared with a hard per-token alarm, the e-process combines weak evidence across responses while providing explicit anytime false-alarm control.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Security and Verification in Computing",
-        "Network Security and Intrusion Detection"
-      ],
-      "keywords": [
-        "stealthy attacks",
-        "calibration transfer",
-        "channel capacity"
       ]
     }
   ]

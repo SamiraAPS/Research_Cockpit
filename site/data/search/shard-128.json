@@ -1,7 +1,17 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-05T13:14:50.634Z",
+  "generatedAt": "2026-11-06T12:59:38.071Z",
   "documents": [
+    {
+      "id": "arxiv:2608.08485",
+      "abstract": "Current LLM safety guardrails face a fundamental tension: fine-tuning distorts pre-trained representations while generative judges incur prohibitive inference costs. We ask a complementary question: how far can safety be achieved through pure geometric reasoning over frozen representations, and where does it fail? We present HoloAegis, a minimally parametric topological inference framework that decouples representation from reasoning: an un-fine-tuned encoder maps text to the unit sphere S^{d-1}, and all decisions reduce to Gibbs-Boltzmann free-energy differences over pre-computed anchor centroids. We contribute a boundary-mapping study rather than a leaderboard claim. On a frozen three-benchmark protocol, HoloAegis (3.2 MB) statistically matches WildGuard-7B (14 GB) on toxicity (0.96 vs. 0.96), exceeds it on harmful behaviors (0.99 vs. 0.79), and cedes oversafety detection (0.62 vs. 0.98) -- while ShieldGemma-2B fails on indirect harms (0.34). These failure modes are complementary and mechanistically traceable: potential-difference scoring senses manifold clustering, whereas policy-conditioned LLM judging requires explicit taxonomy matching. We restate our Topological Boundary Stability conjecture in ratio form and validate it via reference-set bootstrap: anchor banks reduce score variance 4-15x and boundary displacement to approximately 0.44 + 0.23 sqrt(k/K) of the full-space estimator. Per-domain analysis further reveals that geometric separability tracks within-domain semantic homogeneity. Our results chart where geometric guardrails substitute for, and where they must defer to, LLM judges.",
+      "topics": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.08825",
       "abstract": "Foundation models for time series forecasting demonstrate impressive zero-shot generalization but often underperform on specialized domains such as high-frequency finance. We present a comprehensive study of hybrid neural-classical correction for adapting frozen TimesFM (200M parameters) to stock return prediction during the volatile opening trading hour. We compare two neural correction architectures - AttnCorrect (multi-head self-attention, approximately 471K parameters) and GatedLinear (low-rank bilinear projection with gating, approximately 49K parameters) - each augmented with Random Forest residual learning. Through systematic ablation across 10 major technology stocks (NVDA, MSFT, AAPL, GOOG, GOOGL, AMZN, META, AVGO, TSLA, NFLX) spanning 2 million data points, we reveal critical insights: (1) The hybrid neural-classical approach achieves 0.597 pooled correlation and 6.4x mean per-day correlation improvement over frozen TimesFM; (2) Classical residual learning (Random Forest) provides the largest single-component contribution, matching or exceeding the neural correction component; (3) Simpler neural architectures surprisingly outperform complex ones when classical residual learning is removed; (4) Self-attention provides the largest neural-only contribution. GatedLinear+RF achieves best overall performance with 9x fewer neural parameters than AttnCorrect+RF. We report three complementary correlation metrics - mean per-day, cross-day cumulative, and pooled - to provide a complete picture of predictive quality. Our results provide practical guidance: effective foundation model adaptation requires careful integration of neural and classical components, with classical methods playing a crucial complementary role.",
@@ -1840,15 +1850,6 @@
       "abstract": "Reusable skills, which encapsulate the procedural knowledge required to solve real-world professional tasks, offer LLM-based agents a path toward self-evolution in expert domains. Existing self-evolving skill methods construct skills internally from the model's parametric knowledge or trajectories, and are therefore bounded by what the model already knows. However, the domain conventions and standard procedures underlying professional skills often lie beyond this boundary and are hard to elicit from the agent alone. To address this issue, we therefore propose a novel framework, Search2Skill, that automatically identifies the agent's capability gaps, searches external sources to address them, and distills the retrieved evidence into structured, reusable skills. Specifically, Search2Skill is optimized by a rubric-based reinforcement learning scheme that jointly improves when to search, how to search, and how to generate skills. Experiments on eight expert-level domains from three benchmarks show that Search2Skill consistently outperforms both search-augmented and trajectory-based skill-learning baselines under both streaming and held-out evaluation protocols. Further analyses show that the gains arise from skill abstraction rather than raw retrieved evidence, and that the acquired skills transfer across model scales.",
       "topics": [
         "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.05018",
-      "abstract": "Short-term load forecasting (STLF) plays a vital role in the electric power industry. It is relevant for critical infrastructure. STLF is no longer purely a performance and accuracy problem, because determinism, fail-safe handling, minimal-attack surface, and no dead code are software-engineering requirements rather than optional extras. This report describes results from a 41-day live challenge that evaluated an STLF pipeline for the aggregated German transmission-grid load. The STLF pipeline predicts the 24 hourly load values of a target day from European Network of Transmission System Operators for Electricity (ENTSO-E) data. It is based on the open-source Python library spotforecast2-safe, which tries to implement the EU-AI Act Requirements in Safety-Critical Environments by design. The STLF pipeline includes gap- and anomaly-aware data preprocessing, calendar and weather covariates, and a forecasting algorithm. Forecast quality is compared to the official ENTSO-E day-ahead forecast. The spotforecast2-safe pipeline beats the ENTSO-E baseline. In-context models show competitive performance. Transparent, deterministic, low-cost, and auditable local models (referred to as macl2l in this report) are competitive with more than 100-million-parameter large, energy-intensive pre-trained foundation models such as chronos-2. The challenge implementation, the submission history of all teams, and the archived leaderboard are publicly available.",
-      "topics": [
-        "cs.AI",
-        "cs.LG"
       ],
       "keywords": []
     }

@@ -1,7 +1,16 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-05T13:14:50.634Z",
+  "generatedAt": "2026-11-06T12:59:38.071Z",
   "documents": [
+    {
+      "id": "arxiv:2607.25956",
+      "abstract": "Multi-warehouse inventory allocation is typically formulated as a mixed-integer programming (MIP) problem, yet no single formulation consistently matches heterogeneous instance-level regimes induced by demand concentration, inventory imbalance, replenishment scale, service constraints, and forecast volatility. We study this issue as instance-wise operations research (OR) formulation selection, where each allocation instance is assigned to a solver-executable formulation from a candidate OR expert library. We propose a solver-guided large language model (LLM) framework for OR formulation selection, in which each OR expert corresponds to a MIP formulation encoding a distinct allocation priority. To train the selector, the framework first constructs balanced expert-conditioned supervised fine-tuning (SFT) records for schema learning, and then uses MIP solver evaluation on historical instances to convert solver-evaluated allocation-quality gaps into margin-weighted identity preference optimization (IPO) preferences and per-instance expert-score metadata for reward lookup during group relative policy optimization (GRPO) to assign rewards to sampled responses. Experiments on multi-warehouse inventory allocation instances from JD$\\mathord{.}$com, one of China's largest e-retailers, demonstrate that GRPO substantially improves expert-selection accuracy relative to the SFT+IPO selector and, more importantly, produces higher realized allocation quality than both the preference-trained selector and the best fixed formulation. With GRPO, Hit Ratio@1 and Hit Ratio@2 increase from 21.45% to 50.42% and from 70.47% to 82.31%. The resulting selector achieves an allocation accuracy gain of 12.57 percentage points over the incumbent baseline, outperforming both the SFT+IPO selector and the best fixed OR expert, and reduces the gap to the ex-post oracle to 4.85 percentage points.",
+      "topics": [
+        "cs.AI",
+        "math.OC"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2609.20252",
       "abstract": "High-quality representations are essential for a wide range of downstream tasks. Dedicated embedding models are explicitly optimized for representation learning, yet their training data are often more limited in scale and diversity than the massive corpora used to pretrain modern large language models and multimodal large language models. Large-scale pretraining and instruction following enable autoregressive models to select relevant evidence, integrate multimodal information, and infer semantics under different task perspectives, creating a distinctive opportunity for training-free representation learning. However, our analysis reveals that existing semantic-elicitation methods do not reliably orient the extracted states toward the semantic perspective required by the downstream task. Consequently, the resulting representations often remain dominated by salient input content. We characterize this problem as semantic perspective misalignment and propose Lens, a training-free framework that makes representation readout task-directed. Semantic Perspective Anchoring associates the task-required perspective with a task-specific readout phrase, specifying the interpretive role of the positions later used for extraction. Contextualized Phrase Readout places the same phrase after the complete input and aggregates its token states, combining full-context access with the anchored perspective. The resulting representation reflects task-conditioned evidence integration and inference rather than a generic summary of salient content. Without parameter updates, architectural modification, or reranking, Lens achieves an overall Precision@1 of 63.9 across all 36 MMEB datasets, outperforming the closest same-backbone training-free embedding baseline by 10.2 points.",
@@ -3452,21 +3461,6 @@
         "critical information systems",
         "national security",
         "security governance"
-      ]
-    },
-    {
-      "id": "openalex:W7165327921",
-      "abstract": null,
-      "topics": [
-        "Physical Activity and Health",
-        "Behavioral Health and Interventions",
-        "Context-Aware Activity Recognition Systems"
-      ],
-      "keywords": [
-        "sedentary behavior",
-        "cognitive engagement",
-        "assessment instruments",
-        "theoretical framework"
       ]
     }
   ]

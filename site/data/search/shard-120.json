@@ -1,7 +1,28 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-05T13:14:50.634Z",
+  "generatedAt": "2026-11-06T12:59:38.071Z",
   "documents": [
+    {
+      "id": "arxiv:2609.01325",
+      "abstract": "Neural ranking models have become core components of modern information retrieval systems and important building blocks of AI systems such as retrieval-augmented generation (RAG) pipelines. However, their robustness remains insufficiently understood in the presence of large language models (LLMs), which can generate fluent and deceptive content at scale. This work investigates the vulnerability of neural ranking models to corpus poisoning attacks, in which an adversary injects a small number of maliciously crafted documents into the corpus to distort ranking behavior. We propose VerTox, the first framework to formulate corpus poisoning as a verifiable reward-guided reinforcement learning (RLVR) problem. By explicitly coupling ranking distortion with factual corruption through specialized reward shaping, we fine-tune compact LLMs into adversarial generators. Experiments demonstrate that our method achieves near-perfect attack success rates, producing adversarial documents that frequently rank higher than target documents across major neural ranking architectures, as well as a proprietary commercial embedding model. The generated adversarial documents are fluent and exhibit low perplexity, making them difficult to detect. Furthermore, by explicitly encouraging factual corruption, our adversarial documents significantly degrade the performance of a downstream RAG application.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Topic Modeling",
+        "Advanced Graph Neural Networks",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "keywords": [
+        "Adversarial system",
+        "Verifiable secret sharing",
+        "Ranking (information retrieval)",
+        "Adversary",
+        "Robustness (evolution)",
+        "Artificial neural network",
+        "Ranking SVM",
+        "Language model"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2609.01030",
       "abstract": "Price extraction from websites is a key task for market monitoring, price comparison, and business analytics in e-commerce. Existing approaches can be broadly divided into four groups, and understanding their trade-offs in accuracy and scalability is essential for selecting suitable extraction strategies. Classical methods rely on manually written wrappers and rule induction from labeled pages, offering high accuracy but adapting poorly to structural changes and requiring considerable maintenance effort. Browser-based methods, using tools such as Selenium and Puppeteer, handle dynamic JavaScript content but consume large computational resources and scale poorly. Browserless approaches retrieve HTML directly via HTTP requests, offering significant gains in speed and cost, but rely on rules calibrated for specific sites. Methods based on machine learning and large language models offer adaptability but require training data and substantial computation. Our main contribution is an adaptive browserless price extraction system that improves robustness to structural differences between websites. We implemented a baseline architecture combining HTML page fragmentation with syntactic, semantic, and frequency rules, and extended it in two ways: a Bayesian approach that dynamically updates rule weights, and a genetic algorithm that optimizes the system's global parameters. This hybrid scheme increased precision from 77.2% to 87.3% and reduced average per-page processing time by approximately 14% relative to the baseline, confirming it as a competitive alternative to manually tuned browserless solutions and to more resource-intensive browser- or LLM-based methods, offering high extraction accuracy at low computational cost.",
@@ -3671,26 +3692,6 @@
         "Quality (philosophy)",
         "Classifier (UML)",
         "Code (set theory)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.29118",
-      "abstract": "Fine-tuning large language models (LLMs) on narrowly harmful datasets can lead to misalignment broadly, a phenomenon known as emergent misalignment (EM). EM poses a challenge for AI safety and our understanding of LLMs. Prior work often frames EM as an unexpected behavior, and explains it by appealing to general misalignment directions or anthropomorphizing it as acquiring an evil persona. However, the mechanisms behind these framings remain obscure. In this work, we show that EM is a predictable and data-dependent generalization phenomenon. By examining the base model's representation of EM training data and evaluation prompts, we find that evilness after EM training is highly predictable from representational distance: the closer an evaluation prompt is to training data centroid, the more evilness it elicits from EM models after training (with an average Spearman correlation of -0.73 across 12 model-dataset settings). Building upon this analysis, we further demystify EM by showing that (1) its effectiveness changes significantly based on training data format; (2) there is not a general misalignment direction that transfers across different EM models; (3) the effect of EM is fundamentally different from persona changes. Furthermore, we extend the EM generalization metric from a scalar distance to a dataset-specific generalization direction, which robustly predicts EM models' evilness under semantics-preserving prompt perturbations including appending random tokens and paraphrasing, where other methods do not reliably generalize.",
-      "topics": [
-        "Topic Modeling",
-        "Artificial Intelligence in Healthcare and Education",
-        "Ethics and Social Impacts of AI",
-        "cs.AI",
-        "cs.CL",
-        "cs.LG"
-      ],
-      "keywords": [
-        "Generalization",
-        "Metric (unit)",
-        "Representation (politics)",
-        "Phenomenon",
-        "Training set",
-        "Training (meteorology)"
       ]
     }
   ]

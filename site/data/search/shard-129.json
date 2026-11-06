@@ -1,7 +1,16 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-05T13:14:50.634Z",
+  "generatedAt": "2026-11-06T12:59:38.071Z",
   "documents": [
+    {
+      "id": "arxiv:2608.05018",
+      "abstract": "Short-term load forecasting (STLF) plays a vital role in the electric power industry. It is relevant for critical infrastructure. STLF is no longer purely a performance and accuracy problem, because determinism, fail-safe handling, minimal-attack surface, and no dead code are software-engineering requirements rather than optional extras. This report describes results from a 41-day live challenge that evaluated an STLF pipeline for the aggregated German transmission-grid load. The STLF pipeline predicts the 24 hourly load values of a target day from European Network of Transmission System Operators for Electricity (ENTSO-E) data. It is based on the open-source Python library spotforecast2-safe, which tries to implement the EU-AI Act Requirements in Safety-Critical Environments by design. The STLF pipeline includes gap- and anomaly-aware data preprocessing, calendar and weather covariates, and a forecasting algorithm. Forecast quality is compared to the official ENTSO-E day-ahead forecast. The spotforecast2-safe pipeline beats the ENTSO-E baseline. In-context models show competitive performance. Transparent, deterministic, low-cost, and auditable local models (referred to as macl2l in this report) are competitive with more than 100-million-parameter large, energy-intensive pre-trained foundation models such as chronos-2. The challenge implementation, the submission history of all teams, and the archived leaderboard are publicly available.",
+      "topics": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.05224",
       "abstract": "Large language models fine-tuned on human behavioural data have emerged as general-purpose cognitive proxies, but the scale this requires, and whether these models process task structure or exploit statistical shortcuts, remain open questions. We train fourteen models from 135M to 14B parameters across four architecture families on Psych-101, a dataset of 10.7 million trial-level choices from 160 experiments. For in-distribution simulations, scale barely matters. The models fall within a narrow band, as though against a ceiling, and 0.6B to 1B parameters suffice to match a 70B baseline on held-out participants. Out-of-distribution, that band opens into a markedly steeper scaling gradient, with larger models clearly advantaged in generalisation to novel task structure. To determine what information these models use, we run two diagnostics. We progressively strip four prompt channels -- task instructions, experimental stimuli, outcome feedback, and choice history -- across 27 experiments, and permute trial order. Masking the content of stimuli and feedback destroys 75.7% of learned information and pushes models below chance, demonstrating that choice history alone does not account for performance. Permutation reveals invariance on tasks with independent trials but sensitivity where trial order is determined by prior responses. Small cognitively fine-tuned models therefore show promise as noise ceiling estimators for psychological experiments, though their scope remains bounded by the paradigms seen in training.",
@@ -1872,15 +1881,6 @@
         "cs.CR",
         "cs.AI",
         "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.00705",
-      "abstract": "Reported verdicts on GraphRAG versus vector RAG disagree, and the evidence is typically tied to a single corpus, embedder, and judge -- and, we show, to where citation quality is measured. We present a triple-robustness analysis that holds a five-pipeline architecture matrix fixed and varies embedder (local e5-small vs. Azure text-embedding-3-small), corpus (DO-178C typed-edge requirements vs. Wikipedia paragraph chains via MuSiQue), and judge (paired GPT-5.4 x GPT-4.1 on both corpora), over 2x4,440 main-matrix runs, 600 cross-corpus runs, and over 5,000 faithfulness judgments. (C2a) GraphRAG's graph walk floods the context window at precision 0.12-0.23, but the synthesizer cites selectively at precision 0.48-0.65; scoring the retrieved set as the attribution set inverts the architecture ranking, which reconciles part of the disagreement in prior reports. (C1) Answer-level citation winners are corpus- and stratum-conditional but embedder-robust: GraphRAG ties vanilla on short-hop DO-178C queries and wins every MuSiQue stratum, while agentic pipelines lead only on 3+-hop requirements queries. (C2b) Faithfulness is corpus-conditional: on DO-178C it declines with hop distance (trend p<0.05 in three of four judge x embedder combinations); on Wikipedia chains neither judge shows a collapse. (C3) Single-judge LLM faithfulness is fragile to retrieval state: GPT-5.4's self-kappa across embedders is 0.137 (41% verdict change) against a same-day test-retest floor of 0.76, and re-judging frozen inputs eleven weeks later gives kappa <= 0.14 for both judges. A learned router on dense embeddings alone reaches macro-F1 0.86 on hop classification (C4). We argue that RAG architecture claims should be tested at this level of robustness -- including robustness to the citation-measurement point -- before they are trusted.",
-      "topics": [
-        "cs.IR",
-        "cs.CL"
       ],
       "keywords": []
     }

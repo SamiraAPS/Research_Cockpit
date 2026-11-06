@@ -1,7 +1,28 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-05T13:14:50.634Z",
+  "generatedAt": "2026-11-06T12:59:38.071Z",
   "documents": [
+    {
+      "id": "arxiv:2608.12585",
+      "abstract": "Improving reasoning LLMs requires the ability to judge the quality of long reasoning traces for effective reasoning data curation, strong training signals during reinforcement learning, and an in-depth understanding of reasoning behaviors during model performance evaluation. Additionally, surfacing reasoning mistakes that the model makes would enable improving the model's performance at runtime through providing feedback. Due to the difficulty of this complex task on long reasoning traces, single-model judges (even frontier models) do not do well at identifying reasoning defects. Additionally, leveraging frontier models during online training of reasoning LLMs is generally prohibited due to guardrails in terms of use. In this work, we introduce Reasoning Jury, a system that replaces the single judge with a jury of LLMs and a moderated consensus mechanism, to improve the fidelity of judgments for identifying reasoning defects. In reasoning jury, defects of a reasoning trace and their severity are surfaced through a deliberation where a moderator conducts a discussion amongst the jury where the jurors critique each other's judgments and get to modify their initial votes. The moderator derives a consensus through deliberation amongst jurors or consolidation of judgements. We show that Reasoning Jury with a jury of open-weight models (e.g., gpt-oss-120b) is able to significantly outperform frontier models (opus-4.6, sonnet-4.6, and gemini-3.1-pro) at correctly identifying reasoning defects. Besides accuracy performance improvements, the aggregated cost of the jury (initial verdicts, deliberations, consolidation, etc.) is a fraction (8 to 15%) of the cost of running frontier models in LLM-as-a-judge setup. We also show how these judgements can be leveraged to understand failure modes of reasoning LLMs on benchmarks, which allows much deeper understanding of a model's performance.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI",
+        "Advanced Graph Neural Networks",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Deliberation",
+        "Case-based reasoning",
+        "Jury",
+        "Analytic reasoning",
+        "Converse",
+        "Moral reasoning",
+        "Task (project management)",
+        "Moderation",
+        "Model-based reasoning"
+      ]
+    },
     {
       "id": "arxiv:2608.12059",
       "abstract": "GenAI is increasingly integrated into geovisualization, yet its broader implications for professional practice are insufficiently understood. To examine these implications, we conducted semi-structured interviews with 20 geovisualization experts. The interviews were structured around four broad analytical domains: Data, Ideation, Prototyping, and Iteration, while also encouraging participants to reflect on issues that extend beyond these activities. Our findings show that GenAI expands the capabilities of geovisualization, particularly in terms of data handling, creative exploration, and rapid prototyping, but does not simply remove existing constraints. Instead, key bottlenecks are shifting from production to judgment and verification. As routine technical tasks become more automated, professional value increasingly depends on spatial reasoning, contextual interpretation, aesthetic and ethical judgment, and the ability to assess whether AI-generated outputs are appropriate for use. At the same time, GenAI introduces new challenges regarding provenance, interpretability, and accountability, raising questions about how responsibility should be distributed across models, developers, practitioners, institutions, and users. These shifts are particularly significant in geovisualization because spatial representations are constrained by geographic reality and must balance scientific validity, visual expression, and technical implementation. We therefore argue that responsible GenAI in geovisualization requires domain-specific approaches to spatial validation, provenance, uncertainty communication, human oversight, and accountable use. This study provides an expert-grounded perspective on how GenAI is reconfiguring geovisualization as a practice of spatial knowledge production. It also identifies implications for future professional practice, education, system design, and governance.",
@@ -3199,16 +3220,6 @@
       "topics": [
         "cs.HC",
         "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.08485",
-      "abstract": "Current LLM safety guardrails face a fundamental tension: fine-tuning distorts pre-trained representations while generative judges incur prohibitive inference costs. We ask a complementary question: how far can safety be achieved through pure geometric reasoning over frozen representations, and where does it fail? We present HoloAegis, a minimally parametric topological inference framework that decouples representation from reasoning: an un-fine-tuned encoder maps text to the unit sphere S^{d-1}, and all decisions reduce to Gibbs-Boltzmann free-energy differences over pre-computed anchor centroids. We contribute a boundary-mapping study rather than a leaderboard claim. On a frozen three-benchmark protocol, HoloAegis (3.2 MB) statistically matches WildGuard-7B (14 GB) on toxicity (0.96 vs. 0.96), exceeds it on harmful behaviors (0.99 vs. 0.79), and cedes oversafety detection (0.62 vs. 0.98) -- while ShieldGemma-2B fails on indirect harms (0.34). These failure modes are complementary and mechanistically traceable: potential-difference scoring senses manifold clustering, whereas policy-conditioned LLM judging requires explicit taxonomy matching. We restate our Topological Boundary Stability conjecture in ratio form and validate it via reference-set bootstrap: anchor banks reduce score variance 4-15x and boundary displacement to approximately 0.44 + 0.23 sqrt(k/K) of the full-space estimator. Per-domain analysis further reveals that geometric separability tracks within-domain semantic homogeneity. Our results chart where geometric guardrails substitute for, and where they must defer to, LLM judges.",
-      "topics": [
-        "cs.AI",
-        "cs.CL",
-        "cs.LG"
       ],
       "keywords": []
     }

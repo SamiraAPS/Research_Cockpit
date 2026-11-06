@@ -1,7 +1,25 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-05T13:14:50.634Z",
+  "generatedAt": "2026-11-06T12:59:38.071Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.35440",
+      "abstract": "Large language models are trained with backpropagation, whose global gradient coordinates all layers but forces each to hold its activations and wait for the gradient to pass back through every deeper layer. Conventional local learning removes this update locking by training each module to predict the target through its own readout, but has not scaled to billion-parameter pretraining. We identify these private readouts as a key weakness, since they leave each module without information from deeper modules. We propose Shared-Output LOcal learning (SOLO), which replaces them with a shared, read-only copy of the final module's readout, the only one trained on the output of the whole network. Taken from the previous step, the copy transmits information from the final module without passing gradients between modules or reintroducing update locking. SOLO approaches backpropagation on Transformers of 340M to 2B parameters pretrained on 15B tokens, staying within one point in average zero-shot accuracy with a perplexity gap that narrows with scale. Readout ablations attribute SOLO's improvement over private readouts to sharing. Without update locking, each of p pipeline stages holds activations for O(1) micro-batches instead of O(p). The freed memory permits larger micro-batches, which reach up to 1.44x the best measured throughput of pipeline backpropagation on the same partition. To our knowledge, SOLO is the first local learning method to show such memory and throughput gains in billion-parameter language-model pretraining. Local learning thus becomes a practical alternative to backpropagation for large-scale pretraining.",
+      "topics": [
+        "Domain Adaptation and Few-Shot Learning",
+        "Advanced Neural Network Applications",
+        "Generative Adversarial Networks and Image Synthesis"
+      ],
+      "keywords": [
+        "local learning",
+        "large language model pretraining",
+        "backpropagation",
+        "pipeline parallelism",
+        "memory efficiency",
+        "transformer training",
+        "perplexity"
+      ]
+    },
     {
       "id": "doi:10.21203/rs.3.rs-10383312/v1",
       "abstract": null,
@@ -3546,16 +3564,6 @@
         "Color difference",
         "Pattern recognition (psychology)"
       ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33803",
-      "abstract": "Reward models underpin the alignment of large language models, yet the dominant designs reduce each prompt--response pair to a point estimate or to a distribution from a fixed parametric family. This is at odds with human preference, which is inherently multimodal: the same response can be reasonably judged in many ways, and no single family covers all of them. To better fit this structure, we introduce DRM, a Diffusion Reward Model that recasts reward modeling as conditional density estimation over $p(\\mathbf{r}\\mid x,y)$. Conditioned on a frozen LLM encoder, a lightweight Diffusion Transformer denoises Gaussian noise into a reward vector, placing no parametric assumption on the output distribution and naturally representing its multimodal structure. A single architecture handles both multi-attribute regression and pairwise preference data, and at inference $N$ samples form an empirical reward distribution that can be aggregated into a scalar, a variance, or quantiles. Across five benchmarks, DRM matches or surpasses baselines under matched data and backbone, stays competitive with much larger discriminative, distributional, and generative RMs despite its modest training scale, and recovers multimodal reward structure where conventional heads collapse to a point. Uncertainty-aware rejection and lower-confidence-bound (LCB) aggregation further demonstrate that DRM can exploit distributional information beyond a scalar reward to improve reward-model decisions. Downstream RLHF experiments additionally show that using DRM as the training-time reward leads to improved policy performance, directly validating the practical benefit of diffusion-based reward modeling for RLHF training.",
-      "topics": [
-        "Topic Modeling",
-        "Explainable Artificial Intelligence (XAI)",
-        "Recommender Systems and Techniques"
-      ],
-      "keywords": []
     }
   ]
 }
