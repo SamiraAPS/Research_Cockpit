@@ -1,7 +1,24 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-08T11:58:37.803Z",
+  "generatedAt": "2026-11-09T13:57:03.044Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2608.20991",
+      "abstract": "Graph Foundation Models (GFMs) on text-attributed graphs (TAGs) align graph representations with language semantics to support transferable graph learning. Despite these advantages, the backdoor vulnerability of GFMs on TAGs remains insufficiently understood, especially under graph-language alignment, where graph and text representations are trained to constrain each other in a shared semantic space. Existing backdoor attacks mainly target either the graph side or the text side, treating the two modalities independently. This makes direct adaptation ineffective: graph-only triggers can be constrained by clean text semantics, while text-only triggers alter the language view but do not directly shift the graph representation being aligned and scored. TAGs also impose a stealth challenge because triggers are exposed as both node text and local graph structure, making incoherent trigger attributes or anomalous subgraphs easy to inspect or filter. In this paper, we propose STAG, a stealthy trojan attack framework designed for the graph-language alignment interface of GFMs on TAGs. STAG coordinates a graph-trigger generator with a text-side soft prompt so that trigger-attached graph representations and triggered text representations move toward the same target-class text region. To address TAG-specific stealthiness, STAG realizes trigger nodes as readable text through candidate retrieval and regularizes the trigger-attached subgraph so that its local structure remains close to the original subgraph. Extensive experiments on multiple TAG datasets and representative GFMs demonstrate the effectiveness and stealthiness of STAG. Our code is available at https://github.com/ventr1c/STAG.",
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Topic Modeling",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": [
+        "Backdoor",
+        "Graph",
+        "Graph property",
+        "Connected component",
+        "Malware",
+        "Semantics (computer science)"
+      ]
+    },
     {
       "id": "arxiv:2608.21095",
       "abstract": "Retrieval-Augmented Generation (RAG) grounds Large Language Model (LLM) outputs in external knowledge, but RAG systems usually trust whatever they retrieve, creating a Security-Reliability Gap: high semantic relevance does not guarantee factual truth. Adversaries exploit this through knowledge poisoning, inserting malicious documents to cause targeted misinformation. We propose an Evaluation Agent, middleware that combines Natural Language Inference (NLI) factual verification, a five-signal poison detector with relevance-weighted aggregation, and a Trust Index T = 0.4 F + 0.35 C + 0.25 (1 - P ) with a non-linear dampener for high-contamination contexts. On TruthfulQA with Llama 3.3 70B, the agent reaches 91% accuracy and 100% precision, with 100% recall on instruction injection, while in-place edits, such as entity swaps, remain hard to detect. Across three LLMs the Trust Index stays discriminative, with a Receiver Operating Characteristic Area Under the Curve (ROC-AUC) of 0.73 to 0.81; generation style matters more than model size, and per-LLM threshold calibration restores baseline competitive accuracy, whereas a weaker FEVER result shows that cross-dataset generalization requires domain-specific calibration. In a software-engineering use case, a secure-coding assistant over guidance from the Open Worldwide Application Security Project (OWASP) Top 10 and the Common Weakness Enumeration (CWE), the agent reliably blocks instruction injection of unsafe advice (F1 92%), while contradiction and subtle semantic weakening remain hard. Throughout, the agent measures detection of poisoned context before generation, not whether the LLM adopts the injected misinformation. We release the proposed approach, attack generator, and experimental artifacts at the link: https://github.com/GPT-Laboratory/TrustworthyRAG.",
@@ -3659,26 +3676,6 @@
         "Universal design",
         "Cognition",
         "Process (computing)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.19271",
-      "abstract": "Statistically Meaningful Geometry (SMG) is a differential-geometric and information-theoretic framework that lifts over-parameterized models into infinite-dimensional non-parametric Orlicz statistical fiber bundles with an Ehresmann connection, decoupling unobservable vertical gauge noise from horizontal statistically verifiable directions. We prove the First Edge Theorem: Amari's information geometry (IG) and conventional statistics (CS) are not autonomous statistical universes but degenerate boundary layers of the larger gauge-active SMG space. Taking the structural identifiability radius $R\\to\\infty$ breaks gauge symmetry, collapses vertical fibers, and forces the total space onto the IG manifold; subsequent local asymptotic normality as $N\\to\\infty$ flattens the remaining curvature, yielding \\[ \\mathrm{SMG}\\xrightarrow{\\;R\\to\\infty\\;}\\mathrm{IG}\\xrightarrow{\\;N\\to\\infty\\;}\\mathrm{CS}. \\] The same fiber-bundle machinery transforms model non-identifiability from a singular collapse into a structured gauge space. Applications include resolving the deep-learning generalization paradox, constructing gauge-invariant gradient descent and holonomy-matched preference alignment for generative AI, and solving weak identification in structural econometrics via intrinsic horizontal geodesic search.",
-      "topics": [
-        "Statistical Mechanics and Entropy",
-        "Morphological variations and asymmetry",
-        "Gaussian Processes and Bayesian Inference"
-      ],
-      "keywords": [
-        "Geodesic",
-        "Identifiability",
-        "Boundary (topology)",
-        "Equivalence (formal languages)",
-        "Unobservable",
-        "Generalization",
-        "Information geometry",
-        "Differential geometry",
-        "Algebraic geometry"
       ]
     }
   ]

@@ -1,12 +1,209 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-08T11:58:37.803Z",
+  "generatedAt": "2026-11-09T13:57:03.044Z",
   "page": 162,
   "pageSize": 100,
-  "totalItems": 40403,
+  "totalItems": 40461,
   "totalPages": 405,
   "nextPage": "./page-163.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2610.03894",
+      "recordType": "preprint",
+      "title": "Proxy Confidence: Auditing Black-Box LLM Agents with a Surrogate's Log-Probabilities",
+      "abstract": "A deployed LLM agent emits tool calls, queries, and code that can be silently wrong -- by the time the error surfaces, the action has run. Frontier chat APIs hide the model's token probabilities; the agent's stated confidence barely beats chance on the mistakes that matter; and resampling does not help, since frontier models are highly repetitive, reproducing the same call across samples. We recover the missing signal from a low-cost open-weight surrogate run in parallel. It reads the same context, schema, and proposed action as the agent, then scores the call from its own log-probabilities through a family of complementary readouts: teacher forcing and request-PMI weigh the likelihood of each argument value, a discriminative verdict judges the call as a whole, and tool-choice competition tests the function against its siblings. One principle says which to trust: a generative likelihood localizes wrong argument values, while the verdict catches holistically wrong calls. When the error type is unknown, an ensemble is the low-regret default. The readout is training-free, needs no access to the agent's internals, and costs one prefill pass alongside the tool call. On difficult coding tasks it reaches AUROC 0.825 where the actor's stated confidence is near chance (0.598), and the generative readouts beat it by +0.07 to +0.28 across three further actors. Against self-consistency it gains +0.14 to +0.19 on near-deterministic actors, at 1/K the cost. The signal drives two deployment modes: a real-time gate escalating the least-trustworthy calls for review (+0.05 to +0.30 accepted-action accuracy at 50% coverage), and confidence feedback, returning the tool result with the score so the agent adapts its next step -- lifting task success on live-execution benchmarks (+0.119 and +0.137, p <= 1e-4) and beating a random-value control where step errors are silent (+0.078, p = 0.003).",
+      "doi": "10.48550/arxiv.2610.03894",
+      "externalIds": {
+        "openalex": "W7220675382"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7220675382"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-10-02",
+      "firstPublicDate": "2026-10-02",
+      "onlineDate": null,
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Software Testing and Debugging Techniques",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trust",
+              "sourceValue": "…ompetition tests the function against its siblings. One principle says which to trust: a generative likelihood localizes wrong argument values, while the verdict catches holistically wrong calls. When the error type is unknown, an ensemble is the low-regret default. The readout is training-free, needs no access to the …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "LLM",
+        "learning",
+        "trust"
+      ],
+      "authors": [
+        {
+          "id": "A5048093695",
+          "name": "Yikai Zhao",
+          "orcid": "https://orcid.org/0000-0003-2495-7774",
+          "affiliations": []
+        },
+        {
+          "id": "A5069948203",
+          "name": "Saurabh Pandey",
+          "orcid": "https://orcid.org/0000-0001-9110-9527",
+          "affiliations": []
+        },
+        {
+          "id": "A5121974748",
+          "name": "Pradeep Kumar Misra",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2610.03894",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-08T12:04:03.052Z",
+      "firstSeenRunId": "ingestion-2026-10-08T12:03:48.813Z",
+      "retrievedAt": "2026-10-08T12:04:03.052Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-08T12:04:03.052Z",
+      "preferredVersionId": "openalex:W7220675382",
+      "versions": [
+        {
+          "id": "openalex:W7220675382",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7220675382",
+          "doi": "10.48550/arxiv.2610.03894",
+          "publicationDate": "2026-10-02",
+          "url": "https://doi.org/10.48550/arxiv.2610.03894"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-162.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "Proxy Confidence: Auditing Black-Box LLM Agents with a Surrogate's Log-Probabilities",
+              "start": 0,
+              "end": 84
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "A deployed LLM agent emits tool calls, queries, and code that can be silently wrong -- by the time the error surfa",
+              "start": 0,
+              "end": 114
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "tutoring",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "feedback",
+                  "quote": "eview (+0.05 to +0.30 accepted-action accuracy at 50% coverage), and confidence feedback, returning the tool result with the score so the agent adapts its next step -- lifting task success",
+                  "start": 1569,
+                  "end": 1757
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "generative",
+                  "quote": "n tests the function against its siblings. One principle says which to trust: a generative likelihood localizes wrong argument values, while the verdict catches holistically wrong calls. Whe",
+                  "start": 798,
+                  "end": 988
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "calating the least-trustworthy calls for review (+0.05 to +0.30 accepted-action accuracy at 50% coverage), and confidence feedback, returning the tool result with the score so the agent ad",
+                  "start": 1527,
+                  "end": 1715
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "-execution benchmarks (+0.119 and +0.137, p <= 1e-4) and beating a random-value control where step errors are silent (+0.078, p = 0.003).",
+                  "start": 1765,
+                  "end": 1902
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.1007/s11469-026-01724-1",
       "recordType": "publication",
@@ -22719,368 +22916,6 @@
             ]
           }
         ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.29333/ijce/19473",
-      "recordType": "publication",
-      "title": "Use of AI tools among allied healthcare students: Academic integrity, online learning integrity, and nomophobia as predictors",
-      "abstract": "The swift convergence of generative artificial intelligence (GenAI), online instruction, and mobile dependence has transformed higher education, introducing both innovations and ethical problems for allied health training. Although individual studies on AI adoption, digital ethics, and device dependence exist, a significant empirical gap remains regarding how psychological reliance on mobile devices (nomophobia) and virtual-specific ethics jointly drive GenAI adoption among healthcare students, where ethical lapses directly impact clinical competence. To address this gap, this study examined the predictive roles of academic integrity, online learning integrity, and nomophobia in the use of AI tools among allied healthcare students at a higher education institution. Employing a quantitative cross-sectional design, the researchers collected data via convenience sampling among 300 full-time allied health students in Central Luzon, Philippines. The study used four research tools to gather pertinent data for the investigation, including an online survey administered during the second semester of the 2025-2026 academic year. Both descriptive and inferential statistics were employed using SPSS 23. Descriptive results showed high academic integrity, moderate AI usage and nomophobia, but low online learning integrity. Correlation analyses showed that AI tool use was positively associated with online learning integrity, nomophobia, and academic integrity. Multiple linear regression demonstrated that the model significantly predicted AI usage. Online learning integrity was the strongest predictor, followed by academic integrity and nomophobia. These results show that ethical digital engagement and mobile connectedness actively propel AI integration; ultimately, achieving SDG 4 objectives within healthcare education requires moving beyond prohibitive policies toward anticipatory digital governance, robust AI literacy, and ethical models that prepare future professionals for a digitally driven medical environment.",
-      "doi": "10.29333/ijce/19473",
-      "externalIds": {
-        "openalex": "W7216038163"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7216038163"
-      },
-      "venue": "International Journal of Changes in Education",
-      "publicationDate": "2026-10-02",
-      "firstPublicDate": "2026-10-02",
-      "onlineDate": null,
-      "topics": [
-        "E-Learning and COVID-19",
-        "Impact of Technology on Adolescents",
-        "Social Media in Health Education"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 6,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "Use of AI tools among allied healthcare students: Academic integrity, online learning integrity, and nomophobia as predictors",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…his gap, this study examined the predictive roles of academic integrity, online learning integrity, and nomophobia in the use of AI tools among allied healthcare students at a higher education institution. Employing a quantitative cross-sectional design, the researchers collected data via convenience sampling among 300…",
-              "weight": 2
-            },
-            {
-              "source": "external_topic",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "E-Learning and COVID-19",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "motivation",
-          "label": "Motivation & Wohlbefinden",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "engagement",
-              "conceptLabel": "Engagement",
-              "matchedTerm": "engagement",
-              "sourceValue": "…d by academic integrity and nomophobia. These results show that ethical digital engagement and mobile connectedness actively propel AI integration; ultimately, achieving SDG 4 objectives within healthcare education requires moving beyond prohibitive policies toward anticipatory digital governance, robust AI literacy, a…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "participation",
-          "label": "Partizipation & Fairness",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "governance",
-              "conceptLabel": "Governance",
-              "matchedTerm": "governance",
-              "sourceValue": "…ucation requires moving beyond prohibitive policies toward anticipatory digital governance, robust AI literacy, and ethical models that prepare future professionals for a digitally driven medical environment.",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "reliance",
-              "conceptLabel": "Reliance",
-              "matchedTerm": "reliance",
-              "sourceValue": "…pendence exist, a significant empirical gap remains regarding how psychological reliance on mobile devices (nomophobia) and virtual-specific ethics jointly drive GenAI adoption among healthcare students, where ethical lapses directly impact clinical competence. To address this gap, this study examined the predictive ro…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:learning": 6,
-        "topic:motivation": 2,
-        "topic:participation": 2,
-        "topic:trust": 2,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "learning",
-        "reliance",
-        "engagement",
-        "governance"
-      ],
-      "authors": [
-        {
-          "id": "A5013723740",
-          "name": "John Mark R. Asio",
-          "orcid": "https://orcid.org/0000-0002-6096-4595",
-          "affiliations": []
-        },
-        {
-          "id": "A5156043034",
-          "name": "Jason M. Yap",
-          "orcid": "https://orcid.org/0009-0004-4273-0404",
-          "affiliations": []
-        },
-        {
-          "id": "A5063180213",
-          "name": "C. A. Casabella Garcia",
-          "orcid": "https://orcid.org/0009-0003-0446-7863",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.29333/ijce/19473",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-04T11:08:09.976Z",
-      "firstSeenRunId": "ingestion-2026-10-04T11:07:56.290Z",
-      "retrievedAt": "2026-10-04T11:08:09.976Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-04T11:08:09.976Z",
-      "preferredVersionId": "openalex:W7216038163",
-      "versions": [
-        {
-          "id": "openalex:W7216038163",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7216038163",
-          "doi": "10.29333/ijce/19473",
-          "publicationDate": "2026-10-02",
-          "url": "https://doi.org/10.29333/ijce/19473"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-162.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "title",
-              "term": "student",
-              "quote": "Use of AI tools among allied healthcare students: Academic integrity, online learning integrity, and nomophobia as predictors",
-              "start": 0,
-              "end": 125
-            },
-            {
-              "field": "title",
-              "term": "students",
-              "quote": "Use of AI tools among allied healthcare students: Academic integrity, online learning integrity, and nomophobia as predictors",
-              "start": 0,
-              "end": 125
-            },
-            {
-              "field": "abstract",
-              "term": "student",
-              "quote": "obia) and virtual-specific ethics jointly drive GenAI adoption among healthcare students, where ethical lapses directly impact clinical competence. To address this gap, this study examined",
-              "start": 410,
-              "end": 598
-            },
-            {
-              "field": "abstract",
-              "term": "students",
-              "quote": "obia) and virtual-specific ethics jointly drive GenAI adoption among healthcare students, where ethical lapses directly impact clinical competence. To address this gap, this study examined",
-              "start": 410,
-              "end": 598
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "AI",
-              "quote": "Use of AI tools among allied healthcare students: Academic integrity, online learning integrity, and nomophob",
-              "start": 0,
-              "end": 109
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "The swift convergence of generative artificial intelligence (GenAI), online instruction, and mobile dependence has transformed higher education, introducing bo",
-              "start": 0,
-              "end": 159
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "and ethical problems for allied health training. Although individual studies on AI adoption, digital ethics, and device dependence exist, a significant empirical gap remains regardin",
-              "start": 174,
-              "end": 356
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "healthcare",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "healthcare",
-                  "quote": "Use of AI tools among allied healthcare students: Academic integrity, online learning integrity, and nomophobia as predictors",
-                  "start": 0,
-                  "end": 125
-                },
-                {
-                  "field": "abstract",
-                  "term": "healthcare",
-                  "quote": "ces (nomophobia) and virtual-specific ethics jointly drive GenAI adoption among healthcare students, where ethical lapses directly impact clinical competence. To address this gap, this study",
-                  "start": 399,
-                  "end": 589
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "education",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "student",
-                  "quote": "Use of AI tools among allied healthcare students: Academic integrity, online learning integrity, and nomophobia as predictors",
-                  "start": 0,
-                  "end": 125
-                },
-                {
-                  "field": "abstract",
-                  "term": "education",
-                  "quote": "gence (GenAI), online instruction, and mobile dependence has transformed higher education, introducing both innovations and ethical problems for allied health training. Although individual ",
-                  "start": 54,
-                  "end": 243
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "students",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "student",
-                  "quote": "Use of AI tools among allied healthcare students: Academic integrity, online learning integrity, and nomophobia as predictors",
-                  "start": 0,
-                  "end": 125
-                },
-                {
-                  "field": "abstract",
-                  "term": "student",
-                  "quote": "obia) and virtual-specific ethics jointly drive GenAI adoption among healthcare students, where ethical lapses directly impact clinical competence. To address this gap, this study examined",
-                  "start": 410,
-                  "end": 598
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "workers",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "professional",
-                  "quote": " digital governance, robust AI literacy, and ethical models that prepare future professionals for a digitally driven medical environment.",
-                  "start": 1899,
-                  "end": 2036
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "generative",
-                  "quote": "The swift convergence of generative artificial intelligence (GenAI), online instruction, and mobile dependence has transformed higher e",
-                  "start": 0,
-                  "end": 135
-                },
-                {
-                  "field": "abstract",
-                  "term": "GenAI",
-                  "quote": "The swift convergence of generative artificial intelligence (GenAI), online instruction, and mobile dependence has transformed higher education, introducing both inno",
-                  "start": 0,
-                  "end": 166
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "survey",
-                  "quote": "earch tools to gather pertinent data for the investigation, including an online survey administered during the second semester of the 2025-2026 academic year. Both descriptive and infere",
-                  "start": 978,
-                  "end": 1164
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
         "finding": null,
         "findingStatus": "requires-reading",
         "abstractAvailable": true

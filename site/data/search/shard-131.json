@@ -1,7 +1,16 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-08T11:58:37.803Z",
+  "generatedAt": "2026-11-09T13:57:03.044Z",
   "documents": [
+    {
+      "id": "arxiv:2609.20218",
+      "abstract": "Large language models can label a tabular row from a plain-English description with no training - a capability now shipping in mainstream spreadsheet tools such as Microsoft Copilot in Excel and Anthropic's Claude for Excel - raising a practical question for the many business prediction problems where labels are expensive: should you prompt a frozen LLM, or collect data and train a model - and if so, how much data? We quantify the answer with the labeled-data crossover N*, the training-set size at which a trained classical model's learning curve overtakes a frozen LLM's training-free (and therefore flat) error. Aggregating 126 independent student evaluations of small GPT models under eight prompting configurations across 18 tabular datasets, paired with authoritative power-law learning curves for six classical model families, we find that training wins fast: even given an oracle choice of its best prompt configuration, a trained classical model beats the small frozen LLM using no more labeled data than is already on hand in 86% of cases, and wins by the smallest labeled subset we evaluate in 40%, with the observed crossover at a median of ~6% of the training set. In-context few-shot examples do not behave like training - error versus shot count does not follow a power law - and the same protocol re-run by independent implementers varies with a coefficient of variation of 0.148. A controlled probe indicates the LLM depends on recognizable feature-name semantics, which plausibly makes our crossover a conservative estimate (we do not claim memorization). For a typical business table, the evidence is clear: collect a few hundred labels and train a gradient-boosted model.",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2607.25956",
       "abstract": "Multi-warehouse inventory allocation is typically formulated as a mixed-integer programming (MIP) problem, yet no single formulation consistently matches heterogeneous instance-level regimes induced by demand concentration, inventory imbalance, replenishment scale, service constraints, and forecast volatility. We study this issue as instance-wise operations research (OR) formulation selection, where each allocation instance is assigned to a solver-executable formulation from a candidate OR expert library. We propose a solver-guided large language model (LLM) framework for OR formulation selection, in which each OR expert corresponds to a MIP formulation encoding a distinct allocation priority. To train the selector, the framework first constructs balanced expert-conditioned supervised fine-tuning (SFT) records for schema learning, and then uses MIP solver evaluation on historical instances to convert solver-evaluated allocation-quality gaps into margin-weighted identity preference optimization (IPO) preferences and per-instance expert-score metadata for reward lookup during group relative policy optimization (GRPO) to assign rewards to sampled responses. Experiments on multi-warehouse inventory allocation instances from JD$\\mathord{.}$com, one of China's largest e-retailers, demonstrate that GRPO substantially improves expert-selection accuracy relative to the SFT+IPO selector and, more importantly, produces higher realized allocation quality than both the preference-trained selector and the best fixed formulation. With GRPO, Hit Ratio@1 and Hit Ratio@2 increase from 21.45% to 50.42% and from 70.47% to 82.31%. The resulting selector achieves an allocation accuracy gain of 12.57 percentage points over the incumbent baseline, outperforming both the SFT+IPO selector and the best fixed OR expert, and reduces the gap to the ex-post oracle to 4.85 percentage points.",
@@ -3435,32 +3444,6 @@
         "GraphSAGE",
         "situational awareness",
         "swarm coordination"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202606.1156.v1",
-      "abstract": "Permission Misconfigurations in Critical Information Systems: A Sociotechnical ReviewAbstract: Why do permission misconfigurations on classified servers keep happening, even after decades of research into access control? This paper digs into that question through a sociotechnical lens. We argue that the root causes stretch well past simple technical mistakes: privilege creep, sloppy change management, legacy constraints, auditing blind spots, murky accountability, and organizational culture all feed the problem. The consequences can be devastating. Accidental spillage of classified material, insider threats that balloon out of proportion, privilege escalation opening doors to lateral movement, and broadened pathways for wholesale data exfiltration. Drawing on standards from NIST, ISO, and NATO, together with documented breaches involving classified information, we make the case that no single technical fix will do the job. Instead, what is needed is an integrated strategy coupling mandatory access control enforcement with continuous monitoring, privileged access management, and a governance culture that treats permission correctness as a first-order security concern, not something to tick off a checklist and forget about. Although the analysis focuses on classified servers, the risks discussed are also relevant to critical information systems more broadly, where incorrect permission configurations may compromise confidentiality, operational continuity, institutional trust and national security.",
-      "topics": [
-        "Information and Cyber Security",
-        "Access Control and Trust",
-        "Web Application Security Vulnerabilities"
-      ],
-      "keywords": [
-        "access control",
-        "privilege escalation",
-        "insider threats",
-        "data exfiltration",
-        "mandatory access control",
-        "privileged access management",
-        "continuous monitoring",
-        "change management",
-        "legacy systems",
-        "security audit",
-        "accountability",
-        "organizational culture",
-        "critical information systems",
-        "national security",
-        "security governance"
       ]
     }
   ]

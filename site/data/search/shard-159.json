@@ -1,7 +1,97 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-08T11:58:37.803Z",
+  "generatedAt": "2026-11-09T13:57:03.044Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2604.06854",
+      "abstract": "BACKGROUND: Recent studies have shown that domain-adapted large language models (LLMs) do not consistently outperform general-purpose counterparts on standard medical benchmarks, raising questions about the need for specialized clinical adaptation. METHODS: We systematically compare general and clinical LLMs on a diverse set of multiple choice clinical question answering tasks in English and Spanish. We introduce a perturbation based evaluation benchmark that probes model robustness, instruction following, and sensitivity to adversarial variations. Our evaluation includes, one-step and two-step question transformations, multi prompt testing and instruction guided assessment. We analyze a range of state-of-the-art clinical models and their general-purpose counterparts, focusing on Llama 3.1-based models. Additionally, we introduce Marmoka, a family of lightweight 8B-parameter clinical LLMs for English and Spanish, developed via continual domain-adaptive pretraining on medical corpora and instructions. RESULTS: The experiments show that clinical LLMs do not consistently outperform their general purpose counterparts on English clinical tasks, even under the proposed perturbation based benchmark. However, for the Spanish subsets the proposed Marmoka models obtain better results compared to Llama. CONCLUSIONS: Our results show that, under current short-form MCQA benchmarks, clinical LLMs offer only marginal and unstable improvements over general-purpose models in English, suggesting that existing evaluation frameworks may be insufficient to capture genuine medical expertise. We further find that both general and clinical models exhibit substantial limitations in instruction following and strict output formatting. Finally, we demonstrate that robust medical LLMs can be successfully developed for low-resource languages such as Spanish, as evidenced by the Marmoka models.",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Topic Modeling",
+        "Machine Learning in Healthcare"
+      ],
+      "keywords": [
+        "clinical large language models",
+        "domain adaptation",
+        "medical question answering",
+        "multiple-choice question answering",
+        "adversarial robustness",
+        "instruction following",
+        "low-resource languages",
+        "Spanish language",
+        "Llama 3.1",
+        "medical knowledge"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.06552",
+      "abstract": "Misinformation is on the rise, and the strong writing capabilities of LLMs lower the barrier for malicious actors to produce and disseminate false information. We study how LLMs behave when prompted to spread misinformation across languages and target countries, and introduce GlobalLies, a multilingual parallel dataset of 440 misinformation generation prompt templates and 6,867 entities, spanning 8 languages and 195 countries. Using both human annotations and large-scale LLM-as-a-judge evaluations across hundreds of thousands of generations from state-of-the-art models, we show that misinformation generation varies systematically based on the country being discussed. Propagation of lies by LLMs is substantially higher in many lower-resource languages and for countries with a lower Human Development Index (HDI). We find that existing mitigation strategies provide uneven protection: input safety classifiers exhibit cross-lingual gaps, and retrieval-augmented fact-checking remains inconsistent across regions due to unequal information availability. We release GlobalLies for research purposes, aiming to support the development of mitigation strategies to reduce the spread of global misinformation: https://github.com/zohaib-khan5040/globallies",
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Topic Modeling",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "keywords": [
+        "large language models",
+        "LLM-as-a-judge",
+        "cross-lingual bias",
+        "misinformation propagation",
+        "Human Development Index",
+        "low-resource languages",
+        "misinformation mitigation"
+      ]
+    },
+    {
+      "id": "doi:10.1016/j.engappai.2026.114772",
+      "abstract": null,
+      "topics": [
+        "Advanced Battery Technologies Research",
+        "Advancements in Battery Materials",
+        "Structural Health Monitoring Techniques"
+      ],
+      "keywords": [
+        "lithium-ion battery energy storage systems",
+        "state of health estimation",
+        "battery degradation",
+        "physics-informed neural networks",
+        "convolutional neural networks",
+        "battery prognostics",
+        "battery lifecycle management"
+      ]
+    },
+    {
+      "id": "doi:10.1016/j.oceaneng.2026.125464",
+      "abstract": null,
+      "topics": [
+        "Maritime Navigation and Safety",
+        "Human-Automation Interaction and Safety",
+        "Air Traffic Management and Optimization"
+      ],
+      "keywords": [
+        "unmanned surface vehicles",
+        "restricted waters",
+        "field theory",
+        "human factors",
+        "Bayesian optimization",
+        "collision avoidance",
+        "berthing",
+        "turning manoeuvres"
+      ]
+    },
+    {
+      "id": "doi:10.18653/v1/2026.acl-long.1191",
+      "abstract": "Current LLM-based services typically require users to submit raw text regardless of its sensitivity. While intuitive, such practice introduces substantial privacy risks, as unauthorized access may expose personal, medical, or legal information. Although prior defenses strived to mitigate these risks, they often incur substantial computational overhead and degrade model performance. To overcome this privacy-efficiency trade-off, we introduce Privacy-Preserving Fine-Tuning (PPFT), a novel training pipeline that eliminates the need for transmitting raw prompt text while maintaining a favorable balance between privacy preservation and model utility for both clients and service providers. Our approach operates in two stages: first, we train a client-side encoder together with a server-side projection module and LLM, enabling the server to condition on k-pooled prompt embeddings instead of raw text; second, we fine-tune the projection module and LLM on private, domain-specific data using noise-injected embeddings, allowing effective adaptation without exposing plain text prompts and requiring access to the decoder's internal parameters. Extensive experiments on domain-specific and general benchmarks demonstrate that PPFT achieves a striking balance between privacy and utility, maintaining competitive performance with minimal degradation compared to noise-free upper bounds.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Adversarial Robustness in Machine Learning",
+        "Cryptography and Data Security"
+      ],
+      "keywords": [
+        "privacy-utility trade-off",
+        "domain-specific fine-tuning",
+        "secure inference"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2604.07612",
       "abstract": "We present a framework for real-time human-AI musical co-performance, in which a latent diffusion model generates instrumental accompaniment in response to a live stream of context audio. The system combines a MAX/MSP front-end-handling real-time audio input, buffering, and playback-with a Python inference server running the generative model, communicating via OSC/UDP messages. This allows musicians to perform in MAX/MSP - a well-established, real-time capable environment - while interacting with a large-scale Python-based generative model, overcoming the fundamental disconnect between real-time music tools and state-of-the-art AI models. We formulate accompaniment generation as a sliding-window look-ahead protocol, training the model to predict future audio from partial context, where system latency is a critical constraint. To reduce latency, we apply consistency distillation to our diffusion model, achieving a 5.4x reduction in sampling time, with both models achieving real-time operation. Evaluated on musical coherence, beat alignment, and audio quality, both models achieve strong performance in the Retrospective regime and degrade gracefully as look-ahead increases. These results demonstrate the feasibility of diffusion-based real-time accompaniment and expose the fundamental trade-off between model latency, look-ahead depth, and generation quality that any such system must navigate.",
@@ -3902,94 +3992,6 @@
         "Productivity",
         "Domain (mathematical analysis)",
         "Subject-matter expert"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.02578",
-      "abstract": "Humans exhibit remarkable abilities to coordinate in groups. As large language models (LLMs) become more capable, it remains an open question whether they can demonstrate comparable adaptive coordination and whether they use the same strategies as humans. To investigate this, we compare LLM and human performance on a common-interest game with imperfect monitoring: Group Binary Search. In this n-player game, participants need to coordinate their actions to achieve a common objective. Players independently submit numerical values in an effort to collectively sum to a randomly assigned target number. Without direct communication, they rely on group feedback to iteratively adjust their submissions until they reach the target number. Our findings show that, unlike humans who adapt and stabilize their behavior over time, LLMs often fail to improve across games and exhibit excessive switching, which impairs group convergence. Moreover, richer feedback (e.g., numerical error magnitude) benefits humans substantially but has small effects on LLMs. Taken together, by grounding the analysis in human baselines and mechanism-level metrics, including reactivity scaling, switching dynamics, and learning across games, we point to differences in human and LLM groups and provide a behaviorally grounded diagnostic for closing the coordination gap.",
-      "topics": [
-        "Language and cultural evolution",
-        "Neurobiology of Language and Bilingualism",
-        "Action Observation and Synchronization"
-      ],
-      "keywords": [
-        "Coordination game",
-        "Volatility (finance)",
-        "Action (physics)",
-        "Imperfect",
-        "Point (geometry)",
-        "Group (periodic table)"
-      ]
-    },
-    {
-      "id": "doi:10.17605/osf.io/7e9zh",
-      "abstract": "In In Tune with the Divine: Developing Spiritual Intelligence Daily, Prof. Dr. Yoesoep Edhie Rachmad, Ph.D., DBA presents a compelling exploration into the cultivation of spiritual intelligence as an integral part of daily life. Drawing upon a rich tapestry of philosophical insights, psychological understanding, and spiritual traditions, the author offers readers a pathway to harmonize their inner and outer worlds. This work serves as both a guide and companion for individuals seeking to deepen their connection with the divine, enhance personal growth, and contribute meaningfully to the broader human community. The early 1990s marked a period of rapid technological advancement and societal change, leading to a growing sense of disconnection and existential questioning among individuals. Recognizing this, Prof. Dr. Yoesoep Edhie Rachmad, Ph.D., DBA was inspired to address the spiritual void that many experienced amidst material progress. His observations of increasing stress, ethical dilemmas, and a yearning for deeper meaning in life underscored the necessity for a framework that integrates spiritual awareness into everyday existence. Spiritual intelligence, as articulated by Prof. Dr. Yoesoep Edhie Rachmad, Ph.D., DBA, refers to the capacity to access higher meanings, values, and purposes that transcend the material aspects of life. It involves the ability to align one's actions with inner convictions, fostering a sense of coherence and authenticity. This form of intelligence is not confined to religious practices but encompasses a broader understanding of interconnectedness, compassion, and self-awareness. The impetus for this work stemmed from the observable dissonance between external achievements and internal fulfillment. Prof. Dr. Yoesoep Edhie Rachmad, Ph.D., DBA identified a pervasive sense of spiritual disorientation, where individuals, despite material success, grappled with questions of purpose and belonging. This phenomenon highlighted the need for a paradigm that re-centers the human experience around spiritual consciousness. Central to the book is the principle that spiritual intelligence can be nurtured through intentional practices and self-reflection. Prof. Dr. Yoesoep Edhie Rachmad, Ph.D., DBA emphasizes the importance of daily mindfulness, ethical living, and the cultivation of inner silence as means to attune oneself to the divine presence. By integrating these practices, individuals can achieve greater harmony and resilience. Indicators of developed spiritual intelligence include heightened self-awareness, empathy, ethical decision-making, and a sustained sense of inner peace. These manifestations are not only beneficial to personal well-being but also contribute to more compassionate and cohesive communities. The operationalization of spiritual intelligence involves variables such as reflective journaling, meditation practices, engagement in altruistic activities, and continuous learning. Prof. Dr. Yoesoep Edhie Rachmad, Ph.D., DBA provides practical tools and exercises to facilitate the integration of these variables into daily routines. Factors influencing the development of spiritual intelligence encompass individual willingness, cultural contexts, life experiences, and access to supportive environments. Prof. Dr. Yoesoep Edhie Rachmad, Ph.D., DBA acknowledges that while these factors can pose challenges, they also offer opportunities for profound growth when approached with openness and intentionality. To implement the principles of spiritual intelligence, the author advocates for the establishment of personal rituals, participation in community dialogues, and the pursuit of continuous self-inquiry. Strategies include setting aside time for contemplation, engaging with diverse philosophical perspectives, and fostering environments that encourage spiritual exploration. Challenges to cultivating spiritual intelligence may arise from societal pressures, skepticism, or lack of access to resources. However, support can be found through mentorship, spiritual communities, and educational programs. Barriers are addressed through resilience-building practices and the reinforcement of intrinsic motivation. Prof. Dr. Yoesoep Edhie Rachmad, Ph.D., DBA concludes that spiritual intelligence is a vital component of holistic human development. By consciously integrating spiritual practices into daily life, individuals can achieve a deeper sense of purpose, enhance interpersonal relationships, and contribute positively to society. The book serves as a roadmap for those seeking to navigate the complexities of modern life with grace and spiritual insight. This book was published in 1993 by Yoesoep Edhie Rachmad (widely known as YER), Yoesoep Edhie Rachmad is an academic, prolific writer, and global thinker from Indonesia whose work is at the strategic intersection of digital marketing, knowledge systems, and artificial intelligence-based transformation in the platform economy landscape. Since 1992, YER has produced more than 5,950 scientific publications and books, an achievement that reflects his consistency, intellectual depth, and commitment to building a new architecture of thought in the field of modern marketing. https://orcid.org/0000-0001-6414-3252 https://www.webofscience.com/wos/author/record/GRE-6442-2022 https://scholar.google.com/citations?user=fm3iBmgAAAAJ&hl=en https://yoesoepedhie.blogspot.com/ https://yoesoepedhierachmad.academia.edu/ https://unu.academia.edu/YoesoepEdhieRachmad https://publons.com/wos-op/review/author/rukSidtq/ https://publons.com/wos-op/review/author/gLSJGguA/ https://publons.com/wos-op/review/author/wQpAdo05/ https://publons.com/wos-op/review/author/fjeefNWS/ His most prominent contributions are reflected in the development of the 4Ps of Digital Marketing Model (Platform–Page–Program–Posting) and the 7Ps of Digital Marketing Theory (Participants, Processes, Presence, Personalization, Performance, Partnership, and Privacy), which progressively expand the classical marketing framework to a dynamic digital reality. YER not only updates classical marketing theory but also transforms it into a strategic analysis tool for an era defined by data, networks, and algorithms. https://orcid.org/0000-0001-6414-3252 https://www.webofscience.com/wos/author/record/GRE-6442-2022 https://scholar.google.com/citations?user=fm3iBmgAAAAJ&hl=en https://yoesoepedhie.blogspot.com/ https://yoesoepedhierachmad.academia.edu/ https://unu.academia.edu/YoesoepEdhieRachmad https://publons.com/wos-op/review/author/rukSidtq/ https://publons.com/wos-op/review/author/gLSJGguA/ https://publons.com/wos-op/review/author/wQpAdo05/ https://publons.com/wos-op/review/author/fjeefNWS/ In August 2025 and May 2026, Yoesoep Edhie Rachmad (YER) became a hot topic of conversation among international academics. The global elite felt threatened by Yoesoep Edhie Rachmad's (YER) 25 books about Jefry Eipsten, which revealed many of the big secrets of many world figures. Yoesoep Edhie Rachmad's (YER) 25 books about Jefry Eipsten were published in 2024 and 2025. As a result, Yoesoep Edhie Rachmad (YER) was attacked, destroyed, slandered, and brought down by several international influencers on social media Linkend, Thread, X (Twitter), Facebook, Instagram, Tiktok. Social media and online news media in Indonesia also supported this, and together attacked and brought down Yoesoep Edhie Rachmad (YER). https://orcid.org/0000-0001-6414-3252 https://www.webofscience.com/wos/author/record/GRE-6442-2022 https://scholar.google.com/citations?user=fm3iBmgAAAAJ&hl=en https://yoesoepedhie.blogspot.com/ https://yoesoepedhierachmad.academia.edu/ https://unu.academia.edu/YoesoepEdhieRachmad https://publons.com/wos-op/review/author/rukSidtq/ https://publons.com/wos-op/review/author/gLSJGguA/ https://publons.com/wos-op/review/author/wQpAdo05/ https://publons.com/wos-op/review/author/fjeefNWS/ Yoesoep Edhie Rachmad (YER) is an Indonesian scholar, academic leader, and social development advocate with a strong multidisciplinary background. In 2016, YER was awarded the title of Doctor of Humanity, holds a Ph.D. in Information Technology and a DBA in Technology Management. Since 2016, YER has been actively teaching and collaborating with international universities in Malaysia, Singapore, Thailand, and the United States. YER is the founder of the Education Training Centre (ETC, 1992), YER Academic Publishing (YERA, 1993), the Multidisciplinary Academic Institute of Learning (MAIL, 1998), and YER E-Book Publishing (YERE, 1999), institutions dedicated to education, interdisciplinary learning, and ethical academic publishing. His academic contributions have led to his recognition as a Professor and his affiliation with the World Philosophy Foundation. YER is also actively involved in global development initiatives through the United Nations, as a member of the UN Global Compact (id-137635), the UN Global Market (id-709131), and the UN ECOSOC (id-677556). YER has served as a reviewer for several international journals and book chapters, and has written numerous books and articles on a wide range of topics including Philosophy, Economics, Management, Arts and Culture, Anthropology, Law, Psychology, Education, Sociology, Health, Technology, Tourism, and Communication. https://scholar.google.com/citations?user=fm3iBmgAAAAJ&hl=en https://orcid.org/0000-0001-6414-3252 https://yoesoepedhierachmad.academia.edu/ https://unu.academia.edu/YoesoepEdhieRachmad https://scholar.google.com/citations?user=fm3iBmgAAAAJ&hl=en https://www.researchgate.net/profile/yoesoep-rachmad https://scholar.google.com/citations?user=fm3iBmgAAAAJ&hl=en https://www.webofscience.com/wos/author/record/GRE-6442-2022 https://scholar.google.com/citations?user=fm3iBmgAAAAJ&hl=en https://independent.academia.edu/yoesoepedhierachmad https://scholar.google.com/citations?user=fm3iBmgAAAAJ&hl=en https://www.instagram.com/yoesoepedhie/ https://scholar.google.c",
-      "topics": [
-        "Workplace Spirituality and Leadership",
-        "Ego Development and Educational Practices",
-        "Religion, Spirituality, and Psychology"
-      ],
-      "keywords": [
-        "Spiritual intelligence",
-        "Cognitive dissonance",
-        "Existentialism",
-        "Disconnection",
-        "Meaning (existential)",
-        "Spirituality",
-        "The Void",
-        "Coherence (philosophical gambling strategy)"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-02990-2",
-      "abstract": "Abstract This study analyzes tokenization in Natural Language Processing (NLP) at the intersection of language, technology, and political economy. Recent studies show that subword tokenization in multilingual Large Language Models (LLMs) distributes processing costs unevenly across languages, as non-Latin scripts are disproportionately fragmented by statistical segmentation. Taking this disparity as a point of departure, the study reconceptualizes tokenization beyond a purely linguistic or computational problem. The analysis approaches tokenization through the epistemological problems of translation and situates it within a longer history of socio-technical infrastructures from telegraphy to machine learning that mediate between linguistic abstraction and regimes of social productivity. Rather than treating tokens as neutral technical units, it shows that they function as operational measures of linguistic value beyond meaning, enabling the quantification and automation of linguistic labor. Drawing on Marxist and structuralist accounts of linguistic value, and postcolonial critiques of semiotic standardization, the study frames tokenization as both a technical abstraction and a metric in the social division of labor.",
-      "topics": [
-        "Discourse Analysis in Language Studies",
-        "Language and cultural evolution",
-        "Multilingual Education and Policy"
-      ],
-      "keywords": [
-        "Lexical analysis",
-        "Scripting language",
-        "Abstraction",
-        "Semiotics",
-        "Categorical variable",
-        "Metric (unit)",
-        "Point (geometry)",
-        "Computational linguistics"
-      ]
-    },
-    {
-      "id": "doi:10.1145/3799437",
-      "abstract": "Artificial Intelligence (AI)-mediated collaboration has been a core research interest in CSCW and HCI in recent decades. AI is being embedded in teams as a teammate, known as human-AI teamwork. A critical aspect to this and any type of teamwork is monitoring: the ability to track and be aware of both team- and individual-level actions. As AI continuously evolves from a passive tool into a supportive collaborator capable of playing a role in teams, more research is needed to investigate human perceptions of AI teammates' monitoring. More work is needed on when and how AI can function as a supportive collaborator rather than a surveillant (in regard to monitoring) to enhance team coordination and performance. Drawing on 22 interviews, we examined how humans perceive AI monitoring when AI behaves as a collaborative teammate for team support, focusing on perceptions of AI monitoring at both team and individual levels. Four tensions have been identified, namely: performance versus privacy, support versus control, fairness versus empathy, and team-level and individual-level trade-offs. We also propose feasible design principles for human-AI teaming designers to optimize AI monitoring for effective team support, maximizing its unique advantages while mitigating potential risks, further cultivating more effective and trustworthy human-AI collaboration.",
-      "topics": [
-        "Team Dynamics and Performance",
-        "Ethics and Social Impacts of AI",
-        "Human-Automation Interaction and Safety"
-      ],
-      "keywords": [
-        "Teamwork",
-        "Perception",
-        "Trustworthiness",
-        "Function (biology)",
-        "Computer-supported cooperative work",
-        "Work (physics)",
-        "Collaborative software"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03000-1",
-      "abstract": null,
-      "topics": [
-        "Language and cultural evolution",
-        "Action Observation and Synchronization",
-        "Embodied and Extended Cognition"
-      ],
-      "keywords": [
-        "Embodied cognition",
-        "Key (lock)",
-        "Performing arts",
-        "Language understanding"
       ]
     }
   ]

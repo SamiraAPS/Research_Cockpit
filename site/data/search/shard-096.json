@@ -1,7 +1,26 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-08T11:58:37.803Z",
+  "generatedAt": "2026-11-09T13:57:03.044Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.34681",
+      "abstract": "Learning-rate (LR) scheduling plays a central role in large language model (LLM) pretraining, yet current practice still relies heavily on hand-crafted heuristics such as Warmup-Cosine-Decay and Warmup-Stable-Decay. Because these schedules are fixed in advance, they cannot adapt to evolving optimization dynamics. Online learned scheduling within the Learning to Optimize (L2O) framework offers a dynamic alternative, but remains brittle at LLM scale due to noisy signals, delayed feedback, and the risk of catastrophic divergence. We propose SOLAR (State-driven Online Learning rAte scheduleR), a stabilized framework for reliable online LR adaptation. SOLAR uses a base schedule as a reference and learns bounded, state-dependent residual corrections for individual parameter groups. Each correction re-anchors to the base at every step, allowing the policy to adapt the LR without relearning the warmup-decay profile. A lightweight state representation and progress-aware reward guide online learning, while a Circuit-Breaker restores training after rare unsafe actions. Across autoregressive language-model pretraining, SOLAR improves final perplexity over tuned static schedules and automatic LR tuners for dense models from 60M to 1B, AdamW and Muon, and two MoE settings up to 3B. Matched 130M controls show that adding base anchoring and action bounds improves a global PPO controller from 27.09 to 23.74 final PPL, while group-wise control reaches 22.87 on the same two seeds. A residual policy trained on a 60M proxy can also be frozen and reused at larger dense scales without target PPO updates, remaining effective across a fourfold base-LR range. These results establish SOLAR as a practical learned LR controller for LLM pretraining.",
+      "topics": [
+        "Advanced Neural Network Applications",
+        "Machine Learning in Materials Science",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "keywords": [
+        "large language model pretraining",
+        "learning to optimize",
+        "circuit breakers",
+        "PPO",
+        "perplexity",
+        "MoE models",
+        "AdamW",
+        "Muon optimizer"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2609.35440",
       "abstract": "Large language models are trained with backpropagation, whose global gradient coordinates all layers but forces each to hold its activations and wait for the gradient to pass back through every deeper layer. Conventional local learning removes this update locking by training each module to predict the target through its own readout, but has not scaled to billion-parameter pretraining. We identify these private readouts as a key weakness, since they leave each module without information from deeper modules. We propose Shared-Output LOcal learning (SOLO), which replaces them with a shared, read-only copy of the final module's readout, the only one trained on the output of the whole network. Taken from the previous step, the copy transmits information from the final module without passing gradients between modules or reintroducing update locking. SOLO approaches backpropagation on Transformers of 340M to 2B parameters pretrained on 15B tokens, staying within one point in average zero-shot accuracy with a perplexity gap that narrows with scale. Readout ablations attribute SOLO's improvement over private readouts to sharing. Without update locking, each of p pipeline stages holds activations for O(1) micro-batches instead of O(p). The freed memory permits larger micro-batches, which reach up to 1.44x the best measured throughput of pipeline backpropagation on the same partition. To our knowledge, SOLO is the first local learning method to show such memory and throughput gains in billion-parameter language-model pretraining. Local learning thus becomes a practical alternative to backpropagation for large-scale pretraining.",
@@ -3544,25 +3563,6 @@
         "Relevance (law)",
         "Bachelor",
         "Empirical research"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10454340/v1",
-      "abstract": null,
-      "topics": [
-        "Colorectal Cancer Screening and Detection",
-        "Gastric Cancer Management and Outcomes",
-        "Gastrointestinal Bleeding Diagnosis and Treatment"
-      ],
-      "keywords": [
-        "Chromoendoscopy",
-        "Metric (unit)",
-        "Magnification",
-        "Contrast (vision)",
-        "Indigo carmine",
-        "Visibility",
-        "Color difference",
-        "Pattern recognition (psychology)"
       ]
     }
   ]

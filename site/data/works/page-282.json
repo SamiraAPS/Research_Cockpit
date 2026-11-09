@@ -1,12 +1,1229 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-08T11:58:37.803Z",
+  "generatedAt": "2026-11-09T13:57:03.044Z",
   "page": 282,
   "pageSize": 100,
-  "totalItems": 40403,
+  "totalItems": 40461,
   "totalPages": 405,
   "nextPage": "./page-283.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2604.17512",
+      "recordType": "preprint",
+      "title": "ONTO: A Token-Efficient Columnar Notation for LLM Input Optimization",
+      "abstract": "Serialization formats designed for document interchange impose structural overhead that becomes prohibitive when large language models consume operational data at scale. A modest dataset of 1,000 IoT sensor readings serialized as JSON requires approximately 80,000 tokens - the majority spent on repeated field names, nested braces, and structural punctuation rather than semantic content. We present ONTO (Object Notation for Token Optimization), a columnar notation that declares field names once per entity and arranges values in pipe-delimited rows with indentation-based hierarchy. This schema-once, data-many design eliminates per-record key repetition while preserving human readability and nested structure support. Evaluation across three synthetic operational datasets demonstrates 46-51% token reduction versus JSON, with stable scaling from 100 to 1,000 records. Controlled inference benchmarks on Qwen2.5-7B show corresponding 5-10% latency improvement. Comprehension validation confirms no material degradation in LLM task accuracy across lookup, counting, extraction, and aggregation operations when format context is provided. Ablation analysis reveals that key repetition accounts for the majority of JSON overhead, with indentation costs in nested structures explaining the 4-percentage-point gap between flat and hierarchical data. ONTO occupies a previously unfilled position in the serialization landscape: columnar efficiency with hierarchical structure, optimized for LLM context windows rather than document interchange. Code and specification are available at https://github.com/harsh-aranga/onto.",
+      "doi": "10.48550/arxiv.2604.17512",
+      "externalIds": {
+        "openalex": "W7155067930"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7155067930"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-04-19",
+      "firstPublicDate": "2026-04-19",
+      "onlineDate": null,
+      "topics": [
+        "Advanced Database Systems and Queries",
+        "Topic Modeling",
+        "Semantic Web and Ontologies"
+      ],
+      "keywords": [
+        "token efficiency",
+        "data serialization",
+        "hierarchical data structures",
+        "IoT sensor data",
+        "operational data processing"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 3,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM"
+      ],
+      "authors": [
+        {
+          "id": "A5134145652",
+          "name": "Harshavardhanan Deekeswar",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2604.17512",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-30T11:26:47.476Z",
+      "firstSeenRunId": "ingestion-2026-10-30T11:26:18.003Z",
+      "retrievedAt": "2026-10-30T11:26:47.476Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-30T11:26:47.476Z",
+      "preferredVersionId": "openalex:W7155067930",
+      "versions": [
+        {
+          "id": "openalex:W7155067930",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7155067930",
+          "doi": "10.48550/arxiv.2604.17512",
+          "publicationDate": "2026-04-19",
+          "url": "https://doi.org/10.48550/arxiv.2604.17512"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-282.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "ma-once, data-many design eliminates per-record key repetition while preserving human readability and nested structure support. Evaluation across three synthetic operational datasets de",
+              "start": 596,
+              "end": 781
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "ONTO: A Token-Efficient Columnar Notation for LLM Input Optimization",
+              "start": 0,
+              "end": 68
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "r document interchange impose structural overhead that becomes prohibitive when large language models consume operational data at scale. A modest dataset of 1,000 IoT sensor readings serialized as JSON",
+              "start": 33,
+              "end": 234
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "r document interchange impose structural overhead that becomes prohibitive when large language models consume operational data at scale. A modest dataset of 1,000 IoT sensor readings serialized as JSON",
+              "start": 33,
+              "end": 234
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "r document interchange impose structural overhead that becomes prohibitive when large language models consume operational data at scale. A modest dataset of 1,000 IoT sensor readings serialized as JSON",
+                  "start": 33,
+                  "end": 234
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "rovement. Comprehension validation confirms no material degradation in LLM task accuracy across lookup, counting, extraction, and aggregation operations when format context is provided. Ab",
+                  "start": 957,
+                  "end": 1145
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.17535",
+      "recordType": "preprint",
+      "title": "OPSDL: On-Policy Self-Distillation for Long-Context Language Models",
+      "abstract": "Extending the effective context length of large language models (LLMs) remains a central challenge for real-world applications. While recent post-training methods have made progress in long-context scaling, they either rely on high-quality supervision data or sparse sequence-level rewards, leading to unstable and inefficient optimization. We propose OPSDL, an On-Policy Self-Distillation method for enhancing the Long-context capabilities of LLMs. Unlike other recent self-distillation methods that inject privileged information and rely on the model's in-context learning ability to act as a teacher, OPSDL leverages the model's own inherently strong short-context capability as a self-teacher to supervise its own generation in long-context scenarios. The model first generates responses conditioned on the full long-context, then the self-teacher provides per-token supervision signals via point-wise reverse KL divergence under the relevant extracted short-context. This dense token-level signal encourages faithful use of relevant evidence and mitigates hallucinations induced by irrelevant context. We evaluate OPSDL on long-context benchmarks across a range of models from 7B to 32B parameters. Results show consistent and substantial improvements across varying context lengths, outperforming standard post-training approaches such as SFT and DPO with higher sample efficiency. Notably, these gains are achieved without degrading general short-context performance. These findings highlight the effectiveness of OPSDL as a scalable and stable approach for long-context learning.",
+      "doi": "10.48550/arxiv.2604.17535",
+      "externalIds": {
+        "openalex": "W7155051642"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7155051642"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-04-19",
+      "firstPublicDate": "2026-04-19",
+      "onlineDate": null,
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Multimodal Machine Learning Applications"
+      ],
+      "keywords": [
+        "self-distillation",
+        "large language models",
+        "reverse KL divergence",
+        "hallucination mitigation",
+        "post-training fine-tuning",
+        "sample efficiency"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…n methods that inject privileged information and rely on the model's in-context learning ability to act as a teacher, OPSDL leverages the model's own inherently strong short-context capability as a self-teacher to supervise its own generation in long-context scenarios. The model first generates responses conditioned on…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "…t post-training methods have made progress in long-context scaling, they either rely on high-quality supervision data or sparse sequence-level rewards, leading to unstable and inefficient optimization. We propose OPSDL, an On-Policy Self-Distillation method for enhancing the Long-context capabilities of LLMs. Unlike ot…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:learning": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "learning",
+        "rely"
+      ],
+      "authors": [
+        {
+          "id": "A5134157576",
+          "name": "Xinsen Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5134121373",
+          "name": "Zhenkai Ding",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5081439632",
+          "name": "Tianjun Pan",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5134150129",
+          "name": "Run Yang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5126910871",
+          "name": "Chun Kang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5129737859",
+          "name": "Xue Xiong",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5134160714",
+          "name": "Jingnan Gu",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2604.17535",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-30T11:26:47.476Z",
+      "firstSeenRunId": "ingestion-2026-10-30T11:26:18.003Z",
+      "retrievedAt": "2026-10-30T11:26:47.476Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-30T11:26:47.476Z",
+      "preferredVersionId": "openalex:W7155051642",
+      "versions": [
+        {
+          "id": "openalex:W7155051642",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7155051642",
+          "doi": "10.48550/arxiv.2604.17535",
+          "publicationDate": "2026-04-19",
+          "url": "https://doi.org/10.48550/arxiv.2604.17535"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-282.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Extending the effective context length of large language models (LLMs) remains a central challenge for real-world applications. While recent post-training methods ",
+              "start": 0,
+              "end": 163
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "Extending the effective context length of large language models (LLMs) remains a central challenge for real-world applications. While recent post-training methods ",
+              "start": 0,
+              "end": 163
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "Extending the effective context length of large language models (LLMs) remains a central challenge for real-world applications. While recent post-training methods have m",
+              "start": 0,
+              "end": 169
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Extending the effective context length of large language models (LLMs) remains a central challenge for real-world applications. While recent post-training methods ",
+                  "start": 0,
+                  "end": 163
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.29303/jkp.v8i1.239",
+      "recordType": "publication",
+      "title": "Penerapan Kelengkapan Keselamatan dan Kesehatan Kerja (K3) Pada UMKM Konstruksi Logam",
+      "abstract": "Occupational Safety and Health (OSH) implementation in small and medium metal construction enterprises is often neglected, particularly regarding non-ergonomic working postures and the low use of personal protective equipment (PPE). These conditions increase the risk of work-related fatigue, occupational diseases, and workplace accidents. This community service program aimed to improve workers’ knowledge and behavior toward healthy work concepts and PPE utilization in a metal construction MSME through counseling and hands-on demonstrations. The activity was carried out in one day at the partner’s workshop, involving all workers and the business owner. The program adopted a counseling and implementation-oriented training design, using a five-item pre-test and post-test questionnaire on healthy work concepts, OSH, and PPE use. The results indicate a substantial improvement in OSH knowledge and behavior. The average percentage of “yes” responses increased from approximately 16% at pre-test to about 92% at post-test; PPE use rose from 40% to 100%, and workers who reported always using PPE increased from 20% to 80%. The partner also began to understand and apply basic ergonomic principles in working posture and workstation arrangement. It can be concluded that the dissemination and demonstration of healthy work concepts and PPE use effectively enhanced OSH awareness and behavior among workers in the metal construction MSME, thus supporting business continuity through a safer, more comfortable, and more productive work environment.",
+      "doi": "10.29303/jkp.v8i1.239",
+      "externalIds": {
+        "openalex": "W7154907341"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7154907341"
+      },
+      "venue": "JURNAL KARYA PENGABDIAN",
+      "publicationDate": "2026-04-19",
+      "firstPublicDate": "2026-04-19",
+      "onlineDate": null,
+      "topics": [
+        "Occupational Health and Safety Management",
+        "Occupational Health and Safety in Workplaces",
+        "Occupational Health and Safety Research"
+      ],
+      "keywords": [
+        "occupational health and safety",
+        "personal protective equipment",
+        "small and medium-sized enterprises",
+        "human factors",
+        "work posture",
+        "occupational accidents",
+        "occupational fatigue"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Occupational Safety and Health (OSH) implementation in small and medium metal construction enterprises is often neglected, particularly regarding non-ergonomic working postures and the low use of personal protective equipment (PPE). These conditions increase the risk of work-related fatigue, occupational diseases, and …",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "…e low use of personal protective equipment (PPE). These conditions increase the risk of work-related fatigue, occupational diseases, and workplace accidents. This community service program aimed to improve workers’ knowledge and behavior toward healthy work concepts and PPE utilization in a metal construction MSME thro…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "occupational health and safety",
+              "weight": 0
+            },
+            {
+              "source": "external_topic",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Occupational Health and Safety Management",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:safety": 4,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "safety",
+        "human factors",
+        "occupational health",
+        "risk"
+      ],
+      "authors": [
+        {
+          "id": "A5086219858",
+          "name": "Anak Agung Alit Triadi",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5117468342",
+          "name": "Nur Kaliwantoro",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5083744519",
+          "name": "I Gede Bawa Susana",
+          "orcid": "https://orcid.org/0000-0003-1597-154X",
+          "affiliations": []
+        },
+        {
+          "id": "A5068946361",
+          "name": "Maharsa Pradityatama",
+          "orcid": "https://orcid.org/0000-0003-0536-9635",
+          "affiliations": []
+        },
+        {
+          "id": "A5115889961",
+          "name": "Akbar Tawaqqal",
+          "orcid": "https://orcid.org/0009-0000-2753-5011",
+          "affiliations": []
+        },
+        {
+          "id": "A5133991525",
+          "name": "Lalu Muhamad Apriyadi",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Muhammad Alkaff",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.29303/jkp.v8i1.239",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-13T12:44:45.586Z",
+      "firstSeenRunId": "ingestion-2026-10-13T12:44:23.773Z",
+      "retrievedAt": "2026-10-13T12:44:45.586Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-13T12:44:45.586Z",
+      "preferredVersionId": "openalex:W7154907341",
+      "versions": [
+        {
+          "id": "openalex:W7154907341",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7154907341",
+          "doi": "10.29303/jkp.v8i1.239",
+          "publicationDate": "2026-04-19",
+          "url": "https://doi.org/10.29303/jkp.v8i1.239"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-factors"
+        }
+      ],
+      "pagePath": "./works/page-282.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-factors"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "worker",
+              "quote": "eases, and workplace accidents. This community service program aimed to improve workers’ knowledge and behavior toward healthy work concepts and PPE utilization in a metal construction MS",
+              "start": 309,
+              "end": 496
+            },
+            {
+              "field": "abstract",
+              "term": "workers",
+              "quote": "eases, and workplace accidents. This community service program aimed to improve workers’ knowledge and behavior toward healthy work concepts and PPE utilization in a metal construction MS",
+              "start": 309,
+              "end": 496
+            },
+            {
+              "field": "abstract",
+              "term": "workplace",
+              "quote": "onditions increase the risk of work-related fatigue, occupational diseases, and workplace accidents. This community service program aimed to improve workers’ knowledge and behavior toward h",
+              "start": 240,
+              "end": 429
+            }
+          ],
+          "ai": [],
+          "domain": [
+            {
+              "field": "abstract",
+              "term": "ergonomic",
+              "quote": "m metal construction enterprises is often neglected, particularly regarding non-ergonomic working postures and the low use of personal protective equipment (PPE). These conditions increase ",
+              "start": 70,
+              "end": 259
+            }
+          ],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "workplace",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "workplace",
+                  "quote": "onditions increase the risk of work-related fatigue, occupational diseases, and workplace accidents. This community service program aimed to improve workers’ knowledge and behavior toward h",
+                  "start": 240,
+                  "end": 429
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "worker",
+                  "quote": "eases, and workplace accidents. This community service program aimed to improve workers’ knowledge and behavior toward healthy work concepts and PPE utilization in a metal construction MS",
+                  "start": 309,
+                  "end": 496
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "survey",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "questionnaire",
+                  "quote": "plementation-oriented training design, using a five-item pre-test and post-test questionnaire on healthy work concepts, OSH, and PPE use. The results indicate a substantial improvement in OSH k",
+                  "start": 699,
+                  "end": 892
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.29303/jkp.v8i1.255",
+      "recordType": "publication",
+      "title": "Peningkatan Kemampuan Pembuatan Produk Meja Taman Minimalis Melalui Pelatihan Di Bengkel Las Untuk Sma Sunan Bonang Tangerang",
+      "abstract": "Sunan Bonang High School in Tangerang is the partner of PKM this time. The school curriculum does not provide lesson materials on the stages of product design and related studies. This condition results in students' knowledge, understanding, and skills in various aspects related to the design and manufacture of a product being considered lacking. On the other hand, graduates need additional knowledge and skills so that they are better prepared to enter the workforce and are ready to compete in the business world. Initial interviews showed that students were very interested in training activities to improve product design and manufacturing skills. This PKM project focuses on designing and manufacturing an ergonomic minimalist garden table. The materials used are iron Nako and steel plate. Some of the work elements carried out are measuring, cutting, sanding, assembling, welding, grinding, and painting. PKM is carried out in 2 stages. The first stage is an explanation of marketing theory, product design theory, and ergonomic theory, as well as an explanation of product design case studies. Participants learn to design the concept of a garden table with predetermined characteristics. In the second stage, participants practice in groups to realize the product using the equipment available in the welding workshop. Through structured training, it is expected to be able to improve the knowledge, understanding, and skills of training participants. The observation results show that there is a 62% increase in the number of students in understanding the stages of product design and understanding the use of workshop equipment. This indicates that the PKM aimed at SMA Sunan Bonang Tangerang partners has been successful and provided significant benefits",
+      "doi": "10.29303/jkp.v8i1.255",
+      "externalIds": {
+        "openalex": "W7154913072"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7154913072"
+      },
+      "venue": "JURNAL KARYA PENGABDIAN",
+      "publicationDate": "2026-04-19",
+      "firstPublicDate": "2026-04-19",
+      "onlineDate": null,
+      "topics": [
+        "Vocational and Entrepreneurial Education",
+        "Design Education and Practice",
+        "Engineering Education and Pedagogy"
+      ],
+      "keywords": [
+        "product design",
+        "product manufacturing",
+        "ergonomic design",
+        "vocational high school students"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 0,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [],
+      "authors": [
+        {
+          "id": "A5117359029",
+          "name": "I WAYAN SUKANIA WAYAN",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "I Wayan Joniarta",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5133986528",
+          "name": "Florencia Charlene Teng",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5133982037",
+          "name": "Marthinus Chandra",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.29303/jkp.v8i1.255",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-13T12:44:45.586Z",
+      "firstSeenRunId": "ingestion-2026-10-13T12:44:23.773Z",
+      "retrievedAt": "2026-10-13T12:44:45.586Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-13T12:44:45.586Z",
+      "preferredVersionId": "openalex:W7154913072",
+      "versions": [
+        {
+          "id": "openalex:W7154913072",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7154913072",
+          "doi": "10.29303/jkp.v8i1.255",
+          "publicationDate": "2026-04-19",
+          "url": "https://doi.org/10.29303/jkp.v8i1.255"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-factors"
+        }
+      ],
+      "pagePath": "./works/page-282.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-factors"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "participant",
+              "quote": "and ergonomic theory, as well as an explanation of product design case studies. Participants learn to design the concept of a garden table with predetermined characteristics. In the second sta",
+              "start": 1025,
+              "end": 1217
+            },
+            {
+              "field": "abstract",
+              "term": "participants",
+              "quote": "and ergonomic theory, as well as an explanation of product design case studies. Participants learn to design the concept of a garden table with predetermined characteristics. In the second sta",
+              "start": 1025,
+              "end": 1217
+            },
+            {
+              "field": "abstract",
+              "term": "student",
+              "quote": " on the stages of product design and related studies. This condition results in students' knowledge, understanding, and skills in various aspects related to the design and manufacture of a",
+              "start": 126,
+              "end": 314
+            },
+            {
+              "field": "abstract",
+              "term": "students",
+              "quote": " on the stages of product design and related studies. This condition results in students' knowledge, understanding, and skills in various aspects related to the design and manufacture of a",
+              "start": 126,
+              "end": 314
+            }
+          ],
+          "ai": [],
+          "domain": [
+            {
+              "field": "abstract",
+              "term": "ergonomic",
+              "quote": "anufacturing skills. This PKM project focuses on designing and manufacturing an ergonomic minimalist garden table. The materials used are iron Nako and steel plate. Some of the work element",
+              "start": 634,
+              "end": 823
+            }
+          ],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": " on the stages of product design and related studies. This condition results in students' knowledge, understanding, and skills in various aspects related to the design and manufacture of a",
+                  "start": 126,
+                  "end": 314
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "operations",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "manufacturing",
+                  "quote": "dents were very interested in training activities to improve product design and manufacturing skills. This PKM project focuses on designing and manufacturing an ergonomic minimalist garden tabl",
+                  "start": 553,
+                  "end": 746
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "students",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": " on the stages of product design and related studies. This condition results in students' knowledge, understanding, and skills in various aspects related to the design and manufacture of a",
+                  "start": 126,
+                  "end": 314
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "participants",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "participant",
+                  "quote": "and ergonomic theory, as well as an explanation of product design case studies. Participants learn to design the concept of a garden table with predetermined characteristics. In the second sta",
+                  "start": 1025,
+                  "end": 1217
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "qualitative",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "interview",
+                  "quote": " to enter the workforce and are ready to compete in the business world. Initial interviews showed that students were very interested in training activities to improve product design and manu",
+                  "start": 447,
+                  "end": 637
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.17186",
+      "recordType": "preprint",
+      "title": "Persona-Based Requirements Engineering for Explainable Multi-Agent Educational Systems: A Scenario Simulator for Clinical Reasoning Training",
+      "abstract": "As Artificial Intelligence (AI) and Agentic AI become increasingly integrated across sectors such as education and healthcare, it is critical to ensure that Multi-Agent Education System (MAES) is explainable from the early stages of requirements engineering (RE) within the AI software development lifecycle. Explainability is essential to build trust, promote transparency, and enable effective human-AI collaboration. Although personas are well-established in human-computer interaction to represent users and capture their needs and behaviors, their role in RE for explainable MAES remains underexplored. This paper proposes a human-first, persona-driven, explainable MAES RE framework and demonstrates the framework through a MAES for clinical reasoning training. The framework integrates personas and user stories throughout the RE process to capture the needs, goals, and interactions of various stakeholders, including medical educators, medical students, AI patient agent, and clinical agents (physical exam agent, diagnostic agent, clinical intervention agent, supervisor agent, evaluation agent). The goals, underlying models, and knowledge base shape agent interactions and inform explainability requirements that guided the clinical reasoning training of medical students. A post-usage survey found that more than 78\\% of medical students reported that MAES improved their clinical reasoning skills. These findings demonstrate that RE based on persona effectively connects technical requirements with non-technical medical students from a human-centered approach, ensuring that explainable MAES are trustworthy, interpretable, and aligned with authentic clinical scenarios from the early stages of the AI system engineering. The partial MAES for the clinical scenario simulator is~\\href{https://github.com/2sigmaEdTech/MAS/}{open sourced here}.",
+      "doi": "10.48550/arxiv.2604.17186",
+      "externalIds": {
+        "openalex": "W7155068750"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7155068750"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-04-19",
+      "firstPublicDate": "2026-04-19",
+      "onlineDate": null,
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Persona Design and Applications",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "keywords": [
+        "explainable AI",
+        "requirements engineering",
+        "personas",
+        "clinical reasoning training",
+        "medical students",
+        "user stories",
+        "human-AI collaboration",
+        "human-centered design"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trust",
+              "sourceValue": "…hin the AI software development lifecycle. Explainability is essential to build trust, promote transparency, and enable effective human-AI collaboration. Although personas are well-established in human-computer interaction to represent users and capture their needs and behaviors, their role in RE for explainable MAES r…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "explainability",
+              "conceptLabel": "Erklärbarkeit",
+              "matchedTerm": "explainability",
+              "sourceValue": "… of requirements engineering (RE) within the AI software development lifecycle. Explainability is essential to build trust, promote transparency, and enable effective human-AI collaboration. Although personas are well-established in human-computer interaction to represent users and capture their needs and behaviors, th…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "explainability",
+              "conceptLabel": "Erklärbarkeit",
+              "matchedTerm": "explainable ai",
+              "sourceValue": "explainable AI",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "agency",
+          "label": "Work Design & Agency",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "agency",
+              "conceptLabel": "Agency",
+              "matchedTerm": "agentic",
+              "sourceValue": "As Artificial Intelligence (AI) and Agentic AI become increasingly integrated across sectors such as education and healthcare, it is critical to ensure that Multi-Agent Education System (MAES) is explainable from the early stages of requirements engineering (RE) within the AI software development lifecycle. Explainabil…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "teaming",
+          "label": "Human–AI Teaming",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "collaboration",
+              "conceptLabel": "Mensch–KI-Kollaboration",
+              "matchedTerm": "human ai collaboration",
+              "sourceValue": "As Artificial Intelligence (AI) and Agentic AI become increasingly integrated across sectors such as education and healthcare, it is critical to ensure that Multi-Agent Education System (MAES) is explainable from the early stages of requirements engineering (RE) within the AI software development lifecycle. Explainabil…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "collaboration",
+              "conceptLabel": "Mensch–KI-Kollaboration",
+              "matchedTerm": "human ai collaboration",
+              "sourceValue": "human-AI collaboration",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:trust": 4,
+        "topic:agency": 2,
+        "topic:teaming": 2,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "human-AI",
+        "trust",
+        "human-AI collaboration",
+        "explainability",
+        "explainable ai",
+        "agentic",
+        "human ai collaboration"
+      ],
+      "authors": [
+        {
+          "id": "A5031891404",
+          "name": "Weibing Zheng",
+          "orcid": "https://orcid.org/0000-0002-6496-1906",
+          "affiliations": []
+        },
+        {
+          "id": "A5050352146",
+          "name": "Laurah Turner",
+          "orcid": "https://orcid.org/0000-0002-4567-1313",
+          "affiliations": []
+        },
+        {
+          "id": "A5055173784",
+          "name": "Jess Kropczynski",
+          "orcid": "https://orcid.org/0000-0002-7458-6003",
+          "affiliations": []
+        },
+        {
+          "id": "A5071637949",
+          "name": "Matthew E. Kelleher",
+          "orcid": "https://orcid.org/0000-0002-6400-1745",
+          "affiliations": []
+        },
+        {
+          "id": "A5053076513",
+          "name": "Murat Özer",
+          "orcid": "https://orcid.org/0000-0002-2518-3398",
+          "affiliations": []
+        },
+        {
+          "id": "A5072395820",
+          "name": "Shane E. Halse",
+          "orcid": "https://orcid.org/0000-0002-0799-6715",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2604.17186",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-30T11:26:47.476Z",
+      "firstSeenRunId": "ingestion-2026-10-30T11:26:18.003Z",
+      "retrievedAt": "2026-10-30T11:26:47.476Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-30T11:26:47.476Z",
+      "preferredVersionId": "openalex:W7155068750",
+      "versions": [
+        {
+          "id": "openalex:W7155068750",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7155068750",
+          "doi": "10.48550/arxiv.2604.17186",
+          "publicationDate": "2026-04-19",
+          "url": "https://doi.org/10.48550/arxiv.2604.17186"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-282.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "ability is essential to build trust, promote transparency, and enable effective human-AI collaboration. Although personas are well-established in human-computer interaction to represent",
+              "start": 316,
+              "end": 501
+            },
+            {
+              "field": "abstract",
+              "term": "user",
+              "quote": "though personas are well-established in human-computer interaction to represent users and capture their needs and behaviors, their role in RE for explainable MAES remains underexplored.",
+              "start": 422,
+              "end": 607
+            },
+            {
+              "field": "abstract",
+              "term": "users",
+              "quote": "though personas are well-established in human-computer interaction to represent users and capture their needs and behaviors, their role in RE for explainable MAES remains underexplored.",
+              "start": 422,
+              "end": 607
+            },
+            {
+              "field": "abstract",
+              "term": "student",
+              "quote": " and interactions of various stakeholders, including medical educators, medical students, AI patient agent, and clinical agents (physical exam agent, diagnostic agent, clinical interventio",
+              "start": 873,
+              "end": 1061
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "As Artificial Intelligence (AI) and Agentic AI become increasingly integrated across sectors such as education and healthcare,",
+              "start": 0,
+              "end": 126
+            },
+            {
+              "field": "abstract",
+              "term": "human-AI",
+              "quote": "ability is essential to build trust, promote transparency, and enable effective human-AI collaboration. Although personas are well-established in human-computer interaction to represent us",
+              "start": 316,
+              "end": 504
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "As Artificial Intelligence (AI) and Agentic AI become increasingly integrated across sectors such as education and healthcare, it ",
+              "start": 0,
+              "end": 130
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "clinical",
+                  "quote": "ering for Explainable Multi-Agent Educational Systems: A Scenario Simulator for Clinical Reasoning Training",
+                  "start": 33,
+                  "end": 140
+                },
+                {
+                  "field": "abstract",
+                  "term": "healthcare",
+                  "quote": " Agentic AI become increasingly integrated across sectors such as education and healthcare, it is critical to ensure that Multi-Agent Education System (MAES) is explainable from the early st",
+                  "start": 35,
+                  "end": 225
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "education",
+                  "quote": "gence (AI) and Agentic AI become increasingly integrated across sectors such as education and healthcare, it is critical to ensure that Multi-Agent Education System (MAES) is explainable fr",
+                  "start": 21,
+                  "end": 210
+                },
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": " and interactions of various stakeholders, including medical educators, medical students, AI patient agent, and clinical agents (physical exam agent, diagnostic agent, clinical interventio",
+                  "start": 873,
+                  "end": 1061
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "students",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": " and interactions of various stakeholders, including medical educators, medical students, AI patient agent, and clinical agents (physical exam agent, diagnostic agent, clinical interventio",
+                  "start": 873,
+                  "end": 1061
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "survey",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "survey",
+                  "quote": "s that guided the clinical reasoning training of medical students. A post-usage survey found that more than 78\\% of medical students reported that MAES improved their clinical reasoning ",
+                  "start": 1218,
+                  "end": 1404
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "simulation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "simulator",
+                  "quote": "rements Engineering for Explainable Multi-Agent Educational Systems: A Scenario Simulator for Clinical Reasoning Training",
+                  "start": 19,
+                  "end": 140
+                },
+                {
+                  "field": "abstract",
+                  "term": "simulator",
+                  "quote": "stages of the AI system engineering. The partial MAES for the clinical scenario simulator is~\\href{https://github.com/2sigmaEdTech/MAS/}{open sourced here}.",
+                  "start": 1700,
+                  "end": 1856
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.48550/arxiv.2604.17359",
       "recordType": "preprint",
@@ -24395,1023 +25612,6 @@
             ]
           }
         ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.1080/20464177.2026.2660568",
-      "recordType": "publication",
-      "title": "Analysing environmental conditions and human factors in marine casualties in the Black Sea using HFACS-PV and similarity mapping technique",
-      "abstract": "The Black Sea is a waterway characterised by adverse weather and sea conditions. Despite collaborations aimed at ensuring navigational safety, serious marine accidents continue to occur in the area. This study aims to identify human and organisational factors (HOFs) specific to the region that emerge in marine accidents. In this context, the focus was on factors contributing to common accident types, such as groundings and sinkings, occurring in the Black Sea 2019–2024. To identify contributing factors, modified Human Factors Analysis and Classification System was employed. Network analysis using VOSviewer was conducted to reveal relationships among contributing factors. The results showed that, in addition to frequently cited factors like adverse weather, sea conditions, and limited manoeuvring space, Black Sea-specific factors such as inland/river-type ships and aging/worn hull structures play a significant role in the occurrence of accidents. The most common accident sequence for accidents in the region was defined as a chain of events starting with engine failure, followed by drifting and grounding, and ultimately resulting in hull failure and sinking. This study contributes to a deeper understanding of HOFs specific to marine accidents in the Black Sea, providing a useful foundation for future research and risk management strategies.",
-      "doi": "10.1080/20464177.2026.2660568",
-      "externalIds": {
-        "openalex": "W7154734569"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7154734569"
-      },
-      "venue": "Journal of Marine Engineering & Technology",
-      "publicationDate": "2026-04-17",
-      "firstPublicDate": "2026-04-17",
-      "onlineDate": null,
-      "topics": [
-        "Maritime Navigation and Safety",
-        "Risk and Safety Analysis",
-        "Occupational Health and Safety Research"
-      ],
-      "keywords": [
-        "maritime accidents",
-        "Black Sea",
-        "human factors",
-        "organizational factors",
-        "similarity mapping",
-        "ship grounding",
-        "ship sinking",
-        "accident sequences",
-        "engine failure",
-        "adverse weather",
-        "inland waterway vessels",
-        "navigation safety",
-        "accident causes"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 6,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…ather and sea conditions. Despite collaborations aimed at ensuring navigational safety, serious marine accidents continue to occur in the area. This study aims to identify human and organisational factors (HOFs) specific to the region that emerge in marine accidents. In this context, the focus was on factors contributi…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…cidents in the Black Sea, providing a useful foundation for future research and risk management strategies.",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "failure",
-              "conceptLabel": "Fehler",
-              "matchedTerm": "failure",
-              "sourceValue": "…r accidents in the region was defined as a chain of events starting with engine failure, followed by drifting and grounding, and ultimately resulting in hull failure and sinking. This study contributes to a deeper understanding of HOFs specific to marine accidents in the Black Sea, providing a useful foundation for fut…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "failure",
-              "conceptLabel": "Fehler",
-              "matchedTerm": "failure",
-              "sourceValue": "engine failure",
-              "weight": 0
-            },
-            {
-              "source": "keyword",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "navigation safety",
-              "weight": 0
-            },
-            {
-              "source": "external_topic",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Maritime Navigation and Safety",
-              "weight": 0
-            },
-            {
-              "source": "external_topic",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "Risk and Safety Analysis",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:safety": 6,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "safety",
-        "human factors",
-        "occupational health",
-        "risk",
-        "failure"
-      ],
-      "authors": [
-        {
-          "id": "A5063893666",
-          "name": "Fatih Tonoğlu",
-          "orcid": "https://orcid.org/0000-0003-3372-2977",
-          "affiliations": []
-        },
-        {
-          "id": "A5098971123",
-          "name": "Fırat Sivri",
-          "orcid": "https://orcid.org/0000-0002-3666-0284",
-          "affiliations": []
-        },
-        {
-          "id": "A5007219082",
-          "name": "Serdar Yıldız",
-          "orcid": "https://orcid.org/0000-0002-3340-5819",
-          "affiliations": []
-        },
-        {
-          "id": "A5038791269",
-          "name": "Özkan Uğurlu",
-          "orcid": "https://orcid.org/0000-0002-3788-1759",
-          "affiliations": []
-        },
-        {
-          "id": "A5129848070",
-          "name": "Jin Wang",
-          "orcid": "https://orcid.org/0000-0003-4646-9106",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.1080/20464177.2026.2660568",
-      "openAccess": false,
-      "citedByCount": 1,
-      "firstSeenAt": "2026-10-20T10:06:56.240Z",
-      "firstSeenRunId": "ingestion-2026-10-20T10:06:39.708Z",
-      "retrievedAt": "2026-10-20T10:06:56.240Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-20T10:06:56.240Z",
-      "preferredVersionId": "openalex:W7154734569",
-      "versions": [
-        {
-          "id": "openalex:W7154734569",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7154734569",
-          "doi": "10.1080/20464177.2026.2660568",
-          "publicationDate": "2026-04-17",
-          "url": "https://doi.org/10.1080/20464177.2026.2660568"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-282.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-factors"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "title",
-              "term": "human",
-              "quote": "Analysing environmental conditions and human factors in marine casualties in the Black Sea using HFACS-PV and similarity mapping technique",
-              "start": 0,
-              "end": 138
-            },
-            {
-              "field": "title",
-              "term": "human factors",
-              "quote": "Analysing environmental conditions and human factors in marine casualties in the Black Sea using HFACS-PV and similarity mapping technique",
-              "start": 0,
-              "end": 138
-            },
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "ous marine accidents continue to occur in the area. This study aims to identify human and organisational factors (HOFs) specific to the region that emerge in marine accidents. In this c",
-              "start": 147,
-              "end": 332
-            },
-            {
-              "field": "abstract",
-              "term": "human factors",
-              "quote": "ccurring in the Black Sea 2019–2024. To identify contributing factors, modified Human Factors Analysis and Classification System was employed. Network analysis using VOSviewer was conducted to ",
-              "start": 438,
-              "end": 631
-            }
-          ],
-          "ai": [],
-          "domain": [
-            {
-              "field": "title",
-              "term": "human factors",
-              "quote": "Analysing environmental conditions and human factors in marine casualties in the Black Sea using HFACS-PV and similarity mapping technique",
-              "start": 0,
-              "end": 138
-            },
-            {
-              "field": "abstract",
-              "term": "human factors",
-              "quote": "ccurring in the Black Sea 2019–2024. To identify contributing factors, modified Human Factors Analysis and Classification System was employed. Network analysis using VOSviewer was conducted to ",
-              "start": 438,
-              "end": 631
-            }
-          ],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.16675",
-      "recordType": "preprint",
-      "title": "Appearance-free Action Recognition: Zero-shot Generalization in Humans and a Two-Pathway Model",
-      "abstract": "Action recognition is a fundamental ability for social species. Yet, its underlying computations are not well understood. Classical psychophysical studies using simplified stimuli have shown that humans can perceive body motion even under degradation of relevant shape cues. Recent work using real-world action videos and their appearance-free counterparts (that preserve motion but lack static shape cues) included explicit training of humans and models on the appearance-free videos. Whether humans and vision models generalize in a zero-shot manner to appearance-free transformations of real-world action videos is not yet known. To measure this generalization in humans, we conducted a laboratory-based psychophysics experiment. 22 participants were trained to recognize five action categories using naturalistic videos (UCF5 dataset), and tested zero-shot on two types of appearance-free transformations: (i) dense-noise motion videos from an existing dataset (AFD5) and (ii) random-dot appearance-free videos. We find that participants recognize actions in both types of appearance-free videos well above chance, albeit with reduced accuracy compared to naturalistic videos. To model this behavior, we developed a two-pathway 3D CNN-based model combining an RGB (form) stream and an optical flow (motion) stream, including a coherence-gating mechanism inspired by Gestalt common-fate grouping. Our model generalizes to both appearance-free datasets and outperforms contemporary video classification models, narrowing the gap to human performance. We find that the motion pathway is critical for generalization to appearance-free videos, while the form pathway improves performance on naturalistic videos. Our findings highlight the importance of motion-based representations for generalization to appearance-free videos, and support the use of multi-stream architectures to model video-based action recognition.",
-      "doi": "10.48550/arxiv.2604.16675",
-      "externalIds": {
-        "openalex": "W7155053272"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7155053272"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-04-17",
-      "firstPublicDate": "2026-04-17",
-      "onlineDate": null,
-      "topics": [
-        "Human Pose and Action Recognition",
-        "Action Observation and Synchronization",
-        "Human Motion and Animation"
-      ],
-      "keywords": [
-        "Generalization",
-        "Action (physics)",
-        "Motion (physics)",
-        "Gestalt psychology",
-        "Psychophysics",
-        "Measure (data warehouse)",
-        "Optical flow"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 1,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "human performance"
-      ],
-      "authors": [
-        {
-          "id": "A5047580547",
-          "name": "Prerana Kumar",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5046338839",
-          "name": "Martin A. Giese",
-          "orcid": "https://orcid.org/0000-0003-1178-2768",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2604.16675",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-29T11:24:20.877Z",
-      "firstSeenRunId": "ingestion-2026-09-29T11:23:24.379Z",
-      "retrievedAt": "2026-09-29T11:24:20.877Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-29T11:24:20.877Z",
-      "preferredVersionId": "openalex:W7155053272",
-      "versions": [
-        {
-          "id": "openalex:W7155053272",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7155053272",
-          "doi": "10.48550/arxiv.2604.16675",
-          "publicationDate": "2026-04-17",
-          "url": "https://doi.org/10.48550/arxiv.2604.16675"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-282.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-factors"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "title",
-              "term": "human",
-              "quote": "Appearance-free Action Recognition: Zero-shot Generalization in Humans and a Two-Pathway Model",
-              "start": 0,
-              "end": 94
-            },
-            {
-              "field": "title",
-              "term": "humans",
-              "quote": "Appearance-free Action Recognition: Zero-shot Generalization in Humans and a Two-Pathway Model",
-              "start": 0,
-              "end": 94
-            },
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "tood. Classical psychophysical studies using simplified stimuli have shown that humans can perceive body motion even under degradation of relevant shape cues. Recent work using real-worl",
-              "start": 116,
-              "end": 302
-            },
-            {
-              "field": "abstract",
-              "term": "humans",
-              "quote": "tood. Classical psychophysical studies using simplified stimuli have shown that humans can perceive body motion even under degradation of relevant shape cues. Recent work using real-worl",
-              "start": 116,
-              "end": 302
-            }
-          ],
-          "ai": [],
-          "domain": [
-            {
-              "field": "abstract",
-              "term": "human performance",
-              "quote": " and outperforms contemporary video classification models, narrowing the gap to human performance. We find that the motion pathway is critical for generalization to appearance-free videos, while th",
-              "start": 1454,
-              "end": 1651
-            }
-          ],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [
-            {
-              "value": "participants",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "participant",
-                  "quote": "ization in humans, we conducted a laboratory-based psychophysics experiment. 22 participants were trained to recognize five action categories using naturalistic videos (UCF5 dataset), and test",
-                  "start": 656,
-                  "end": 848
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "human performance",
-                  "quote": " and outperforms contemporary video classification models, narrowing the gap to human performance. We find that the motion pathway is critical for generalization to appearance-free videos, while th",
-                  "start": 1454,
-                  "end": 1651
-                },
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": " in both types of appearance-free videos well above chance, albeit with reduced accuracy compared to naturalistic videos. To model this behavior, we developed a two-pathway 3D CNN-based mo",
-                  "start": 1059,
-                  "end": 1247
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "re this generalization in humans, we conducted a laboratory-based psychophysics experiment. 22 participants were trained to recognize five action categories using naturalistic videos (UCF5 d",
-                  "start": 641,
-                  "end": 831
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2605.23920",
-      "recordType": "preprint",
-      "title": "Artificial Effort",
-      "abstract": "Real-effort tasks, in which participants perform cognitively costly activities whose outcomes depend on actual performance, are widely used in experimental economics. Their validity, however, rests on the assumption that a human performs them. We study whether this assumption still holds in the era of Artificial Intelligence (AI) and Large Language Models (LLMs). Using 8 canonical real-effort tasks and 23 LLMs from three major providers, we show that most tasks can now be solved accurately and at a negligible cost, while only a few resist automation. Performance improves with each model generation, and midtier models are rapidly closing the gap with frontier ones, broadening the set of widely accessible models that can automate these tasks. Additionally, we show that verbally offering monetary incentives has no effect on LLM performance. Our findings establish a boundary condition for the use of real-effort tasks in unsupervised settings: when participants can cheaply outsource task completion to an LLM, observed performance may no longer reflect genuine human effort.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2605.23920"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2605.23920"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-04-17",
-      "firstPublicDate": "2026-04-17",
-      "onlineDate": "2026-04-17",
-      "topics": [
-        "cs.CY",
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 4,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "large language model",
-        "large language models",
-        "LLM"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Federico Belotti",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Stefano Coniglio",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Antonio Cosma",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Francesco Fallucchi",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2605.23920v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-09T11:56:04.524Z",
-      "firstSeenRunId": "ingestion-2026-10-09T11:55:34.583Z",
-      "retrievedAt": "2026-10-09T11:56:04.524Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-10-09T11:56:04.524Z",
-      "preferredVersionId": "arxiv:2605.23920",
-      "versions": [
-        {
-          "id": "arxiv:2605.23920",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2605.23920",
-          "doi": null,
-          "publicationDate": "2026-04-17",
-          "url": "https://arxiv.org/abs/2605.23920v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-282.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "experimental economics. Their validity, however, rests on the assumption that a human performs them. We study whether this assumption still holds in the era of Artificial Intelligence (",
-              "start": 143,
-              "end": 328
-            },
-            {
-              "field": "abstract",
-              "term": "participant",
-              "quote": "Real-effort tasks, in which participants perform cognitively costly activities whose outcomes depend on actual performance, are widely used ",
-              "start": 0,
-              "end": 140
-            },
-            {
-              "field": "abstract",
-              "term": "participants",
-              "quote": "Real-effort tasks, in which participants perform cognitively costly activities whose outcomes depend on actual performance, are widely used ",
-              "start": 0,
-              "end": 140
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "human performs them. We study whether this assumption still holds in the era of Artificial Intelligence (AI) and Large Language Models (LLMs). Using 8 canonical real-effort tasks and 23 LLMs from three m",
-              "start": 223,
-              "end": 426
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "ther this assumption still holds in the era of Artificial Intelligence (AI) and Large Language Models (LLMs). Using 8 canonical real-effort tasks and 23 LLMs from three major providers, we show that mo",
-              "start": 256,
-              "end": 457
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "ther this assumption still holds in the era of Artificial Intelligence (AI) and Large Language Models (LLMs). Using 8 canonical real-effort tasks and 23 LLMs from three major providers, we show that mo",
-              "start": 256,
-              "end": 457
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [
-            {
-              "value": "participants",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "participant",
-                  "quote": "Real-effort tasks, in which participants perform cognitively costly activities whose outcomes depend on actual performance, are widely used ",
-                  "start": 0,
-                  "end": 140
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "ther this assumption still holds in the era of Artificial Intelligence (AI) and Large Language Models (LLMs). Using 8 canonical real-effort tasks and 23 LLMs from three major providers, we show that mo",
-                  "start": 256,
-                  "end": 457
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "automation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "automation",
-                  "quote": " can now be solved accurately and at a negligible cost, while only a few resist automation. Performance improves with each model generation, and midtier models are rapidly closing the gap wi",
-                  "start": 465,
-                  "end": 655
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.30564/jees.v8i4.13213",
-      "recordType": "publication",
-      "title": "Autonomous Multi-Robot Systems for Real-Time Environmental Monitoring and Disaster Response",
-      "abstract": "Autonomous multi-robot systems (MRS) are revolutionizing environmental monitoring and disaster response by enabling real-time data collection, enhanced situational awareness, and efficient task execution in hazardous environments. They are made up of autonomous and collaborative groups of robots that are fitted with high-tech sensors, machine learning algorithms, and communication technologies that enable them to handle a host of tasks, including environmental surveillance and search and rescue missions. The MRS has major strengths compared to the conventional approaches, which are increased response rates, operation in hazardous or even inaccessible locations, and scalability when dealing with high-volume operations. This review examines the core technologies of MRS, which are sensor integration, autonomous navigation, and coordination algorithms, and how they are used in environmental monitoring and managing disasters. Such issues as environmental variability, power constraints, reliability of communication, scalability, and ethical issues are also analyzed. Nevertheless, the problems do not deter the further development of AI, energy systems, and communication standards, which support the functionality of MRS and allow more efficient, adaptable, and effective systems. The next generation of autonomous MRS has huge potential of enhancing disaster resilience, environmental conservation, and management of resources. MRS can be instrumental in reducing the impact of natural disasters, tracking ecosystems, and protecting human life by working around the current constraints.",
-      "doi": "10.30564/jees.v8i4.13213",
-      "externalIds": {
-        "openalex": "W7154695214"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7154695214"
-      },
-      "venue": "Journal of Environmental & Earth Sciences",
-      "publicationDate": "2026-04-17",
-      "firstPublicDate": "2026-04-17",
-      "onlineDate": null,
-      "topics": [
-        "Robotics and Automated Systems",
-        "Distributed Control Multi-Agent Systems",
-        "Modular Robots and Swarm Intelligence"
-      ],
-      "keywords": [
-        "environmental monitoring",
-        "disaster response",
-        "search and rescue",
-        "sensor integration",
-        "autonomous navigation",
-        "communication reliability",
-        "power constraints",
-        "scalability",
-        "ethical considerations",
-        "disaster resilience",
-        "ecological monitoring"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "awareness",
-              "conceptLabel": "Situation Awareness",
-              "matchedTerm": "situational awareness",
-              "sourceValue": "…onitoring and disaster response by enabling real-time data collection, enhanced situational awareness, and efficient task execution in hazardous environments. They are made up of autonomous and collaborative groups of robots that are fitted with high-tech sensors, machine learning algorithms, and communication technolo…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "resilience",
-              "conceptLabel": "Resilienz",
-              "matchedTerm": "resilience",
-              "sourceValue": "… The next generation of autonomous MRS has huge potential of enhancing disaster resilience, environmental conservation, and management of resources. MRS can be instrumental in reducing the impact of natural disasters, tracking ecosystems, and protecting human life by working around the current constraints.",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "resilience",
-              "conceptLabel": "Resilienz",
-              "matchedTerm": "resilience",
-              "sourceValue": "disaster resilience",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 1,
-        "topic:cognition": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "learning",
-        "situational awareness",
-        "resilience"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Xiaolan Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5133875237",
-          "name": "Xinrong Ma",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5133858145",
-          "name": "Yanwei Xu",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.30564/jees.v8i4.13213",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-20T10:06:56.240Z",
-      "firstSeenRunId": "ingestion-2026-10-20T10:06:39.708Z",
-      "retrievedAt": "2026-10-20T10:06:56.240Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-20T10:06:56.240Z",
-      "preferredVersionId": "openalex:W7154695214",
-      "versions": [
-        {
-          "id": "openalex:W7154695214",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7154695214",
-          "doi": "10.30564/jees.v8i4.13213",
-          "publicationDate": "2026-04-17",
-          "url": "https://doi.org/10.30564/jees.v8i4.13213"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-282.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "n reducing the impact of natural disasters, tracking ecosystems, and protecting human life by working around the current constraints.",
-              "start": 1465,
-              "end": 1598
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "so analyzed. Nevertheless, the problems do not deter the further development of AI, energy systems, and communication standards, which support the functionality of MRS and allow more",
-              "start": 1064,
-              "end": 1246
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "automation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "robot",
-                  "quote": "Autonomous Multi-Robot Systems for Real-Time Environmental Monitoring and Disaster Response",
-                  "start": 0,
-                  "end": 91
-                },
-                {
-                  "field": "abstract",
-                  "term": "robot",
-                  "quote": "Autonomous multi-robot systems (MRS) are revolutionizing environmental monitoring and disaster response by enabling real-t",
-                  "start": 0,
-                  "end": 122
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.5552/crojfe.2026.3977",
-      "recordType": "publication",
-      "title": "Battery-Powered Chainsaw Can be Efficiently Used for Commercial Thinning in Young Pine Stands",
-      "abstract": "Chainsaws are still a commonly used tool in the tending of young forests. The small volume of felled trees makes the use of powerful multi-operational machines economically unjustifiable. Moreover, the use of traditional petrol chainsaws carries a number of problems for the operator, such as noise, vibration, and exhaust fumes. Battery-powered tools can be an alternative to traditional petrol chainsaws. The purpose of this study was to determine the possibilities of using a battery-powered chainsaw during late thinning in terms of productivity and ergonomics. For the study, an ECHO ECCS-58V battery-powered chainsaw and a DOLMAR PS 5000 petrol chainsaw were used. Measurements were conducted in a 14-year-old pine stand. All measured noise level parameters were significantly higher for the petrol chainsaw. The average operating efficiency was 0.15 ha/hfor the battery-powered chainsaw and 0.16 ha/h for the petrol chainsaw. The petrol chainsaw ran for an average of 42.0 minutes on a single tank of fuel, while the battery-powered chainsaw ran for an average of 41.0 minutes on a single battery. It was found that the battery-powered chainsaw achieved very similar productivity. With the availability of a sufficient number of batteries, it can successfully replace traditional petrol chainsaws during the tending of young forests. This will significantly reduce the negative impact of noise, vibrations, and exhaust fumes on the operator, while maintaining satisfactory productivity.",
-      "doi": "10.5552/crojfe.2026.3977",
-      "externalIds": {
-        "openalex": "W7154682526"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7154682526"
-      },
-      "venue": "Croatian journal of forest engineering",
-      "publicationDate": "2026-04-17",
-      "firstPublicDate": "2026-04-17",
-      "onlineDate": null,
-      "topics": [
-        "Forest Biomass Utilization and Management",
-        "Forest Management and Policy",
-        "Forest ecology and management"
-      ],
-      "keywords": [
-        "forest thinning",
-        "young pine stands",
-        "forest tending",
-        "operational efficiency",
-        "noise",
-        "vibration",
-        "exhaust gas",
-        "operator ergonomics"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 1,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "ergonomics"
-      ],
-      "authors": [
-        {
-          "id": "A5059782608",
-          "name": "Bartłomiej Naskrent",
-          "orcid": "https://orcid.org/0000-0002-0756-4162",
-          "affiliations": []
-        },
-        {
-          "id": "A5055743572",
-          "name": "Karol Tomczak",
-          "orcid": "https://orcid.org/0000-0001-5192-0294",
-          "affiliations": []
-        },
-        {
-          "id": "A5116208476",
-          "name": "Ewelina Naskrent",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5001490740",
-          "name": "Wojciech Rukat",
-          "orcid": "https://orcid.org/0000-0003-4856-7543",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.5552/crojfe.2026.3977",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-20T10:06:56.240Z",
-      "firstSeenRunId": "ingestion-2026-10-20T10:06:39.708Z",
-      "retrievedAt": "2026-10-20T10:06:56.240Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-20T10:06:56.240Z",
-      "preferredVersionId": "openalex:W7154682526",
-      "versions": [
-        {
-          "id": "openalex:W7154682526",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7154682526",
-          "doi": "10.5552/crojfe.2026.3977",
-          "publicationDate": "2026-04-17",
-          "url": "https://doi.org/10.5552/crojfe.2026.3977"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-282.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-factors"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "operator",
-              "quote": "r, the use of traditional petrol chainsaws carries a number of problems for the operator, such as noise, vibration, and exhaust fumes. Battery-powered tools can be an alternative to tradit",
-              "start": 195,
-              "end": 383
-            },
-            {
-              "field": "abstract",
-              "term": "ergonomics",
-              "quote": "ng a battery-powered chainsaw during late thinning in terms of productivity and ergonomics. For the study, an ECHO ECCS-58V battery-powered chainsaw and a DOLMAR PS 5000 petrol chainsaw were",
-              "start": 474,
-              "end": 664
-            }
-          ],
-          "ai": [],
-          "domain": [
-            {
-              "field": "abstract",
-              "term": "ergonomics",
-              "quote": "ng a battery-powered chainsaw during late thinning in terms of productivity and ergonomics. For the study, an ECHO ECCS-58V battery-powered chainsaw and a DOLMAR PS 5000 petrol chainsaw were",
-              "start": 474,
-              "end": 664
-            },
-            {
-              "field": "abstract",
-              "term": "ergonomic",
-              "quote": "ng a battery-powered chainsaw during late thinning in terms of productivity and ergonomics. For the study, an ECHO ECCS-58V battery-powered chainsaw and a DOLMAR PS 5000 petrol chainsaw were",
-              "start": 474,
-              "end": 664
-            }
-          ],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [
-            {
-              "value": "operators",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "operator",
-                  "quote": "r, the use of traditional petrol chainsaws carries a number of problems for the operator, such as noise, vibration, and exhaust fumes. Battery-powered tools can be an alternative to tradit",
-                  "start": 195,
-                  "end": 383
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
         "finding": null,
         "findingStatus": "requires-reading",
         "abstractAvailable": true

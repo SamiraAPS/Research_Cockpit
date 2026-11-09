@@ -1,7 +1,21 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-08T11:58:37.803Z",
+  "generatedAt": "2026-11-09T13:57:03.044Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.24481",
+      "abstract": "Language models can make personalized recommendations from rich item content, user history, and feedback. However, evaluating many candidates with full-text inputs incurs substantial online computation and limits serving throughput. We introduce DuoLM, a framework for fast and effective personalized recommendation that integrates a compact recommendation model with an efficient serving runtime. An encoder LLM learns compact item representations for offline reuse, while a personalized ranker LLM combines them with user history and feedback for recommendation. We train both models end to end with recommendation supervision and teacher distillation. The runtime further accelerates inference through virtual token IDs for embedding access, shared history computation, and CUDA Graph replay. Benchmark results show that our framework achieves recommendation quality comparable to that of the expert teacher model. On a single H100, it delivers approximately 26,400 candidate scores per second, about $60\\times$ the throughput of the teacher served with vLLM and automatic prefix caching.",
+      "topics": [
+        "Recommender Systems and Techniques",
+        "Information Retrieval and Search Behavior",
+        "Advanced Bandit Algorithms Research"
+      ],
+      "keywords": [
+        "personalized recommendation",
+        "language models",
+        "inference acceleration"
+      ]
+    },
     {
       "id": "doi:10.1038/s41598-026-72340-1",
       "abstract": "With the rapid advancement of artificial intelligence technologies, AI-driven medical image classification has attracted considerable attention in recent years. However, increasingly stringent data privacy regulations have significantly restricted data sharing among medical institutions, making it difficult for traditional centralized learning frameworks to effectively exploit distributed medical data resources. As a privacy-preserving distributed machine learning paradigm, federated learning enables multiple institutions to collaboratively train models without directly exchanging raw data. Nevertheless, federated learning still faces several critical challenges in practical applications, including heterogeneous data distributions and model bias caused by non-independent and identically distributed (Non-IID) data. To address these challenges, this paper proposes a dynamic weighted learning method based on federated contrastive learning. Different from approaches that focus solely on local representation optimization or employ fixed aggregation weights, the proposed framework couples supervised contrastive local training with loss-feedback-based multi-factor client weighting, thereby jointly controlling local representation drift and server-side model aggregation. Specifically, contrastive learning is integrated into the federated learning framework by jointly leveraging local and global model representations for supervised contrastive optimization. This strategy effectively mitigates the distribution discrepancy among different clients and gradually aligns local models with the global model as communication rounds progress. Furthermore, during global aggregation, a loss-feedback rule is introduced to accept the candidate global model parameters and aggregation weights only when the candidate loss-feedback value decreases. In addition, a multi-factor weighted aggregation mechanism is introduced to comprehensively evaluate client contributions based on multiple factors, thereby assigning larger aggregation weights to local models that are more beneficial to global model optimization. Experiments were conducted on an osteoporosis knee X-ray dataset and a COVID–Pneumonia–Normal chest X-ray dataset under IID and different Non-IID settings. Under severe Non-IID conditions, the proposed method achieved accuracies of 92.12% and 96.27%, area under the receiver operating characteristic curve (AUC) values of 98.31% and 97.68%, and F1 scores of 90.92% and 93.22% on the two datasets, respectively. Comparisons with representative federated learning methods and the static-weighting ablation setting demonstrate that the proposed method maintains competitive classification performance and stable training behavior under heterogeneous client distributions.",
@@ -3864,21 +3878,6 @@
         "perceived capability",
         "algorithmic transparency",
         "decision strategies"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.24545",
-      "abstract": "Software quality has long rested on specifications that state what code must do, and on testing and verification that check that the code does it. Agentic systems change this foundation: they replace parts of their logic, such as choosing the next tool, judging whether an action is allowed, or writing code to run, with calls to a large language model (LLM). The program still relies on what this logic must guarantee, but the model's behavior is not fixed by code, varies across runs, and can be steered by its input. The guarantee must therefore come from the program around each LLM call site, as a contract of pre-conditions, prompt constraints, and post-conditions. We present an empirical study of these contracts in 496 LLM call sites of 40 popular open-source agentic systems (13.4 MLOC, four languages). Using a multi-agent pipeline validated by 17,428 human judgments, we trace where every model output flows, derive an expected contract for each call site without access to its code, and compare it with the contract that the code implements. We find that 48% of LLM outputs reach control flow or execution, and 73% of these never reach a person. Programs enforce 78% of their constraints in code, but in the prompt, 67% of the constraints are only requested from the model. Although 82% of call sites are checked before and after the call, 63% of the expected constraints are unmet and only 5.3% of call sites satisfy their whole contract; ten recurring patterns explain 99% of the gaps. 38 mechanisms behind these gaps trigger at runtime, and a small code fix that enforces the expected constraint stops all 38. Our results show that the presence of checks says little about their adequacy, and we derive implications for agent developers, framework maintainers, and researchers.",
-      "topics": [
-        "Software Engineering Research",
-        "Software Testing and Debugging Techniques",
-        "Advanced Software Engineering Methodologies"
-      ],
-      "keywords": [
-        "agentic systems",
-        "large language models",
-        "constraint enforcement",
-        "multi-agent pipeline"
       ]
     }
   ]

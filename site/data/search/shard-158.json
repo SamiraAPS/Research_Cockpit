@@ -1,7 +1,97 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-08T11:58:37.803Z",
+  "generatedAt": "2026-11-09T13:57:03.044Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2604.06683",
+      "abstract": "Software architecture serves as the blueprint of a software system, capturing high-level structural decisions that shape downstream implementation and system quality. Despite this central role, generating architecture designs from requirement documents remains underexplored, with limited task-specific benchmarks for generation or rigorous evaluation. To bridge this gap, we introduce R2ABench, a benchmark for requirements-to-architecture (R2A) reasoning. R2ABench contains 68 projects with human-validated references collected from both educational-style settings and GitHub repositories. Each project is packaged as a unified instance that provides a structured software requirements specification (SRS), a reference architecture view in PlantUML, and the corresponding source requirement artifacts. To evaluate generated architecture views, we design a layered hybrid evaluation framework spanning syntax validation, structural graph diagnostics, and semantic and evidence-based architecture scoring. Using this framework, we conduct a comprehensive empirical study of state-of-the-art LLMs and agents on R2ABench. We find that current systems can often generate syntactically valid and readable architecture views, but still struggle with relation-level architecture modeling across both subsets: component identification is substantially stronger than edge recovery, and edge hallucination is the dominant structural failure mode. Semantically, structural fidelity does not guarantee requirement coverage or traceability, which emerge as the primary quality gaps. The associated data files are available at https://figshare.com/s/01f0a5fb6243a6a60f23.",
+      "topics": [
+        "Advanced Software Engineering Methodologies",
+        "Software Engineering Research",
+        "Model-Driven Software Engineering Techniques"
+      ],
+      "keywords": [
+        "software architecture",
+        "benchmark",
+        "architectural views",
+        "PlantUML",
+        "large language models",
+        "LLM agents",
+        "architectural modeling",
+        "requirements traceability",
+        "component identification"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.06799",
+      "abstract": "Algebraic reasoning remains one of the most informative stress tests for large language models, yet current benchmarks provide no mechanism for attributing failure to a specific cause. When a model fails an algebraic problem, a single accuracy score cannot reveal whether the expression was too deeply nested, the operator too uncommon, the intermediate state count too high, or the dependency chain too long. Prior work has studied individual failure modes in isolation, but no framework has varied each complexity factor independently under strict experimental control. No prior system has offered automatic generation and verification of problems of increasing complexity to track model progress over time. We introduce a nine-dimension algebraic complexity framework in which each factor is varied independently while all others are held fixed, with problem generation and verification handled by a parametric pipeline requiring no human annotation. Each dimension is grounded in a documented LLM failure mode and captures a structurally distinct aspect of algebraic difficulty, including expression nesting depth, simultaneous intermediate result count, sub-expression complexity, operator hardness, and dependent reasoning chain length. We evaluated seven instruction-tuned models spanning 8B to 235B parameters across all nine dimensions and find that working memory is the dominant scale-invariant bottleneck. Every model collapses between 20 and 30 parallel branches regardless of parameter count, pointing to a hard architectural constraint rather than a solvable capacity limitation. Our analysis further identifies a minimal yet diagnostically sufficient subset of five dimensions that together span the full space of documented algebraic failure modes, providing a complete complexity profile of a model's algebraic reasoning capacity.",
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Mathematics, Computing, and Information Processing"
+      ],
+      "keywords": [
+        "algebraic thinking",
+        "large language models",
+        "failure mode identification",
+        "nested expressions",
+        "working memory",
+        "instruction-tuned models"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.07502",
+      "abstract": "For six decades, software engineering principles have been optimized for a single consumer: the human developer. The rise of agentic AI development, where LLM-based agents autonomously read, write, navigate, and debug codebases, introduces a new primary consumer with fundamentally different constraints. This paper presents a systematic analysis of human-centric conventions under agentic pressure and proposes a key design principle: semantic density optimization, eliminating tokens that carry zero information while preserving tokens that carry high semantic value. We validate this principle through a controlled experiment on log format token economy across four conditions (human-readable, structured, compressed, and tool-assisted compressed), demonstrating a counterintuitive finding: aggressive compression increased total session cost by 67% despite reducing input tokens by 17%, because it shifted interpretive burden to the model's reasoning phase. We extend this principle to propose the rehabilitation of classical anti-patterns, introduce the program skeleton concept for agentic code navigation, and argue for a fundamental decoupling of semantic intent from human-readable representation.",
+      "topics": [
+        "Software Engineering Research",
+        "Software Engineering Techniques and Practices",
+        "Advanced Software Engineering Methodologies"
+      ],
+      "keywords": [
+        "LLM agents",
+        "token economy",
+        "anti-patterns",
+        "code navigation"
+      ]
+    },
+    {
+      "id": "doi:10.20944/preprints202604.0491.v1",
+      "abstract": "As artificial intelligence increasingly mediates decision-making across organizational and societal contexts, a critical challenge emerges concerning the preservation of human cognitive coherence under system-driven conditions. While prior research has emphasized trust, fairness, and transparency, it provides limited explanation of whether individuals remain cognitively aligned with decisions generated through algorithmic processes. This paper introduces perceptual integrity as a construct capturing the extent to which individuals maintain coherence, interpretability, and authorship over their decisions in human–AI interaction. Building on a proposed theory of conscious leadership, cognition is conceptualized as an emergent interaction among environment, memory, systems, and the human agent, where decision quality depends on the balance among these forces. An experimental study (N = 602) was conducted to examine the impact of decision structure on perceptual integrity and its relationship with trust. Participants were assigned to either an algorithmic imposition condition or an interpretive autonomy condition. Results indicate that algorithmic imposition reduces perceptual integrity compared to interpretive autonomy (t(600) = 4.21, p < 0.001, d = 0.38). Furthermore, perceptual integrity significantly predicts trust (β = 0.36, p < 0.001) and partially mediates the relationship between decision condition and trust (indirect effect = 0.17, 95% CI [0.09, 0.27]). These findings suggest that trust in AI-assisted decisions is shaped not only by system performance but also by the degree to which individuals remain cognitively engaged in the decision process. By introducing perceptual integrity as a measurable manifestation of cognitive balance, this study contributes to human–AI research and offers a new perspective on leadership as the management of cognitive conditions rather than behavioral outcomes.",
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "human-AI interaction",
+        "trust in AI",
+        "algorithmic decision-making",
+        "conscious leadership",
+        "cognitive coherence",
+        "decision structure",
+        "cognitive balance"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.06727",
+      "abstract": "Heterogeneity in time series data is more pronounced than in vision or language, as temporal dynamics vary substantially across domains and tasks. Existing efforts on training time series foundation models (TSFMs) from scratch are often trained with mixed-batch strategies that merge large-scale datasets, which can cause gradient conflicts and degrade representation quality. To address this, we propose a fine-grained learning method that distills invariant knowledge from heterogeneous series while reducing cross-domain interference. We characterize heterogeneity at two levels: inter-domain and intra-domain. To tackle this bi-level heterogeneity, we design a federated learning method that mitigates intra-domain conflicts by enforcing domain-invariant and semantically consistent representations through local regularization, and addresses inter-domain discrepancies by enhancing cross-domain collaboration via domain-aware aggregation. Experiments across diverse benchmarks show that TSFMs trained with our method consistently outperform both centralized and federated TSFM baselines in point and probabilistic forecasting, while also achieving competitive zero-shot performance at scale, offering a flexible pathway for training TSFMs from scratch in heterogeneous environments.",
+      "topics": [
+        "Time Series Analysis and Forecasting",
+        "Domain Adaptation and Few-Shot Learning",
+        "Privacy-Preserving Technologies in Data"
+      ],
+      "keywords": [
+        "time series foundation models",
+        "federated learning",
+        "data heterogeneity",
+        "domain-invariant features",
+        "local regularization",
+        "point forecasting",
+        "probabilistic forecasting",
+        "zero-shot forecasting",
+        "temporal dynamics"
+      ]
+    },
     {
       "id": "doi:10.64223/tvj.p2026.v2.i5.a95",
       "abstract": "This article focuses on clarifying the current situation of university students, especially those not majoring in English, lacking initiative in learning communicative English – a common problem in Vietnamese higher education today. Based on an analysis of the main causes related to learner psychology, teaching methods, and the learning environment, the article proposes a system of measures to develop students' selfdirected learning capacity. The measures are built according to three main directions: (1) Cultivating self-directed learning skills and enhancing intrinsic motivation; (2) Innovating teaching methods through the application of the flipped classroom model and project-based learning; (3) Building a safe learning environment supported by technology. The research results aim to form sustainable selfdirected learning capacity, thereby contributing to improving the learning efficiency and English communication ability of students in the context of international integration.",
@@ -3739,96 +3829,6 @@
         "social media in language teaching",
         "English teacher education",
         "Tadulako University"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.06854",
-      "abstract": "BACKGROUND: Recent studies have shown that domain-adapted large language models (LLMs) do not consistently outperform general-purpose counterparts on standard medical benchmarks, raising questions about the need for specialized clinical adaptation. METHODS: We systematically compare general and clinical LLMs on a diverse set of multiple choice clinical question answering tasks in English and Spanish. We introduce a perturbation based evaluation benchmark that probes model robustness, instruction following, and sensitivity to adversarial variations. Our evaluation includes, one-step and two-step question transformations, multi prompt testing and instruction guided assessment. We analyze a range of state-of-the-art clinical models and their general-purpose counterparts, focusing on Llama 3.1-based models. Additionally, we introduce Marmoka, a family of lightweight 8B-parameter clinical LLMs for English and Spanish, developed via continual domain-adaptive pretraining on medical corpora and instructions. RESULTS: The experiments show that clinical LLMs do not consistently outperform their general purpose counterparts on English clinical tasks, even under the proposed perturbation based benchmark. However, for the Spanish subsets the proposed Marmoka models obtain better results compared to Llama. CONCLUSIONS: Our results show that, under current short-form MCQA benchmarks, clinical LLMs offer only marginal and unstable improvements over general-purpose models in English, suggesting that existing evaluation frameworks may be insufficient to capture genuine medical expertise. We further find that both general and clinical models exhibit substantial limitations in instruction following and strict output formatting. Finally, we demonstrate that robust medical LLMs can be successfully developed for low-resource languages such as Spanish, as evidenced by the Marmoka models.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Topic Modeling",
-        "Machine Learning in Healthcare"
-      ],
-      "keywords": [
-        "clinical large language models",
-        "domain adaptation",
-        "medical question answering",
-        "multiple-choice question answering",
-        "adversarial robustness",
-        "instruction following",
-        "low-resource languages",
-        "Spanish language",
-        "Llama 3.1",
-        "medical knowledge"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.06552",
-      "abstract": "Misinformation is on the rise, and the strong writing capabilities of LLMs lower the barrier for malicious actors to produce and disseminate false information. We study how LLMs behave when prompted to spread misinformation across languages and target countries, and introduce GlobalLies, a multilingual parallel dataset of 440 misinformation generation prompt templates and 6,867 entities, spanning 8 languages and 195 countries. Using both human annotations and large-scale LLM-as-a-judge evaluations across hundreds of thousands of generations from state-of-the-art models, we show that misinformation generation varies systematically based on the country being discussed. Propagation of lies by LLMs is substantially higher in many lower-resource languages and for countries with a lower Human Development Index (HDI). We find that existing mitigation strategies provide uneven protection: input safety classifiers exhibit cross-lingual gaps, and retrieval-augmented fact-checking remains inconsistent across regions due to unequal information availability. We release GlobalLies for research purposes, aiming to support the development of mitigation strategies to reduce the spread of global misinformation: https://github.com/zohaib-khan5040/globallies",
-      "topics": [
-        "Misinformation and Its Impacts",
-        "Topic Modeling",
-        "Hate Speech and Cyberbullying Detection"
-      ],
-      "keywords": [
-        "large language models",
-        "LLM-as-a-judge",
-        "cross-lingual bias",
-        "misinformation propagation",
-        "Human Development Index",
-        "low-resource languages",
-        "misinformation mitigation"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.engappai.2026.114772",
-      "abstract": null,
-      "topics": [
-        "Advanced Battery Technologies Research",
-        "Advancements in Battery Materials",
-        "Structural Health Monitoring Techniques"
-      ],
-      "keywords": [
-        "lithium-ion battery energy storage systems",
-        "state of health estimation",
-        "battery degradation",
-        "physics-informed neural networks",
-        "convolutional neural networks",
-        "battery prognostics",
-        "battery lifecycle management"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.oceaneng.2026.125464",
-      "abstract": null,
-      "topics": [
-        "Maritime Navigation and Safety",
-        "Human-Automation Interaction and Safety",
-        "Air Traffic Management and Optimization"
-      ],
-      "keywords": [
-        "unmanned surface vehicles",
-        "restricted waters",
-        "field theory",
-        "human factors",
-        "Bayesian optimization",
-        "collision avoidance",
-        "berthing",
-        "turning manoeuvres"
-      ]
-    },
-    {
-      "id": "doi:10.18653/v1/2026.acl-long.1191",
-      "abstract": "Current LLM-based services typically require users to submit raw text regardless of its sensitivity. While intuitive, such practice introduces substantial privacy risks, as unauthorized access may expose personal, medical, or legal information. Although prior defenses strived to mitigate these risks, they often incur substantial computational overhead and degrade model performance. To overcome this privacy-efficiency trade-off, we introduce Privacy-Preserving Fine-Tuning (PPFT), a novel training pipeline that eliminates the need for transmitting raw prompt text while maintaining a favorable balance between privacy preservation and model utility for both clients and service providers. Our approach operates in two stages: first, we train a client-side encoder together with a server-side projection module and LLM, enabling the server to condition on k-pooled prompt embeddings instead of raw text; second, we fine-tune the projection module and LLM on private, domain-specific data using noise-injected embeddings, allowing effective adaptation without exposing plain text prompts and requiring access to the decoder's internal parameters. Extensive experiments on domain-specific and general benchmarks demonstrate that PPFT achieves a striking balance between privacy and utility, maintaining competitive performance with minimal degradation compared to noise-free upper bounds.",
-      "topics": [
-        "Privacy-Preserving Technologies in Data",
-        "Adversarial Robustness in Machine Learning",
-        "Cryptography and Data Security"
-      ],
-      "keywords": [
-        "privacy-utility trade-off",
-        "domain-specific fine-tuning",
-        "secure inference"
       ]
     }
   ]

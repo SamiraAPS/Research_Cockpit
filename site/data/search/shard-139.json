@@ -1,7 +1,92 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-08T11:58:37.803Z",
+  "generatedAt": "2026-11-09T13:57:03.044Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2604.22840",
+      "abstract": "Large language models (LLMs) have demonstrated strong potential in agentic tasks, particularly in slide generation. However, slide generation poses a fundamental challenge: the generation process is text-centric, whereas its quality is governed by visual aesthetics. This modality gap leads current models to frequently produce slides with aesthetically suboptimal layouts. Existing solutions typically rely either on heavy visual reflection, which incurs high inference cost yet yields limited gains; or on fine-tuning with large-scale datasets, which still provides weak and indirect aesthetic supervision. In contrast, the explicit use of aesthetic principles as supervision remains unexplored. In this work, we present AeSlides, a reinforcement learning framework with verifiable rewards for Aesthetic layout supervision in Slide generation. We introduce a suite of meticulously designed verifiable metrics to quantify slide layout quality, capturing key layout issues in an accurate, efficient, and low-cost manner. Leveraging these verifiable metrics, we develop a GRPO-based reinforcement learning method that directly optimizes slide generation models for aesthetically coherent layouts. With only 5K training prompts on GLM-4.7-Flash, AeSlides improves aspect ratio compliance from 36% to 85%, while reducing whitespace by 44%, element collisions by 43%, and visual imbalance by 28%. Human evaluation further shows a substantial improvement in overall quality, increasing scores from 3.31 to 3.56 (+7.6%), outperforming both model-based reward optimization and reflection-based agentic approaches, and even edging out Claude-Sonnet-4.5. These results demonstrate that such a verifiable aesthetic paradigm provides an efficient and scalable approach to aligning slide generation with human aesthetic preferences. Our repository is available at https://github.com/ympan0508/aeslides.",
+      "topics": [
+        "Generative Adversarial Networks and Image Synthesis",
+        "Multimodal Machine Learning Applications",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "slide generation",
+        "verifiable rewards",
+        "reinforcement learning",
+        "Group Relative Policy Optimization",
+        "large language models",
+        "LLM agents"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2605.27396",
+      "abstract": "Autonomous AI agents now plan, decide, and act on behalf of users across healthcare, financial services, and workplace contexts, often without step-by-step human approval. Existing AI literacy frameworks were built for a world in which humans evaluate AI outputs and decide whether to act; they have no vocabulary for the user who has delegated decision-making authority to an agent whose actions may not be observable, reversible, or controllable. This paper names the resulting problem agentic literacy debt: the accumulating societal deficit that grows when agentic AI systems are deployed at scale without corresponding literacy infrastructure. The debt compounds through three reinforcing channels (normalization of opaque delegation, multi-agent ecosystem complexity, and institutional path dependence), and it is incurred by the organizations that deploy agents but paid by the users, patients, and citizens on whose behalf the agents act. Evidence from healthcare, financial fraud, and global equity contexts suggests the gap is already consequential. The problem is structural, not a temporary lag that curriculum reform will close. It demands a reframing of AI literacy as a governance capability, not an evaluative one.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Digital literacy in education",
+        "Literacy, Media, and Education"
+      ],
+      "keywords": [
+        "AI literacy",
+        "autonomous AI agents",
+        "delegation of decision-making",
+        "multi-agent systems",
+        "institutional path dependence",
+        "AI governance",
+        "AI literacy framework",
+        "artificial intelligence in healthcare",
+        "financial fraud",
+        "equity"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.26969",
+      "abstract": "Modern large-scale recommendation systems are typically constructed as multi-stage pipelines, encompassing pre-ranking, ranking, and re-ranking phases. While traditional recommendation research typically focuses on optimizing a specific model, such as improving the pre-ranking model structure or ranking models training algorithm, system-level configurations optimization play a crucial role, which integrates the output from each model head to get the final score in each stage. Due to the complexity of the system, the configuration optimization is highly important and challenging. Any model modification requires new optimal system-level configurations. But each experimental iteration requires significant tuning effort. Furthermore, models in different stage operates within a distinct context and optimizes for different targets, requiring specialized domain expertise. In addition, optimization success depends on balancing competing multiple online metrics and alignment with shifting production development objectives. To address these challenges, we propose AgenticRecTune, an agentic framework comprising five specialized agents, Actor, Critic, Insight, Skill, and Online, designed to manage the end-to-end configuration optimization workflow. By leveraging the advanced reasoning of Large Language Models (LLMs), specifically Gemini, AgenticRecTune explore the optimal configuration spaces. The Actor Agent proposes multiple candidates and Critic Agent filters out suboptimal proposals.Then Online Agent autonomously prepares A/B tests based on the proposed configurations set from the Critic Agent and captures the subsequencet experimental results. We also introduce a self-evolving Skillhub, which utilizes a collaboration between the Insight Agent and Skill Agent to summarize the history results, extract underlying mechanics of each task in recommendation system and update skills.",
+      "topics": [
+        "Recommender Systems and Techniques",
+        "Information Retrieval and Search Behavior",
+        "Advanced Bandit Algorithms Research"
+      ],
+      "keywords": [
+        "multi-agent systems",
+        "large language models",
+        "Gemini",
+        "A/B testing",
+        "online assessment"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.19914",
+      "abstract": "Artificial intelligence systems are now deployed at scale across sectors, accompanied by a growing number of real-world incidents ranging from misinformation and cybercrime to autonomous-system failures. Databases of AI incidents index these events, but they cannot measure ``risk'' (i.e., a joint measure of likelihood and severity) without additional data regarding the prevalence of risk-associated systems and their incident reporting rates. As a result, policymakers, companies, and the general public lack a means to weigh the benefits of AI against their in-context risks. Inspired by public-health processes, which presume noisy and incomplete disease surveillance, we identify six phases of incident emergence. We demonstrate the framework through a detailed case study of autonomous vehicles, whose mandatory reporting requirements produces reliable incident-rate ground truth expressed in distance traveled. The case study shows that an informed panel of domain experts (e.g., self-driving experts) can combine their domain expertise, incident data, and a collection of statistical and visualization tools to arrive at incident phase determinations serving public needs. We further demonstrate the approach with a deepfake incident case study and chart a path for future research in incident phase determination.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Safety Systems Engineering in Autonomy",
+        "Data-Driven Disease Surveillance"
+      ],
+      "keywords": [
+        "autonomous vehicles",
+        "deepfakes",
+        "incident database",
+        "AI risk assessment"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.19386",
+      "abstract": "Composed Image Retrieval (CIR) has attracted significant attention due to its flexible multimodal query method, yet its development is severely constrained by the Noisy Triplet Correspondence (NTC) problem. Most existing robust learning methods rely on the \"small loss hypothesis\", but the unique semantic ambiguity in NTC, such as \"partial matching\", invalidates this assumption, leading to unreliable noise identification. This entraps the model in a self dependent vicious cycle where the learner is intertwined with the arbiter, ultimately causing catastrophic \"representation pollution\". To address this critical challenge, we propose a novel \"Expert-Proxy-Diversion\" decoupling paradigm, named Air-Know (ArbIteR calibrated Knowledge iNternalizing rObust netWork). Air-Know incorporates three core modules: (1) External Prior Arbitration (EPA), which utilizes Multimodal Large Language Models (MLLMs) as an offline expert to construct a high precision anchor dataset; (2) Expert Knowledge Internalization (EKI), which efficiently guides a lightweight proxy \"arbiter\" to internalize the expert's discriminative logic; (3) Dual Stream Reconciliation (DSR), which leverages the EKI's matching confidence to divert the training data, achieving a clean alignment stream and a representation feedback reconciliation stream. Extensive experiments on multiple CIR benchmark datasets demonstrate that Air-Know significantly outperforms existing SOTA methods under the NTC setting, while also showing strong competitiveness in traditional CIR.",
+      "topics": [
+        "Advanced Image and Video Retrieval Techniques",
+        "Image Retrieval and Classification Techniques",
+        "Multimodal Machine Learning Applications"
+      ],
+      "keywords": [
+        "composed image retrieval",
+        "robust learning",
+        "multimodal large language models",
+        "knowledge internalization",
+        "multimodal queries"
+      ]
+    },
     {
       "id": "doi:10.1145/3811031",
       "abstract": "As robots increasingly collaborate with humans in dynamic environments, the tension between communication clarity and social appropriateness presents an important design challenge. While communicative clarity is traditionally assumed to enhance human–robot interaction, recent findings suggest that clear communication can backfire when robots violate social norms. This study introduces and validates a “social amplifier” model of embodied communication, proposing that the value of role clarity depends on the appropriateness of the robot’s social behavior. We developed a novel confidence-aware role adaptation paradigm where an NAO robot dynamically switches between socially appropriate and inappropriate roles based on users’ confidence levels in an ambiguous video discrimination task. Using a within-subjects design with 64 participants, we manipulated role complementarity, choice alignment, and embodied communication across 512 total interactions. Results revealed that embodied communication significantly enhanced role clarity but had conditional effects on collaborative outcomes. Contrary to the “bad is stronger than good” principle, embodied communication asymmetrically amplified positive effects of appropriate robot behavior while having minimal impact on inappropriate behavior. This pattern emerged consistently across subjective measures (collaboration quality, role dynamics, trust) and objective behavioral outcomes (confidence change, choice change). The findings also demonstrate that robots with socially appropriate roles became over 7 times more persuasive when enhanced with rich embodied cues, while inappropriate robots showed no benefit. These results provide evidence-based design principles prioritizing social intelligence over mere expressiveness in collaborative decision-making robots.",
@@ -3734,99 +3819,6 @@
         "diagnostic imaging",
         "deep learning",
         "publication trends"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.18578",
-      "abstract": "Proximal Policy Optimization (PPO) has become the predominant algorithm for on-policy reinforcement learning due to its scalability and empirical robustness across domains. However, there is a significant disconnect between the underlying foundations of trust region methods and the heuristic clipped objective used in PPO. In this paper, we bridge this gap by introducing the Bounded Ratio Reinforcement Learning (BRRL) framework. We formulate a novel regularized and constrained policy optimization problem and derive its analytical optimal solution. We prove that this solution ensures monotonic performance improvement. To handle parameterized policy classes, we develop a policy optimization algorithm called Bounded Policy Optimization (BPO) that minimizes an advantage-weighted divergence between the policy and the analytic optimal solution from BRRL. We further establish a lower bound on the expected performance of the resulting policy in terms of the BPO loss function. Notably, our framework also provides a new theoretical lens to interpret the success of the PPO loss, and connects trust region policy optimization and the Cross-Entropy Method (CEM). We additionally extend BPO to Group-relative BPO (GBPO) for LLM fine-tuning. Empirical evaluations of BPO across MuJoCo, Atari, and complex IsaacLab environments (e.g., Humanoid locomotion), and of GBPO for LLM fine-tuning tasks, demonstrate that BPO and GBPO generally match or outperform PPO and GRPO in stability and final performance.",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "Adaptive Dynamic Programming Control",
-        "Advanced Bandit Algorithms Research"
-      ],
-      "keywords": [
-        "proximal policy optimization",
-        "trust region policy optimization",
-        "cross-entropy method",
-        "LLM fine-tuning",
-        "on-policy learning",
-        "policy optimization"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.ijnss.2026.04.006",
-      "abstract": "Objectives: We aimed to describe the implementation process and provide a baseline characterization of suicidal behavior during the first year of implementing the Registered Nurses' Association of Ontario (RNAO) Best Practice Guideline (BPG) for suicide prevention in a tertiary occupational hospital in Santiago, Chile. Methods: A cross-sectional descriptive study was guided by the Knowledge-to-Action (KTA) framework. The implementation process included: 1) assessment of the local context; 2) adaptation of 26 RNAO BPG recommendations through the first four phases of the KTA cycle; and 3) use of institutional data from April 2024 to April 2025 to establish a baseline of suicidal behavior. Data sources included Emergency Department (ED) consultations, hospital admissions, liaison psychiatry referrals, patient safety reports, and staff training records. Data were analyzed using descriptive statistics. Results: The preliminary assessment identified variable levels of compliance with the RNAO BPG recommendations, with 9 fully met, 12 partially met, and 4 unmet. Contextual analysis revealed key barriers and facilitators at the individual, team, and organizational levels, and identified priority stakeholders. Based on these findings, context-adapted strategies were developed, including protocol standardization, staff training, structured referral pathways, and environmental safety measures. Institutional data showed 7,936 ED consultations, of which 577 (7.3 %) involved suicidal behavior. Among 368 admitted patients with primary mental health diagnoses, 336 (91.3 %) were linked to suicide risk. Liaison psychiatry documented 7 cases from medical-surgical wards, while patient safety records identified three suicide-related sentinel events associated with mild to moderate harm. Conclusions: Implementation demonstrated that evidence-based nursing, guided by the KTA framework, supports standardized detection and management of suicide risk. These findings provide an initial characterization of suicidal behavior in an occupational health setting and underscore the importance of context-adapted strategies, continuous training, and institutional cultural change to support implementation.",
-      "topics": [
-        "Suicide and Self-Harm Studies",
-        "Health Policy Implementation Science",
-        "Patient Safety and Medication Errors"
-      ],
-      "keywords": [
-        "suicide prevention",
-        "suicide risk management",
-        "guideline implementation",
-        "occupational health nursing",
-        "knowledge-to-action framework",
-        "emergency department consultations",
-        "psychosomatic medicine",
-        "suicide risk identification",
-        "employee training",
-        "organizational culture change",
-        "barriers and facilitators",
-        "Chile"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.18305",
-      "abstract": "In this paper we investigate forecasting coevolving time series that feature intricate dependencies and nonstationary dynamics by using an LLM Large Language Models approach We propose a novel modeling approach named ContextAware ARLLM CAARL that provides an interpretable framework to decode the contextual dynamics influencing changes in coevolving series CAARL decomposes time series into autoregressive segments constructs a temporal dependency graph and serializes this graph into a narrative to allow processing by LLM This design yields a chainofthoughtlike reasoning path where intermediate steps capture contextual dynamics and guide forecasts in a transparent manner By linking prediction to explicit reasoning traces CAARL enhances interpretability while maintaining accuracy Experiments on realworld datasets validate its effectiveness positioning CAARL as a competitive and interpretable alternative to stateoftheart forecasting methods",
-      "topics": [
-        "Time Series Analysis and Forecasting",
-        "Forecasting Techniques and Applications",
-        "Stock Market Forecasting Methods"
-      ],
-      "keywords": [
-        "interpretable forecasting",
-        "large language models",
-        "chain-of-thought reasoning",
-        "non-stationary dynamics",
-        "contextual dynamics"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.18401",
-      "abstract": "Reinforcement learning (RL) has become a key technique for improving the agentic capabilities of large language models (LLMs). Although critic-free methods such as GRPO are increasingly popular, we argue that critic-based methods remain well suited to long-horizon agentic tasks because their critic models can assess each state and assign credit to different decisions. However, representative critic-based methods such as PPO still organize value estimation, credit assignment, and policy updates at token granularity, whereas the environment state changes only after the agent completes a full action. In this work, we propose CAPO, a critic-guided action-aligned policy optimization method for advancing LLM agent capabilities. CAPO introduces two action-aligned designs. First, it estimates the state value at the action boundary using a critic model and assigns the corresponding advantage to the complete action rather than individual tokens. Second, CAPO introduces a novel action-aware policy ratio that aggregates token ratios within each action with length calibration for consistent updates across actions of different lengths. These two designs effectively achieve fine-grained credit assignment and consistent policy updates while remaining compatible with token-level gradient computation. Experiments across multi-hop QA, academic paper search, and text-world action tasks show that CAPO consistently outperforms representative RL methods. Further analyses validate both designs and reveal how action-aligned optimization improves multi-turn RL training. We hope this work provides a practical path for training more capable LLM agents.",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "Natural Language Processing Techniques",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "LLM agents",
-        "credit assignment",
-        "multi-hop question answering",
-        "textual worlds"
-      ]
-    },
-    {
-      "id": "doi:10.3390/jcm15083130",
-      "abstract": "Background/Objectives: Digital media play an important role in the lives of contemporary adolescents. While associated with many benefits, they also pose risks to physical health related to prolonged screen time and non-ergonomic body posture. This study analyzed the frequency of self-reported physical complaints among Polish adolescents in relation to time spent on different screen-based activities. Methods: The study included 9083 students aged 13–17 who completed an online survey in March and April 2024 in schools located in western Poland (approximately 30% of the region’s student population). Physical symptoms selected from the HBSC-SCL instrument were analyzed and supplemented with neck or shoulder pain and eye strain. Results: Longer screen time was associated with more frequent occurrence of all analyzed complaints. A 5-item index ranging from 0 to 20 points was proposed, including headache, neck or shoulder pain, eye strain, dizziness, and problems falling asleep (mean 6.56 ± 5.15). The index showed reliability at the level of α = 0.744 and good model fit according to CFA (RMSEA = 0.025). In a multivariate linear regression model (R2 = 0.153), after adjusting for age, gender, place of residence, and family affluence, the variability of this index was most strongly associated with time spent on social media (β = 0.40) and browsing websites (β = 0.30). Gender-specific models were also compared. Conclusions: The results confirm the co-occurrence of physical complaints during adolescence and a significant association between their severity and screen-based activities, particularly engagement in social media.",
-      "topics": [
-        "Ergonomics and Musculoskeletal Disorders",
-        "Impact of Technology on Adolescents",
-        "Physical Activity and Health"
-      ],
-      "keywords": [
-        "screen time",
-        "adolescents",
-        "physical health complaints",
-        "social media use",
-        "neck and shoulder pain",
-        "visual fatigue",
-        "headache",
-        "dizziness",
-        "sleep disorders",
-        "digital media",
-        "Polish adolescents"
       ]
     }
   ]
