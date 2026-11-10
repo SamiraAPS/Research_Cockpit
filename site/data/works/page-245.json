@@ -1,12 +1,683 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "page": 245,
   "pageSize": 100,
-  "totalItems": 40461,
-  "totalPages": 405,
+  "totalItems": 40512,
+  "totalPages": 406,
   "nextPage": "./page-246.json",
   "items": [
+    {
+      "id": "arxiv:2608.23706",
+      "recordType": "preprint",
+      "title": "Do LLMs Understand Limit Order Book Dynamics?",
+      "abstract": "A large language model (LLM) trained on synthetic limit order book (LOB) data achieves near perfect scores in generating valid sequences of LOB events. However, the LLM's implicit world model fails to learn the state of the LOB. This deficiency leads to biased estimates and spurious predictability in using the LLM to forecast future LOB events. Our analysis uses novel tests of an LLM's world model, extending prior work from deterministic settings to the stochastic dynamics needed for the LOB.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.23706"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.23706"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-24",
+      "firstPublicDate": "2026-08-24",
+      "onlineDate": "2026-08-24",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 2,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "LLM"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Junxiao Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Paul Glasserman",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.23706v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:33.532Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-22T08:39:33.532Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-22T08:39:33.532Z",
+      "preferredVersionId": "arxiv:2608.23706",
+      "versions": [
+        {
+          "id": "arxiv:2608.23706",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.23706",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.23706v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-245.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "Do LLMs Understand Limit Order Book Dynamics?",
+              "start": 0,
+              "end": 45
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "A large language model (LLM) trained on synthetic limit order book (LOB) data achieves near perfect scores in generating v",
+              "start": 0,
+              "end": 122
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "A large language model (LLM) trained on synthetic limit order book (LOB) data achieves near perfect scores in generating valid ",
+              "start": 0,
+              "end": 127
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "A large language model (LLM) trained on synthetic limit order book (LOB) data achieves near perfect scores in generating v",
+                  "start": 0,
+                  "end": 122
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.23268",
+      "recordType": "preprint",
+      "title": "Dual-Grained Agent Memory and Shapley Context Attribution for Multimodal Agentic Learner",
+      "abstract": "Frontier multimodal large language models (MLLMs) deliver impressive perception yet still falter on scientific and mathematical reasoning. Parameter-level adaptation is unavailable for closed-weight or on-device backbones, and stateless prompting forfeits any compounding benefit from problems already solved. We propose \\textbf{DG-Mem}, a dual-grained agentic memory framework that augments a frozen MLLM with a non-parametric, externally stored memory built once from training-time rollouts and consulted read-only at test time. Motivated by the Complementary Learning Systems (CLS) account of human memory, DG-Mem factors its store into an instance-grounded exemplar memory and a category-level schema memory of IF-THEN rules, with a transient reflection store mediating their construction so that schemas are synthesized only from abstract reflections, never from exemplar text. Two design choices distinguish DG-Mem: an online concept categorizer that grows the category space incrementally during training rather than committing to a predefined taxonomy, and a Shapley context attribution procedure that decomposes correctness across the entire retrieved rule set and yields a per-rule utility that re-weights retrieval at test time. The pipeline introduces no gradient updates and is deployable on closed-weight or on-device backbones. Across MathVista, MMMU, and MMMU-Pro on four open-weight and proprietary backbones (Qwen3.5-27B, Qwen3.5-122B-A10B, GPT-5-Nano, Gemini-3-Flash), DG-Mem improves consistently over no-memory and competitive memory baselines.",
+      "doi": "10.48550/arxiv.2608.23268",
+      "externalIds": {
+        "openalex": "W7204175137"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7204175137"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-24",
+      "firstPublicDate": "2026-08-24",
+      "onlineDate": null,
+      "topics": [
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications",
+        "Advanced Graph Neural Networks"
+      ],
+      "keywords": [
+        "Schema (genetic algorithms)",
+        "Context (archaeology)",
+        "Correctness",
+        "Set (abstract data type)",
+        "Misattribution of memory",
+        "Soar",
+        "Encoding (memory)",
+        "Perception",
+        "Pipeline (software)",
+        "Salience (neuroscience)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 8,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learner",
+              "sourceValue": "…ual-Grained Agent Memory and Shapley Context Attribution for Multimodal Agentic Learner",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "reflection",
+              "conceptLabel": "Reflexion & Metakognition",
+              "matchedTerm": "reflection",
+              "sourceValue": "…ar memory and a category-level schema memory of IF-THEN rules, with a transient reflection store mediating their construction so that schemas are synthesized only from abstract reflections, never from exemplar text. Two design choices distinguish DG-Mem: an online concept categorizer that grows the category space incre…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…e rollouts and consulted read-only at test time. Motivated by the Complementary Learning Systems (CLS) account of human memory, DG-Mem factors its store into an instance-grounded exemplar memory and a category-level schema memory of IF-THEN rules, with a transient reflection store mediating their construction so that s…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "agency",
+          "label": "Work Design & Agency",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "agency",
+              "conceptLabel": "Agency",
+              "matchedTerm": "agentic",
+              "sourceValue": "Dual-Grained Agent Memory and Shapley Context Attribution for Multimodal Agentic Learner",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "agency",
+              "conceptLabel": "Agency",
+              "matchedTerm": "agentic",
+              "sourceValue": "…enefit from problems already solved. We propose \\textbf{DG-Mem}, a dual-grained agentic memory framework that augments a frozen MLLM with a non-parametric, externally stored memory built once from training-time rollouts and consulted read-only at test time. Motivated by the Complementary Learning Systems (CLS) account …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:learning": 8,
+        "topic:agency": 6,
+        "classificationMaximum": 8
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "learning",
+        "agentic",
+        "learner",
+        "reflection"
+      ],
+      "authors": [
+        {
+          "id": "A5085689776",
+          "name": "Jieke Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5113917589",
+          "name": "Tiancheng Shen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5138215256",
+          "name": "Yibo Yang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5140981185",
+          "name": "Ming-Hsuan Yang",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.23268",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:35.436Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:35.436Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-09-27T14:56:35.436Z",
+      "preferredVersionId": "openalex:W7204175137",
+      "versions": [
+        {
+          "id": "openalex:W7204175137",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204175137",
+          "doi": "10.48550/arxiv.2608.23268",
+          "url": "https://doi.org/10.48550/arxiv.2608.23268"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-245.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": " at test time. Motivated by the Complementary Learning Systems (CLS) account of human memory, DG-Mem factors its store into an instance-grounded exemplar memory and a category-level sch",
+              "start": 516,
+              "end": 701
+            },
+            {
+              "field": "abstract",
+              "term": "reflection",
+              "quote": "ar memory and a category-level schema memory of IF-THEN rules, with a transient reflection store mediating their construction so that schemas are synthesized only from abstract reflections, ",
+              "start": 667,
+              "end": 857
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Frontier multimodal large language models (MLLMs) deliver impressive perception yet still falter on scientific and mathematical reasoning. Pa",
+              "start": 0,
+              "end": 141
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "Frontier multimodal large language models (MLLMs) deliver impressive perception yet still falter on scientific and mathematical reasoning. Pa",
+              "start": 0,
+              "end": 141
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "human-mentioned",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "students",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "learner",
+                  "quote": "ual-Grained Agent Memory and Shapley Context Attribution for Multimodal Agentic Learner",
+                  "start": 1,
+                  "end": 88
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "reflection",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "reflection",
+                  "quote": "ar memory and a category-level schema memory of IF-THEN rules, with a transient reflection store mediating their construction so that schemas are synthesized only from abstract reflections, ",
+                  "start": 667,
+                  "end": 857
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Frontier multimodal large language models (MLLMs) deliver impressive perception yet still falter on scientific and mathematical reasoning. Pa",
+                  "start": 0,
+                  "end": 141
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "learning",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "reflection",
+                  "quote": "ar memory and a category-level schema memory of IF-THEN rules, with a transient reflection store mediating their construction so that schemas are synthesized only from abstract reflections, ",
+                  "start": 667,
+                  "end": 857
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [
+          {
+            "topic": "cognitive-engagement",
+            "evidence": [
+              {
+                "field": "abstract",
+                "term": "reflection",
+                "quote": "ar memory and a category-level schema memory of IF-THEN rules, with a transient reflection store mediating their construction so that schemas are synthesized only from abstract reflections, ",
+                "start": 667,
+                "end": 857
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.23563",
+      "recordType": "preprint",
+      "title": "EG-ARSA: An Expert-Grounded Open Model for Visual Road Safety Auditing in Low-Resource Settings",
+      "abstract": "Road traffic injuries remain a major challenge in low- and middle-income countries, where proactive road safety auditing is limited by incomplete crash records, shortages of qualified auditors, and the high cost of large-scale field inspections. To address this problem, we propose Expert-Grounded Distillation (EGD), a novel artificial intelligence framework that transfers institutional road safety expertise into a compact vision-language model for scalable visual road safety auditing. The key innovation is a quantified expert-grounding stage in which the teacher vision-language model is calibrated against authoritative field audits. Large-scale annotation is permitted only after the teacher reaches substantial agreement with expert risk assessments (Cohen's kappa = 0.74). The calibrated teacher then generates structured supervision that is distilled into an 8-billion-parameter student vision-language model using Low-Rank Adaptation and a single leakage-free prompt. We also introduce Bangladesh Road Safety Audit (BD-ARSA), the first open, expert-grounded Bangladeshi visual road safety audit dataset containing 21,947 image-audit records with near-national coverage, and Expert-Grounded Road Safety Auditor (EG-ARSA), the first vision-language model developed specifically for this task. Experimental results show that grounded fine-tuning substantially improves ordinal risk assessment over the zero-shot baseline, while blind expert evaluation demonstrates that the compact student outperforms both its 31 billion-parameter teacher and Gemini-2.5-Flash. These findings demonstrate that EGD provides an effective and scalable engineering solution for proactive road safety auditing in resource-constrained environments.",
+      "doi": "10.48550/arxiv.2608.23563",
+      "externalIds": {
+        "openalex": "W7204176805",
+        "arxiv": "2608.23563"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.23563"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-24",
+      "firstPublicDate": "2026-08-24",
+      "onlineDate": null,
+      "topics": [
+        "Infrastructure Maintenance and Monitoring",
+        "Advanced Neural Network Applications",
+        "Multimodal Machine Learning Applications",
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Audit",
+        "Crash",
+        "Visual inspection",
+        "Key (lock)",
+        "Scheme (mathematics)",
+        "Safety case",
+        "Subject-matter expert",
+        "Scalability"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 8,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "EG-ARSA: An Expert-Grounded Open Model for Visual Road Safety Auditing in Low-Resource Settings",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…ain a major challenge in low- and middle-income countries, where proactive road safety auditing is limited by incomplete crash records, shortages of qualified auditors, and the high cost of large-scale field inspections. To address this problem, we propose Expert-Grounded Distillation (EGD), a novel artificial intellig…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "…n is permitted only after the teacher reaches substantial agreement with expert risk assessments (Cohen's kappa = 0.74). The calibrated teacher then generates structured supervision that is distilled into an 8-billion-parameter student vision-language model using Low-Rank Adaptation and a single leakage-free prompt. We…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Safety case",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "…ovel artificial intelligence framework that transfers institutional road safety expertise into a compact vision-language model for scalable visual road safety auditing. The key innovation is a quantified expert-grounding stage in which the teacher vision-language model is calibrated against authoritative field audits. …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 5,
+        "topic:safety": 8,
+        "topic:learning": 2,
+        "classificationMaximum": 8
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "learning",
+        "expertise",
+        "safety",
+        "risk"
+      ],
+      "authors": [
+        {
+          "id": "A5148176237",
+          "name": "Md Thamed Bin Zaman Chowdhury",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Hossain, Moazzem",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.23563",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:33.532Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-27T14:56:35.436Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:35.436Z",
+      "preferredVersionId": "arxiv:2608.23563",
+      "versions": [
+        {
+          "id": "arxiv:2608.23563",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.23563",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.23563v1"
+        },
+        {
+          "id": "openalex:W7204176805",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204176805",
+          "doi": "10.48550/arxiv.2608.23563",
+          "url": "https://doi.org/10.48550/arxiv.2608.23563"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-245.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "student",
+              "quote": " generates structured supervision that is distilled into an 8-billion-parameter student vision-language model using Low-Rank Adaptation and a single leakage-free prompt. We also introduce",
+              "start": 810,
+              "end": 997
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "To address this problem, we propose Expert-Grounded Distillation (EGD), a novel artificial intelligence framework that transfers institutional road safety expertise into a compact vision-language model f",
+              "start": 246,
+              "end": 449
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": " generates structured supervision that is distilled into an 8-billion-parameter student vision-language model using Low-Rank Adaptation and a single leakage-free prompt. We also introduce",
+                  "start": 810,
+                  "end": 997
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "students",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": " generates structured supervision that is distilled into an 8-billion-parameter student vision-language model using Low-Rank Adaptation and a single leakage-free prompt. We also introduce",
+                  "start": 810,
+                  "end": 997
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [
+          {
+            "topic": "high-skill-operations",
+            "evidence": [
+              {
+                "field": "abstract",
+                "term": "expertise",
+                "quote": "ovel artificial intelligence framework that transfers institutional road safety expertise into a compact vision-language model for scalable visual road safety auditing. The key innovation i",
+                "start": 321,
+                "end": 510
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.21203/rs.3.rs-10451093/v1",
       "recordType": "preprint",
@@ -21987,642 +22658,6 @@
                   "quote": "cess reward mechanism, TL-GRPO, which encourages strategic reasoning. Extensive experiments across various MLLM architectures demonstrate that TwSG reduces inference latency while substantial",
                   "start": 1422,
                   "end": 1613
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.22151",
-      "recordType": "preprint",
-      "title": "Towards Actionable Visualization: Ten Years Later, What Generative AI Changes and What It Cannot",
-      "abstract": "Ten years ago, we surveyed software visualization research under the assumption that the challenge for adoption was matching developers' needs with techniques. Generative AI might have made that assumption obsolete by driving the cost of producing a visualization on demand toward zero. We argue that this mirrors a broader inversion already underway in software engineering: as AI devalues the production of artifacts, it elevates the human work of perceiving and directing them. Looking back at our 2016 research, we found that domains we flagged as neglected, such as rationale, are exactly the ones AI now makes tractable, and a tool-sustainability problem we diagnosed then is one generative AI may worsen before it helps solve. One finding shifted outright: the share of studies delivered through immersive environments grew roughly fifteen-fold, though it remains a small minority of the field. We argue that future research should focus on helping people understand large and complex software systems, including the reasoning processes generated by AI agents alongside the code itself. Humans have always been accountable for what they trust, but AI may lead them to trust without enough scrutiny. We confront the risks that follow, from the reliability of AI-generated visualization itself to the temptation of competing with machines on their own terrain, and conclude that actionable visualization is no longer a distant destination but a standard the field can now meet.",
-      "doi": "10.48550/arxiv.2608.22151",
-      "externalIds": {
-        "openalex": "W7204188171"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7204188171"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-23",
-      "firstPublicDate": "2026-08-23",
-      "onlineDate": null,
-      "topics": [
-        "Data Visualization and Analytics",
-        "Ethics and Social Impacts of AI",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "Visualization",
-        "Temptation",
-        "Generative grammar",
-        "Software",
-        "Field (mathematics)",
-        "Matching (statistics)"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risks",
-              "sourceValue": "…y trust, but AI may lead them to trust without enough scrutiny. We confront the risks that follow, from the reliability of AI-generated visualization itself to the temptation of competing with machines on their own terrain, and conclude that actionable visualization is no longer a distant destination but a standard the…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "trust",
-              "conceptLabel": "Vertrauen",
-              "matchedTerm": "trust",
-              "sourceValue": "…ts alongside the code itself. Humans have always been accountable for what they trust, but AI may lead them to trust without enough scrutiny. We confront the risks that follow, from the reliability of AI-generated visualization itself to the temptation of competing with machines on their own terrain, and conclude that …",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 5,
-        "topic:safety": 2,
-        "topic:trust": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "generative AI",
-        "AI agent",
-        "AI agents",
-        "trust",
-        "risks"
-      ],
-      "authors": [
-        {
-          "id": "A5018518654",
-          "name": "Leonel Merino",
-          "orcid": "https://orcid.org/0000-0002-5396-487X",
-          "affiliations": []
-        },
-        {
-          "id": "A5124813944",
-          "name": "Mohammad Ghafari",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5041096019",
-          "name": "Oscar Nierstrasz",
-          "orcid": "https://orcid.org/0000-0002-9975-9791",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.22151",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:36.497Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "openalex:W7204188171",
-      "versions": [
-        {
-          "id": "openalex:W7204188171",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204188171",
-          "doi": "10.48550/arxiv.2608.22151",
-          "url": "https://doi.org/10.48550/arxiv.2608.22151"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-245.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "ftware engineering: as AI devalues the production of artifacts, it elevates the human work of perceiving and directing them. Looking back at our 2016 research, we found that domains we ",
-              "start": 356,
-              "end": 541
-            },
-            {
-              "field": "abstract",
-              "term": "humans",
-              "quote": "uding the reasoning processes generated by AI agents alongside the code itself. Humans have always been accountable for what they trust, but AI may lead them to trust without enough scru",
-              "start": 1014,
-              "end": 1200
-            },
-            {
-              "field": "abstract",
-              "term": "people",
-              "quote": "ll minority of the field. We argue that future research should focus on helping people understand large and complex software systems, including the reasoning processes generated by AI ag",
-              "start": 876,
-              "end": 1062
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "generative AI",
-              "quote": "Towards Actionable Visualization: Ten Years Later, What Generative AI Changes and What It Cannot",
-              "start": 0,
-              "end": 96
-            },
-            {
-              "field": "title",
-              "term": "AI",
-              "quote": "Towards Actionable Visualization: Ten Years Later, What Generative AI Changes and What It Cannot",
-              "start": 0,
-              "end": 96
-            },
-            {
-              "field": "abstract",
-              "term": "generative AI",
-              "quote": "that the challenge for adoption was matching developers' needs with techniques. Generative AI might have made that assumption obsolete by driving the cost of producing a visualization on demand",
-              "start": 80,
-              "end": 273
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "generative",
-                  "quote": "Towards Actionable Visualization: Ten Years Later, What Generative AI Changes and What It Cannot",
-                  "start": 0,
-                  "end": 96
-                },
-                {
-                  "field": "abstract",
-                  "term": "generative",
-                  "quote": "that the challenge for adoption was matching developers' needs with techniques. Generative AI might have made that assumption obsolete by driving the cost of producing a visualization on dem",
-                  "start": 80,
-                  "end": 270
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.22188",
-      "recordType": "preprint",
-      "title": "Unveiling the Depth-Performance Dilemma in Split-Federated Fine-tuning of LLMs",
-      "abstract": "Split Federated Fine-tuning (SFF) is a promising paradigm for scaling Large Language Models (LLMs) by partitioning model depth between resource-constrained clients and a centralized server. While system incentives for throughput and privacy favor deep partitions, the impact of such configurations on model utility remains poorly understood. In this work, we identify and characterize the Depth-Performance Dilemma: the regime that maximizes system efficiency is precisely where fine-tuning quality collapses. Through a comprehensive audit across four model scales (GPT-2 to Llama-3-8B) and diverse benchmarks, we demonstrate that deeper partitions provide monotonic gains in throughput and privacy at the cost of catastrophic performance plateaus. We evaluate a suite of state-of-the-art federated adapter aggregation methods including AVG, STACK, SVD, and FREEZE, revealing that while these techniques are effective in standard Federated Learning, they fail to mitigate the artifacts unique to split architectures. Finally, we provide a mechanistic diagnosis for this failure, tracing the collapse to the near-isometric topology of Transformers, which allows aggregation noise to propagate without attenuation until it triggers Attention Collapse in the server partition. Our findings challenge the prevailing assumption that partition depth is a utility-neutral tuning knob and provide a structural foundation for stable distributed LLM fine-tuning.",
-      "doi": "10.48550/arxiv.2608.22188",
-      "externalIds": {
-        "openalex": "W7204214851",
-        "arxiv": "2608.22188"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.22188"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-23",
-      "firstPublicDate": "2026-08-23",
-      "onlineDate": null,
-      "topics": [
-        "Privacy-Preserving Technologies in Data",
-        "Big Data and Digital Economy",
-        "Software System Performance and Reliability",
-        "cs.LG",
-        "cs.CL",
-        "cs.DC"
-      ],
-      "keywords": [
-        "Dilemma",
-        "Incentive",
-        "Throughput",
-        "Survivability",
-        "Tracing",
-        "Suite",
-        "Confidentiality",
-        "Quality (philosophy)",
-        "Scaling"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "…ich allows aggregation noise to propagate without attenuation until it triggers Attention Collapse in the server partition. Our findings challenge the prevailing assumption that partition depth is a utility-neutral tuning knob and provide a structural foundation for stable distributed LLM fine-tuning.",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "failure",
-              "conceptLabel": "Fehler",
-              "matchedTerm": "failure",
-              "sourceValue": "…ue to split architectures. Finally, we provide a mechanistic diagnosis for this failure, tracing the collapse to the near-isometric topology of Transformers, which allows aggregation noise to propagate without attenuation until it triggers Attention Collapse in the server partition. Our findings challenge the prevailin…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:cognition": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "attention",
-        "failure"
-      ],
-      "authors": [
-        {
-          "id": "A5129652288",
-          "name": "Hariharan Ramesh",
-          "orcid": "https://orcid.org/0009-0004-0370-2224",
-          "affiliations": []
-        },
-        {
-          "id": "A5148047632",
-          "name": "Someshwaran Murugaiyan",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5065225892",
-          "name": "Jyotikrishna Dass",
-          "orcid": "https://orcid.org/0000-0002-7552-8753",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.22188",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-22T08:39:33.532Z",
-      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "arxiv:2608.22188",
-      "versions": [
-        {
-          "id": "arxiv:2608.22188",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.22188",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.22188v1"
-        },
-        {
-          "id": "openalex:W7204214851",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204214851",
-          "doi": "10.48550/arxiv.2608.22188",
-          "url": "https://doi.org/10.48550/arxiv.2608.22188"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-245.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "Unveiling the Depth-Performance Dilemma in Split-Federated Fine-tuning of LLMs",
-              "start": 0,
-              "end": 78
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Split Federated Fine-tuning (SFF) is a promising paradigm for scaling Large Language Models (LLMs) by partitioning model depth between resource-constrained clients and a centralized server. W",
-              "start": 0,
-              "end": 191
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Split Federated Fine-tuning (SFF) is a promising paradigm for scaling Large Language Models (LLMs) by partitioning model depth between resource-constrained clients and a centralized server. W",
-              "start": 0,
-              "end": 191
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Split Federated Fine-tuning (SFF) is a promising paradigm for scaling Large Language Models (LLMs) by partitioning model depth between resource-constrained clients and a centralized server. W",
-                  "start": 0,
-                  "end": 191
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.22217",
-      "recordType": "preprint",
-      "title": "UR$^{2}$-MLLM: Uncertainty-aware Revisit Reasoning in Multimodal Large Language Models for Radiology Report Generation",
-      "abstract": "Radiologists generate diagnostic reports through iterative and selective revisiting of suspicious regions to refine their interpretations. Recent multimodal large language models (MLLMs) for radiology report generation (RRG) have shifted from text-only reasoning toward a ``Thinking-with-Images'' paradigm, incorporating visual evidence into the reasoning process. However, existing methods provide static visual evidence without a dynamic revisit mechanism during reasoning, neglecting how radiologists re-examine uncertain observations. To this end, we propose an Uncertainty-aware Revisit Reasoning MLLM (UR$^{2}$-MLLM) framework that dynamically revisits uncertain regions during reasoning for RRG. UR$^{2}$-MLLM is first equipped with uncertainty perception by training on an uncertainty-aware dataset. We then construct a multimodal reasoning trajectory dataset together with a detect-and-copy mechanism, which guides when and where to revisit. Finally, a visual grounding reward refines this behavior through reinforcement learning, aligning the revisited regions with corresponding anatomical structures. Experiments on MIMIC-CXR and IU-Xray show that UR$^{2}$-MLLM achieves state-of-the-art performance, highlighting the value of uncertainty-aware visual revisit reasoning for reliable and clinically aligned report generation.",
-      "doi": "10.48550/arxiv.2608.22217",
-      "externalIds": {
-        "openalex": "W7204202242"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7204202242"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-23",
-      "firstPublicDate": "2026-08-23",
-      "onlineDate": null,
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Topic Modeling",
-        "Domain Adaptation and Few-Shot Learning"
-      ],
-      "keywords": [
-        "Visual reasoning",
-        "Construct (python library)",
-        "Model-based reasoning",
-        "Opportunistic reasoning",
-        "Automated reasoning",
-        "Perception",
-        "Trajectory",
-        "Reasoning system",
-        "Deductive reasoning"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 4,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5148099888",
-          "name": "Yucheng Chen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5148084561",
-          "name": "Yang Yu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5074096594",
-          "name": "Jiazhou Zhou",
-          "orcid": "https://orcid.org/0009-0008-5258-1675",
-          "affiliations": []
-        },
-        {
-          "id": "A5125112918",
-          "name": "Yufei Shi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5121628457",
-          "name": "Yongying Lan",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5124431308",
-          "name": "Yichi Zhang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Li, Liyi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5134956785",
-          "name": "Si Yong Yeo",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.22217",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:36.497Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "openalex:W7204202242",
-      "versions": [
-        {
-          "id": "openalex:W7204202242",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204202242",
-          "doi": "10.48550/arxiv.2608.22217",
-          "url": "https://doi.org/10.48550/arxiv.2608.22217"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-245.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "large language model",
-              "quote": "UR$^{2}$-MLLM: Uncertainty-aware Revisit Reasoning in Multimodal Large Language Models for Radiology Report Generation",
-              "start": 0,
-              "end": 118
-            },
-            {
-              "field": "title",
-              "term": "large language models",
-              "quote": "UR$^{2}$-MLLM: Uncertainty-aware Revisit Reasoning in Multimodal Large Language Models for Radiology Report Generation",
-              "start": 0,
-              "end": 118
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "siting of suspicious regions to refine their interpretations. Recent multimodal large language models (MLLMs) for radiology report generation (RRG) have shifted from text-only reasoning toward a ``Thin",
-              "start": 77,
-              "end": 278
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "large language model",
-                  "quote": "UR$^{2}$-MLLM: Uncertainty-aware Revisit Reasoning in Multimodal Large Language Models for Radiology Report Generation",
-                  "start": 0,
-                  "end": 118
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "siting of suspicious regions to refine their interpretations. Recent multimodal large language models (MLLMs) for radiology report generation (RRG) have shifted from text-only reasoning toward a ``Thin",
-                  "start": 77,
-                  "end": 278
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "rning, aligning the revisited regions with corresponding anatomical structures. Experiments on MIMIC-CXR and IU-Xray show that UR$^{2}$-MLLM achieves state-of-the-art performance, highlightin",
-                  "start": 1033,
-                  "end": 1224
                 }
               ],
               "interpretation": "mentioned; role/outcome not confirmed"

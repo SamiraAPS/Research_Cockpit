@@ -1,7 +1,37 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "documents": [
+    {
+      "id": "arxiv:2608.08878",
+      "abstract": "Transformer-based large language models (LLMs) achieve strong performance across many tasks, but their Key-Value (KV) cache grows linearly with sequence length, creating a severe memory bottleneck for long-context inference. Existing heuristic eviction methods (e.g., H$_2$O and SnapKV) rely on static attention or positional signals that often fail to capture a token's future predictive influence. We propose DistillCache, a reinforcement learning framework that formulates KV-cache eviction as a sequential decision problem. DistillCache learns a lightweight policy network using rich internal model signals (attention statistics, value norms, entropy, and position) and trains it with REINFORCE via a per-step KL-divergence reward to preserve the full-cache output distribution. On a 7B-parameter instruction-tuned Transformer (Mistral-7B-Instruct-v0.3), DistillCache retains 94.2% of full-cache accuracy on LongBench at a 25% cache budget, outperforming both strong heuristic baselines (H$_2$O, SnapKV) by up to 2.7 absolute points and, under our re-implementations, concurrent RL-based methods (ForesightKV, RLKV) by up to 1.4 points on long-context tasks. On reasoning benchmarks, DistillCache is competitive with the best concurrent method and surpasses it under aggressive compression. It also delivers up to 2.1x full-cache throughput while maintaining competitive practical efficiency. These results highlight the effectiveness of learned, distribution-aware policies for memory-efficient long-context LLM inference.",
+      "topics": [
+        "cs.LG",
+        "cs.AI",
+        "cs.PF"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.08761",
+      "abstract": "In an era defined by escalating climate change and the pervasive deployment of edge intelligence, the environmental cost of semiconductor manufacturing and operation has reached a critical threshold. As Deep Learning (DL) accelerators dominate System-on-Chip (SoC) die area, achieving true sustainability requires a paradigm shift from static worst-case efficiency to dynamic energy-proportionality. This paper introduces Eco-SoC, a highly scalable VLSI architecture co-designed specifically for sustainable artificial intelligence. We propose a hardware-level Dynamic Precision-Scaling Logic (DPSL) framework that adaptively modulates bit-width precision based on real-time activation sparsity, successfully reducing switching activity by up to 42% on a commercial 7nm FinFET process node. Furthermore, we transcend traditional Power-Performance-Area (PPA) metrics by providing a comprehensive Life Cycle Assessment (LCA) using the Architectural Carbon footprint Tool (ACT). Our synthesis demonstrates that Eco-SoC offsets its increased embodied carbon footprint (a marginal 4.8% area overhead) within 1.1 years of edge deployment. Finally, by introducing a thermal-aware power gating mechanism that mitigates localized hotspots, Eco-SoC doubles the projected Mean Time To Failure (MTTF) of the silicon, providing a tangible, scalable strategy for electronic waste (e-waste) mitigation in next-generation computing systems.",
+      "topics": [
+        "cs.AR",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1016/j.eswa.2026.133983",
+      "abstract": "Scientific named entity recognition (SciNER) plays a crucial role in information extraction and knowledge discovery from scientific texts. Recently, large language models (LLMs) have demonstrated the capacity to achieve competitive SciNER performance with minimal human effort. Existing research highlights the importance of incorporating candidate entity type information for accurate entity recognition and classification by LLMs. However, when too many candidate entity types are provided in the prompt, LLMs struggle to accurately recognize and label entities in scientific texts, where entity types are more complex than in general domains. To address this challenge, we propose TdSciNER, a type-driven approach that effectively leverages entity type information to enhance SciNER performance. In TdSciNER, we first design an entity type filter model to identify the most likely entity types present in a given sentence. Subsequently, we introduce an auxiliary multi-class entity typing task within a multi-task learning framework alongside SciNER to obtain richer contextual representations. Then, we develop a novel demonstration selection strategy based on sentence similarity and entity type diversity to activate the in-context learning capabilities of LLMs, thereby improving entity recognition accuracy across diverse scientific domains. Experiments on three datasets demonstrate that our method achieves performance comparable to fully supervised models. Further analysis validates that each entity type-driven component in TdSciNER contributes to the improvement of SciNER performance. This work provides valuable insights for future advancements in SciNER and broader information extraction tasks in scientific text mining.",
+      "topics": [
+        "cs.CL",
+        "cs.AI",
+        "cs.DL",
+        "cs.IR"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.08882",
       "abstract": "AI tools can improve claim judgments while leaving open what users can do later without them. This paper develops an evaluation framework for epistemic transfer: the effect of prior AI-assisted verification on delayed judgments of novel claims under a specified access regime. The contribution is a verification-specific synthesis of learning, transfer, and human--AI evaluation, organized around two complementary estimands. The Epistemic Transfer Effect (ETE) compares delayed performance after alternative practice conditions. Tool-Removal Cost (TRC) compares immediate performance with and without assistance after practice; despite its name, it measures a current availability effect, not skill loss or psychological dependence. The proposed randomized protocol includes answer-first and evidence-first interfaces, active practice, a no-additional-practice comparator, and held-out claims. It specifies how to account for learning opportunities introduced by assessment, elicit confidence probabilities, average model predictions over a target population, and handle attrition and uncertainty. Reading ETE and TRC together distinguishes relative capability gains, equivalence, transfer penalties, and unresolved outcomes. A ``verification-on-loan'' profile is explicitly comparator-relative and cannot be inferred from a nonsignificant delayed contrast. A brief illustration from a two-wave verification study shows why these distinctions matter: an uncertain delayed interface contrast and an ordered assisted--unassisted probe cannot establish a clean transfer profile. The framework makes a practical demand: when independent judgment matters, evaluate both what assistance contributes now and what prior use changes later.",
@@ -1825,31 +1855,6 @@
       "topics": [
         "cs.CV",
         "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1145/3830398.3830657",
-      "abstract": "When manipulating objects in immersive platforms through speech and gesture, users naturally construct spatial references, referring to scene entities, their bodies, or the environment. Leveraging spatial cognition theories, this work systematically examines how users construct and communicate spatial intent. Using a custom toolkit, we conducted a Wizard-of-Oz study to observe unconstrained multimodal (speech + gesture) input patterns in Virtual Reality for scene construction. Based on these findings, we formalize a framework that decomposes spatial references into three core components: Source, Anchor, and Frame, while characterizing their compositional strategies and explicitness. We demonstrate the utility of this Reference-based Manipulation framework by implementing an LLM-based pipeline featuring a set of example interaction techniques with a preliminary technical evaluation. Finally, we discuss key lessons learned for supporting reference-based spatial interaction.",
-      "topics": [
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04552",
-      "abstract": "Black-box language-model reliability is commonly pursued by sampling, prompting, voting, verifying, or iteratively revising individual answers. We ask a prior question: \\emph{what determines whether a collection of black-box responses is recoverable at all?} We represent responses to typed transformations of a query as a \\emph{relational response field} (RRF). Edge transports encode how valid responses must change under paraphrase, scaling, decomposition, refactoring, or other task symmetries; anchors encode independently trusted evidence such as execution or a verifier. For relation operator $D$, anchor operator $A$, and at most $k$ corrupted response nodes, we identify $γ_k(D,A)$ as the intrinsic difficulty of black-box response recovery. It is positive exactly when every $k$-node corruption is identifiable; it gives a deterministic stability bound proportional to $1/γ_k$; and a matching two-point minimax lower bound shows that no estimator can improve this dependence. Thus consistency is not truth: relation-only methods are blind to null directions, including shared hallucinations. We derive sparse field-repair algorithms while separating information-theoretic identifiability from the stronger null-space conditions required by convex optimization. Controlled theorem tests and black-box mathematics/code experiments evaluate four theory-fixed consequences: consistency--truth separation, anchor phase transitions, redundancy saturation, and cross-model, cross-task prediction of repair difficulty. The results support $γ_k(D,A)$ as a measurable property of a response-recovery instance, rather than a score attached to one repair heuristic.",
-      "topics": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04514",
-      "abstract": "Background: Respiratory specialty care requires multimodal interpretation, longitudinal risk assessment, guideline-concordant intervention, and whole-course management, which are poorly represented by examination-oriented medical benchmarks. Objective: To develop RESPClinBench, a real-world scenario-based benchmark for respiratory clinical decision-making, and evaluate seven contemporary large language models across AECOPD-PIM and PNBIM. Methods: RESPClinBench cases were adapted from de-identified respiratory clinical data. Three attending-level respiratory physicians revised cases, reference answers, and atomic clinical-action points, while one senior respiratory specialist performed cross-review and final adjudication. AECOPD-PIM comprised 427 open-ended COPD cases, and PNBIM comprised 196 multimodal pulmonary nodule cases combining chest CT with structured clinical information. Seven models generated 4,361 responses through standardized API inference with temperature 0 and a maximum output length of 8192 tokens. An automated framework calculated the final score as the arithmetic mean of atomic-action recall and rubric-based LLM-as-a-Judge assessment. Results: Across 623 cases, the mean final score was 68.58. Qwen3.6-27B ranked first overall at 71.22, Qwen3.5-397B-A17B led PNBIM at 72.48, and Qwen3.6-27B led AECOPD-PIM at 71.11. Imaging hallucination and serious medical risk occurred in 31.85% and 8.16% of PNBIM responses; medication-safety risk and serious medical risk occurred in 26.93% and 1.44% of AECOPD-PIM responses. Conclusions: RESPClinBench identifies task-specific limitations in multimodal pulmonary nodule assessment and longitudinal COPD management. Combining explicit clinical-action coverage, holistic evaluation, and independent safety flags provides a clinically grounded basis for model selection and prospective validation.",
-      "topics": [
         "cs.CL"
       ],
       "keywords": []

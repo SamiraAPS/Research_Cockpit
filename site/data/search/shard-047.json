@@ -1,7 +1,44 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "documents": [
+    {
+      "id": "doi:10.5281/zenodo.23390590",
+      "abstract": "Abstract—Fine-tuning Large Language Models (LLMs) and Vision Foundation Models on private, decentralized domain data is essential for specialized healthcare, legal, and financial enterprise applications. However, centralizing domain-specific text corpora triggers catastrophic data privacy violations under stringent regulatory mandates (e.g., GDPR, HIPAA), while full-parameter federated fine-tuning incurs insurmountable communication bottlenecks (>140 GB per communication round for a 70B parameter model) and exhausts edge GPU memory. The confluence of Federated Learning (FL) and Parameter-Efficient Fine-Tuning (PEFT)—designated as Fed-LLMs—establishes a scalable paradigm where decentralized client nodes collaboratively adapt foundation backbones while sharing exclusively low-rank parameter updates. Nevertheless, deploying Fed-LLMs across heterogeneous edge infrastructures introduces severe systems challenges: non-independent and identically distributed (non-IID) catastrophic forgetting, communication bandwidth saturation over constrained wide-area networks, split learning intermediate activation leakage, and susceptibility to gradient inversion attacks in autoregressive attention layers. This paper delivers an exhaustive, mathematically formal technical investigation and empirical architectural evaluation of Federated Fine-Tuning for Foundation Models. We formalize federated low-rank adaptation (Fed-LoRA) aggregation under statistical distribution skew, derive the mathematical dynamics of Split Federated Learning (SplitFed) across partitioned transformer layers, and establish formal differential privacy bounds under DP-FedAvg. Furthermore, we construct an enterprise multi-node testbed comprising 64 distributed client nodes fine-tuning open foundation models (Llama-3-8B, Llama-3-70B, and Mistral-7B) across multi-tenant clinical records, financial reports, and legal jurisprudence. Our empirical findings demonstrate that quantized federated low-rank adaptation (Fed-QLoRA, rank r=8, 4-bit NormalFloat) reduces uplink communication payloads by 99.4% (from 14.2 GB down to 84 MB per round) while retaining 96.8% downstream domain accuracy compared to centralized full-parameter fine-tuning. Concurrently, activation obfuscation in SplitFed bounds reconstruction attacks to below 0.002 PSNR. Finally, we formulate open research directions in heterogeneous client rank adaptation, post-quantum secure aggregation, and federated alignment via decentralized direct preference optimization.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Domain Adaptation and Few-Shot Learning",
+        "Stochastic Gradient Optimization Techniques"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.21348",
+      "abstract": "Large language model agents can improve their capabilities by evolving reusable natural-language skills from execution experience. In real-world deployments, this experience is distributed across data owners who cannot pool their raw data, which motivates federated skill evolution. The natural first design lets each client evolve the whole skill document and upload the result for server-side aggregation. That design is poorly matched to skill evolution for three reasons. An evolved document can still carry client-specific content distilled from private traces, repeated transmission of a nearly unchanged document spends communication on knowledge that the population already holds and the contribution of a single client is buried in a document that the server cannot meaningfully attribute. We propose FedSkillGit, a federated skill evolution framework that replaces full-document updates with commits. Each participating client submits a bounded set of patches over named rules together with its local experience, which summarizes what the round taught it, and the pair passes a two-stage privacy filter before it leaves the client. The server deduplicates the submitted patches and the local experience of all participants, updates a global experience document that only the optimizers read, and merges the surviving patches into a candidate skill. The candidate is distributed to the clients, which score it on their own validation sets and report the results, and it is published only when the reported scores improve on the current version. Experiments on three datasets and three language model families show that FedSkillGit outperforms state-of-the-art baselines by up to 22% and approaches centralized evolution without sharing raw client data.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Domain Adaptation and Few-Shot Learning",
+        "Evolutionary Algorithms and Applications"
+      ],
+      "keywords": [
+        "LLM agents",
+        "version control",
+        "privacy-preserving data aggregation",
+        "data ownership",
+        "skill reuse",
+        "communication efficiency"
+      ]
+    },
+    {
+      "id": "doi:10.1002/jci3.70046",
+      "abstract": "ABSTRACT The integration of Internet of Things (IoT) with cloud platforms has generated an extremely decentralized, data‐driven network that is transforming industries. At the same time, the integration poses intricate cybersecurity challenges because of scalability requirements, device heterogeneity, and an evolving threat environment. Conventional security metrics are inadequate in some circumstances, creating a necessity for adaptive, intelligent, and proactive defense modules. Artificial intelligence (AI) offers beneficial capabilities for intrusion detection, predictive threat modeling, anomaly detection, and malware analysis. Moreover, deep learning (DL) models have proved exceptional effectiveness in automatically learning intricate patterns from larger‐scale network traffic information, allowing precise identification of advanced cyberattacks in IoT‐cloud systems. Therefore, this manuscript presents a Fine‐Grained Hybrid Attention‐Aware Deep Learning Framework for Multi‐Layer Cyberattack Detection (FGHADL‐MLCD). The major intention of the proposed model is to enhance the reliability and intelligence of cyberattack detection in large‐scale IoT‐cloud infrastructures. The FGHADL‐MLCD approach operates through a sequence of stages, including preprocessing, attribute selection, cyberattack classification, and model optimization. Initially, the collected network traffic data from TON‐IoT and Edge‐IIoT datasets undergo preprocessing operations such as data cleaning, label encoding, feature scaling, and dataset splitting to ensure consistency of input data. Following that, an effective attribute selection mechanism is introduced using the Boruta feature selection technique, which identifies the most relevant network traffic features. For multi‐layer cyberattack detection and classification, the proposed model employs a bidirectional temporal convolutional network integrated with an attention mechanism. Furthermore, the training process of the deep learning model is optimized using the Adam optimizer. To assess the model's effectiveness, extensive experiments are conducted using the benchmark IoT cybersecurity datasets. The experimental results indicate that the proposed technique achieves improved cyberattack detection performance compared to recent models. Thus, the proposed model delivers a reliable solution for securing IoT‐cloud infrastructures against diverse and evolving cyber threats.",
+      "topics": [
+        "Network Security and Intrusion Detection",
+        "Internet Traffic Analysis and Secure E-voting",
+        "Internet of Things and AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.3390/occuphealth1040047",
       "abstract": "Musculoskeletal injuries are a major occupational health concern in the fire service and can affect firefighter health, operational readiness, staffing, and injury-related costs. Although prior research has described the epidemiology of firefighter injuries, less is known about how firefighters perceive the causes of musculoskeletal injuries. This study examined perceived contributors to musculoskeletal injury among 113 career firefighters from two Mid-Atlantic fire departments. Firefighters completed an open-ended survey question asking them to identify the top three reasons firefighters are injured on the job. Responses were analyzed using inductive qualitative content analysis, and theme frequencies were summarized overall and compared across department, sex, age group, and years of service. Nine themes were identified. Insufficient physical fitness was the most frequently reported perceived contributor (75.2% of participants), followed by complacency or protocol non-compliance, fatigue and impaired sleep, improper movement technique, and limited mobility or flexibility. Perceived contributors were generally consistent across demographic and occupational subgroups. These findings suggest that firefighters perceive musculoskeletal injuries as largely related to modifiable individual and behavioral factors. Identifying firefighter-perceived causes of injury may help inform worksite prevention efforts, including fitness development, fatigue mitigation, movement education, mobility training, and reinforcement of safe work practices.",
@@ -2988,64 +3025,6 @@
         "expert advice",
         "technological uncertainty",
         "collective action"
-      ]
-    },
-    {
-      "id": "doi:10.3389/fpara.2026.1929185",
-      "abstract": "Introduction Coproparasitological analysis in zoo animals is essential for preventing parasitic diseases, which can compromise conservation efforts and pose occupational health risks. This study aimed to characterize the endoparasitic fauna detected in fecal samples from mammals, birds, and reptiles maintained at the Getúlio Vargas Zoobotanical Park, Salvador, Bahia, Brazil. Methods Fecal samples were examined using four complementary coproparasitological methods: the direct method, spontaneous sedimentation, Willis flotation, and Mini-FLOTAC®. Results Of the samples (N = 144), 52.8% were positive. Among these, 80.3% harbored nematodes, 23.7% protozoa, 13.2% cestodes, and 10.5% trematodes, with 26.3% presenting mixed infections. In primates, coccidia, Strongyloides spp., Bertiella spp., and Platynosomum spp. were observed; in carnivores, Strongyloides spp. and Oxyuridae; in Artiodactyla, Balantioides spp., Trichuris spp., and Strongyloides spp.; in Perissodactyla, Balantioides spp. and Strongyloidea; and in Didelphimorphia, Eimeria spp., Cruzia spp., and Aspidodera spp. In birds, Capillaria spp., Isospora spp., and cestodes were identified; in reptiles, Nyctotherus spp. and Balantioides spp. were detected. Discussion This study reports, for the first time, the occurrence of Strongyloides spp. in Ateles marginatus and Leontopithecus chrysomelas, Bertiella spp. in Callicebus barbarabrownae and Saimiri sciureus , and Capillaria spp. in Amazona rhodocorytha, Eupsittula aurea , and Diopsittca nobilis .",
-      "topics": [
-        "Helminth infection and control",
-        "Parasitic Infections and Diagnostics",
-        "Parasite Biology and Host Interactions"
-      ],
-      "keywords": [
-        "zoo animals",
-        "endoparasites",
-        "coproparasitology",
-        "Strongyloides",
-        "Bertiella",
-        "Capillaria",
-        "nematodes",
-        "protozoa",
-        "cestodes",
-        "trematodes",
-        "primates",
-        "birds",
-        "reptiles",
-        "Ateles marginatus",
-        "Leontopithecus chrysomelas",
-        "Saimiri sciureus",
-        "coccidia",
-        "occupational health",
-        "wildlife conservation"
-      ]
-    },
-    {
-      "id": "doi:10.32628/cseit2612554",
-      "abstract": "Residential parking facilities are not utilized effectively since they remain vacant for many hours each day while visitors have trouble locating convenient and inexpensive options [6]. Traditional parking facilities are seen as a result of infrastructure problems due to physical property issues rather than providing opportunities for private owners to generate revenue from idle spaces. Recent advancements on the internet such as smart parking, parking prediction, shared parking/reservation and two-way parking platform show how these systems are able to match supply demand effectively [1]-[10]. The study is about this topic of research direction which relates to ParkConnect that it is a platform based on artificial intelligence where people who own spaces can connect with those who need temporary parking services. IoT &, sensors-based occupancy monitoring; Machine Learning Deep Learning Parking Availability Prediction Reservation Allocation Models Intelligent Parking Matching Monetary Mechanisms Two-Sided Market Model Surveyed. These methods� we could integrate this process within our existing system where owners list up their availability while drivers share information about available spaces; then an algorithm would estimate how many people will want to park their based upon proximity before assigning those spots out along with accepting bookings and paying discounts ←& providing reviews/feedback through the app. There**Research needs remain for more information on residential scale of data, trust and security issues, uncertainty around arrival/departure time schedules, variable prices policies, explanations behind recommendation algorithms and integration between revenue generation models and predicting occupancy rates. Research to develop ParkConnect as an easy-to-use app based on real estate listings.",
-      "topics": [
-        "Smart Parking Systems Research",
-        "Transportation and Mobility Innovations",
-        "Blockchain Technology Applications and Security"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.22087",
-      "abstract": "In pathology, pattern recognition relies on a frame of reference built through extensive training and experience, which may still fall short when encountering rare cancer subtypes. Archives of previously diagnosed tumors often contain relevant precedents, yet identifying the most relevant cases remains challenging. Here we explore whether content-based retrieval with current pathology foundation models facilitates rare cancer diagnostics without any task-specific training. Pathologists can query a digitized archive using a region of interest (ROI) from a whole slide image (WSI) and retrieve morphologically similar cases, along with their ICD-O codes and corresponding WSIs. The ROI can be selected manually or automatically using a gated attention-based multiple instance learning model. We evaluate our approach by leave-one-case-out on an imbalanced dataset of 137 salivary gland tumor cases spanning 12 ICD-O morphology categories, comparing four pathology foundation models (Atlas2, Atlas2-B, Atlas2-S, and UNI2h). Top-1/3/5 retrieval was 62.5%/76.7%/81.3% for Atlas2, 50.2/66.6/72.9% for UNI2h, 52.3%/71.5%/77.6% for Atlas2-B and 54.4/65.2/73.7% for Atlas2-S. Macro-averaged F1 ranged from 69.0% for the smallest model Atlas2-S to 76.6% for the largest model Atlas2 across the five classes with at least ten cases. Our modified Chamfer similarity separated correct from incorrect matches among the Top-5 more reliably for Atlas2 (AUC 0.754) than for Atlas2-B (0.679, p = 0.020) and Atlas2-S (0.653, p = 0.003), but not UNI2h (0.697, p = 0.196). Requiring no additional training or manual annotation, this approach makes departmental archives searchable with pathology foundation models, providing a low-barrier route to case-based differential diagnosis and extending the individual frame of reference to the collective experience of the department.",
-      "topics": [
-        "AI in cancer detection",
-        "Image Retrieval and Classification Techniques",
-        "Radiomics and Machine Learning in Medical Imaging"
-      ],
-      "keywords": [
-        "salivary gland tumors",
-        "pathology foundation models",
-        "whole slide images",
-        "differential diagnosis",
-        "multiple instance learning",
-        "gated attention",
-        "training-free retrieval"
       ]
     }
   ]

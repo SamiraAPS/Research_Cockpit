@@ -1,7 +1,32 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "documents": [
+    {
+      "id": "doi:10.1145/3830398.3830657",
+      "abstract": "When manipulating objects in immersive platforms through speech and gesture, users naturally construct spatial references, referring to scene entities, their bodies, or the environment. Leveraging spatial cognition theories, this work systematically examines how users construct and communicate spatial intent. Using a custom toolkit, we conducted a Wizard-of-Oz study to observe unconstrained multimodal (speech + gesture) input patterns in Virtual Reality for scene construction. Based on these findings, we formalize a framework that decomposes spatial references into three core components: Source, Anchor, and Frame, while characterizing their compositional strategies and explicitness. We demonstrate the utility of this Reference-based Manipulation framework by implementing an LLM-based pipeline featuring a set of example interaction techniques with a preliminary technical evaluation. Finally, we discuss key lessons learned for supporting reference-based spatial interaction.",
+      "topics": [
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.04552",
+      "abstract": "Black-box language-model reliability is commonly pursued by sampling, prompting, voting, verifying, or iteratively revising individual answers. We ask a prior question: \\emph{what determines whether a collection of black-box responses is recoverable at all?} We represent responses to typed transformations of a query as a \\emph{relational response field} (RRF). Edge transports encode how valid responses must change under paraphrase, scaling, decomposition, refactoring, or other task symmetries; anchors encode independently trusted evidence such as execution or a verifier. For relation operator $D$, anchor operator $A$, and at most $k$ corrupted response nodes, we identify $γ_k(D,A)$ as the intrinsic difficulty of black-box response recovery. It is positive exactly when every $k$-node corruption is identifiable; it gives a deterministic stability bound proportional to $1/γ_k$; and a matching two-point minimax lower bound shows that no estimator can improve this dependence. Thus consistency is not truth: relation-only methods are blind to null directions, including shared hallucinations. We derive sparse field-repair algorithms while separating information-theoretic identifiability from the stronger null-space conditions required by convex optimization. Controlled theorem tests and black-box mathematics/code experiments evaluate four theory-fixed consequences: consistency--truth separation, anchor phase transitions, redundancy saturation, and cross-model, cross-task prediction of repair difficulty. The results support $γ_k(D,A)$ as a measurable property of a response-recovery instance, rather than a score attached to one repair heuristic.",
+      "topics": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.04514",
+      "abstract": "Background: Respiratory specialty care requires multimodal interpretation, longitudinal risk assessment, guideline-concordant intervention, and whole-course management, which are poorly represented by examination-oriented medical benchmarks. Objective: To develop RESPClinBench, a real-world scenario-based benchmark for respiratory clinical decision-making, and evaluate seven contemporary large language models across AECOPD-PIM and PNBIM. Methods: RESPClinBench cases were adapted from de-identified respiratory clinical data. Three attending-level respiratory physicians revised cases, reference answers, and atomic clinical-action points, while one senior respiratory specialist performed cross-review and final adjudication. AECOPD-PIM comprised 427 open-ended COPD cases, and PNBIM comprised 196 multimodal pulmonary nodule cases combining chest CT with structured clinical information. Seven models generated 4,361 responses through standardized API inference with temperature 0 and a maximum output length of 8192 tokens. An automated framework calculated the final score as the arithmetic mean of atomic-action recall and rubric-based LLM-as-a-Judge assessment. Results: Across 623 cases, the mean final score was 68.58. Qwen3.6-27B ranked first overall at 71.22, Qwen3.5-397B-A17B led PNBIM at 72.48, and Qwen3.6-27B led AECOPD-PIM at 71.11. Imaging hallucination and serious medical risk occurred in 31.85% and 8.16% of PNBIM responses; medication-safety risk and serious medical risk occurred in 26.93% and 1.44% of AECOPD-PIM responses. Conclusions: RESPClinBench identifies task-specific limitations in multimodal pulmonary nodule assessment and longitudinal COPD management. Combining explicit clinical-action coverage, holistic evaluation, and independent safety flags provides a clinically grounded basis for model selection and prospective validation.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.05245",
       "abstract": "Reusable skills, which encapsulate the procedural knowledge required to solve real-world professional tasks, offer LLM-based agents a path toward self-evolution in expert domains. Existing self-evolving skill methods construct skills internally from the model's parametric knowledge or trajectories, and are therefore bounded by what the model already knows. However, the domain conventions and standard procedures underlying professional skills often lie beyond this boundary and are hard to elicit from the agent alone. To address this issue, we therefore propose a novel framework, Search2Skill, that automatically identifies the agent's capability gaps, searches external sources to address them, and distills the retrieved evidence into structured, reusable skills. Specifically, Search2Skill is optimized by a rubric-based reinforcement learning scheme that jointly improves when to search, how to search, and how to generate skills. Experiments on eight expert-level domains from three benchmarks show that Search2Skill consistently outperforms both search-augmented and trajectory-based skill-learning baselines under both streaming and held-out evaluation protocols. Further analyses show that the gains arise from skill abstraction rather than raw retrieved evidence, and that the acquired skills transfer across model scales.",
@@ -1853,32 +1878,6 @@
       "topics": [
         "cs.AI",
         "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01283",
-      "abstract": "All Transformer-based large language models compute attention via the Euclidean inner product, an architectural choice that Dong et al. (2021) proved causes representational rank to decay doubly exponentially with depth in pure self-attention stacks. We develop a theoretical framework that targets this structural limitation at the mathematical level by replacing the flat Euclidean metric with learned per-token Riemannian metrics. Our contributions are threefold. (1) We prove that Riemannian attention scores with heterogeneous per-token metrics are non-Gram---they cannot be factorized as QK^T with factorization dimension O(d). We are explicit that this is a structural observation, not a proof of rank preservation. (2) We establish that low-rank metric factors render all geometric operations tractable: geodesic distance in O(d*r) per token and metric inversion in O(d*r^2) via the Woodbury identity---both far below the O(d^3) cost of a general matrix---making Riemannian attention feasible at billion-parameter scale with negligible overhead. (3) We present the Fiber Bundle Transformer, a complete architecture specification in which each token position carries its own Riemannian metric, attention is geodesic distance computation, feed-forward updates use metric-preconditioned steps, and the connection carries explicit curvature and torsion proxies. We derive formal predictions about correctly implemented geometric architectures and identify the central open problem: proving or disproving that heterogeneous Riemannian metrics prevent the rank collapse that row-stochastic attention matrices otherwise cause. This paper presents theoretical analysis and architectural design; empirical validation is the subject of future work.",
-      "topics": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.00974",
-      "abstract": "The effective use of search engines by large language models (LLMs) remains a significant challenge, particularly in complex, multi-hop question-answering (MHQA) tasks. These tasks require the model to decompose questions into subqueries, retrieve relevant information, and synthesize answers from multiple sources, often leading to cascading errors due to poor retrieval in early stages. Reinforcement learning (RL) has shown promise in improving LLMs' search capabilities, but it often suffers from sparse rewards during training, hindering the model's ability to learn effectively. To address these challenges, we introduce Guided Retrieval Training (GRT), a novel method that improves the performance of a search agent by restricting the retrieval process during RL training using ground truth information. By focusing on a curated set of relevant documents, GRT provides the model with a stronger learning signal, mitigating the problem of sparse rewards and improving its ability to generate accurate subqueries and synthesize correct answers. Our experimental results demonstrate that GRT achieves consistent performance improvements over existing methods, such as Search-R1, across a wide range of question-answering (QA) tasks. Notably, GRT excels in MHQA tasks, achieving over 40% improvements in performance. Additionally, GRT enhances training efficiency by achieving better QA performance with fewer training steps.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01400",
-      "abstract": "Tabular foundation models, driven by in-context learning, have rapidly grown in quality and popularity. However, recent approaches with either cell-based architectures or retrieval have sacrificed efficiency for raw performance, restricting their utility in situations where compute is limited or inference speed is crucial. We adopt an alternate approach, sticking with row-based attention while incorporating long context pre-training to eliminate the need for retrieval. By combining this with architectural improvements and SSL pre-training on a newly-sourced, larger corpus of real data results, we present TabDPT-Turbo, a model that provides comparable default performance to TabDPT v1.1 on TabArena-Lite, CC18, and CTR23, at orders of magnitude faster. In our experiments, TabDPT-Turbo is the fastest model overall among leading foundation models. We have released the new model as TabDPT v1.2 at https://github.com/layer6ai-labs/TabDPT-inference.",
-      "topics": [
-        "cs.LG",
-        "cs.AI"
       ],
       "keywords": []
     }

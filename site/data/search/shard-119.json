@@ -1,7 +1,70 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.03718",
+      "abstract": "Computer-aided engineering (CAE) simulation is among the largest and most demanding areas of engineering, where setting up a solver such as OpenFOAM, FEniCS, or COMSOL takes real expertise. Large language model (LLM) agents promise to turn a natural-language request into a working simulation, and recent CAE agents add simulation-specific machinery: multi-agent decomposition, domain retrieval, and scripted reflection. That machinery suited weak base models; modern harnesses already supply multi-turn reasoning, tool use, and execution feedback. We ask what a CAE simulation agent still needs beyond a generic harness. With information access and repair budget held fixed, a single-agent harness matches or beats multi-agent specialized systems (FoamBench 96.4\\% vs.\\ 88.2\\%). Ablations trace this to capabilities the harness already provides: execution-feedback repair lifts FoamBench from 71.8\\% with no repair round to 96.4\\%, while scripted reflection adds nothing. The one input that still helps is domain knowledge supplied as solver tutorials, our largest measured gain (80.9\\% to 96.4\\%).",
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Artificial Intelligence in Law",
+        "Simulation Techniques and Applications",
+        "cs.CE",
+        "cs.CL",
+        "physics.comp-ph"
+      ],
+      "keywords": [
+        "Solver",
+        "Domain (mathematical analysis)",
+        "Problem solver",
+        "TRACE (psycholinguistics)",
+        "Reflection (computer programming)",
+        "Base (topology)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.04061",
+      "abstract": "Large language models (LLMs) are increasingly used to edit existing code, but correctness alone is not enough: useful repairs should also be minimal, reviewable, and faithful to the original implementation. We study over-editing, the tendency of a model to rewrite code beyond what is required to fix a bug. We construct an evaluation framework from 400 BigCodeBench problems by injecting controlled AST-level corruptions into reference solutions, giving each repair task a known minimal patch. Across frontier LLMs, over-editing is widespread even among strong models like GPT-5.5: high Pass@1 can coexist with unnecessarily large edits and added cognitive complexity. A preservation instruction substantially reduces this behavior, lowering average excess Levenshtein distance from 0.195 to 0.131, reducing added cognitive complexity by 26.6%, and increasing Pass@1 by 2.3 points. However, these gains do not simply follow from a larger reasoning budget or larger models. We next ask whether minimal editing can be learned directly during post-training. We observe that supervised fine-tuning overfits to seen corruption patterns, whereas reinforcement learning gives the best out-of-domain edit-fidelity and performance-retention trade-off. These results position edit fidelity as a distinct axis of code-repair quality and show that it can be measured and learned.",
+      "topics": [
+        "Software Engineering Research",
+        "Scientific Computing and Data Management",
+        "Machine Learning in Materials Science",
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Ask price",
+        "Correctness",
+        "Construct (python library)",
+        "Fidelity",
+        "Task (project management)",
+        "Code (set theory)",
+        "Oracle",
+        "Quality (philosophy)",
+        "Position (finance)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.03454",
+      "abstract": "Retrieval-augmented generation (RAG) can improve the specificity and grounding of large language model responses, but its effect is not uniformly beneficial in single-turn mental-health question answering, where user queries often combine emotional distress, treatment concerns, and safety-sensitive needs. We study when retrieval helps or hurts mental-health QA, and whether a lightweight selective retrieval policy can better control this trade-off. We operationalize retrieval need using three draft-conditioned utility dimensions: psychoeducational need, coping need, and response specificity, together with a rule-based safety trigger. Following psychotherapy-grounded RAG systems such as coTherapist, we construct a compact and controllable guideline corpus comprising coping-strategy, psychoeducational, and safety resources. We fine-tune an instruction-tuned generator on MentalChat16K using QLoRA and compare Closed-book, Always Retrieval, and Selective Retrieval settings on CounselBench-Eval and CounselBench-Adv. Experiments show that retrieval is not uniformly beneficial in this domain. Always Retrieval improves specificity but lowers overall quality and introduces additional safety-sensitive failures. Selective Retrieval preserves closed-book behavior for low-need cases while avoiding the additional degradation caused by unconditional retrieval, supporting the view that retrieval activation is a safety-sensitive control decision.",
+      "topics": [
+        "Topic Modeling",
+        "Mental Health via Writing",
+        "Neurobiology of Language and Bilingualism",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "keywords": [
+        "Document retrieval",
+        "Human–computer information retrieval",
+        "Operationalization",
+        "Control (management)",
+        "Construct (python library)",
+        "Quality (philosophy)",
+        "Query expansion"
+      ]
+    },
     {
       "id": "doi:10.21203/rs.3.rs-10740716/v1",
       "abstract": null,
@@ -3689,64 +3752,6 @@
         "Language model",
         "Software deployment",
         "Metric system"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.01293",
-      "abstract": "Network slicing in multidomain 5G environments introduces critical challenges in guaranteeing Service Level Agreements (SLAs) under dynamic resource variability and heterogeneous service requirements. This article presents TriSLA, a closed-loop, preventive, SLA-aware architecture designed to evaluate feasibility at request time and continuously ensure SLA compliance during operation. The architecture combines ontology-driven semantic intent interpretation, multidomain machine learning feasibility risk inference, Explainable Artificial Intelligence (XAI) feature attribution, and closed-loop runtime SLA assurance into a unified operational pipeline. A fully operational prototype was evaluated in a multi-node cloud-native environment integrating Radio Access Network (RAN), Transport Network (TN), and 5G Core (5GC) domains with real-time telemetry collection. Experimental evaluation demonstrates that TriSLA guarantees a 100% SLA satisfaction rate for admitted slices, completely eliminating post-deployment violations compared to reactive (51.2%) and static threshold (80.4%) admission baselines. The predictive feasibility assessment achieved a classification accuracy of up to 99.51% (98.68% for the default explainable Random Forest classifier), enabling preventive admission decisions before infrastructure commitment. Furthermore, the cognitive admission pipeline introduces minimal processing overhead, requiring 25.37 ms for ontology-driven semantic parsing and 231.66 ms for XAI-assisted feasibility inference. Concurrently, the closed-loop assurance engine resolves 100% of runtime telemetry anomalies within a 4.22 s recovery cycle. These results demonstrate that TriSLA provides reliable, explainable, transparent, and preventive SLA management through integrated predictive admission and closed-loop runtime assurance for next-generation 5G networks.",
-      "topics": [
-        "Software-Defined Networks and 5G",
-        "Software System Performance and Reliability",
-        "Adversarial Robustness in Machine Learning"
-      ],
-      "keywords": [
-        "Service (business)",
-        "Architecture framework",
-        "Feature (linguistics)",
-        "Resource (disambiguation)",
-        "Architecture",
-        "Pipeline (software)",
-        "Network monitoring",
-        "Admission control"
-      ]
-    },
-    {
-      "id": "arxiv:2609.00624",
-      "abstract": "A prominent paradigm in inference-time alignment employs lightweight supervisors to steer Large Language Models (LLMs). Through empirical analysis, we identify a structural mismatch in this paradigm: weak supervisors exhibit pervasive high entropy across the vast majority of tokens, yet prevailing dense intervention approaches mandate supervision at every decoding step. This leads to frequent low-confidence interventions that can disrupt valid base-model reasoning and incur substantial utility costs. To resolve this, we propose TUSA (Trust-based Uncertainty Sparse Alignment). Moving away from continuous oversight, TUSA reframes alignment as a dynamic arbitration process, introducing an uncertainty-aware arbiter that authorizes intervention only when two conditions are met: the supervisor is confident and the token is semantically salient. This mechanism effectively filters out uncertainty-driven noise and redundant supervision. Extensive experiments across multiple models and benchmarks show that TUSA consistently improves both safety alignment and general helpfulness. By bypassing approximately 50% of alignment steps, it not only enhances safety preference by up to 15.6%, but also boosts general preference rates by up to 12.0% compared to the dense baseline, demonstrating that selective, high-precision alignment can outperform continuous supervision.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Explainable Artificial Intelligence (XAI)",
-        "Ethics and Social Impacts of AI",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Inference",
-        "Supervisor",
-        "Security token",
-        "Preference",
-        "Hidden Markov model",
-        "Entropy (arrow of time)",
-        "SAFER",
-        "Control (management)"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.ergon.2026.104041",
-      "abstract": null,
-      "topics": [
-        "AI in Service Interactions",
-        "Artificial Intelligence in Healthcare and Education",
-        "Digital Mental Health Interventions"
-      ],
-      "keywords": [
-        "Technology acceptance model",
-        "Cognition",
-        "Empirical research",
-        "Scope (computer science)",
-        "Trustworthiness",
-        "Structural equation modeling",
-        "Heuristic",
-        "Persuasion"
       ]
     }
   ]

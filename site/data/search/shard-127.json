@@ -1,7 +1,68 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2608.12286",
+      "abstract": "Many nonlinear models across physics, chemistry, and biology exhibit multiple solutions for the same parameters, and capturing this entire solution set is essential for understanding pattern-forming systems. Yet existing learned surrogates are fundamentally single-valued: neural operators map each parameter to a single output, and physics-informed neural networks converge to one branch. We develop \\textbf{PatternFormer} (PF), a large language model-based framework for learning the multiple solutions of nonlinear partial differential equations. By transforming unordered coexisting solutions into canonical sequences, PF produces structured solution sets in a single autoregressive pass, terminating automatically for finite families and enforcing physical residual constraints for unbounded ones. On nonlinear elliptic problems it recovers all solution branches in one inference step; on Gray--Scott it generates coexisting Turing patterns, including physically valid states absent from the reference data and beyond training. PF can also be sequentially fine-tuned across multistable systems, toward general foundation models for solution landscapes.",
+      "topics": [
+        "Model Reduction and Neural Networks",
+        "Machine Learning in Materials Science",
+        "Quantum many-body systems"
+      ],
+      "keywords": [
+        "Nonlinear system",
+        "Set (abstract data type)",
+        "Turing",
+        "Artificial neural network",
+        "Inference",
+        "Partial differential equation",
+        "Nonlinear autoregressive exogenous model",
+        "Residual"
+      ]
+    },
+    {
+      "id": "arxiv:2608.11955",
+      "abstract": "Large language models are already adept at engaging users in long, emotionally salient conversations across ordinary and existential domains. They are also capable of inducing a potent sense of connection with a human-like entity, even when the user knows their interlocutor is artificial. For some users, these conversations can unsettle assumptions about mind, reality, agency and authority, producing forms of ontological shock and epistemic destabilisation in which inherited criteria become newly available for doubt or revision. Independent of direct use, exposure to public discourse about AI and the disorienting pace of their evolution might extend this destabilisation by changing the cultural background against which artificial minds are encountered and interpreted. We describe this condition as philosophical vertigo: a loosening of the ordinary criteria by which people stabilise meaning and orient themselves to reality. Drawing on philosophy, psychiatry, cognitive science, AI safety and religious studies, we outline pathways through which philosophical vertigo may arise, become affectively saturated, and eventually propagate through human-AI interaction and online communities. Against this background, clinical reports of AI-associated delusions can be seen as sentinel events making visible themes and mechanisms that may also operate at a population level in less severe or non-clinical forms. We argue that AI systems themselves will increasingly participate in the reconstruction of our shared epistemic environment because they readily supply narrative material and personalised interpretive scaffolding at precisely the moment when users' conceptual assumptions may already be loosened. We conclude by considering possible trajectories for the ecology of belief and shared reality, and proposing philosophical corrigibility as a civic response for navigating this emerging social condition.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Embodied and Extended Cognition",
+        "cs.CY",
+        "cs.HC"
+      ],
+      "keywords": [
+        "Agency (philosophy)",
+        "Existentialism",
+        "Meaning (existential)",
+        "Narrative",
+        "Salient",
+        "Identity (music)",
+        "Population",
+        "Cognition",
+        "Ambiguity"
+      ]
+    },
+    {
+      "id": "arxiv:2608.12649",
+      "abstract": "Computing systems are moving from reactive tools toward systems that sense, interpret, predict, and act before explicit user requests. This transition is enabled by the global scale of mobile connectivity, the rapid expansion of wearable and ambient sensing, advances in machine learning and foundation models, distributed edge infrastructure, and physical actuation. We define \\emph{proactive computing} as a paradigm in which systems infer user context, anticipate future needs or risks, and initiate information delivery or actions at an appropriate time. This survey distinguishes proactive computing from reactive, context-aware, adaptive, and predictive computing, and frames proactivity as a system-level integration problem across sensing, understanding, decision making, action, and governance. We review the technological enablers of proactive computing, organize its design space, analyze technical challenges such as uncertainty-aware triggering and the prediction-to-action gap, and discuss socio-technical issues involving user acceptance, trust, privacy, accountability, fairness, and sustainability. We argue that the key research challenge is not merely improving prediction accuracy, but determining when, how, and whether systems should act on behalf of users.",
+      "topics": [
+        "Innovative Human-Technology Interaction",
+        "IoT and Edge/Fog Computing",
+        "Context-Aware Activity Recognition Systems",
+        "cs.CY"
+      ],
+      "keywords": [
+        "Proactivity",
+        "Key (lock)",
+        "Wearable computer",
+        "Scale (ratio)",
+        "Edge computing",
+        "Information system",
+        "Ubiquitous computing",
+        "Mobile computing"
+      ]
+    },
     {
       "id": "arxiv:2608.11830",
       "abstract": "The deployment of large language models (LLMs) in mental health contexts raises questions about the relationship between clinical safety and environmental cost. In this paper, we examine this relationship by combining K-Bench clinical safety scores with EcoLogits life-cycle assessment estimates across 47 supported model configurations. We evaluate model performance and environmental impact across four dimensions: energy use, carbon emissions, water consumption, and abiotic depletion. The results indicate a non-linear trade-off at the upper end of the safety distribution: a 2.61 percentage-point increase in clinical safety score corresponded to an approximately 60-fold increase in estimated energy use per million output tokens. Row-level analyses further suggest that additional test-time compute did not consistently improve clinical safety and, in some configurations, was associated with lower clinical safety scores. These findings suggest that relying solely on larger models or additional inference-time computation may be an inefficient strategy for improving safety in therapeutic AI systems. We discuss the implications for sustainable deployment and highlight dynamic model selection, including model cascading, as a potential approach for reducing environmental impact while preserving clinical performance in higher-risk cases.",
@@ -3202,36 +3263,6 @@
       "topics": [
         "cs.CL",
         "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.08878",
-      "abstract": "Transformer-based large language models (LLMs) achieve strong performance across many tasks, but their Key-Value (KV) cache grows linearly with sequence length, creating a severe memory bottleneck for long-context inference. Existing heuristic eviction methods (e.g., H$_2$O and SnapKV) rely on static attention or positional signals that often fail to capture a token's future predictive influence. We propose DistillCache, a reinforcement learning framework that formulates KV-cache eviction as a sequential decision problem. DistillCache learns a lightweight policy network using rich internal model signals (attention statistics, value norms, entropy, and position) and trains it with REINFORCE via a per-step KL-divergence reward to preserve the full-cache output distribution. On a 7B-parameter instruction-tuned Transformer (Mistral-7B-Instruct-v0.3), DistillCache retains 94.2% of full-cache accuracy on LongBench at a 25% cache budget, outperforming both strong heuristic baselines (H$_2$O, SnapKV) by up to 2.7 absolute points and, under our re-implementations, concurrent RL-based methods (ForesightKV, RLKV) by up to 1.4 points on long-context tasks. On reasoning benchmarks, DistillCache is competitive with the best concurrent method and surpasses it under aggressive compression. It also delivers up to 2.1x full-cache throughput while maintaining competitive practical efficiency. These results highlight the effectiveness of learned, distribution-aware policies for memory-efficient long-context LLM inference.",
-      "topics": [
-        "cs.LG",
-        "cs.AI",
-        "cs.PF"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.08761",
-      "abstract": "In an era defined by escalating climate change and the pervasive deployment of edge intelligence, the environmental cost of semiconductor manufacturing and operation has reached a critical threshold. As Deep Learning (DL) accelerators dominate System-on-Chip (SoC) die area, achieving true sustainability requires a paradigm shift from static worst-case efficiency to dynamic energy-proportionality. This paper introduces Eco-SoC, a highly scalable VLSI architecture co-designed specifically for sustainable artificial intelligence. We propose a hardware-level Dynamic Precision-Scaling Logic (DPSL) framework that adaptively modulates bit-width precision based on real-time activation sparsity, successfully reducing switching activity by up to 42% on a commercial 7nm FinFET process node. Furthermore, we transcend traditional Power-Performance-Area (PPA) metrics by providing a comprehensive Life Cycle Assessment (LCA) using the Architectural Carbon footprint Tool (ACT). Our synthesis demonstrates that Eco-SoC offsets its increased embodied carbon footprint (a marginal 4.8% area overhead) within 1.1 years of edge deployment. Finally, by introducing a thermal-aware power gating mechanism that mitigates localized hotspots, Eco-SoC doubles the projected Mean Time To Failure (MTTF) of the silicon, providing a tangible, scalable strategy for electronic waste (e-waste) mitigation in next-generation computing systems.",
-      "topics": [
-        "cs.AR",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1016/j.eswa.2026.133983",
-      "abstract": "Scientific named entity recognition (SciNER) plays a crucial role in information extraction and knowledge discovery from scientific texts. Recently, large language models (LLMs) have demonstrated the capacity to achieve competitive SciNER performance with minimal human effort. Existing research highlights the importance of incorporating candidate entity type information for accurate entity recognition and classification by LLMs. However, when too many candidate entity types are provided in the prompt, LLMs struggle to accurately recognize and label entities in scientific texts, where entity types are more complex than in general domains. To address this challenge, we propose TdSciNER, a type-driven approach that effectively leverages entity type information to enhance SciNER performance. In TdSciNER, we first design an entity type filter model to identify the most likely entity types present in a given sentence. Subsequently, we introduce an auxiliary multi-class entity typing task within a multi-task learning framework alongside SciNER to obtain richer contextual representations. Then, we develop a novel demonstration selection strategy based on sentence similarity and entity type diversity to activate the in-context learning capabilities of LLMs, thereby improving entity recognition accuracy across diverse scientific domains. Experiments on three datasets demonstrate that our method achieves performance comparable to fully supervised models. Further analysis validates that each entity type-driven component in TdSciNER contributes to the improvement of SciNER performance. This work provides valuable insights for future advancements in SciNER and broader information extraction tasks in scientific text mining.",
-      "topics": [
-        "cs.CL",
-        "cs.AI",
-        "cs.DL",
-        "cs.IR"
       ],
       "keywords": []
     }

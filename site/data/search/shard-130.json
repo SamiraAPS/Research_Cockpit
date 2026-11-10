@@ -1,7 +1,33 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "documents": [
+    {
+      "id": "arxiv:2608.01283",
+      "abstract": "All Transformer-based large language models compute attention via the Euclidean inner product, an architectural choice that Dong et al. (2021) proved causes representational rank to decay doubly exponentially with depth in pure self-attention stacks. We develop a theoretical framework that targets this structural limitation at the mathematical level by replacing the flat Euclidean metric with learned per-token Riemannian metrics. Our contributions are threefold. (1) We prove that Riemannian attention scores with heterogeneous per-token metrics are non-Gram---they cannot be factorized as QK^T with factorization dimension O(d). We are explicit that this is a structural observation, not a proof of rank preservation. (2) We establish that low-rank metric factors render all geometric operations tractable: geodesic distance in O(d*r) per token and metric inversion in O(d*r^2) via the Woodbury identity---both far below the O(d^3) cost of a general matrix---making Riemannian attention feasible at billion-parameter scale with negligible overhead. (3) We present the Fiber Bundle Transformer, a complete architecture specification in which each token position carries its own Riemannian metric, attention is geodesic distance computation, feed-forward updates use metric-preconditioned steps, and the connection carries explicit curvature and torsion proxies. We derive formal predictions about correctly implemented geometric architectures and identify the central open problem: proving or disproving that heterogeneous Riemannian metrics prevent the rank collapse that row-stochastic attention matrices otherwise cause. This paper presents theoretical analysis and architectural design; empirical validation is the subject of future work.",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.00974",
+      "abstract": "The effective use of search engines by large language models (LLMs) remains a significant challenge, particularly in complex, multi-hop question-answering (MHQA) tasks. These tasks require the model to decompose questions into subqueries, retrieve relevant information, and synthesize answers from multiple sources, often leading to cascading errors due to poor retrieval in early stages. Reinforcement learning (RL) has shown promise in improving LLMs' search capabilities, but it often suffers from sparse rewards during training, hindering the model's ability to learn effectively. To address these challenges, we introduce Guided Retrieval Training (GRT), a novel method that improves the performance of a search agent by restricting the retrieval process during RL training using ground truth information. By focusing on a curated set of relevant documents, GRT provides the model with a stronger learning signal, mitigating the problem of sparse rewards and improving its ability to generate accurate subqueries and synthesize correct answers. Our experimental results demonstrate that GRT achieves consistent performance improvements over existing methods, such as Search-R1, across a wide range of question-answering (QA) tasks. Notably, GRT excels in MHQA tasks, achieving over 40% improvements in performance. Additionally, GRT enhances training efficiency by achieving better QA performance with fewer training steps.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.01400",
+      "abstract": "Tabular foundation models, driven by in-context learning, have rapidly grown in quality and popularity. However, recent approaches with either cell-based architectures or retrieval have sacrificed efficiency for raw performance, restricting their utility in situations where compute is limited or inference speed is crucial. We adopt an alternate approach, sticking with row-based attention while incorporating long context pre-training to eliminate the need for retrieval. By combining this with architectural improvements and SSL pre-training on a newly-sourced, larger corpus of real data results, we present TabDPT-Turbo, a model that provides comparable default performance to TabDPT v1.1 on TabArena-Lite, CC18, and CTR23, at orders of magnitude faster. In our experiments, TabDPT-Turbo is the fastest model overall among leading foundation models. We have released the new model as TabDPT v1.2 at https://github.com/layer6ai-labs/TabDPT-inference.",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.01388",
       "abstract": "Runtime safety monitors based on Linear Temporal Logic (LTL) and finite automata (FSA) are increasingly deployed to intercept unsafe tool-call sequences in LLM agents. Yet the same monitor achieves 68-75% attack coverage on some model architectures and near-zero on others, with no explanation from capability scores, training data, or prompt design. We provide the missing theory. We prove that the recall of any fixed-invariant FSA monitor is bounded above by the concentration of the attack distribution: the fraction of attacks covered by the k most frequent trigger-completion patterns. When attacks concentrate (low Shannon entropy), a small fixed invariant set achieves high recall; when they disperse across many structurally distinct patterns (high entropy), no fixed invariant set of tractable size can, regardless of how the invariants were derived. We validate this entropy-coverage bound across eight frontier LLM architectures. GPT-class and DeepSeek backends yield highly concentrated attacks (H ~ 0.24 bits; one pattern covers 96%), explaining 68-75% recall; Gemini variants yield high-entropy distributions (H ~ 2.81 bits; 7 clusters each <= 7%), explaining near-zero recall (6-13%), invariant to architecture-matched retraining. Entropy accounts for 76% of variance in coverage (Pearson r = -0.87, p = 0.005, 95% CI [-0.98, -0.78]), holding under leave-one-out (r in [-0.91, -0.82]). We introduce a pre-deployment entropy test that predicts monitor coverage from a small attack sample, enabling architecture-aware monitor selection before deployment. The bound and test are architecture-agnostic and apply to any FSA-based runtime monitor over discrete action sequences.",
@@ -1843,31 +1869,6 @@
         "cs.AI",
         "cs.CL",
         "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.25297",
-      "abstract": "The rapid development of large language model (LLM) agents has enabled their broad adoption across diverse real-world tasks. To standardize interactions between LLM agents and external environments, Model Context Protocol (MCP) tools have emerged as a de facto standard and have been widely integrated into these systems. However, the use of MCP tools also introduces new safety risks, as LLM agents can be induced to perform malicious or unauthorized actions. Although prior work has proposed defenses for securing tool use in LLM agents, most methods rely on static analysis, i.e., inspecting prompts and generated outputs, which limits the defense effectiveness and robustness. To address these limitations, we propose MTGuard, a hybrid analysis-based defense framework designed to safeguard the use of MCP tools in LLM agents by leveraging lifecycle-aware static-dynamic co-analysis. Extensive evaluation demonstrates that MTGuard effectively mitigates multiple categories of harmful tool use across different LLM agents while maintaining performance on benign user tasks.",
-      "topics": [
-        "cs.CR",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.25375",
-      "abstract": "India is a vast nation of over 1.4 billion people, varied by hundreds of diverse and locally specific traditions and cultures and 22 officially recognized languages. Large language models (LLMs) are now being deployed on a massive scale throughout the mainland as well as in remote villages. However, the common benchmarks - MMLU, BIG-Bench, and TruthfulQA are almost exclusively English- and Western-centric. They do not identify those safety, fairness, and accuracy failures unique to the Indian context. That is the gap Inspect India Evals seeks to fill. It is an open-source framework built on top of UK AISI's Inspect AI platform. It has six benchmarks: Multilingual MMLU across sixteen Indian languages, BharatBBQ (our adaptation of BBQ for Indian social bias), a safety evaluation for Digital Public Infrastructure, a multilingual safety test using harmful prompts in Indian languages, a multi-turn jailbreak resistance test, and an Indian cultural knowledge benchmark scored using LLM-as-judge rubrics. In this study, we tested five open-weight models ranging from 8B to 32B parameters. Sarvam-M 24B and Gemma 2 27B came out on top, both scoring 80% on the composite India Fairness Index, with Sarvam-M even beating larger 32B models on Indian cultural knowledge and DPI safety compliance. All models scored 100% refusal on Multilingual Safety, whereas DPI safety varied from 20% to 100%. The framework is public. It's built to work with the UK AISI registry. Anyone can reproduce or extend this work.",
-      "topics": [
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.25228",
-      "abstract": "Column annotation (CA), including column type annotation (CTA) and column property annotation (CPA), aims to identify the meanings of table columns and the semantic relationships among them. Recent CA methods usually use various neural models to learn column representations and directly map them to label categories, thereby (1) sacrificing model interpretability and adaptivity, and (2) overlooking rich label semantics and ultimately limiting accuracy. To address these limitations, we propose SymCA, an LLM-empowered interpretable CA framework that materializes column annotation as a global-to-local symbolic decision process. SymCA consists of two components: (1) global skeleton induction, which constructs a semantic skeleton over the label space, and (2) local substrate evolution, which evolves predictive substrates within the skeleton. Specifically, to exploit label semantics while preserving an interpretable decision process, the global skeleton induction module leverages LLMs to generate candidate hypernym-inspired tree-structured semantic skeletons and employs a Minimum Bayes Risk (MBR)-based consensus strategy to select a robust skeleton against generation variance. Since different internal nodes require different evidence to distinguish among their child nodes, the local substrate evolution module materializes each internal node as an executable and evolvable predictive substrate. Over multiple evolution rounds, each substrate trains an interpretable random forest classifier with the current operator set, leverages the LLM to propose node-specific operator modifications, and uses an exploration-exploitation strategy to prioritize promising substrates. Extensive experiments demonstrate that SymCA is accurate, robust, and interpretable, outperforming the strongest baselines by an average of 6.42% in Micro-F1 and 11.03% in Macro-F1.",
-      "topics": [
-        "cs.CL"
       ],
       "keywords": []
     }

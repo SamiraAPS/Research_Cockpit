@@ -1,7 +1,54 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "documents": [
+    {
+      "id": "doi:10.1145/3834580.3838740",
+      "abstract": "Repeated human-AI interaction is often analyzed through pooled belief-updating slopes: users observe AI successes and failures, revise reported beliefs in the feedback-consistent direction, but appear conservative on average. We show that such averages can obscure an important distinction between whether an elicited belief report changes at all and how it changes conditional on movement. We refer to this measurement-aware decomposition as the belief update gate. Reanalyzing a multi-task human-AI decision-making dataset with 240 participants, 7,200 trials, and three task domains, we find substantial non-movement in reported beliefs: 67.3% of trial-level belief changes are exactly zero, and 76.4% are smaller than five percentage points. Separating non-moving from moving reports changes the descriptive interpretation of pooled conservatism: the within-trajectory slope rises from 0.494 overall to 0.949 among rows with nonzero movement. Since this latter estimate conditions on observed movement, we interpret it as a descriptive decomposition rather than as evidence of a near-Bayesian latent learning process. Complementary hurdle style analyses (i.e., modeling zero vs. non-zero changes before predicting update magnitude) show that the absolute discrepancy between feedback and entering belief predicts whether a report changes, while the signed feedback discrepancy predicts the direction and magnitude of change among reports that move. Importantly, observed non-movement does not distinguish genuine latent belief inertia from small unexpressed updates, rounding, or other reporting processes. These findings show that calibration analyses of repeated human--AI interaction should distinguish visible non-movement in elicited belief reports from updating conditional on movement rather than treating reported beliefs as a single continuous updating process.",
+      "topics": [
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.20707",
+      "abstract": "Simulating realistic user shopping behavior underpins offline evaluation and reinforcement learning in e-commerce scenarios. While recent LLM- and VLM-based simulators have made encouraging progress, reproducing a real browsing session remains difficult for two reasons. (i) Memory Challenge: a shopping session spans dozens of pages, yet existing agents either discard long-range observation histories, losing the evolving user state, or naively concatenate them, overwhelming the context window and even degrading simulation quality. (ii) Optimization Challenge: current user simulators are typically supervised to match each logged action via imitation or step-level rewards; the resulting sessions often display unrealistic patterns, such as over-exploration or excessive passivity, which per-step supervision can neither detect nor correct. To address the above challenges, we present RecVerse, a GUI-grounded simulation agent that perceives pages through screenshots and produces faithful multi-turn trajectories. For the memory challenge, RecVerse adopts a cognitive-inspired hierarchical memory: Working Memory for short-term focus, Episodic Memory for in-session traces, and Preference Memory for high-level intent, with memory updates treated as actions so that the agent adaptively learns when and what to memorize. For the optimization challenge, RecVerse is optimized with a trajectory-level RL objective that scores entire sessions, aligning both macro-level action-type distributions and micro-level shopping intent with real users. We further release USB (User Simulation Benchmark), an interactive e-commerce GUI trajectory dataset for multi-turn user simulation. Experiments show that RecVerse significantly outperforms existing baselines in both behavioral fidelity and intent consistency.",
+      "topics": [
+        "Artificial Intelligence in Games",
+        "Recommender Systems and Techniques",
+        "Multimodal Machine Learning Applications"
+      ],
+      "keywords": [
+        "Session (web analytics)",
+        "Context (archaeology)",
+        "Reinforcement learning",
+        "Fidelity",
+        "Imitation",
+        "Encoding (memory)",
+        "Action (physics)",
+        "Trajectory"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.21126",
+      "abstract": "Networked large language model (LLM) agents retrieve information from email, cloud storage, calendars, transaction platforms, and Web services to complete multistep tasks that produce persistent external effects. The same content needed for legitimate execution may also contain indirect prompt injections that redirect tool use, alter sensitive arguments, or disrupt task completion. Existing defenses mainly constrain untrusted content or individual tool calls, leaving user intent, runtime evidence, realized effects, and task completion insufficiently connected. We present TraceGrant, a security framework that governs the task-effect lifecycle of networked LLM agents through an explicit Contract. Before execution, TraceGrant establishes a task-effect boundary from the trusted user request. During execution, admitted evidence can instantiate only authority already established by the Contract. After execution, task completion is verified against actual tool results. Across 949 AgentDojo and 400 Agent Security Bench attack cases under fixed benchmark settings, TraceGrant recorded no attack successes while retaining utility under attack rates of 77.32% and 83.00%, respectively. We further evaluate TraceGrant through white-box defense-aware attacks, Contract quality analysis, stage ablations, targeted stress tests, and runtime overhead measurements. The results show that TraceGrant provides a unified governance layer that connects trusted user intent, runtime evidence, concrete tool execution, and verified task completion.",
+      "topics": [
+        "Security and Verification in Computing",
+        "Access Control and Trust",
+        "Web Application Security Vulnerabilities"
+      ],
+      "keywords": [
+        "Task (project management)",
+        "Overhead (engineering)",
+        "Database transaction",
+        "Cloud computing",
+        "Trusted Computing",
+        "Quality (philosophy)",
+        "Trusted Network Connect",
+        "Trusted Platform Module",
+        "Security domain"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.20991",
       "abstract": "Graph Foundation Models (GFMs) on text-attributed graphs (TAGs) align graph representations with language semantics to support transferable graph learning. Despite these advantages, the backdoor vulnerability of GFMs on TAGs remains insufficiently understood, especially under graph-language alignment, where graph and text representations are trained to constrain each other in a shared semantic space. Existing backdoor attacks mainly target either the graph side or the text side, treating the two modalities independently. This makes direct adaptation ineffective: graph-only triggers can be constrained by clean text semantics, while text-only triggers alter the language view but do not directly shift the graph representation being aligned and scored. TAGs also impose a stealth challenge because triggers are exposed as both node text and local graph structure, making incoherent trigger attributes or anomalous subgraphs easy to inspect or filter. In this paper, we propose STAG, a stealthy trojan attack framework designed for the graph-language alignment interface of GFMs on TAGs. STAG coordinates a graph-trigger generator with a text-side soft prompt so that trigger-attached graph representations and triggered text representations move toward the same target-class text region. To address TAG-specific stealthiness, STAG realizes trigger nodes as readable text through candidate retrieval and regularizes the trigger-attached subgraph so that its local structure remains close to the original subgraph. Extensive experiments on multiple TAG datasets and representative GFMs demonstrate the effectiveness and stealthiness of STAG. Our code is available at https://github.com/ventr1c/STAG.",
@@ -3618,64 +3665,6 @@
         "State (computer science)",
         "Action (physics)",
         "Key (lock)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.18184",
-      "abstract": "Human-centric intelligence is evolving in the foundation-model era, with growing emphasis on scale, transferability, and general-purpose modeling. Yet it has not fully integrated with foundation models to achieve the comparable progress seen in them. More importantly, recent advances across this broad landscape remain fragmented across tasks, modalities, and research communities, leaving their intrinsic conceptual and methodological connections unclear. To bridge these divides and rethink human-centric intelligence in the foundation-model era, we introduce a full-spectrum human context taxonomy that integrates six interconnected levels by viewing humans as observable subjects through visual appearance and spatial geometry, as dynamic actors through kinematic dynamics and interaction modeling, and as situated agents through world simulation and embodied agency. We next present the methodological foundations of the field, covering human-centric data families, computational architecture paradigms, and representative training and inference optimization strategies. We then systematically review representative methods across these levels and organize the associated datasets, benchmarks, and evaluation metrics. We further discuss open challenges and promising research directions toward human-centric intelligence that is scalable, trustworthy, physically grounded, and deployable, aiming to provide a coherent framework and practical reference for advancing the field. Finally, we provide a systematically organized and continuously updated collection of human-centric AI literature and resources on our project page.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Face Recognition and Perception",
-        "Spatial Cognition and Navigation"
-      ],
-      "keywords": [
-        "Situated",
-        "Context (archaeology)",
-        "Embodied cognition",
-        "Foundation (evidence)",
-        "Taxonomy (biology)",
-        "Bridge (graph theory)",
-        "Inference"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.17883",
-      "abstract": "The availability of high-quality paired data is essential for training learning-based image demoiréing models. However, it remains challenging for existing datasets to encompass the complex moiré patterns captured in uncontrolled real-world scenarios. Such degradations typically manifest as large-scale, multicolored moiré patterns. Moreover, these patterns frequently occur in images for which clean counterparts are difficult to obtain, such as photographs acquired from public displays or existing online resources. In this work, we propose a novel data engine designed to improve the removal of complex moiré patterns by generating training supervision. Specifically, we initially collect real-world images containing complex moiré patterns and localize the corresponding screen regions. Multiple image-conditioned generative foundation models are subsequently deployed to produce candidate references. To establish reliable supervision, these candidates are subjected to patch-level quality control to filter and select the optimal results. Based on this systematic paradigm, we construct the WildMoiré dataset, which contains 6.8K moiré-GT training pairs. For evaluation, we additionally build an independent test set comprising $\\sim$250 pairs with captured clean ground truth. Extensive experiments on ESDNet, SDXL, and Qwen-Image-Edit demonstrate that the proposed generative supervision consistently improves the performance of complex moiré removal.",
-      "topics": [
-        "Image Enhancement Techniques",
-        "Generative Adversarial Networks and Image Synthesis",
-        "Image and Signal Denoising Methods"
-      ],
-      "keywords": [
-        "Set (abstract data type)",
-        "Generative grammar",
-        "Construct (python library)",
-        "Filter (signal processing)",
-        "Training set",
-        "Generative model",
-        "Quality (philosophy)",
-        "Test set"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202608.1199.v1",
-      "abstract": "Definition The term high-readability, dyslexia-friendly font refers to a typeface specifically designed or configured to reduce the cognitive effort associated with reading, thereby improving text accessibility for individuals with dyslexia without compromising overall readability. Such typefaces aim to facilitate the accurate mapping between graphemes and phonemes during the reading process. In addition, for individuals with dysorthographia, they may support the inverse process by facilitating the encoding of phonemes into their corresponding graphemes during writing. Abstract This entry examines the pedagogical relevance of typographic design as a compensatory strategy for improving accessibility in reading and writing for individuals with dyslexia and related Specific Learning Disorders (SLDs). A high-readability, dyslexia-friendly font is defined as a typeface designed to reduce the cognitive effort associated with reading while facilitating the mapping between graphemes and phonemes, without compromising readability for the general population. Grounded in the principal cognitive and neurophysiological models of dyslexia, this work analyzes how specific typographic features can mitigate cognitive load and support more efficient text processing. Cross-linguistic considerations further emphasize the need for culturally and linguistically responsive design solutions. Based on the evidence reviewed, a user-centered workflow for the development of high-readability, dyslexia-friendly fonts is proposed. Although specialized typefaces such as OpenDyslexic have introduced innovative design principles, current empirical evidence does not conclusively demonstrate their superiority over carefully designed and appropriately configured conventional fonts. The findings highlight the importance of typography as a key component of inclusive design and educational accessibility, reinforcing its role in reducing learning barriers, promoting equitable access to written information, and supporting more inclusive digital learning environments. Drawing on cognitive, neuropsychological, anthropological, and technological perspectives, the work examines how reading, as a culturally acquired technology, interacts with human cognitive processes. It analyzes the potential of high-readability and dyslexia-friendly fonts and it discusses the integration of typography with Artificial Intelligence and adaptive learning technologies to develop personalized and inclusive educational environments.",
-      "topics": [
-        "Writing and Handwriting Education",
-        "Digital Accessibility for Disabilities",
-        "Subtitles and Audiovisual Media"
-      ],
-      "keywords": [
-        "Typeface",
-        "Typography",
-        "Font",
-        "Legibility",
-        "Readability",
-        "Reading (process)",
-        "Workflow",
-        "Universal design",
-        "Cognition",
-        "Process (computing)"
       ]
     }
   ]

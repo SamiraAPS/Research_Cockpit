@@ -1,7 +1,57 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "documents": [
+    {
+      "id": "arxiv:2608.23706",
+      "abstract": "A large language model (LLM) trained on synthetic limit order book (LOB) data achieves near perfect scores in generating valid sequences of LOB events. However, the LLM's implicit world model fails to learn the state of the LOB. This deficiency leads to biased estimates and spurious predictability in using the LLM to forecast future LOB events. Our analysis uses novel tests of an LLM's world model, extending prior work from deterministic settings to the stochastic dynamics needed for the LOB.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.23268",
+      "abstract": "Frontier multimodal large language models (MLLMs) deliver impressive perception yet still falter on scientific and mathematical reasoning. Parameter-level adaptation is unavailable for closed-weight or on-device backbones, and stateless prompting forfeits any compounding benefit from problems already solved. We propose \\textbf{DG-Mem}, a dual-grained agentic memory framework that augments a frozen MLLM with a non-parametric, externally stored memory built once from training-time rollouts and consulted read-only at test time. Motivated by the Complementary Learning Systems (CLS) account of human memory, DG-Mem factors its store into an instance-grounded exemplar memory and a category-level schema memory of IF-THEN rules, with a transient reflection store mediating their construction so that schemas are synthesized only from abstract reflections, never from exemplar text. Two design choices distinguish DG-Mem: an online concept categorizer that grows the category space incrementally during training rather than committing to a predefined taxonomy, and a Shapley context attribution procedure that decomposes correctness across the entire retrieved rule set and yields a per-rule utility that re-weights retrieval at test time. The pipeline introduces no gradient updates and is deployable on closed-weight or on-device backbones. Across MathVista, MMMU, and MMMU-Pro on four open-weight and proprietary backbones (Qwen3.5-27B, Qwen3.5-122B-A10B, GPT-5-Nano, Gemini-3-Flash), DG-Mem improves consistently over no-memory and competitive memory baselines.",
+      "topics": [
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications",
+        "Advanced Graph Neural Networks"
+      ],
+      "keywords": [
+        "Schema (genetic algorithms)",
+        "Context (archaeology)",
+        "Correctness",
+        "Set (abstract data type)",
+        "Misattribution of memory",
+        "Soar",
+        "Encoding (memory)",
+        "Perception",
+        "Pipeline (software)",
+        "Salience (neuroscience)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.23563",
+      "abstract": "Road traffic injuries remain a major challenge in low- and middle-income countries, where proactive road safety auditing is limited by incomplete crash records, shortages of qualified auditors, and the high cost of large-scale field inspections. To address this problem, we propose Expert-Grounded Distillation (EGD), a novel artificial intelligence framework that transfers institutional road safety expertise into a compact vision-language model for scalable visual road safety auditing. The key innovation is a quantified expert-grounding stage in which the teacher vision-language model is calibrated against authoritative field audits. Large-scale annotation is permitted only after the teacher reaches substantial agreement with expert risk assessments (Cohen's kappa = 0.74). The calibrated teacher then generates structured supervision that is distilled into an 8-billion-parameter student vision-language model using Low-Rank Adaptation and a single leakage-free prompt. We also introduce Bangladesh Road Safety Audit (BD-ARSA), the first open, expert-grounded Bangladeshi visual road safety audit dataset containing 21,947 image-audit records with near-national coverage, and Expert-Grounded Road Safety Auditor (EG-ARSA), the first vision-language model developed specifically for this task. Experimental results show that grounded fine-tuning substantially improves ordinal risk assessment over the zero-shot baseline, while blind expert evaluation demonstrates that the compact student outperforms both its 31 billion-parameter teacher and Gemini-2.5-Flash. These findings demonstrate that EGD provides an effective and scalable engineering solution for proactive road safety auditing in resource-constrained environments.",
+      "topics": [
+        "Infrastructure Maintenance and Monitoring",
+        "Advanced Neural Network Applications",
+        "Multimodal Machine Learning Applications",
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Audit",
+        "Crash",
+        "Visual inspection",
+        "Key (lock)",
+        "Scheme (mathematics)",
+        "Safety case",
+        "Subject-matter expert",
+        "Scalability"
+      ]
+    },
     {
       "id": "doi:10.21203/rs.3.rs-10451093/v1",
       "abstract": null,
@@ -3667,53 +3717,6 @@
         "Supervisor",
         "Generator (circuit theory)",
         "User interface"
-      ]
-    },
-    {
-      "id": "doi:10.1145/3834580.3838740",
-      "abstract": "Repeated human-AI interaction is often analyzed through pooled belief-updating slopes: users observe AI successes and failures, revise reported beliefs in the feedback-consistent direction, but appear conservative on average. We show that such averages can obscure an important distinction between whether an elicited belief report changes at all and how it changes conditional on movement. We refer to this measurement-aware decomposition as the belief update gate. Reanalyzing a multi-task human-AI decision-making dataset with 240 participants, 7,200 trials, and three task domains, we find substantial non-movement in reported beliefs: 67.3% of trial-level belief changes are exactly zero, and 76.4% are smaller than five percentage points. Separating non-moving from moving reports changes the descriptive interpretation of pooled conservatism: the within-trajectory slope rises from 0.494 overall to 0.949 among rows with nonzero movement. Since this latter estimate conditions on observed movement, we interpret it as a descriptive decomposition rather than as evidence of a near-Bayesian latent learning process. Complementary hurdle style analyses (i.e., modeling zero vs. non-zero changes before predicting update magnitude) show that the absolute discrepancy between feedback and entering belief predicts whether a report changes, while the signed feedback discrepancy predicts the direction and magnitude of change among reports that move. Importantly, observed non-movement does not distinguish genuine latent belief inertia from small unexpressed updates, rounding, or other reporting processes. These findings show that calibration analyses of repeated human--AI interaction should distinguish visible non-movement in elicited belief reports from updating conditional on movement rather than treating reported beliefs as a single continuous updating process.",
-      "topics": [
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.20707",
-      "abstract": "Simulating realistic user shopping behavior underpins offline evaluation and reinforcement learning in e-commerce scenarios. While recent LLM- and VLM-based simulators have made encouraging progress, reproducing a real browsing session remains difficult for two reasons. (i) Memory Challenge: a shopping session spans dozens of pages, yet existing agents either discard long-range observation histories, losing the evolving user state, or naively concatenate them, overwhelming the context window and even degrading simulation quality. (ii) Optimization Challenge: current user simulators are typically supervised to match each logged action via imitation or step-level rewards; the resulting sessions often display unrealistic patterns, such as over-exploration or excessive passivity, which per-step supervision can neither detect nor correct. To address the above challenges, we present RecVerse, a GUI-grounded simulation agent that perceives pages through screenshots and produces faithful multi-turn trajectories. For the memory challenge, RecVerse adopts a cognitive-inspired hierarchical memory: Working Memory for short-term focus, Episodic Memory for in-session traces, and Preference Memory for high-level intent, with memory updates treated as actions so that the agent adaptively learns when and what to memorize. For the optimization challenge, RecVerse is optimized with a trajectory-level RL objective that scores entire sessions, aligning both macro-level action-type distributions and micro-level shopping intent with real users. We further release USB (User Simulation Benchmark), an interactive e-commerce GUI trajectory dataset for multi-turn user simulation. Experiments show that RecVerse significantly outperforms existing baselines in both behavioral fidelity and intent consistency.",
-      "topics": [
-        "Artificial Intelligence in Games",
-        "Recommender Systems and Techniques",
-        "Multimodal Machine Learning Applications"
-      ],
-      "keywords": [
-        "Session (web analytics)",
-        "Context (archaeology)",
-        "Reinforcement learning",
-        "Fidelity",
-        "Imitation",
-        "Encoding (memory)",
-        "Action (physics)",
-        "Trajectory"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.21126",
-      "abstract": "Networked large language model (LLM) agents retrieve information from email, cloud storage, calendars, transaction platforms, and Web services to complete multistep tasks that produce persistent external effects. The same content needed for legitimate execution may also contain indirect prompt injections that redirect tool use, alter sensitive arguments, or disrupt task completion. Existing defenses mainly constrain untrusted content or individual tool calls, leaving user intent, runtime evidence, realized effects, and task completion insufficiently connected. We present TraceGrant, a security framework that governs the task-effect lifecycle of networked LLM agents through an explicit Contract. Before execution, TraceGrant establishes a task-effect boundary from the trusted user request. During execution, admitted evidence can instantiate only authority already established by the Contract. After execution, task completion is verified against actual tool results. Across 949 AgentDojo and 400 Agent Security Bench attack cases under fixed benchmark settings, TraceGrant recorded no attack successes while retaining utility under attack rates of 77.32% and 83.00%, respectively. We further evaluate TraceGrant through white-box defense-aware attacks, Contract quality analysis, stage ablations, targeted stress tests, and runtime overhead measurements. The results show that TraceGrant provides a unified governance layer that connects trusted user intent, runtime evidence, concrete tool execution, and verified task completion.",
-      "topics": [
-        "Security and Verification in Computing",
-        "Access Control and Trust",
-        "Web Application Security Vulnerabilities"
-      ],
-      "keywords": [
-        "Task (project management)",
-        "Overhead (engineering)",
-        "Database transaction",
-        "Cloud computing",
-        "Trusted Computing",
-        "Quality (philosophy)",
-        "Trusted Network Connect",
-        "Trusted Platform Module",
-        "Security domain"
       ]
     }
   ]

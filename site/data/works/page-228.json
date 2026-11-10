@@ -1,12 +1,585 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "page": 228,
   "pageSize": 100,
-  "totalItems": 40461,
-  "totalPages": 405,
+  "totalItems": 40512,
+  "totalPages": 406,
   "nextPage": "./page-229.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2609.07808",
+      "recordType": "preprint",
+      "title": "You Can't Prefer Emotions You Don't Sample: Intensity Undershoot in DPO-Tuned LLMs",
+      "abstract": "Ask a language model to respond \"very excitedly,\" and its output is typically only mildly more energetic. We quantify this effect. We condition an instruction-tuned LLM on a continuous Valence-Arousal (VA) target, where valence measures how pleasant a state is and arousal how activated it is, measure the achieved affect with a frozen regressor, and sweep the requested target from -1 to +1. The response moves far less than asked: the gain, the slope of achieved against requested affect, is only 0.26 for valence and 0.13 for arousal on Llama-3.1-8B, where a faithful controller would score 1. The model systematically undershoots requested emotional intensity, which puts a number on the qualitative observation of Fazzi et al. (2025). Our experiments trace this to the preference-learning pipeline. Training targets from natural corpora such as EmoBank are neutral-heavy, and the sampled candidates themselves rarely reach extreme affect, so Direct Preference Optimization (DPO) is left with no extreme exemplar to prefer. If instead we cover the target space uniformly and sample a hotter, larger candidate pool, valence gain rises from 0.26 to 0.40 +/- 0.02 (3 seeds) and extrapolation error drops, at only a modest in-distribution cost (EmoBank-test VA distance 0.092 to 0.107). The same recipe reproduces on Qwen3-8B (gain_v 0.44, with in-distribution accuracy preserved). Arousal is harder and less reliable: its gain barely moves on average and swings across seeds (0.14 +/- 0.07, against valence's tight +/- 0.02), because raising arousal needs candidates the base model is reluctant to generate. The evidence indicates that faithful intensity is bottlenecked by the extremity of the candidate pool rather than by the conditioning format.",
+      "doi": "10.48550/arxiv.2609.07808",
+      "externalIds": {
+        "openalex": "W7212012643",
+        "arxiv": "2609.07808"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2609.07808"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-07",
+      "firstPublicDate": "2026-09-07",
+      "onlineDate": null,
+      "topics": [
+        "Emotion and Mood Recognition",
+        "Sentiment Analysis and Opinion Mining",
+        "Mental Health via Writing",
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": [
+        "Valence (chemistry)",
+        "Arousal",
+        "Extrapolation",
+        "Affect (linguistics)",
+        "Ask price",
+        "Offset (computer science)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "motivation",
+          "label": "Motivation & Wohlbefinden",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "affect",
+              "conceptLabel": "Affekt",
+              "matchedTerm": "emotions",
+              "sourceValue": "You Can't Prefer Emotions You Don't Sample: Intensity Undershoot in DPO-Tuned LLMs",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "affect",
+              "conceptLabel": "Affekt",
+              "matchedTerm": "affect",
+              "sourceValue": "…s how pleasant a state is and arousal how activated it is, measure the achieved affect with a frozen regressor, and sweep the requested target from -1 to +1. The response moves far less than asked: the gain, the slope of achieved against requested affect, is only 0.26 for valence and 0.13 for arousal on Llama-3.1-8B, w…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "affect",
+              "conceptLabel": "Affekt",
+              "matchedTerm": "affect",
+              "sourceValue": "Affect (linguistics)",
+              "weight": 0
+            },
+            {
+              "source": "external_topic",
+              "concept": "affect",
+              "conceptLabel": "Affekt",
+              "matchedTerm": "emotion",
+              "sourceValue": "Emotion and Mood Recognition",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…bservation of Fazzi et al. (2025). Our experiments trace this to the preference-learning pipeline. Training targets from natural corpora such as EmoBank are neutral-heavy, and the sampled candidates themselves rarely reach extreme affect, so Direct Preference Optimization (DPO) is left with no extreme exemplar to prefe…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:motivation": 6,
+        "topic:learning": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning",
+        "emotions",
+        "affect",
+        "emotion"
+      ],
+      "authors": [
+        {
+          "id": "A5103185676",
+          "name": "Hyunwoo Kim",
+          "orcid": "https://orcid.org/0000-0003-4024-0298",
+          "affiliations": []
+        },
+        {
+          "id": "A5150873565",
+          "name": "Usama Khalid",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.07808",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-12T09:23:36.153Z",
+      "firstSeenRunId": "ingestion-2026-09-12T09:23:23.935Z",
+      "retrievedAt": "2026-09-12T09:23:44.518Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-12T09:23:44.518Z",
+      "preferredVersionId": "arxiv:2609.07808",
+      "versions": [
+        {
+          "id": "openalex:W7212012643",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7212012643",
+          "doi": "10.48550/arxiv.2609.07808",
+          "url": "https://doi.org/10.48550/arxiv.2609.07808"
+        },
+        {
+          "id": "arxiv:2609.07808",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2609.07808",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2609.07808v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-228.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "You Can't Prefer Emotions You Don't Sample: Intensity Undershoot in DPO-Tuned LLMs",
+              "start": 0,
+              "end": 82
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "ldly more energetic. We quantify this effect. We condition an instruction-tuned LLM on a continuous Valence-Arousal (VA) target, where valence measures how pleasant a state is and aro",
+              "start": 85,
+              "end": 268
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "controller",
+                  "quote": "is only 0.26 for valence and 0.13 for arousal on Llama-3.1-8B, where a faithful controller would score 1. The model systematically undershoots requested emotional intensity, which puts a num",
+                  "start": 491,
+                  "end": 681
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "107). The same recipe reproduces on Qwen3-8B (gain_v 0.44, with in-distribution accuracy preserved). Arousal is harder and less reliable: its gain barely moves on average and swings across",
+                  "start": 1281,
+                  "end": 1469
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": " which puts a number on the qualitative observation of Fazzi et al. (2025). Our experiments trace this to the preference-learning pipeline. Training targets from natural corpora such as EmoBa",
+                  "start": 664,
+                  "end": 855
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "qualitative",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "qualitative",
+                  "quote": "matically undershoots requested emotional intensity, which puts a number on the qualitative observation of Fazzi et al. (2025). Our experiments trace this to the preference-learning pipeline.",
+                  "start": 612,
+                  "end": 803
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.3390/info17090864",
+      "recordType": "publication",
+      "title": "Zero-Shot Annotation by Large Language Model with Serial Correction of Mixed Label Corruption for Weakly Supervised Financial News Classification",
+      "abstract": "Multi-label classification of financial news is frequently affected by incomplete and noisy annotations, while obtaining expert-curated labels at scale is prohibitively expensive. This study proposes a weakly supervised classification framework that combines large language model (LLM) zero-shot annotation with a serial label-correction strategy. The framework first uses an LLM to generate initial weak labels and then refines them through a two-stage Correct→Clean procedure that recovers missing labels via centrality-weighted graph propagation before suppressing label noise. Systematic experiments on a financial subset of Reuters-21578 show that, under an extreme mixed-corruption setting with 80% missing labels and 15% noise labels, Correct→Clean increases the Micro-F1 from 0 to 0.6748. In an end-to-end evaluation, the proposed framework achieves a Micro-F1 of 0.8882 with reduced-dimensional features, recovering 88.69% of the performance gap to fully supervised learning. Additional experiments on the RCV1 Topics and AAPD datasets confirm that the advantage of Correct→Clean is consistently reproduced across domains and dataset sizes. These findings demonstrate that coupling LLM-generated annotations with ordered label correction offers an effective means of addressing the joint effects of missing and noisy labels, providing a promising approach to financial text classification when expert annotations are scarce.",
+      "doi": "10.3390/info17090864",
+      "externalIds": {
+        "openalex": "W7211884874"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7211884874"
+      },
+      "venue": "Information",
+      "publicationDate": "2026-09-07",
+      "firstPublicDate": "2026-09-07",
+      "onlineDate": null,
+      "topics": [
+        "Text and Document Classification Technologies",
+        "Machine Learning and Data Classification",
+        "Imbalanced Data Classification Techniques"
+      ],
+      "keywords": [
+        "Annotation",
+        "Language model",
+        "Graph",
+        "Missing data",
+        "Noise (video)",
+        "Scale (ratio)",
+        "Labeled data"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…ensional features, recovering 88.69% of the performance gap to fully supervised learning. Additional experiments on the RCV1 Topics and AAPD datasets confirm that the advantage of Correct→Clean is consistently reproduced across domains and dataset sizes. These findings demonstrate that coupling LLM-generated annotation…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "large language model",
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5150580364",
+          "name": "Jianxin Sun",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5023510385",
+          "name": "H.L. Liu",
+          "orcid": "https://orcid.org/0000-0003-0559-5552",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.3390/info17090864",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:29.513Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:29.513Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-09-27T14:56:29.513Z",
+      "preferredVersionId": "openalex:W7211884874",
+      "versions": [
+        {
+          "id": "openalex:W7211884874",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7211884874",
+          "doi": "10.3390/info17090864",
+          "url": "https://doi.org/10.3390/info17090864"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-openalex-broad-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-228.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "large language model",
+              "quote": "Zero-Shot Annotation by Large Language Model with Serial Correction of Mixed Label Corruption for Weakly Supervised Financial News Classificatio",
+              "start": 0,
+              "end": 144
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": " This study proposes a weakly supervised classification framework that combines large language model (LLM) zero-shot annotation with a serial label-correction strategy. The framework first uses an LLM",
+              "start": 179,
+              "end": 379
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": " weakly supervised classification framework that combines large language model (LLM) zero-shot annotation with a serial label-correction strategy. The framework first uses an LLM to g",
+              "start": 201,
+              "end": 384
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "large language model",
+                  "quote": "Zero-Shot Annotation by Large Language Model with Serial Correction of Mixed Label Corruption for Weakly Supervised Financial News Classificatio",
+                  "start": 0,
+                  "end": 144
+                },
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": " This study proposes a weakly supervised classification framework that combines large language model (LLM) zero-shot annotation with a serial label-correction strategy. The framework first uses an LLM",
+                  "start": 179,
+                  "end": 379
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "entrality-weighted graph propagation before suppressing label noise. Systematic experiments on a financial subset of Reuters-21578 show that, under an extreme mixed-corruption setting with 80",
+                  "start": 512,
+                  "end": 703
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.52653/ppi.2026.9.9.020",
+      "recordType": "publication",
+      "title": "Применение методов машинного обучения для проектирования гранулированных продуктов",
+      "abstract": "Пищевые продукты определяются такими основными факторами, как сырье, рецептура и технология производства. Каждое сырье можно идентифицировать по его химическому составу, точно так же, как и конечный продукт. Если соотнести химический состав ингредиентов продукта и его конечный состав, то можно построить ряд моделей, в основе которых лежит технология искусственного интеллекта. Эти модели будут способны предсказывать химический состав продукта с использованием иного сырья, при этом рецептура к данному продукту еще не была разработана. Для этой цели подойдет одна из технологий искусственного интеллекта под названием «машинное обучение». В данном исследовании был разработан алгоритм применения методов машинного обучения для составления рецептуры и подбора сырья для производства гранулированных продуктов. Было рассмотрено 4 вида продуктов: морсы, кисели, сухие завтраки и напитки. В рассматриваемых продуктах был определен ряд основных компонентов, а также их процентное содержание в конечном продукте. Разработано более 500 рецептур проектируемых продуктов на основе порядка 30 видов исходного сырья. Для проектирования рассматриваемых продуктов разработан алгоритм формирования набора данных, который включает в себя предварительную обработку данных. На основе алгоритма составлен набор данных, который состоит из химического состава компонентов исходного сырья и химического состава готового продукта. Также рассмотрен ряд методов машинного обучения, которые являются наиболее подходящими для решения поставленной задачи. Прогноз конечного химического состава проектируемого продукта выполнен с применением рассмотренных моделей машинного обучения. Для каждого проектируемого продукта были получены оценки моделей и выделены те модели, которые показывают наилучший результат. На основе созданного алгоритма разработана программа ЭВМ, в которую интегрировали обученные модели искусственного интеллекта. С помощью данного продукта был смоделирован ряд рецептур киселя, которые затем подверглись органолептической оценке. На ее основе определена наилучшая рецептура и принята на производство. Food products are defined by key factors such as raw materials, formulation, and production technology. Each raw material can be identified by its chemical composition, just like the final product. By correlating the chemical compositions of a product's ingredients with its final composition, a series of models based on artificial intelligence technology can be built. These models will be able to predict the chemical composition of a product using different raw materials, even if the formulation for this product has not yet been developed. One artificial intelligence technology, machine learning, is suitable for this purpose. In this study, an algorithm was developed for applying machine learning methods to formulate and select raw materials for the production of granulated products. Four types of products were considered: fruit drinks, kissels, breakfast cereals, and beverages. A number of key components were identified in these products, as well as their percentage content in the final product. Over five hundred recipes for the planned products were developed, based on approximately thirty types of raw materials. To design the products under consideration, an algorithm for generating a data set was developed, including data preprocessing. Based on this algorithm, a data set was compiled consisting of the chemical composition of the feedstock components and the chemical composition of the finished product. A number of machine learning methods were also considered, which were most suitable for solving the problem. The final chemical composition of the designed product was predicted using the machine learning models considered. For each product under consideration, model evaluations were obtained, and the models with the best results were identified. Based on the developed algorithm, a computer program was developed that integrated trained artificial intelligence models. Using this product, several jelly recipes were simulated, which were then subjected to organoleptic evaluation. Based on this evaluation, the best recipe was determined and accepted for production.",
+      "doi": "10.52653/ppi.2026.9.9.020",
+      "externalIds": {
+        "openalex": "W7211910229"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7211910229"
+      },
+      "venue": "Food processing industry",
+      "publicationDate": "2026-09-07",
+      "firstPublicDate": "2026-09-07",
+      "onlineDate": null,
+      "topics": [
+        "Advanced Scientific Research Methods",
+        "Food Industry and Aquatic Biology",
+        "Nutrition, Genetics, and Disease"
+      ],
+      "keywords": [
+        "Process (computing)",
+        "Identification (biology)",
+        "Product (mathematics)"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 2,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5074157071",
+          "name": "Anton Shafrai",
+          "orcid": "https://orcid.org/0000-0003-4512-1933",
+          "affiliations": []
+        },
+        {
+          "id": "A5103847121",
+          "name": "Анатолий Михайлович Попов",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5123602495",
+          "name": "Косинов Виталий Сергеевич",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5087100259",
+          "name": "Вагайцева Елена Алексеевна",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5150681409",
+          "name": "Григорий Игоревич Подберезен",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.52653/ppi.2026.9.9.020",
+      "openAccess": false,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:30.968Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:30.968Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-09-27T14:56:30.968Z",
+      "preferredVersionId": "openalex:W7211910229",
+      "versions": [
+        {
+          "id": "openalex:W7211910229",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7211910229",
+          "doi": "10.52653/ppi.2026.9.9.020",
+          "url": "https://doi.org/10.52653/ppi.2026.9.9.020"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-openalex-broad-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-228.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "a product's ingredients with its final composition, a series of models based on artificial intelligence technology can be built. These models will be able to predict the chemical composition of a product",
+              "start": 2342,
+              "end": 2545
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "openalex:W7211980520",
       "recordType": "publication",
@@ -23494,640 +24067,6 @@
           "population": [],
           "aiFunction": [],
           "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.1007/s11761-026-00511-z",
-      "recordType": "publication",
-      "title": "JailFlowEval: a workflow-safety benchmark for LLM-driven enterprise service workflows",
-      "abstract": null,
-      "doi": "10.1007/s11761-026-00511-z",
-      "externalIds": {
-        "openalex": "W7210295176"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7210295176"
-      },
-      "venue": "Service Oriented Computing and Applications",
-      "publicationDate": "2026-09-06",
-      "firstPublicDate": "2026-09-06",
-      "onlineDate": null,
-      "topics": [
-        "Topic Modeling",
-        "Scientific Computing and Data Management",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "Workflow",
-        "Benchmark (surveying)",
-        "Pipeline (software)",
-        "Context (archaeology)",
-        "Plan (archaeology)",
-        "Continuation",
-        "Service (business)",
-        "Workflow engine"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "JailFlowEval: a workflow-safety benchmark for LLM-driven enterprise service workflows",
-              "weight": 4
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:safety": 4,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "LLM",
-        "safety"
-      ],
-      "authors": [
-        {
-          "id": "A5100459796",
-          "name": "Zhichao Liu",
-          "orcid": "https://orcid.org/0000-0001-8102-2399",
-          "affiliations": []
-        },
-        {
-          "id": "A5010753025",
-          "name": "Haining Yu",
-          "orcid": "https://orcid.org/0000-0002-4996-3233",
-          "affiliations": []
-        },
-        {
-          "id": "A5076234477",
-          "name": "Wenbo Pan",
-          "orcid": "https://orcid.org/0000-0001-9734-3090",
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Xiang Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5144362474",
-          "name": "Wenting Zhang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5150446807",
-          "name": "Bingxuan Wang",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.1007/s11761-026-00511-z",
-      "openAccess": false,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:33.431Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:33.431Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-27T14:56:33.431Z",
-      "preferredVersionId": "openalex:W7210295176",
-      "versions": [
-        {
-          "id": "openalex:W7210295176",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7210295176",
-          "doi": "10.1007/s11761-026-00511-z",
-          "url": "https://doi.org/10.1007/s11761-026-00511-z"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-228.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "JailFlowEval: a workflow-safety benchmark for LLM-driven enterprise service workflows",
-              "start": 0,
-              "end": 85
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": false
-      }
-    },
-    {
-      "id": "doi:10.1002/arj.70510",
-      "recordType": "publication",
-      "title": "KneeFusionNet Enables Accurate and Efficient Comprehensive Detection of Knee Ligament Injuries on Magnetic Resonance Imaging: A Multicenter Validation Study",
-      "abstract": "PURPOSE: To develop and externally validate KneeFusionNet, a multimodal deep learning model for detecting anterior cruciate ligament (ACL), posterior cruciate ligament (PCL), medial collateral ligament (MCL), and lateral collateral ligament (LCL) injuries on knee magnetic resonance imaging (MRI), and to assess the impact of multimodal fusion and artificial intelligence (AI) assistance on diagnostic performance. METHODS: This 3-center retrospective study was conducted between April 2020 and August 2025. The injury group included patients who underwent knee MRI within 1 month before arthroscopy and had surgically confirmed ACL, PCL, MCL, or LCL injuries; controls had unremarkable MRI and physical examination findings. Two centers formed the development set, and the remaining center served as the external test set. DenseNet-based KneeFusionNet was developed and compared with 3 deep learning models. Diagnostic performance was assessed using the area under the receiver operating characteristic curve, and a reader study evaluated AI-assisted diagnostic performance. RESULTS: Overall, 919 patients were included: 759 in the development set and 160 in the external test set. Multimodal fusion outperformed single-modality approaches for all ligaments (all P < .05). On internal validation, KneeFusionNet achieved area under the receiver operating characteristic curves of 0.971 for ACL, 0.906 for PCL, 0.919 for MCL, and 0.924 for LCL. Corresponding external area under the receiver operating characteristic curves were 0.888, 0.867, 0.862, and 0.874. Sex-stratified analyses showed no consistent sex-related decrease in model performance. KneeFusionNet outperformed all comparison models on internal validation (all P < .05). AI assistance improved mean diagnostic accuracy for junior surgeons from 0.818 to 0.900 and reduced mean interpretation time by 14.73 seconds across all surgeons (all P < .05). CONCLUSIONS: KneeFusionNet detected ACL, PCL, MCL, and LCL injuries on MRI with high diagnostic performance and outperformed comparison models. AI assistance improved diagnostic accuracy for junior surgeons and reduced interpretation time for all surgeons. LEVEL OF EVIDENCE: Level III, retrospective case-control study.",
-      "doi": "10.1002/arj.70510",
-      "externalIds": {
-        "openalex": "W7210281559"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7210281559"
-      },
-      "venue": "Arthroscopy The Journal of Arthroscopic and Related Surgery",
-      "publicationDate": "2026-09-06",
-      "firstPublicDate": "2026-09-06",
-      "onlineDate": null,
-      "topics": [
-        "Knee injuries and reconstruction techniques",
-        "Total Knee Arthroplasty Outcomes",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": [
-        "Receiver operating characteristic",
-        "Magnetic resonance imaging",
-        "Medial collateral ligament",
-        "Anterior cruciate ligament",
-        "Arthroscopy",
-        "Posterior cruciate ligament"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 2,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5075314444",
-          "name": "Bo Chen",
-          "orcid": "https://orcid.org/0000-0002-5591-9597",
-          "affiliations": []
-        },
-        {
-          "id": "A5071482267",
-          "name": "Xiongfeng Tang",
-          "orcid": "https://orcid.org/0000-0002-0424-7946",
-          "affiliations": []
-        },
-        {
-          "id": "A5086187597",
-          "name": "Deming Guo",
-          "orcid": "https://orcid.org/0009-0009-7919-076X",
-          "affiliations": []
-        },
-        {
-          "id": "A5045456893",
-          "name": "Xianyue Shen",
-          "orcid": "https://orcid.org/0000-0002-3623-201X",
-          "affiliations": []
-        },
-        {
-          "id": "A5150476623",
-          "name": "Shenghao Xu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5068127215",
-          "name": "Shihuai Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5124234197",
-          "name": "Yingzhi Li",
-          "orcid": "https://orcid.org/0000-0002-9545-3875",
-          "affiliations": []
-        },
-        {
-          "id": "A5091551159",
-          "name": "Qingshuai Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5150553396",
-          "name": "Yang Wu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5033392437",
-          "name": "Yanguo Qin",
-          "orcid": "https://orcid.org/0000-0003-3296-3779",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.1002/arj.70510",
-      "openAccess": false,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:33.431Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:33.431Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-27T14:56:33.431Z",
-      "preferredVersionId": "openalex:W7210281559",
-      "versions": [
-        {
-          "id": "openalex:W7210281559",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7210281559",
-          "doi": "10.1002/arj.70510",
-          "url": "https://doi.org/10.1002/arj.70510"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-228.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "patient",
-              "quote": "udy was conducted between April 2020 and August 2025. The injury group included patients who underwent knee MRI within 1 month before arthroscopy and had surgically confirmed ACL, PCL, MCL",
-              "start": 454,
-              "end": 642
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "etic resonance imaging (MRI), and to assess the impact of multimodal fusion and artificial intelligence (AI) assistance on diagnostic performance. METHODS: This 3-center retrospective study was conducted",
-              "start": 268,
-              "end": 471
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "RI), and to assess the impact of multimodal fusion and artificial intelligence (AI) assistance on diagnostic performance. METHODS: This 3-center retrospective study was conducted bet",
-              "start": 293,
-              "end": 475
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [
-            {
-              "value": "clinicians",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "surgeon",
-                  "quote": "ation (all P < .05). AI assistance improved mean diagnostic accuracy for junior surgeons from 0.818 to 0.900 and reduced mean interpretation time by 14.73 seconds across all surgeons (all ",
-                  "start": 1714,
-                  "end": 1902
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": "ls on internal validation (all P < .05). AI assistance improved mean diagnostic accuracy for junior surgeons from 0.818 to 0.900 and reduced mean interpretation time by 14.73 seconds acros",
-                  "start": 1694,
-                  "end": 1882
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "before arthroscopy and had surgically confirmed ACL, PCL, MCL, or LCL injuries; controls had unremarkable MRI and physical examination findings. Two centers formed the development set, and",
-                  "start": 581,
-                  "end": 769
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [
-          {
-            "topic": "high-skill-operations",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "surgeon",
-                "quote": "ation (all P < .05). AI assistance improved mean diagnostic accuracy for junior surgeons from 0.818 to 0.900 and reduced mean interpretation time by 14.73 seconds across all surgeons (all ",
-                "start": 1714,
-                "end": 1902
-              }
-            ]
-          }
-        ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.17613/ntb8s-6rt15",
-      "recordType": "publication",
-      "title": "Knowledge-Capital Expansion in Modernity: Public Knowledge and Epistemic Capitalization in the Age of Artificial Intelligence",
-      "abstract": "This paper examines knowledge-capital expansion under modern conditions, with particular attention to the transformation of public knowledge into recursively expanding epistemic capacity. Building on the concepts of knowledge capital and epistemic capitalization, the inquiry situates contemporary artificial intelligence within a longer historical development of writing, archives, universities, scientific publication, digital databases, computational infrastructure, and increasingly automated knowledge production. Artificial intelligence intensifies this trajectory by expanding epistemic absorption, accelerating recombination and inquiry, enabling machine-scaled empirical investigation, and increasing the extent to which knowledge-generating processes can be organized through models, agents, compute, data, robotic systems, and other infrastructures. The paper develops the political economy of this transformation through Marxian concepts of accumulation, means of production, relations of production, automation, and alienation. Particular attention is given to the emerging position of the epistemic proletariat, whose generative capacity may increase while dependence upon externally controlled epistemic infrastructure simultaneously deepens. The analysis further examines the growing separation among epistemic production, epistemic encounter, human knowing, and subject formation. Traditional models of inquiry, learning, experience, judgment, curiosity, and self-cultivation are considered alongside philosophical accounts of the value of knowing, including instrumental, autonomous, generative, formative, and existential dimensions. The paper also identifies justice problems arising from machine-scaled capitalization of public knowledge. These include unequal capitalization capacity, concentration of generative infrastructure, generative extraction, attention scarcity, epistemic crowding, recursive visibility advantage, and the emergence of framing and definitional power. A Generative Relational perspective is introduced to analyze the delegation of knowledge-generating relations and the possible redistribution of subject formation across epistemic and non-epistemic domains. The inquiry advances neither technological optimism nor technological pessimism. It treats AI-mediated epistemic capitalization as an historically unfolding transformation whose consequences remain contingent upon changing relations of access, control, attention, experience, circulation, and generativity.",
-      "doi": "10.17613/ntb8s-6rt15",
-      "externalIds": {
-        "openalex": "W7210263645"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7210263645"
-      },
-      "venue": "PhilPapers (PhilPapers Foundation)",
-      "publicationDate": "2026-09-06",
-      "firstPublicDate": "2026-09-06",
-      "onlineDate": null,
-      "topics": [
-        "Digital Education and Society",
-        "Socio-political and Technological Issues",
-        "Digital Media and Philosophy"
-      ],
-      "keywords": [
-        "Generative grammar",
-        "Epistemic community",
-        "Framing (construction)",
-        "Capitalization",
-        "Subject (documents)",
-        "Generativity",
-        "Uncertainty quantification"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "…r examines knowledge-capital expansion under modern conditions, with particular attention to the transformation of public knowledge into recursively expanding epistemic capacity. Building on the concepts of knowledge capital and epistemic capitalization, the inquiry situates contemporary artificial intelligence within …",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…encounter, human knowing, and subject formation. Traditional models of inquiry, learning, experience, judgment, curiosity, and self-cultivation are considered alongside philosophical accounts of the value of knowing, including instrumental, autonomous, generative, formative, and existential dimensions. The paper also i…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "participation",
-          "label": "Partizipation & Fairness",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "fairness",
-              "conceptLabel": "Fairness",
-              "matchedTerm": "justice",
-              "sourceValue": "…s, generative, formative, and existential dimensions. The paper also identifies justice problems arising from machine-scaled capitalization of public knowledge. These include unequal capitalization capacity, concentration of generative infrastructure, generative extraction, attention scarcity, epistemic crowding, recur…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 2,
-        "topic:cognition": 2,
-        "topic:learning": 2,
-        "topic:participation": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "learning",
-        "attention",
-        "justice"
-      ],
-      "authors": [
-        {
-          "id": "A5151648351",
-          "name": "Wanhong HUANG",
-          "orcid": "https://orcid.org/0000-0001-9540-7425",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.17613/ntb8s-6rt15",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:32.235Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:32.235Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-27T14:56:32.235Z",
-      "preferredVersionId": "openalex:W7210263645",
-      "versions": [
-        {
-          "id": "openalex:W7210263645",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7210263645",
-          "doi": "10.17613/ntb8s-6rt15",
-          "url": "https://doi.org/10.17613/ntb8s-6rt15"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-openalex-broad-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-228.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "xamines the growing separation among epistemic production, epistemic encounter, human knowing, and subject formation. Traditional models of inquiry, learning, experience, judgment, curi",
-              "start": 1280,
-              "end": 1465
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "nsion in Modernity: Public Knowledge and Epistemic Capitalization in the Age of Artificial Intelligence",
-              "start": 22,
-              "end": 125
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "owledge capital and epistemic capitalization, the inquiry situates contemporary artificial intelligence within a longer historical development of writing, archives, universities, scientific publication, ",
-              "start": 218,
-              "end": 421
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": " advances neither technological optimism nor technological pessimism. It treats AI-mediated epistemic capitalization as an historically unfolding transformation whose consequences re",
-              "start": 2217,
-              "end": 2399
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "generative",
-                  "quote": "attention is given to the emerging position of the epistemic proletariat, whose generative capacity may increase while dependence upon externally controlled epistemic infrastructure simultan",
-                  "start": 1052,
-                  "end": 1242
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "automation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "automation",
-                  "quote": "Marxian concepts of accumulation, means of production, relations of production, automation, and alienation. Particular attention is given to the emerging position of the epistemic proletaria",
-                  "start": 933,
-                  "end": 1123
-                },
-                {
-                  "field": "abstract",
-                  "term": "automated",
-                  "quote": " publication, digital databases, computational infrastructure, and increasingly automated knowledge production. Artificial intelligence intensifies this trajectory by expanding epistemic ab",
-                  "start": 407,
-                  "end": 596
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "rmation whose consequences remain contingent upon changing relations of access, control, attention, experience, circulation, and generativity.",
-                  "start": 2370,
-                  "end": 2512
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
           "studyDesign": []
         },
         "personalFit": [],

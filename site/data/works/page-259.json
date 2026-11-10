@@ -1,12 +1,488 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-09T13:57:03.044Z",
+  "generatedAt": "2026-11-10T13:31:15.770Z",
   "page": 259,
   "pageSize": 100,
-  "totalItems": 40461,
-  "totalPages": 405,
+  "totalItems": 40512,
+  "totalPages": 406,
   "nextPage": "./page-260.json",
   "items": [
+    {
+      "id": "arxiv:2608.01283",
+      "recordType": "preprint",
+      "title": "Riemannian Attention Mechanisms for Transformers: A Theoretical Framework and Architecture Design",
+      "abstract": "All Transformer-based large language models compute attention via the Euclidean inner product, an architectural choice that Dong et al. (2021) proved causes representational rank to decay doubly exponentially with depth in pure self-attention stacks. We develop a theoretical framework that targets this structural limitation at the mathematical level by replacing the flat Euclidean metric with learned per-token Riemannian metrics. Our contributions are threefold. (1) We prove that Riemannian attention scores with heterogeneous per-token metrics are non-Gram---they cannot be factorized as QK^T with factorization dimension O(d). We are explicit that this is a structural observation, not a proof of rank preservation. (2) We establish that low-rank metric factors render all geometric operations tractable: geodesic distance in O(d*r) per token and metric inversion in O(d*r^2) via the Woodbury identity---both far below the O(d^3) cost of a general matrix---making Riemannian attention feasible at billion-parameter scale with negligible overhead. (3) We present the Fiber Bundle Transformer, a complete architecture specification in which each token position carries its own Riemannian metric, attention is geodesic distance computation, feed-forward updates use metric-preconditioned steps, and the connection carries explicit curvature and torsion proxies. We derive formal predictions about correctly implemented geometric architectures and identify the central open problem: proving or disproving that heterogeneous Riemannian metrics prevent the rank collapse that row-stochastic attention matrices otherwise cause. This paper presents theoretical analysis and architectural design; empirical validation is the subject of future work.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.01283"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.01283"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-02",
+      "firstPublicDate": "2026-08-02",
+      "onlineDate": "2026-08-02",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 2,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "attention"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Sen Song",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.01283v2",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:37.139Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:37.139Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:37.139Z",
+      "preferredVersionId": "arxiv:2608.01283",
+      "versions": [
+        {
+          "id": "arxiv:2608.01283",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.01283",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.01283v2"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-259.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "All Transformer-based large language models compute attention via the Euclidean inner product, an architectural choice that Dong et al. (2021) ",
+              "start": 0,
+              "end": 143
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "All Transformer-based large language models compute attention via the Euclidean inner product, an architectural choice that Dong et al. (2021) ",
+              "start": 0,
+              "end": 143
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "All Transformer-based large language models compute attention via the Euclidean inner product, an architectural choice that Dong et al. (2021) ",
+                  "start": 0,
+                  "end": 143
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.00974",
+      "recordType": "preprint",
+      "title": "Search-GRT: Guided Retrieval Training of Search Agents to Optimize for Complex Question Answering",
+      "abstract": "The effective use of search engines by large language models (LLMs) remains a significant challenge, particularly in complex, multi-hop question-answering (MHQA) tasks. These tasks require the model to decompose questions into subqueries, retrieve relevant information, and synthesize answers from multiple sources, often leading to cascading errors due to poor retrieval in early stages. Reinforcement learning (RL) has shown promise in improving LLMs' search capabilities, but it often suffers from sparse rewards during training, hindering the model's ability to learn effectively. To address these challenges, we introduce Guided Retrieval Training (GRT), a novel method that improves the performance of a search agent by restricting the retrieval process during RL training using ground truth information. By focusing on a curated set of relevant documents, GRT provides the model with a stronger learning signal, mitigating the problem of sparse rewards and improving its ability to generate accurate subqueries and synthesize correct answers. Our experimental results demonstrate that GRT achieves consistent performance improvements over existing methods, such as Search-R1, across a wide range of question-answering (QA) tasks. Notably, GRT excels in MHQA tasks, achieving over 40% improvements in performance. Additionally, GRT enhances training efficiency by achieving better QA performance with fewer training steps.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.00974"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.00974"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-02",
+      "firstPublicDate": "2026-08-02",
+      "onlineDate": "2026-08-02",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 4,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Aounon Kumar",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Sudipta Paul",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Vivek Kulkarni",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Vijay Srinivasan",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Srinivas Chappidi",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.00974v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:37.139Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:37.139Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:37.139Z",
+      "preferredVersionId": "arxiv:2608.00974",
+      "versions": [
+        {
+          "id": "arxiv:2608.00974",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.00974",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.00974v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-259.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "The effective use of search engines by large language models (LLMs) remains a significant challenge, particularly in complex, multi-hop question-answering (MHQA",
+              "start": 0,
+              "end": 160
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "The effective use of search engines by large language models (LLMs) remains a significant challenge, particularly in complex, multi-hop question-answering (MHQA",
+              "start": 0,
+              "end": 160
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "The effective use of search engines by large language models (LLMs) remains a significant challenge, particularly in complex, multi-hop question-answering (MHQA) task",
+              "start": 0,
+              "end": 166
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "The effective use of search engines by large language models (LLMs) remains a significant challenge, particularly in complex, multi-hop question-answering (MHQA",
+                  "start": 0,
+                  "end": 160
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.01400",
+      "recordType": "preprint",
+      "title": "TabDPT-Turbo: Efficient In-Context Learning for Tabular Prediction",
+      "abstract": "Tabular foundation models, driven by in-context learning, have rapidly grown in quality and popularity. However, recent approaches with either cell-based architectures or retrieval have sacrificed efficiency for raw performance, restricting their utility in situations where compute is limited or inference speed is crucial. We adopt an alternate approach, sticking with row-based attention while incorporating long context pre-training to eliminate the need for retrieval. By combining this with architectural improvements and SSL pre-training on a newly-sourced, larger corpus of real data results, we present TabDPT-Turbo, a model that provides comparable default performance to TabDPT v1.1 on TabArena-Lite, CC18, and CTR23, at orders of magnitude faster. In our experiments, TabDPT-Turbo is the fastest model overall among leading foundation models. We have released the new model as TabDPT v1.2 at https://github.com/layer6ai-labs/TabDPT-inference.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.01400"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.01400"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-02",
+      "firstPublicDate": "2026-08-02",
+      "onlineDate": "2026-08-02",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "TabDPT-Turbo: Efficient In-Context Learning for Tabular Prediction",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Tabular foundation models, driven by in-context learning, have rapidly grown in quality and popularity. However, recent approaches with either cell-based architectures or retrieval have sacrificed efficiency for raw performance, restricting their utility in situations where compute is limited or inference speed is cruc…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "attention",
+              "conceptLabel": "Aufmerksamkeit",
+              "matchedTerm": "attention",
+              "sourceValue": "…rence speed is crucial. We adopt an alternate approach, sticking with row-based attention while incorporating long context pre-training to eliminate the need for retrieval. By combining this with architectural improvements and SSL pre-training on a newly-sourced, larger corpus of real data results, we present TabDPT-Tu…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 6,
+        "topic:cognition": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "foundation model",
+        "foundation models",
+        "learning",
+        "attention"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Rasa Hosseinzadeh",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Alex Labach",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Zexin Xue",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Shuyi Han",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Valentin Thomas",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Anthony L. Caterini",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.01400v2",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:37.139Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:37.139Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:37.139Z",
+      "preferredVersionId": "arxiv:2608.01400",
+      "versions": [
+        {
+          "id": "arxiv:2608.01400",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.01400",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.01400v2"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-259.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "foundation model",
+              "quote": "Tabular foundation models, driven by in-context learning, have rapidly grown in quality and popularity. However, recent appro",
+              "start": 0,
+              "end": 125
+            },
+            {
+              "field": "abstract",
+              "term": "foundation models",
+              "quote": "Tabular foundation models, driven by in-context learning, have rapidly grown in quality and popularity. However, recent appro",
+              "start": 0,
+              "end": 125
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "T v1.1 on TabArena-Lite, CC18, and CTR23, at orders of magnitude faster. In our experiments, TabDPT-Turbo is the fastest model overall among leading foundation models. We have released the ne",
+                  "start": 687,
+                  "end": 878
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "arxiv:2608.01388",
       "recordType": "preprint",
@@ -20551,650 +21027,6 @@
           ]
         },
         "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2607.27586",
-      "recordType": "preprint",
-      "title": "Is Solving Better Than Evaluating GenAI Solutions?",
-      "abstract": "As Generative AI (GenAI) tools become increasingly capable of generating solutions to computing assignments, the computing education community is exploring pedagogical approaches that emphasize solution evaluation, verification, and critique alongside traditional solution generation. However, evidence regarding the impact of such evaluation-centered tasks on student learning remains limited, particularly in upper-division, theory-heavy courses. We conducted a randomized A/B crossover study (N=220) in a junior-level algorithms course to compare evaluating GenAI-generated solutions with traditional problem solving. Across six assignments, student working groups either solved challenging algorithmic problems directly or evaluated often-flawed GenAI-generated solutions, with roles reversed midway through the semester. We found no statistically significant differences between groups in midterm scores, final exam scores, overall course grades, or exam problems structurally aligned with the homework interventions. Students received significantly higher homework scores when evaluating GenAI-generated solutions, but this localized advantage did not translate into downstream summative gains. Survey data further indicated that most students reported no change in study habits in response to the intervention; however, those who reported adapting their study strategies rated the GenAI-evaluation assignments as significantly more helpful. These findings suggest that GenAI evaluation redistributes student effort from open-ended solution construction toward verification, diagnosis, and judgment, but does not automatically produce stronger conceptual transfer. We conclude that GenAI-evaluation activities can be incorporated into algorithms coursework without broad performance losses, but meaningful learning gains may require deliberate scaffolding that pushes students beyond simple error diagnosis.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2607.27586"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2607.27586"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-07-30",
-      "firstPublicDate": "2026-07-30",
-      "onlineDate": "2026-07-30",
-      "topics": [
-        "cs.CY",
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…ver, evidence regarding the impact of such evaluation-centered tasks on student learning remains limited, particularly in upper-division, theory-heavy courses. We conducted a randomized A/B crossover study (N=220) in a junior-level algorithms course to compare evaluating GenAI-generated solutions with traditional probl…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "development",
-              "conceptLabel": "Kompetenzentwicklung",
-              "matchedTerm": "scaffolding",
-              "sourceValue": "… broad performance losses, but meaningful learning gains may require deliberate scaffolding that pushes students beyond simple error diagnosis.",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 2,
-        "topic:learning": 4,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "generative AI",
-        "learning",
-        "scaffolding"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Ethan Dickey",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Marios Mertzanidis",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Alexandros Psomas",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2607.27586v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:41.144Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:41.144Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:41.144Z",
-      "preferredVersionId": "arxiv:2607.27586",
-      "versions": [
-        {
-          "id": "arxiv:2607.27586",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2607.27586",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2607.27586v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-259.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "student",
-              "quote": "on. However, evidence regarding the impact of such evaluation-centered tasks on student learning remains limited, particularly in upper-division, theory-heavy courses. We conducted a rand",
-              "start": 281,
-              "end": 468
-            },
-            {
-              "field": "abstract",
-              "term": "students",
-              "quote": " grades, or exam problems structurally aligned with the homework interventions. Students received significantly higher homework scores when evaluating GenAI-generated solutions, but this l",
-              "start": 943,
-              "end": 1131
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "GenAI",
-              "quote": "Is Solving Better Than Evaluating GenAI Solutions?",
-              "start": 0,
-              "end": 50
-            },
-            {
-              "field": "abstract",
-              "term": "generative AI",
-              "quote": "As Generative AI (GenAI) tools become increasingly capable of generating solutions to computing assignments, the com",
-              "start": 0,
-              "end": 116
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "As Generative AI (GenAI) tools become increasingly capable of generating solutions to computing assignments, the com",
-              "start": 0,
-              "end": 116
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "human-mentioned",
-        "fields": {
-          "context": [
-            {
-              "value": "education",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "education",
-                  "quote": "asingly capable of generating solutions to computing assignments, the computing education community is exploring pedagogical approaches that emphasize solution evaluation, verification, and",
-                  "start": 43,
-                  "end": 232
-                },
-                {
-                  "field": "abstract",
-                  "term": "student",
-                  "quote": "on. However, evidence regarding the impact of such evaluation-centered tasks on student learning remains limited, particularly in upper-division, theory-heavy courses. We conducted a rand",
-                  "start": 281,
-                  "end": 468
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "students",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "student",
-                  "quote": "on. However, evidence regarding the impact of such evaluation-centered tasks on student learning remains limited, particularly in upper-division, theory-heavy courses. We conducted a rand",
-                  "start": 281,
-                  "end": 468
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "tutoring",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "scaffolding",
-                  "quote": " broad performance losses, but meaningful learning gains may require deliberate scaffolding that pushes students beyond simple error diagnosis.",
-                  "start": 1770,
-                  "end": 1913
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "GenAI",
-                  "quote": "Is Solving Better Than Evaluating GenAI Solutions?",
-                  "start": 0,
-                  "end": 50
-                },
-                {
-                  "field": "abstract",
-                  "term": "generative",
-                  "quote": "As Generative AI (GenAI) tools become increasingly capable of generating solutions to computing assignments, the ",
-                  "start": 0,
-                  "end": 113
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "randomized",
-                  "quote": "s limited, particularly in upper-division, theory-heavy courses. We conducted a randomized A/B crossover study (N=220) in a junior-level algorithms course to compare evaluating GenAI-generat",
-                  "start": 384,
-                  "end": 574
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "survey",
-                  "quote": "but this localized advantage did not translate into downstream summative gains. Survey data further indicated that most students reported no change in study habits in response to the int",
-                  "start": 1121,
-                  "end": 1307
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2607.28077",
-      "recordType": "preprint",
-      "title": "LEEPS: Latent-Guided Explore-Exploit Prompt Sampling for Efficient RLVR in Large Language Models",
-      "abstract": "Reinforcement learning with verifiable rewards (RLVR) improves the reasoning capabilities of large language models, but prompt groups with identical rollout rewards consume generation budget without effective learning signals. Pre-rollout prompt selection can reduce this waste by screening prompts before rollout generation. However, existing pre-rollout methods struggle to balance exploitation and exploration: repeatedly exploiting historically informative prompts can narrow training coverage, whereas broader exploration can lower the fraction of informative prompts. To address these limitations, we introduce LEEPS, a Latent-Guided Explore--Exploit Prompt Sampler that adaptively balances the reuse of previously observed informative prompts with continued exploration of uncertain ones. LEEPS partitions candidates into exploit and explore portfolios and adaptively allocates rollout budget according to their recent non-trivial ratios. It further uses representation-space neighbors and historical rollout outcomes to prioritize uncertain prompts likely to yield non-zero reward variance, thereby making exploration more targeted without additional rollouts. Across six mathematical reasoning benchmarks, LEEPS achieves the highest average score at both model scales, with relative gains of 2.6\\% and 3.7\\% over the strongest baseline for Qwen2.5-Math-1.5B and 7B, respectively, and generally improves faster during the training process. It also achieves the highest average score across the three evaluated OOD general-reasoning benchmarks at both model scales and adds only about 2 seconds of online sampling overhead per training step. Code is available at https://github.com/ShuangLiangX/LEEPS.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2607.28077"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2607.28077"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-07-30",
-      "firstPublicDate": "2026-07-30",
-      "onlineDate": "2026-07-30",
-      "topics": [
-        "cs.CL"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 3,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Shuang Liang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Haoyang Zhou",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yifan Gong",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Guowei Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Xiting Wang",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2607.28077v2",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:41.144Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:41.144Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:41.144Z",
-      "preferredVersionId": "arxiv:2607.28077",
-      "versions": [
-        {
-          "id": "arxiv:2607.28077",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2607.28077",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2607.28077v2"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-259.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "large language model",
-              "quote": "LEEPS: Latent-Guided Explore-Exploit Prompt Sampling for Efficient RLVR in Large Language Models",
-              "start": 0,
-              "end": 96
-            },
-            {
-              "field": "title",
-              "term": "large language models",
-              "quote": "LEEPS: Latent-Guided Explore-Exploit Prompt Sampling for Efficient RLVR in Large Language Models",
-              "start": 0,
-              "end": 96
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": " learning with verifiable rewards (RLVR) improves the reasoning capabilities of large language models, but prompt groups with identical rollout rewards consume generation budget without effective learn",
-              "start": 13,
-              "end": 214
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "large language model",
-                  "quote": "LEEPS: Latent-Guided Explore-Exploit Prompt Sampling for Efficient RLVR in Large Language Models",
-                  "start": 0,
-                  "end": 96
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": " learning with verifiable rewards (RLVR) improves the reasoning capabilities of large language models, but prompt groups with identical rollout rewards consume generation budget without effective learn",
-                  "start": 13,
-                  "end": 214
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.28624",
-      "recordType": "preprint",
-      "title": "MA-RAG: Multi-Agent Retrieval-Augmented Generation for Query-Driven Summarization of Longitudinal Parkinson's Disease Assessments",
-      "abstract": "Accurate interpretation of single-visit and longitudinal clinical assessments for Parkinson's disease is time-consuming and often depends on specialist expertise. Although large language models (LLMs) can generate natural language summaries, they frequently lack domain-specific clinical grounding and struggle to produce factually correct and temporally consistent responses for structured longitudinal assessment data. To address these limitations, we propose MA-RAG, a query-driven multi-agent retrieval-augmented generation framework that decomposes clinical reasoning into domain-specialized agents, combines structured fact extraction, and synthesizes clinically grounded summaries through a final verification stage. The framework supports four clinical analysis tasks: single-session, trajectory, comparison, and cohort summarization. We evaluate MA-RAG using objective metrics, namely Fact Precision, Hallucination Rate, Temporal Fidelity, and Semantic Similarity, together with subjective evaluations conducted by clinical experts. Compared to Traditional, RAG-only, and Single-agent RAG baselines, MA-RAG substantially improves factual correctness, achieving up to a 122% relative increase in Fact Precision (from 0.436 to 0.990) and reducing the Hallucination Rate by up to 98% (from 0.564 to 0.010), while consistently receiving top ratings from clinical experts for organization and clinical usefulness. These results demonstrate that domain-specialized multi-agent reasoning enables reliable query-driven summarization of structured longitudinal clinical assessment data.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.28624"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.28624"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-07-30",
-      "firstPublicDate": "2026-07-30",
-      "onlineDate": "2026-07-30",
-      "topics": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "expertise",
-              "conceptLabel": "Expertise",
-              "matchedTerm": "expertise",
-              "sourceValue": "…ments for Parkinson's disease is time-consuming and often depends on specialist expertise. Although large language models (LLMs) can generate natural language summaries, they frequently lack domain-specific clinical grounding and struggle to produce factually correct and temporally consistent responses for structured l…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:learning": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "expertise"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Sana Alamgeera",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Denise Goberta",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Muhammad Irshad",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Anne H. H. Ngu",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.28624v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:41.144Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:41.144Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:41.144Z",
-      "preferredVersionId": "arxiv:2608.28624",
-      "versions": [
-        {
-          "id": "arxiv:2608.28624",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.28624",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.28624v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-259.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "s disease is time-consuming and often depends on specialist expertise. Although large language models (LLMs) can generate natural language summaries, they frequently lack domain-specific clinical groun",
-              "start": 92,
-              "end": 293
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "s disease is time-consuming and often depends on specialist expertise. Although large language models (LLMs) can generate natural language summaries, they frequently lack domain-specific clinical groun",
-              "start": 92,
-              "end": 293
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "ming and often depends on specialist expertise. Although large language models (LLMs) can generate natural language summaries, they frequently lack domain-specific clinical grounding a",
-              "start": 115,
-              "end": 299
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "healthcare",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "clinical",
-                  "quote": "Accurate interpretation of single-visit and longitudinal clinical assessments for Parkinson's disease is time-consuming and often depends on specialist expertise. Al",
-                  "start": 0,
-                  "end": 165
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "s disease is time-consuming and often depends on specialist expertise. Although large language models (LLMs) can generate natural language summaries, they frequently lack domain-specific clinical groun",
-                  "start": 92,
-                  "end": 293
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "longitudinal",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "longitudinal",
-                  "quote": "G: Multi-Agent Retrieval-Augmented Generation for Query-Driven Summarization of Longitudinal Parkinson's Disease Assessments",
-                  "start": 5,
-                  "end": 129
-                },
-                {
-                  "field": "abstract",
-                  "term": "longitudinal",
-                  "quote": "Accurate interpretation of single-visit and longitudinal clinical assessments for Parkinson's disease is time-consuming and often depends on specialist expe",
-                  "start": 0,
-                  "end": 156
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [
-          {
-            "topic": "high-skill-operations",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "expertise",
-                "quote": "ments for Parkinson's disease is time-consuming and often depends on specialist expertise. Although large language models (LLMs) can generate natural language summaries, they frequently lac",
-                "start": 72,
-                "end": 261
-              }
-            ]
-          }
-        ],
         "finding": null,
         "findingStatus": "requires-reading",
         "abstractAvailable": true
