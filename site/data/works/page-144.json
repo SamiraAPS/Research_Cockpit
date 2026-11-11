@@ -1,12 +1,599 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "page": 144,
   "pageSize": 100,
-  "totalItems": 40512,
+  "totalItems": 40515,
   "totalPages": 406,
   "nextPage": "./page-145.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2610.07863",
+      "recordType": "preprint",
+      "title": "ReFold: Training-Free Reversible Inter-Turn Context Folding for Long-Horizon Agents",
+      "abstract": "Long-horizon LLM agents act on an append-only interaction history that is re-sent to the model at every step, so the context and its cost grow with steps until the sessions exceed the context window. Existing methods manage the context through context requirement prediction, relying on additional model calls, heuristic rules, or trained policies. However, these predictive approaches introduce runtime overhead, invalidate prefix caches, and permanently discard content with no guarantee of recovery. To overcome these limitations, we introduce ReFold: a training-free rendering layer that preserves the underlying interaction history while compressing only the model's rendered context. It removes two kinds of inter-turn redundancy without an auxiliary predictor: content an earlier turn already displayed, replaced by a stub, and turns the agent itself reports finished, folded into a one-line note. Both operators use chunked rendering, rewriting the cached prefix once every few steps rather than at every step. Every removal is strictly reversible, a wrong removal costs one restore from the history rather than permanent content loss. Because it operates at the rendering layer, ReFold is plug-and-play across standard ReAct-style harnesses. Evaluations across five long-horizon benchmarks and two frontier LLMs demonstrate that ReFold reduces token consumption by up to 2.5x and halves the KV-cache memory per session without degrading task success rates. Under capped context budgets, it avoids up to 92% of forced compactions. Under concurrent serving workloads, it reduces request queuing delays by up to 100%, accelerating inference by up to 1.7x, while cutting inference costs by up to 3.4x.",
+      "doi": "10.48550/arxiv.2610.07863",
+      "externalIds": {
+        "openalex": "W7220935081"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7220935081"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-10-06",
+      "firstPublicDate": "2026-10-06",
+      "onlineDate": null,
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Topic Modeling",
+        "Speech and dialogue systems"
+      ],
+      "keywords": [
+        "context compression",
+        "KV cache memory reduction",
+        "ReAct agents",
+        "context window limits"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "relying",
+              "sourceValue": "…ow. Existing methods manage the context through context requirement prediction, relying on additional model calls, heuristic rules, or trained policies. However, these predictive approaches introduce runtime overhead, invalidate prefix caches, and permanently discard content with no guarantee of recovery. To overcome t…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "LLM",
+        "relying"
+      ],
+      "authors": [
+        {
+          "id": "A5157931344",
+          "name": "Yupeng Su",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5157919698",
+          "name": "Jiayi Tian",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5157898916",
+          "name": "Zheng Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5076002956",
+          "name": "Souvik Kundu",
+          "orcid": "https://orcid.org/0000-0002-3533-9405",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2610.07863",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-09T11:55:55.907Z",
+      "firstSeenRunId": "ingestion-2026-10-09T11:55:34.583Z",
+      "retrievedAt": "2026-10-12T13:12:36.772Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-12T13:12:36.772Z",
+      "preferredVersionId": "openalex:W7220935081",
+      "versions": [
+        {
+          "id": "openalex:W7220935081",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7220935081",
+          "doi": "10.48550/arxiv.2610.07863",
+          "publicationDate": "2026-10-06",
+          "url": "https://doi.org/10.48550/arxiv.2610.07863"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-144.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "operator",
+              "quote": " and turns the agent itself reports finished, folded into a one-line note. Both operators use chunked rendering, rewriting the cached prefix once every few steps rather than at every step. ",
+              "start": 830,
+              "end": 1019
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "Long-horizon LLM agents act on an append-only interaction history that is re-sent to the model at every step, so the",
+              "start": 0,
+              "end": 116
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "operator",
+                  "quote": " and turns the agent itself reports finished, folded into a one-line note. Both operators use chunked rendering, rewriting the cached prefix once every few steps rather than at every step. ",
+                  "start": 830,
+                  "end": 1019
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "workload",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "workload",
+                  "quote": "xt budgets, it avoids up to 92% of forced compactions. Under concurrent serving workloads, it reduces request queuing delays by up to 100%, accelerating inference by up to 1.7x, while cutti",
+                  "start": 1484,
+                  "end": 1673
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.4324/9781003663041-18",
+      "recordType": "publication",
+      "title": "Reframing Data Literacy for Arts Administration Education",
+      "abstract": "Data competency is an indispensable skill for both cultural-sector managers and researchers. Because these fields increasingly leverage data to inform organizational decisions, shape cultural policies, and support sophisticated research endeavors, it is vital that educational training programs equip students with the ability to navigate information-centric professional environments. Despite this growing need, existing pedagogical norms seldom integrate intentional data fluency training into their arts administration and cultural management curricula. This chapter draws on a tripartite pedagogical framework that emphasizes the conceptual, technical, and ethical dimensions of data literacy. After discussing the fragmentary nature of existing approaches to teaching data competencies, we propose a graduate-level course designed to develop students’ fundamental data skills through constructivist, inquiry-based learning. Throughout the chapter, we outline suggestions for the key concepts, lessons, activities, and assignments that will support instructors in adapting this course to their needs. We also highlight how the use of emergent technologies, like generative artificial intelligence, may supplement and optimize students’ data skills while also introducing their own challenges. Implementing such a course will better prepare emerging cultural managers to meet the evolving professional demands of both research and practice in the field.",
+      "doi": "10.4324/9781003663041-18",
+      "externalIds": {
+        "openalex": "W7220736015"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7220736015"
+      },
+      "venue": "Routledge eBooks",
+      "publicationDate": "2026-10-06",
+      "firstPublicDate": "2026-10-06",
+      "onlineDate": null,
+      "topics": [
+        "Library Science and Information Literacy",
+        "Digital literacy in education",
+        "Literacy, Media, and Education"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…develop students’ fundamental data skills through constructivist, inquiry-based learning. Throughout the chapter, we outline suggestions for the key concepts, lessons, activities, and assignments that will support instructors in adapting this course to their needs. We also highlight how the use of emergent technologies…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5107690078",
+          "name": "Trevor Meagher",
+          "orcid": "https://orcid.org/0009-0005-0778-7621",
+          "affiliations": []
+        },
+        {
+          "id": "A5041565829",
+          "name": "Wen Guo",
+          "orcid": "https://orcid.org/0000-0002-2829-5651",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.4324/9781003663041-18",
+      "openAccess": false,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-08T12:03:54.900Z",
+      "firstSeenRunId": "ingestion-2026-10-08T12:03:48.813Z",
+      "retrievedAt": "2026-10-08T12:03:54.900Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-08T12:03:54.900Z",
+      "preferredVersionId": "openalex:W7220736015",
+      "versions": [
+        {
+          "id": "openalex:W7220736015",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7220736015",
+          "doi": "10.4324/9781003663041-18",
+          "publicationDate": "2026-10-06",
+          "url": "https://doi.org/10.4324/9781003663041-18"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-144.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "student",
+              "quote": "icated research endeavors, it is vital that educational training programs equip students with the ability to navigate information-centric professional environments. Despite this growing ne",
+              "start": 221,
+              "end": 409
+            },
+            {
+              "field": "abstract",
+              "term": "students",
+              "quote": "icated research endeavors, it is vital that educational training programs equip students with the ability to navigate information-centric professional environments. Despite this growing ne",
+              "start": 221,
+              "end": 409
+            },
+            {
+              "field": "abstract",
+              "term": "professional",
+              "quote": "aining programs equip students with the ability to navigate information-centric professional environments. Despite this growing need, existing pedagogical norms seldom integrate intentional da",
+              "start": 279,
+              "end": 471
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": " needs. We also highlight how the use of emergent technologies, like generative artificial intelligence, may supplement and optimize students’ data skills while also introducing their own challenges. Imp",
+              "start": 1097,
+              "end": 1300
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "education",
+                  "quote": "Reframing Data Literacy for Arts Administration Education",
+                  "start": 0,
+                  "end": 57
+                },
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": "icated research endeavors, it is vital that educational training programs equip students with the ability to navigate information-centric professional environments. Despite this growing ne",
+                  "start": 221,
+                  "end": 409
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "workplace",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "organizational",
+                  "quote": "gers and researchers. Because these fields increasingly leverage data to inform organizational decisions, shape cultural policies, and support sophisticated research endeavors, it is vital that ",
+                  "start": 71,
+                  "end": 265
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "students",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": "icated research endeavors, it is vital that educational training programs equip students with the ability to navigate information-centric professional environments. Despite this growing ne",
+                  "start": 221,
+                  "end": 409
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "professional",
+                  "quote": "aining programs equip students with the ability to navigate information-centric professional environments. Despite this growing need, existing pedagogical norms seldom integrate intentional da",
+                  "start": 279,
+                  "end": 471
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "generative",
+                  "quote": "se to their needs. We also highlight how the use of emergent technologies, like generative artificial intelligence, may supplement and optimize students’ data skills while also introducing t",
+                  "start": 1086,
+                  "end": 1276
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.34920/phe.2026.19.14",
+      "recordType": "publication",
+      "title": "REGIONAL INFODAY OF THE ERASMUS+ PROGRAMME AND TECHNICAL ASSISTANCE MISSION CONFERENCE ON “ARTIFICIAL INTELLIGENCE IN HIGHER EDUCATION”, 21-22.05.2026",
+      "abstract": "This article presents the major outcomes, recommendationsand impactof the Regional Information Day of the Erasmus+ Programme and the Technical Assistance Mission (TAM)Conference on Artificial Intelligence in Higher Education, held in Astana on 21-22 May 2026, the event that brought together representatives of higher education institutions, policymakers, researchers, and international experts from across the region to discuss opportunities for academic cooperation under Erasmus+ and the transformative role of AIin teaching, learning, research, and university governance.",
+      "doi": "10.34920/phe.2026.19.14",
+      "externalIds": {
+        "openalex": "W7220689223"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7220689223"
+      },
+      "venue": "Information system of scientific journals of Uzbekistan",
+      "publicationDate": "2026-10-06",
+      "firstPublicDate": "2026-10-06",
+      "onlineDate": null,
+      "topics": [
+        "Artificial Intelligence in Education",
+        "Educational Innovations and Challenges",
+        "Higher Education Governance and Development"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…ademic cooperation under Erasmus+ and the transformative role of AIin teaching, learning, research, and university governance.",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "participation",
+          "label": "Partizipation & Fairness",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "governance",
+              "conceptLabel": "Governance",
+              "matchedTerm": "governance",
+              "sourceValue": "…nd the transformative role of AIin teaching, learning, research, and university governance.",
+              "weight": 2
+            },
+            {
+              "source": "external_topic",
+              "concept": "governance",
+              "conceptLabel": "Governance",
+              "matchedTerm": "governance",
+              "sourceValue": "Higher Education Governance and Development",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:learning": 2,
+        "topic:participation": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "learning",
+        "governance"
+      ],
+      "authors": [
+        {
+          "id": "A5157714291",
+          "name": "Laura Paluanova",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.34920/phe.2026.19.14",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-08T12:03:53.565Z",
+      "firstSeenRunId": "ingestion-2026-10-08T12:03:48.813Z",
+      "retrievedAt": "2026-10-08T12:03:53.565Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-08T12:03:53.565Z",
+      "preferredVersionId": "openalex:W7220689223",
+      "versions": [
+        {
+          "id": "openalex:W7220689223",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7220689223",
+          "doi": "10.34920/phe.2026.19.14",
+          "publicationDate": "2026-10-06",
+          "url": "https://doi.org/10.34920/phe.2026.19.14"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-144.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "artificial intelligence",
+              "quote": "FODAY OF THE ERASMUS+ PROGRAMME AND TECHNICAL ASSISTANCE MISSION CONFERENCE ON “ARTIFICIAL INTELLIGENCE IN HIGHER EDUCATION”, 21-22.05.2026",
+              "start": 11,
+              "end": 150
+            },
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": " the Erasmus+ Programme and the Technical Assistance Mission (TAM)Conference on Artificial Intelligence in Higher Education, held in Astana on 21-22 May 2026, the event that brought together representati",
+              "start": 101,
+              "end": 304
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "education",
+                  "quote": "D TECHNICAL ASSISTANCE MISSION CONFERENCE ON “ARTIFICIAL INTELLIGENCE IN HIGHER EDUCATION”, 21-22.05.2026",
+                  "start": 45,
+                  "end": 150
+                },
+                {
+                  "field": "abstract",
+                  "term": "education",
+                  "quote": "chnical Assistance Mission (TAM)Conference on Artificial Intelligence in Higher Education, held in Astana on 21-22 May 2026, the event that brought together representatives of higher educat",
+                  "start": 135,
+                  "end": 324
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.1371/journal.pdig.0001776",
       "recordType": "publication",
@@ -22018,837 +22605,6 @@
               "interpretation": "mentioned; role/outcome not confirmed"
             }
           ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.13140/rg.2.2.14834.06082",
-      "recordType": "preprint",
-      "title": "Towards In-Parameter Memory Augmentation for Large Language Models",
-      "abstract": "Recently Large Language Models (LLMs) and LLM-based agents increasingly need to incorporate knowledge acquired after pretraining, e.g., domain facts, user preferences, documents, and interaction experience. In-context learning (ICL) and ICL-based agent harness remain flexible, but they consume context capacity and incur repeated discretized encoding cost that grows with context length. \\textbf{In-parameter memory} offers a complementary substrate: reusable memory information is represented in model parameters, adapters, or other parameter-like objects that are composed into the forward pass at inference time. This survey focuses on methods that augment LLMs with such parametric memory at deployment: a memory-bearing parameter object is plugged into the forward pass during inference, whether it is acquired before or during deployment. We organize the landscape with two orthogonal axes: \\textbf{Parameter Placement}, which includes Embedding, Attention, FFN layers, or Hybrid when two or more layers are used; and \\textbf{Parameter Acquisition Time}, which distinguishes methods whose memory object is acquired during deployment (online) from those acquired before it (offline). We clarify boundaries, conduct comparisons, and discuss open directions in interference, safety, co-design with ICL, and recursive self-improvement.",
-      "doi": "10.13140/rg.2.2.14834.06082",
-      "externalIds": {
-        "openalex": "W7220733556"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7220733556"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-10-06",
-      "firstPublicDate": "2026-10-06",
-      "onlineDate": null,
-      "topics": [
-        "Topic Modeling",
-        "Natural Language Processing Techniques",
-        "Multimodal Machine Learning Applications"
-      ],
-      "keywords": [
-        "large language models",
-        "parameter-efficient fine-tuning",
-        "memory enhancement"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "…th two orthogonal axes: \\textbf{Parameter Placement}, which includes Embedding, Attention, FFN layers, or Hybrid when two or more layers are used; and \\textbf{Parameter Acquisition Time}, which distinguishes methods whose memory object is acquired during deployment (online) from those acquired before it (offline). We c…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…main facts, user preferences, documents, and interaction experience. In-context learning (ICL) and ICL-based agent harness remain flexible, but they consume context capacity and incur repeated discretized encoding cost that grows with context length. \\textbf{In-parameter memory} offers a complementary substrate: reusab…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "participation",
-          "label": "Partizipation & Fairness",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "participation",
-              "conceptLabel": "Partizipation",
-              "matchedTerm": "co-design",
-              "sourceValue": "…ries, conduct comparisons, and discuss open directions in interference, safety, co-design with ICL, and recursive self-improvement.",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…y boundaries, conduct comparisons, and discuss open directions in interference, safety, co-design with ICL, and recursive self-improvement.",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 7,
-        "topic:cognition": 2,
-        "topic:learning": 2,
-        "topic:participation": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "safety",
-        "attention",
-        "co-design"
-      ],
-      "authors": [
-        {
-          "id": "A5157671878",
-          "name": "Haoyu Huang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5157718630",
-          "name": "Zhongwei Xie",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5157755370",
-          "name": "Jiaxin Bai",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5157689139",
-          "name": "Yisen Gao",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5133804776",
-          "name": "Hong Ting Tsang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5086983892",
-          "name": "Wuganjing Song",
-          "orcid": "https://orcid.org/0000-0001-9581-4127",
-          "affiliations": []
-        },
-        {
-          "id": "A5099230380",
-          "name": "Huihao Jing",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5157727951",
-          "name": "Yufei Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5157663319",
-          "name": "Yangqiu Song",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.13140/rg.2.2.14834.06082",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-10T11:12:44.228Z",
-      "firstSeenRunId": "ingestion-2026-10-10T11:12:16.971Z",
-      "retrievedAt": "2026-10-12T13:12:36.772Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-12T13:12:36.772Z",
-      "preferredVersionId": "openalex:W7220733556",
-      "versions": [
-        {
-          "id": "openalex:W7220733556",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7220733556",
-          "doi": "10.13140/rg.2.2.14834.06082",
-          "publicationDate": "2026-10-06",
-          "url": "https://doi.org/10.13140/rg.2.2.14834.06082"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-144.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "y need to incorporate knowledge acquired after pretraining, e.g., domain facts, user preferences, documents, and interaction experience. In-context learning (ICL) and ICL-based agent h",
-              "start": 70,
-              "end": 254
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "large language model",
-              "quote": "Towards In-Parameter Memory Augmentation for Large Language Models",
-              "start": 0,
-              "end": 66
-            },
-            {
-              "field": "title",
-              "term": "large language models",
-              "quote": "Towards In-Parameter Memory Augmentation for Large Language Models",
-              "start": 0,
-              "end": 66
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Recently Large Language Models (LLMs) and LLM-based agents increasingly need to incorporate knowledge acquired after pretraining, ",
-              "start": 0,
-              "end": 130
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "large language model",
-                  "quote": "Towards In-Parameter Memory Augmentation for Large Language Models",
-                  "start": 0,
-                  "end": 66
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Recently Large Language Models (LLMs) and LLM-based agents increasingly need to incorporate knowledge acquired after pretraining, ",
-                  "start": 0,
-                  "end": 130
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "survey",
-                  "quote": "er-like objects that are composed into the forward pass at inference time. This survey focuses on methods that augment LLMs with such parametric memory at deployment: a memory-bearing pa",
-                  "start": 542,
-                  "end": 728
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.08630",
-      "recordType": "preprint",
-      "title": "Towards In-Parameter Memory Augmentation for Large Language Models",
-      "abstract": "Recently Large Language Models (LLMs) and LLM-based agents increasingly need to incorporate knowledge acquired after pretraining, e.g., domain facts, user preferences, documents, and interaction experience. In-context learning (ICL) and ICL-based agent harness remain flexible, but they consume context capacity and incur repeated discretized encoding cost that grows with context length. \\textbf{In-parameter memory} offers a complementary substrate: reusable memory information is represented in model parameters, adapters, or other parameter-like objects that are composed into the forward pass at inference time. This survey focuses on methods that augment LLMs with such parametric memory at deployment: a memory-bearing parameter object is plugged into the forward pass during inference, whether it is acquired before or during deployment. We organize the landscape with two orthogonal axes: \\textbf{Parameter Placement}, which includes Embedding, Attention, FFN layers, or Hybrid when two or more layers are used; and \\textbf{Parameter Acquisition Time}, which distinguishes methods whose memory object is acquired during deployment (online) from those acquired before it (offline). We clarify boundaries, conduct comparisons, and discuss open directions in interference, safety, co-design with ICL, and recursive self-improvement.",
-      "doi": "10.48550/arxiv.2610.08630",
-      "externalIds": {
-        "openalex": "W7220951842"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7220951842"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-10-06",
-      "firstPublicDate": "2026-10-06",
-      "onlineDate": null,
-      "topics": [
-        "Topic Modeling",
-        "Domain Adaptation and Few-Shot Learning",
-        "Natural Language Processing Techniques"
-      ],
-      "keywords": [
-        "large language models",
-        "parametric memory",
-        "LLM agents",
-        "in-context learning",
-        "LLM safety",
-        "recursive self-improvement"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "…th two orthogonal axes: \\textbf{Parameter Placement}, which includes Embedding, Attention, FFN layers, or Hybrid when two or more layers are used; and \\textbf{Parameter Acquisition Time}, which distinguishes methods whose memory object is acquired during deployment (online) from those acquired before it (offline). We c…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…main facts, user preferences, documents, and interaction experience. In-context learning (ICL) and ICL-based agent harness remain flexible, but they consume context capacity and incur repeated discretized encoding cost that grows with context length. \\textbf{In-parameter memory} offers a complementary substrate: reusab…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "in-context learning",
-              "weight": 0
-            },
-            {
-              "source": "external_topic",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "Domain Adaptation and Few-Shot Learning",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "participation",
-          "label": "Partizipation & Fairness",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "participation",
-              "conceptLabel": "Partizipation",
-              "matchedTerm": "co-design",
-              "sourceValue": "…ries, conduct comparisons, and discuss open directions in interference, safety, co-design with ICL, and recursive self-improvement.",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…y boundaries, conduct comparisons, and discuss open directions in interference, safety, co-design with ICL, and recursive self-improvement.",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "LLM safety",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 7,
-        "topic:cognition": 2,
-        "topic:learning": 2,
-        "topic:participation": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "safety",
-        "attention",
-        "co-design"
-      ],
-      "authors": [
-        {
-          "id": "A5157945269",
-          "name": "Haoyu Huang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5157957381",
-          "name": "Zhongwei Xie",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5157903939",
-          "name": "Jiaxin Bai",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5157916408",
-          "name": "Yisen Gao",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5133804776",
-          "name": "Hong Ting Tsang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5086983892",
-          "name": "Wuganjing Song",
-          "orcid": "https://orcid.org/0000-0001-9581-4127",
-          "affiliations": []
-        },
-        {
-          "id": "A5099230380",
-          "name": "Huihao Jing",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5157938888",
-          "name": "Yufei Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5157924938",
-          "name": "Yangqiu Song",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2610.08630",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-09T11:55:55.907Z",
-      "firstSeenRunId": "ingestion-2026-10-09T11:55:34.583Z",
-      "retrievedAt": "2026-10-12T13:12:36.772Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-12T13:12:36.772Z",
-      "preferredVersionId": "openalex:W7220951842",
-      "versions": [
-        {
-          "id": "openalex:W7220951842",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7220951842",
-          "doi": "10.48550/arxiv.2610.08630",
-          "publicationDate": "2026-10-06",
-          "url": "https://doi.org/10.48550/arxiv.2610.08630"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-144.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "y need to incorporate knowledge acquired after pretraining, e.g., domain facts, user preferences, documents, and interaction experience. In-context learning (ICL) and ICL-based agent h",
-              "start": 70,
-              "end": 254
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "large language model",
-              "quote": "Towards In-Parameter Memory Augmentation for Large Language Models",
-              "start": 0,
-              "end": 66
-            },
-            {
-              "field": "title",
-              "term": "large language models",
-              "quote": "Towards In-Parameter Memory Augmentation for Large Language Models",
-              "start": 0,
-              "end": 66
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Recently Large Language Models (LLMs) and LLM-based agents increasingly need to incorporate knowledge acquired after pretraining, ",
-              "start": 0,
-              "end": 130
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "large language model",
-                  "quote": "Towards In-Parameter Memory Augmentation for Large Language Models",
-                  "start": 0,
-                  "end": 66
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Recently Large Language Models (LLMs) and LLM-based agents increasingly need to incorporate knowledge acquired after pretraining, ",
-                  "start": 0,
-                  "end": 130
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "survey",
-                  "quote": "er-like objects that are composed into the forward pass at inference time. This survey focuses on methods that augment LLMs with such parametric memory at deployment: a memory-bearing pa",
-                  "start": 542,
-                  "end": 728
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.3389/fpubh.2026.1921273",
-      "recordType": "publication",
-      "title": "Towards the One Exposome: harnessing artificial intelligence and digital health technologies across One Health toxicology, new approach methodologies, and environmental public health",
-      "abstract": "The One Exposome framework integrates exposomics, One Health toxicology, New Approach Methodologies (NAMs) and artificial intelligence to advance environmental health from reactive risk assessment towards predictive, preventive, and participatory science. The paper positions One Health as the ethical and conceptual rationale for recognizing the interdependence of human, animal, and environmental health, the Exposome as the framework for measuring cumulative and life-course exposures, and NAMs together with digital and AI-enabled tools as the means to generate, integrate, and interpret mechanistic and adverse outcome pathway (AOP)-based evidence across biological scales. In this review, environmental health challenges such as antimicrobial resistance, endocrine disruption, and other complex multi-stressor exposures cannot be adequately addressed through compartmentalized, single-substance, or purely retrospective approaches. The One Exposome paradigm instead proposes a systems-based model that links exposure data, mechanistic toxicology, and public health intelligence across humans, animals, and ecosystems. It draws on human-relevant NAMs, including microphysiological systems, together with AI and multi-omics approaches, to support cross-species interpretation, earlier hazard identification, and more preventive intervention strategies. Within this framework, sentinel surveillance, integrated monitoring, and interoperable data systems are central for detecting shared risks across environmental, veterinary, food, and human health domains. The approach is also presented as requiring governance reform so that agricultural practice, environmental management, and clinical stewardship are aligned within a common preventive and planetary health perspective. Overall, the paper frames the One Exposome as a transdisciplinary architecture for environmental public health that combines measurable environments, mechanistic understanding, and computational integration. By connecting cumulative exposures to biological responses and population-level consequences, it offers a foundation for more anticipatory, equitable, and scientifically integrated environmental health decision-making.",
-      "doi": "10.3389/fpubh.2026.1921273",
-      "externalIds": {
-        "openalex": "W7220739481"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7220739481"
-      },
-      "venue": "Frontiers in Public Health",
-      "publicationDate": "2026-10-06",
-      "firstPublicDate": "2026-10-06",
-      "onlineDate": null,
-      "topics": [
-        "Health, Environment, Cognitive Aging",
-        "Zoonotic diseases and public health",
-        "Public Health and Environmental Issues"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "participation",
-          "label": "Partizipation & Fairness",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "participation",
-              "conceptLabel": "Partizipation",
-              "matchedTerm": "participatory",
-              "sourceValue": "…mental health from reactive risk assessment towards predictive, preventive, and participatory science. The paper positions One Health as the ethical and conceptual rationale for recognizing the interdependence of human, animal, and environmental health, the Exposome as the framework for measuring cumulative and life-co…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "governance",
-              "conceptLabel": "Governance",
-              "matchedTerm": "governance",
-              "sourceValue": "…ry, food, and human health domains. The approach is also presented as requiring governance reform so that agricultural practice, environmental management, and clinical stewardship are aligned within a common preventive and planetary health perspective. Overall, the paper frames the One Exposome as a transdisciplinary a…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision making",
-              "sourceValue": "The One Exposome framework integrates exposomics, One Health toxicology, New Approach Methodologies (NAMs) and artificial intelligence to advance environmental health from reactive risk assessment towards predictive, preventive, and participatory science. The paper positions One Health as the ethical and conceptual rat…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…NAMs) and artificial intelligence to advance environmental health from reactive risk assessment towards predictive, preventive, and participatory science. The paper positions One Health as the ethical and conceptual rationale for recognizing the interdependence of human, animal, and environmental health, the Exposome a…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 1,
-        "topic:participation": 4,
-        "topic:cognition": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "participatory",
-        "governance",
-        "decision making",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": "A5021936550",
-          "name": "Sandra Coecke",
-          "orcid": "https://orcid.org/0000-0003-2773-6408",
-          "affiliations": []
-        },
-        {
-          "id": "A5141262069",
-          "name": "Thomas Hartung",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.3389/fpubh.2026.1921273",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-08T12:03:54.900Z",
-      "firstSeenRunId": "ingestion-2026-10-08T12:03:48.813Z",
-      "retrievedAt": "2026-10-08T12:03:54.900Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-08T12:03:54.900Z",
-      "preferredVersionId": "openalex:W7220739481",
-      "versions": [
-        {
-          "id": "openalex:W7220739481",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7220739481",
-          "doi": "10.3389/fpubh.2026.1921273",
-          "publicationDate": "2026-10-06",
-          "url": "https://doi.org/10.3389/fpubh.2026.1921273"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-144.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": " as the ethical and conceptual rationale for recognizing the interdependence of human, animal, and environmental health, the Exposome as the framework for measuring cumulative and life-",
-              "start": 286,
-              "end": 471
-            },
-            {
-              "field": "abstract",
-              "term": "humans",
-              "quote": "ks exposure data, mechanistic toxicology, and public health intelligence across humans, animals, and ecosystems. It draws on human-relevant NAMs, including microphysiological systems, to",
-              "start": 1011,
-              "end": 1197
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "Towards the One Exposome: harnessing artificial intelligence and digital health technologies across One Health toxicology, new approach methodologies, and envir",
-              "start": 0,
-              "end": 160
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "grates exposomics, One Health toxicology, New Approach Methodologies (NAMs) and artificial intelligence to advance environmental health from reactive risk assessment towards predictive, preventive, and p",
-              "start": 31,
-              "end": 234
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "suring cumulative and life-course exposures, and NAMs together with digital and AI-enabled tools as the means to generate, integrate, and interpret mechanistic and adverse outcome pa",
-              "start": 444,
-              "end": 626
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "healthcare",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "clinical",
-                  "quote": " governance reform so that agricultural practice, environmental management, and clinical stewardship are aligned within a common preventive and planetary health perspective. Overall, the p",
-                  "start": 1605,
-                  "end": 1793
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
           "studyDesign": []
         },
         "personalFit": [],

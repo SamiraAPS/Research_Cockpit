@@ -1,7 +1,64 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "documents": [
+    {
+      "id": "arxiv:2608.18254",
+      "abstract": "Trajectory planning for autonomous driving requires both high-level reasoning and precise low-level control. Large Language Models (LLMs) offer semantic-rich planning capabilities, however, their application is limited by hallucinated reasoning, poor grounding in environment dynamics, and limited numerical precision in control. We propose GAPL (Grounded Action-effect Policy Learning), a unified framework that integrates LLM-based effect estimation, simulation-based effect grounding, and policy optimization into a closed-loop system. GAPL consists of three modules: (1) an LLM-based Effect Evaluator for structured multi-dimensional action-effect estimation; (2) a Simulation-based Effect Grounder that predicts dynamics-consistent effects from simulator rollouts; and (3) an Effect-Aware Decision Maker that grounds LLM effect estimates against simulation via a distiller to guide Proximal Policy Optimization (PPO)-based policy learning. Experiments on four Highway-env scenarios demonstrate that GAPL consistently outperforms baselines, achieving average reductions of {0.76, 0.86, 2.00} in collision rate, average displacement error (ADE), and final displacement error (FDE), and an average reward gain of 1.44.",
+      "topics": [
+        "Autonomous Vehicle Technology and Safety",
+        "Reinforcement Learning in Robotics",
+        "Human-Automation Interaction and Safety",
+        "cs.RO"
+      ],
+      "keywords": [
+        "Hallucinating",
+        "Trajectory",
+        "Policy learning",
+        "Displacement (psychology)",
+        "Motion planning",
+        "Collision"
+      ]
+    },
+    {
+      "id": "arxiv:2608.21440",
+      "abstract": "Vision-language-action (VLA) models have advanced end-to-end autonomous driving by leveraging foundation models for semantic reasoning and long-tail generalization. However, their planning performance remains limited in complex driving environments because image-only representations inadequately capture planning-relevant road geometry and topology. In this paper, we propose Geo-VLA, a plug-and-play framework that enhances VLA models by learning geometry-aware visual representations. During training, Geo-VLA internalizes geometric map semantics to strengthen road-structure representations, while requiring no HD maps or additional lane information during inference. To support this approach, we introduce Geo-QA, a geometry-focused question-answering dataset that injects road geometry into vision-language representations through contrastive learning and instruction tuning. Experiments on NAVSIM v1 demonstrate that Geo-VLA consistently improves VLA planners with distinct action-generation architectures, achieving 92.1 PDMS and establishing a new state-of-the-art among single-camera VLA planners.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Autonomous Vehicle Technology and Safety",
+        "Robotic Path Planning Algorithms",
+        "cs.RO",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Semantics (computer science)",
+        "Visual reasoning",
+        "Visualization",
+        "Foundation (evidence)",
+        "Semantic mapping",
+        "Knowledge representation and reasoning"
+      ]
+    },
+    {
+      "id": "arxiv:2608.17597",
+      "abstract": "Large language models are increasingly deployed through agent harnesses that manage tools, extensions, persistent state, permissions, and external actions. Existing safety benchmarks mainly target individual attack mechanisms or a limited subset of operational settings, making it difficult to compare how safety failures emerge across different harness responsibilities. We present HarnessRisk, a lifecycle oriented benchmark that organizes agent harness safety into six operational phases including Harness Configuration, Capability Extension, Runtime Operation, State Persistence, Action Control, and Incident Recovery. HarnessRisk contains 128 sandboxed cases, each pairing a benign user objective with an adversarial instruction embedded in an untrusted workflow artifact. We evaluate each trajectory using Utility, Attack Success Rate, Persistence, and Detection. Across three harnesses, six language models, and 14 model and harness configurations, attack success ranges from 12.6% to 80.9%, while Utility remains between 75.0% and 97.6%. Harness Configuration is the most vulnerable phase across all three harnesses, showing that attacks can succeed by altering security sensitive parameters within otherwise authorized workflows. We also find that explicit risk recognition does not reliably lead to safe action, as some configurations detect risks in more than 90% of runs while retaining substantial attack success. These results highlight the need to evaluate agent safety across multiple harness responsibilities and at the level of the deployed model and harness configuration.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Security and Verification in Computing",
+        "Information and Cyber Security",
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Workflow",
+        "Benchmark (surveying)",
+        "Adversarial system",
+        "Attack surface",
+        "State (computer science)",
+        "Action (physics)",
+        "Key (lock)"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.18184",
       "abstract": "Human-centric intelligence is evolving in the foundation-model era, with growing emphasis on scale, transferability, and general-purpose modeling. Yet it has not fully integrated with foundation models to achieve the comparable progress seen in them. More importantly, recent advances across this broad landscape remain fragmented across tasks, modalities, and research communities, leaving their intrinsic conceptual and methodological connections unclear. To bridge these divides and rethink human-centric intelligence in the foundation-model era, we introduce a full-spectrum human context taxonomy that integrates six interconnected levels by viewing humans as observable subjects through visual appearance and spatial geometry, as dynamic actors through kinematic dynamics and interaction modeling, and as situated agents through world simulation and embodied agency. We next present the methodological foundations of the field, covering human-centric data families, computational architecture paradigms, and representative training and inference optimization strategies. We then systematically review representative methods across these levels and organize the associated datasets, benchmarks, and evaluation metrics. We further discuss open challenges and promising research directions toward human-centric intelligence that is scalable, trustworthy, physically grounded, and deployable, aiming to provide a coherent framework and practical reference for advancing the field. Finally, we provide a systematically organized and continuously updated collection of human-centric AI literature and resources on our project page.",
@@ -3616,67 +3673,6 @@
         "Semantic similarity",
         "Similarity (geometry)",
         "Feature learning"
-      ]
-    },
-    {
-      "id": "arxiv:2608.14953",
-      "abstract": "Recent advances in Large Language Models (LLMs) have opened opportunities to apply high-level code transformations to the field of code optimization, and it has since emerged as one of the most fundamental tasks for LLMs to perform; however, at present, LLMs struggle to apply wide-ranging code optimization tasks due to both the complexity of the code and the inability to independently verify the correctness of the transformations. In this paper, we present the Trusted LLM (T-LLM) Compiler, which proposes an advancement in compiler technology through a collaborative effort involving high-level LLM code transformations, traditional compilers, and verification tools. Experimental results reveal that it can significantly improve code correctness when tested on a set of PolyBench/C benchmarks. Our approach facilitates iterative code optimization efforts with verification strategies that enable corrective actions. Through this approach, T-LLM Compiler achieves code optimization accuracy of up to 83.3% and a speedup of up to 16.1\\% on the PolyBench/C benchmarks, with the transformed code reaching an average of 26.7% speedup wrt standard baselines. Additionally, we release the project's source code to the open-source community.",
-      "topics": [
-        "Natural Language Processing Techniques",
-        "Machine Learning and Data Classification",
-        "Big Data and Digital Economy",
-        "cs.AI",
-        "cs.CL",
-        "cs.LG",
-        "cs.PF",
-        "cs.PL"
-      ],
-      "keywords": [
-        "Correctness",
-        "Compiler",
-        "Unreachable code",
-        "Speedup",
-        "Code (set theory)",
-        "Dead code",
-        "Set (abstract data type)",
-        "Code generation"
-      ]
-    },
-    {
-      "id": "arxiv:2608.15055",
-      "abstract": "Hypergraphs effectively model higher-order groupwise relationships beyond pairwise interactions, while pretrained language models (PLMs) and large language models (LLMs) provide rich semantic understanding from textual attributes. However, research on combining language models with hypergraph learning remains limited due to the lack of public text-attributed hypergraph benchmarks. To address this limitation, we present TAHB (Text-Attributed Hypergraph Benchmark), the first public benchmark integrating hypergraph structures and raw textual attributes. TAHB contains 10 real-world datasets from four domains - e-commerce, academia, movies, and politics networks - enabling systematic evaluation of text-aware hypergraph representation learning. Experimental results show that TAHB preserves key structural properties of real-world hypergraphs and consistently reproduces performance tendencies observed in existing benchmarks. Furthermore, experiments under both LLM-as-Enhancer and LLM-as-Predictor settings demonstrate that LLM-enhanced textual semantics improve hypergraph learning performance, while structural and textual information jointly provide the best setting for LLM-based prediction. Our benchmark provides a foundation for future research at the intersection of hypergraph learning and language models.",
-      "topics": [
-        "Advanced Graph Neural Networks",
-        "Topic Modeling",
-        "Text and Document Classification Technologies",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Hypergraph",
-        "Benchmark (surveying)",
-        "Pairwise comparison",
-        "Semantics (computer science)",
-        "Intersection (aeronautics)",
-        "Representation (politics)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.15326",
-      "abstract": "Artificial intelligence (AI) benchmarks are not neutral tools of evaluation but socio-technical artefacts that shape competition, power, and research priorities within AI. Benchmarks standardise the assessment of systems and facilitate the creation of leaderboards that reward state-of-the-art performance with prestige, citations, trust, and institutional influence. As the costs of developing competitive AI systems rise, these rewards increasingly concentrate among powerful, industry-funded labs. This paper situates these concerns within Iris Marion Young's theories of oppression and structural injustice. It argues that current benchmarking practices may perpetuate systematic harms affecting various actors in AI research, aligning with four of Young's \"faces of oppression\". Benchmarking culture is further framed as a source of structural injustice, as these harms emerge from normalised, individually defensible practices and network effects, even without explicit wrongdoing. By reinforcing existing power structures and narrowing possible research trajectories, benchmarking may in fact prevent the field from advancing in epistemically robust and socially beneficial ways.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Innovation, Sustainability, Human-Machine Systems",
-        "Computational and Text Analysis Methods",
-        "cs.AI",
-        "cs.CY"
-      ],
-      "keywords": [
-        "Benchmarking",
-        "Benchmark (surveying)",
-        "Field (mathematics)",
-        "Injustice",
-        "Power (physics)",
-        "Oppression"
       ]
     }
   ]

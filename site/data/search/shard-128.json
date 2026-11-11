@@ -1,7 +1,36 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "documents": [
+    {
+      "id": "arxiv:2609.25021",
+      "abstract": "Large Language Models (LLMs) tend to add disclaimers like \"I'm just an AI\" when asked about something related to themselves. The self-reports from such responses are used in debates about AI safety or self-knowledge of the models, yet what drives them is not well understood. Are the models telling us about themselves or rather how they are deployed? In this work, we show that the chat template works like a switch - when present, it turns this disclaimer voice up and experiential voice like \"I feel\" down, across 8 popular open-source instruct models up to 9B parameters in size. And conversely when the chat template is not present, it turns the disclaimer voice down and experiential voice up. Inside the activations of 3 models, we find a direction that steers this behavior. Removing the direction in the model's activation space turns disclaimer voice down and adding it turns it up, while a random direction of the same size has little effect. We find that instruct models without chat template, when we add the disclaimer direction to them, disclaim like the template was there. Since the chat template controls the disclaimer voice of LLMs, then researchers studying self-reports or introspection of models might have a confound they need to control for. Our results show that there is a direction they can use to steer this voice. More broadly, our work shows that what models say about themselves is not a fact about them. What they say doesn't come only from weights, but it is partially set by the chat template, and because of that a model's self-description shouldn't be treated literally.",
+      "topics": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.14694",
+      "abstract": "Foundation models are emerging as a transformative paradigm for AI-native sixth-generation (6G) wireless networks by enabling scalable, transferable, and data-efficient intelligence across diverse communication tasks. Unlike conventional deep learning models that are trained for individual applications, wireless foundation models (WFMs) learn generalized representations from large-scale heterogeneous wireless data and can be efficiently adapted to communication, sensing, localization, and network optimization tasks with minimal task-specific supervision. Despite rapid progress, current research remains fragmented across architectures, training paradigms, and application domains, with no unified survey dedicated to the design, learning, and deployment of WFMs. This survey presents a comprehensive and unified review of wireless foundation models. We first establish the fundamental concepts of WFMs and introduce a taxonomy that organizes the field according to model architectures, pre-training paradigms, and applications. We then review representative architectures, self-supervised pre-training strategies, parameter-efficient adaptation methods, datasets, benchmarks, and evaluation methodologies, highlighting their roles in enabling transferable wireless intelligence. Furthermore, we examine emerging applications spanning physical-layer signal processing, network intelligence, and cross-layer optimization, and discuss the key challenges of data availability, generalization, interpretability, efficient edge deployment, and standardization. Finally, we outline future research directions toward scalable, trustworthy, and general-purpose wireless intelligence for AI-native 6G networks. This survey provides a comprehensive reference for researchers and practitioners developing next-generation intelligent wireless systems.",
+      "topics": [
+        "cs.AI",
+        "cs.NI",
+        "eess.SP"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.08829",
+      "abstract": "Activation steering edits the behaviour of a frozen language model by adding a learned vector to its residual stream, and current practice fixes the injection layers globally per task. We argue that the best layers are an instance-level decision, and we make per-instance, multi-layer selection both well understood and deployable. On two open-weight 8B models and six binary persona traits, a per-instance oracle over layer subsets shows that the best layers vary from one input to the next: on most trait-model pairs, no fixed global layer set recovers the per-instance benefit. A greedy rule that ranks layers by single-layer marginal effect recovers nearly all of the oracle's benefit, but both must score candidate layers against the gold answer, so neither can run at deployment; the rule instead becomes the target a prompt-only predictor is trained to reproduce. Our deployable recipe needs no label at inference: a per-instance layer ranker read off the prompt embedding, a classifier that infers the steering direction, and an adaptive gate that scores short steered passes against that inferred direction and steers no more layers than necessary. The recipe recovers most of the oracle's lift (the bulk on the stronger model, a clear majority on the harder one), never drives any trait-model pair below its unsteered alignment baseline on average, and largely avoids the fluency collapse that strong global selection incurs at higher layer counts. A mechanistic account, \"direction over magnitude\", explains the behavioural flip under a mis-directed global set, the output collapse from steering too many layers, and the ceiling of unsteerable inputs.",
+      "topics": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.08878",
       "abstract": "Transformer-based large language models (LLMs) achieve strong performance across many tasks, but their Key-Value (KV) cache grows linearly with sequence length, creating a severe memory bottleneck for long-context inference. Existing heuristic eviction methods (e.g., H$_2$O and SnapKV) rely on static attention or positional signals that often fail to capture a token's future predictive influence. We propose DistillCache, a reinforcement learning framework that formulates KV-cache eviction as a sequential decision problem. DistillCache learns a lightweight policy network using rich internal model signals (attention statistics, value norms, entropy, and position) and trains it with REINFORCE via a per-step KL-divergence reward to preserve the full-cache output distribution. On a 7B-parameter instruction-tuned Transformer (Mistral-7B-Instruct-v0.3), DistillCache retains 94.2% of full-cache accuracy on LongBench at a 25% cache budget, outperforming both strong heuristic baselines (H$_2$O, SnapKV) by up to 2.7 absolute points and, under our re-implementations, concurrent RL-based methods (ForesightKV, RLKV) by up to 1.4 points on long-context tasks. On reasoning benchmarks, DistillCache is competitive with the best concurrent method and surpasses it under aggressive compression. It also delivers up to 2.1x full-cache throughput while maintaining competitive practical efficiency. These results highlight the effectiveness of learned, distribution-aware policies for memory-efficient long-context LLM inference.",
@@ -1828,34 +1857,6 @@
       "topics": [
         "eess.SY",
         "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04980",
-      "abstract": "We show that tiny transformers can profitably employ a simple form of Chain of Thought, which we call protoreasoning, allowing us to study step-by-step reasoning on ~1M-parameter models and opening up opportunities for much more detailed experimentation and analysis than is feasible for larger models. Current Large Language Models exhibit impressive step-by-step reasoning, but we have yet to understand its generality, i.e., when and how LLMs learn genuinely general algorithms rather than \"bags of heuristics.\" Such questions are hard to settle on compute-intensive frontier models trained on opaque data. To work at model scales far below the threshold for natural-language competence, we define reasoning-friendly tasks on Dyck languages (sentences of correctly nested brackets). We find that protoreasoning traces substantially close the out-of-distribution generalization gap, and ablations confirm that the trace's content, not merely its extra tokens, drives the gain.",
-      "topics": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04311",
-      "abstract": "Translating wordplay across languages has long challenged both professional translators and machine translation systems. We investigate three approaches to translating puns from English to French by combining large language models with linguistic constraints for wordplay generation. Our baseline uses a large language model with feedback from a discriminator prompted with positive and negative French examples. Our guided reasoning pipeline uses combined phonetic-semantic embeddings to retrieve lexical candidates for wordplay generation. Finally, our multi-agent framework iteratively evaluates and regenerates candidate translations using specialized feedback. Moving beyond literal translation, our objective is to preserve the linguistic creativity, ambiguity, and humor of the source-text wordplay rather than simply reproduce its vocabulary. The multi-agent and guided chain-of-thought systems ranked first and second, respectively, in the CLEF JOKER 2025 Task 2 competition under expert human evaluation, despite only modest improvements in BLEU and BERTScore. These findings suggest that both explicit phonetic-semantic guidance and iterative multi-agent evaluation can improve LLM-based wordplay translation relative to direct discriminator-guided generation, particularly when balancing semantic fidelity, phonetic similarity, and natural target-language expression",
-      "topics": [
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04452",
-      "abstract": "Multimodal large language models (MLLMs) can miss fine details in a full image that they recognize in a closer view. Recovering this evidence requires deciding where to look and how much surrounding context to retain. We present Q-CueGraph, a query-conditioned evidence acquisition method for frozen MLLMs. For text-rich images, it builds a reusable graph of OCR lines and layout relations. Each question activates anchors, expands them into contextual regions, and selects candidates for a single observation window. Query-conditioned object detections support natural-image search through the same region-selection and composition interface. A lightweight candidate scorer further learns which observations support correct answers from frozen-reader feedback and training answers, without evidence-box supervision. Across six benchmarks, we examine the roles of query conditioning, evidence composition, and learned answerability. With Qwen2.5-VL-7B, Q-CueGraph raises V*Bench accuracy from 0.696 to 0.832 using 19.1% of source-image area, and retains 92% of full-image ANLS on InfographicVQA using about half the image area. The analyses show that useful evidence depends on both its relevance to the question and the context available to the reader. Q-CueGraph makes these choices explicit before answer generation.",
-      "topics": [
-        "cs.CV",
-        "cs.AI",
-        "cs.CL"
       ],
       "keywords": []
     }

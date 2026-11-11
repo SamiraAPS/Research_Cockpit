@@ -1,7 +1,68 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "documents": [
+    {
+      "id": "doi:10.2147/jmdh.s640102",
+      "abstract": "Purpose: Retrieval-augmented generation (RAG) is increasingly used to reduce hallucination in medical large language models (LLMs), but authentic retrieval does not necessarily ensure clinically correct output. We evaluated whether full-text-enriched RAG improves the clinical reliability of locally deployed models for perioperative inflammatory bowel disease (IBD) question answering. Methods: We constructed a locally deployed full-text IBD perioperative knowledge base and a 50-question high-difficulty benchmark. Two 8B models (Qwen3-VL-8B and DeepSeek-R1-Distill-Llama-8B) were evaluated under matched no-retrieval and RAG conditions. Three physicians independently scored clinical accuracy, patient safety, and faithfulness under a source-blinded, format-homogeneous protocol. Evidence traceability was assessed objectively by verifying all retrieved PubMed identifiers (PMIDs) against PubMed. Results: All retrieved PMIDs existed in PubMed (236 verifications; 187 unique), confirming source-existence authenticity at the retrieval layer. RAG significantly improved Qwen3 accuracy (Δ=+0.44, P< 0.001) but not DeepSeek accuracy (Δ=+0.21, P=0.09), and the model-by-retrieval interaction for accuracy was not significant. Patient safety showed no reliable benefit. Faithfulness decreased significantly with RAG on Qwen3 (Δ=− 0.24, P< 0.001), with a significant model-by-retrieval interaction. Inter-rater reliability was excellent (ICC 0.86– 0.93). Conclusion: PubMed-based retrieval achieved source-existence authenticity but did not consistently improve clinical correctness or safety. Authentic references could accompany incorrect or unsafe conclusions, indicating that evidence traceability and clinical reliability should be evaluated separately. Additional model-external safety mechanisms may be warranted in high-risk settings but require independent validation. Keywords: retrieval-augmented generation, RAG, large language models, LLMs, hallucination, inflammatory bowel disease, IBD, perioperative medicine, patient safety, on-premises deployment",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Information Retrieval and Search Behavior",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "retrieval-augmented generation",
+        "hallucinations",
+        "large language models",
+        "inflammatory bowel disease",
+        "perioperative medicine",
+        "evidence traceability",
+        "clinical reliability",
+        "patient safety",
+        "faithfulness",
+        "question answering"
+      ]
+    },
+    {
+      "id": "doi:10.55041/ijsrem68520",
+      "abstract": "Retrieval-augmented generation (RAG) enables language models to answer enterprise questions using external documents; however semantic retrieval and multi-agent delegation create authorization risks when access checks occur only after search or answer generation. This study presents a literature-informed architecture for authorization-aware multi-agent RAG in which a policy decision point evaluates current user and resource attributes, whereas a policy enforcement point restricts the eligible candidate set before content reaches rerankers, agents, or a large language model. This design combines role-based and attribute-based access control, semantic embeddings, vector search, least-privilege delegation, provenance-aware auditing, and policy revalidation at protected access boundaries. A focused survey identifies risks including semantic overfetch, cross-domain synthesis leakage, stale permissions, and delegation escalation. The paper defines authorization-correctness conditions and proposes an evaluation protocol that compares authorization-first retrieval with a retrieve-then-filter baseline. The metrics include unauthorized-context exposure, authorized Recall@k, answer relevance, latency, revocation propagation time, delegation violations, and audit completeness. This study is a survey and design contribution; no benchmark results are claimed because the proposed prototype has not yet been empirically evaluated.",
+      "topics": [
+        "Access Control and Trust",
+        "Adversarial Robustness in Machine Learning",
+        "Digital Rights Management and Security"
+      ],
+      "keywords": [
+        "retrieval-augmented generation",
+        "multi-agent systems",
+        "authorization",
+        "access control",
+        "policy decision point",
+        "policy enforcement point",
+        "attribute-based access control",
+        "role-based access control",
+        "least privilege",
+        "semantic search",
+        "vector search",
+        "authorization revocation"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.23831116",
+      "abstract": "Joining unfamiliar software projects forces developers to spend days deciphering complex codebases, API routes, and runtime flows. Standard Retrieval-Augmented Generation (RAG) pipelines should help, but they break down on source code in practice. New engineers rarely know what specific questions to ask, and standard chunking blindly slices code mid-function. To solve these issues without manual intervention, we present RepoInsight, an end-to-end system that automatically generates an 11-facet architectural report directly from a GitHub repository URL without requiring human queries. To preserve enclosing syntax without inflating prompt token volume, RepoInsight implements hierarchical parent-child retrieval: granular 500-character child chunks are embedded via Cohere (384 dimensions) and indexed in PostgreSQL pgvector, while complete parent source files are retrieved dynamically through single batched relational queries. To control inference latency and avoid rate limits, the system applies order-preserving file deduplication to consolidate 11 architectural facets into 7 batched prompts. Generation routes through a three-tier fallback hierarchy (Groq -> Gemini 1.5 Flash -> Cohere Command-R) paired with regular-expression JSON sanitization. Empirical evaluations across seven benchmark repositories show that RepoInsight reduces redundant prompt tokens by an average of 40.2%, accelerates nearest-neighbor vector retrieval by 16.1x via HNSW graph indexing, and achieves 100% request completion under severe upstream throttling where single-provider baselines crash on 63.6% of queries. This architecture offers a practical, high-throughput foundation for automated developer onboarding. Github : geethika1207/RepoInsight-Backend: AI-powered GitHub repository intelligence engine built with FastAPI, PostgreSQL, pgvector, and LLMs. Clone any public repository, generate semantic embeddings, and chat with your codebase using Retrieval-Augmented Generation (RAG).",
+      "topics": [
+        "Software Engineering Research",
+        "Topic Modeling",
+        "Information Retrieval and Search Behavior"
+      ],
+      "keywords": [
+        "hierarchical retrieval",
+        "retrieval-augmented generation",
+        "source code embeddings",
+        "pgvector",
+        "developer onboarding",
+        "GitHub repositories"
+      ]
+    },
     {
       "id": "doi:10.1007/s11760-026-05840-2",
       "abstract": null,
@@ -4173,79 +4234,6 @@
         "multimodal mobility",
         "bottleneck effect",
         "network balance"
-      ]
-    },
-    {
-      "id": "doi:10.59688/8kb1sr92",
-      "abstract": "Prolonged non-ergonomic sitting posture during computer-based learning activities poses a risk of musculoskeletal disorders, yet current posture monitoring systems are largely static and neglect temporal aspects. This study develops a real-time posture classification system integrating accelerometer-based wearables with the XGBoost algorithm, specifically designed for university students. Data were collected from 21 subjects using two MPU6050 sensors placed on the thoracic and lumbar areas, yielding 28,054 data rows. Preprocessing involved mean imputation for missing values, removal of non-feature columns, and exclusion of gyroscope data due to extreme outliers. Feature extraction using 30-sample non-overlapping windows generated 24 statistical features (minimum, maximum, mean, standard deviation) from the accelerometer axes. As the primary benchmark for generalization, the XGBoost model was evaluated using Leave-One-Person-Out Cross-Validation (LOPOCV), achieving an average accuracy of 73.76% with balanced precision and recall scores (0.73–0.75), indicating consistent performance when encountering new subjects. Feature importance analysis identified az2_max (score: 0.1087) and az1_mean (score: 0.1053) as the most dominant features. Meanwhile, as an initial feasibility test under controlled conditions, real-time testing with five subjects (50 instances) reached 100% accuracy, with a web monitoring interface successfully displaying posture status, confidence values (53–81%), and posture-change logs, alongside a buzzer mechanism that activated appropriately upon detecting non-ergonomic postures. This system demonstrates the potential of low-cost accelerometer-based wearables for effective real-time posture monitoring; however, its performance is significantly influenced by individual physical characteristics such as height and weight. Consequently, future research is advised to diversify the dataset and implement personalization techniques to enhance generalization across broader populations.",
-      "topics": [
-        "Context-Aware Activity Recognition Systems",
-        "Ergonomics and Musculoskeletal Disorders",
-        "Human Pose and Action Recognition"
-      ],
-      "keywords": [
-        "wearable sensors",
-        "accelerometer",
-        "MPU6050",
-        "XGBoost",
-        "musculoskeletal disorders",
-        "university students",
-        "real-time posture monitoring",
-        "feature importance",
-        "low-cost sensors"
-      ]
-    },
-    {
-      "id": "doi:10.55041/ijcope.v2i10.213",
-      "abstract": "Skin cancer is most common diseases find in humans worldwide and early detection can be assist to improve the doctors’ diagnosis. Traditional diagnosis depends on visual examination by dermatologists using dermoscopy also time consuming and depends heavily on the experience of the clinician or doctor. In recent years, deep learning has become the leading approach for automatic detection and classification skin lesions from dermoscopic and clinical images. In this paper we present a focused review of the most recent deep learning methods, published recently, for skin cancer detection and classification. The review covers benchmark datasets, image preprocessing and classification and segmentation methods, and major deep learning architectures, which include convolutional neural networks (CNNs), hybrid CNN-Transformer models, vision transformers, generative adversarial networks (GANs), and multimodal fusion approaches. It also summarizes the main challenges that still limit the real-world use of these systems, such as complex lesion features, image noise, intra-class variation, inter-class similarity, and class imbalance. In this paper we discuss future research directions, such as explainable artificial intelligence, fairness across different skin tones, and uncertainty-aware models. Keywords— Skin cancer; deep learning; dermoscopy; convolutional neural network; vision transformer; image classification; class imbalance",
-      "topics": [
-        "Cutaneous Melanoma Detection and Management",
-        "AI in cancer detection",
-        "Advanced Neural Network Applications"
-      ],
-      "keywords": [
-        "skin cancer detection",
-        "skin lesion classification",
-        "dermoscopy",
-        "deep learning",
-        "convolutional neural networks",
-        "vision transformer",
-        "generative adversarial networks",
-        "multimodal fusion",
-        "class imbalance",
-        "explainable AI",
-        "skin lesion segmentation"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23410012",
-      "abstract": "A smart city is defined as a city that employs communication and information technologies to enhance the entire process of governance, including making it more effective, public access to data, and enhancing the quality of government services alongside the well-being of citizens. Rapid population growth creates problems for cities associated with urban transport, air pollution, energy inefficiency, water scarcity, waste disposal issues, and burden on urban infrastructure. Smart city solutions include using new technologies, such as the Internet of Things (IoT), Artificial Intelligence (AI), Cloud Computing, Big Data Analytics, Geographic Information System (GIS), 5G, and intelligent sensors, for efficient resource management. Smart city technologies help monitor different aspects in real time and make intelligent decisions in the areas of transport, health, energy supply, waste management, and public safety. In India, the Smart Cities Mission has made cities implement several technology-based initiatives for sustainable development and citizen engagement. In this research paper, the concept, design, technologies, applications, advantages, problems and perspectives of smart cities are examined, taking into account their applications in India.",
-      "topics": [
-        "Smart Cities and Technologies",
-        "Sustainable Urban and Rural Development",
-        "E-Government and Public Services"
-      ],
-      "keywords": [
-        "smart cities",
-        "sustainable urban development",
-        "Smart Cities Mission",
-        "Internet of Things",
-        "artificial intelligence",
-        "cloud computing",
-        "big data analytics",
-        "geographic information systems",
-        "5G",
-        "smart sensors",
-        "urban governance",
-        "public services",
-        "resource management",
-        "waste management",
-        "urban transport",
-        "energy efficiency",
-        "water scarcity",
-        "public safety",
-        "citizen participation",
-        "India"
       ]
     }
   ]

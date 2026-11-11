@@ -1,12 +1,579 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "page": 256,
   "pageSize": 100,
-  "totalItems": 40512,
+  "totalItems": 40515,
   "totalPages": 406,
   "nextPage": "./page-257.json",
   "items": [
+    {
+      "id": "arxiv:2608.06362",
+      "recordType": "preprint",
+      "title": "AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games",
+      "abstract": "Deciding which of two agents is stronger means playing games until skill outweighs luck, and every game costs money, model inference, or expert time. Since the number of games needed is unknown, fixed-budget evaluations either keep paying after the result is settled or stop before the agents can be told apart, while naive optional stopping with an ordinary confidence interval invalidates the stated level. We make such an evaluation stop as soon as its evidence suffices, with the guarantee intact. The Action-Informed Value Assessment Tool (AIVAT) reduces variance in imperfect-information games through conditional mean-zero corrections, by a median $54\\times$ across 15 LLM agent configurations spanning 71,439 paired Heads-Up No-Limit Hold'em (HUNL) hands, but does not say when to stop. We combine AIVAT with continuously monitored Confidence Sequences (CSs) into anytime-valid AIVAT (AV-AIVAT), whose online value model learns only from past games so that no game scores its own correction. At the nominal 95\\% level and a target precision of $\\pm1$ Big Blind, raw outcomes need a median $74\\times$ as many hands as AIVAT-corrected outcomes to stop under the Asymptotic CS (AsympCS). Exact finite-sample certification uses the Empirical-Bernstein CS (EB-CS), which needs an independently justified bound on corrected payoffs. We establish such a bound structurally for Leduc hold'em and characterize a width floor set by the CS's bet cap and that bound, which governs how much of a variance gain becomes earlier stopping; the descriptive HUNL EB-CS runs show a median $1.37\\times$ stopping-time ratio. AV-AIVAT turns variance reduction into efficient, auditable early stopping while separating asymptotic screening from exact certification, so an evaluation can stop the moment its evidence suffices and hand a third party everything needed to recheck the verdict at that very stopping time.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.06362"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.06362"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-06",
+      "firstPublicDate": "2026-08-06",
+      "onlineDate": "2026-08-06",
+      "topics": [
+        "cs.GT",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 1,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "LLM"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Boning Li",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yu Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Longbo Huang",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.06362v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:56.204Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:56.204Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:56.204Z",
+      "preferredVersionId": "arxiv:2608.06362",
+      "versions": [
+        {
+          "id": "arxiv:2608.06362",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.06362",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.06362v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-256.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "mes through conditional mean-zero corrections, by a median $54\\times$ across 15 LLM agent configurations spanning 71,439 paired Heads-Up No-Limit Hold'em (HUNL) hands, but does not sa",
+              "start": 596,
+              "end": 779
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.06300",
+      "recordType": "preprint",
+      "title": "Bias Analysis of L2 Speaking Assessment Systems Using Concept Activation Vectors",
+      "abstract": "Automatic speaking assessment systems are increasingly deployed in high-stakes settings to mark second language (L2) learners' speaking tests, making it critical to show that their scores depend on speaking proficiency rather than irrelevant speaker attributes such as first language (L1) or age. Transformer-based foundation models have improved the accuracy of these L2 speaking graders, but their black-box representations make fairness and interpretability analysis more difficult. Building on prior work that used Concept Activation Vectors (CAVs) to detect bias towards unwanted attributes (`concepts') in feature-based graders, we extend CAV-based analysis to two neural speaking assessment systems: a text-based BERT grader and a speech-and-text multimodal grader based on Whisper. CAVs represent human-interpretable concepts as directions in a model's activation space, allowing us to distinguish between whether a concept is encoded in a model's internal representations and whether it influences the predicted score, the latter quantified using a gradient-based sensitivity metric. Since CAVs rely on linear separability, which is less likely in complex neural embedding spaces, we also investigate whether sparse autoencoders (SAEs) provide cleaner concept directions by learning CAVs in a sparse latent space and mapping them back to activation space. Our analysis shows that concept recoverability depends strongly on the representation and architecture being probed, rather than on the concept alone. Sensitivity to concepts is also architecture-dependent. SAEs make concepts more linearly recoverable, but attenuate the original activation-space sensitivity, especially in low-dimensional layers. These findings highlight the need to distinguish concept recoverability from concept influence when auditing bias in speaking assessment systems.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.06300"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.06300"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-06",
+      "firstPublicDate": "2026-08-06",
+      "onlineDate": "2026-08-06",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…tigate whether sparse autoencoders (SAEs) provide cleaner concept directions by learning CAVs in a sparse latent space and mapping them back to activation space. Our analysis shows that concept recoverability depends strongly on the representation and architecture being probed, rather than on the concept alone. Sensiti…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "participation",
+          "label": "Partizipation & Fairness",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "fairness",
+              "conceptLabel": "Fairness",
+              "matchedTerm": "fairness",
+              "sourceValue": "…accuracy of these L2 speaking graders, but their black-box representations make fairness and interpretability analysis more difficult. Building on prior work that used Concept Activation Vectors (CAVs) to detect bias towards unwanted attributes (`concepts') in feature-based graders, we extend CAV-based analysis to two …",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "…re, the latter quantified using a gradient-based sensitivity metric. Since CAVs rely on linear separability, which is less likely in complex neural embedding spaces, we also investigate whether sparse autoencoders (SAEs) provide cleaner concept directions by learning CAVs in a sparse latent space and mapping them back …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 2,
+        "topic:participation": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "foundation model",
+        "foundation models",
+        "learning",
+        "fairness",
+        "rely"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Arya Labroo",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Mengjie Qian",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Kate Knill",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.06300v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:56.204Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:56.204Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:56.204Z",
+      "preferredVersionId": "arxiv:2608.06300",
+      "versions": [
+        {
+          "id": "arxiv:2608.06300",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.06300",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.06300v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-256.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "grader and a speech-and-text multimodal grader based on Whisper. CAVs represent human-interpretable concepts as directions in a model's activation space, allowing us to distinguish betw",
+              "start": 725,
+              "end": 910
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "foundation model",
+              "quote": "levant speaker attributes such as first language (L1) or age. Transformer-based foundation models have improved the accuracy of these L2 speaking graders, but their black-box representations make f",
+              "start": 235,
+              "end": 432
+            },
+            {
+              "field": "abstract",
+              "term": "foundation models",
+              "quote": "levant speaker attributes such as first language (L1) or age. Transformer-based foundation models have improved the accuracy of these L2 speaking graders, but their black-box representations make f",
+              "start": 235,
+              "end": 432
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "operations",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "high stakes",
+                  "quote": "Automatic speaking assessment systems are increasingly deployed in high-stakes settings to mark second language (L2) learners' speaking tests, making it critical to show that the",
+                  "start": 0,
+                  "end": 178
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "students",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "learner",
+                  "quote": " are increasingly deployed in high-stakes settings to mark second language (L2) learners' speaking tests, making it critical to show that their scores depend on speaking proficiency rather",
+                  "start": 37,
+                  "end": 225
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "rst language (L1) or age. Transformer-based foundation models have improved the accuracy of these L2 speaking graders, but their black-box representations make fairness and interpretabilit",
+                  "start": 271,
+                  "end": 459
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [
+          {
+            "topic": "high-skill-operations",
+            "evidence": [
+              {
+                "field": "abstract",
+                "term": "high stakes",
+                "quote": "Automatic speaking assessment systems are increasingly deployed in high-stakes settings to mark second language (L2) learners' speaking tests, making it critical to show that the",
+                "start": 0,
+                "end": 178
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.06501",
+      "recordType": "preprint",
+      "title": "Can MLLMs Decode the Creative Leap? Introducing C4 for Cross-Concept Understanding",
+      "abstract": "Creative capabilities of MLLMs matter in design, communication, education, and human--AI collaboration, yet remain difficult to evaluate because explicit targets and reward signals are scarce compared with accuracy-oriented tasks. Cross-concept understanding is a core cognitive capacity underlying receptive creativity. It enables a perceiver to recover intended meaning from non-obvious but meaningful conceptual relations. We operationalize item construction as cross-concept encoding and model inference as cross-concept decoding. We introduce C4, a cognition-inspired evaluation framework for Chengyu (Chinese idiom)-based Cross-Concept Creativity. Its encoding component maps target slots to imageable substitute concepts along bridge paths in a manually annotated and third-party-reviewed cross-concept network, enabling batch generation with explicit structure, difficulty indexed by bridge count and depth, and exact answers. Using this framework, we instantiate the C4 Evaluation Set (C4-Eval), comprising 184 synthetic items and 37 human-created cross-concept chengyu figures collected from online sources. We manually construct and review cross-concept relations, bridge paths, and reasoning processes for the collected figures. Each C4-Eval item is instantiated in five task settings, yielding 884 primary answer-recovery cases. Across ten evaluated MLLMs, the strongest closed models reach 50.7% and 48.0% primary accuracy, while open-source models remain substantially lower. Candidate constraints improve accuracy sharply, but bridge hints and explanation requests provide only modest gains. These results expose a substantial gap in how current MLLMs decode creatively encoded meaning through cross-concept relations. The code is in the supplementary material.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.06501"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.06501"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-06",
+      "firstPublicDate": "2026-08-06",
+      "onlineDate": "2026-08-06",
+      "topics": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MM"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "teaming",
+          "label": "Human–AI Teaming",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "collaboration",
+              "conceptLabel": "Mensch–KI-Kollaboration",
+              "matchedTerm": "human ai collaboration",
+              "sourceValue": "Creative capabilities of MLLMs matter in design, communication, education, and human--AI collaboration, yet remain difficult to evaluate because explicit targets and reward signals are scarce compared with accuracy-oriented tasks. Cross-concept understanding is a core cognitive capacity underlying receptive creativity.…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:teaming": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "human-AI",
+        "LLM",
+        "human-AI collaboration",
+        "human ai collaboration"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Ming Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yuqing Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Tingna Xie",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Xiangju Li",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Xiaocui Yang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Daling Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Shi Feng",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yifei Zhang",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.06501v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:56.204Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:56.204Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:56.204Z",
+      "preferredVersionId": "arxiv:2608.06501",
+      "versions": [
+        {
+          "id": "arxiv:2608.06501",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.06501",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.06501v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-256.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "Creative capabilities of MLLMs matter in design, communication, education, and human--AI collaboration, yet remain difficult to evaluate because explicit targets and reward signals are",
+              "start": 0,
+              "end": 184
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "human-AI",
+              "quote": "Creative capabilities of MLLMs matter in design, communication, education, and human--AI collaboration, yet remain difficult to evaluate because explicit targets and reward signals are sca",
+              "start": 0,
+              "end": 188
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "ve capabilities of MLLMs matter in design, communication, education, and human--AI collaboration, yet remain difficult to evaluate because explicit targets and reward signals are sca",
+              "start": 6,
+              "end": 188
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "education",
+                  "quote": "Creative capabilities of MLLMs matter in design, communication, education, and human--AI collaboration, yet remain difficult to evaluate because explicit targets and reward ",
+                  "start": 0,
+                  "end": 173
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "o evaluate because explicit targets and reward signals are scarce compared with accuracy-oriented tasks. Cross-concept understanding is a core cognitive capacity underlying receptive creat",
+                  "start": 126,
+                  "end": 314
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "arxiv:2608.05790",
       "recordType": "preprint",
@@ -21686,505 +22253,6 @@
             }
           ],
           "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.04980",
-      "recordType": "preprint",
-      "title": "Protoreasoning in Tiny Transformers",
-      "abstract": "We show that tiny transformers can profitably employ a simple form of Chain of Thought, which we call protoreasoning, allowing us to study step-by-step reasoning on ~1M-parameter models and opening up opportunities for much more detailed experimentation and analysis than is feasible for larger models. Current Large Language Models exhibit impressive step-by-step reasoning, but we have yet to understand its generality, i.e., when and how LLMs learn genuinely general algorithms rather than \"bags of heuristics.\" Such questions are hard to settle on compute-intensive frontier models trained on opaque data. To work at model scales far below the threshold for natural-language competence, we define reasoning-friendly tasks on Dyck languages (sentences of correctly nested brackets). We find that protoreasoning traces substantially close the out-of-distribution generalization gap, and ablations confirm that the trace's content, not merely its extra tokens, drives the gain.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.04980"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.04980"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-05",
-      "firstPublicDate": "2026-08-05",
-      "onlineDate": "2026-08-05",
-      "topics": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 3,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Eduardo Valle",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Fergal Reid",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.04980v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:29.380Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:29.380Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
-      "preferredVersionId": "arxiv:2608.04980",
-      "versions": [
-        {
-          "id": "arxiv:2608.04980",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.04980",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.04980v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-256.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "tailed experimentation and analysis than is feasible for larger models. Current Large Language Models exhibit impressive step-by-step reasoning, but we have yet to understand its generality, i.e., when",
-              "start": 231,
-              "end": 432
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "tailed experimentation and analysis than is feasible for larger models. Current Large Language Models exhibit impressive step-by-step reasoning, but we have yet to understand its generality, i.e., when",
-              "start": 231,
-              "end": 432
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "tep reasoning, but we have yet to understand its generality, i.e., when and how LLMs learn genuinely general algorithms rather than \"bags of heuristics.\" Such questions are hard to set",
-              "start": 361,
-              "end": 545
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "tailed experimentation and analysis than is feasible for larger models. Current Large Language Models exhibit impressive step-by-step reasoning, but we have yet to understand its generality, i.e., when",
-                  "start": 231,
-                  "end": 432
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.04311",
-      "recordType": "preprint",
-      "title": "Pun Intended: Multi-Agent Translation of Wordplay with Contrastive Learning and Phonetic-Semantic Embeddings",
-      "abstract": "Translating wordplay across languages has long challenged both professional translators and machine translation systems. We investigate three approaches to translating puns from English to French by combining large language models with linguistic constraints for wordplay generation. Our baseline uses a large language model with feedback from a discriminator prompted with positive and negative French examples. Our guided reasoning pipeline uses combined phonetic-semantic embeddings to retrieve lexical candidates for wordplay generation. Finally, our multi-agent framework iteratively evaluates and regenerates candidate translations using specialized feedback. Moving beyond literal translation, our objective is to preserve the linguistic creativity, ambiguity, and humor of the source-text wordplay rather than simply reproduce its vocabulary. The multi-agent and guided chain-of-thought systems ranked first and second, respectively, in the CLEF JOKER 2025 Task 2 competition under expert human evaluation, despite only modest improvements in BLEU and BERTScore. These findings suggest that both explicit phonetic-semantic guidance and iterative multi-agent evaluation can improve LLM-based wordplay translation relative to direct discriminator-guided generation, particularly when balancing semantic fidelity, phonetic similarity, and natural target-language expression",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.04311"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.04311"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-05",
-      "firstPublicDate": "2026-08-05",
-      "onlineDate": "2026-08-05",
-      "topics": [
-        "cs.CL"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "Pun Intended: Multi-Agent Translation of Wordplay with Contrastive Learning and Phonetic-Semantic Embeddings",
-              "weight": 4
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:learning": 4,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Russell Taylor",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Benjamin Herbert",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Michael Sana",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.04311v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:29.380Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:29.380Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
-      "preferredVersionId": "arxiv:2608.04311",
-      "versions": [
-        {
-          "id": "arxiv:2608.04311",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.04311",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.04311v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-256.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "nd second, respectively, in the CLEF JOKER 2025 Task 2 competition under expert human evaluation, despite only modest improvements in BLEU and BERTScore. These findings suggest that bot",
-              "start": 917,
-              "end": 1102
-            },
-            {
-              "field": "abstract",
-              "term": "professional",
-              "quote": "Translating wordplay across languages has long challenged both professional translators and machine translation systems. We investigate three approaches to translating puns fr",
-              "start": 0,
-              "end": 175
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "tigate three approaches to translating puns from English to French by combining large language models with linguistic constraints for wordplay generation. Our baseline uses a large language model with ",
-              "start": 129,
-              "end": 330
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "tigate three approaches to translating puns from English to French by combining large language models with linguistic constraints for wordplay generation. Our baseline uses a large language model with ",
-              "start": 129,
-              "end": 330
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "cit phonetic-semantic guidance and iterative multi-agent evaluation can improve LLM-based wordplay translation relative to direct discriminator-guided generation, particularly when ba",
-              "start": 1109,
-              "end": 1292
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [
-            {
-              "value": "workers",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "professional",
-                  "quote": "Translating wordplay across languages has long challenged both professional translators and machine translation systems. We investigate three approaches to translating puns fr",
-                  "start": 0,
-                  "end": 175
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "tutoring",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "feedback",
-                  "quote": "straints for wordplay generation. Our baseline uses a large language model with feedback from a discriminator prompted with positive and negative French examples. Our guided reasoning pipe",
-                  "start": 250,
-                  "end": 438
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "tigate three approaches to translating puns from English to French by combining large language models with linguistic constraints for wordplay generation. Our baseline uses a large language model with ",
-                  "start": 129,
-                  "end": 330
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.04452",
-      "recordType": "preprint",
-      "title": "Q-CueGraph: Query-Conditioned Visual Evidence Graphs for Multimodal Reasoning",
-      "abstract": "Multimodal large language models (MLLMs) can miss fine details in a full image that they recognize in a closer view. Recovering this evidence requires deciding where to look and how much surrounding context to retain. We present Q-CueGraph, a query-conditioned evidence acquisition method for frozen MLLMs. For text-rich images, it builds a reusable graph of OCR lines and layout relations. Each question activates anchors, expands them into contextual regions, and selects candidates for a single observation window. Query-conditioned object detections support natural-image search through the same region-selection and composition interface. A lightweight candidate scorer further learns which observations support correct answers from frozen-reader feedback and training answers, without evidence-box supervision. Across six benchmarks, we examine the roles of query conditioning, evidence composition, and learned answerability. With Qwen2.5-VL-7B, Q-CueGraph raises V*Bench accuracy from 0.696 to 0.832 using 19.1% of source-image area, and retains 92% of full-image ANLS on InfographicVQA using about half the image area. The analyses show that useful evidence depends on both its relevance to the question and the context available to the reader. Q-CueGraph makes these choices explicit before answer generation.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.04452"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.04452"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-05",
-      "firstPublicDate": "2026-08-05",
-      "onlineDate": "2026-08-05",
-      "topics": [
-        "cs.CV",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 3,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Pengcheng Pan",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Xinfang Zhang",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.04452v2",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:29.380Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:29.380Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
-      "preferredVersionId": "arxiv:2608.04452",
-      "versions": [
-        {
-          "id": "arxiv:2608.04452",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.04452",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.04452v2"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-256.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Multimodal large language models (MLLMs) can miss fine details in a full image that they recognize in a closer view. Recovering this",
-              "start": 0,
-              "end": 132
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Multimodal large language models (MLLMs) can miss fine details in a full image that they recognize in a closer view. Recovering this",
-              "start": 0,
-              "end": 132
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "tutoring",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "feedback",
-                  "quote": "er further learns which observations support correct answers from frozen-reader feedback and training answers, without evidence-box supervision. Across six benchmarks, we examine the roles",
-                  "start": 672,
-                  "end": 860
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Multimodal large language models (MLLMs) can miss fine details in a full image that they recognize in a closer view. Recovering this",
-                  "start": 0,
-                  "end": 132
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": "ition, and learned answerability. With Qwen2.5-VL-7B, Q-CueGraph raises V*Bench accuracy from 0.696 to 0.832 using 19.1% of source-image area, and retains 92% of full-image ANLS on Infogra",
-                  "start": 899,
-                  "end": 1087
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
           "studyDesign": []
         },
         "personalFit": [],

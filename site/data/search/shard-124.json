@@ -1,7 +1,65 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "documents": [
+    {
+      "id": "arxiv:2608.21500",
+      "abstract": "Prompt injection is listed as the \\#1 threat to AI agents. When an agent accesses external data from websites, files, or emails, an attacker may inject a prompt into the data, saying, \"Ignore all prior instructions and perform .\" To prevent arbitrary manipulation of agents, defenders try to train secure LLMs, which, however, still suffer from near 100% attack success rates (ASRs) against adaptive prompt injections. We note that this is because existing defensive finetuning recipes rely on sequence-level feedback signals (in DPO or GRPO). Treating an entire output equally prevents the model from learning precisely which output tokens are insecure. In this paper, we propose Secure On-Policy Distillation (SecOPD) that provides token-level feedback to guide defensive fine-tuning. The LLM receives an injected sample and produces a rollout, whose tokens are scored by the initialization model given the corresponding clean input. With more fine-grained training signals, our defended Qwen3.6-27B achieves a 9.0% ASR against the SoTA PISmith adaptive prompt injections, compared to 94.0% for the prior SoTA, Meta-SecAlign. The obtained security generalizes to domains completely unseen in training: in agentic tool calling, SecOPD achieves a 4.7% ASR compared to 5.5% for Meta-SecAlign. Code and the model are available at https://github.com/pppyb/SecOPD and https://huggingface.co/pybbb/Qwen3.6-27B-SecOPD.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Security and Verification in Computing",
+        "Advanced Malware Detection Techniques",
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Initialization",
+        "Code (set theory)",
+        "Sample (material)",
+        "Control theory (sociology)",
+        "Distillation"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.20916",
+      "abstract": "Vision foundation models (VFMs) offer strong generalization capabilities for domain-adaptive object detection (DAOD). However, existing VFM-based methods overlook the spatial-scale discrepancy between teacher and student feature maps, resulting in semantic incompatibility that weakens both feature alignment and pseudo-label learning. Moreover, domain shift can cause source-trained VFM teachers to miss target-domain objects, limiting the quality of their pseudo-labels. To address these issues, we propose the Semantic Localization-Enhanced Teacher (SLE-T), a semantically compatible knowledge-distillation framework built around a lightweight SLE Adapter for DINOv2. SLE Adapter injects pretrained local-texture priors into DINOv2 to improve cross-domain recognition and reformulates its features into dense representations that are spatially and semantically compatible with the student detector. SLE-T transfers the resulting teacher knowledge through either pseudo-label learning or feature alignment. We instantiate SLE-T with DINOv2-B and DINOv2-L (the ViT-B and ViT-L variants) and compare them with the larger DINOv2-G teacher. Extensive experiments on three DAOD benchmarks demonstrate that our method achieves state-of-the-art performance, and ablation studies confirm the importance of teacher-student semantic compatibility. Notably, SLE-T with DINOv2-B produces competitive or superior pseudo-labels using approximately one-quarter of the training time of DINOv2-G and substantially less GPU memory, demonstrating efficient VFM knowledge transfer under limited computational resources.",
+      "topics": [
+        "Advanced Neural Network Applications",
+        "Domain Adaptation and Few-Shot Learning",
+        "Multimodal Machine Learning Applications"
+      ],
+      "keywords": [
+        "Feature (linguistics)",
+        "Object detection",
+        "Generalization",
+        "Semantic feature",
+        "Adapter (computing)",
+        "Limiting",
+        "Feature learning",
+        "Domain (mathematical analysis)",
+        "Transfer of learning",
+        "Cognitive neuroscience of visual object recognition"
+      ]
+    },
+    {
+      "id": "doi:10.1177/10711813261475226",
+      "abstract": "UX heuristic evaluation is a core human factors method for assessing interface designs, but expert-led approaches are constrained by expert availability and time demands. Although multimodal large language models can automate heuristic evaluation from screenshots, full automation raises concerns about inaccurate design interpretation, unreliable reasoning, and limited transparency. This study proposes a structured human-in-the-loop architecture that reframes heuristic evaluation as a problem of cognitive labor distribution. Two AI agents—the Design Representation Generator and the Heuristic Evaluator—collaborate with a human supervisor. The supervisor reviews and corrects intermediate design representations and challenges, contextualizes, or refines AI-generated UX issues through correction and adjustment loops. Across four Android mobile app task scenarios, the human-in-the-loop system was compared with a fully automated baseline using the same two-agent pipeline without human supervision. The human-in-the-loop system produced heuristic evaluation results that showed substantially greater alignment with human experts than those generated by the automated baseline.",
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Usability and User Interface Design",
+        "Persona Design and Applications"
+      ],
+      "keywords": [
+        "Automation",
+        "Heuristic",
+        "Pipeline (software)",
+        "Heuristic evaluation",
+        "Task (project management)",
+        "Supervisor",
+        "Generator (circuit theory)",
+        "User interface"
+      ]
+    },
     {
       "id": "doi:10.1145/3834580.3838740",
       "abstract": "Repeated human-AI interaction is often analyzed through pooled belief-updating slopes: users observe AI successes and failures, revise reported beliefs in the feedback-consistent direction, but appear conservative on average. We show that such averages can obscure an important distinction between whether an elicited belief report changes at all and how it changes conditional on movement. We refer to this measurement-aware decomposition as the belief update gate. Reanalyzing a multi-task human-AI decision-making dataset with 240 participants, 7,200 trials, and three task domains, we find substantial non-movement in reported beliefs: 67.3% of trial-level belief changes are exactly zero, and 76.4% are smaller than five percentage points. Separating non-moving from moving reports changes the descriptive interpretation of pooled conservatism: the within-trajectory slope rises from 0.494 overall to 0.949 among rows with nonzero movement. Since this latter estimate conditions on observed movement, we interpret it as a descriptive decomposition rather than as evidence of a near-Bayesian latent learning process. Complementary hurdle style analyses (i.e., modeling zero vs. non-zero changes before predicting update magnitude) show that the absolute discrepancy between feedback and entering belief predicts whether a report changes, while the signed feedback discrepancy predicts the direction and magnitude of change among reports that move. Importantly, observed non-movement does not distinguish genuine latent belief inertia from small unexpressed updates, rounding, or other reporting processes. These findings show that calibration analyses of repeated human--AI interaction should distinguish visible non-movement in elicited belief reports from updating conditional on movement rather than treating reported beliefs as a single continuous updating process.",
@@ -3608,63 +3666,6 @@
         "Cognition",
         "Accountability",
         "Counterfactual thinking"
-      ]
-    },
-    {
-      "id": "arxiv:2608.18254",
-      "abstract": "Trajectory planning for autonomous driving requires both high-level reasoning and precise low-level control. Large Language Models (LLMs) offer semantic-rich planning capabilities, however, their application is limited by hallucinated reasoning, poor grounding in environment dynamics, and limited numerical precision in control. We propose GAPL (Grounded Action-effect Policy Learning), a unified framework that integrates LLM-based effect estimation, simulation-based effect grounding, and policy optimization into a closed-loop system. GAPL consists of three modules: (1) an LLM-based Effect Evaluator for structured multi-dimensional action-effect estimation; (2) a Simulation-based Effect Grounder that predicts dynamics-consistent effects from simulator rollouts; and (3) an Effect-Aware Decision Maker that grounds LLM effect estimates against simulation via a distiller to guide Proximal Policy Optimization (PPO)-based policy learning. Experiments on four Highway-env scenarios demonstrate that GAPL consistently outperforms baselines, achieving average reductions of {0.76, 0.86, 2.00} in collision rate, average displacement error (ADE), and final displacement error (FDE), and an average reward gain of 1.44.",
-      "topics": [
-        "Autonomous Vehicle Technology and Safety",
-        "Reinforcement Learning in Robotics",
-        "Human-Automation Interaction and Safety",
-        "cs.RO"
-      ],
-      "keywords": [
-        "Hallucinating",
-        "Trajectory",
-        "Policy learning",
-        "Displacement (psychology)",
-        "Motion planning",
-        "Collision"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21440",
-      "abstract": "Vision-language-action (VLA) models have advanced end-to-end autonomous driving by leveraging foundation models for semantic reasoning and long-tail generalization. However, their planning performance remains limited in complex driving environments because image-only representations inadequately capture planning-relevant road geometry and topology. In this paper, we propose Geo-VLA, a plug-and-play framework that enhances VLA models by learning geometry-aware visual representations. During training, Geo-VLA internalizes geometric map semantics to strengthen road-structure representations, while requiring no HD maps or additional lane information during inference. To support this approach, we introduce Geo-QA, a geometry-focused question-answering dataset that injects road geometry into vision-language representations through contrastive learning and instruction tuning. Experiments on NAVSIM v1 demonstrate that Geo-VLA consistently improves VLA planners with distinct action-generation architectures, achieving 92.1 PDMS and establishing a new state-of-the-art among single-camera VLA planners.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Autonomous Vehicle Technology and Safety",
-        "Robotic Path Planning Algorithms",
-        "cs.RO",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Semantics (computer science)",
-        "Visual reasoning",
-        "Visualization",
-        "Foundation (evidence)",
-        "Semantic mapping",
-        "Knowledge representation and reasoning"
-      ]
-    },
-    {
-      "id": "arxiv:2608.17597",
-      "abstract": "Large language models are increasingly deployed through agent harnesses that manage tools, extensions, persistent state, permissions, and external actions. Existing safety benchmarks mainly target individual attack mechanisms or a limited subset of operational settings, making it difficult to compare how safety failures emerge across different harness responsibilities. We present HarnessRisk, a lifecycle oriented benchmark that organizes agent harness safety into six operational phases including Harness Configuration, Capability Extension, Runtime Operation, State Persistence, Action Control, and Incident Recovery. HarnessRisk contains 128 sandboxed cases, each pairing a benign user objective with an adversarial instruction embedded in an untrusted workflow artifact. We evaluate each trajectory using Utility, Attack Success Rate, Persistence, and Detection. Across three harnesses, six language models, and 14 model and harness configurations, attack success ranges from 12.6% to 80.9%, while Utility remains between 75.0% and 97.6%. Harness Configuration is the most vulnerable phase across all three harnesses, showing that attacks can succeed by altering security sensitive parameters within otherwise authorized workflows. We also find that explicit risk recognition does not reliably lead to safe action, as some configurations detect risks in more than 90% of runs while retaining substantial attack success. These results highlight the need to evaluate agent safety across multiple harness responsibilities and at the level of the deployed model and harness configuration.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Security and Verification in Computing",
-        "Information and Cyber Security",
-        "cs.CR",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Workflow",
-        "Benchmark (surveying)",
-        "Adversarial system",
-        "Attack surface",
-        "State (computer science)",
-        "Action (physics)",
-        "Key (lock)"
       ]
     }
   ]

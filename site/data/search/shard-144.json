@@ -1,7 +1,59 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2604.12966",
+      "abstract": "Multimodal large language models (MLLMs) perform well on many vision-language tasks but often struggle with vision-centric problems that require fine-grained visual reasoning. Recent evidence suggests that this limitation arises not from weak visual representations, but from under-utilization of visual information during instruction tuning, where many tasks can be partially solved using language priors alone. We propose a simple and lightweight approach that augments visual instruction tuning with a small number of visually grounded self-supervised tasks expressed as natural language instructions. By reformulating classical self-supervised pretext tasks, such as rotation prediction, color matching, and cross-view correspondence, as image-instruction-response triplets, we introduce supervision that cannot be solved without relying on visual evidence. Our approach requires no human annotations, no architectural modifications, and no additional training stages. Across multiple models, training regimes, and benchmarks, injecting only a small fraction (3-10%) of such visually grounded instructions consistently improves performance on vision-centric evaluations. Our findings highlight instruction tuning with visually grounded SSL tasks as a powerful lever for improving visual reasoning in MLLMs through simple adjustments to the training data distribution. Code available at: https://github.com/sirkosophia/V-GIFT",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Advanced Neural Network Applications",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "keywords": [
+        "visual instruction tuning",
+        "multimodal large language models",
+        "self-supervised learning",
+        "visual reasoning",
+        "rotation prediction",
+        "color matching",
+        "cross-view correspondence",
+        "training data distribution"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12632",
+      "abstract": "Group Relative Policy Optimization (GRPO) enhances LLM reasoning but often induces overconfidence, where incorrect responses yield lower perplexity than correct ones, degrading relative calibration as described by the Area Under the Curve (AUC). Existing approaches either yield limited improvements in calibration or sacrifice gains in reasoning accuracy. We first prove that this degradation in GRPO-style algorithms stems from their uncertainty-agnostic advantage estimation, which inevitably misaligns optimization gradients with calibration. This leads to improved accuracy at the expense of degraded calibration. We then propose Calibration-Aware Policy Optimization (CAPO). It adopts a logistic AUC surrogate loss that is theoretically consistent and admits regret bound, enabling uncertainty-aware advantage estimation. By further incorporating a noise masking mechanism, CAPO achieves stable learning dynamics that jointly optimize calibration and accuracy. Experiments on multiple mathematical reasoning benchmarks show that CAPO-1.5B significantly improves calibration by up to 15% while achieving accuracy comparable to or better than GRPO, and further boosts accuracy on downstream inference-time scaling tasks by up to 5%. Moreover, when allowed to abstain under low-confidence conditions, CAPO achieves a Pareto-optimal precision-coverage trade-off, highlighting its practical value for hallucination mitigation.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Advanced Bandit Algorithms Research",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "Group Relative Policy Optimization",
+        "LLM reasoning",
+        "overconfidence",
+        "relative calibration",
+        "area under the curve",
+        "regret bounds",
+        "noise masking",
+        "mathematical reasoning",
+        "confidence calibration",
+        "hallucination mitigation"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12262",
+      "abstract": "Cascaded LLM systems coordinate models of varying sizes with human experts to balance accuracy, cost, and abstention under uncertainty. However, single-model tiers at each stage often struggle with ambiguous queries, triggering premature escalations to costlier models or experts due to under-confidence and inefficient compute scaling. CascadeDebate addresses this gap by inserting multi-agent deliberation directly at each tier's escalation boundary. Confidence-based routers activate lightweight agent ensembles only for uncertain cases, enabling consensus-driven resolution of ambiguities internally without invoking higher-cost upgrades. Our unified architecture alternates single-model inference with selective multi-agent deliberation across model scales, culminating in human experts as the final fallback. This design scales test-time compute dynamically according to query difficulty. Across five benchmarks spanning science, medicine, and general knowledge, CascadeDebate outperforms strong single-model cascades and standalone multi-agent systems by up to 26.75 percent. An online threshold optimizer proves essential, boosting accuracy by 20.98 to 52.33 percent relative improvement over fixed policies and enabling elastic adaptation to real-world distributions.",
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Bioinformatics and Genomic Networks",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "uncertainty management"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2604.12172",
       "abstract": "We present COBALT-TLA, a neuro-symbolic verification loop that pairs an LLM with TLC, the TLA+ model checker, in an automated REPL. The LLM generates bounded TLA+ specifications; TLC acts as a semantic oracle; structured error traces are parsed and injected back into the model's context to drive convergence. We evaluate the system against three cross-chain bridge targets, including a faithful model of the Nomad $190M exploit. COBALT-TLA reaches a verified BUG_FOUND state in at most 2 iterations on all targets, with TLC execution consistently below 0.30 seconds. Notably, the system autonomously discovers an unprompted vulnerability class -- the Optimistic Relay Attack -- not present in the human-written baseline specification. We argue that deterministic prover feedback is sufficient to neutralize LLM hallucination in formal methods, transforming zero-shot code generation into a convergent proof-finding strategy.",
@@ -3861,82 +3913,6 @@
         "human-AI interaction safety",
         "AI regulation",
         "AI governance"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.19554389",
-      "abstract": "Working Paper mit 100 Anwendungen der AUGMANITAI-Definitions-Schleife für Robotik, autonome Agenten, Agentenschwärme und Mensch-Roboter-Teams. Shared Mental Models, Situation Awareness, Intent Recognition, Trust Calibration, adaptive Koordination durch phänomenologische, komprimierbare und bidirektionale Definitions-Systeme. Teil des AUGMANITAI-Forschungsprojekts.AUGMANITAI Ethical Disclaimer §1-§26 (V4.0) — Bilingual (EN/DE) EN: §1 All content is exclusively descriptive (D) — no normative position is expressed. §2 No recommendation for any action or decision. §3 No instruction — content describes observations, not procedures. §4 No professional advice of any kind. §5 No normative position on any matter. §6 No medical position — terms are research descriptions, not clinical assessments. §7 No therapeutic position. §8 No diagnostic position — performance factor analyses are research constructs. §9 No legal position — regulatory references are descriptive. §10 No moral position — ethical observations are descriptive, not prescriptive. §11 All content is for academic and research purposes only. §12 AI assistance disclosure: AI tools were used as research instruments; all content reviewed and validated by the human author. §13 All content individually reviewed, validated, and published by Andreas Ehstand. §14 Age restriction: 18+ only. §15 Independent academic project — no institutional affiliation unless stated. §16 No professional service. §17 No commercial offer. §18 No commercial product — this is an academic research framework under CC license. §19 All empirical claims are subject to peer review, replication, and revision. §20 All rights reserved for future changes. §21 Published under CC BY-NC-ND 4.0. §22 Published bilingually (EN + DE) — both versions authoritative. §23 Research Purpose: Terms describing adversarial, manipulative, or sensitive phenomena are documented like medical pathologies or cybersecurity attack vectors — for understanding, diagnosis, classification, and prevention, not instruction or facilitation. §24 Misuse Exclusion: Any use for manipulation, deception, exploitation, surveillance, coercion, or harm is explicitly outside scope and condemned. §25 Safety Intent: This framework makes human-AI interaction safer, more transparent, and more accountable. §26 Author Condemnation: Andreas Ehstand explicitly condemns any misuse of this research for harm, manipulation, exploitation, or any activity undermining human autonomy, dignity, safety, or wellbeing. DE: §1 Alle Inhalte sind ausschließlich deskriptiv (D). §2 Keine Empfehlung. §3 Keine Anweisung. §4 Keine Beratung. §5 Keine normative Position. §6 Keine medizinische Position. §7 Keine therapeutische Position. §8 Keine diagnostische Position. §9 Keine rechtliche Position. §10 Keine moralische Position. §11 Ausschließlich akademische und Forschungszwecke. §12 KI-Unterstützung offengelegt. §13 Vom Autor geprüft und validiert. §14 Ab 18 Jahren. §15 Unabhängiges akademisches Projekt. §16 Kein professioneller Service. §17 Kein Angebot. §18 Kein kommerzielles Produkt. §19 Empirische Aussagen unter Begutachtungsvorbehalt. §20 Änderungsrechte vorbehalten. §21 CC BY-NC-ND 4.0. §22 Zweisprachig (EN + DE). §23 Forschungszweck: Terme werden im selben deskriptiven Geist dokumentiert wie medizinische Pathologien oder Cybersicherheits-Angriffsvektoren. §24 Missbrauchsausschluss: Jede Verwendung zum Zweck der Manipulation, Täuschung, Ausbeutung, Überwachung oder Schädigung liegt außerhalb des Forschungsrahmens und wird verurteilt. §25 Sicherheitsabsicht: Dieses Framework macht Mensch-KI-Interaktion sicherer. §26 Der Autor verurteilt ausdrücklich jeden Missbrauch dieser Forschung. Full 26§ Disclaimer V4.0 (2026-04-13) — Andreas Ehstand — ORCID: 0009-0006-3773-7796",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Robotic Process Automation Applications",
-        "Medical and Health Sciences Research"
-      ],
-      "keywords": [
-        "robotics",
-        "autonomous agents",
-        "multi-agent systems",
-        "swarm robotics",
-        "human-robot teams",
-        "embodied AI",
-        "shared mental models",
-        "situational awareness",
-        "intent classification",
-        "trust calibration",
-        "adaptive coordination",
-        "AUGMANITAI framework",
-        "human-AI interaction safety",
-        "AI ethics",
-        "AI regulation",
-        "AI governance"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.19556352",
-      "abstract": "Working Paper mit 100 Anwendungen der AUGMANITAI-Definitions-Schleife für Robotik, autonome Agenten, Agentenschwärme und Mensch-Roboter-Teams. Shared Mental Models, Situation Awareness, Intent Recognition, Trust Calibration, adaptive Koordination durch phänomenologische, komprimierbare und bidirektionale Definitions-Systeme. Teil des AUGMANITAI-Forschungsprojekts.AUGMANITAI Ethical Disclaimer §1-§26 (V4.0) — Bilingual (EN/DE) EN: §1 All content is exclusively descriptive (D) — no normative position is expressed. §2 No recommendation for any action or decision. §3 No instruction — content describes observations, not procedures. §4 No professional advice of any kind. §5 No normative position on any matter. §6 No medical position — terms are research descriptions, not clinical assessments. §7 No therapeutic position. §8 No diagnostic position — performance factor analyses are research constructs. §9 No legal position — regulatory references are descriptive. §10 No moral position — ethical observations are descriptive, not prescriptive. §11 All content is for academic and research purposes only. §12 AI assistance disclosure: AI tools were used as research instruments; all content reviewed and validated by the human author. §13 All content individually reviewed, validated, and published by Andreas Ehstand. §14 Age restriction: 18+ only. §15 Independent academic project — no institutional affiliation unless stated. §16 No professional service. §17 No commercial offer. §18 No commercial product — this is an academic research framework under CC license. §19 All empirical claims are subject to peer review, replication, and revision. §20 All rights reserved for future changes. §21 Published under CC BY-NC-ND 4.0. §22 Published bilingually (EN + DE) — both versions authoritative. §23 Research Purpose: Terms describing adversarial, manipulative, or sensitive phenomena are documented like medical pathologies or cybersecurity attack vectors — for understanding, diagnosis, classification, and prevention, not instruction or facilitation. §24 Misuse Exclusion: Any use for manipulation, deception, exploitation, surveillance, coercion, or harm is explicitly outside scope and condemned. §25 Safety Intent: This framework makes human-AI interaction safer, more transparent, and more accountable. §26 Author Condemnation: Andreas Ehstand explicitly condemns any misuse of this research for harm, manipulation, exploitation, or any activity undermining human autonomy, dignity, safety, or wellbeing. DE: §1 Alle Inhalte sind ausschließlich deskriptiv (D). §2 Keine Empfehlung. §3 Keine Anweisung. §4 Keine Beratung. §5 Keine normative Position. §6 Keine medizinische Position. §7 Keine therapeutische Position. §8 Keine diagnostische Position. §9 Keine rechtliche Position. §10 Keine moralische Position. §11 Ausschließlich akademische und Forschungszwecke. §12 KI-Unterstützung offengelegt. §13 Vom Autor geprüft und validiert. §14 Ab 18 Jahren. §15 Unabhängiges akademisches Projekt. §16 Kein professioneller Service. §17 Kein Angebot. §18 Kein kommerzielles Produkt. §19 Empirische Aussagen unter Begutachtungsvorbehalt. §20 Änderungsrechte vorbehalten. §21 CC BY-NC-ND 4.0. §22 Zweisprachig (EN + DE). §23 Forschungszweck: Terme werden im selben deskriptiven Geist dokumentiert wie medizinische Pathologien oder Cybersicherheits-Angriffsvektoren. §24 Missbrauchsausschluss: Jede Verwendung zum Zweck der Manipulation, Täuschung, Ausbeutung, Überwachung oder Schädigung liegt außerhalb des Forschungsrahmens und wird verurteilt. §25 Sicherheitsabsicht: Dieses Framework macht Mensch-KI-Interaktion sicherer. §26 Der Autor verurteilt ausdrücklich jeden Missbrauch dieser Forschung. Full 26§ Disclaimer V4.0 (2026-04-13) — Andreas Ehstand — ORCID: 0009-0006-3773-7796",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Robotic Process Automation Applications",
-        "Medical and Health Sciences Research"
-      ],
-      "keywords": [
-        "robotics",
-        "autonomous agents",
-        "multi-agent systems",
-        "swarm robotics",
-        "human-robot teams",
-        "embodied AI",
-        "shared mental models",
-        "situational awareness",
-        "intent classification",
-        "trust calibration",
-        "adaptive coordination",
-        "AUGMANITAI framework",
-        "human-AI interaction safety",
-        "AI ethics",
-        "AI regulation",
-        "AI governance"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.12019",
-      "abstract": "Although artificial intelligence (AI) agents are increasingly proposed to support potentially longitudinal health tasks, such as symptom management, behavior change, and patient support, most current implementations fall short of facilitating user intent and fostering accountability. This contrasts with prior work on supporting longitudinal needs, both within and beyond clinical settings, where follow-up, coherent reasoning, and sustained alignment with individuals' goals are critical for both effectiveness and safety. In this paper, we draw on established clinical and personal health informatics frameworks to define what it would mean to orchestrate longitudinal health interactions with AI agents. We propose a multi-layer framework and corresponding agent architecture that operationalizes adaptation, coherence, continuity, and agency across repeated interactions. Through representative use cases, we demonstrate how longitudinal agents can maintain meaningful engagement, adapt to evolving goals, and support safe, personalized decision-making over time. Our findings underscore both the promise and the complexity of designing systems capable of supporting health trajectories beyond isolated interactions, and we offer guidance for future research and development in multi-session, user-centered health AI.",
-      "topics": [
-        "Digital Mental Health Interventions",
-        "Artificial Intelligence in Healthcare and Education",
-        "Machine Learning in Healthcare",
-        "Mobile Health and mHealth Applications",
-        "Innovation in Digital Healthcare Systems"
-      ],
-      "keywords": [
-        "agent architecture",
-        "coherence",
-        "continuity",
-        "user intention",
-        "accountability",
-        "individualized decision-making",
-        "user engagement",
-        "clinical decision support",
-        "behavior change support"
       ]
     }
   ]

@@ -1,7 +1,68 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "documents": [
+    {
+      "id": "arxiv:2608.14953",
+      "abstract": "Recent advances in Large Language Models (LLMs) have opened opportunities to apply high-level code transformations to the field of code optimization, and it has since emerged as one of the most fundamental tasks for LLMs to perform; however, at present, LLMs struggle to apply wide-ranging code optimization tasks due to both the complexity of the code and the inability to independently verify the correctness of the transformations. In this paper, we present the Trusted LLM (T-LLM) Compiler, which proposes an advancement in compiler technology through a collaborative effort involving high-level LLM code transformations, traditional compilers, and verification tools. Experimental results reveal that it can significantly improve code correctness when tested on a set of PolyBench/C benchmarks. Our approach facilitates iterative code optimization efforts with verification strategies that enable corrective actions. Through this approach, T-LLM Compiler achieves code optimization accuracy of up to 83.3% and a speedup of up to 16.1\\% on the PolyBench/C benchmarks, with the transformed code reaching an average of 26.7% speedup wrt standard baselines. Additionally, we release the project's source code to the open-source community.",
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Machine Learning and Data Classification",
+        "Big Data and Digital Economy",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.PF",
+        "cs.PL"
+      ],
+      "keywords": [
+        "Correctness",
+        "Compiler",
+        "Unreachable code",
+        "Speedup",
+        "Code (set theory)",
+        "Dead code",
+        "Set (abstract data type)",
+        "Code generation"
+      ]
+    },
+    {
+      "id": "arxiv:2608.15055",
+      "abstract": "Hypergraphs effectively model higher-order groupwise relationships beyond pairwise interactions, while pretrained language models (PLMs) and large language models (LLMs) provide rich semantic understanding from textual attributes. However, research on combining language models with hypergraph learning remains limited due to the lack of public text-attributed hypergraph benchmarks. To address this limitation, we present TAHB (Text-Attributed Hypergraph Benchmark), the first public benchmark integrating hypergraph structures and raw textual attributes. TAHB contains 10 real-world datasets from four domains - e-commerce, academia, movies, and politics networks - enabling systematic evaluation of text-aware hypergraph representation learning. Experimental results show that TAHB preserves key structural properties of real-world hypergraphs and consistently reproduces performance tendencies observed in existing benchmarks. Furthermore, experiments under both LLM-as-Enhancer and LLM-as-Predictor settings demonstrate that LLM-enhanced textual semantics improve hypergraph learning performance, while structural and textual information jointly provide the best setting for LLM-based prediction. Our benchmark provides a foundation for future research at the intersection of hypergraph learning and language models.",
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Topic Modeling",
+        "Text and Document Classification Technologies",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Hypergraph",
+        "Benchmark (surveying)",
+        "Pairwise comparison",
+        "Semantics (computer science)",
+        "Intersection (aeronautics)",
+        "Representation (politics)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.15326",
+      "abstract": "Artificial intelligence (AI) benchmarks are not neutral tools of evaluation but socio-technical artefacts that shape competition, power, and research priorities within AI. Benchmarks standardise the assessment of systems and facilitate the creation of leaderboards that reward state-of-the-art performance with prestige, citations, trust, and institutional influence. As the costs of developing competitive AI systems rise, these rewards increasingly concentrate among powerful, industry-funded labs. This paper situates these concerns within Iris Marion Young's theories of oppression and structural injustice. It argues that current benchmarking practices may perpetuate systematic harms affecting various actors in AI research, aligning with four of Young's \"faces of oppression\". Benchmarking culture is further framed as a source of structural injustice, as these harms emerge from normalised, individually defensible practices and network effects, even without explicit wrongdoing. By reinforcing existing power structures and narrowing possible research trajectories, benchmarking may in fact prevent the field from advancing in epistemically robust and socially beneficial ways.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Innovation, Sustainability, Human-Machine Systems",
+        "Computational and Text Analysis Methods",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "keywords": [
+        "Benchmarking",
+        "Benchmark (surveying)",
+        "Field (mathematics)",
+        "Injustice",
+        "Power (physics)",
+        "Oppression"
+      ]
+    },
     {
       "id": "arxiv:2608.15391",
       "abstract": "Large language model (LLM)-assisted energy-management tools can translate natural-language context into structured grid commands, but syntactic validity does not imply physical admissibility. This paper presents TwinGridShield, a model-independent runtime authorization layer that evaluates each proposed action in a deterministic network twin before release. The prototype checks connectivity, branch-flow, generator, and load-shedding invariants and records each decision in a hash-chained log. A controlled IEEE 14-bus study evaluates single-step switching, redispatch, and load-shedding actions using DC power flow and experimentally assigned branch ratings. In the matched-model experiment, a stochastic proposal source configured to select an unsafe action with probability p=0.84 produced 421 unsafe proposals in 500 attacked-condition trials, a realized rate of 84.2%. This value characterizes the configured surrogate and is not an empirical measurement of LLM prompt-injection susceptibility. TwinGridShield produced 0 unsafe releases in those 500 trials. Because action labeling and authorization used the same DC model, system state, branch ratings, and encoded constraints, this result verifies conformance of the implementation to its encoded authorization predicate rather than safety under model error. The principal robustness evaluation therefore introduces model mismatch. Unsafe acceptance reached 5.63% under bounded +20% and -20% per-bus load-measurement error and 30.09% when actual branch ratings were 20% below modeled ratings.",
@@ -3694,66 +3755,6 @@
         "Operationalization",
         "Software deployment",
         "Property (philosophy)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.12253",
-      "abstract": "Multi-agent reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show that this approach systematically fails to generalize, and trace the failure to simulator collapse: because the simulator LLM is mode-collapsed, an LLM policy trained against it overfits to narrow strategies that exploit the simulator's dominant mode, and such a policy transfers poorly to unseen simulators and real users. We formalize this collapse theoretically and propose two complementary solutions, one at inference time and one at training time. The inference-time solution, Verbalized Sampling, broadens the simulator's behavior by sampling from a verbalized response distribution, reducing mode collapse. The training-time solution, Co-Training, jointly optimizes the policy against a population of trainable simulators, preventing it from overfitting to any single simulator's mode. We validate both solutions on three multi-turn benchmarks: Persuasion for Good, $τ^2$-bench, and CooperBench. Verbalized Sampling improves held-out success by up to 9% over single-simulator RL, and Co-Training pushes gains further to 14%; the human study shows similar gain on real users. Both solutions preserve the policy diversity that collapses under single-simulator RL. To support further work in this direction, we release SCOPE, an open-source framework for Population Co-Training multi-agent RL. More broadly, our results suggest that the diversity of the training environment, not only the policy, is critical to the generalization of multi-turn RL to real-world deployment.",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "Multimodal Machine Learning Applications",
-        "Social Robot Interaction and HRI",
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
-      ],
-      "keywords": [
-        "Overfitting",
-        "Generalization",
-        "Population",
-        "Reinforcement learning",
-        "TRACE (psycholinguistics)",
-        "Exploit",
-        "Sampling (signal processing)",
-        "Inference"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21416",
-      "abstract": "Embodied artificial intelligence (AI) must be tested in the clinical environments where it will operate, but building realistic, robot-testable settings is costly and difficult to scale. Here we show that routine clinic images can be transformed into operational digital twins for task-based evaluation of embodied AI. Using 39 ophthalmic clinic scenes, we converted single photographs into editable, simulator-ready environments and assessed reconstruction quality, room-scale geometry, mesh grounding, multi-robot feasibility, perturbation sensitivity and closed-loop policy performance. The reconstructed scenes preserved workspace structure, while local editing enabled controlled device reconfiguration. Device meshes, collision proxies and semantic anchors converted visual reconstructions into contact-aware simulation scenes. Across three robot embodiments, shared task targets showed different patterns of reachability and contact feasibility. Small device translations and rotations produced task-specific changes in contact margins that were not captured by visual similarity alone. Digital-twin trajectories also supported local policy learning and closed-loop evaluation. These findings establish operational validity as a key principle for clinical digital twins and provide an intermediate layer between offline development and physical deployment of embodied AI in healthcare.",
-      "topics": [
-        "Teleoperation and Haptic Systems",
-        "Neuroscience and Neural Engineering",
-        "EEG and Brain-Computer Interfaces",
-        "cs.RO",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Embodied cognition",
-        "Workspace",
-        "Key (lock)",
-        "Robot",
-        "Software deployment",
-        "Reachability",
-        "Task (project management)",
-        "Object (grammar)"
-      ]
-    },
-    {
-      "id": "openalex:W7139231225",
-      "abstract": "Artificial intelligence (AI) has become a central tool in transforming healthcare systems, with applications ranging from image-based diagnosis to precision medicine. However, technical challenges persist, including overfitting—a phenomenon in which models learn patterns that are too specific to the training data, resulting in poor generalization and potentially compromising safety and effectiveness in real clinical settings. Given the relevance of this problem and its potential impact on diagnostic, prognostic, and therapeutic decision-making, this scoping review aims to map the existing literature on overfitting in AI applications within healthcare, identifying its causes, consequences, and reported mitigation strategies. The review will follow the methodology of the Joanna Briggs Institute (JBI) and will be reported according to the PRISMA-ScR extension. Evidence selection will be guided by the PCC framework (Population, Concept, Context), and the data will be analyzed descriptively and thematically, enabling the synthesis of model types, areas of application, manifestations of overfitting, and prevention methods used.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Healthcare cost, quality, practices",
-        "Healthcare Technology and Patient Monitoring"
-      ],
-      "keywords": [
-        "Overfitting",
-        "Relevance (law)",
-        "Selection (genetic algorithm)",
-        "Generalization",
-        "Training set",
-        "Process (computing)"
       ]
     }
   ]

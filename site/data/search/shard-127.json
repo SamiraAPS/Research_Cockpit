@@ -1,7 +1,67 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "documents": [
+    {
+      "id": "arxiv:2608.12253",
+      "abstract": "Multi-agent reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show that this approach systematically fails to generalize, and trace the failure to simulator collapse: because the simulator LLM is mode-collapsed, an LLM policy trained against it overfits to narrow strategies that exploit the simulator's dominant mode, and such a policy transfers poorly to unseen simulators and real users. We formalize this collapse theoretically and propose two complementary solutions, one at inference time and one at training time. The inference-time solution, Verbalized Sampling, broadens the simulator's behavior by sampling from a verbalized response distribution, reducing mode collapse. The training-time solution, Co-Training, jointly optimizes the policy against a population of trainable simulators, preventing it from overfitting to any single simulator's mode. We validate both solutions on three multi-turn benchmarks: Persuasion for Good, $τ^2$-bench, and CooperBench. Verbalized Sampling improves held-out success by up to 9% over single-simulator RL, and Co-Training pushes gains further to 14%; the human study shows similar gain on real users. Both solutions preserve the policy diversity that collapses under single-simulator RL. To support further work in this direction, we release SCOPE, an open-source framework for Population Co-Training multi-agent RL. More broadly, our results suggest that the diversity of the training environment, not only the policy, is critical to the generalization of multi-turn RL to real-world deployment.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Multimodal Machine Learning Applications",
+        "Social Robot Interaction and HRI",
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": [
+        "Overfitting",
+        "Generalization",
+        "Population",
+        "Reinforcement learning",
+        "TRACE (psycholinguistics)",
+        "Exploit",
+        "Sampling (signal processing)",
+        "Inference"
+      ]
+    },
+    {
+      "id": "arxiv:2608.21416",
+      "abstract": "Embodied artificial intelligence (AI) must be tested in the clinical environments where it will operate, but building realistic, robot-testable settings is costly and difficult to scale. Here we show that routine clinic images can be transformed into operational digital twins for task-based evaluation of embodied AI. Using 39 ophthalmic clinic scenes, we converted single photographs into editable, simulator-ready environments and assessed reconstruction quality, room-scale geometry, mesh grounding, multi-robot feasibility, perturbation sensitivity and closed-loop policy performance. The reconstructed scenes preserved workspace structure, while local editing enabled controlled device reconfiguration. Device meshes, collision proxies and semantic anchors converted visual reconstructions into contact-aware simulation scenes. Across three robot embodiments, shared task targets showed different patterns of reachability and contact feasibility. Small device translations and rotations produced task-specific changes in contact margins that were not captured by visual similarity alone. Digital-twin trajectories also supported local policy learning and closed-loop evaluation. These findings establish operational validity as a key principle for clinical digital twins and provide an intermediate layer between offline development and physical deployment of embodied AI in healthcare.",
+      "topics": [
+        "Teleoperation and Haptic Systems",
+        "Neuroscience and Neural Engineering",
+        "EEG and Brain-Computer Interfaces",
+        "cs.RO",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Embodied cognition",
+        "Workspace",
+        "Key (lock)",
+        "Robot",
+        "Software deployment",
+        "Reachability",
+        "Task (project management)",
+        "Object (grammar)"
+      ]
+    },
+    {
+      "id": "openalex:W7139231225",
+      "abstract": "Artificial intelligence (AI) has become a central tool in transforming healthcare systems, with applications ranging from image-based diagnosis to precision medicine. However, technical challenges persist, including overfitting—a phenomenon in which models learn patterns that are too specific to the training data, resulting in poor generalization and potentially compromising safety and effectiveness in real clinical settings. Given the relevance of this problem and its potential impact on diagnostic, prognostic, and therapeutic decision-making, this scoping review aims to map the existing literature on overfitting in AI applications within healthcare, identifying its causes, consequences, and reported mitigation strategies. The review will follow the methodology of the Joanna Briggs Institute (JBI) and will be reported according to the PRISMA-ScR extension. Evidence selection will be guided by the PCC framework (Population, Concept, Context), and the data will be analyzed descriptively and thematically, enabling the synthesis of model types, areas of application, manifestations of overfitting, and prevention methods used.",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Healthcare cost, quality, practices",
+        "Healthcare Technology and Patient Monitoring"
+      ],
+      "keywords": [
+        "Overfitting",
+        "Relevance (law)",
+        "Selection (genetic algorithm)",
+        "Generalization",
+        "Training set",
+        "Process (computing)"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.12286",
       "abstract": "Many nonlinear models across physics, chemistry, and biology exhibit multiple solutions for the same parameters, and capturing this entire solution set is essential for understanding pattern-forming systems. Yet existing learned surrogates are fundamentally single-valued: neural operators map each parameter to a single output, and physics-informed neural networks converge to one branch. We develop \\textbf{PatternFormer} (PF), a large language model-based framework for learning the multiple solutions of nonlinear partial differential equations. By transforming unordered coexisting solutions into canonical sequences, PF produces structured solution sets in a single autoregressive pass, terminating automatically for finite families and enforcing physical residual constraints for unbounded ones. On nonlinear elliptic problems it recovers all solution branches in one inference step; on Gray--Scott it generates coexisting Turing patterns, including physically valid states absent from the reference data and beyond training. PF can also be sequentially fine-tuned across multistable systems, toward general foundation models for solution landscapes.",
@@ -3233,35 +3293,6 @@
       "id": "arxiv:2608.09095",
       "abstract": "Uncovering the internal mechanisms underlying the safety capabilities of large language models (LLMs) is crucial for developing trustworthy artificial intelligence. Currently, mechanistic interpretability studies on multilingual safety are largely confined to local components, such as isolated neurons. However, this static and fragmented perspective overlooks the synergy among components and fails to elucidate how safety signals dynamically propagate within the model to drive safety decisions ultimately. In this work, we move beyond isolated neurons to identify and target the cross-layer functional pathways formed during safety signal propagation, thereby uncovering the mechanisms driving the cross-lingual safety gap. Specifically, we first identify monolingual safety pathways and validate their impact on refusing harmful requests. Subsequent cross-lingual analyses reveal a sparse subset of cross-lingual shared safety pathways, confirming that this intersection acts as the internal bridge transferring safety capabilities from high-resource (HR) languages to non-high-resource (NHR) languages. Building on these mechanistic findings, we propose a pathways-targeted alignment method based on the cross-lingual shared safety pathways. Experimental results show that updating only a small fraction of pathway parameters significantly improves safety in NHR languages while largely preserving the model's general capabilities.",
       "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2609.25021",
-      "abstract": "Large Language Models (LLMs) tend to add disclaimers like \"I'm just an AI\" when asked about something related to themselves. The self-reports from such responses are used in debates about AI safety or self-knowledge of the models, yet what drives them is not well understood. Are the models telling us about themselves or rather how they are deployed? In this work, we show that the chat template works like a switch - when present, it turns this disclaimer voice up and experiential voice like \"I feel\" down, across 8 popular open-source instruct models up to 9B parameters in size. And conversely when the chat template is not present, it turns the disclaimer voice down and experiential voice up. Inside the activations of 3 models, we find a direction that steers this behavior. Removing the direction in the model's activation space turns disclaimer voice down and adding it turns it up, while a random direction of the same size has little effect. We find that instruct models without chat template, when we add the disclaimer direction to them, disclaim like the template was there. Since the chat template controls the disclaimer voice of LLMs, then researchers studying self-reports or introspection of models might have a confound they need to control for. Our results show that there is a direction they can use to steer this voice. More broadly, our work shows that what models say about themselves is not a fact about them. What they say doesn't come only from weights, but it is partially set by the chat template, and because of that a model's self-description shouldn't be treated literally.",
-      "topics": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.14694",
-      "abstract": "Foundation models are emerging as a transformative paradigm for AI-native sixth-generation (6G) wireless networks by enabling scalable, transferable, and data-efficient intelligence across diverse communication tasks. Unlike conventional deep learning models that are trained for individual applications, wireless foundation models (WFMs) learn generalized representations from large-scale heterogeneous wireless data and can be efficiently adapted to communication, sensing, localization, and network optimization tasks with minimal task-specific supervision. Despite rapid progress, current research remains fragmented across architectures, training paradigms, and application domains, with no unified survey dedicated to the design, learning, and deployment of WFMs. This survey presents a comprehensive and unified review of wireless foundation models. We first establish the fundamental concepts of WFMs and introduce a taxonomy that organizes the field according to model architectures, pre-training paradigms, and applications. We then review representative architectures, self-supervised pre-training strategies, parameter-efficient adaptation methods, datasets, benchmarks, and evaluation methodologies, highlighting their roles in enabling transferable wireless intelligence. Furthermore, we examine emerging applications spanning physical-layer signal processing, network intelligence, and cross-layer optimization, and discuss the key challenges of data availability, generalization, interpretability, efficient edge deployment, and standardization. Finally, we outline future research directions toward scalable, trustworthy, and general-purpose wireless intelligence for AI-native 6G networks. This survey provides a comprehensive reference for researchers and practitioners developing next-generation intelligent wireless systems.",
-      "topics": [
-        "cs.AI",
-        "cs.NI",
-        "eess.SP"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.08829",
-      "abstract": "Activation steering edits the behaviour of a frozen language model by adding a learned vector to its residual stream, and current practice fixes the injection layers globally per task. We argue that the best layers are an instance-level decision, and we make per-instance, multi-layer selection both well understood and deployable. On two open-weight 8B models and six binary persona traits, a per-instance oracle over layer subsets shows that the best layers vary from one input to the next: on most trait-model pairs, no fixed global layer set recovers the per-instance benefit. A greedy rule that ranks layers by single-layer marginal effect recovers nearly all of the oracle's benefit, but both must score candidate layers against the gold answer, so neither can run at deployment; the rule instead becomes the target a prompt-only predictor is trained to reproduce. Our deployable recipe needs no label at inference: a per-instance layer ranker read off the prompt embedding, a classifier that infers the steering direction, and an adaptive gate that scores short steered passes against that inferred direction and steers no more layers than necessary. The recipe recovers most of the oracle's lift (the bulk on the stronger model, a clear majority on the harder one), never drives any trait-model pair below its unsteered alignment baseline on average, and largely avoids the fluency collapse that strong global selection incurs at higher layer counts. A mechanistic account, \"direction over magnitude\", explains the behavioural flip under a mis-directed global set, the output collapse from steering too many layers, and the ceiling of unsteerable inputs.",
-      "topics": [
-        "cs.CL",
         "cs.AI"
       ],
       "keywords": []

@@ -1,12 +1,775 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "page": 253,
   "pageSize": 100,
-  "totalItems": 40512,
+  "totalItems": 40515,
   "totalPages": 406,
   "nextPage": "./page-254.json",
   "items": [
+    {
+      "id": "arxiv:2608.12253",
+      "recordType": "preprint",
+      "title": "One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL",
+      "abstract": "Multi-agent reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show that this approach systematically fails to generalize, and trace the failure to simulator collapse: because the simulator LLM is mode-collapsed, an LLM policy trained against it overfits to narrow strategies that exploit the simulator's dominant mode, and such a policy transfers poorly to unseen simulators and real users. We formalize this collapse theoretically and propose two complementary solutions, one at inference time and one at training time. The inference-time solution, Verbalized Sampling, broadens the simulator's behavior by sampling from a verbalized response distribution, reducing mode collapse. The training-time solution, Co-Training, jointly optimizes the policy against a population of trainable simulators, preventing it from overfitting to any single simulator's mode. We validate both solutions on three multi-turn benchmarks: Persuasion for Good, $τ^2$-bench, and CooperBench. Verbalized Sampling improves held-out success by up to 9% over single-simulator RL, and Co-Training pushes gains further to 14%; the human study shows similar gain on real users. Both solutions preserve the policy diversity that collapses under single-simulator RL. To support further work in this direction, we release SCOPE, an open-source framework for Population Co-Training multi-agent RL. More broadly, our results suggest that the diversity of the training environment, not only the policy, is critical to the generalization of multi-turn RL to real-world deployment.",
+      "doi": "10.48550/arxiv.2608.12253",
+      "externalIds": {
+        "openalex": "W7202348973",
+        "arxiv": "2608.12253"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.12253"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-12",
+      "firstPublicDate": "2026-08-12",
+      "onlineDate": null,
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Multimodal Machine Learning Applications",
+        "Social Robot Interaction and HRI",
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": [
+        "Overfitting",
+        "Generalization",
+        "Population",
+        "Reinforcement learning",
+        "TRACE (psycholinguistics)",
+        "Exploit",
+        "Sampling (signal processing)",
+        "Inference"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "failure",
+              "conceptLabel": "Fehler",
+              "matchedTerm": "failure",
+              "sourceValue": "…r. We show that this approach systematically fails to generalize, and trace the failure to simulator collapse: because the simulator LLM is mode-collapsed, an LLM policy trained against it overfits to narrow strategies that exploit the simulator's dominant mode, and such a policy transfers poorly to unseen simulators a…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "teaming",
+          "label": "Human–AI Teaming",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "interaction",
+              "conceptLabel": "Mensch–KI-Interaktion",
+              "matchedTerm": "human ai interaction",
+              "sourceValue": "Multi-agent reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show that this approach systematically fails to generalize, and trace the failure to simulator collapse: because the simulator LLM is mode-collapsed, an LLM policy trained against …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 5,
+        "topic:safety": 2,
+        "topic:teaming": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "human-AI",
+        "large language model",
+        "LLM",
+        "learning",
+        "human-AI interaction",
+        "failure",
+        "human ai interaction"
+      ],
+      "authors": [
+        {
+          "id": "A5081455883",
+          "name": "Su Yu",
+          "orcid": "https://orcid.org/0000-0002-9532-4408",
+          "affiliations": []
+        },
+        {
+          "id": "A5013447238",
+          "name": "Nicholas Tomlin",
+          "orcid": "https://orcid.org/0000-0001-6502-989X",
+          "affiliations": []
+        },
+        {
+          "id": "A5084881611",
+          "name": "Marwa Abdulhai",
+          "orcid": "https://orcid.org/0009-0005-2760-559X",
+          "affiliations": []
+        },
+        {
+          "id": "A5147070305",
+          "name": "Ximing Lu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5135924130",
+          "name": "Derek Chong",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147134898",
+          "name": "Abe Hou",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5088639037",
+          "name": "Dilara Soylu",
+          "orcid": "https://orcid.org/0009-0006-1586-6511",
+          "affiliations": []
+        },
+        {
+          "id": "A5127800314",
+          "name": "Sergey Levine",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147076697",
+          "name": "Christopher D. Manning",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5089522357",
+          "name": "Weiyan Shi",
+          "orcid": "https://orcid.org/0000-0003-0850-5831",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.12253",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:48.439Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-28T11:43:26.210Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:26.210Z",
+      "preferredVersionId": "arxiv:2608.12253",
+      "versions": [
+        {
+          "id": "arxiv:2608.12253",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.12253",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.12253v2"
+        },
+        {
+          "id": "openalex:W7202348973",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7202348973",
+          "doi": "10.48550/arxiv.2608.12253",
+          "url": "https://doi.org/10.48550/arxiv.2608.12253"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-253.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "Multi-agent reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show",
+              "start": 0,
+              "end": 144
+            },
+            {
+              "field": "abstract",
+              "term": "user",
+              "quote": "an-AI interaction typically relies on a single large language model to simulate user behavior. We show that this approach systematically fails to generalize, and trace the failure to s",
+              "start": 42,
+              "end": 226
+            },
+            {
+              "field": "abstract",
+              "term": "users",
+              "quote": "dominant mode, and such a policy transfers poorly to unseen simulators and real users. We formalize this collapse theoretically and propose two complementary solutions, one at inference",
+              "start": 382,
+              "end": 567
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "human-AI",
+              "quote": "Multi-agent reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show th",
+              "start": 0,
+              "end": 147
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "nt reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show that this approach systematically fails to generalize, and trace",
+              "start": 9,
+              "end": 209
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": " generalize, and trace the failure to simulator collapse: because the simulator LLM is mode-collapsed, an LLM policy trained against it overfits to narrow strategies that exploit the ",
+              "start": 187,
+              "end": 370
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "nt reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show that this approach systematically fails to generalize, and trace",
+                  "start": 9,
+                  "end": 209
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "simulation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "simulator",
+                  "quote": "One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL",
+                  "start": 0,
+                  "end": 72
+                },
+                {
+                  "field": "abstract",
+                  "term": "simulator",
+                  "quote": "that this approach systematically fails to generalize, and trace the failure to simulator collapse: because the simulator LLM is mode-collapsed, an LLM policy trained against it overfits to",
+                  "start": 145,
+                  "end": 334
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.21416",
+      "recordType": "preprint",
+      "title": "Operational digital twin clinics enable task-based evaluation of embodied AI",
+      "abstract": "Embodied artificial intelligence (AI) must be tested in the clinical environments where it will operate, but building realistic, robot-testable settings is costly and difficult to scale. Here we show that routine clinic images can be transformed into operational digital twins for task-based evaluation of embodied AI. Using 39 ophthalmic clinic scenes, we converted single photographs into editable, simulator-ready environments and assessed reconstruction quality, room-scale geometry, mesh grounding, multi-robot feasibility, perturbation sensitivity and closed-loop policy performance. The reconstructed scenes preserved workspace structure, while local editing enabled controlled device reconfiguration. Device meshes, collision proxies and semantic anchors converted visual reconstructions into contact-aware simulation scenes. Across three robot embodiments, shared task targets showed different patterns of reachability and contact feasibility. Small device translations and rotations produced task-specific changes in contact margins that were not captured by visual similarity alone. Digital-twin trajectories also supported local policy learning and closed-loop evaluation. These findings establish operational validity as a key principle for clinical digital twins and provide an intermediate layer between offline development and physical deployment of embodied AI in healthcare.",
+      "doi": "10.48550/arxiv.2608.21416",
+      "externalIds": {
+        "openalex": "W7204203827",
+        "arxiv": "2608.21416"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.21416"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-12",
+      "firstPublicDate": "2026-08-12",
+      "onlineDate": null,
+      "topics": [
+        "Teleoperation and Haptic Systems",
+        "Neuroscience and Neural Engineering",
+        "EEG and Brain-Computer Interfaces",
+        "cs.RO",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Embodied cognition",
+        "Workspace",
+        "Key (lock)",
+        "Robot",
+        "Software deployment",
+        "Reachability",
+        "Task (project management)",
+        "Object (grammar)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "… visual similarity alone. Digital-twin trajectories also supported local policy learning and closed-loop evaluation. These findings establish operational validity as a key principle for clinical digital twins and provide an intermediate layer between offline development and physical deployment of embodied AI in healthc…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5148164294",
+          "name": "Xinyuan Wu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5148043411",
+          "name": "Jingrao Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5102020639",
+          "name": "Mengdi Xu",
+          "orcid": "https://orcid.org/0000-0001-6087-7558",
+          "affiliations": []
+        },
+        {
+          "id": "A5135925420",
+          "name": "Henry K. Chu",
+          "orcid": "https://orcid.org/0000-0001-7225-6927",
+          "affiliations": []
+        },
+        {
+          "id": "A5148132515",
+          "name": "Mingguang He",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5129671604",
+          "name": "Danli Shi",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.21416",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:48.439Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-28T11:43:26.210Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:26.210Z",
+      "preferredVersionId": "arxiv:2608.21416",
+      "versions": [
+        {
+          "id": "arxiv:2608.21416",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.21416",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.21416v1"
+        },
+        {
+          "id": "openalex:W7204203827",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204203827",
+          "doi": "10.48550/arxiv.2608.21416",
+          "url": "https://doi.org/10.48550/arxiv.2608.21416"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-253.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "AI",
+              "quote": "Operational digital twin clinics enable task-based evaluation of embodied AI",
+              "start": 0,
+              "end": 76
+            },
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "Embodied artificial intelligence (AI) must be tested in the clinical environments where it will operate, but building realistic, rob",
+              "start": 0,
+              "end": 132
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "Embodied artificial intelligence (AI) must be tested in the clinical environments where it will operate, but building realistic, robot-t",
+              "start": 0,
+              "end": 136
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "healthcare",
+                  "quote": "ate layer between offline development and physical deployment of embodied AI in healthcare.",
+                  "start": 1301,
+                  "end": 1392
+                },
+                {
+                  "field": "abstract",
+                  "term": "clinical",
+                  "quote": "Embodied artificial intelligence (AI) must be tested in the clinical environments where it will operate, but building realistic, robot-testable settings is costly and d",
+                  "start": 0,
+                  "end": 168
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "automation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "robot",
+                  "quote": "ted in the clinical environments where it will operate, but building realistic, robot-testable settings is costly and difficult to scale. Here we show that routine clinic images can be ",
+                  "start": 49,
+                  "end": 234
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "simulation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "simulator",
+                  "quote": "ing 39 ophthalmic clinic scenes, we converted single photographs into editable, simulator-ready environments and assessed reconstruction quality, room-scale geometry, mesh grounding, multi-",
+                  "start": 321,
+                  "end": 510
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "openalex:W7139231225",
+      "recordType": "preprint",
+      "title": "Overfitting in Artificial Intelligence Applications in Healthcare: A Scoping Review",
+      "abstract": "Artificial intelligence (AI) has become a central tool in transforming healthcare systems, with applications ranging from image-based diagnosis to precision medicine. However, technical challenges persist, including overfitting—a phenomenon in which models learn patterns that are too specific to the training data, resulting in poor generalization and potentially compromising safety and effectiveness in real clinical settings. Given the relevance of this problem and its potential impact on diagnostic, prognostic, and therapeutic decision-making, this scoping review aims to map the existing literature on overfitting in AI applications within healthcare, identifying its causes, consequences, and reported mitigation strategies. The review will follow the methodology of the Joanna Briggs Institute (JBI) and will be reported according to the PRISMA-ScR extension. Evidence selection will be guided by the PCC framework (Population, Concept, Context), and the data will be analyzed descriptively and thematically, enabling the synthesis of model types, areas of application, manifestations of overfitting, and prevention methods used.",
+      "doi": null,
+      "externalIds": {
+        "openalex": "W7139231225"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7139231225"
+      },
+      "venue": "OSF Preprints (OSF Preprints)",
+      "publicationDate": "2026-08-12",
+      "firstPublicDate": "2026-08-12",
+      "onlineDate": null,
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Healthcare cost, quality, practices",
+        "Healthcare Technology and Patient Monitoring"
+      ],
+      "keywords": [
+        "Overfitting",
+        "Relevance (law)",
+        "Selection (genetic algorithm)",
+        "Generalization",
+        "Training set",
+        "Process (computing)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "decision",
+              "conceptLabel": "Entscheiden",
+              "matchedTerm": "decision making",
+              "sourceValue": "Artificial intelligence (AI) has become a central tool in transforming healthcare systems, with applications ranging from image-based diagnosis to precision medicine. However, technical challenges persist, including overfitting—a phenomenon in which models learn patterns that are too specific to the training data, resu…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "…he training data, resulting in poor generalization and potentially compromising safety and effectiveness in real clinical settings. Given the relevance of this problem and its potential impact on diagnostic, prognostic, and therapeutic decision-making, this scoping review aims to map the existing literature on overfitt…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:cognition": 2,
+        "topic:safety": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "safety",
+        "decision making"
+      ],
+      "authors": [
+        {
+          "id": "A5147190857",
+          "name": "Ana Carolina Dos Santos",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5151195592",
+          "name": "Isabelle Cristinne Pinto Costa",
+          "orcid": "https://orcid.org/0000-0002-2611-8643",
+          "affiliations": []
+        },
+        {
+          "id": "A5092653404",
+          "name": "Yasmim Ribeiro Fracaroli",
+          "orcid": "https://orcid.org/0009-0004-2400-2323",
+          "affiliations": []
+        },
+        {
+          "id": "A5093394824",
+          "name": "Sara Luiza Custódio de Souza",
+          "orcid": "https://orcid.org/0009-0004-4785-457X",
+          "affiliations": []
+        },
+        {
+          "id": "A5130000232",
+          "name": "Francini Castilha do Nacimento",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://osf.io/e2z5r",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:26.210Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:26.210Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-09-28T11:43:26.210Z",
+      "preferredVersionId": "openalex:W7139231225",
+      "versions": [
+        {
+          "id": "openalex:W7139231225",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7139231225",
+          "doi": null,
+          "url": "https://osf.io/e2z5r"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-253.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "artificial intelligence",
+              "quote": "Overfitting in Artificial Intelligence Applications in Healthcare: A Scoping Review",
+              "start": 0,
+              "end": 83
+            },
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "Artificial intelligence (AI) has become a central tool in transforming healthcare systems, with applications ranging from i",
+              "start": 0,
+              "end": 123
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "Artificial intelligence (AI) has become a central tool in transforming healthcare systems, with applications ranging from image",
+              "start": 0,
+              "end": 127
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "healthcare",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "healthcare",
+                  "quote": "Overfitting in Artificial Intelligence Applications in Healthcare: A Scoping Review",
+                  "start": 0,
+                  "end": 83
+                },
+                {
+                  "field": "abstract",
+                  "term": "healthcare",
+                  "quote": "Artificial intelligence (AI) has become a central tool in transforming healthcare systems, with applications ranging from image-based diagnosis to precision medicine. However, techn",
+                  "start": 0,
+                  "end": 181
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "review",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "scoping review",
+                  "quote": "Overfitting in Artificial Intelligence Applications in Healthcare: A Scoping Review",
+                  "start": 0,
+                  "end": 83
+                },
+                {
+                  "field": "abstract",
+                  "term": "scoping review",
+                  "quote": "tential impact on diagnostic, prognostic, and therapeutic decision-making, this scoping review aims to map the existing literature on overfitting in AI applications within healthcare, identifyin",
+                  "start": 476,
+                  "end": 670
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.48550/arxiv.2608.12286",
       "recordType": "preprint",
@@ -21038,489 +21801,6 @@
         "finding": null,
         "findingStatus": "requires-reading",
         "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.10837",
-      "recordType": "preprint",
-      "title": "TACTICL: Task-Aware Compression of Tabular ICL Models",
-      "abstract": "The strong performance of foundation models for tabular tasks comes at substantial inference costs. Distilling models into task-specific architectures reduces model size and computational demands but also sacrifices in-context adaptability. Here we introduce TACTICL, an automated task-aware compression framework for tabular in-context learning models that jointly prunes transformer layers and replaces them with lightweight adapters trained on downstream tasks, thus blending in-context with in-weight learning. We study TACTICL on 47 benchmark datasets and show that we can substitute up to 85% of layers without substantial performance drop on a given downstream task. We further show that TACTICL maintains robustness to data shifts, leaving its in-context ability intact. Overall, TACTICL provides a robust framework for exploiting the depth-wise redundancy of tabular foundation models by combining task-specific adaptation and structured compression. We provide the code at: https://github.com/Hebog/tfm_compression",
-      "doi": "10.48550/arxiv.2608.10837",
-      "externalIds": {
-        "openalex": "W7202248145",
-        "arxiv": "2608.10837"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.10837"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-11",
-      "firstPublicDate": "2026-08-11",
-      "onlineDate": null,
-      "topics": [
-        "Domain Adaptation and Few-Shot Learning",
-        "Adversarial Robustness in Machine Learning",
-        "Multimodal Machine Learning Applications",
-        "cs.LG",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Robustness (evolution)",
-        "Redundancy (engineering)",
-        "Inference",
-        "Transformer",
-        "Data compression",
-        "Compression (physics)",
-        "Code (set theory)"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…e TACTICL, an automated task-aware compression framework for tabular in-context learning models that jointly prunes transformer layers and replaces them with lightweight adapters trained on downstream tasks, thus blending in-context with in-weight learning. We study TACTICL on 47 benchmark datasets and show that we can…",
-              "weight": 2
-            },
-            {
-              "source": "external_topic",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "Domain Adaptation and Few-Shot Learning",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:learning": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "foundation models",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5107526458",
-          "name": "Mykhailo Koshil",
-          "orcid": "https://orcid.org/0009-0004-1652-0446",
-          "affiliations": []
-        },
-        {
-          "id": "A5054262288",
-          "name": "Matthias Feurer",
-          "orcid": "https://orcid.org/0000-0001-9611-8588",
-          "affiliations": []
-        },
-        {
-          "id": "A5081813991",
-          "name": "Katharina Eggensperger",
-          "orcid": "https://orcid.org/0000-0002-0309-401X",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.10837",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:52.324Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-28T11:43:28.143Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:28.143Z",
-      "preferredVersionId": "arxiv:2608.10837",
-      "versions": [
-        {
-          "id": "arxiv:2608.10837",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.10837",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.10837v1"
-        },
-        {
-          "id": "openalex:W7202248145",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7202248145",
-          "doi": "10.48550/arxiv.2608.10837",
-          "url": "https://doi.org/10.48550/arxiv.2608.10837"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-253.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "The strong performance of foundation models for tabular tasks comes at substantial inference costs. Distilling models into task-specific archit",
-              "start": 0,
-              "end": 143
-            },
-            {
-              "field": "abstract",
-              "term": "foundation models",
-              "quote": "The strong performance of foundation models for tabular tasks comes at substantial inference costs. Distilling models into task-specific archit",
-              "start": 0,
-              "end": 143
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "automation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "automated",
-                  "quote": "ands but also sacrifices in-context adaptability. Here we introduce TACTICL, an automated task-aware compression framework for tabular in-context learning models that jointly prunes transfo",
-                  "start": 191,
-                  "end": 380
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.11008",
-      "recordType": "preprint",
-      "title": "Templated or fully synthetic? Prompt construction as a confound in measuring LLM political stance beyond writing assistance",
-      "abstract": "Political stance detection in LLMs has long been dominated by closed-ended, multiple-choice political survey questions---originally designed for humans, and thus lacks the realism and nuance of human-AI interactions in the wild, while also being susceptible to sandbagging. The recent IssueBench framework substantially mitigates these limitations with templated prompts anchored in real-world chat logs. Given the rise in non-work-related use of GenAI assistants, we extend IssueBench beyond writing assistance to include two additional tasks, information seeking and opinion sharing. We argue that templated prompts still lack the nuance of real ones, especially for open-ended tasks, and remain recognisable as evaluation artefacts. We propose the use of fully synthetic (LLM-generated) prompts, produced under detailed instructions with real prompts as seeds. We assess the ecological validity of real, templated, and LLM-generated prompts in a small-scale study covering 3 highly contested policy issues and 3 recent geopolitical conflicts. Human and LLM annotators rank LLM-generated prompts as no less realistic than real ones and clearly more realistic than templated ones, and find that they carry their intended intent and stance more clearly; the LLMs separate templated prompts from the other two far more sharply than the humans do. In a case study, templated and LLM-generated prompts yield systematically different stance estimates for the same model, most visibly under neutral framings, where templated prompts overstate the model's leaning in the direction encoded by the topic-and-stance text (filler) slotted into their templates.",
-      "doi": "10.48550/arxiv.2608.11008",
-      "externalIds": {
-        "openalex": "W7202266528",
-        "arxiv": "2608.11008"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.11008"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-11",
-      "firstPublicDate": "2026-08-11",
-      "onlineDate": null,
-      "topics": [
-        "Computational and Text Analysis Methods",
-        "Ethics and Social Impacts of AI",
-        "AI in Service Interactions",
-        "cs.CL",
-        "cs.CY"
-      ],
-      "keywords": [
-        "Politics",
-        "Realism",
-        "Geopolitics",
-        "Rank (graph theory)",
-        "Variety (cybernetics)",
-        "Yield (engineering)"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 3,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "human-AI",
-        "LLM",
-        "human-AI interaction"
-      ],
-      "authors": [
-        {
-          "id": "A5079179621",
-          "name": "Ilias Chalkidis",
-          "orcid": "https://orcid.org/0000-0002-0706-7772",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.11008",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:48.439Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-28T11:43:28.143Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:28.143Z",
-      "preferredVersionId": "arxiv:2608.11008",
-      "versions": [
-        {
-          "id": "arxiv:2608.11008",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.11008",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.11008v2"
-        },
-        {
-          "id": "openalex:W7202266528",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7202266528",
-          "doi": "10.48550/arxiv.2608.11008",
-          "url": "https://doi.org/10.48550/arxiv.2608.11008"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-253.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "sed-ended, multiple-choice political survey questions---originally designed for humans, and thus lacks the realism and nuance of human-AI interactions in the wild, while also being susce",
-              "start": 65,
-              "end": 251
-            },
-            {
-              "field": "abstract",
-              "term": "humans",
-              "quote": "sed-ended, multiple-choice political survey questions---originally designed for humans, and thus lacks the realism and nuance of human-AI interactions in the wild, while also being susce",
-              "start": 65,
-              "end": 251
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "Templated or fully synthetic? Prompt construction as a confound in measuring LLM political stance beyond writing assistance",
-              "start": 0,
-              "end": 123
-            },
-            {
-              "field": "abstract",
-              "term": "human-AI",
-              "quote": "ions---originally designed for humans, and thus lacks the realism and nuance of human-AI interactions in the wild, while also being susceptible to sandbagging. The recent IssueBench framew",
-              "start": 114,
-              "end": 302
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "Political stance detection in LLMs has long been dominated by closed-ended, multiple-choice political survey questions---originally de",
-              "start": 0,
-              "end": 134
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "GenAI",
-                  "quote": "pts anchored in real-world chat logs. Given the rise in non-work-related use of GenAI assistants, we extend IssueBench beyond writing assistance to include two additional tasks, informa",
-                  "start": 367,
-                  "end": 552
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "survey",
-                  "quote": "tion in LLMs has long been dominated by closed-ended, multiple-choice political survey questions---originally designed for humans, and thus lacks the realism and nuance of human-AI inter",
-                  "start": 22,
-                  "end": 208
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10646557/v1",
-      "recordType": "preprint",
-      "title": "The Claim-to-Action Gap: Measuring How Misinformation Turns False State into Tool Calls in Tool-Using LLM Agents",
-      "abstract": null,
-      "doi": "10.21203/rs.3.rs-10646557/v1",
-      "externalIds": {
-        "openalex": "W7202186750"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7202186750"
-      },
-      "venue": "Research Square",
-      "publicationDate": "2026-08-11",
-      "firstPublicDate": "2026-08-11",
-      "onlineDate": null,
-      "topics": [
-        "Misinformation and Its Impacts",
-        "Explainable Artificial Intelligence (XAI)",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "Misinformation",
-        "Action (physics)",
-        "Firewall (physics)",
-        "Cryptographic nonce",
-        "State (computer science)",
-        "Measure (data warehouse)",
-        "Surprise",
-        "Blocking (statistics)"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 2,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "LLM"
-      ],
-      "authors": [
-        {
-          "id": "A5139980897",
-          "name": "Mohammadreza Rashidi",
-          "orcid": "https://orcid.org/0009-0003-7136-7168",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.21203/rs.3.rs-10646557/v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:28.143Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:28.143Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-28T11:43:28.143Z",
-      "preferredVersionId": "openalex:W7202186750",
-      "versions": [
-        {
-          "id": "openalex:W7202186750",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7202186750",
-          "doi": "10.21203/rs.3.rs-10646557/v1",
-          "url": "https://doi.org/10.21203/rs.3.rs-10646557/v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-253.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "p: Measuring How Misinformation Turns False State into Tool Calls in Tool-Using LLM Agents",
-              "start": 22,
-              "end": 112
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": false
       }
     }
   ]

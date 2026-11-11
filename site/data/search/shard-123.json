@@ -1,7 +1,55 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-10T13:31:15.770Z",
+  "generatedAt": "2026-11-11T12:45:31.251Z",
   "documents": [
+    {
+      "id": "arxiv:2608.23095",
+      "abstract": "Media bias detection relies on definitions and examples that specify what counts as bias, yet these specifications often vary across datasets or remain implicit, even when given the same name. Such variation makes it unclear whether models trained for the same bias category learn the same construct or different phenomena, a problem largely overlooked in prior work. We examine how definition choice affects bias annotation in a between-subjects experiment with 354 participants and a parallel evaluation with four LLMs. Participants and models rate six news articles across four bias categories using definitions that vary in conceptual framing and elaboration. Across 8,496 human and 28,800 LLM ratings, we find that the conceptual target of a definition drives annotation divergence, while construct-preserving elaboration does not: conceptual framing significantly shifts annotations for humans and does so even more strongly for LLMs. We discuss implications for construct specification in annotation protocols and prompt-based measurement, and consider how definitional sensitivity may propagate to downstream classification beyond media bias. We also release MUDD, the Multi-Definition Bias Detection Dataset.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.24949",
+      "abstract": "Reinforcement learning (RL) post-training has emerged as a powerful framework for enhancing the capabilities of large language models (LLMs), enabling impressive reasoning, math, and coding capabilities. Yet for many researchers and practitioners, the principles behind classical RL remain a \"black box\". In this work, we deconstruct the RL post-training algorithm, investigating each step to clarify what is actually happening beneath the surface. By isolating the mechanics of RL with Verifiable Rewards in a controlled and simplified environment, we examine how RL outcomes are shaped by the base model's prior distribution, the granularity of the reward signal, the diversity of the prompt distribution, and model scale. We use the entropy of the policy's output distribution as a lens to compare the distributions learned through pretraining, SFT, and RL post-training, revealing how each stage shapes model certainty. Our investigation sheds light on how these choices interact to affect post-training success. For example, we show that the effect of so-called 'spurious rewards' depends on the prompt distribution used for post-training. We also provide insight into why the success of RL post-training depends on whether the base model already places sufficient probability mass on the desired behavior, linking it to the classical concept of exploration in RL. Ultimately, we provide this primer as a resource to those in the NLP community wishing to incorporate RL as a tool in their toolbox.",
+      "topics": [
+        "Topic Modeling",
+        "Reinforcement Learning in Robotics",
+        "Artificial Intelligence in Healthcare and Education",
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Reinforcement learning",
+        "Language model",
+        "Through-the-lens metering",
+        "Entropy (arrow of time)",
+        "Verifiable secret sharing",
+        "Granularity",
+        "Coding (social sciences)",
+        "Bridging (networking)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.22796",
+      "abstract": "Multi-speaker automatic speech recognition (MSASR) aims to jointly predict content transcriptions, speaker identities, and timestamps, thereby addressing the key question of \"who spoke what and when\" and holds substantial practical value in real-world multi-speaker scenarios. However, MSASR still encounters considerable challenges in the presence of fast turn transitions, overlapping speech, and complex, diverse multi-speaker scenarios. In this work, we propose DiaScriber, an end-to-end multi-speaker diarization and transcription model built on a speech large language model. We first construct diverse data pipelines to cover a wide variety of multi-speaker scenarios and their complexities, including validation and refinement, turn-transition and overlapping-speech simulation, and multimodal annotation. Furthermore, DiaScriber is developed based on the pretrained version of Qwen3.5-Omni through a three-stage training strategy involving continual pretraining, supervised fine-tuning, and reinforcement learning. Experiments show that DiaScriber achieves superior performance over comparison methods across extensive multi-speaker scenario test sets and demonstrates outstanding generalization ability in unseen multi-speaker scenarios.",
+      "topics": [
+        "Speech Recognition and Synthesis",
+        "Speech and Audio Processing",
+        "Emotion and Mood Recognition"
+      ],
+      "keywords": [
+        "Transcription (linguistics)",
+        "Speaker diarisation",
+        "Generalization",
+        "Construct (python library)",
+        "Variety (cybernetics)",
+        "Joint (building)",
+        "Key (lock)"
+      ]
+    },
     {
       "id": "arxiv:2608.23706",
       "abstract": "A large language model (LLM) trained on synthetic limit order book (LOB) data achieves near perfect scores in generating valid sequences of LOB events. However, the LLM's implicit world model fails to learn the state of the LOB. This deficiency leads to biased estimates and spurious predictability in using the LLM to forecast future LOB events. Our analysis uses novel tests of an LLM's world model, extending prior work from deterministic settings to the stochastic dynamics needed for the LOB.",
@@ -3659,64 +3707,6 @@
         "Narrative review",
         "Therapeutic window",
         "Metagenomics"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21500",
-      "abstract": "Prompt injection is listed as the \\#1 threat to AI agents. When an agent accesses external data from websites, files, or emails, an attacker may inject a prompt into the data, saying, \"Ignore all prior instructions and perform .\" To prevent arbitrary manipulation of agents, defenders try to train secure LLMs, which, however, still suffer from near 100% attack success rates (ASRs) against adaptive prompt injections. We note that this is because existing defensive finetuning recipes rely on sequence-level feedback signals (in DPO or GRPO). Treating an entire output equally prevents the model from learning precisely which output tokens are insecure. In this paper, we propose Secure On-Policy Distillation (SecOPD) that provides token-level feedback to guide defensive fine-tuning. The LLM receives an injected sample and produces a rollout, whose tokens are scored by the initialization model given the corresponding clean input. With more fine-grained training signals, our defended Qwen3.6-27B achieves a 9.0% ASR against the SoTA PISmith adaptive prompt injections, compared to 94.0% for the prior SoTA, Meta-SecAlign. The obtained security generalizes to domains completely unseen in training: in agentic tool calling, SecOPD achieves a 4.7% ASR compared to 5.5% for Meta-SecAlign. Code and the model are available at https://github.com/pppyb/SecOPD and https://huggingface.co/pybbb/Qwen3.6-27B-SecOPD.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Security and Verification in Computing",
-        "Advanced Malware Detection Techniques",
-        "cs.CR",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Initialization",
-        "Code (set theory)",
-        "Sample (material)",
-        "Control theory (sociology)",
-        "Distillation"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.20916",
-      "abstract": "Vision foundation models (VFMs) offer strong generalization capabilities for domain-adaptive object detection (DAOD). However, existing VFM-based methods overlook the spatial-scale discrepancy between teacher and student feature maps, resulting in semantic incompatibility that weakens both feature alignment and pseudo-label learning. Moreover, domain shift can cause source-trained VFM teachers to miss target-domain objects, limiting the quality of their pseudo-labels. To address these issues, we propose the Semantic Localization-Enhanced Teacher (SLE-T), a semantically compatible knowledge-distillation framework built around a lightweight SLE Adapter for DINOv2. SLE Adapter injects pretrained local-texture priors into DINOv2 to improve cross-domain recognition and reformulates its features into dense representations that are spatially and semantically compatible with the student detector. SLE-T transfers the resulting teacher knowledge through either pseudo-label learning or feature alignment. We instantiate SLE-T with DINOv2-B and DINOv2-L (the ViT-B and ViT-L variants) and compare them with the larger DINOv2-G teacher. Extensive experiments on three DAOD benchmarks demonstrate that our method achieves state-of-the-art performance, and ablation studies confirm the importance of teacher-student semantic compatibility. Notably, SLE-T with DINOv2-B produces competitive or superior pseudo-labels using approximately one-quarter of the training time of DINOv2-G and substantially less GPU memory, demonstrating efficient VFM knowledge transfer under limited computational resources.",
-      "topics": [
-        "Advanced Neural Network Applications",
-        "Domain Adaptation and Few-Shot Learning",
-        "Multimodal Machine Learning Applications"
-      ],
-      "keywords": [
-        "Feature (linguistics)",
-        "Object detection",
-        "Generalization",
-        "Semantic feature",
-        "Adapter (computing)",
-        "Limiting",
-        "Feature learning",
-        "Domain (mathematical analysis)",
-        "Transfer of learning",
-        "Cognitive neuroscience of visual object recognition"
-      ]
-    },
-    {
-      "id": "doi:10.1177/10711813261475226",
-      "abstract": "UX heuristic evaluation is a core human factors method for assessing interface designs, but expert-led approaches are constrained by expert availability and time demands. Although multimodal large language models can automate heuristic evaluation from screenshots, full automation raises concerns about inaccurate design interpretation, unreliable reasoning, and limited transparency. This study proposes a structured human-in-the-loop architecture that reframes heuristic evaluation as a problem of cognitive labor distribution. Two AI agents—the Design Representation Generator and the Heuristic Evaluator—collaborate with a human supervisor. The supervisor reviews and corrects intermediate design representations and challenges, contextualizes, or refines AI-generated UX issues through correction and adjustment loops. Across four Android mobile app task scenarios, the human-in-the-loop system was compared with a fully automated baseline using the same two-agent pipeline without human supervision. The human-in-the-loop system produced heuristic evaluation results that showed substantially greater alignment with human experts than those generated by the automated baseline.",
-      "topics": [
-        "Human-Automation Interaction and Safety",
-        "Usability and User Interface Design",
-        "Persona Design and Applications"
-      ],
-      "keywords": [
-        "Automation",
-        "Heuristic",
-        "Pipeline (software)",
-        "Heuristic evaluation",
-        "Task (project management)",
-        "Supervisor",
-        "Generator (circuit theory)",
-        "User interface"
       ]
     }
   ]
