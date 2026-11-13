@@ -1,7 +1,52 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.31096",
+      "abstract": "Large language models (LLMs) can drive scientific software through function calling, but free-form tool use is fragile on long, data-dependent processing chains. Models omit arguments, invent units, feed the previous artifact into the wrong input, and report completion without a verifiable product. We present GeoAgent, an agent system for seismic data processing built on Madagascar's roughly 1{,}965 command-line programs. GeoAgent exposes 54 operator agents (51 generated from a declarative specification), retrieves from an index of 1{,}937 operators, and encodes the processing flow as a nine-stage state graph. Four explicit contracts---named artifacts, input resolution, parameter takeover, and artifact validation---move everything the graph can determine out of the model's discretion. A deterministic geometry tool parses the self-describing SPS/RPS/XPS and SEG-Y headers, cross-checks eight consistency conditions, and reproduces the reference shell recipe exactly. The system runs in containers with session- and task-level isolation, bounded execution, and defenses against silent failures. On a 2-D land dataset, the nine-stage pipeline completes in about six to eleven minutes and yields a verified artifact at every stage, while retrieval reduces per-turn tool context from about 12k to 2k tokens. We report the design, deployment experience, and motivating failure modes.",
+      "topics": [
+        "Scientific Computing and Data Management",
+        "Artificial Intelligence Applications",
+        "Seismic Imaging and Inversion Techniques"
+      ],
+      "keywords": [
+        "LLM agents",
+        "seismic data processing",
+        "function calling",
+        "contract verification",
+        "state diagrams",
+        "Madagascar",
+        "tool retrieval",
+        "container isolation"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.30796",
+      "abstract": "Training large language models for complex reasoning tasks relies on two complementary signals: sparse, outcome-grounded reinforcement learning (RL) for correctness, and dense, token-level distillation for guidance. However, complementarity in supervision does not guarantee compatibility in optimization; imitation-focused distillation can conflict with the outcome-driven RL objective, and existing hybrids lack a principled resolution. We propose \\textbf{GIFT} (\\textbf{G}radient-\\textbf{I}nformed \\textbf{F}il\\textbf{T}ering for Distillation-Augmented Reasoning RL), a novel method that directly addresses the allocation problem of which teacher updates to apply. GIFT performs a token-level geometric analysis, decomposing the distillation gradient into a component \\textbf{parallel} to the RL gradient, which measures first-order conflict and provides a \\textbf{safety} filter, and a component \\textbf{orthogonal} to it, which quantifies novel directional guidance and provides a measure of \\textbf{value}. This decomposition yields a principled scoring rule to rank token-level guidance. We combine this with a progressive \\textbf{coverage annealing} schedule that shrinks the budget of tokens receiving distillation, ensuring that the most conflicting updates are discarded first while the most complementary ones are retained at full strength. This facilitates a smooth transition from dense, geometrically-filtered guidance to a pure, outcome-grounded objective at convergence. Extensive experiments on mathematical and logical reasoning benchmarks show that GIFT consistently outperforms strong baselines across multiple model scales, achieving relative gains of up to 9.5\\% on difficult mathematical reasoning tasks. Code: https://github.com/lilifree/GIFT",
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "keywords": [
+        "teacher-student distillation",
+        "gradient decomposition",
+        "large language model training",
+        "mathematical reasoning",
+        "logical reasoning"
+      ]
+    },
+    {
+      "id": "doi:10.1163/22134514-bja10124",
+      "abstract": "Abstract Risk-based artificial intelligence regulation is usually presented as a settlement between innovation and control. This article instead examines the institutional work that follows when legal systems turn risk into duties, records, review and remedies. It compares Regulation (EU) 2024/1689 with Viet Nam’s Law No. 134/2025/QH15, Decree No. 142/2026/ND-CP, Decision No. 33/2026/QD-TTg on high-risk artificial intelligence (AI) systems and Decree No. 134/2026/ND-CP in the intellectual-property field. The comparison shows that similar risk labels can produce different administrative effects. The EU AI Act is therefore treated not as a model to copy but as a demanding grammar of classification, verification, documentation, supervision, contestation and learning. Viet Nam’s 2026 instruments make the comparison concrete. The article reframes legal borrowing as institutional translation: accountable AI governance depends on procedures through which affected persons can move from harm to forum, evidence and remedy.",
+      "topics": [
+        "Digitalization, Law, and Regulation",
+        "Ethics and Social Impacts of AI",
+        "Law, AI, and Intellectual Property"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.48550/arxiv.2610.30557",
       "abstract": "LLM agents that act on live Web data must combine heterogeneous evidence, remember what they have done and improve from outcomes without weakening their own safeguards. We study this problem in autonomous investing, where every action is irreversible and based on untrusted Web content. We present Steward, a multi-agent LLM system that draws the boundary of self-evolution in its type system. First, nine role-specialised agents decide jointly: four analysts read news feeds, SEC filings, macroeconomic series and market data and emit typed reports, from which a Portfolio Manager sets target positions that a protected Risk Manager audits. Second, a seven-layer shared memory, assembled by code from the system's own record, gives each decision its position context, the market narrative, calibration and the agent's past decisions. Third, the system improves itself by review: code grades every trade and forecast nightly and writes the grades into memory, and each quarter a reflector proposes prompt learnings that a deterministic gate applies reversibly and replay of recorded inputs verifies. All three operate around an invariant core of order arithmetic, risk rules and discipline-agent prompts that no self-edit can reach. In a five-month live deployment (102 trading days, 1,632 LLM calls), the system contained a 24.6% sector drawdown to a 0.3% loss; in replay of its recorded inputs, a single model given the same raw data traded more and lost 1.35 points against the market over five days where the joint design showed no significant loss, and no injected instruction was followed; and a 2015-2026 backtest shows the core alone lowering the maximum drawdown under all 50 random entry policies. The reflector traced the dominant failure to its root cause, and the gate applied a learning that the agent adopted on trigger evenings and on no control evening. Code: https://github.com/yebof/quant-agent",
@@ -3302,47 +3347,6 @@
         "media companies",
         "Ecuador"
       ]
-    },
-    {
-      "id": "doi:10.54097/7v3qsn29",
-      "abstract": "The Manila Amendments to the STCW Convention set compliance requirements for seafarers’ maritime communicative competence; however, higher-vocational Maritime English assessment still relies mainly on summative final-term evaluation, with high oral-assessment costs and delayed feedback. Drawing on the Outcomes-Based Education (OBE) philosophy and formative assessment theory, and supported by generative AI and intelligent speech-judgment technology, this study constructs a three-dimensional evaluation indicator system and designs a human-AI collaborative assessment closed loop of “pre-class diagnosis, in-class dynamic monitoring, and post-class iterative feedback”. A 16-week quasi-experiment shows that this model significantly improves students’ maritime English communicative competence, with the largest gain in the oral dimension (18.7% improvement in the experimental class versus 5.3% in the control class), and enhances students’ learning initiative. The study also analyzes the validity defects and academic-integrity risks of AI-driven assessment and proposes human-AI collaborative verification mechanisms, providing practical references for curriculum assessment reform of higher-vocational Maritime English and for STCW-aligned talent training.",
-      "topics": [
-        "Student Assessment and Feedback",
-        "Artificial Intelligence in Education",
-        "English Language Learning and Teaching"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.53941/aim.2026.100011",
-      "abstract": "This study overviews the application of artificial intelligence (AI) in the prediction of biomarkers for non-small cell lung cancer (NSCLC). Different from recent reviews on AI-driven radiogenomics that adopt clinical or imaging-based classification, this work innovatively takes AI model architecture as the core classification framework. By analyzing multimodal data (mainly CT) and modeling paradigms (radiomics, deep learning and fusion models), it reveals the current research status centered on EGFR mutation prediction. In terms of technological evolution, prediction models are evolving from traditional radiomics to end-to-end learning, Transformer architecture and multimodal perception-driven deep learning paradigms. This study deeply analyzes the performance differences among different models, fills the application gaps in existing reviews, and provides an important benchmark reference for the clinical optimization of AI-assisted tools and the promotion of standardized precise diagnosis and treatment of NSCLC.",
-      "topics": [
-        "Radiomics and Machine Learning in Medical Imaging",
-        "AI in cancer detection",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": [
-        "non-small cell lung cancer",
-        "biomarker prediction",
-        "EGFR mutation prediction",
-        "radiomics",
-        "deep learning",
-        "multimodal fusion",
-        "computed tomography",
-        "transformer models",
-        "end-to-end learning",
-        "precision oncology"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23554468",
-      "abstract": "RESO International Magazine – October 2026 | Volume 02, Issue 08 The October 2026 issue of RESO International Magazine explores social resilience, global leadership, human values, artificial intelligence governance, social responsibility, and contemporary social challenges through diverse international perspectives. This multidisciplinary issue features contributions on motherhood, family relationships, love and sacrifice; human autonomy and algorithmic influence in the digital economy; domestic violence awareness and workplace advocacy; the lessons of humility, generosity, and resilience from nature; artificial intelligence governance and strategic risks in the Global South; the role of government in shaping social culture, cultural diversity, and the rule of law; and the importance of technological progress without losing our humanity. Bringing together perspectives on sociology, digital society, ethical leadership, gender-related concerns, public policy, social culture, and human development, this edition encourages critical reflection, informed dialogue, and responsible approaches to the challenges facing contemporary societies. Key topics covered Social resilience and global leadership Motherhood, family relationships, and emotional well-being Human autonomy, algorithms, and consumer behaviour Domestic violence awareness and workplace advocacy Nature, humility, generosity, and human values AI governance and the strategic risks facing the Global South Government, social culture, and the rule of law Ethical leadership, technological progress, and humanity Intended audience: Researchers, academics, students, sociologists, policymakers, technology and AI governance professionals, social advocates, and readers interested in social change, human values, and global challenges. Published by RESO Research Sociology Organization, RESO International Magazine provides a platform for knowledge exchange, interdisciplinary perspectives, social awareness, and thoughtful dialogue on issues shaping contemporary society. Publication details Publication: RESO International MagazineVolume: 02Issue: 08Publication date: October 2026Language: EnglishPublisher: RESO Research Sociology OrganizationPublication type: Magazine / PeriodicalOfficial website: https://www.resoresearch.org/reso-international-magazine Explore this issue for perspectives on social resilience, AI ethics, human autonomy, family life, domestic violence awareness, cultural governance, and responsible social progress.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Socio-political and Technological Issues",
-        "Social impacts of COVID-19"
-      ],
-      "keywords": []
     }
   ]
 }

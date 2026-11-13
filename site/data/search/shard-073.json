@@ -1,7 +1,52 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.08155",
+      "abstract": "Large language model (LLM)-based multi-agent systems (MAS) have become a promising paradigm for complex information-seeking and reasoning tasks by enabling collaborative problem solving among specialized agents. However, existing MAS frameworks tightly couple task reasoning with coordination operations, including task selection, role assignment, message routing, and context management. As interactions grow, using powerful LLMs for these bounded control decisions introduces substantial token overhead and latency, limiting the scalability of agentic Web services. In this paper, we investigate whether coordination can be decoupled from expensive reasoning without compromising collaborative performance. We propose S1-MAS, a token-efficient multi-agent framework based on System One-guided computational division of labor. S1-MAS assigns bounded coordination decisions to lightweight System One models while reserving open-ended reasoning for capable LLM workers. Specifically, a lightweight controller selects inspection conditions, chooses subsequent tasks, and determines termination, while a compact reader retrieves condition-relevant evidence from authorized sources to support these decisions. Through a decision-evidence loop, selected tasks dynamically determine worker roles and source access, enabling adaptive collaboration without task-specific training. Extensive experiments on seven diverse benchmarks demonstrate that S1-MAS achieves superior accuracy while substantially reducing the inference cost. Across individual comparisons with AgentVerse, DyLAN, and SelfOrg on seven benchmarks, S1-MAS reduces GPT-4o token consumption by 44.9%-97.2% and measured end-to-end latency by 37.8%-93.0%. These results highlight its potential for scalable and cost-effective agentic Web applications.",
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Natural Language Processing Techniques",
+        "AI-based Problem Solving and Planning"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1080/00223131.2026.2742550",
+      "abstract": "Monte Carlo particle transport codes are powerful tools, but their use requires substantial knowledge of input preparation, execution, and result analysis. In this study, we present a code-side strategy for applying existing AI assistants and AI agents to PHITS. Two complementary sets of AI-ready resources were prepared from manuals, lecture materials, sample inputs, utility information, and developer-curated cautions: a bundled knowledge base for retrieval-augmented generation (RAG)-based assistants and a compact agent reference for direct use by AI agents. The knowledge base was loaded into Gemini Notebook to provide conversational PHITS support, while the agent reference was combined with PHITS-specific policies and execution rules to enable AI agents to edit input files, execute calculations, inspect errors, analyze results, and assist with source-code modification and compilation. To evaluate the agent-driven workflow, five demonstration tasks were executed ten times with different AI agents and computing environments. The results showed that AI agents could handle complex PHITS workflows when appropriate resources and rules were provided. Practical lessons included precise prompts, human verification, well-documented sample files, explicit execution policies, and command-line-accessible tools. These findings support bundling AI-ready resources with particle transport codes to enable the use of general-purpose AI tools without requiring dedicated code-specific applications.",
+      "topics": [
+        "Artificial Intelligence Applications",
+        "Nuclear reactor physics and engineering",
+        "Scientific Computing and Data Management"
+      ],
+      "keywords": [
+        "AI agents",
+        "PHITS",
+        "Monte Carlo particle transport",
+        "retrieval-augmented generation",
+        "knowledge base",
+        "NotebookLM",
+        "codices",
+        "Claude",
+        "conversational AI assistant",
+        "AI-assisted workflows",
+        "prompt engineering",
+        "parameter optimization",
+        "interpretation of results",
+        "program compilation"
+      ]
+    },
+    {
+      "id": "doi:10.1021/acs.jcim.6c02128",
+      "abstract": "Abstract Force field models are one of the central pillars of molecular simulations. A large number of molecular force field models has been developed in the past decades─mostly published in scientific papers. Building machine-readable force field input files for simulation engines is a tedious and error-prone task. We developed a method for extracting and building force field files from publications using large language models (LLMs). We have tested the new method by extracting 114 force field models from 21 scientific publications. The studied force fields comprise 6–74 parameters that were automatically extracted, identified, annotated, and allocated. We have compared the performance of different LLMs, namely Gemini 2.5 Pro, Claude 4 Sonnet, Claude 3.7 Sonnet, Gemini 2.5 Flash, and GPT-4o. Overall, they yield similar performance─yet there are important differences in individual cases. The overall best performance was obtained by the Gemini 2.5 Pro LLM. The force field parameters were extracted and identified with an accuracy of 94.0% using the Gemini 2.5 Pro LLM. The new LLM-assisted extraction method drastically reduces the time required for building force field files. Nevertheless, human-in-the-loop verification is still indispensable.",
+      "topics": [
+        "Machine Learning in Materials Science",
+        "Computational Drug Discovery Methods",
+        "Topic Modeling"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.13140/rg.2.2.14834.06082",
       "abstract": "Recently Large Language Models (LLMs) and LLM-based agents increasingly need to incorporate knowledge acquired after pretraining, e.g., domain facts, user preferences, documents, and interaction experience. In-context learning (ICL) and ICL-based agent harness remain flexible, but they consume context capacity and incur repeated discretized encoding cost that grows with context length. \\textbf{In-parameter memory} offers a complementary substrate: reusable memory information is represented in model parameters, adapters, or other parameter-like objects that are composed into the forward pass at inference time. This survey focuses on methods that augment LLMs with such parametric memory at deployment: a memory-bearing parameter object is plugged into the forward pass during inference, whether it is acquired before or during deployment. We organize the landscape with two orthogonal axes: \\textbf{Parameter Placement}, which includes Embedding, Attention, FFN layers, or Hybrid when two or more layers are used; and \\textbf{Parameter Acquisition Time}, which distinguishes methods whose memory object is acquired during deployment (online) from those acquired before it (offline). We clarify boundaries, conduct comparisons, and discuss open directions in interference, safety, co-design with ICL, and recursive self-improvement.",
@@ -2913,52 +2958,6 @@
         "provenance tracking",
         "large language models"
       ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.05863",
-      "abstract": "High-quality child care in early life is a critical determinant of children's growth and development. Research on child care quality has been constrained by fragmented, non-research-friendly, and privacy-bound datasets. We present CCQ (Child Care Quality), a large-scale, de-identified dataset for applied data science research at the intersection of AI and early childhood health. CCQ integrates 59,372 child care provider records across 12 U.S. states, covering diverse provider types as well as data schemas. To ensure research utility while protecting privacy, we implement an automated, LLM-based curation pipeline that anonymizes, cleans, and standardizes raw state records into two complementary releases: a cleaned textual release and a fully preprocessed tabular release. We also benchmark traditional machine learning models, tabular foundation models, and language models on quality rating prediction and important features analytics. Within a state, tabular classifiers on the preprocessed tables perform best. Across states, zero-shot transfer is near chance, but modest target-state supervision recovers most of the within-state performance, and pretraining on other states benefits finetuned language models. We release both datasets with all code to accelerate AI-driven research on child care quality and ultimately improve children's health and development.",
-      "topics": [
-        "Early Childhood Education and Development",
-        "Data Quality and Management",
-        "Artificial Intelligence in Healthcare"
-      ],
-      "keywords": [
-        "child care quality",
-        "childcare workers",
-        "early childhood health",
-        "de-identification",
-        "tabular foundation models",
-        "language models",
-        "zero-shot transfer",
-        "child development"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.06238",
-      "abstract": "We investigate the use of formal methods to provide tight and sound generalization bounds for learning algorithms. By casting the traditional notion of algorithmic stability as a specification to be verified, we demonstrate that recent advances in reachability analysis can yield provable bounds on the generalization of a given model and algorithm on a sample dataset. As sample-specific algorithmic stability is insufficient to bound the usual distributional notion of generalization, we develop a novel concentration inequality to connect the sample-specific results of formal certification algorithms to the required distributional analysis for bounding the expected generalization gap. The resulting framework enables the analysis of prior generalization bounds to extend far beyond their original restrictive assumptions. Our approach computes sound bounds on the expected generalization gap in a constant number of algorithm runs without making any analytical assumptions on the algorithm; to achieve non-vacuous bounds we only require that the certified reachable parameter set is bounded --- a condition that we do not assume but formally verify. In practice, we demonstrate that our framework provides formal generalization guarantees that are orders of magnitude tighter than alternative sound computational approaches at scales ranging from toy datasets to fine-tuning classification heads on top of modern large language models. While we implement certification-enhanced versions of several well-known stability results, future extensions of our approach will enable tighter bounds and enhanced practical adoption across the spectrum of modern generalization bounds.",
-      "topics": [
-        "Machine Learning and Algorithms",
-        "Stochastic Gradient Optimization Techniques",
-        "Formal Methods in Verification"
-      ],
-      "keywords": [
-        "generalization bounds",
-        "algorithm stability",
-        "formal verification",
-        "reachability analysis",
-        "concentration inequalities",
-        "large language models"
-      ]
-    },
-    {
-      "id": "doi:10.21741/9781644904398-10",
-      "abstract": "Corrosion is a significant industrial problem that influences the quality, safety, and cost efficiency of engineering systems in the global context. Oil and gas industries, marine, chemical processing, power generation, transport, and manufacturing industries are continually experiencing the degradation of materials due to chemical and electrochemical interactions and even environmental interactions. The effects of corrosion include breakages and loss of production, high maintenance expenses, energy wastage and extreme safety risks. Due to more complex industrial systems and the more severe conditions under which they are operating, the traditional methods of corrosion control are no longer typically sufficient in most cases. As such, insight in issues of concern and emerging solutions in the prevention of corrosion have turned out to be vital in sustainable industry development. The anti-corrosion of industries is an issue which has some important challenges outlined in this book chapter. It is written on different kinds of corrosion like uniform corrosion, pitting corrosion, galvanic corrosion, stress corrosion cracking, erosion-corrosion; and microbiologically influenced corrosion. Mechanisms affecting the corrosion behaviour, which is temperature, humidity, aggressive chemical, mechanical stress and choice of materials, are also discussed. Besides these, the chapter also shows the shortcomings of methods used in traditional prevention which include; coating and inhibitors, cathodic protection as well as routine methods of maintenance. Additionally, the paper discusses the latest innovations that are transforming the management of corrosion in industries today. Techniques of enhancing protective coating, the use of nanotechnology in surface treatment, self-healing material, green corrosion inhibitors, smart sensors, real-time monitoring, artificial intelligence based on predictive maintenance are explored as possible solutions. These are technologies that enhance corrosion resistance, lower the cost of operation as well as improving the reliability of the equipment. This chapter finds that effective corruption prevention should entail a comprehensive approach that involves the combination of materials engineering, surface science, monitoring systems, and sustainable measures. With innovative solutions and proactive management strategies, industries can lean considerably towards lowering the losses associated with corrosion and enhance operational efficiency in the long run.",
-      "topics": [
-        "Corrosion Behavior and Inhibition",
-        "Structural Integrity and Reliability Analysis",
-        "Material Properties and Failure Mechanisms"
-      ],
-      "keywords": []
     }
   ]
 }

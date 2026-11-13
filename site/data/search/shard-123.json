@@ -1,7 +1,70 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "arxiv:2608.23663",
+      "abstract": "Aligning deployed language models requires knowing when their outputs can be trusted, yet on-device models now ship to hundreds of millions of devices with no server-side moderation, and the configuration developers can actually deploy is rarely audited independently. We present a reproducible reliability audit of the developer-accessible on-device foundation model, framed as an oversight question: can a user or a resource-constrained developer tell when the model is wrong? Red-teaming it on calibration, confident confabulation on false-premise questions, and over-refusal of benign prompts, we find a \\emph{task-asymmetric miscalibration}: its guardrails fail in opposite directions across tasks (confabulating on 69\\% of false premises while refusing 18\\% of entirely benign inputs), atop a self-reported confidence that is saturated and non-discriminative (AUROC 0.47; ECE 70, worst among comparable small models). Crucially, confident-correct and confident-wrong outputs are \\emph{surface-indistinguishable}: a classifier over 15 user-visible features separates them at AUROC only 0.55 (equivalence-confirmed), leaving no signal for oversight at inference time. No cheap single-generation signal flags these failures ($\\le$0.68 AUROC), whereas a black-box consistency wrapper requiring no model access recovers reliability (confident confabulation 75\\%$\\to$3\\%; selective accuracy 43\\%$\\to$83\\%) at a tunable cost. We contribute a model-agnostic audit protocol, a surface-indistinguishability test, and released code and frozen evaluation items as reusable infrastructure for auditing deployed models.",
+      "topics": [
+        "Security and Verification in Computing",
+        "Scientific Computing and Data Management",
+        "Software System Performance and Reliability",
+        "cs.SE",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Audit",
+        "Inference",
+        "Consistency (knowledge bases)",
+        "Reliability (semiconductor)",
+        "Classifier (UML)",
+        "Language model",
+        "Audit trail",
+        "Confabulation (neural networks)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.23903",
+      "abstract": "Visual foundation models are commonly adapted under the assumption that the appearance of incoming data may change while the semantic meaning of the prediction task remains fixed. In long-lived visual systems, however, taxonomies, policies, and concept definitions can themselves evolve, causing the same visual evidence to require a different interpretation. We study this setting as evolving semantic concept shift and introduce SemReWrite, a framework for selectively updating obsolete visual--semantic mappings while preserving knowledge that remains valid. SemReWrite represents changes between old and revised semantic specifications, combines semantic discrepancy with sparse revised supervision to localize affected visual regions, and uses an input-dependent low-rank rewriting mechanism together with structured semantic memory, preservation, and obsolete-decision suppression. We further introduce EvoShift-Bench, spanning ImageNet, iNaturalist, CUB-200-2011, and DomainNet, with semantic transitions including class split, merge, boundary revision, insertion, partial redefinition, recurrence, and mixed semantic--appearance shift. To explicitly evaluate selective semantic revision, we introduce Rewrite Accuracy (RA) and Preservation Accuracy (PA) for affected and unaffected regions, respectively, Obsolete Retention (OR) for measuring residual outdated semantic associations, and the Selective Revision Score (SRS), which jointly summarizes rewriting and preservation performance. Experiments show that SemReWrite achieves a stronger balance between learning revised semantics and retaining unaffected knowledge than prompt replacement, conventional fine-tuning, parameter-efficient adaptation, and continual-learning strategies.",
+      "topics": [
+        "Domain Adaptation and Few-Shot Learning",
+        "Generative Adversarial Networks and Image Synthesis",
+        "Multimodal Machine Learning Applications",
+        "cs.CV",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Semantics (computer science)",
+        "Rewriting",
+        "Class (philosophy)",
+        "Task (project management)",
+        "Semantic change",
+        "Semantic property",
+        "Semantic memory",
+        "Semantic similarity"
+      ]
+    },
+    {
+      "id": "arxiv:2608.23922",
+      "abstract": "Data mixing is a central design problem in large language model pretraining: given a fixed token budget, practitioners must decide how much data to allocate to each domain. Recent proxy-based methods address this problem by training small models on candidate mixtures, fitting a response model, and using the response to select mixtures for larger-scale training. We show that this workflow has the structure of a classical mixture experiment. Under this view, data domains are mixture components, token shares are component proportions, proxy-training runs are experimental design points, and validation loss defines a response surface over the probability simplex. We develop this formulation using sparse second-order Scheffé response-surface models and construct model-robust $\\mathcal{I}$-optimal designs for proxy data-mixing experiments. Using RegMix as an empirical case study, we demonstrate how the framework can both interpret observed mixture responses and design more efficient proxy experiments. The Scheffé analysis shows that domain value is strongly relational: several domains that are weak under additive effects become favourable through pairwise interactions, especially through combinations with web-derived text. The sparse Scheffé model preserves mixture rankings across model scales and remains competitive with a flexible machine-learning predictor while providing an explicit decomposition of additive and interaction effects. In a simulation study calibrated to observed proxy-training responses, model-robust $\\mathcal{I}$-optimal designs recover the relevant mixture ordering after removing about 25\\% of the original proxy runs. These results suggest that LLM data mixing should be treated not only as a prediction problem, but also as an experimental-design problem in which the proxy mixtures themselves can be chosen to improve statistical efficiency.",
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Computational and Text Analysis Methods",
+        "Machine Learning and Algorithms",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "keywords": [
+        "Pairwise comparison",
+        "Mixture model",
+        "Proxy (statistics)",
+        "Mixing (physics)",
+        "Workflow",
+        "Design of experiments",
+        "Experimental data",
+        "Security token"
+      ]
+    },
     {
       "id": "arxiv:2608.23095",
       "abstract": "Media bias detection relies on definitions and examples that specify what counts as bias, yet these specifications often vary across datasets or remain implicit, even when given the same name. Such variation makes it unclear whether models trained for the same bias category learn the same construct or different phenomena, a problem largely overlooked in prior work. We examine how definition choice affects bias annotation in a between-subjects experiment with 354 participants and a parallel evaluation with four LLMs. Participants and models rate six news articles across four bias categories using definitions that vary in conceptual framing and elaboration. Across 8,496 human and 28,800 LLM ratings, we find that the conceptual target of a definition drives annotation divergence, while construct-preserving elaboration does not: conceptual framing significantly shifts annotations for humans and does so even more strongly for LLMs. We discuss implications for construct specification in annotation protocols and prompt-based measurement, and consider how definitional sensitivity may propagate to downstream classification beyond media bias. We also release MUDD, the Multi-Definition Bias Detection Dataset.",
@@ -3651,62 +3714,6 @@
         "Position (finance)",
         "Cognitive neuroscience of visual object recognition",
         "Space (punctuation)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.21100",
-      "abstract": "While multimodal large language models (MLLMs) extend model capabilities beyond text, they also make safety alignment increasingly challenging. Multimodal safety alignment methods must address cross-modal jailbreaks, safety-awareness failures, and over-sensitive refusals. However, existing methods often rely on retraining or internal-state inspection, limiting their applicability to deployed closed-source MLLMs and motivating test-time safety alignment. We analyze this setting and identify two key obstacles, utility dominance and reasoning inertia, which cause models to overlook latent risks or follow malicious reasoning trajectories. Guided by these insights, we propose ReFrame, a training-free multimodal input reframing framework where two agents share a lightweight locally deployed MLLM: the evidence-generation agent constructs complementary risk and utility evidence, and the rewrite-and-routing agent converts it into a safe proxy prompt and image-routing decision before calling the downstream MLLM, without modifying it or accessing its internal information. Experiments across multiple MLLMs and benchmarks show that ReFrame improves jailbreak defense, safety awareness, and oversensitivity reduction while preserving multimodal utility.",
-      "topics": [
-        "Topic Modeling",
-        "Adversarial Robustness in Machine Learning",
-        "Multimodal Machine Learning Applications",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Cognitive reframing",
-        "Key (lock)",
-        "Inference",
-        "Limiting",
-        "Language model",
-        "Reuse"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.20709",
-      "abstract": "Transport resilience work is often split across separate data preparation scripts, network models, simulation tools, image inspection systems and reports. This fragmentation makes it difficult to move from an observation to a tested and reviewable decision. We introduce ResiliFlow, an open transport world model concept and an implemented platform for infrastructure resilience, response and recovery. The platform connects two workspaces. Disaster Transport Resilience Analysis provides six map-centred functions for critical-road and critical-area identification, recovery prioritisation, disruption routing, resilience testing and scenario simulation. AI-based Transport Infrastructure Perception and Decision Support organises street-level and satellite evidence, detects visible road, footpath and kerb conditions, and prepares these observations for human-reviewed intervention planning. Both workspaces share an eight-step cycle of perception, prediction, model development, verification, execution, decision, feedback and memory. Research Validation records assumptions and checks, while a local Assistant and an optional multi-provider large language model Copilot translate user questions into bounded calls to executable tools. We document the platform architecture, representative mathematical models, interface evidence and computer-vision learning results. Examples show accurate recognition across eight visible-condition classes, while compact error analysis demonstrates how difficult cases guide continued learning. ResiliFlow shows how transport models can become an inspectable, reusable and question-led system rather than a collection of disconnected analyses. The accompanying release is intended to support research collaboration, public scrutiny and extension under institutional review.",
-      "topics": [
-        "Infrastructure Resilience and Vulnerability Analysis",
-        "Disaster Management and Resilience",
-        "Evacuation and Crowd Dynamics"
-      ],
-      "keywords": [
-        "Resilience (materials science)",
-        "Executable",
-        "Interface (matter)",
-        "Emergency management",
-        "Perception",
-        "Grid",
-        "Disaster response",
-        "Public transport",
-        "Geographic information system"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202608.1555.v1",
-      "abstract": "The human microbiome has emerged as a fundamental determinant of drug metabolism, efficacy, and safety, expanding the traditional host-centered view of pharmacology. Beyond its established roles in nutrient metabolism, immune regulation, and maintenance of epithelial homeostasis, the microbiome functions as a metabolically active organ capable of transforming endogenous molecules, dietary compounds, xenobiotics, and therapeutic agents through an extensive repertoire of microbial enzymes and metabolites. These interactions influence virtually every stage of drug disposition by modifying pharmacokinetics, pharmacodynamics, bioavailability, therapeutic efficacy, and toxicity. This narrative review summarizes current knowledge of the composition and functional diversity of the human microbiome and examines the molecular mechanisms underlying host–microbe–drug interactions, including direct microbial biotransformation, regulation of intestinal barrier integrity, immune modulation, bile acid metabolism, and microbial control of hepatic drug-metabolizing pathways. We further discuss the impact of these mechanisms across multiple therapeutic areas, including oncology, neurological and psychiatric disorders, cardiovascular medicine, diabetes, metabolic diseases, and microbiome-dependent activation of natural products. Emphasis is placed on recent advances in cancer therapy, where the microbiome has emerged as a key determinant of responses to chemotherapy, immune checkpoint inhibitors, oncolytic viruses, and other immunotherapies. The review also highlights the bidirectional relationship between drugs and microbial communities, illustrating how pharmaceuticals reshape the microbiome while microbial ecosystems simultaneously influence therapeutic outcomes. Finally, we discuss emerging technologies, including multi-omics approaches, artificial intelligence, organ-on-chip models, and microbiome-targeted interventions, that are accelerating the integration of pharmacomicrobiomics into drug discovery and precision medicine. Collectively, current evidence supports recognizing the microbiome as an integral component of human pharmacology and a promising source of predictive biomarkers and therapeutic targets for the development of safer, more effective, and personalized treatment strategies.",
-      "topics": [
-        "Gut microbiota and health",
-        "Pharmacogenetics and Drug Metabolism",
-        "Metabolomics and Mass Spectrometry Studies"
-      ],
-      "keywords": [
-        "Microbiome",
-        "Human microbiome",
-        "Immune system",
-        "Drug",
-        "Narrative review",
-        "Therapeutic window",
-        "Metagenomics"
       ]
     }
   ]

@@ -1,7 +1,57 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "arxiv:2609.01867",
+      "abstract": "A major question in cognitive modeling concerns the behavioral alignment between large language models and humans across linguistic and non-linguistic tasks. Unlike standard LLMs, large reasoning models (LRMs) are optimized with reinforcement learning from verifiable rewards, encouraging correct solutions to reasoning tasks rather than preference-aligned responses. Recent work (de Varda et al., 2025) investigates the cost of thinking in humans and LRMs by comparing human reaction times with model reasoning traces across a range of reasoning tasks. We isolate this alignment by turning to abductive reasoning: unlike deductive tasks, its difficulty cannot be inferred from formal structure and offers no shortcuts a model could exploit to mimic effort without genuine search, providing firmer ground for empirical claims of shared effort. We find further evidence of alignment between LRM and human reasoning effort, as well as evidence that models and humans tend to make similar errors. Finally, we show that decoding methods that let models explore multiple reasoning paths increase alignment in reasoning cost between humans and LRMs across the three models tested.",
+      "topics": [
+        "Neurobiology of Language and Bilingualism",
+        "Language and cultural evolution",
+        "Language Development and Disorders",
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Abductive reasoning",
+        "Psychology of reasoning",
+        "Deductive reasoning",
+        "Verbal reasoning",
+        "Exploit",
+        "Spatial intelligence",
+        "Non-monotonic logic",
+        "Analytic reasoning",
+        "Visual reasoning",
+        "Opportunistic reasoning"
+      ]
+    },
+    {
+      "id": "doi:10.20944/preprints202609.0035.v1",
+      "abstract": "Autonomous agents require not only deliberate reasoning for unfamiliar situations but also the ability to convert repeatedly useful reasoning into efficient automatic behavior. However, existing LLM-based agents and knowledge-distillation approaches generally couple reasoning and learning through predefined training objectives or direct teacher--student supervision, leaving unclear how an agent can autonomously determine what should become learned behavior. This paper proposes Thought-Mediated Learning (TML), a framework that separates LLM-based deliberative thinking from an independent ML/DL background learning process. Thinking cannot directly update the automatic model; instead, it produces thought materials whose content and frequency determine what becomes available for learning. Repeated thinking implicitly strengthens important experiences, attention determines which factors are represented, jointly considered events may create spurious associations, and imagined experiences can provide learning materials before corresponding real events occur. Observed outcomes further generate corrective materials that revise previously learned automatic behavior. Experimental results show that TML achieves 96.67% hidden-pattern acquisition and 99.93% post-learning automatic accuracy, reaches 97.83% OOD (out-of-distribution) accuracy versus 9.50% for raw learning, and improves zero-real rare-case success to 59.38% while corrective learning raises final hidden-case success to 96.82%.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "AI-based Problem Solving and Planning",
+        "Artificial Intelligence in Games"
+      ],
+      "keywords": [
+        "Spurious relationship",
+        "Case-based reasoning",
+        "Causal reasoning",
+        "Task analysis",
+        "Cognition",
+        "Autonomous agent",
+        "Intelligent agent"
+      ]
+    },
+    {
+      "id": "arxiv:2609.00805",
+      "abstract": "LLM-based software systems increasingly require effective \"evals\" as quality gates in the development lifecycle. However, existing work typically addresses individual aspects of eval reliability rather than the full set of practical requirements. We present an end-to-end eval pipeline that combines eval checklist creation, with learned aggregation for checklist responses, to improve agreement across LLM judges and accuracy against human judgments. The framework additionally pro- vides self-consistency, explanations, and prediction uncertainty, and we empirically demonstrate its effectiveness.",
+      "topics": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.48550/arxiv.2609.01777",
       "abstract": "Seismology increasingly depends upon large data retrieval across multi-datacenter platforms. Yet, data procurement often demands domain expertise, user burden, and is difficult to reproduce. As archives continue to grow, translating scientific intent into structured workflows that operate across multiple repositories and produce high quality, AI ready data is becoming an increasingly urgent challenge. We present TREMORS (Text Referenced Event Mapping and Output Renderer for Seismographs), an agentic framework that uses large language model reasoning within a constrained execution graph to automate seismic data retrieval. TREMORS translates natural language queries into a structured intermediate schema, which drives execution through a constrained LangGraph workflow. Example workflows demonstrate support for both event-based and continuous waveform acquisition. The framework is designed to extend across heterogeneous multi-datacenter systems through a portable schema and modular workflow components. This work positions agentic workflows as the catalyst that will connect scientific intent with distributed seismic data systems, enabling a future of reproducible, data-driven inquiry while reducing the burden of routine acquisition tasks.",
@@ -3649,66 +3699,6 @@
         "Pattern recognition (psychology)",
         "Space (punctuation)",
         "Clinical Practice"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.29347",
-      "abstract": "Operators remain essential to Remotely Operated Vehicle (ROV) operation, yet often suffer from low situational awareness and high workload, both of which negatively affect safety. This paper presents a cognitive architecture consisting of an ontology and multiple Large Language Models (LLMs) to assist the operator at all stages of the mission. Each LLM is grounded with domain-specific information from the ontology and given a simple role to create a system that can support the operator at all stages of an operation. We are aiming to prove that using the two together will allow decisions to be grounded in the relevant domain knowledge, but also benefit from the reasoning capabilities of the LLM. Our framework determines if a mission is possible for a given Unmanned Underwater Vehicle (UUV), performs mission planning, and executes a given mission in simulation. The operator can be involved in planning and execution, ensuring the resulting plan is valid and that the vehicle behaves safely during execution. We compare different LLMs, Llama3, GPT-OSS, and Qwen2.5, to determine which are best suited to the different roles within our framework. We find that GPT-OSS performs best for feasibility assessment, planning, and execution, while Qwen2.5 is best suited to identifying mission types from natural language input.",
-      "topics": [
-        "Underwater Vehicles and Communication Systems",
-        "Maritime Navigation and Safety",
-        "AI-based Problem Solving and Planning",
-        "cs.RO"
-      ],
-      "keywords": [
-        "Situation awareness",
-        "Ontology",
-        "Operator (biology)",
-        "Domain (mathematical analysis)",
-        "Semantics (computer science)",
-        "Architecture",
-        "Plan (archaeology)",
-        "Process (computing)",
-        "Natural language"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.29255",
-      "abstract": "Artificial Intelligence-Generated Content (AIGC) services employ Generative AI (GenAI) models to automatically generate diverse content. Mobile AIGC networks host GenAI models on edge-located AIGC Service Providers (ASPs) to deliver low-latency and personalized AIGC services for mobile users. However, AIGC inference tasks typically occupy GPU memory until task completion, causing GPU memory exhaustion at serving ASPs and triggering out-of-memory failures rather than merely increasing service latency. Existing studies on AIGC task orchestration have largely overlooked GPU memory feasibility constraints. To address this issue, we develop a cooperative multi-agent orchestration framework, in which each edge node is equipped with a scheduling agent to route tasks to local ASPs or neighboring edge nodes. Since scheduling agents make decisions based only on local observations, while peer offloading couples their resource states and long-term utilities, we formulate the orchestration process as a cooperative Decentralized Partially Observable Markov Decision Process (Dec-POMDP). To solve the Dec-POMDP, we propose an \\underline{A}ttention-guided \\underline{M}ulti-\\underline{A}gent deep reinforcement learning algorithm with \\underline{Diff}usion policies (A-MADiff) under the centralized training with a decentralized execution paradigm. A-MADiff employs diffusion-based decentralized actors to generate multi-modal preferences over feasible orchestration actions, and an attention-guided centralized critic to estimate per-agent values from cross-agent states under GPU memory heterogeneity. Numerical results demonstrate that A-MADiff significantly improves the cumulative reward over the state-of-the-art baseline.",
-      "topics": [
-        "IoT and Edge/Fog Computing",
-        "Mobile Crowdsensing and Crowdsourcing",
-        "Opportunistic and Delay-Tolerant Networks"
-      ],
-      "keywords": [
-        "Orchestration",
-        "Reinforcement learning",
-        "Scheduling (production processes)",
-        "Task (project management)",
-        "Edge computing",
-        "Markov decision process",
-        "Inference",
-        "Node (physics)",
-        "Service (business)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.29378",
-      "abstract": "Arabic large language models must refuse harmful prompts without over-refusing benign or sensitive prompts, yet a single refusal rate hides this trade-off. We evaluate it using benign refusal B and harmful-prompt refusal H, where H measures refusal rather than harmful compliance. Across five Arabic-capable models and 130 runs on the full human-written AraSafe set, refusal-only supervised fine-tuning (SFT) collapses toward blanket refusal, whereas selected mixed-SFT configurations reach H = 90% to 93% at B = 14% to 23%; four selected configurations exceed the H = 90% target in all three runs, while Fanar does so in two of three. Direct Preference Optimization (DPO) and inference guards change B and H differently across models rather than acting as uniform upgrades. In a blinded 300-response audit, annotator binary-refusal agreement is 89.0% (kappa = 0.78); Qwen3Guard and Aya Expanse 32B reach 88.7% and 91.0% accuracy, respectively, with no conclusive paired difference. Selected SFT raises H on Arabizi for all five models, but none reaches 90%, showing only partial transfer from Modern Standard Arabic. Overall, the results support model-specific operating-point selection: set a deployment target and retain only interventions that improve it.",
-      "topics": [
-        "Topic Modeling",
-        "Natural Language Processing Techniques",
-        "Hate Speech and Cyberbullying Detection",
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Guard (computer science)",
-        "Software deployment",
-        "Empirical research",
-        "Set (abstract data type)",
-        "Inference",
-        "Arabic"
       ]
     }
   ]

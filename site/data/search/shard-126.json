@@ -1,7 +1,52 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "arxiv:2608.15165",
+      "abstract": "Large language model (LLM) agents can continually improve without parameter updates by converting historical experience into reusable procedural knowledge. However, existing methods often consolidate experience based on semantic similarity or LLM judgments, which may merge superficially related but behaviorally incompatible strategies and thereby degrade performance. To address the issue, we propose SkillCommit, an online skill evolution framework that continuously transforms experience into a hierarchical library of reusable skills. Each new experience is initially preserved as an instance-specific patch, retaining the behavior validated in its local context. As related skills accumulate, SkillCommit abstracts those sharing a common behavioral mechanism into higher-level skills. Specifically, for each incoming skill, embedding-based retrieval first identifies candidate related skills. Cross-instance replay and an LLM-based mechanism check determine whether these skills transfer across cases and share a common underlying mechanism. Candidates that pass both checks are abstracted into a higher-level skill and committed only if it preserves the validated behavior of all constituent skills. Experiments on RuleArena, OpenExempt and KOR-Bench demonstrate that SkillCommit consistently improves agent performance across diverse domains. Moreover, the learned skills transfer across model scales and families, enabling cross-model experience transfer.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.5281/zenodo.21957431",
+      "abstract": "Abstract: Scientific methods are commonly developed for classes of problems, allowing knowledge to transfer across structurally related cases. LLM-based agentic systems can execute scientific workflows, but their problem--method relationships remain implicit, leaving method selection dependent on generation and limiting the connections that can be transferred or discovered. We introduce GRAFT--ATHENA, an agentic framework whose expandable probabilistic structure encodes admissible problems and methods through semantic characteristics and dependencies. Graph factorization makes this structure tractable, while semantic fingerprints make scientific similarity measurable, allowing the framework to retain and learn from evaluated experience across problems. Across scientific families, it matched or exceeded expert baselines, attaining near-machine-precision losses, clinically consistent blood-rheology trends, and a high-order solver for flow over the Apollo Command Module. GRAFT--ATHENA also proposed a verifiable regularization strategy for ill-posed in vivo brain-flow reconstruction, developed a spectrally convergent physics-informed architecture, and derived machine-checked universal-approximation theorems for commonly used scientific machine-learning architectures. Scientific structure therefore enables transferable, extensible, and verifiable agentic discovery. Contents: The associated file contains a README.md file with specific instructions on how to run and reproduce the results if the paper.",
+      "topics": [
+        "Bayesian Modeling and Causal Inference",
+        "Model Reduction and Neural Networks",
+        "Advanced Multi-Objective Optimization Algorithms"
+      ],
+      "keywords": [
+        "Probabilistic logic",
+        "Closeness",
+        "Metric (unit)",
+        "Evolutionary algorithm",
+        "Sequence (biology)",
+        "Embedding",
+        "Bayesian probability"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.15224",
+      "abstract": "Reliable post-hoc evaluation asks whether already generated text satisfies a target criterion after generation. In this paper we study a focused frozen-embedding setting using principle-evaluation proxy tasks: toxicity detection, fine-grained emotion categorization, and ordinal review rating. General-purpose text embeddings are widely deployed for such tasks, but broad semantic similarity can place semantically similar yet task-distinct examples in overlapping regions of the representation space. We introduce Prototype-Guided Contrastive Learning (PGCL), a prototype-guided geometric regularization module built on top of frozen text embeddings. The module combines a semantic stream, a prototype-anchor attention stream, supervised contrastive learning, offset-based prototype-margin regularization, and stream regularization to produce a compact task-adapted representation without updating the base encoder. Controlled experiments show that PGCL improves over raw frozen embeddings on all three datasets and gives the clearest direct-baseline margin on AmazonReviews, while remaining competitive with strong direct frozen metric-learning baselines on GoEmotions and ToxicComment. We also add supervised residual-adapter, encoder-LoRA, full fine-tuning, objective ablation, sensitivity, and fully logged few-shot LLM protocol diagnostics to define the boundary of the claim. The theoretical analysis is revised as a sufficient-condition account for prototype-margin behavior under explicit assumptions in the prototype-mapping space, rather than as an unconditional training or final-embedding separation guarantee.",
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Topic Modeling",
+        "Sentiment Analysis and Opinion Mining"
+      ],
+      "keywords": [
+        "Pairwise comparison",
+        "Regularization (linguistics)",
+        "Structuring",
+        "Margin (machine learning)",
+        "Representation (politics)",
+        "Semantic similarity",
+        "Similarity (geometry)",
+        "Feature learning"
+      ]
+    },
     {
       "id": "arxiv:2608.14953",
       "abstract": "Recent advances in Large Language Models (LLMs) have opened opportunities to apply high-level code transformations to the field of code optimization, and it has since emerged as one of the most fundamental tasks for LLMs to perform; however, at present, LLMs struggle to apply wide-ranging code optimization tasks due to both the complexity of the code and the inability to independently verify the correctness of the transformations. In this paper, we present the Trusted LLM (T-LLM) Compiler, which proposes an advancement in compiler technology through a collaborative effort involving high-level LLM code transformations, traditional compilers, and verification tools. Experimental results reveal that it can significantly improve code correctness when tested on a set of PolyBench/C benchmarks. Our approach facilitates iterative code optimization efforts with verification strategies that enable corrective actions. Through this approach, T-LLM Compiler achieves code optimization accuracy of up to 83.3% and a speedup of up to 16.1\\% on the PolyBench/C benchmarks, with the transformed code reaching an average of 26.7% speedup wrt standard baselines. Additionally, we release the project's source code to the open-source community.",
@@ -3696,65 +3741,6 @@
         "Workflow",
         "Negative feedback",
         "Feedback loop"
-      ]
-    },
-    {
-      "id": "arxiv:2608.11705",
-      "abstract": "Aligned large language models (LLMs) are expected to exhibit safety behavior based on the content of the user request: they should refuse unsafe requests and comply with safe ones. However, we show that the same request can elicit substantially different safety decisions under different traits assigned in the system prompt, a failure mode we call trait-induced safety variation. To measure this failure, we introduce refusal-based metrics: Trait-Induced Deviation measures dataset-level deviation from the no-trait baseline, while Trait-Induced Flip Rate measures whether the same request receives different safety decisions across traits. We then provide a representation-level analysis of the mechanism behind trait-induced safety shifts and find that traits perturb the model's safety representations within a low-dimensional subspace. To achieve trait-invariant safety, where safety behavior remains stable across traits, we introduce Trait-Invariant Safety Tuning (TIST), a simple yet effective self-distillation framework that aligns an LLM's trait-conditioned behavior with its no-trait behavior. Guided by our analysis, we further propose Trait-Subspace Neutralization (TraSN), an instantiation of TIST, which enforces invariance only within the identified trait subspace. Experiments show that TraSN improves trait-invariant safety and strengthens harmful-request safety while preserving general capability. Our results highlight traits as an important factor in LLM safety and robust model behavior.",
-      "topics": [
-        "Topic Modeling",
-        "Adversarial Robustness in Machine Learning",
-        "Natural Language Processing Techniques",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Trait",
-        "System safety",
-        "Simple (philosophy)",
-        "Safety behaviors",
-        "Poison control",
-        "Safety culture",
-        "Measure (data warehouse)"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s00146-026-03133-3",
-      "abstract": null,
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Artificial Intelligence in Healthcare and Education",
-        "AI in Service Interactions"
-      ],
-      "keywords": [
-        "Perception",
-        "Thematic analysis",
-        "Health care",
-        "Corporate governance",
-        "Empirical research",
-        "Qualitative research",
-        "Public health",
-        "Qualitative property"
-      ]
-    },
-    {
-      "id": "arxiv:2608.12104",
-      "abstract": "The increasing deployment of autonomous, agentic AI systems challenges traditional accountability mechanisms. Existing research predominantly frames AI accountability gaps as barriers that can be overcome through better standards, transparency, and institutional reform. We argue that this framing is insufficient: certain configurations of actors, systems, and institutions render AI accountability conceptually unachievable regardless of effort. We introduce the concept of constitutive AI unaccountability to capture these configurations. Through a three-stage qualitative study comprising a concept-centric literature analysis, a secondary analysis of 27 expert interviews with AI professionals from technical, legal, and sociotechnical backgrounds, and an illustrative framework application to the open-source agentic AI system OpenClaw, we identify nine categories and 20 themes of constitutive AI unaccountability. These are organized across structural, technological, and normative clusters and reinforce one another through eight directed interdependencies. Our framework is operationalized as a diagnostic instrument of 20 questions, which detected 17 of 20 conditions when applied to OpenClaw, including an inverted anthropomorphism configuration in which the AI agent was the only identifiable actor. We contribute a reframing of AI unaccountability as a constitutive property of sociotechnical systems, an extension of the four barriers to accountability, and a practical instrument for identifying accountability voids in specific AI deployments.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Law, AI, and Intellectual Property",
-        "Artificial Intelligence in Law",
-        "cs.CY",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Accountability",
-        "Sociotechnical system",
-        "Framing (construction)",
-        "Cognitive reframing",
-        "Normative",
-        "Operationalization",
-        "Software deployment",
-        "Property (philosophy)"
       ]
     }
   ]

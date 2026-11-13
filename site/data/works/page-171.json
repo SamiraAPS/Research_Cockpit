@@ -1,12 +1,760 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "page": 171,
   "pageSize": 100,
-  "totalItems": 40515,
+  "totalItems": 40518,
   "totalPages": 406,
   "nextPage": "./page-172.json",
   "items": [
+    {
+      "id": "openalex:W7219155420",
+      "recordType": "preprint",
+      "title": "TACO: Ternary Absolute-max Column-wise One-sparse Optimizer for LLM Fine-Tuning",
+      "abstract": "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on modern GPUs. Existing approaches either compress optimizer state, abandon first-order gradients, or change the update geometry while retaining dense state. The recently introduced Muon optimizer reduces optimizer memory through matrix-valued updates. Still, its geometry differs from AdamW and can lead to performance degradation when fine-tuning AdamW-pretrained models. To reduce optimizer memory without sacrificing accuracy or computational efficiency in LLM fine-tuning, we propose Ternary Absolute-max Column-wise One-sparse optimizer, or TACO, which follows Muon's operator-norm steepest-descent view but takes the geometric route further. TACO computes the exact steepest-descent direction under a dimension-normalized $1\\to1$ operator norm by selecting the sign of the largest magnitude entry in each column of two-dimensional weight matrices. This retains first-order gradients while making optimizer state memory nearly negligible. Our practical TACO optimizer maintains only a small set of low precision gradient components per column, reducing persistent optimizer state by $174\\times$ relative to AdamW8bit (from 27.7 GB to 0.16 GB) and peak training memory by $2.9\\times$ (from 80.6 GB to 27.5 GB) on OPT-13B, while achieving comparable accuracy and runtime. TACO further enables full-parameter fine-tuning of 30-32B-parameter models on a single 80 GB H100 GPU across multiple model families and tasks.",
+      "doi": null,
+      "externalIds": {
+        "openalex": "W7219155420"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7219155420"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-10-01",
+      "firstPublicDate": "2026-10-01",
+      "onlineDate": null,
+      "topics": [
+        "Stochastic Gradient Optimization Techniques",
+        "Topic Modeling",
+        "Domain Adaptation and Few-Shot Learning",
+        "Parallel Computing and Optimization Techniques",
+        "Big Data and Digital Economy",
+        "Machine Learning in Materials Science"
+      ],
+      "keywords": [
+        "LLM fine-tuning",
+        "full-parameter fine-tuning",
+        "sparse optimization",
+        "Muon optimizer",
+        "AdamW",
+        "gradient compression"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 4,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5156489867",
+          "name": "Jichao Jiang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5138642489",
+          "name": "Cristian McGee",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5000183128",
+          "name": "El Houcine Bergou",
+          "orcid": "https://orcid.org/0000-0001-8685-6974",
+          "affiliations": []
+        },
+        {
+          "id": "A5103070466",
+          "name": "HanQin Cai",
+          "orcid": "https://orcid.org/0000-0002-2937-1986",
+          "affiliations": []
+        },
+        {
+          "id": "A5074006719",
+          "name": "Aritra Dutta",
+          "orcid": "https://orcid.org/0000-0001-6994-1659",
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2610.02199",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-04T11:08:31.033Z",
+      "firstSeenRunId": "ingestion-2026-10-04T11:07:56.290Z",
+      "retrievedAt": "2026-10-07T11:48:56.717Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-07T11:48:56.717Z",
+      "preferredVersionId": "openalex:W7219155420",
+      "versions": [
+        {
+          "id": "openalex:W7219155420",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7219155420",
+          "doi": null,
+          "publicationDate": "2026-10-01",
+          "url": "https://arxiv.org/abs/2610.02199"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-171.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "operator",
+              "quote": "ry Absolute-max Column-wise One-sparse optimizer, or TACO, which follows Muon's operator-norm steepest-descent view but takes the geometric route further. TACO computes the exact steepest-",
+              "start": 640,
+              "end": 828
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "TACO: Ternary Absolute-max Column-wise One-sparse Optimizer for LLM Fine-Tuning",
+              "start": 0,
+              "end": 79
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on mod",
+              "start": 0,
+              "end": 151
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on mod",
+              "start": 0,
+              "end": 151
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "operator",
+                  "quote": "ry Absolute-max Column-wise One-sparse optimizer, or TACO, which follows Muon's operator-norm steepest-descent view but takes the geometric route further. TACO computes the exact steepest-",
+                  "start": 640,
+                  "end": 828
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on mod",
+                  "start": 0,
+                  "end": 151
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "-tuning AdamW-pretrained models. To reduce optimizer memory without sacrificing accuracy or computational efficiency in LLM fine-tuning, we propose Ternary Absolute-max Column-wise One-spa",
+                  "start": 487,
+                  "end": 675
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1016/j.mfglet.2026.08.073",
+      "recordType": "publication",
+      "title": "Task Analysis: A Review Proposing an Optimized Task Sequence Framework to Enhance Learning and Skill Transfer",
+      "abstract": "Industry 4.0 has reshaped assembly and maintenance work, demanding precision, adaptability, and ergonomic awareness that traditional training methods struggle to achieve. Although research has addressed task sequencing, ergonomic risks, and digital instruction, these areas often remain fragmented, lacking integration into a unified, human-centered framework. To address this gap, this study reviewed 37 peer-reviewed articles across manufacturing, ergonomics, and training to identify recurring task patterns, ergonomic risk factors, and technological trends. The analysis revealed coordinated task sequences that varied by industry context and operation type. Ergonomic assessments consistently linked awkward postures, repetitive handling, and forceful exertions to elevated musculoskeletal risks, with novices more vulnerable than experts. Extended reality technologies and motion sensing have emerged as promising tools, although most systems still provide feedback post-task rather than in real-time. Building on these insights, this study proposes a mixed reality (MR) training framework that integrates optimized task sequences with motion capture-based ergonomic monitoring. A pilot implementation demonstrated improvements in learning consistency, postural stability, and procedural accuracy. By combining immersive guidance with ergonomic evaluation, this research advances a scalable approach for adaptive, safe, and skill-focused training systems aligned with Industry 4.0 and the human-centered goals of Industry 5.0. © 2026 The Authors. Published by ELSEVIER Ltd. This is an open access article under the CC BY-NC-ND license ( https://creativecommons.org/licenses/by-nc-nd/4.0 ) Peer-review under responsibility of the scientific committee of the NAMRI|SME.",
+      "doi": "10.1016/j.mfglet.2026.08.073",
+      "externalIds": {
+        "openalex": "W7220450288"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7220450288"
+      },
+      "venue": "Manufacturing Letters",
+      "publicationDate": "2026-10-01",
+      "firstPublicDate": "2026-10-01",
+      "onlineDate": null,
+      "topics": [
+        "Human Resource Development and Performance Evaluation",
+        "Innovative Education and Learning Practices",
+        "Manufacturing Process and Optimization"
+      ],
+      "keywords": [
+        "task analysis",
+        "task sequence optimization",
+        "skill transfer",
+        "learning"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…sk Analysis: A Review Proposing an Optimized Task Sequence Framework to Enhance Learning and Skill Transfer",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…based ergonomic monitoring. A pilot implementation demonstrated improvements in learning consistency, postural stability, and procedural accuracy. By combining immersive guidance with ergonomic evaluation, this research advances a scalable approach for adaptive, safe, and skill-focused training systems aligned with Ind…",
+              "weight": 2
+            },
+            {
+              "source": "keyword",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "learning",
+              "weight": 0
+            },
+            {
+              "source": "external_topic",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Innovative Education and Learning Practices",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risk",
+              "sourceValue": "…struggle to achieve. Although research has addressed task sequencing, ergonomic risks, and digital instruction, these areas often remain fragmented, lacking integration into a unified, human-centered framework. To address this gap, this study reviewed 37 peer-reviewed articles across manufacturing, ergonomics, and trai…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:learning": 6,
+        "topic:safety": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "learning",
+        "ergonomics",
+        "risk"
+      ],
+      "authors": [
+        {
+          "id": "A5092825626",
+          "name": "Nishat B. Alam",
+          "orcid": "https://orcid.org/0009-0003-9441-5687",
+          "affiliations": []
+        },
+        {
+          "id": "A5140314016",
+          "name": "Md Hadisur Rahman",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5031397144",
+          "name": "Sina Samimi",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5076218708",
+          "name": "Thorsten Wuest",
+          "orcid": "https://orcid.org/0000-0001-7457-7927",
+          "affiliations": []
+        },
+        {
+          "id": "A5002970133",
+          "name": "Ramy Harik",
+          "orcid": "https://orcid.org/0000-0003-1452-9653",
+          "affiliations": []
+        },
+        {
+          "id": "A5037352413",
+          "name": "JuHyeong Ryu",
+          "orcid": "https://orcid.org/0000-0001-5836-9968",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1016/j.mfglet.2026.08.073",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-08T12:03:59.164Z",
+      "firstSeenRunId": "ingestion-2026-10-08T12:03:48.813Z",
+      "retrievedAt": "2026-10-08T12:03:59.164Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-08T12:03:59.164Z",
+      "preferredVersionId": "openalex:W7220450288",
+      "versions": [
+        {
+          "id": "openalex:W7220450288",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7220450288",
+          "doi": "10.1016/j.mfglet.2026.08.073",
+          "publicationDate": "2026-10-01",
+          "url": "https://doi.org/10.1016/j.mfglet.2026.08.073"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-factors"
+        }
+      ],
+      "pagePath": "./works/page-171.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-factors"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "ction, these areas often remain fragmented, lacking integration into a unified, human-centered framework. To address this gap, this study reviewed 37 peer-reviewed articles across manuf",
+              "start": 255,
+              "end": 440
+            },
+            {
+              "field": "abstract",
+              "term": "ergonomics",
+              "quote": "s this gap, this study reviewed 37 peer-reviewed articles across manufacturing, ergonomics, and training to identify recurring task patterns, ergonomic risk factors, and technological trends",
+              "start": 370,
+              "end": 560
+            }
+          ],
+          "ai": [],
+          "domain": [
+            {
+              "field": "abstract",
+              "term": "ergonomics",
+              "quote": "s this gap, this study reviewed 37 peer-reviewed articles across manufacturing, ergonomics, and training to identify recurring task patterns, ergonomic risk factors, and technological trends",
+              "start": 370,
+              "end": 560
+            },
+            {
+              "field": "abstract",
+              "term": "ergonomic",
+              "quote": " reshaped assembly and maintenance work, demanding precision, adaptability, and ergonomic awareness that traditional training methods struggle to achieve. Although research has addressed ta",
+              "start": 16,
+              "end": 205
+            }
+          ],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "operations",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "manufacturing",
+                  "quote": "work. To address this gap, this study reviewed 37 peer-reviewed articles across manufacturing, ergonomics, and training to identify recurring task patterns, ergonomic risk factors, and technolo",
+                  "start": 355,
+                  "end": 548
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "pilot",
+                  "quote": "ates optimized task sequences with motion capture-based ergonomic monitoring. A pilot implementation demonstrated improvements in learning consistency, postural stability, and procedura",
+                  "start": 1107,
+                  "end": 1292
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "tutoring",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "feedback",
+                  "quote": "on sensing have emerged as promising tools, although most systems still provide feedback post-task rather than in real-time. Building on these insights, this study proposes a mixed reality",
+                  "start": 883,
+                  "end": 1071
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "trated improvements in learning consistency, postural stability, and procedural accuracy. By combining immersive guidance with ergonomic evaluation, this research advances a scalable appro",
+                  "start": 1214,
+                  "end": 1402
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.33422/ejte.v8i3.1872",
+      "recordType": "publication",
+      "title": "Teachers' Navigation of Assessing Written Work in Times of Generative AI",
+      "abstract": "Teachers’ assessment practices are changing as generative artificial intelligence (genAI) becomes embedded in students’ schoolwork. While existing research has highlighted teachers’ concerns about AI use in written assignments, assessment practices have received limited analytical attention. This exploratory qualitative study investigates how teachers reason about assessment practices in genAI-rich contexts and examines the adequacy of the Technological Pedagogical Content Knowledge (TPACK) framework for understanding these practices. Drawing on survey responses and interviews from licensed Swedish secondary school teachers, the reflexive thematic analysis reveals that assessment emerges as the central practice through which teachers renegotiate what counts as knowledge and how assessment judgements can be legitimised. Teachers describe assessment as epistemically uncertain and reliant on professional judgement, while also raising concerns about equity and legal certainty. The study suggests that assessment constitutes an integrative dimension of teachers’ professional knowledge and proposes extending TPACK to include an explicit assessment dimension (TPACK-A).",
+      "doi": "10.33422/ejte.v8i3.1872",
+      "externalIds": {
+        "openalex": "W7215055574"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7215055574"
+      },
+      "venue": "European Journal of Teaching and Education",
+      "publicationDate": "2026-10-01",
+      "firstPublicDate": "2026-10-01",
+      "onlineDate": null,
+      "topics": [
+        "Mathematics Education and Teaching Techniques",
+        "Student Assessment and Feedback",
+        "Educational Theory and Curriculum Studies"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "attention",
+              "conceptLabel": "Aufmerksamkeit",
+              "matchedTerm": "attention",
+              "sourceValue": "…e in written assignments, assessment practices have received limited analytical attention. This exploratory qualitative study investigates how teachers reason about assessment practices in genAI-rich contexts and examines the adequacy of the Technological Pedagogical Content Knowledge (TPACK) framework for understandin…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:cognition": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "generative AI",
+        "attention"
+      ],
+      "authors": [
+        {
+          "id": "A5051985957",
+          "name": "Karin Stolpe",
+          "orcid": "https://orcid.org/0000-0002-6859-1420",
+          "affiliations": []
+        },
+        {
+          "id": "A5153710275",
+          "name": "Marit Deubler Holmlund",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.33422/ejte.v8i3.1872",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-02T11:07:46.467Z",
+      "firstSeenRunId": "ingestion-2026-10-02T11:07:34.369Z",
+      "retrievedAt": "2026-10-03T10:25:56.277Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-03T10:25:56.277Z",
+      "preferredVersionId": "openalex:W7215055574",
+      "versions": [
+        {
+          "id": "openalex:W7215055574",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7215055574",
+          "doi": "10.33422/ejte.v8i3.1872",
+          "publicationDate": "2026-10-01",
+          "url": "https://doi.org/10.33422/ejte.v8i3.1872"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-171.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "student",
+              "quote": " are changing as generative artificial intelligence (genAI) becomes embedded in students’ schoolwork. While existing research has highlighted teachers’ concerns about AI use in written ass",
+              "start": 30,
+              "end": 218
+            },
+            {
+              "field": "abstract",
+              "term": "students",
+              "quote": " are changing as generative artificial intelligence (genAI) becomes embedded in students’ schoolwork. While existing research has highlighted teachers’ concerns about AI use in written ass",
+              "start": 30,
+              "end": 218
+            },
+            {
+              "field": "abstract",
+              "term": "professional",
+              "quote": "timised. Teachers describe assessment as epistemically uncertain and reliant on professional judgement, while also raising concerns about equity and legal certainty. The study suggests that as",
+              "start": 822,
+              "end": 1014
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "generative AI",
+              "quote": "Teachers' Navigation of Assessing Written Work in Times of Generative AI",
+              "start": 0,
+              "end": 72
+            },
+            {
+              "field": "title",
+              "term": "AI",
+              "quote": "Teachers' Navigation of Assessing Written Work in Times of Generative AI",
+              "start": 0,
+              "end": 72
+            },
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": "Teachers’ assessment practices are changing as generative artificial intelligence (genAI) becomes embedded in students’ schoolwork. While existing research has highlighted teachers’",
+              "start": 0,
+              "end": 181
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": " are changing as generative artificial intelligence (genAI) becomes embedded in students’ schoolwork. While existing research has highlighted teachers’ concerns about AI use in written ass",
+                  "start": 30,
+                  "end": 218
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "students",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": " are changing as generative artificial intelligence (genAI) becomes embedded in students’ schoolwork. While existing research has highlighted teachers’ concerns about AI use in written ass",
+                  "start": 30,
+                  "end": 218
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "professional",
+                  "quote": "timised. Teachers describe assessment as epistemically uncertain and reliant on professional judgement, while also raising concerns about equity and legal certainty. The study suggests that as",
+                  "start": 822,
+                  "end": 1014
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "generative",
+                  "quote": "Teachers' Navigation of Assessing Written Work in Times of Generative AI",
+                  "start": 0,
+                  "end": 72
+                },
+                {
+                  "field": "abstract",
+                  "term": "generative",
+                  "quote": "Teachers’ assessment practices are changing as generative artificial intelligence (genAI) becomes embedded in students’ schoolwork. While existing research h",
+                  "start": 0,
+                  "end": 157
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "qualitative",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "interview",
+                  "quote": "K) framework for understanding these practices. Drawing on survey responses and interviews from licensed Swedish secondary school teachers, the reflexive thematic analysis reveals that asses",
+                  "start": 493,
+                  "end": 683
+                },
+                {
+                  "field": "abstract",
+                  "term": "qualitative",
+                  "quote": "sessment practices have received limited analytical attention. This exploratory qualitative study investigates how teachers reason about assessment practices in genAI-rich contexts and examin",
+                  "start": 230,
+                  "end": 421
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "survey",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "survey",
+                  "quote": "ntent Knowledge (TPACK) framework for understanding these practices. Drawing on survey responses and interviews from licensed Swedish secondary school teachers, the reflexive thematic an",
+                  "start": 472,
+                  "end": 658
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.1016/j.trf.2026.103828",
       "recordType": "publication",
@@ -21289,848 +22037,6 @@
                   "quote": "lians when there is no meaningful human control over their use. The analysis is qualitative, as it crucially makes use of secondary data such as policy reports, human rights organizations, an",
                   "start": 1392,
                   "end": 1583
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.1002/phar.70207",
-      "recordType": "publication",
-      "title": "User Beware: Inaccuracy and Inconsistency of Large Language Models in Providing Precision Dosing Recommendations for Patients With Kidney Impairment—A Case Series",
-      "abstract": "INTRODUCTION: Evidence-based dosing guidance for medications in critically ill patients with acute kidney injury (AKI) and receiving continuous kidney replacement therapy (CKRT) is limited. Freely available large language models (LLMs) can generate confident, human-like outputs. The accuracy and reproducibility of LLMs in providing precision drug dosing recommendations in the setting of AKI and CKRT have not been evaluated. OBJECTIVES: We sought to characterize literature concordance and internal consistency of LLM-generated dosing recommendations for cefepime and meropenem in patients with AKI and receiving CKRT. METHODS: Six investigators queried the freely available versions of six LLMs (ChatGPT, Claude, Google Gemini, Microsoft Copilot, OpenEvidence, and Perplexity) from July to September 2025 using three standardized vignettes asking for dosing recommendations and rationale to meet prespecified pharmacodynamic targets: (i) adult with AKI not on dialysis receiving cefepime, (ii) child receiving CKRT and cefepime, and (iii) toddler receiving high-effluent CKRT and meropenem. To assess inter-iteration consistency, each investigator also prompted one LLM three times for each vignette. Responses were parsed for concordance with recommendations in primary literature. LLM \"reasoning\" was evaluated for use of pharmacokinetic (PK) equations, citation accuracy versus confabulation, acknowledgment of uncertainty, and recommendations for therapeutic drug monitoring (TDM) for efficacy or safety. RESULTS: LLM-generated dosing recommendations varied widely. Mean concordance with literature-based recommendations was 63% (range: 28%-94%). LLMs produced variable responses to the same user upon multiple iterations, with variance in daily maintenance doses recommended ranging from 0 to 1000%. OpenEvidence universally cited relevant sources, whereas other LLMs leveraged sources inconsistently or confabulated them. Each recommended TDM, though only Claude consistently acknowledged its own uncertainty. CONCLUSION: Freely available LLMs produce highly variable and often discordant antibiotic dosing recommendations for patients with AKI and receiving CKRT. Although valuable for hypothesis generation and literature retrieval, LLM outputs should not be used in isolation for drug dosing in critically ill patients with kidney dysfunction.",
-      "doi": "10.1002/phar.70207",
-      "externalIds": {
-        "openalex": "W7215086451"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7215086451"
-      },
-      "venue": "Pharmacotherapy The Journal of Human Pharmacology and Drug Therapy",
-      "publicationDate": "2026-10-01",
-      "firstPublicDate": "2026-10-01",
-      "onlineDate": null,
-      "topics": [
-        "Acute Kidney Injury Research",
-        "Antibiotics Pharmacokinetics and Efficacy",
-        "Heparin-Induced Thrombocytopenia and Thrombosis"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…inty, and recommendations for therapeutic drug monitoring (TDM) for efficacy or safety. RESULTS: LLM-generated dosing recommendations varied widely. Mean concordance with literature-based recommendations was 63% (range: 28%-94%). LLMs produced variable responses to the same user upon multiple iterations, with variance …",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 5,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "ChatGPT",
-        "safety"
-      ],
-      "authors": [
-        {
-          "id": "A5028029888",
-          "name": "Horace Rhodes Hambrick",
-          "orcid": "https://orcid.org/0000-0003-1218-8293",
-          "affiliations": []
-        },
-        {
-          "id": "A5011771413",
-          "name": "Samuel Dubinsky",
-          "orcid": "https://orcid.org/0000-0002-3847-4899",
-          "affiliations": []
-        },
-        {
-          "id": "A5051399689",
-          "name": "Danica Quickfall",
-          "orcid": "https://orcid.org/0009-0008-1984-6483",
-          "affiliations": []
-        },
-        {
-          "id": "A5023264281",
-          "name": "Shannon Reinert",
-          "orcid": "https://orcid.org/0009-0002-5319-9052",
-          "affiliations": []
-        },
-        {
-          "id": "A5038807460",
-          "name": "Sonya Tang Girdwood",
-          "orcid": "https://orcid.org/0000-0001-7737-8499",
-          "affiliations": []
-        },
-        {
-          "id": "A5058417140",
-          "name": "Gideon A. Stitt",
-          "orcid": "https://orcid.org/0000-0001-5269-214X",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.1002/phar.70207",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-02T11:07:47.352Z",
-      "firstSeenRunId": "ingestion-2026-10-02T11:07:34.369Z",
-      "retrievedAt": "2026-10-03T10:25:57.463Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-03T10:25:57.463Z",
-      "preferredVersionId": "openalex:W7215086451",
-      "versions": [
-        {
-          "id": "openalex:W7215086451",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7215086451",
-          "doi": "10.1002/phar.70207",
-          "publicationDate": "2026-10-01",
-          "url": "https://doi.org/10.1002/phar.70207"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-171.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "title",
-              "term": "user",
-              "quote": "User Beware: Inaccuracy and Inconsistency of Large Language Models in Providing Precision Dosing Recomme",
-              "start": 0,
-              "end": 104
-            },
-            {
-              "field": "title",
-              "term": "patient",
-              "quote": "ency of Large Language Models in Providing Precision Dosing Recommendations for Patients With Kidney Impairment—A Case Series",
-              "start": 37,
-              "end": 162
-            },
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": " limited. Freely available large language models (LLMs) can generate confident, human-like outputs. The accuracy and reproducibility of LLMs in providing precision drug dosing recommend",
-              "start": 180,
-              "end": 365
-            },
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "ndations was 63% (range: 28%-94%). LLMs produced variable responses to the same user upon multiple iterations, with variance in daily maintenance doses recommended ranging from 0 to 10",
-              "start": 1620,
-              "end": 1804
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "large language model",
-              "quote": "User Beware: Inaccuracy and Inconsistency of Large Language Models in Providing Precision Dosing Recommendations for Patients With Kidney Impairment—A Case Series",
-              "start": 0,
-              "end": 162
-            },
-            {
-              "field": "title",
-              "term": "large language models",
-              "quote": "User Beware: Inaccuracy and Inconsistency of Large Language Models in Providing Precision Dosing Recommendations for Patients With Kidney Impairment—A Case Series",
-              "start": 0,
-              "end": 162
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "iving continuous kidney replacement therapy (CKRT) is limited. Freely available large language models (LLMs) can generate confident, human-like outputs. The accuracy and reproducibility of LLMs in prov",
-              "start": 127,
-              "end": 328
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "decisionSupport",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "recommendation",
-                  "quote": "curacy and Inconsistency of Large Language Models in Providing Precision Dosing Recommendations for Patients With Kidney Impairment—A Case Series",
-                  "start": 17,
-                  "end": 162
-                },
-                {
-                  "field": "abstract",
-                  "term": "recommendation",
-                  "quote": "ts. The accuracy and reproducibility of LLMs in providing precision drug dosing recommendations in the setting of AKI and CKRT have not been evaluated. OBJECTIVES: We sought to characterize liter",
-                  "start": 276,
-                  "end": 471
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "large language model",
-                  "quote": "User Beware: Inaccuracy and Inconsistency of Large Language Models in Providing Precision Dosing Recommendations for Patients With Kidney Impairment—A Case Series",
-                  "start": 0,
-                  "end": 162
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "iving continuous kidney replacement therapy (CKRT) is limited. Freely available large language models (LLMs) can generate confident, human-like outputs. The accuracy and reproducibility of LLMs in prov",
-                  "start": 127,
-                  "end": 328
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": "le large language models (LLMs) can generate confident, human-like outputs. The accuracy and reproducibility of LLMs in providing precision drug dosing recommendations in the setting of AK",
-                  "start": 204,
-                  "end": 392
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.1108/jrit-06-2026-0199",
-      "recordType": "publication",
-      "title": "Using artificial intelligence to mitigate global teacher shortage",
-      "abstract": "Purpose This viewpoint addresses the systemic global teacher crisis – driven by burnout, unsustainable workloads and administrative attrition – and explores the potential of artificial intelligence (AI) tools to reduce non-academic tasks. This piece argues that by using AI to help with administrative burdens, education systems can improve teacher retention, enhance individual student engagement and even support democracy. Design/methodology/approach This piece uses a conceptual and synthesis-based approach, combining a review of current literature with the author's firsthand narrative reflections as a veteran educator and teacher trainer. Findings The piece identifies the root causes of the teacher shortage: the overwhelming volume of non-instructional work. The analysis of the literature supports the use of AI tools to unburden teachers from non-instructional work gaining time to build robust relationships with students, increase the individualization of instruction, all of which can lead to better meeting the learning needs of their students. Finally, it allows for a better life–work balance that can mitigate teacher attrition and attract more quality candidates. Research limitations/implications This is a viewpoint article, and although it is supported by a robust review of relevant literature, it does not put forward new empirical evidence. Practical implications The practical implications of the piece focus on reforming the daily operations of educators' work by integrating AI to eliminate up to six hours of administrative workload per week, thereby reducing teacher burnout and mitigating the global shortage. Social implications The social implications center on safeguarding democratic foundations by stabilizing an endangered education system. Restoring work–life balance through AI helps attract and retain qualified teachers, preventing the systemic collapse of public schooling. Originality/value The originality of this piece is in its unique view of how to mitigate the teacher shortage by embracing AI tools rather than fear them. By using relevant national and international literature in conjunction with the authentic, lived perspective of a veteran educator, the piece provides a fresh approach to combatting the teacher shortage.",
-      "doi": "10.1108/jrit-06-2026-0199",
-      "externalIds": {
-        "openalex": "W7215039047"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7215039047"
-      },
-      "venue": "Journal of Research in Innovative Teaching & Learning",
-      "publicationDate": "2026-10-01",
-      "firstPublicDate": "2026-10-01",
-      "onlineDate": null,
-      "topics": [
-        "Teacher Education and Leadership Studies",
-        "Global Educational Policies and Reforms",
-        "Educational Leadership and Innovation"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "motivation",
-          "label": "Motivation & Wohlbefinden",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "engagement",
-              "conceptLabel": "Engagement",
-              "matchedTerm": "engagement",
-              "sourceValue": "…ns, education systems can improve teacher retention, enhance individual student engagement and even support democracy. Design/methodology/approach This piece uses a conceptual and synthesis-based approach, combining a review of current literature with the author's firsthand narrative reflections as a veteran educator a…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "strain",
-              "conceptLabel": "Beanspruchung",
-              "matchedTerm": "burnout",
-              "sourceValue": "Purpose This viewpoint addresses the systemic global teacher crisis – driven by burnout, unsustainable workloads and administrative attrition – and explores the potential of artificial intelligence (AI) tools to reduce non-academic tasks. This piece argues that by using AI to help with administrative burdens, education…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "load",
-              "conceptLabel": "Kognitive Belastung",
-              "matchedTerm": "workload",
-              "sourceValue": "…addresses the systemic global teacher crisis – driven by burnout, unsustainable workloads and administrative attrition – and explores the potential of artificial intelligence (AI) tools to reduce non-academic tasks. This piece argues that by using AI to help with administrative burdens, education systems can improve te…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…e individualization of instruction, all of which can lead to better meeting the learning needs of their students. Finally, it allows for a better life–work balance that can mitigate teacher attrition and attract more quality candidates. Research limitations/implications This is a viewpoint article, and although it is s…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 5,
-        "topic:motivation": 4,
-        "topic:cognition": 2,
-        "topic:learning": 2,
-        "classificationMaximum": 4
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "learning",
-        "engagement",
-        "burnout",
-        "workload"
-      ],
-      "authors": [
-        {
-          "id": "A5091199584",
-          "name": "Rollin D. Nordgren",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.1108/jrit-06-2026-0199",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-02T11:07:45.609Z",
-      "firstSeenRunId": "ingestion-2026-10-02T11:07:34.369Z",
-      "retrievedAt": "2026-10-03T10:25:55.714Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-03T10:25:55.714Z",
-      "preferredVersionId": "openalex:W7215039047",
-      "versions": [
-        {
-          "id": "openalex:W7215039047",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7215039047",
-          "doi": "10.1108/jrit-06-2026-0199",
-          "publicationDate": "2026-10-01",
-          "url": "https://doi.org/10.1108/jrit-06-2026-0199"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-171.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "student",
-              "quote": "ve burdens, education systems can improve teacher retention, enhance individual student engagement and even support democracy. Design/methodology/approach This piece uses a conceptual and",
-              "start": 299,
-              "end": 486
-            },
-            {
-              "field": "abstract",
-              "term": "students",
-              "quote": "ers from non-instructional work gaining time to build robust relationships with students, increase the individualization of instruction, all of which can lead to better meeting the learnin",
-              "start": 846,
-              "end": 1034
-            },
-            {
-              "field": "abstract",
-              "term": "reflection",
-              "quote": " combining a review of current literature with the author's firsthand narrative reflections as a veteran educator and teacher trainer. Findings The piece identifies the root causes of the tea",
-              "start": 512,
-              "end": 703
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "Using artificial intelligence to mitigate global teacher shortage",
-              "start": 0,
-              "end": 65
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "tainable workloads and administrative attrition – and explores the potential of artificial intelligence (AI) tools to reduce non-academic tasks. This piece argues that by using AI to help with administra",
-              "start": 94,
-              "end": 297
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "ministrative attrition – and explores the potential of artificial intelligence (AI) tools to reduce non-academic tasks. This piece argues that by using AI to help with administrative",
-              "start": 119,
-              "end": 301
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "human-mentioned",
-        "fields": {
-          "context": [
-            {
-              "value": "education",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "education",
-                  "quote": " tasks. This piece argues that by using AI to help with administrative burdens, education systems can improve teacher retention, enhance individual student engagement and even support democ",
-                  "start": 231,
-                  "end": 420
-                },
-                {
-                  "field": "abstract",
-                  "term": "student",
-                  "quote": "ve burdens, education systems can improve teacher retention, enhance individual student engagement and even support democracy. Design/methodology/approach This piece uses a conceptual and",
-                  "start": 299,
-                  "end": 486
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "students",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "student",
-                  "quote": "ve burdens, education systems can improve teacher retention, enhance individual student engagement and even support democracy. Design/methodology/approach This piece uses a conceptual and",
-                  "start": 299,
-                  "end": 486
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "reflection",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "reflection",
-                  "quote": " combining a review of current literature with the author's firsthand narrative reflections as a veteran educator and teacher trainer. Findings The piece identifies the root causes of the tea",
-                  "start": 512,
-                  "end": 703
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "learning",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "reflection",
-                  "quote": " combining a review of current literature with the author's firsthand narrative reflections as a veteran educator and teacher trainer. Findings The piece identifies the root causes of the tea",
-                  "start": 512,
-                  "end": 703
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "workload",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "workload",
-                  "quote": "addresses the systemic global teacher crisis – driven by burnout, unsustainable workloads and administrative attrition – and explores the potential of artificial intelligence (AI) tools to ",
-                  "start": 23,
-                  "end": 212
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "wellbeing",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "burnout",
-                  "quote": "Purpose This viewpoint addresses the systemic global teacher crisis – driven by burnout, unsustainable workloads and administrative attrition – and explores the potential of artificial in",
-                  "start": 0,
-                  "end": 187
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [
-          {
-            "topic": "cognitive-engagement",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "reflection",
-                "quote": " combining a review of current literature with the author's firsthand narrative reflections as a veteran educator and teacher trainer. Findings The piece identifies the root causes of the tea",
-                "start": 512,
-                "end": 703
-              }
-            ]
-          }
-        ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.3390/systems14101213",
-      "recordType": "publication",
-      "title": "Validating LLM-Generated Expert Judgments in AHP Decision Support: A Preregistered Cross-Study Benchmark and Randomized-Order Audit",
-      "abstract": "Large language models (LLMs) are entering decision-support systems as inexpensive synthetic experts, yet their judgments are rarely validated against published human targets. We benchmark six LLMs on a source-audited corpus of 27 published Analytic Hierarchy Process (AHP) studies with a preregistered holdout of 22 studies, 21 reference-weight tasks, 28,783 valid benchmark calls, and study-clustered inference. Holdout rank replication was modest and model dependent. A diagnostic showed that fixed-source-order rank evaluation is confounded with criterion presentation order: reference vectors largely follow source listing order, and a model-free descending-order rule reaches a mean Spearman correlation of 0.735, outscoring every model. A prospective randomized-order experiment raised Claude Sonnet 5’s mean Spearman correlation by 0.46, and a registered follow-up with an exactly balanced schedule replicated that gain. For HCX-007, the model that tracks presentation order most strongly, the randomized-order decline was directional but not statistically significant (0.17, Holm p=0.16), and the follow-up was inconclusive about the average difference (+0.007, 95% CI [−0.23, 0.22]); its single draws continued to follow presentation order, and in an exploratory subgroup of six tasks with seven or more criteria its balanced-order accuracy was lower. Most holdout panels could be implemented only as repeated draws under a shared profile, and matched individual human data were limited to two tasks. Benchmarks for synthetic experts should therefore balance presentation order and evaluate aggregate reconstruction, individual human-likeness, and downstream ranking separately.",
-      "doi": "10.3390/systems14101213",
-      "externalIds": {
-        "openalex": "W7203813445"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7203813445"
-      },
-      "venue": "Systems",
-      "publicationDate": "2026-10-01",
-      "firstPublicDate": "2026-10-01",
-      "onlineDate": null,
-      "topics": [
-        "Multi-Criteria Decision Making",
-        "Decision Support System Applications",
-        "Artificial Intelligence in Healthcare and Education",
-        "Persona Design and Applications",
-        "AI in Service Interactions",
-        "Data Quality and Management"
-      ],
-      "keywords": [
-        "analytic hierarchy process",
-        "pairwise comparison matrix",
-        "large language models",
-        "replication",
-        "consistency ratio",
-        "criteria weighting",
-        "multi-criteria decision making"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 6,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision support",
-              "sourceValue": "Validating LLM-Generated Expert Judgments in AHP Decision Support: A Preregistered Cross-Study Benchmark and Randomized-Order Audit",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision support",
-              "sourceValue": "Large language models (LLMs) are entering decision-support systems as inexpensive synthetic experts, yet their judgments are rarely validated against published human targets. We benchmark six LLMs on a source-audited corpus of 27 published Analytic Hierarchy Process (AHP) studies with a preregistered holdout of 22 stud…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision making",
-              "sourceValue": "multi-criteria decision making",
-              "weight": 0
-            },
-            {
-              "source": "external_topic",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision making",
-              "sourceValue": "Multi-Criteria Decision Making",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 6,
-        "topic:cognition": 6,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "large language model",
-        "large language models",
-        "LLM",
-        "decision support",
-        "decision making"
-      ],
-      "authors": [
-        {
-          "id": "A5101871754",
-          "name": "Howard Kim",
-          "orcid": "https://orcid.org/0000-0003-4200-3237",
-          "affiliations": []
-        },
-        {
-          "id": "A5071191666",
-          "name": "Keuntae Cho",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.3390/systems14101213",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-02T11:07:44.406Z",
-      "firstSeenRunId": "ingestion-2026-10-02T11:07:34.369Z",
-      "retrievedAt": "2026-10-08T12:04:04.049Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-08T12:04:04.049Z",
-      "preferredVersionId": "openalex:W7203813445",
-      "versions": [
-        {
-          "id": "openalex:W7203813445",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7203813445",
-          "doi": "10.3390/systems14101213",
-          "publicationDate": "2026-10-01",
-          "url": "https://doi.org/10.3390/systems14101213"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        },
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-171.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "e synthetic experts, yet their judgments are rarely validated against published human targets. We benchmark six LLMs on a source-audited corpus of 27 published Analytic Hierarchy Proces",
-              "start": 80,
-              "end": 265
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "Validating LLM-Generated Expert Judgments in AHP Decision Support: A Preregistered Cross-Study Benchmark and Rando",
-              "start": 0,
-              "end": 114
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Large language models (LLMs) are entering decision-support systems as inexpensive synthetic experts, yet their judgments ",
-              "start": 0,
-              "end": 121
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Large language models (LLMs) are entering decision-support systems as inexpensive synthetic experts, yet their judgments ",
-              "start": 0,
-              "end": 121
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "decisionSupport",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "decision support",
-                  "quote": "Validating LLM-Generated Expert Judgments in AHP Decision Support: A Preregistered Cross-Study Benchmark and Randomized-Order Audit",
-                  "start": 0,
-                  "end": 131
-                },
-                {
-                  "field": "abstract",
-                  "term": "decision support",
-                  "quote": "Large language models (LLMs) are entering decision-support systems as inexpensive synthetic experts, yet their judgments are rarely validated against publishe",
-                  "start": 0,
-                  "end": 158
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Large language models (LLMs) are entering decision-support systems as inexpensive synthetic experts, yet their judgments ",
-                  "start": 0,
-                  "end": 121
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": "xploratory subgroup of six tasks with seven or more criteria its balanced-order accuracy was lower. Most holdout panels could be implemented only as repeated draws under a shared profile, ",
-                  "start": 1261,
-                  "end": 1449
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "randomized",
-                  "quote": "rt Judgments in AHP Decision Support: A Preregistered Cross-Study Benchmark and Randomized-Order Audit",
-                  "start": 29,
-                  "end": 131
-                },
-                {
-                  "field": "abstract",
-                  "term": "randomized",
-                  "quote": "hes a mean Spearman correlation of 0.735, outscoring every model. A prospective randomized-order experiment raised Claude Sonnet 5’s mean Spearman correlation by 0.46, and a registered follo",
-                  "start": 677,
-                  "end": 867
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "longitudinal",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "follow up",
-                  "quote": "nt raised Claude Sonnet 5’s mean Spearman correlation by 0.46, and a registered follow-up with an exactly balanced schedule replicated that gain. For HCX-007, the model that tracks presenta",
-                  "start": 782,
-                  "end": 971
                 }
               ],
               "interpretation": "mentioned; role/outcome not confirmed"

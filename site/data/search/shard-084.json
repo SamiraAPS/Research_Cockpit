@@ -1,7 +1,57 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.01784",
+      "abstract": "Reducing LLM serving energy does not by itself guarantee lower deployment cost when electricity procurement exposes operators to unfavorable deviations from preset commitments. We study hourly commitments with positive, potentially asymmetric costs for overuse and underuse, and formulate energy-Performance-Aware Commitment Tracking: minimize deviation costs subject to request-level service requirements. We implement ePACT, a two-level controller that adjusts serving capacity and GPU clocks as requests arrive. A global planner updates interval energy targets from measured consumption and the remaining hourly commitment. A local decision maker predicts candidate configurations' energy and completion times, checks predicted deadline misses, and selects among admitted configurations by asymmetric target-deviation cost, with a service-first fallback. Coarse-to-fine action search runs asynchronously with serving. We evaluate ePACT through single-hour comparisons, controller ablations, and full-day trace simulations for H20 and H200 GPU pools. In the 24-hour simulations, ePACT reduces the asymmetric deviation cost by $73.8\\%$ and $75.7\\%$ relative to vLLM while retaining near-vLLM SLO attainment. Mean absolute hourly deviations are $2.16\\%$ and $2.31\\%$, respectively.",
+      "topics": [
+        "Energy Efficiency in Computing",
+        "Cloud Computing and Resource Management",
+        "Parallel Computing and Optimization Techniques",
+        "Green IT and Sustainability"
+      ],
+      "keywords": [
+        "large language model inference",
+        "energy-aware resource management",
+        "service level objectives",
+        "energy cost optimization"
+      ]
+    },
+    {
+      "id": "doi:10.1145/3839470",
+      "abstract": "With the rapid progress of deep learning and large language models (LLMs), companies spend enormous sums executing GPU kernels. These kernels have become prime targets for aggressive optimization. Recent efforts increasingly leverage LLMs to generate GPU kernels, but make no formal guarantees about the generated kernels. We present the first equivalence checker for GPU kernels and use it to formally verify the correctness of machine learning (ML) kernels optimized by hand, by LLM, and by compiler. We show that our equivalence checker is sound and, for a well-defined class of GPU kernels which includes many programs of interest, complete. Our implementation, VOLTA, can verify ML computations such as convolutions, matrix multiplications, and various attention mechanisms.",
+      "topics": [
+        "Logic, programming, and type systems",
+        "Parallel Computing and Optimization Techniques",
+        "Software Testing and Debugging Techniques",
+        "Advanced Neural Network Applications",
+        "Big Data and Digital Economy"
+      ],
+      "keywords": [
+        "equivalence checking",
+        "GPU kernels",
+        "formal verification",
+        "LLM-generated code",
+        "kernel optimization",
+        "compiler optimization",
+        "convolution",
+        "matrix multiplication",
+        "attention mechanism",
+        "soundness and completeness",
+        "Volta"
+      ]
+    },
+    {
+      "id": "openalex:W7220796671",
+      "abstract": "ABSTRACTAnthropometric data constitute fundamental inputs for designing products andwork environments in accordance with user characteristics. However, thedevelopment of reliable anthropometric databases requires large samples,standardized measurement protocols, and substantial implementation costs. Becausebody dimensions may change over time as a result of changes in nutrition, physicalactivity, and living conditions, the validity of established databases is not permanent.Ratio Scaling, which has been used in the literature as a practical solution to thisproblem, is based on the assumption that the ratios of anthropometric dimensions tostature remain constant over time. In this study, this assumption was tested using the1988 ANSUR1 and 2012 ANSUR2 datasets. In addition, predictions obtained fromsimple linear regression based on stature, regression based on body mass index, andmultiple linear regression incorporating both stature and body weight werecompared. The findings indicate that Ratio Scaling may retain its applicability overshorter time intervals, but remains reliable for only a limited number of dimensionsin long-term database updates. In contrast, multiple regression models incorporatingboth stature and body weight produced lower prediction errors for manyanthropometric dimensions. These results suggest that no single method should begeneralized across all anthropometric dimensions and time intervals when updatinganthropometric databases.",
+      "topics": [
+        "Ergonomics and Musculoskeletal Disorders",
+        "Ergonomics and Human Factors",
+        "Body Composition Measurement Techniques"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.1001/jamaoto.2026.3000",
       "abstract": "This Viewpoint discusses the challenges of ergonomic risk in endoscopic sinus and endoscopic skull base surgery and proposes immediate, low-cost interventions while institutions implement longer-term structural solutions.",
@@ -3002,57 +3052,6 @@
         "Hand Gesture Recognition Systems"
       ],
       "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.01393",
-      "abstract": "Constructing typed, justified semantic links between ontologies is essential for enabling interoperability across heterogeneous and interdisciplinary knowledge domains. However, manually curating such links is difficult to scale. To address this challenge, we propose an end-to-end framework for ontology network construction that automates the discovery and generation of both intra-domain and inter-domain relationships. Our approach combines domain-adapted DistilBERT embeddings for dense contextual representation, clustering-based pre-filtering to reduce the candidate search space, and GPT-4o-driven relationship generation via iterative prompt engineering to produce semantically rich, interpretable links. Applied to ReproduceMeON - a network of 33 ontologies spanning machine learning, microscopy, computational science, and experimental workflow - the pipeline reduces approximately 800k raw concept pairs to 95k high-quality candidates. Human expert validation of 429 generated relationships by two independent annotators yields an overall precision of 80.19% (91.49% on high-certainty annotations) and an F1 of 0.890, with substantial inter-annotator agreement. Comparative experiments against five similarity-based baselines, including Sentence-BERT, show a substantial performance gap (best baseline F1 = 0.581), while an ablation study demonstrates that similarity-based methods alone fail to discriminate valid from invalid relationships (AUC approx 0.5) on the filtered candidate set. These findings highlight the necessity of LLM-based reasoning over concept roles and domain semantics for accurate relationship construction.",
-      "topics": [
-        "Semantic Web and Ontologies",
-        "Biomedical Text Mining and Ontologies",
-        "Topic Modeling",
-        "Advanced Graph Neural Networks"
-      ],
-      "keywords": [
-        "GPT-4o",
-        "prompt engineering",
-        "ontology interoperability"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s44379-026-00099-3",
-      "abstract": "Developing constitutive models that capture how materials deform under load traditionally requires years of specialized expertise in continuum mechanics, machine learning, and scientific programming. Large language models (LLMs) have recently been shown to lower this barrier by generating constitutive models on demand, but existing single-agent pipelines lack systematic checks that the resulting models respect fundamental physical laws. To close this gap, we introduce the first multi-agent LLM-driven approach for constitutive model generation: a Creator agent proposes a model tailored to the data, while an Inspector agent critically audits each proposal against nine physical constraints and returns it for refinement whenever a violation is detected. We demonstrate this concept with constitutive artificial neural networks (CANNs) and benchmark it on brain tissue and rubber as isotropic materials, and on porcine skin tissue as a transversely isotropic material with a preferred fiber direction, using two different LLM backbones (Claude Opus 4.7 and Kimi K2.5). Whether a generated model satisfies the physical constraints is assessed numerically, by probing each constraint across a broad sample of deformation states, rotations, and perturbation directions. Adding the Inspector raises the share of exported models that pass all these checks from 90% to 95% for Opus and from 47% to 60% for Kimi. In addition, the generated models are on par with or even surpass expert-designed models in accuracy, extrapolate reliably beyond the training data, and generalize remarkably well to unseen loading paths. Separating generation from inspection thus turns LLM-driven constitutive modeling into a substantially more trustworthy process. The paradigm is deliberately technique-agnostic and scales automatically with advances in LLM capability, opening a promising path toward automated, physics-aware model discovery.",
-      "topics": [
-        "Elasticity and Material Modeling",
-        "Model Reduction and Neural Networks",
-        "Machine Learning in Materials Science"
-      ],
-      "keywords": [
-        "large language models",
-        "multi-agent LLM systems",
-        "brain tissue",
-        "rubber",
-        "porcine skin",
-        "transversely isotropic materials",
-        "material deformation"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.02126",
-      "abstract": "We explore catastrophic forgetting in the context of large pre-trained models. By considering forgetting as a geometric problem in the input space of each weight matrix, we uncover a natural retention objective under which updates produced by gradient-based optimizers are suboptimal. Following this observation, we propose Local Support Learning (LSL), a general-purpose framework that augments gradient-based training for retention of prior capabilities without access to prior data. During a new learning phase, LSL pairs two components with distinct roles: a standard weight adapter, trained as usual to minimize the loss, and a gating function that enables the adapter only on input activations from its own training distribution, making the update local to that distribution. The key challenge is that this gate must route data from all learning phases while training only on data from the current one. We address this with a gate based on a Gaussian Mixture Model (GMM), whose likelihood decays rapidly away from its training data, giving it a natural tendency to stay closed on data from prior phases. We show that this post-training approach can resolve forgetting in LLMs of up to 7 billion parameters, retaining both pretrained and finetuned capabilities across multiple training phases, while being efficient in memory and compute, robust to hyperparameter choice, and showing scaling potential.",
-      "topics": [
-        "Domain Adaptation and Few-Shot Learning",
-        "Topic Modeling",
-        "Advanced Neural Network Applications",
-        "Generative Adversarial Networks and Image Synthesis",
-        "Stochastic Gradient Optimization Techniques"
-      ],
-      "keywords": [
-        "catastrophic forgetting",
-        "large language models",
-        "gating function",
-        "gradient-based learning",
-        "post-training fine-tuning"
-      ]
     }
   ]
 }

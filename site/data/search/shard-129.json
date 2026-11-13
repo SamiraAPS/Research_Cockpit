@@ -1,7 +1,34 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "arxiv:2608.05131",
+      "abstract": "On-Policy Self-Distillation (OPSD) has become a standard post-training approach for improving visual reasoning in multimodal large language models (MLLMs). Existing methods draw privileged information from diverse input sources to guide self-distillation. Yet these designs overlook Modality Imbalance, a challenge inherent to MLLM reasoning. When textual information dominates generation, the model cannot fully integrate its multimodal input. Consequently, carefully designed privileged information remains underused, limiting the effectiveness of OPSD. To examine this limitation, we construct a Positive Teacher with the Zoom-In Image and a Negative Teacher with the Mask Image, which exhibit different degrees of Modality Imbalance. Changes in their reasoning correctness and token logits reveal that Modality Balance can itself serve as privileged information. Motivated by this finding, we introduce OPD-V, a visual OPSD paradigm that instantiates such information through the Positive Teacher and Negative Teacher. Positive Modality-Balance Logits Margins define a Modality-Balance Trust Region that selects the on-policy tokens used for self-distillation. Experiments across 6 benchmarks, 4 MLLM backbones, and 5 post-training methods show that OPD-V consistently improves reasoning performance while reducing training cost.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.05080",
+      "abstract": "Critic-free group-based reinforcement learning has become a scalable approach for post-training large language models. However, most existing methods allocate the same number of rollouts to every task and trajectory state, even though some rollouts provide much more useful learning signals than others. Recent work has started to treat rollout generation as an adaptive decision, but two important limitations remain. First, intervention strategies are often based on fixed heuristics and therefore cannot adjust as the policy changes during training. Second, these methods usually decide only how many rollouts to generate, without explicitly controlling where and how to intervene. To address these limitations, we propose Recoverability-Aware Intervention Learning (RAIL), a training-time framework that learns how to generate rollouts based on the improvement produced by each intervention. RAIL models intervention selection as an online contextual-bandit problem and trains a recoverability controller using intervention traces collected through a shadow-to-live procedure. This allows the controller to keep learning while the underlying policy evolves. We evaluate RAIL in terms of effectiveness, adaptivity, expressiveness, and efficiency. Across multiple settings, RAIL consistently improves performance under limited rollout budgets. These results show that recoverability-aware intervention provides a principled way to generate more informative and less redundant rollouts, leading to stronger learning signals during post-training.",
+      "topics": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.04999",
+      "abstract": "Analog circuit design automation using reinforcement learning (RL) has emerged as a promising approach for reducing manual effort. However, many existing RL-based methods focus on single-objective optimization. Even methods designed for multi-objective (MO) problems often reduce multiple design specifications to a single scalar reward. This simplification limits the ability to capture the true Pareto trade-off among competing objectives and often leads to suboptimal designs. Moreover, requiring the model to be retrained from scratch whenever the desired MO specifications change remains a key limitation. To address these challenges, we present ORACLE, an open-source RL-based framework for MO analog circuit design optimization that replaces scalar reward optimization with vector-valued learning and preference-aware conditioning. ORACLE represents a true MO analog circuit design optimizer that uses a preference vector to specify the relative weights of multiple objectives, enabling a single trained model to generate designs across diverse trade-off settings without retraining. We further propose two preference-guidance strategies, namely normalized-weight guidance and cosine-aligned guidance, to improve convergence. In addition, we incorporate a large language model (LLM)-guided action selection mechanism to filter actions that are likely to lead to suboptimal designs or increased runtime. Our results show that, on multiple circuit topologies with 2,000 test cases, ORACLE reduces runtime by 20.4x - 104.4x compared to state-of-the-art approaches. It also meets 99.9% of the 2,000 target specifications, and achieves 5.1x - 318.6x better figure of merit in the resulting output specs.",
+      "topics": [
+        "eess.SY",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.04980",
       "abstract": "We show that tiny transformers can profitably employ a simple form of Chain of Thought, which we call protoreasoning, allowing us to study step-by-step reasoning on ~1M-parameter models and opening up opportunities for much more detailed experimentation and analysis than is feasible for larger models. Current Large Language Models exhibit impressive step-by-step reasoning, but we have yet to understand its generality, i.e., when and how LLMs learn genuinely general algorithms rather than \"bags of heuristics.\" Such questions are hard to settle on compute-intensive frontier models trained on opaque data. To work at model scales far below the threshold for natural-language competence, we define reasoning-friendly tasks on Dyck languages (sentences of correctly nested brackets). We find that protoreasoning traces substantially close the out-of-distribution generalization gap, and ablations confirm that the trace's content, not merely its extra tokens, drives the gain.",
@@ -1856,30 +1883,6 @@
       "topics": [
         "cs.AI",
         "cs.CR"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01458",
-      "abstract": "Large language models are being extensively used to simulate individual user behavior, yet faithfully representing a population requires capturing the systematic variation in values, beliefs, and cultural norms that distinguish one group from another. We introduce Population Aligned Language Models (PALMs), a suite of models each aligned to specific populations, covering five countries: USA, India, Brazil, France and Italy. PALMs are created by synthesizing rationales grounded in psychological and cultural constructs and using these as latent supervision during preference tuning for population-specific alignment. Evaluated across four dimensions: personality, values and beliefs, cultural norms, and morality, PALMs consistently outperform baselines, including culture-specialized models, achieving an average of 8.59% relative improvement over the best baseline across all five populations. Notably, construct-grounded rationales outperform both demographic prompting and survey-based fine-tuning, suggesting that grounding preference learning in psychology and culture provides a richer inductive signal than surface-level response distributions. We further demonstrate strong generalization to downstream applications with- out task-specific supervision: outperforming best baselines by 5.19% in personalized reward modeling, 6.34% in population simulation, and showing strong transfer to social reasoning tasks. Datasets and code are available at: https://github.com/limenlp/PALMs.",
-      "topics": [
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1145/3830398.3830483",
-      "abstract": "As Extended Reality (XR) evolves into an immersive computing medium, interactive 3D authoring becomes essential for creative and functional workflows. However, existing generative XR systems produce monolithic outputs lacking explicit semantic structure, limiting post-generation control. We introduce PartInteractor, a representation-to-interaction framework that investigates how semantic part hierarchies can be incorporated into generative XR authoring, and exposed as first-class, directly manipulable units, turning one-shot prompt-to-object generation into continuous component-level co-creation. PartInteractor supports speech, sketch, and image inputs, integrating an LLM interpreter with a retrieval-generation strategy to scaffold user intent prior to 3D generation. Instead of producing monolithic objects, our system generates semantically decomposed 3D assets with explicit part hierarchies, enabling rich component-level interaction over object structure and composition. Our evaluations suggest that part-aware representation increases post-generation control and reduces reliance on whole-object regeneration, while intent scaffolding mitigates ambiguity and improves intent-result alignment, together supporting more expressive and controllable human-AI co-creation workflows. These results highlight part-aware representation and intent scaffolding as promising design considerations for future generative XR authoring systems.",
-      "topics": [
-        "cs.HC"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01149",
-      "abstract": "Lifelong LLM agents increasingly adapt through external learning states that store past interactions as retrievable memories or reusable skills, yet existing benchmarks rarely account for how the path of accumulated experience shapes what agents transfer and retain. In this work, we establish PATH-Bench, a benchmark for path-dependent evaluation of lifelong agents. PATH-Bench estimates directed task relationships via multi-model in-context learning, constructs probe-centered sequences with controlled helpful and interfering histories, and repeatedly evaluates probe tasks to measure average performance, forward transfer, backward transfer, and forgetting. We evaluate eight representative agents on single-turn code generation and multi-turn tool-use tasks under positive- and negative-dominant histories. Benchmark results show that experience utility depends jointly on how experience is represented and on the task's interaction structure, that strong transfer does not ensure retention, and that later experience can reshape gains acquired earlier in the learning path. Based on these findings, we propose Selective Experience Use (SEU), an agent harness that regulates how path-accumulated experience influences each new task, admitting helpful items while filtering out potential interference. SEU consistently reduces forgetting while improving forward transfer in the majority of settings. The PATH-Bench provides both a controlled evaluation framework and actionable guidance for designing more selective and robust lifelong agents.",
-      "topics": [
-        "cs.AI"
       ],
       "keywords": []
     }

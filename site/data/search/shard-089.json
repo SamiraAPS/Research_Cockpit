@@ -1,7 +1,65 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.00787",
+      "abstract": "A correctly governed LLM agent can reach a state in which neither continuing execution nor automatically halting is admissible: the system has detected a persistent failure of its observability or drift-detection layer, but cannot itself decide who has the authority to resume, deny, or recalibrate the deployment. We call this an identity-bound governance event and formalise the mechanism that resolves it. We introduce the Accountability Proof Block (APB): a system-constructed evidence block, a human-supplied decision block, and an ed25519 signature binding both to a registered principal. The system cannot forge the signature, and the principal cannot alter the evidence undetected. We prove four theorems: Protocol-Bounded Governance Completeness, Non-Repudiability, Impossibility of Anonymous Re-Authorization, and Finite-Time APB Construction Termination. The implementation uses RFC 8785 JSON canonicalization and a UUID4-based replay predicate. Empirically, governance completeness holds over 3,812 halt events with zero unresolved cases; the verifier detects 100% of 1,800 attacks across 9 adversarial vectors; a k-of-n multi-principal variant shows 0 false acceptances in 2,000 single-key capture attempts. A study of six open LLMs finds the drift threshold T* stable within model (sigma/T* < 2%) but varying across models, refuting size-monotonicity: the largest model did not drift. T* must therefore be measured per deployment, and the APB is the vehicle by which that threshold yields accountable authority transfer.",
+      "topics": [
+        "Access Control and Trust",
+        "Blockchain Technology Applications and Security",
+        "Cryptography and Data Security",
+        "Security and Verification in Computing"
+      ],
+      "keywords": [
+        "cryptographic signatures",
+        "Ed25519",
+        "drift detection",
+        "non-repudiation",
+        "replay attack resistance",
+        "execution uncertainty"
+      ]
+    },
+    {
+      "id": "doi:10.17605/osf.io/cse82",
+      "abstract": "This repository contains supplementary materials for the paper \"AI-Assisted Generation of Bloom's-Aligned Assessments: A Comparative Study of Prompting Strategies and Assessment Quality,\" accepted at IEEE TALE 2026. The study investigated an AI-assisted pipeline using GPT-5.2 (via Perplexity Pro) to generate multiple-choice and short-answer questions aligned to Bloom's Taxonomy for a biomedical engineering module (BN2201, Quantitative Physiology for Bioengineers). Few-shot and chain-of-thought prompting strategies were compared via educator evaluation (RQ1), and AI-generated items were subsequently compared against human-authored items in an authentic midterm examination (RQ2). Materials are organized into two components: Generation Metadata, Prompts & Analysis Code (public): LLM configuration, prompt templates, and R code for inter-rater reliability analysis. Item Pool and Examination Materials (restricted access): Instructor-provided exemplars, the AI-generated item pool, and examination design. Access to this component is restricted to preserve item integrity for future use in the module; researchers may contact the corresponding author for access. Authors: Shruthi Sethuraman, Kareeb Rahman, Bina Rai, Chen Huei Leo Affiliation: Department of Biomedical Engineering, National University of Singapore For questions regarding these materials, please contact the corresponding author at leoch@nus.edu.sg.",
+      "topics": [
+        "Artificial Intelligence in Education",
+        "Educational Assessment and Pedagogy",
+        "Educational Technology and Assessment",
+        "Artificial Intelligence in Healthcare and Education",
+        "Intelligent Tutoring Systems and Adaptive Learning"
+      ],
+      "keywords": [
+        "Bloom's taxonomy",
+        "multiple-choice questions",
+        "short-answer questions",
+        "prompting strategies",
+        "few-shot prompting",
+        "chain-of-thought prompting",
+        "GPT-5.2",
+        "assessment design",
+        "item pool",
+        "inter-rater reliability",
+        "biomedical engineering education",
+        "quantitative physiology"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.40347",
+      "abstract": "We introduce VideoMSN, a Masked Siamese Network framework for efficient self-supervised spatio-temporal representation learning in videos. Instead of relying on heavy 3D architectures or reconstruction-based autoencoders for learning with unlabeled data, we repurpose standard image Vision Transformers by representing videos as super images which are grids composed of frames sampled from videos. From each super image, we construct two views: one with spatial patch masking and the other with temporal frame masking, ensuring no information leakage across frames. A shared Vision Transformer (ViT) encoder aligns their embeddings using a masked Siamese loss, capturing both motion and appearance cues without reconstruction. Our decoder-free formulation leverages an image foundation model towards efficient video representation learning. Starting from pretrained DINO-v3 and DeiT-v3 image encoders, VideoMSN achieves state-of-the-art performance on Kinetics-400, UCF101, and HMDB51 while requiring up to $32\\times$ fewer and $160\\times$ fewer video pretraining epochs compared to prior video self-supervised learning methods. Our proposed approach also shows strong performance in low-shot classification, confirming the transferability of the learned representations in a label-scarce scenario. Project Page: https://cvir.github.io/projects/videomsn.",
+      "topics": [
+        "Human Pose and Action Recognition",
+        "Domain Adaptation and Few-Shot Learning",
+        "Multimodal Machine Learning Applications",
+        "Generative Adversarial Networks and Image Synthesis"
+      ],
+      "keywords": [
+        "self-supervised video representation learning",
+        "spatio-temporal representation learning",
+        "unlabeled video data"
+      ]
+    },
     {
       "id": "doi:10.1145/3848635",
       "abstract": "Text-Attributed Graphs (TAGs) are prevalent in various real-world scenarios, where each node is associated with a text attribute. Representation learning on TAGs relies on a comprehensive understanding of both the textual attributes and the topological connections. Recent works have enhanced graph neural networks (GNNs) with pre-trained language models (PLMs) for textual attribute modeling, achieving promising results compared with shallow text representations such as BoW. With the advent of more powerful LLMs, how to effectively and efficiently inject the generic knowledge in LLMs into representation learning on TAGs still calls for systematic investigation. To this end, we first examine whether mainstream generative LLMs can provide high-quality generic text embeddings that can be directly used by downstream GNNs, and further explore their complementarity with the task-specific knowledge from a tuned PLM (TLM). Based on these observations, we propose a dual-channel knowledge fusion framework, named MoKGNN, to simultaneously leverage the generic semantic knowledge from LLMs and the task adaptation capability of TLM. Specifically, we design a dual-channel feature extraction module to learn generic and task-specific text representations separately. Next, we introduce a Knowledge Alignment Network to align the LLM embeddings with the TLM representations. Finally, MoKGNN adopts a global mixing weight to fuse the two channels, obtaining a unified node embedding for downstream GNN training. Moreover, we further analyze a key limitation of such early feature fusion under message passing: once heterogeneous text features are merged before neighborhood aggregation, source-specific noise and non-aligned semantics may be diffused together and become harder to disentangle and correct. Motivated by this observation, we propose IMoKGNN, a decoupled dual-stream framework that propagates LLM and TLM features in parallel with a shared GNN backbone and performs late fusion in logit space. Extensive experiments on five TAG datasets demonstrate the effectiveness of our approaches for both node classification and link prediction, and show that IMoKGNN yields more reliable improvements than MoKGNN.",
@@ -3638,94 +3696,6 @@
         "Energy subsidies",
         "Photovoltaic system",
         "Government (linguistics)"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22915466",
-      "abstract": "Abstract Renewable energy innovation has become a critical component of the global transition toward a sustainable, secure, and low-carbon energy system. Growing energy demand, climate change, depletion of conventional fossil-fuel resources, and concerns regarding energy security have accelerated the development and adoption of renewable energy technologies. Innovation in solar photovoltaic systems, wind energy, hydropower, bioenergy, geothermal energy, green hydrogen, energy storage, smart grids, and digital energy-management systems is transforming the structure of modern energy systems. This research paper examines the concept, evolution, major technological developments, economic significance, environmental benefits, challenges, and future prospects of renewable energy innovation. It also discusses the role of artificial intelligence, Internet of Things technologies, advanced batteries, floating solar, offshore wind, green hydrogen, and decentralized energy systems in improving the efficiency and reliability of renewable energy. Particular attention is given to the Indian context, including India's renewable-energy potential, policy initiatives, technological development, and opportunities for sustainable economic growth. The paper adopts a descriptive and analytical research approach based primarily on secondary information from academic literature, institutional reports, government publications, and international energy organizations. The study finds that renewable energy innovation can reduce greenhouse-gas emissions, improve energy security, create employment, encourage technological development, and support inclusive economic growth. However, challenges such as intermittency, energy storage, high initial investment, grid integration, land requirements, financing constraints, supply-chain dependencies, and skill shortages must be addressed. The paper concludes that sustained investment in research and development, supportive public policy, private-sector participation, technological collaboration, and development of skilled human resources are essential for accelerating renewable energy innovation and achieving long-term sustainable development.",
-      "topics": [
-        "Hybrid Renewable Energy Systems",
-        "Social Acceptance of Renewable Energy",
-        "Energy and Environmental Sustainability"
-      ],
-      "keywords": [
-        "renewable energy innovation",
-        "sustainable development",
-        "photovoltaics",
-        "wind energy",
-        "hydropower",
-        "bioenergy",
-        "geothermal energy",
-        "green hydrogen",
-        "energy storage",
-        "smart grid",
-        "artificial intelligence in energy",
-        "Internet of Things",
-        "floating photovoltaics",
-        "offshore wind energy",
-        "distributed energy systems",
-        "energy security",
-        "intermittency",
-        "grid integration",
-        "renewable energy policy",
-        "India",
-        "greenhouse gas emissions reduction",
-        "job creation",
-        "Renewable energy",
-        "Energy engineering",
-        "Energy security",
-        "Sustainable development",
-        "Feed-in tariff",
-        "Renewable energy credit",
-        "Energy subsidies",
-        "Photovoltaic system",
-        "Government (linguistics)"
-      ]
-    },
-    {
-      "id": "openalex:W7219402635",
-      "abstract": "Background: Youth-facing artificial intelligence (AI) mental health tools have moved from research prototypes to consumer products at scale, and nearly three in four (72%) US adolescents report having used an AI companion. Racial and ethnic minority and sexual and gender minority (SGM) youth carry a disproportionate mental health burden, yet how often the evidence for these tools reports who was studied has not, to our knowledge, been measured. The nearest prior review found race or ethnicity reported in 34 of 88 studies and examined gender-related indicators in none. Objective: To measure what proportion of studies of youth-facing AI mental health tools report participants' race and ethnicity and SGM status; which groups are represented; whether outcomes are disaggregated by identity; the extent of minoritized youth involvement in design, development, or evaluation; and how reporting has changed from 2020 to 2026 and between rule-based and generative systems. Methods: Scoping review under JBI methodology, reported against PRISMA-ScR, prospectively registered (OSF 10.17605/OSF.IO/XUZAE). Five databases were searched (2020 to 2026) with no identity term in any search string, because absence of identity reporting cannot be measured in a corpus selected on its presence. Search recall was validated against a seed set (88.6% as prespecified, 62/70; 91.1% under the operative eligibility interpretation, 82/90; 100% on the highest-priority tier under both). Identity reporting was charted for every study—absence is data. Results: 100 studies were included. 42 of 100 (42.0%) reported neither race/ethnicity nor SGM status; 27 (27.0%) reported both. Decomposed into sexual orientation and gender identity (SOGI) data elements, race/ethnicity was reported in 42 (42.0%), gender identity in 41 (41.0%), and sexual orientation in 14 (14.0%). Outcomes were disaggregated by identity in 19 (19.0%). Involvement of minoritized youth in design, development, or evaluation was documented in 10 (10.0%), and in 0 of 36 studies of generative systems, against 6 of 40 (15.0%) rule-based conversational agent studies. Conclusions: The evidence base for youth AI mental health tools under-reports the identities of the youth it studies; gender-identity reporting was more common in studies published from 2023 to 2026 than in studies published from 2020 to 2022, whereas sexual-orientation reporting remained uncommon in both periods; and participatory involvement of minoritized youth is unreported in the generative literature (0 of 36 studies). Reporting completeness is an actionable target for journals, funders, and developers.",
-      "topics": [
-        "Digital Mental Health Interventions",
-        "Ethics and Social Impacts of AI",
-        "LGBTQ Health, Identity, and Policy",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": [
-        "race and ethnicity reporting",
-        "sexual and gender minority youth",
-        "generative AI",
-        "rule-based AI",
-        "mental health outcomes",
-        "adolescent mental health"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.22976964",
-      "abstract": "Abstract: The present research paper deals with the representation of artificial intelligence in the contemporary fiction. The rapid developments of artificial intelligence had generated corresponding proliferation of literary narratives concerned with intelligent machines, artificial consciousness, automation, human-machine intimacy and the boundaries of human world. While earlier science fiction often imagined intelligent machines primarily as either servants or threats; recent literature presents artificial intelligence in more complex roles such as companion, worker, friend, moral agent and political subject. Such representations make the distinction between human and machines very complex and redefine the concepts like consciousness, emotion, autonomy and responsibility. Hence, in this paper an attempt is made to take the review of AI reflected in the contemporary fiction. Keywords: artificial intelligence, contemporary fiction, science fiction, human-machine relationships, technology identity.",
-      "topics": [
-        "Utopian, Dystopian, and Speculative Fiction",
-        "Cultural Studies and Postmodernism",
-        "Bioethics and Human Rights Issues"
-      ],
-      "keywords": [
-        "artificial intelligence",
-        "contemporary fiction",
-        "science fiction",
-        "human-machine interaction",
-        "artificial consciousness",
-        "automation",
-        "autonomy",
-        "responsibility",
-        "emotions",
-        "Representation (politics)",
-        "Artificial life",
-        "Narrative",
-        "Autonomy",
-        "Human intelligence",
-        "Symbolic artificial intelligence",
-        "Artificial intelligence, situated approach",
-        "Artificial psychology"
       ]
     }
   ]

@@ -1,12 +1,656 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "page": 245,
   "pageSize": 100,
-  "totalItems": 40515,
+  "totalItems": 40518,
   "totalPages": 406,
   "nextPage": "./page-246.json",
   "items": [
+    {
+      "id": "arxiv:2608.23663",
+      "recordType": "preprint",
+      "title": "Confidently Wrong, Silently So: Auditing Undetectable Failures of a Deployed On-Device Language Model",
+      "abstract": "Aligning deployed language models requires knowing when their outputs can be trusted, yet on-device models now ship to hundreds of millions of devices with no server-side moderation, and the configuration developers can actually deploy is rarely audited independently. We present a reproducible reliability audit of the developer-accessible on-device foundation model, framed as an oversight question: can a user or a resource-constrained developer tell when the model is wrong? Red-teaming it on calibration, confident confabulation on false-premise questions, and over-refusal of benign prompts, we find a \\emph{task-asymmetric miscalibration}: its guardrails fail in opposite directions across tasks (confabulating on 69\\% of false premises while refusing 18\\% of entirely benign inputs), atop a self-reported confidence that is saturated and non-discriminative (AUROC 0.47; ECE 70, worst among comparable small models). Crucially, confident-correct and confident-wrong outputs are \\emph{surface-indistinguishable}: a classifier over 15 user-visible features separates them at AUROC only 0.55 (equivalence-confirmed), leaving no signal for oversight at inference time. No cheap single-generation signal flags these failures ($\\le$0.68 AUROC), whereas a black-box consistency wrapper requiring no model access recovers reliability (confident confabulation 75\\%$\\to$3\\%; selective accuracy 43\\%$\\to$83\\%) at a tunable cost. We contribute a model-agnostic audit protocol, a surface-indistinguishability test, and released code and frozen evaluation items as reusable infrastructure for auditing deployed models.",
+      "doi": "10.48550/arxiv.2608.23663",
+      "externalIds": {
+        "openalex": "W7204238461",
+        "arxiv": "2608.23663"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.23663"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-24",
+      "firstPublicDate": "2026-08-24",
+      "onlineDate": null,
+      "topics": [
+        "Security and Verification in Computing",
+        "Scientific Computing and Data Management",
+        "Software System Performance and Reliability",
+        "cs.SE",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Audit",
+        "Inference",
+        "Consistency (knowledge bases)",
+        "Reliability (semiconductor)",
+        "Classifier (UML)",
+        "Language model",
+        "Audit trail",
+        "Confabulation (neural networks)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "failure",
+              "conceptLabel": "Fehler",
+              "matchedTerm": "failures",
+              "sourceValue": "Confidently Wrong, Silently So: Auditing Undetectable Failures of a Deployed On-Device Language Model",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "failure",
+              "conceptLabel": "Fehler",
+              "matchedTerm": "failures",
+              "sourceValue": "… for oversight at inference time. No cheap single-generation signal flags these failures ($\\le$0.68 AUROC), whereas a black-box consistency wrapper requiring no model access recovers reliability (confident confabulation 75\\%$\\to$3\\%; selective accuracy 43\\%$\\to$83\\%) at a tunable cost. We contribute a model-agnostic au…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "trust",
+              "conceptLabel": "Vertrauen",
+              "matchedTerm": "trusted",
+              "sourceValue": "Aligning deployed language models requires knowing when their outputs can be trusted, yet on-device models now ship to hundreds of millions of devices with no server-side moderation, and the configuration developers can actually deploy is rarely audited independently. We present a reproducible reliability audit of the …",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "calibration",
+              "conceptLabel": "Kalibrierung",
+              "matchedTerm": "calibration",
+              "sourceValue": "… resource-constrained developer tell when the model is wrong? Red-teaming it on calibration, confident confabulation on false-premise questions, and over-refusal of benign prompts, we find a \\emph{task-asymmetric miscalibration}: its guardrails fail in opposite directions across tasks (confabulating on 69\\% of false pr…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 5,
+        "topic:safety": 6,
+        "topic:trust": 4,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "foundation model",
+        "trust",
+        "failures",
+        "trusted",
+        "calibration"
+      ],
+      "authors": [
+        {
+          "id": "A5051142062",
+          "name": "Shashwat Pandey",
+          "orcid": "https://orcid.org/0009-0003-1954-9116",
+          "affiliations": []
+        },
+        {
+          "id": "A5101336497",
+          "name": "Satwik Pandey",
+          "orcid": "https://orcid.org/0009-0009-2421-1463",
+          "affiliations": []
+        },
+        {
+          "id": "A5133133991",
+          "name": "Suresh Raghu",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.23663",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:33.532Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-27T14:56:35.436Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:35.436Z",
+      "preferredVersionId": "arxiv:2608.23663",
+      "versions": [
+        {
+          "id": "arxiv:2608.23663",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.23663",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.23663v2"
+        },
+        {
+          "id": "openalex:W7204238461",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204238461",
+          "doi": "10.48550/arxiv.2608.23663",
+          "url": "https://doi.org/10.48550/arxiv.2608.23663"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-245.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "user",
+              "quote": "r-accessible on-device foundation model, framed as an oversight question: can a user or a resource-constrained developer tell when the model is wrong? Red-teaming it on calibration, co",
+              "start": 328,
+              "end": 512
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "foundation model",
+              "quote": " present a reproducible reliability audit of the developer-accessible on-device foundation model, framed as an oversight question: can a user or a resource-constrained developer tell when the mode",
+              "start": 271,
+              "end": 467
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "el access recovers reliability (confident confabulation 75\\%$\\to$3\\%; selective accuracy 43\\%$\\to$83\\%) at a tunable cost. We contribute a model-agnostic audit protocol, a surface-indistin",
+                  "start": 1302,
+                  "end": 1490
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.23903",
+      "recordType": "preprint",
+      "title": "Continual Visual Learning under Evolving Semantic Concept Shift",
+      "abstract": "Visual foundation models are commonly adapted under the assumption that the appearance of incoming data may change while the semantic meaning of the prediction task remains fixed. In long-lived visual systems, however, taxonomies, policies, and concept definitions can themselves evolve, causing the same visual evidence to require a different interpretation. We study this setting as evolving semantic concept shift and introduce SemReWrite, a framework for selectively updating obsolete visual--semantic mappings while preserving knowledge that remains valid. SemReWrite represents changes between old and revised semantic specifications, combines semantic discrepancy with sparse revised supervision to localize affected visual regions, and uses an input-dependent low-rank rewriting mechanism together with structured semantic memory, preservation, and obsolete-decision suppression. We further introduce EvoShift-Bench, spanning ImageNet, iNaturalist, CUB-200-2011, and DomainNet, with semantic transitions including class split, merge, boundary revision, insertion, partial redefinition, recurrence, and mixed semantic--appearance shift. To explicitly evaluate selective semantic revision, we introduce Rewrite Accuracy (RA) and Preservation Accuracy (PA) for affected and unaffected regions, respectively, Obsolete Retention (OR) for measuring residual outdated semantic associations, and the Selective Revision Score (SRS), which jointly summarizes rewriting and preservation performance. Experiments show that SemReWrite achieves a stronger balance between learning revised semantics and retaining unaffected knowledge than prompt replacement, conventional fine-tuning, parameter-efficient adaptation, and continual-learning strategies.",
+      "doi": "10.48550/arxiv.2608.23903",
+      "externalIds": {
+        "openalex": "W7204268598",
+        "arxiv": "2608.23903"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.23903"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-24",
+      "firstPublicDate": "2026-08-24",
+      "onlineDate": null,
+      "topics": [
+        "Domain Adaptation and Few-Shot Learning",
+        "Generative Adversarial Networks and Image Synthesis",
+        "Multimodal Machine Learning Applications",
+        "cs.CV",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Semantics (computer science)",
+        "Rewriting",
+        "Class (philosophy)",
+        "Task (project management)",
+        "Semantic change",
+        "Semantic property",
+        "Semantic memory",
+        "Semantic similarity"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Continual Visual Learning under Evolving Semantic Concept Shift",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "…rformance. Experiments show that SemReWrite achieves a stronger balance between learning revised semantics and retaining unaffected knowledge than prompt replacement, conventional fine-tuning, parameter-efficient adaptation, and continual-learning strategies.",
+              "weight": 2
+            },
+            {
+              "source": "external_topic",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Domain Adaptation and Few-Shot Learning",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 6,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "foundation model",
+        "foundation models",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5098907775",
+          "name": "Ismail Lamaakal",
+          "orcid": "https://orcid.org/0009-0009-6532-2573",
+          "affiliations": []
+        },
+        {
+          "id": "A5119506747",
+          "name": "Chaymae Yahyati",
+          "orcid": "https://orcid.org/0009-0002-2316-8140",
+          "affiliations": []
+        },
+        {
+          "id": "A5014120892",
+          "name": "Yassine Maleh",
+          "orcid": "https://orcid.org/0000-0003-4704-5364",
+          "affiliations": []
+        },
+        {
+          "id": "A5001534531",
+          "name": "Khalid El Makkaoui",
+          "orcid": "https://orcid.org/0000-0002-9569-9162",
+          "affiliations": []
+        },
+        {
+          "id": "A5077012960",
+          "name": "Ibrahim Ouahbi",
+          "orcid": "https://orcid.org/0000-0002-0552-9275",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.23903",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:29.253Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-27T14:56:36.497Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
+      "preferredVersionId": "arxiv:2608.23903",
+      "versions": [
+        {
+          "id": "arxiv:2608.23903",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.23903",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.23903v1"
+        },
+        {
+          "id": "openalex:W7204268598",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204268598",
+          "doi": "10.48550/arxiv.2608.23903",
+          "url": "https://doi.org/10.48550/arxiv.2608.23903"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-245.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "foundation model",
+              "quote": "Visual foundation models are commonly adapted under the assumption that the appearance of incoming data may change while the",
+              "start": 0,
+              "end": 124
+            },
+            {
+              "field": "abstract",
+              "term": "foundation models",
+              "quote": "Visual foundation models are commonly adapted under the assumption that the appearance of incoming data may change while the",
+              "start": 0,
+              "end": 124
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "shift. To explicitly evaluate selective semantic revision, we introduce Rewrite Accuracy (RA) and Preservation Accuracy (PA) for affected and unaffected regions, respectively, Obsolete Ret",
+                  "start": 1137,
+                  "end": 1325
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "n Score (SRS), which jointly summarizes rewriting and preservation performance. Experiments show that SemReWrite achieves a stronger balance between learning revised semantics and retaining u",
+                  "start": 1417,
+                  "end": 1608
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.23922",
+      "recordType": "preprint",
+      "title": "Data Mixing as Mixture Experiment: Response Surface Methodology and Optimal Design for Large Language Model Pretraining",
+      "abstract": "Data mixing is a central design problem in large language model pretraining: given a fixed token budget, practitioners must decide how much data to allocate to each domain. Recent proxy-based methods address this problem by training small models on candidate mixtures, fitting a response model, and using the response to select mixtures for larger-scale training. We show that this workflow has the structure of a classical mixture experiment. Under this view, data domains are mixture components, token shares are component proportions, proxy-training runs are experimental design points, and validation loss defines a response surface over the probability simplex. We develop this formulation using sparse second-order Scheffé response-surface models and construct model-robust $\\mathcal{I}$-optimal designs for proxy data-mixing experiments. Using RegMix as an empirical case study, we demonstrate how the framework can both interpret observed mixture responses and design more efficient proxy experiments. The Scheffé analysis shows that domain value is strongly relational: several domains that are weak under additive effects become favourable through pairwise interactions, especially through combinations with web-derived text. The sparse Scheffé model preserves mixture rankings across model scales and remains competitive with a flexible machine-learning predictor while providing an explicit decomposition of additive and interaction effects. In a simulation study calibrated to observed proxy-training responses, model-robust $\\mathcal{I}$-optimal designs recover the relevant mixture ordering after removing about 25\\% of the original proxy runs. These results suggest that LLM data mixing should be treated not only as a prediction problem, but also as an experimental-design problem in which the proxy mixtures themselves can be chosen to improve statistical efficiency.",
+      "doi": "10.48550/arxiv.2608.23922",
+      "externalIds": {
+        "openalex": "W7204266134",
+        "arxiv": "2608.23922"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.23922"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-24",
+      "firstPublicDate": "2026-08-24",
+      "onlineDate": null,
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Computational and Text Analysis Methods",
+        "Machine Learning and Algorithms",
+        "cs.AI",
+        "stat.ML"
+      ],
+      "keywords": [
+        "Pairwise comparison",
+        "Mixture model",
+        "Proxy (statistics)",
+        "Mixing (physics)",
+        "Workflow",
+        "Design of experiments",
+        "Experimental data",
+        "Security token"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 3,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5148409705",
+          "name": "Yicheng Mao",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5072771687",
+          "name": "Hongru Du",
+          "orcid": "https://orcid.org/0000-0001-7008-2943",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.23922",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-22T08:39:29.253Z",
+      "firstSeenRunId": "ingestion-2026-09-22T08:39:04.283Z",
+      "retrievedAt": "2026-09-27T14:56:36.497Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
+      "preferredVersionId": "arxiv:2608.23922",
+      "versions": [
+        {
+          "id": "arxiv:2608.23922",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.23922",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.23922v1"
+        },
+        {
+          "id": "openalex:W7204266134",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7204266134",
+          "doi": "10.48550/arxiv.2608.23922",
+          "url": "https://doi.org/10.48550/arxiv.2608.23922"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-245.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "large language model",
+              "quote": "xing as Mixture Experiment: Response Surface Methodology and Optimal Design for Large Language Model Pretraining",
+              "start": 7,
+              "end": 119
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Data mixing is a central design problem in large language model pretraining: given a fixed token budget, practitioners must decide how much data to allocate to eac",
+              "start": 0,
+              "end": 163
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "fter removing about 25\\% of the original proxy runs. These results suggest that LLM data mixing should be treated not only as a prediction problem, but also as an experimental-design ",
+              "start": 1607,
+              "end": 1790
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "large language model",
+                  "quote": "xing as Mixture Experiment: Response Surface Methodology and Optimal Design for Large Language Model Pretraining",
+                  "start": 7,
+                  "end": 119
+                },
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Data mixing is a central design problem in large language model pretraining: given a fixed token budget, practitioners must decide how much data to allocate to eac",
+                  "start": 0,
+                  "end": 163
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "experiment",
+                  "quote": "Data Mixing as Mixture Experiment: Response Surface Methodology and Optimal Design for Large Language Model Pretraining",
+                  "start": 0,
+                  "end": 119
+                },
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "e training. We show that this workflow has the structure of a classical mixture experiment. Under this view, data domains are mixture components, token shares are component proportions, prox",
+                  "start": 352,
+                  "end": 542
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "simulation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "simulation study",
+                  "quote": "e providing an explicit decomposition of additive and interaction effects. In a simulation study calibrated to observed proxy-training responses, model-robust $\\mathcal{I}$-optimal designs recover",
+                  "start": 1379,
+                  "end": 1575
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "arxiv:2608.23095",
       "recordType": "preprint",
@@ -22027,554 +22671,6 @@
               "interpretation": "mentioned; role/outcome not confirmed"
             }
           ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.22527",
-      "recordType": "preprint",
-      "title": "Stress Testing Unlearning Algorithms",
-      "abstract": "Recently, machine unlearning, the removal of specific training data influence from a model, has gained increasing attention. In large language models (LLMs), unlearning is particularly challenging due to the ambiguity of inputs and outputs. Con- sequently, rigorous evaluation is critical for assessing both safety and utility, and for driving progress in unlearning meth- ods. We identify two key shortcomings in existing unlearning benchmarks: (1) they do not actively test whether unlearned information can still be forcibly extracted, and (2) they fail to evaluate performance preservation on boundary questions, be- nign queries that are semantically close to the unlearned con- tent. Here we introduce WMDP++, an extension of WMDP that addresses these gaps by incorporating targeted extrac- tion of unlearned information and systematic evaluation on boundary questions. WMDP++ provides a more stringent and informative benchmark for evaluating unlearning in LLMs.",
-      "doi": "10.48550/arxiv.2608.22527",
-      "externalIds": {
-        "openalex": "W7204187272"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7204187272"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-23",
-      "firstPublicDate": "2026-08-23",
-      "onlineDate": null,
-      "topics": [
-        "Topic Modeling",
-        "Machine Learning and Data Classification",
-        "Domain Adaptation and Few-Shot Learning"
-      ],
-      "keywords": [
-        "Ambiguity",
-        "Extension (predicate logic)",
-        "Key (lock)",
-        "Benchmark (surveying)",
-        "Boundary (topology)"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "…removal of specific training data influence from a model, has gained increasing attention. In large language models (LLMs), unlearning is particularly challenging due to the ambiguity of inputs and outputs. Con- sequently, rigorous evaluation is critical for assessing both safety and utility, and for driving progress i…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…and outputs. Con- sequently, rigorous evaluation is critical for assessing both safety and utility, and for driving progress in unlearning meth- ods. We identify two key shortcomings in existing unlearning benchmarks: (1) they do not actively test whether unlearned information can still be forcibly extracted, and (2) t…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 5,
-        "topic:cognition": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "safety",
-        "attention"
-      ],
-      "authors": [
-        {
-          "id": "A5060554140",
-          "name": "Noam Diamant",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5047865587",
-          "name": "Neta Glazer",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5053007211",
-          "name": "Ethan Fetaya",
-          "orcid": "https://orcid.org/0000-0003-3125-1665",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.22527",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:36.497Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "openalex:W7204187272",
-      "versions": [
-        {
-          "id": "openalex:W7204187272",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204187272",
-          "doi": "10.48550/arxiv.2608.22527",
-          "url": "https://doi.org/10.48550/arxiv.2608.22527"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-245.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "cific training data influence from a model, has gained increasing attention. In large language models (LLMs), unlearning is particularly challenging due to the ambiguity of inputs and outputs. Con- seq",
-              "start": 48,
-              "end": 249
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "cific training data influence from a model, has gained increasing attention. In large language models (LLMs), unlearning is particularly challenging due to the ambiguity of inputs and outputs. Con- seq",
-              "start": 48,
-              "end": 249
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "luence from a model, has gained increasing attention. In large language models (LLMs), unlearning is particularly challenging due to the ambiguity of inputs and outputs. Con- sequently",
-              "start": 71,
-              "end": 255
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "cific training data influence from a model, has gained increasing attention. In large language models (LLMs), unlearning is particularly challenging due to the ambiguity of inputs and outputs. Con- seq",
-                  "start": 48,
-                  "end": 249
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "wellbeing",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "stress",
-                  "quote": "Stress Testing Unlearning Algorithms",
-                  "start": 0,
-                  "end": 36
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.22594",
-      "recordType": "preprint",
-      "title": "Tabular foundation models for non-tabular tasks",
-      "abstract": "Tabular foundation models (TFMs) have recently emerged as a promising paradigm for machine learning on tabular data, offering the ability to generalize across datasets without task-specific training. Since many machine learning datasets can be represented as tables, this raises the question: does TFM capability extend beyond tasks traditionally regarded as tabular? We address this question by using TabPFN v3 on three non-tabular classification problems: handwritten digit recognition on MNIST, language identification of French and German words, and image classification on Tiny ImageNet. In each case, the original data are represented as rows of a table and classification is formulated as prediction of a missing label. We evaluate performance as a function of the number of context samples provided to the pretrained model, with no additional training or fine-tuning. Despite having no explicit access to the spatial or sequential structure characterizing the data, TabPFN v3 in some cases achieves accuracies comparable with that of models or methods geared specifically toward the corresponding tasks.",
-      "doi": "10.48550/arxiv.2608.22594",
-      "externalIds": {
-        "openalex": "W7204156712"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7204156712"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-23",
-      "firstPublicDate": "2026-08-23",
-      "onlineDate": null,
-      "topics": [
-        "Machine Learning and Data Classification",
-        "Handwritten Text Recognition Techniques",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "Context (archaeology)",
-        "Identification (biology)",
-        "Table (database)",
-        "Row",
-        "Training set",
-        "Function (biology)"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 3,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "foundation models",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5055091094",
-          "name": "Goran Nakerst",
-          "orcid": "https://orcid.org/0000-0001-7313-2758",
-          "affiliations": []
-        },
-        {
-          "id": "A5076722602",
-          "name": "John Brennan",
-          "orcid": "https://orcid.org/0000-0002-7274-5920",
-          "affiliations": []
-        },
-        {
-          "id": "A5031665172",
-          "name": "Wouter Beugeling",
-          "orcid": "https://orcid.org/0000-0001-8687-7441",
-          "affiliations": []
-        },
-        {
-          "id": "A5044690810",
-          "name": "Masudul Haque",
-          "orcid": "https://orcid.org/0000-0001-6848-6068",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.22594",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:36.497Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "openalex:W7204156712",
-      "versions": [
-        {
-          "id": "openalex:W7204156712",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7204156712",
-          "doi": "10.48550/arxiv.2608.22594",
-          "url": "https://doi.org/10.48550/arxiv.2608.22594"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-245.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "foundation model",
-              "quote": "Tabular foundation models for non-tabular tasks",
-              "start": 0,
-              "end": 47
-            },
-            {
-              "field": "title",
-              "term": "foundation models",
-              "quote": "Tabular foundation models for non-tabular tasks",
-              "start": 0,
-              "end": 47
-            },
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "Tabular foundation models (TFMs) have recently emerged as a promising paradigm for machine learning on tabular data, offering",
-              "start": 0,
-              "end": 125
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "openalex:W7203730321",
-      "recordType": "preprint",
-      "title": "TBBT: LLM-Augmented Host Threat Detection with Trusted Behavior Baseline Trees and Multi-View Evidence Assessment",
-      "abstract": "Large language models and intelligent agents accelerate the automation of advanced cyber attacks. The infinitely expanding attack surface motivates a more practical defensive perspective: characterizing host-specific trusted behavior patterns and conducting fine-grained deviation assessments. Existing solutions struggle to identify stealthy attacks abusing legitimate software chains and lack interpretable evidence for further investigation. This paper proposes TBBT, a host threat detection framework with trusted behavior baseline trees and multi-view evidence assessment. TBBT performs LLM-driven semantic category induction and rule generation to construct trusted behavior baseline trees with five-level semantic slots, including process role, execution context, behavior modality, resource semantics, and finer behavior variants. During real-time detection, it calculates tree deviation for unknown behavior fragments and conducts LLM semantic assessment on multi-view evidence payloads. The final threat detection decision are produced by fusing multi-dimensional risk signals. We conduct extensive evaluations across 16 host threat detection scenarios spanning diverse device types, operating systems, and attack tactics. TBBT achieves an average F1 score of 94.83% and recall of 97.30%, with an average assessment time of 5.27 seconds. TBBT can effectively model diverse trusted behaviors while reducing storage requirements by 103.29 ~ 307.21 × relative to raw system logs. Moreover, it remains robust under a series of stealthy adversarial strategies, including process identity mimicry, slow execution, context camouflage, and indirect prompt injection.",
-      "doi": null,
-      "externalIds": {
-        "openalex": "W7203730321"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7203730321"
-      },
-      "venue": "OSF Preprints (OSF Preprints)",
-      "publicationDate": "2026-08-23",
-      "firstPublicDate": "2026-08-23",
-      "onlineDate": null,
-      "topics": [
-        "Network Security and Intrusion Detection",
-        "Advanced Malware Detection Techniques",
-        "Security and Verification in Computing"
-      ],
-      "keywords": [
-        "Baseline (sea)",
-        "Host (biology)",
-        "Process (computing)",
-        "Context (archaeology)",
-        "Robustness (evolution)",
-        "Gadget",
-        "Server",
-        "Leverage (statistics)",
-        "Precision and recall",
-        "Resource (disambiguation)"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 6,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "trust",
-              "conceptLabel": "Vertrauen",
-              "matchedTerm": "trusted",
-              "sourceValue": "TBBT: LLM-Augmented Host Threat Detection with Trusted Behavior Baseline Trees and Multi-View Evidence Assessment",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "trust",
-              "conceptLabel": "Vertrauen",
-              "matchedTerm": "trusted",
-              "sourceValue": "… motivates a more practical defensive perspective: characterizing host-specific trusted behavior patterns and conducting fine-grained deviation assessments. Existing solutions struggle to identify stealthy attacks abusing legitimate software chains and lack interpretable evidence for further investigation. This paper p…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…s. The final threat detection decision are produced by fusing multi-dimensional risk signals. We conduct extensive evaluations across 16 host threat detection scenarios spanning diverse device types, operating systems, and attack tactics. TBBT achieves an average F1 score of 94.83% and recall of 97.30%, with an average…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:trust": 6,
-        "topic:safety": 2,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "trust",
-        "trusted",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": "A5147436171",
-          "name": "SupportingMaterials",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://osf.io/zsx5m",
-      "openAccess": false,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:36.497Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-27T14:56:36.497Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-27T14:56:36.497Z",
-      "preferredVersionId": "openalex:W7203730321",
-      "versions": [
-        {
-          "id": "openalex:W7203730321",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7203730321",
-          "doi": null,
-          "url": "https://osf.io/zsx5m"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-245.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "TBBT: LLM-Augmented Host Threat Detection with Trusted Behavior Baseline Trees and Multi-View Evidence Assess",
-              "start": 0,
-              "end": 109
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Large language models and intelligent agents accelerate the automation of advanced cyber attacks. The infinitely expandin",
-              "start": 0,
-              "end": 121
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Large language models and intelligent agents accelerate the automation of advanced cyber attacks. The infinitely expandin",
-              "start": 0,
-              "end": 121
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Large language models and intelligent agents accelerate the automation of advanced cyber attacks. The infinitely expandin",
-                  "start": 0,
-                  "end": 121
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "automation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "automation",
-                  "quote": "Large language models and intelligent agents accelerate the automation of advanced cyber attacks. The infinitely expanding attack surface motivates a more practical defen",
-                  "start": 0,
-                  "end": 170
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
           "studyDesign": []
         },
         "personalFit": [],

@@ -1,7 +1,31 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "arxiv:2608.01458",
+      "abstract": "Large language models are being extensively used to simulate individual user behavior, yet faithfully representing a population requires capturing the systematic variation in values, beliefs, and cultural norms that distinguish one group from another. We introduce Population Aligned Language Models (PALMs), a suite of models each aligned to specific populations, covering five countries: USA, India, Brazil, France and Italy. PALMs are created by synthesizing rationales grounded in psychological and cultural constructs and using these as latent supervision during preference tuning for population-specific alignment. Evaluated across four dimensions: personality, values and beliefs, cultural norms, and morality, PALMs consistently outperform baselines, including culture-specialized models, achieving an average of 8.59% relative improvement over the best baseline across all five populations. Notably, construct-grounded rationales outperform both demographic prompting and survey-based fine-tuning, suggesting that grounding preference learning in psychology and culture provides a richer inductive signal than surface-level response distributions. We further demonstrate strong generalization to downstream applications with- out task-specific supervision: outperforming best baselines by 5.19% in personalized reward modeling, 6.34% in population simulation, and showing strong transfer to social reasoning tasks. Datasets and code are available at: https://github.com/limenlp/PALMs.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1145/3830398.3830483",
+      "abstract": "As Extended Reality (XR) evolves into an immersive computing medium, interactive 3D authoring becomes essential for creative and functional workflows. However, existing generative XR systems produce monolithic outputs lacking explicit semantic structure, limiting post-generation control. We introduce PartInteractor, a representation-to-interaction framework that investigates how semantic part hierarchies can be incorporated into generative XR authoring, and exposed as first-class, directly manipulable units, turning one-shot prompt-to-object generation into continuous component-level co-creation. PartInteractor supports speech, sketch, and image inputs, integrating an LLM interpreter with a retrieval-generation strategy to scaffold user intent prior to 3D generation. Instead of producing monolithic objects, our system generates semantically decomposed 3D assets with explicit part hierarchies, enabling rich component-level interaction over object structure and composition. Our evaluations suggest that part-aware representation increases post-generation control and reduces reliance on whole-object regeneration, while intent scaffolding mitigates ambiguity and improves intent-result alignment, together supporting more expressive and controllable human-AI co-creation workflows. These results highlight part-aware representation and intent scaffolding as promising design considerations for future generative XR authoring systems.",
+      "topics": [
+        "cs.HC"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.01149",
+      "abstract": "Lifelong LLM agents increasingly adapt through external learning states that store past interactions as retrievable memories or reusable skills, yet existing benchmarks rarely account for how the path of accumulated experience shapes what agents transfer and retain. In this work, we establish PATH-Bench, a benchmark for path-dependent evaluation of lifelong agents. PATH-Bench estimates directed task relationships via multi-model in-context learning, constructs probe-centered sequences with controlled helpful and interfering histories, and repeatedly evaluates probe tasks to measure average performance, forward transfer, backward transfer, and forgetting. We evaluate eight representative agents on single-turn code generation and multi-turn tool-use tasks under positive- and negative-dominant histories. Benchmark results show that experience utility depends jointly on how experience is represented and on the task's interaction structure, that strong transfer does not ensure retention, and that later experience can reshape gains acquired earlier in the learning path. Based on these findings, we propose Selective Experience Use (SEU), an agent harness that regulates how path-accumulated experience influences each new task, admitting helpful items while filtering out potential interference. SEU consistently reduces forgetting while improving forward transfer in the majority of settings. The PATH-Bench provides both a controlled evaluation framework and actionable guidance for designing more selective and robust lifelong agents.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.00969",
       "abstract": "Existing search-augmented LLM agents are trained using Reinforcement Learning to boost its reasoning capabilities. However, these approaches primarily rely on outcome-level rewards, which provide little supervision over search behavior and overlook agent's ability to decompose complex queries properly. To mitigate this issue, we propose PROGRESS which utilizes teacher-guided coverage reward to explicitly shape decomposed query generation of the policy model. During training, frozen teacher models are used to decompose complex queries into essential search queries. These essential search queries are utilized to guide the search behavior of the policy model. Integrated into an R1-style training framework, our approach provides lightweight guidance over query decomposition decisions without dense process-level supervision. Experiments show that coverage-guided RL improves overall task performance, highlighting the importance of explicitly supervising search strategies in agentic LLMs.",
@@ -1837,35 +1861,6 @@
       "abstract": "Future event prediction carries broad social impact yet remains challenging. SOTA approaches augment LLMs with external agent frameworks whose predictive capability vanishes once the harness is removed. While recent Tool-Integrated Reasoning (TIR) internalizes deep search for multi-hop retrieval of facts, forecasting further demands temporal search and reasoning over historical trends and dynamic shifts. The key obstacle is data: historical queries induce temporal leakage that degrades forecasting into retrieval. Prior works either freeze information gathering with static observations, or rely on rejection sampling or unresolved fresh queries that discard vast amounts of data, degrading synthesis efficiency. We propose a time-truncation harness that enforces a temporal cut-off at every turn, enabling TIR-style sampling from historical events, reducing temporal leakage and reliance of rejection sampling or unsolved queries, increasing the sampling efficiency. We further build a large-scale corpus and a process-based metric and show that our harness naturally induces a broader temporal breadth of search and raises the proportion of high-quality data, further increasing the efficiency and reducing the reliance on complex rubrics. Distillation experiments show that students trained on harness-intervened data achieve the best performance, demonstrating harness-assisted model evolving that turns higher quality temporal search and reasoning data into a parametric advancement of the students.",
       "topics": [
         "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.27248",
-      "abstract": "While large language models excel in reasoning, these generalists often lack knowledge for specialized scientific domains. Conversely, domain models~(specialists), while knowledgeable, suffer from specialization side-effects including diminished logic and reduced robustness.To address this dilemma, we introduce Divergence Decoding, a training-free framework for capability fusion. It reconstructs the \"draft-and-verify\" skeleton of speculative decoding into an adaptive routing mechanism. The core is using Jensen-Shannon divergence to monitor the distributional disagreement between the two models at each token. When the specialist exhibits significant divergence, our method identifies it as a potential reasoning risk and instantaneously routes control to the generalist. This allows the dynamic injection of general reasoning while preserving domain expertise, achieving inference-time policy composition of the generalist and the specialist.We evaluate Divergence Decoding across diverse model families (Qwen and Llama series) on challenging scientific benchmarks (GPQA, ChemBench, and ChemCoTBench). Experimental results demonstrate that Divergence Decoding outperforms both the domain-specialized and general-purpose models, effectively surpassing the performance of most single-model baseline. This suggests that Divergence Decoding provides a general, training-free paradigm for fusing diverse LLM capabilities through adaptive inference-time collaboration.",
-      "topics": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.25364",
-      "abstract": "Tool-using agents expose structured calls but commonly attach free-form rationales. Such rationales are neither authorization nor reliable introspection. We present Explanation-Bound Tool Execution (EBTE), a claim-carrying mediation layer that converts decision-relevant rationale content into typed action claims and checks them against server-held intent, policy, payload, tool, risk, provenance, and freshness facts. EBTE cannot widen baseline authority: conflicts deny, incomplete or uncertain claims review, and only matching claims remain eligible for governed execution. We formalize this composition under explicit mediation and trusted-fact assumptions and implement a versioned reference profile with minimized audit packets. Across 136 authored conformance scenarios, the full profile matches all specified dispositions, admits none of 96 designated hard contradictions, and passes 232 metamorphic checks. A draft-only reference integration forwards none of 48 authored hard cases under EBTE while preserving all 16 soft-review and 4 aligned draft paths. In a frozen 2026-07-12 exploratory 224-attempt hosted-model record, the historical generation/runner agreement counts are 71/96, 66/96, and 19/32; a zero-call revalidation of the preserved minimized claims under the current pipeline yields 70/96, 65/96, and 17/32. In an AgentDojo-derived semantic check, existing high-risk controls make all 12 attack proposals non-allow, while EBTE resolves the task--proposal contradictions as deny. Together, these studies establish profile conformance and demonstrate the feasibility of server-checked action claims within the evaluated settings.",
-      "topics": [
-        "cs.AI",
-        "cs.SE"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.26034",
-      "abstract": "Technological races create tension between speed and safety: actors may gain by moving faster than competitors, even when risky development is harmful. This is prominent in debates about artificial intelligence (AI), where competitive pressure is often argued to incentivise riskier, less safety-conscious development. We study this using a framed behavioural experiment based on an idealised AI race, in which paired participants repeatedly chose between Safe and Unsafe development under an uncertain time horizon. Unsafe development gave faster progress and higher immediate payoffs but accumulated private risk up to a treatment-specific maximum of 10\\%, 60\\%, or 90\\%; the race's competitive structure was held constant, and only this maximum risk varied. Neither the pre-registered comparison between risk levels nor the role of elicited risk preferences was supported by the data. Instead, exploratory analyses motivated by the task's repeated structure show that Unsafe behaviour is shaped less by risk preferences than by the evolving strategic state of the race: participants are more likely to choose Unsafe after their opponent does so, being ahead reduces Unsafe play while falling behind increases it, and first-round choices predict later behaviour. To interpret these effects we introduce a reduced evolutionary model with four strategies -- Always Safe, Always Unsafe, Conditionally Safe, and Conditionally Antisocial Safe -- which reproduces the treatment effect and shows how conditional Unsafe behaviour can be favoured by competitive race dynamics. Together, the experiment and model show that unsafe development can emerge from early behavioural momentum, opponent behaviour, and fear of falling behind, rather than from risk preferences alone, suggesting policy should focus on reducing competitive pressure and promoting cooperation in AI development rather than only individual risk.",
-      "topics": [
-        "cs.AI",
-        "cs.CY",
-        "cs.GT",
-        "econ.GN"
       ],
       "keywords": []
     }

@@ -1,7 +1,52 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "doi:10.1007/s10111-026-00892-3",
+      "abstract": null,
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "Arbitration",
+        "Framing (construction)",
+        "Automation",
+        "Reliability (semiconductor)",
+        "Preference",
+        "Industrial and organizational psychology",
+        "Permissive"
+      ]
+    },
+    {
+      "id": "doi:10.1177/10711813261475186",
+      "abstract": "Driver drowsiness during prolonged, monotonous driving remains a major road safety risk, and conventional audio-haptic alerts often fail to counter it. This exploratory study examined whether specific features of driver-AI conversation are associated with reduced drowsiness. Ten participants drove a 50-minute high-fidelity simulated highway session, with a five-minute unscripted voice-based conversational intervention with ChatGPT-4o introduced after 30 min. Sleepiness (KSS) was measured before, immediately after, and at three post-intervention timepoints. Conversational data were analyzed using lexical, sentiment, and embedding-based semantic measures, then correlated with change in KSS. Mean KSS decreased significantly following the intervention and remained below baseline for 15 min. Compound sentiment, fear-induced emotional arousal, and AI-to-human novelty ratio showed the strongest, directionally stable associations with reduced drowsiness, while coherence, drift, and topic breadth showed weaker associations. Given the small sample and correlational design, findings should be interpreted as preliminary, informing future controlled studies on designing engaging in-vehicle conversational agents.",
+      "topics": [
+        "Sleep and Work-Related Fatigue",
+        "Human-Automation Interaction and Safety",
+        "Mind wandering and attention"
+      ],
+      "keywords": [
+        "Conversation",
+        "Novelty",
+        "Exploratory analysis",
+        "Intervention (counseling)",
+        "Sample (material)",
+        "Exploratory research",
+        "Conversation analysis",
+        "Baseline (sea)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.09095",
+      "abstract": "Uncovering the internal mechanisms underlying the safety capabilities of large language models (LLMs) is crucial for developing trustworthy artificial intelligence. Currently, mechanistic interpretability studies on multilingual safety are largely confined to local components, such as isolated neurons. However, this static and fragmented perspective overlooks the synergy among components and fails to elucidate how safety signals dynamically propagate within the model to drive safety decisions ultimately. In this work, we move beyond isolated neurons to identify and target the cross-layer functional pathways formed during safety signal propagation, thereby uncovering the mechanisms driving the cross-lingual safety gap. Specifically, we first identify monolingual safety pathways and validate their impact on refusing harmful requests. Subsequent cross-lingual analyses reveal a sparse subset of cross-lingual shared safety pathways, confirming that this intersection acts as the internal bridge transferring safety capabilities from high-resource (HR) languages to non-high-resource (NHR) languages. Building on these mechanistic findings, we propose a pathways-targeted alignment method based on the cross-lingual shared safety pathways. Experimental results show that updating only a small fraction of pathway parameters significantly improves safety in NHR languages while largely preserving the model's general capabilities.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2609.25021",
       "abstract": "Large Language Models (LLMs) tend to add disclaimers like \"I'm just an AI\" when asked about something related to themselves. The self-reports from such responses are used in debates about AI safety or self-knowledge of the models, yet what drives them is not well understood. Are the models telling us about themselves or rather how they are deployed? In this work, we show that the chat template works like a switch - when present, it turns this disclaimer voice up and experiential voice like \"I feel\" down, across 8 popular open-source instruct models up to 9B parameters in size. And conversely when the chat template is not present, it turns the disclaimer voice down and experiential voice up. Inside the activations of 3 models, we find a direction that steers this behavior. Removing the direction in the model's activation space turns disclaimer voice down and adding it turns it up, while a random direction of the same size has little effect. We find that instruct models without chat template, when we add the disclaimer direction to them, disclaim like the template was there. Since the chat template controls the disclaimer voice of LLMs, then researchers studying self-reports or introspection of models might have a confound they need to control for. Our results show that there is a direction they can use to steer this voice. More broadly, our work shows that what models say about themselves is not a fact about them. What they say doesn't come only from weights, but it is partially set by the chat template, and because of that a model's self-description shouldn't be treated literally.",
@@ -1829,33 +1874,6 @@
       "id": "arxiv:2608.04776",
       "abstract": "The ability to accurately assess and anticipate risks in safety-critical scenarios is crucial for autonomous driving systems. While existing research has made progress in collision prediction, accurately quantifying risk levels from monocular vision inputs remains challenging due to the complex dynamics of multi-agent interactions and the inherent uncertainty in real-world environments. To address these challenges, we present NSF-HRPT, a novel framework that combines learning-based perception with structured reasoning for quantitative risk assessment. Our approach features a Neural Semantic Field (NSF) that learns to model scene semantics, trajectory predictions, and probabilistic Time-to-Collision (TTC) distributions from simulation data. During inference, the pre-trained NSF serves as a prior for our Hierarchical Risk Perception Tree (HRPT), which enables efficient parallel computation and spatial reasoning about multi-agent risks. Additionally, we introduce a Sim2Real enhancement strategy that improves real-world applicability without retraining by incorporating priors from foundation models. Extensive evaluations demonstrate that our framework achieves state-of-the-art performance on synthetic benchmarks and delivers competitive, near-state-of-the-art results on real-world datasets for both TTC estimation accuracy and risk localization precision. The proposed method provides an effective solution for real-time risk awareness from monocular camera inputs.",
       "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.05131",
-      "abstract": "On-Policy Self-Distillation (OPSD) has become a standard post-training approach for improving visual reasoning in multimodal large language models (MLLMs). Existing methods draw privileged information from diverse input sources to guide self-distillation. Yet these designs overlook Modality Imbalance, a challenge inherent to MLLM reasoning. When textual information dominates generation, the model cannot fully integrate its multimodal input. Consequently, carefully designed privileged information remains underused, limiting the effectiveness of OPSD. To examine this limitation, we construct a Positive Teacher with the Zoom-In Image and a Negative Teacher with the Mask Image, which exhibit different degrees of Modality Imbalance. Changes in their reasoning correctness and token logits reveal that Modality Balance can itself serve as privileged information. Motivated by this finding, we introduce OPD-V, a visual OPSD paradigm that instantiates such information through the Positive Teacher and Negative Teacher. Positive Modality-Balance Logits Margins define a Modality-Balance Trust Region that selects the on-policy tokens used for self-distillation. Experiments across 6 benchmarks, 4 MLLM backbones, and 5 post-training methods show that OPD-V consistently improves reasoning performance while reducing training cost.",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.05080",
-      "abstract": "Critic-free group-based reinforcement learning has become a scalable approach for post-training large language models. However, most existing methods allocate the same number of rollouts to every task and trajectory state, even though some rollouts provide much more useful learning signals than others. Recent work has started to treat rollout generation as an adaptive decision, but two important limitations remain. First, intervention strategies are often based on fixed heuristics and therefore cannot adjust as the policy changes during training. Second, these methods usually decide only how many rollouts to generate, without explicitly controlling where and how to intervene. To address these limitations, we propose Recoverability-Aware Intervention Learning (RAIL), a training-time framework that learns how to generate rollouts based on the improvement produced by each intervention. RAIL models intervention selection as an online contextual-bandit problem and trains a recoverability controller using intervention traces collected through a shadow-to-live procedure. This allows the controller to keep learning while the underlying policy evolves. We evaluate RAIL in terms of effectiveness, adaptivity, expressiveness, and efficiency. Across multiple settings, RAIL consistently improves performance under limited rollout budgets. These results show that recoverability-aware intervention provides a principled way to generate more informative and less redundant rollouts, leading to stronger learning signals during post-training.",
-      "topics": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04999",
-      "abstract": "Analog circuit design automation using reinforcement learning (RL) has emerged as a promising approach for reducing manual effort. However, many existing RL-based methods focus on single-objective optimization. Even methods designed for multi-objective (MO) problems often reduce multiple design specifications to a single scalar reward. This simplification limits the ability to capture the true Pareto trade-off among competing objectives and often leads to suboptimal designs. Moreover, requiring the model to be retrained from scratch whenever the desired MO specifications change remains a key limitation. To address these challenges, we present ORACLE, an open-source RL-based framework for MO analog circuit design optimization that replaces scalar reward optimization with vector-valued learning and preference-aware conditioning. ORACLE represents a true MO analog circuit design optimizer that uses a preference vector to specify the relative weights of multiple objectives, enabling a single trained model to generate designs across diverse trade-off settings without retraining. We further propose two preference-guidance strategies, namely normalized-weight guidance and cosine-aligned guidance, to improve convergence. In addition, we incorporate a large language model (LLM)-guided action selection mechanism to filter actions that are likely to lead to suboptimal designs or increased runtime. Our results show that, on multiple circuit topologies with 2,000 test cases, ORACLE reduces runtime by 20.4x - 104.4x compared to state-of-the-art approaches. It also meets 99.9% of the 2,000 target specifications, and achieves 5.1x - 318.6x better figure of merit in the resulting output specs.",
-      "topics": [
-        "eess.SY",
         "cs.AI"
       ],
       "keywords": []

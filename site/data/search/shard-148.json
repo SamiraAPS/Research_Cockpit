@@ -1,7 +1,63 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2604.10688",
+      "abstract": "On-policy reinforcement learning has become the dominant paradigm for reasoning alignment in large language models, yet its sparse, outcome-level rewards make token-level credit assignment notoriously difficult. On-Policy Distillation (OPD) alleviates this by introducing dense, token-level KL supervision from a teacher model, but typically applies this supervision uniformly across all rollouts, ignoring fundamental differences in signal quality. We propose Signal-Calibrated On-Policy Distillation Enhancement (SCOPE), a dual-path adaptive training framework that routes on-policy rollouts by correctness into two complementary supervision paths. For incorrect trajectories, SCOPE performs teacher-perplexity-weighted KL distillation to prioritize instances where the teacher demonstrates genuine corrective capability, while down-weighting unreliable guidance. For correct trajectories, it applies student-perplexity-weighted MLE to concentrate reinforcement on low-confidence samples at the capability boundary rather than over-reinforcing already mastered ones. Both paths employ a group-level normalization to adaptively calibrate weight distributions, accounting for the intrinsic difficulty variance across prompts. Extensive experiments on six reasoning benchmarks show that SCOPE achieves an average relative improvement of 11.42% in Avg@32 and 7.30% in Pass@32 over competitive baselines, demonstrating its consistent effectiveness.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Topic Modeling",
+        "Natural Language Processing Techniques"
+      ],
+      "keywords": [
+        "on-policy distillation",
+        "large language models",
+        "adaptive training",
+        "group normalization",
+        "reasoning benchmarks"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.19545237",
+      "abstract": "Shadow AI has emerged as one of the most significant yet under-recognised governance risks in enterprise AI adoption. While organisations increasingly deploy artificial intelligence systems for productivity and decision support, employees simultaneously integrate external generative AI tools into everyday workflows without formal approval, monitoring, or contractual governance. This paper analyses the phenomenon of Shadow AI Version 2, a new phase characterised by prompt-driven data exfiltration, generative AI workflow embedding, agentic automation, and cross-platform AI integration. Unlike earlier forms of unsanctioned technology use, modern Shadow AI introduces complex legal and governance risks including regulatory exposure under data protection laws, intellectual property leakage through AI prompts, and accountability gaps between organisational security and privacy functions. The research examines regulatory responses across multiple jurisdictions including India, the European Union, the United Kingdom, the United States, Singapore, Australia, Canada, and Japan. Particular attention is given to the implications of the Digital Personal Data Protection Act 2023 (India) and the emerging governance blind spot related to employee-driven AI usage. The paper proposes a governance architecture for detecting, assessing, and containing Shadow AI through integrated security, privacy, and organisational oversight mechanisms. It introduces practical frameworks including a prompt-driven data exfiltration model, a Shadow AI containment programme roadmap, and a CISO–DPO governance convergence model. This research contributes to the emerging field of AI governance and institutional risk management, providing a structured framework for organisations seeking to manage the invisible compliance crisis created by unmonitored AI adoption.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Digital Economy and Work Transformation",
+        "Robotic Process Automation Applications"
+      ],
+      "keywords": [
+        "shadow AI",
+        "generative AI",
+        "AI governance",
+        "data exfiltration",
+        "data sovereignty",
+        "regulatory compliance",
+        "data protection law",
+        "AI containment",
+        "Digital Personal Data Protection Act 2023"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.19545238",
+      "abstract": "Shadow AI has emerged as one of the most significant yet under-recognised governance risks in enterprise AI adoption. While organisations increasingly deploy artificial intelligence systems for productivity and decision support, employees simultaneously integrate external generative AI tools into everyday workflows without formal approval, monitoring, or contractual governance. This paper analyses the phenomenon of Shadow AI Version 2, a new phase characterised by prompt-driven data exfiltration, generative AI workflow embedding, agentic automation, and cross-platform AI integration. Unlike earlier forms of unsanctioned technology use, modern Shadow AI introduces complex legal and governance risks including regulatory exposure under data protection laws, intellectual property leakage through AI prompts, and accountability gaps between organisational security and privacy functions. The research examines regulatory responses across multiple jurisdictions including India, the European Union, the United Kingdom, the United States, Singapore, Australia, Canada, and Japan. Particular attention is given to the implications of the Digital Personal Data Protection Act 2023 (India) and the emerging governance blind spot related to employee-driven AI usage. The paper proposes a governance architecture for detecting, assessing, and containing Shadow AI through integrated security, privacy, and organisational oversight mechanisms. It introduces practical frameworks including a prompt-driven data exfiltration model, a Shadow AI containment programme roadmap, and a CISO–DPO governance convergence model. This research contributes to the emerging field of AI governance and institutional risk management, providing a structured framework for organisations seeking to manage the invisible compliance crisis created by unmonitored AI adoption.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Digital Economy and Work Transformation",
+        "Robotic Process Automation Applications"
+      ],
+      "keywords": [
+        "shadow AI",
+        "generative AI",
+        "AI governance",
+        "data exfiltration",
+        "data sovereignty",
+        "regulatory compliance",
+        "data protection law",
+        "AI containment",
+        "Digital Personal Data Protection Act 2023"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2604.10674",
       "abstract": "Reinforcement learning (RL) has been widely used to train LLM agents for multi-turn interactive tasks, but its sample efficiency is severely limited by sparse rewards and long horizons. On-policy self-distillation (OPSD) alleviates this by providing dense token-level supervision from a privileged teacher that has access to ground-truth answers. However, such fixed privileged information cannot capture the diverse valid strategies in agent tasks, and naively combining OPSD with RL often leads to training collapse. To address these limitations, we introduce Skill-SD, a framework that turns the agent's own trajectories into dynamic training-only supervision. Completed trajectories are summarized into compact natural language skills that describe successful behaviors, mistakes, and workflows. These skills serve as dynamic privileged information conditioning only the teacher, while the student always acts under the plain task prompt and learns to internalize the guidance through distillation. To stabilize the training, we derive an importance-weighted reverse-KL loss to provide gradient-correct token-level distillation, and dynamically synchronize the teacher with the improving student. Experimental results on agentic benchmarks demonstrate that Skill-SD substantially outperforms the standard RL baseline, improving both vanilla GRPO (+14.0%/+10.9% on AppWorld/Sokoban) and vanilla OPD (+42.1%/+40.6%). Project page: https://k1xe.github.io/skill-sd/",
@@ -4018,65 +4074,6 @@
         "graph convolutional networks",
         "hybrid model",
         "computer-aided diagnosis"
-      ]
-    },
-    {
-      "id": "doi:10.55041/ijsrem59896",
-      "abstract": "1.INTRODUCTION Breast cancer is one of the most prevalent and life-threatening diseases among women worldwide, and its early detection remains a crucial factor in improving survival rates. Whole Slide Images (WSI), which contain extremely high-resolution digital histopathology scans, are commonly used by pathologists to examine tissue morphology and identify malignant regions. However, manual examination of WSIs is time-consuming, prone to inter-observer variability, and highly dependent on the expertise and experience of the pathologist. With millions of new breast cancer cases reported globally each year, there is a growing need for automated, accurate, and explainable diagnostic systems that can support clinical decision-making. Recent advancements in Deep Learning (DL) and Explainable Artificial Intelligence (XAI) have enabled the development of powerful computer-aided diagnostic (CAD) tools. Among these, Vision Transformers (ViT) have gained significant attention due to their ability to capture long-range dependencies and global contextual information from image patches. Unlike conventional Convolutional Neural Networks (CNNs), which primarily focus on local spatial features, ViTs process images as sequences of patches, allowing them to understand complex tissue structures often present in histopathology images. Despite these advancements, one major challenge in medical AI systems is their “black-box” nature, which limits clinical adoption. Pathologists must understand why a model predicts a certain region as cancerous. Therefore, explainability is essential in ensuring the transparency, trust, and reliability of AI-based diagnostic systems. Attention maps generated by ViT models provide a mechanism to visualize the regions that contribute most to predictions, making them valuable tools for pathologists evaluating WSIs.",
-      "topics": [
-        "AI in cancer detection",
-        "Explainable Artificial Intelligence (XAI)",
-        "Radiomics and Machine Learning in Medical Imaging"
-      ],
-      "keywords": [
-        "breast cancer",
-        "whole slide images",
-        "vision transformer",
-        "explainable AI",
-        "attention maps",
-        "computer-aided diagnosis",
-        "risk stratification",
-        "histopathology",
-        "black-box models",
-        "clinical decision support"
-      ]
-    },
-    {
-      "id": "doi:10.22214/ijraset.2026.79064",
-      "abstract": "The rapid development of social media has raised the importance of sentiment analysis in the context of user emotions. Recent developments in multimodal sentiment analysis have incorporated various features such as text, emojis, and hashtags to improve the predictive accuracy of the system. However, most of the existing multimodal sentiment analysis models are complex and involve deep learning and language models that are black box in nature. This makes it difficult for the user to trust the system. On the other hand, Explainable Artificial Intelligence (XAI) has been developed to improve the transparency of the system. However, the integration of multimodal sentiment analysis and Explainable Artificial Intelligence is in its infancy.The current paper presents a conceptual framework that bridges the gap in multimodal sentiment analysis and Explainable Artificial Intelligence. The proposed framework incorporates various features such as text, emojis, and hashtags with the Explainable Artificial Intelligence approach. The proposed approach will improve the transparency and usability of the multimodal sentiment analysis system. The research challenges and implementation of the proposed approach are also highlighted in the current study.",
-      "topics": [
-        "Sentiment Analysis and Opinion Mining",
-        "Explainable Artificial Intelligence (XAI)",
-        "Emotion and Mood Recognition"
-      ],
-      "keywords": [
-        "multimodal sentiment analysis",
-        "explainable AI",
-        "conceptual framework",
-        "social media",
-        "user emotions",
-        "emojis",
-        "hashtags",
-        "model transparency",
-        "trust in AI",
-        "black-box models"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.10221",
-      "abstract": "Collaborative learning works when groups regulate together by setting shared goals, coordinating participation, monitoring progress, and responding to breakdowns through co-regulation (CoRL) and socially shared regulation (SSRL). As generative AI (GenAI) enters group work, however, it remains unclear whether and how it supports these socially distributed regulation processes. This doctoral project proposes a GenAI-supported collaborative learning system grounded in CoRL and SSRL to strengthen groups' socially distributed regulation capacity. The system links three components: (1) group activity generation; (2) an in-group support agent that provides process-focused prompts without giving solutions; and (3) an embedded learning analytics dashboard that turns interaction traces into timely summaries for monitoring and decision making. The project progresses from mechanism to design to impact: it first identifies how GenAI reshapes regulation patterns and which patterns indicate more effective Human-AI collaboration, then builds an integrated GenAI system that targets these patterns, and finally evaluates whether the GenAI system improves regulation capacity and group performance across varying levels of GenAI involvement. Expected contributions include a teacher-in-the-loop system for Human-AI collaboration and process-level evidence on how GenAI reconfigures CoRL and SSRL in group work.",
-      "topics": [
-        "Innovative Teaching and Learning Methods",
-        "Intelligent Tutoring Systems and Adaptive Learning",
-        "Artificial Intelligence in Education"
-      ],
-      "keywords": [
-        "human-AI collaboration",
-        "cooperative learning",
-        "co-regulation",
-        "socially shared regulation",
-        "learning analytics dashboards",
-        "group performance"
       ]
     }
   ]

@@ -1,7 +1,58 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-12T13:48:29.575Z",
+  "generatedAt": "2026-11-13T13:09:37.948Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.01393",
+      "abstract": "Constructing typed, justified semantic links between ontologies is essential for enabling interoperability across heterogeneous and interdisciplinary knowledge domains. However, manually curating such links is difficult to scale. To address this challenge, we propose an end-to-end framework for ontology network construction that automates the discovery and generation of both intra-domain and inter-domain relationships. Our approach combines domain-adapted DistilBERT embeddings for dense contextual representation, clustering-based pre-filtering to reduce the candidate search space, and GPT-4o-driven relationship generation via iterative prompt engineering to produce semantically rich, interpretable links. Applied to ReproduceMeON - a network of 33 ontologies spanning machine learning, microscopy, computational science, and experimental workflow - the pipeline reduces approximately 800k raw concept pairs to 95k high-quality candidates. Human expert validation of 429 generated relationships by two independent annotators yields an overall precision of 80.19% (91.49% on high-certainty annotations) and an F1 of 0.890, with substantial inter-annotator agreement. Comparative experiments against five similarity-based baselines, including Sentence-BERT, show a substantial performance gap (best baseline F1 = 0.581), while an ablation study demonstrates that similarity-based methods alone fail to discriminate valid from invalid relationships (AUC approx 0.5) on the filtered candidate set. These findings highlight the necessity of LLM-based reasoning over concept roles and domain semantics for accurate relationship construction.",
+      "topics": [
+        "Semantic Web and Ontologies",
+        "Biomedical Text Mining and Ontologies",
+        "Topic Modeling",
+        "Advanced Graph Neural Networks"
+      ],
+      "keywords": [
+        "GPT-4o",
+        "prompt engineering",
+        "ontology interoperability"
+      ]
+    },
+    {
+      "id": "doi:10.1007/s44379-026-00099-3",
+      "abstract": "Developing constitutive models that capture how materials deform under load traditionally requires years of specialized expertise in continuum mechanics, machine learning, and scientific programming. Large language models (LLMs) have recently been shown to lower this barrier by generating constitutive models on demand, but existing single-agent pipelines lack systematic checks that the resulting models respect fundamental physical laws. To close this gap, we introduce the first multi-agent LLM-driven approach for constitutive model generation: a Creator agent proposes a model tailored to the data, while an Inspector agent critically audits each proposal against nine physical constraints and returns it for refinement whenever a violation is detected. We demonstrate this concept with constitutive artificial neural networks (CANNs) and benchmark it on brain tissue and rubber as isotropic materials, and on porcine skin tissue as a transversely isotropic material with a preferred fiber direction, using two different LLM backbones (Claude Opus 4.7 and Kimi K2.5). Whether a generated model satisfies the physical constraints is assessed numerically, by probing each constraint across a broad sample of deformation states, rotations, and perturbation directions. Adding the Inspector raises the share of exported models that pass all these checks from 90% to 95% for Opus and from 47% to 60% for Kimi. In addition, the generated models are on par with or even surpass expert-designed models in accuracy, extrapolate reliably beyond the training data, and generalize remarkably well to unseen loading paths. Separating generation from inspection thus turns LLM-driven constitutive modeling into a substantially more trustworthy process. The paradigm is deliberately technique-agnostic and scales automatically with advances in LLM capability, opening a promising path toward automated, physics-aware model discovery.",
+      "topics": [
+        "Elasticity and Material Modeling",
+        "Model Reduction and Neural Networks",
+        "Machine Learning in Materials Science"
+      ],
+      "keywords": [
+        "large language models",
+        "multi-agent LLM systems",
+        "brain tissue",
+        "rubber",
+        "porcine skin",
+        "transversely isotropic materials",
+        "material deformation"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.02126",
+      "abstract": "We explore catastrophic forgetting in the context of large pre-trained models. By considering forgetting as a geometric problem in the input space of each weight matrix, we uncover a natural retention objective under which updates produced by gradient-based optimizers are suboptimal. Following this observation, we propose Local Support Learning (LSL), a general-purpose framework that augments gradient-based training for retention of prior capabilities without access to prior data. During a new learning phase, LSL pairs two components with distinct roles: a standard weight adapter, trained as usual to minimize the loss, and a gating function that enables the adapter only on input activations from its own training distribution, making the update local to that distribution. The key challenge is that this gate must route data from all learning phases while training only on data from the current one. We address this with a gate based on a Gaussian Mixture Model (GMM), whose likelihood decays rapidly away from its training data, giving it a natural tendency to stay closed on data from prior phases. We show that this post-training approach can resolve forgetting in LLMs of up to 7 billion parameters, retaining both pretrained and finetuned capabilities across multiple training phases, while being efficient in memory and compute, robust to hyperparameter choice, and showing scaling potential.",
+      "topics": [
+        "Domain Adaptation and Few-Shot Learning",
+        "Topic Modeling",
+        "Advanced Neural Network Applications",
+        "Generative Adversarial Networks and Image Synthesis",
+        "Stochastic Gradient Optimization Techniques"
+      ],
+      "keywords": [
+        "catastrophic forgetting",
+        "large language models",
+        "gating function",
+        "gradient-based learning",
+        "post-training fine-tuning"
+      ]
+    },
     {
       "id": "doi:10.58286/35023",
       "abstract": "In the field of Acoustic Emission analysis, the use of artificial intelligence is becoming increasingly important. Especially for localizing Acoustic Emission events via pattern recognition of time signals, Neural Networks hold great potential. As part of this research, this potential was tested by examining the locatability of Acoustic Emission sources on a reinforced concrete beam as a result of a four-point bending test. Specifically, the experiment involved a loading that increased until fracture of the specimen, while Acoustic Emissions were measured and recorded over 16 Acoustic Emission sensors. A total of 10,343 Acoustic Emission events were captured, of which 4,102 events could be localized three-dimensionally by triangulation. The remaining 6,241 events could not be assigned locations due to either insufficient determinability of the arrival times or too large measurement deviations. In this work, the combination of neural methods from supervised and unsupervised learning was explored. The acquired events were first divided into localized and non-localized signals. The localized events were subsequently grouped into 5, 10, 15, and 20 clusters using the K-means algorithm (unsupervised learning). Furthermore, four convolutional neural networks were trained by using the clusters as classes and the assigned events as samples per class. This approach achieved assignability with an accuracy of 71–94% and allowed the previously non-localizable Acoustic Emission events to be classified and localized by these Convolutional Neural Networks.",
@@ -2996,51 +3047,6 @@
         "Graph Theory and Algorithms",
         "Advanced Graph Neural Networks",
         "Data Quality and Management"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "openalex:W7219155420",
-      "abstract": "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on modern GPUs. Existing approaches either compress optimizer state, abandon first-order gradients, or change the update geometry while retaining dense state. The recently introduced Muon optimizer reduces optimizer memory through matrix-valued updates. Still, its geometry differs from AdamW and can lead to performance degradation when fine-tuning AdamW-pretrained models. To reduce optimizer memory without sacrificing accuracy or computational efficiency in LLM fine-tuning, we propose Ternary Absolute-max Column-wise One-sparse optimizer, or TACO, which follows Muon's operator-norm steepest-descent view but takes the geometric route further. TACO computes the exact steepest-descent direction under a dimension-normalized $1\\to1$ operator norm by selecting the sign of the largest magnitude entry in each column of two-dimensional weight matrices. This retains first-order gradients while making optimizer state memory nearly negligible. Our practical TACO optimizer maintains only a small set of low precision gradient components per column, reducing persistent optimizer state by $174\\times$ relative to AdamW8bit (from 27.7 GB to 0.16 GB) and peak training memory by $2.9\\times$ (from 80.6 GB to 27.5 GB) on OPT-13B, while achieving comparable accuracy and runtime. TACO further enables full-parameter fine-tuning of 30-32B-parameter models on a single 80 GB H100 GPU across multiple model families and tasks.",
-      "topics": [
-        "Stochastic Gradient Optimization Techniques",
-        "Topic Modeling",
-        "Domain Adaptation and Few-Shot Learning",
-        "Parallel Computing and Optimization Techniques",
-        "Big Data and Digital Economy",
-        "Machine Learning in Materials Science"
-      ],
-      "keywords": [
-        "LLM fine-tuning",
-        "full-parameter fine-tuning",
-        "sparse optimization",
-        "Muon optimizer",
-        "AdamW",
-        "gradient compression"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.mfglet.2026.08.073",
-      "abstract": "Industry 4.0 has reshaped assembly and maintenance work, demanding precision, adaptability, and ergonomic awareness that traditional training methods struggle to achieve. Although research has addressed task sequencing, ergonomic risks, and digital instruction, these areas often remain fragmented, lacking integration into a unified, human-centered framework. To address this gap, this study reviewed 37 peer-reviewed articles across manufacturing, ergonomics, and training to identify recurring task patterns, ergonomic risk factors, and technological trends. The analysis revealed coordinated task sequences that varied by industry context and operation type. Ergonomic assessments consistently linked awkward postures, repetitive handling, and forceful exertions to elevated musculoskeletal risks, with novices more vulnerable than experts. Extended reality technologies and motion sensing have emerged as promising tools, although most systems still provide feedback post-task rather than in real-time. Building on these insights, this study proposes a mixed reality (MR) training framework that integrates optimized task sequences with motion capture-based ergonomic monitoring. A pilot implementation demonstrated improvements in learning consistency, postural stability, and procedural accuracy. By combining immersive guidance with ergonomic evaluation, this research advances a scalable approach for adaptive, safe, and skill-focused training systems aligned with Industry 4.0 and the human-centered goals of Industry 5.0. © 2026 The Authors. Published by ELSEVIER Ltd. This is an open access article under the CC BY-NC-ND license ( https://creativecommons.org/licenses/by-nc-nd/4.0 ) Peer-review under responsibility of the scientific committee of the NAMRI|SME.",
-      "topics": [
-        "Human Resource Development and Performance Evaluation",
-        "Innovative Education and Learning Practices",
-        "Manufacturing Process and Optimization"
-      ],
-      "keywords": [
-        "task analysis",
-        "task sequence optimization",
-        "skill transfer",
-        "learning"
-      ]
-    },
-    {
-      "id": "doi:10.33422/ejte.v8i3.1872",
-      "abstract": "Teachers’ assessment practices are changing as generative artificial intelligence (genAI) becomes embedded in students’ schoolwork. While existing research has highlighted teachers’ concerns about AI use in written assignments, assessment practices have received limited analytical attention. This exploratory qualitative study investigates how teachers reason about assessment practices in genAI-rich contexts and examines the adequacy of the Technological Pedagogical Content Knowledge (TPACK) framework for understanding these practices. Drawing on survey responses and interviews from licensed Swedish secondary school teachers, the reflexive thematic analysis reveals that assessment emerges as the central practice through which teachers renegotiate what counts as knowledge and how assessment judgements can be legitimised. Teachers describe assessment as epistemically uncertain and reliant on professional judgement, while also raising concerns about equity and legal certainty. The study suggests that assessment constitutes an integrative dimension of teachers’ professional knowledge and proposes extending TPACK to include an explicit assessment dimension (TPACK-A).",
-      "topics": [
-        "Mathematics Education and Teaching Techniques",
-        "Student Assessment and Feedback",
-        "Educational Theory and Curriculum Studies"
       ],
       "keywords": []
     }
