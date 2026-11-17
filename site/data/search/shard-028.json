@@ -1,7 +1,31 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-16T13:42:28.928Z",
+  "generatedAt": "2026-11-17T14:28:42.116Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.30548",
+      "abstract": "AI agents can now search literature, generate hypotheses, analyze datasets, and run experiments at a scale difficult for researchers to match. Yet scaling scientific execution does not automatically scale researchers' ability to make sense of what agents produce. When researchers return to a long-horizon run, they must evaluate work they did not monitor: what the agent produced, which decisions shaped those outputs, and whether those decisions served the research goal. We frame this post-run sensemaking as a representation problem across three linked levels: goal, decision, and artifact. From this framework we developed Atlas, an agentic workspace with a trajectory tree, which renders the run as a branching structure showing what the agent chose and set aside, and artifact projections over six representations. In a within-subjects study (N=14), participants reported higher decision transparency, artifact sensemaking, and goal connection with Atlas than with a standard baseline, together with substantially lower subjective workload.",
+      "topics": [
+        "Scientific Computing and Data Management",
+        "Data Visualization and Analytics",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "transparency in decision-making",
+        "user workload",
+        "AI agent evaluation"
+      ]
+    },
+    {
+      "id": "doi:10.17605/osf.io/cpzsa",
+      "abstract": "This systematic literature review investigates the evolution of automated adversary emulation and autonomous penetration testing, from attack graphs and classical planning approaches to reinforcement learning and large language model (LLM) based autonomous agents. The review examines how these approaches model attacker objectives, represent target environments, select attack actions and evaluate performance. It also assesses empirical evidence concerning the validity and limitations of the Cyber Kill Chain and MITRE ATT&CK frameworks for representing adversary behaviour. The review will use structured academic searches, predefined eligibility criteria, transparent study selection, quality appraisal and comparative narrative synthesis. Reporting will be guided by PRISMA 2020 and PRISMA-S, with methodological consideration of established software-engineering systematic review guidance. Preliminary literature searches and paper retrieval have commenced. Formal screening, quality appraisal and synthesis are planned to follow the finalisation of this protocol",
+      "topics": [
+        "Information and Cyber Security",
+        "Network Security and Intrusion Detection",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.48550/arxiv.2610.31352",
       "abstract": "Compiling quantum algorithms for real devices involves hard optimization problems that can decide whether an algorithm runs at scale. We present a general method for solving such problems with AI agents, with every result certified. It builds on autoresearch loops, in which agents iteratively improve programs against a fixed evaluator and which have recently improved quantum cryptanalysis circuits, and adds two elements: a frozen, exact verifier certifies every result, and this verifier, together with the challenge around it, is built by an agent that formulates the problem with a researcher and validates the verifier against a solved case, deliberately broken solutions and published results before any solution exists. The method applies to any optimization problem whose solutions can be verified exactly and efficiently. We apply it to three compilation problems in quantum simulation, namely fermion-to-qubit encoding, Hamiltonian layout and unitary synthesis. In each, the agents improved substantially on published or standard constructions, reducing the cost being optimized by up to 73% at the largest sizes tested and outperforming a state-of-the-art optimizer for fermion-to-qubit encodings. Every submission is a program accompanied by its agent's notes, so the ideas behind each improvement are recorded in human-readable form; later agents built on them, and we describe them here. These results open the way to automated, certified discovery across quantum circuit design and beyond.",
@@ -3268,33 +3292,6 @@
         "Intellectual Property Rights and Media"
       ],
       "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23559970",
-      "abstract": "Decoding the regulatory grammar of the human genome and predicting gene expression from primary DNA sequences represent foundational grand challenges in computational biology and synthetic genomics. While traditional bioinformatics pipelines rely on heuristic sequence alignment, position weight matrices (PWMs), and shallow convolutional models, they fail to capture long-range genomic interactions, distal enhancer-promoter looping, and complex epigenetic modifications spanning millions of base pairs. Genomic Foundation Models (GFMs)—large-scale selfsupervised transformer architectures trained on multi-species whole-genome corpora—establish a transformative paradigm shift that treats DNA as a universal biological language. By tokenizing nucleotide sequences into overlapping kmers and training via masked language modeling over ultra-long context windows (up to 1M base pairs), genomic foundation models learn deep representations of splicing sites, transcription factor binding domains, and chromatin accessibility. However, scaling transformer models to whole-genome nucleotide sequences introduces acute mathematical and systems bottlenecks: quadratic self-attention complexity over multi-megabase contexts, high-dimensional embedding collapse across repetitive genomic elements, and poor zero-shot generalization across evolutionary divergences. This paper presents an exhaustive, mathematically formal technical investigation and empirical benchmark of genomic foundation models and de novo gene expression prediction. We formalize nucleotide tokenization and k-mer embedding spaces, derive linear and flash-attention memory bounds for multi-megabase genomic contexts, and model epigenetic chromatin profiling via multi-task transformer heads. Furthermore, we construct an enterprise multi-species benchmark testbed evaluating genomic foundation models (Nucleotide Transformer, Enformer, AlphaGenome) across human gene expression prediction (GTEx v8), pathogenic variant effect scoring (ClinVar), and synthetic promoter generation. Our empirical findings demonstrate that our optimized multi-scale genomic transformer achieves a Pearson correlation of R = 0.892 in predicting cross-tissue gene expression levels from raw DNA sequences alone, while outperforming classical heuristic models by 34.6% in pathogenicity variant effect prediction. Finally, we formulate open challenges in all-genomic generative design, single-cell epigenetic conditioning, and ethical biosecurity screening of synthetic gene constructs.",
-      "topics": [
-        "Genomics and Chromatin Dynamics",
-        "Machine Learning in Bioinformatics",
-        "Genomics and Phylogenetic Studies"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.26599/air.2026.9150015",
-      "abstract": "Abstract Large language model (LLM) hidden widths—such as the 18 944-dimensional intermediate layer of the Qwen family—are often burst-aligned but not tile-compatible with heterogeneous NPU Cube engines, forcing the compiler to emit a small residual kernel that stalls the pipeline for up to 77% of cycles. Manual tuning does not scale across the growing space of model dimensions, sequence lengths, and operator variants. We present GenTile, a dual-role Research–Development (R&D) agent framework that closes the loop between LLM causal reasoning and on-device telemetry: a Research agent diagnoses bottlenecks from structured profiles, a Development agent materializes hardware-legal descriptors from compiler feedback, and iteration traces accumulate into a reusable knowledge base under an air-gap sandbox. On Ascend 910B, an offline hardware-faithful sandbox loop first demonstrates convergence mechanics; on real pretrained weights, the loop then measures the full multi-objective trade-off—latency, energy, memory, AICore efficiency, and approximation error (ε)—across six projection families from two Qwen generations (Qwen3.5-32B and Qwen2.5-7B). From telemetry alone, the agent deploys lossless sibling-projection fusions (QKV, gate–up) consistent with production inference-engine layouts (1.06–1.16× faster, up to 13% lower energy, ε=0, stable across sequence lengths, layer depths, and both models), and rejects every lossy low-rank rewrite—including a 1.39× lm_head speedup whose measured ε=0.89 exceeds any usable accuracy budget—while validating the Eckart–Young cliff prediction (ε → 0.002 at the tail rank) on structural layers. Baselines, ablations, cross-dimension generalization, and a sandbox loop that matches the geometric Oracle within four generations without exhaustive search further support the framework.",
-      "topics": [
-        "Parallel Computing and Optimization Techniques",
-        "Advanced Neural Network Applications",
-        "Embedded Systems Design Techniques"
-      ],
-      "keywords": [
-        "low-rank approximation",
-        "compiler feedback",
-        "multi-objective trade-offs",
-        "approximation error",
-        "Eckart-Young theorem",
-        "Qwen"
-      ]
     }
   ]
 }

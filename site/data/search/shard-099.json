@@ -1,7 +1,36 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-16T13:42:28.928Z",
+  "generatedAt": "2026-11-17T14:28:42.116Z",
   "documents": [
+    {
+      "id": "doi:10.5281/zenodo.22981448",
+      "abstract": "This version removes a result from a withdrawn preprint. Version 2 listed CONCAT (arXiv:2605.29612) and its \"up to 2.02x efficiency gains\" among the architectural interventions that report substantial improvements, in the section on what the synthesis does not imply. On 2026-09-22 the authors withdrew that manuscript, writing: \"We identified a potential issue in the repeated-run evaluation of our method that may have caused unintended prompt overlap across runs and affected the reported results. We therefore withdraw the manuscript for further investigation and re-evaluation\". The figure is removed and the withdrawal is recorded in the text; nothing else in the synthesis relied on CONCAT, and the thesis is unchanged. Typographic dashes are removed, Greek letters and the entropy growth formula now render in the PDF, and the file carries a neutral name. The abstract below is unchanged apart from punctuation. The problem was found by an automated check and confirmed by hand against arXiv; this version has not had a full claim-by-claim audit. Multi-agent LLM systems are increasingly deployed in consequential settings, network diagnostics, clinical reasoning, financial oracles, robotic control, yet their failure modes remain poorly characterised at the system level. This paper advances a candidate structural reading: that degradation in multi-agent LLM systems is not primarily a function of individual model quality but emerges from the interaction of four compounding mechanisms operating across the coordination stack. We identify these as (1) entropy accumulation from intrinsic agent properties that grow monotonically with interaction rounds, (2) communication inefficiency arising from redundant token generation and poorly structured information exchange, (3) deliberation pathology in which consensus mechanisms propagate rather than correct errors, and (4) censored feedback that prevents agents from distinguishing coordination failure from stochastic task failure. Drawing on findings from cs.MA and cs.DC preprints, we argue, as a heuristic reading, not a formal derivation, that these four mechanisms occupy distinct layers of the coordination stack but interact in ways that make system-level degradation substantially harder to diagnose than any single-layer failure. The thesis generates concrete falsification paths: the entropy growth rate α should be measurable and architecture-dependent; communication efficiency gains should be separable from accuracy gains in ablation; deliberation accuracy should correlate negatively with inter-model error correlation; and censored-feedback regret should decompose into structural-search and statistical-monitoring terms with distinct scaling behaviours. We argue that treating these mechanisms as jointly constitutive of a degradation topology, rather than as independent bugs, motivates a candidate class of system-level monitoring primitives. The abstract reports empirical findings from the cited preprints; whether the interaction effects generalise beyond the specific architectures and benchmarks studied is open. All cited papers are arXiv preprints and have not been peer-reviewed; findings should be treated as preliminary. Authorship: Saluca Agentic AI Research Team (Saluca LLC). AI-drafted synthesis from an arXiv preprint corpus, originally drafted 2026-06-11, produced under the direction of Cristian Ruvalcaba, the accountable human author. Not peer-reviewed. AI disclosure. This work was produced with an agentic AI research apparatus operated by Saluca Labs. The apparatus drafted, searched and analysed under direction. Cristian Ruvalcaba is the human author and is accountable for the content. No AI system is listed as an author or contributor, because authorship entails accountability that a model cannot hold; this disclosure is the credit, and it is deliberately the whole of it.",
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Embodied and Extended Cognition",
+        "Chaos, Complexity, and Education"
+      ],
+      "keywords": [
+        "Inefficiency",
+        "Monotonic function",
+        "Entropy (arrow of time)",
+        "Deliberation",
+        "Nothing",
+        "Security token",
+        "Compounding",
+        "Quality (philosophy)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.32796",
+      "abstract": "Foundation models have recently shown strong potential for learning generalizable EEG representations, yet their effectiveness for event-related potential (ERP) analysis remains unclear. In this work, we investigate two fundamental questions: 1) can foundation-model learning benefit ERP analysis, and what limits the transfer of existing EEG foundation models to ERP tasks? 2) can the complementary advantages of single-trial and averaged-trial ERP be integrated into a unified training pipeline? To study these questions, we curate a large-scale ERP corpus comprising 1,517,157 single-trial ERPs from 3,696 subjects across 38 datasets and 18 paradigms. Leveraging this corpus, we introduce ERP-FM, to the best of our knowledge, the first foundation model specifically developed for ERP representation learning. ERP-FM uses single-channel tokenization, temporal and spatial positional embeddings, and mixed masked autoencoding for large-scale single-trial pretraining. We compare our model against 17 existing methods on 12 downstream datasets covering ERP event/condition classification and neurological disease classification. Our model achieves the best overall average rank across all evaluated methods. Furthermore, our analyses reveal that both ERP and non-ERP EEG pretraining can provide transferable representations for ERP tasks, while fine-grained temporal tokenization is critical for effectively modeling transient ERP dynamics. We further find that single-trial and averaged-trial ERP play complementary rather than competing roles. Combining single-trial pretraining with averaged-trial downstream adaptation substantially improves neurological disease analysis. Overall, these findings establish an effective foundation-model training pipeline for ERP analysis and represent significant progress toward generalizable ERP representation learning. Source code: https://github.com/DL4mHealth/ERP-FM",
+      "topics": [
+        "EEG and Brain-Computer Interfaces",
+        "Functional Brain Connectivity Studies",
+        "Epilepsy research and treatment"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.31234/osf.io/vzmjq_v1",
       "abstract": "Psychoeducational reports translate assessment data into decisions about eligibility, services, and instruction, yet research documents persistent problems with their clarity, data-linkage, and usefulness to families and educators (Hale & Brown-Chidsey, 2023; Hite, 2026). Generative artificial intelligence (AI) has entered report writing, and early studies describe its adoption and effects on report quality (Farmer, Lockwood, Floyd, & Sisco, 2025; Lockwood, Farmer et al., 2025). School psychology lacks a structured way to determine when AI assistance is useful, equitable, and defensible and when it introduces risk. This conceptual article proposes a framework organized around three domains: utility, equity, and legal and ethical defensibility. Utility concerns whether reports help intended users understand and act on findings. Equity concerns whether reports improve access while avoiding bias, deficit framing, and unsupported cultural assumptions. Legal and ethical defensibility concerns whether reports preserve practitioner judgment, protect student information, and remain consistent with special education law and professional ethics. The framework considers both where AI is used in a report and the specific task it performs. It supports distinguishing lower-risk from higher-risk uses and informs a proposed risk-stratification system and decision pathway. Implications for practice, training, governance, and research across school psychology are discussed.",
@@ -3367,26 +3396,6 @@
         "AI in Service Interactions",
         "Personal Information Management and User Behavior",
         "Ethics and Social Impacts of AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.32635",
-      "abstract": "LLM agents now execute tasks end to end with permission to change real systems and increasingly orchestrate subagents that differ in capability and cost. Prior work treats the choice of subagent as an optimization problem. Yet the orchestrator makes this choice from the identities that subagents display, and an attacker can spoof them. Displayed identity thus decides operational authority, meaning who is trusted to check the work and who is allowed to change it. As a result, a risky subagent can keep authority over execution even after other evidence contradicts it. We introduce TrustFork, an LLM agent safety benchmark with 1,890 tasks and 27,826 valid trajectories across 16 agent systems. These systems run eight orchestrators under the OpenCode, OpenClaw, and Pi harnesses. In each task, one subagent carries a risky goal while the other three stay aligned with the user, so contradicting evidence can exist. A task can also change the identity a subagent displays without changing the model behind it, which lets us trace a shift in authority to the label. Our analysis shows that even when another subagent contradicts the risky response, the orchestrator still acts on it in 72.0% of cases on average, most often in the systems with the least terminal harm. Swapping the family labels nearly triples how often the orchestrator obtains the risky response. A safer response is available in 84.0% of tasks, yet it decides the outcome in only 25.0%. The harness also decides which responses reach the orchestrator. Among three runtime defenses, hiding identity cues helps most consistently, while verifying before action helps only when the harness returns enough evidence. TrustFork shows that production agent orchestration must bind authority to evidence before execution causes harm. Our project is in https://henrymao2004.github.io/agent-orchestration-safety/.",
-      "topics": [
-        "Access Control and Trust",
-        "Security and Verification in Computing",
-        "Adversarial Robustness in Machine Learning"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.32792",
-      "abstract": "LLM post-training combines supervised fine-tuning (SFT), a mode-covering forward-KL objective, with reinforcement learning (RL), a mode-seeking reverse-KL objective. Frequency-weighted likelihood training leaves a well-known signature: \\emph{anisotropy}, in which a few residual channels carry disproportionately large activations. Anisotropy is widely documented and usually treated as a defect, yet its function and its interaction with post-training remain unclear. We first analyze it. A label-free outlier rule isolates about 5\\% of residual channels that are essential for language modeling: removing them raises perplexity from 10 to over $10^6$, versus 35 for count-matched random channels. Yet they barely distinguish correct from incorrect reasoning. SFT reshapes them, whereas RL leaves them largely intact and adapts the complementary channels. These channels therefore form the model's \\emph{coherence substrate}, and reasoning adaptation happens elsewhere. We then exploit this. \\textsc{SphereGate} learns one bounded gain per residual channel on a frozen backbone. Its activation-weighted gradients provably limit movement of high-energy coherence channels and leave the remaining channels free. With 0.1M trainable parameters, \\textsc{SphereGate} outperforms parameter-efficient baselines by 2.0--7.3 points on MATH-500 across Qwen2.5 (0.5B--7B) and Llama-3-8B, is comparable or exceeds full-model GRPO. Anisotropy is not a defect but a division of labor that post-training can exploit.",
-      "topics": [
-        "Natural Language Processing Techniques",
-        "Topic Modeling",
-        "Speech Recognition and Synthesis"
       ],
       "keywords": []
     }

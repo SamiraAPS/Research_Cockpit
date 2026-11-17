@@ -1,7 +1,63 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-16T13:42:28.928Z",
+  "generatedAt": "2026-11-17T14:28:42.116Z",
   "documents": [
+    {
+      "id": "doi:10.36348/gajeb.2026.v08i05.038",
+      "abstract": "As energy, water, transport, telecommunications, healthcare, finance and government services migrate to cloud platforms, industrial internet connectivity, remote operations and data-driven automation, Saudi Arabia’s critical national infrastructure is becoming more digitally integrated. The integration enhances operational capability, but also provides routes for ransomware and advanced persistent threats (APTs) to move from information technology to operational technology, disrupt essential services, manipulate trusted identities and exploit supplier relationships. This review integrates recent peer-reviewed evidence on cyber resilience against these threats and interprets it for the Saudi critical-infrastructure context. The choice of a structured integrative review is due to the evidence being across the fields of cyber resilience, ransomware, APT behaviour, industrial control systems, zero trust, situational awareness, risk governance and recovery engineering. The synthesis suggests that prevention alone cannot deliver resilient infrastructure. It calls for service-centric governance, separation of business and operational environments, identity-based access control, threat-informed monitoring, secure and tested recovery, supplier assurance, and continuous adaptation after exercises or incidents. Ransomware and APTs differ in speed and goals, but both take advantage of weak identity, lack of asset visibility, trusted administrative pathways, and poor recovery design. The paper therefore proposes a Critical Infrastructure Cyber-Resilience Loop that incorporates govern, anticipate, withstand, detect, contain, recover and adapt functions around minimum viable service delivery. The review provides a practical framework for Saudi operators and policymakers, and also highlights research gaps in OT-specific resilience measurement, cross-sector dependency modelling, recovery assurance, and empirical evaluation of national cybersecurity controls.",
+      "topics": [
+        "Cybersecurity and Cyber Warfare Studies",
+        "Information and Cyber Security",
+        "Smart Grid Security and Resilience"
+      ],
+      "keywords": [
+        "cyber resilience",
+        "ransomware",
+        "advanced persistent threats",
+        "critical national infrastructure",
+        "Saudi Arabia",
+        "industrial control systems",
+        "operational technology",
+        "zero-trust architecture",
+        "situational awareness",
+        "risk governance",
+        "identity-based access control",
+        "cyber-physical systems",
+        "Ransomware",
+        "Resilience (materials science)",
+        "Critical infrastructure",
+        "Exploit",
+        "Business continuity",
+        "Dependency (UML)",
+        "Government (linguistics)",
+        "Critical infrastructure protection",
+        "Industrial control system",
+        "Scope (computer science)"
+      ]
+    },
+    {
+      "id": "doi:10.1002/jat.70457",
+      "abstract": "Mineral extraction poses significant occupational health risks, particularly from respirable crystalline silica exposure. Sandstone quarrying generates substantial dust, yet evidence of its genotoxic effects remains limited. This study investigated cytogenotoxic damage in sandstone quarry workers from southern Brazil using the buccal micronucleus (MN) cytome assay. Buccal cell samples were collected from 21 male workers occupationally exposed to sandstone dust and 21 unexposed control subjects, and 2000 cells per individual were analyzed for biomarkers of genomic instability, cytokinesis defects, and cytotoxicity. Exposed workers exhibited significantly higher frequencies of MN (2.3 ± 2.8 vs. 0.3 ± 0.5, p = 0.005), nuclear buds (5.0 ± 3.9 vs. 0.9 ± 1.9, p < 0.001), and pyknotic cells (4.5 ± 3.9 vs. 1.9 ± 2.3, p = 0.026) compared with controls, indicating increased genomic instability and cytotoxic damage. Within the exposed group, longer occupational exposure (> 10 years) was associated with higher frequencies of binucleated cells, and a significant positive correlation was observed between exposure duration and binucleated cell frequency. Additionally, workers engaged in sandstone sawing and cutting showed significantly elevated MN frequencies compared with those performing other quarry-related activities. No significant differences were observed according to reported personal protective equipment use. These findings provide evidence that occupational exposure to sandstone quarry dust is associated with cytogenotoxic effects. The results highlight the importance of biomonitoring as an early warning tool and reinforce the need for effective dust control measures and preventive strategies to protect the occupational health of sandstone quarry workers.",
+      "topics": [
+        "Occupational and environmental lung diseases",
+        "Carcinogens and Genotoxicity Assessment",
+        "Occupational exposure and asthma"
+      ],
+      "keywords": [
+        "crystalline silica exposure",
+        "occupational exposure",
+        "genotoxicity",
+        "cytotoxicity",
+        "genomic instability",
+        "nuclear buds",
+        "pyknotic cells",
+        "binucleated cells",
+        "exposure duration",
+        "personal protective equipment",
+        "biomonitoring",
+        "dust control"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2609.35362",
       "abstract": "Large language models (LLMs) typically generate text autoregressively (AR), predicting one token at a time. Block diffusion language models (dLLMs) instead generate blocks sequentially while denoising multiple tokens in parallel within each block, offering a promising way to accelerate generation. Rather than training such models from scratch, recent work adapts strong pretrained AR models into block dLLMs through distillation. On-policy distillation (OPD) has been widely used for LLM training because it supervises the student on states generated by its current policy, rather than only on fixed offline trajectories. By training on the states the student actually visits, it reduces the mismatch between training and generation and can provide more relevant supervision as the student evolves. Recent work has extended this idea to AR-to-block-diffusion conversion. However, this setting introduces a fundamental mismatch in supervision: the block-diffusion student and the causal AR teacher condition on different information at the same training state. The student predicts from the entire partially denoised block, including visible future context, whereas the standard AR teacher target is defined only from the causal prefix. As a result, the teacher distribution used for distillation is not fully aligned with the information available to the student. We therefore introduce d-OPD, a future-aware on-policy distillation method that corrects the AR teacher distribution to better align with the student-visible state by incorporating visible future information within each block, providing supervision that better matches the information used by the student. Across Qwen3 models from 0.6B to 8B, d-OPD improves the six-benchmark average by up to $4.0$ points over OPDLM and reduces training time by $1.35$-$1.58\\times$. The code is available at https://github.com/mit-han-lab/d-OPD.",
@@ -3632,42 +3688,6 @@
       "keywords": [
         "model performance estimation",
         "cost-aware routing"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.34967",
-      "abstract": "Semantic uncertainty quantification for large language models rests on a common template: sample several answers, measure how much they agree, and treat disagreement as uncertainty. We first formalize this template as two separate roles: an operator that compares two answers, and an aggregator that combines all pairwise comparisons into a scalar. Existing methods differ almost entirely in how they aggregate, while taking the operator off the shelf, typically an NLI model or a generic sentence encoder. We show that this reliance on off-the-shelf operators is the primary bottleneck of semantic UQ: they do not accurately measure factual equivalence of multiple answers to the same question. We resolve this with a deliberately simple recipe: a single encoder trained contrastively to isolate the targeted fact, utilizing synthetic data generated by an LLM and dataset both disjoint from all evaluation settings. Integrating the resulting operator into existing methods improves performance on 120 of 126 evaluation settings (95%) spanning 18 model dataset combinations across language and vision-language models. The best variant reaches 0.76 mean AUROC against 0.68 for the strongest baseline, while replacing the quadratic cross-encoder comparisons of entailment-based operators with one encoder pass per answer. The uniformity of the improvement supports the view that the operator, not the aggregator, is the limiting factor. The same operator also improves single generation token-level estimators: the norm it assigns to each token measures how much that token bears on the answer, and reweighting token log-likelihoods accordingly sharpens the estimate.",
-      "topics": [
-        "Topic Modeling",
-        "Multimodal Machine Learning Applications",
-        "Natural Language Processing Techniques"
-      ],
-      "keywords": [
-        "large language models",
-        "contrastive learning",
-        "synthetic data generation",
-        "answer aggregation",
-        "vision-language models"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202609.2372.v1",
-      "abstract": "Knowledge distillation-based unsupervised anomaly detection has achieved strong performance in industrial inspection. However, existing Reverse Distillation (RD) methods suffer from two fundamental limitations: the bottleneck compresses semantically entangled CNN features into a one-class representation that inadequately characterizes normal structural regularity, and the pairwise distillation objective leaves the co-learned teacher-student geometry semantically underconstrained. To address these issues, we propose Semantically Grounded Reverse Distillation (SGRD), which integrates a frozen vision foundation model (DINOv2 in this work) as a fixed semantic reference into the RD framework. Specifically, a foundation-aware semantic bottleneck conditions the bottleneck encoding pathway with foundation-model patch semantics to produce a structurally coherent one-class code. Furthermore, a foundation-semantic representation anchoring module jointly constrains both teacher and student representations toward the foundation-model semantic subspace, preventing semantically arbitrary representation geometry. Experiments on MVTec AD achieve 98.5% image-level AUROC and 98.3% pixel-level AUROC, while experiments on VisA achieve 99.8% image-level AUROC and 94.2% pixel-level AUPRO, with the proposed method attaining the strongest overall average performance among the compared methods on both benchmarks.",
-      "topics": [
-        "Anomaly Detection Techniques and Applications",
-        "Adversarial Robustness in Machine Learning",
-        "Advanced Neural Network Applications"
-      ],
-      "keywords": [
-        "reverse distillation",
-        "unsupervised anomaly detection",
-        "knowledge distillation",
-        "vision foundation models",
-        "DINOv2",
-        "representational geometry",
-        "industrial inspection",
-        "MVTec AD",
-        "Visa"
       ]
     }
   ]

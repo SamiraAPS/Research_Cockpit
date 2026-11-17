@@ -1,12 +1,642 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-16T13:42:28.928Z",
+  "generatedAt": "2026-11-17T14:28:42.116Z",
   "page": 253,
   "pageSize": 100,
-  "totalItems": 40518,
+  "totalItems": 40573,
   "totalPages": 406,
   "nextPage": "./page-254.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2608.11593",
+      "recordType": "preprint",
+      "title": "Luna-TTS Family Technical Report",
+      "abstract": "Modern text-to-speech (TTS) is dominated by autoregressive (AR) codec language models, whose left-to-right decoding brings latency that grows with utterance length, error accumulation along the committed prefix, and an artificial generation order imposed on the Residual Vector Quantization (RVQ) token grid. We propose Luna-TTS Family, diffusion-language-model-based TTS systems pretrained on 1 million hours of speech across Chinese, English, Japanese, and Korean. The family is built by progressive adaptation of a pretrained AR text LLM, from causal to bidirectional and finally to block-causal attention, and comprises two variants sharing a single tokenizer, data pipeline, and 0.6B backbone lineage. Luna-TTS is fully non-autoregressive: it generates the entire RVQ token grid in a fixed number of parallel refinement steps, with zero-shot voice cloning and speech editing arising natively as infilling. Luna-TTS Realtime, derived by continual training, is autoregressive over blocks of 32 codec frames (1.28s) while denoising each block in parallel; it supports KV-cached blockwise generation and incremental audio delivery, achieving an end-to-end RTF of 0.0240 and 41.6 ms local first-block latency under the warmed serving protocol. An annealed fine-tuning stage adds explicit control over emotion and non-verbal vocalizations (NVVs), and a reinforcement-learning stage applies GRPO with policy ratios computed over the realized denoising trajectory. On Seed-TTS-Eval, Luna-TTS achieves the best results on all four metrics among compared open-source and commercial systems (0.73 CER / 79.7 SIM on test-zh, 1.49 WER / 76.8 SIM on test-en); on the harder in-the-wild CV3-Eval, it posts the lowest Mandarin and English error rates in our comparison. Against leading commercial systems, it achieves the best results on most objective, model-based, and human-rated metrics for NVV and emotion control.",
+      "doi": "10.48550/arxiv.2608.11593",
+      "externalIds": {
+        "openalex": "W7202364406"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7202364406"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-12",
+      "firstPublicDate": "2026-08-12",
+      "onlineDate": null,
+      "topics": [
+        "Speech Recognition and Synthesis",
+        "Face recognition and analysis",
+        "Phonetics and Phonology Research"
+      ],
+      "keywords": [
+        "Security token",
+        "Autoregressive model",
+        "Codec",
+        "Decoding methods",
+        "Latency (audio)",
+        "Quantization (signal processing)",
+        "Noise reduction",
+        "Language model",
+        "Vector quantization"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "attention",
+              "conceptLabel": "Aufmerksamkeit",
+              "matchedTerm": "attention",
+              "sourceValue": "…retrained AR text LLM, from causal to bidirectional and finally to block-causal attention, and comprises two variants sharing a single tokenizer, data pipeline, and 0.6B backbone lineage. Luna-TTS is fully non-autoregressive: it generates the entire RVQ token grid in a fixed number of parallel refinement steps, with ze…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "motivation",
+          "label": "Motivation & Wohlbefinden",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "affect",
+              "conceptLabel": "Affekt",
+              "matchedTerm": "emotion",
+              "sourceValue": "…rmed serving protocol. An annealed fine-tuning stage adds explicit control over emotion and non-verbal vocalizations (NVVs), and a reinforcement-learning stage applies GRPO with policy ratios computed over the realized denoising trajectory. On Seed-TTS-Eval, Luna-TTS achieves the best results on all four metrics among …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:cognition": 2,
+        "topic:motivation": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning",
+        "attention",
+        "emotion"
+      ],
+      "authors": [
+        {
+          "id": "A5100696174",
+          "name": "Feng Yin",
+          "orcid": "https://orcid.org/0000-0001-5754-9246",
+          "affiliations": []
+        },
+        {
+          "id": "A5147080999",
+          "name": "Shuai Shi",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147086686",
+          "name": "Junjie Zheng",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5050521239",
+          "name": "Kechenying Zhou",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5102983434",
+          "name": "Yiqiu Wang",
+          "orcid": "https://orcid.org/0000-0002-1760-3911",
+          "affiliations": []
+        },
+        {
+          "id": "A5147123117",
+          "name": "Chenyang He",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147108349",
+          "name": "Qiuhua Jiang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5036369578",
+          "name": "Mengxiao Bi",
+          "orcid": "https://orcid.org/0009-0007-6680-481X",
+          "affiliations": []
+        },
+        {
+          "id": "A5147114811",
+          "name": "Yanmin Qian",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5146613012",
+          "name": "Mingxin Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147116910",
+          "name": "Xun Gong",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5114218788",
+          "name": "Tianteng Gu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147106597",
+          "name": "Bing Han",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147106742",
+          "name": "Peng Jiang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147089782",
+          "name": "Chenda Li",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5136952825",
+          "name": "Haiyang Sun",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147131621",
+          "name": "Han Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147088488",
+          "name": "Wei Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147100726",
+          "name": "Yi Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147104439",
+          "name": "Leying Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5147136799",
+          "name": "Wangyou Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5124451403",
+          "name": "Chushu Zhou",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.11593",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:26.210Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:26.210Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-09-28T11:43:26.210Z",
+      "preferredVersionId": "openalex:W7202364406",
+      "versions": [
+        {
+          "id": "openalex:W7202364406",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7202364406",
+          "doi": "10.48550/arxiv.2608.11593",
+          "url": "https://doi.org/10.48550/arxiv.2608.11593"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-253.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "rcial systems, it achieves the best results on most objective, model-based, and human-rated metrics for NVV and emotion control.",
+              "start": 1780,
+              "end": 1908
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "d Korean. The family is built by progressive adaptation of a pretrained AR text LLM, from causal to bidirectional and finally to block-causal attention, and comprises two variants sha",
+              "start": 457,
+              "end": 640
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "error rate",
+                  "quote": "); on the harder in-the-wild CV3-Eval, it posts the lowest Mandarin and English error rates in our comparison. Against leading commercial systems, it achieves the best results on most objecti",
+                  "start": 1648,
+                  "end": 1839
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": " under the warmed serving protocol. An annealed fine-tuning stage adds explicit control over emotion and non-verbal vocalizations (NVVs), and a reinforcement-learning stage applies GRPO w",
+                  "start": 1208,
+                  "end": 1395
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.11625",
+      "recordType": "preprint",
+      "title": "Making AI-Generated Feedback Matter: A Large-Scale Study of Feedback Workflows and Student Enactment",
+      "abstract": "Feedback processes strongly influence student learning, yet their educational value depends on addressing two distinct challenges: providing high-quality, timely, and individualised feedback at scale, and supporting students to interpret, evaluate, and act on that feedback productively. Generative AI offers a credible means of addressing the provision challenge, but students' uptake of AI-generated feedback remains limited. We conducted a large-scale quasi-experimental sequential cohort study comparing three AI-mediated feedback workflows across 13,037 students and 51,296 student-authored resources. In Directed Feedback (n = 3,723), students received AI-generated feedback comments without structured support. In Self-Directed Feedback (n = 3,951), students could initiate optional AI-supported dialogue. In Enacted Feedback (n = 5,363), students were prompted to select feedback suggestions, evaluate their relevance, and engage in targeted AI-supported dialogue anchored to those selections. Enacted Feedback was associated with significantly higher uptake of AI-generated feedback, with an estimated probability of 26.2%, compared with 14.1% for Directed Feedback and 0.1% for Self-Directed Feedback. It was also associated with significantly higher self-assessment confidence and submitted-work quality than both comparison conditions. These findings suggest that the educational value of AI-generated feedback depends not only on the quality of feedback comments, but also on workflows that actively structure students' enactment of feedback literacy processes. The results have implications for the design of AI feedback systems that position learners as active participants in judgement, dialogue, and improvement rather than passive recipients of comments. Overall findings show that AI access alone is insufficient; purposeful workflow design is central to productive feedback use.",
+      "doi": "10.48550/arxiv.2608.11625",
+      "externalIds": {
+        "openalex": "W7202344627",
+        "arxiv": "2608.11625"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.11625"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-08-12",
+      "firstPublicDate": "2026-08-12",
+      "onlineDate": null,
+      "topics": [
+        "Student Assessment and Feedback",
+        "Intelligent Tutoring Systems and Adaptive Learning",
+        "AI in Service Interactions",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Peer feedback",
+        "Quality (philosophy)",
+        "Value (mathematics)",
+        "Feedback regulation",
+        "Workflow",
+        "Negative feedback",
+        "Feedback loop"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Feedback processes strongly influence student learning, yet their educational value depends on addressing two distinct challenges: providing high-quality, timely, and individualised feedback at scale, and supporting students to interpret, evaluate, and act on that feedback productively. Generative AI offers a credible …",
+              "weight": 2
+            },
+            {
+              "source": "external_topic",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "Intelligent Tutoring Systems and Adaptive Learning",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:learning": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "generative AI",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5056833851",
+          "name": "Omar Ali Saleh Alsaiari",
+          "orcid": "https://orcid.org/0009-0002-6909-6306",
+          "affiliations": []
+        },
+        {
+          "id": "A5047525857",
+          "name": "Nilufar Baghaei",
+          "orcid": "https://orcid.org/0000-0003-1776-7075",
+          "affiliations": []
+        },
+        {
+          "id": "A5069874026",
+          "name": "Jason M. Lodge",
+          "orcid": "https://orcid.org/0000-0001-6330-6160",
+          "affiliations": []
+        },
+        {
+          "id": "A5147138556",
+          "name": "Dragan Gaševi'c",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5008091286",
+          "name": "Naomi Winstone",
+          "orcid": "https://orcid.org/0000-0001-8157-8274",
+          "affiliations": []
+        },
+        {
+          "id": "A5007067645",
+          "name": "Hassan Khosravi",
+          "orcid": "https://orcid.org/0000-0001-8664-6117",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2608.11625",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:48.439Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-28T11:43:26.210Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:26.210Z",
+      "preferredVersionId": "arxiv:2608.11625",
+      "versions": [
+        {
+          "id": "arxiv:2608.11625",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.11625",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.11625v2"
+        },
+        {
+          "id": "openalex:W7202344627",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7202344627",
+          "doi": "10.48550/arxiv.2608.11625",
+          "url": "https://doi.org/10.48550/arxiv.2608.11625"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        },
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-253.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "title",
+              "term": "student",
+              "quote": "ing AI-Generated Feedback Matter: A Large-Scale Study of Feedback Workflows and Student Enactment",
+              "start": 3,
+              "end": 100
+            },
+            {
+              "field": "abstract",
+              "term": "participant",
+              "quote": "ications for the design of AI feedback systems that position learners as active participants in judgement, dialogue, and improvement rather than passive recipients of comments. Overall finding",
+              "start": 1596,
+              "end": 1788
+            },
+            {
+              "field": "abstract",
+              "term": "participants",
+              "quote": "ications for the design of AI feedback systems that position learners as active participants in judgement, dialogue, and improvement rather than passive recipients of comments. Overall finding",
+              "start": 1596,
+              "end": 1788
+            },
+            {
+              "field": "abstract",
+              "term": "student",
+              "quote": "Feedback processes strongly influence student learning, yet their educational value depends on addressing two distinct challenges: providing high",
+              "start": 0,
+              "end": 145
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "AI",
+              "quote": "Making AI-Generated Feedback Matter: A Large-Scale Study of Feedback Workflows and Student Enactment",
+              "start": 0,
+              "end": 100
+            },
+            {
+              "field": "abstract",
+              "term": "generative AI",
+              "quote": "porting students to interpret, evaluate, and act on that feedback productively. Generative AI offers a credible means of addressing the provision challenge, but students' uptake of AI-generated",
+              "start": 208,
+              "end": 401
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "dents to interpret, evaluate, and act on that feedback productively. Generative AI offers a credible means of addressing the provision challenge, but students' uptake of AI-generated",
+              "start": 219,
+              "end": 401
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "human-mentioned",
+        "fields": {
+          "context": [
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "student",
+                  "quote": "ing AI-Generated Feedback Matter: A Large-Scale Study of Feedback Workflows and Student Enactment",
+                  "start": 3,
+                  "end": 100
+                },
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": "Feedback processes strongly influence student learning, yet their educational value depends on addressing two distinct challenges: providing high",
+                  "start": 0,
+                  "end": 145
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "students",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "student",
+                  "quote": "ing AI-Generated Feedback Matter: A Large-Scale Study of Feedback Workflows and Student Enactment",
+                  "start": 3,
+                  "end": 100
+                },
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": "Feedback processes strongly influence student learning, yet their educational value depends on addressing two distinct challenges: providing high",
+                  "start": 0,
+                  "end": 145
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "participants",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "participant",
+                  "quote": "ications for the design of AI feedback systems that position learners as active participants in judgement, dialogue, and improvement rather than passive recipients of comments. Overall finding",
+                  "start": 1596,
+                  "end": 1788
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "tutoring",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "feedback",
+                  "quote": "Making AI-Generated Feedback Matter: A Large-Scale Study of Feedback Workflows and Student Enactment",
+                  "start": 0,
+                  "end": 100
+                },
+                {
+                  "field": "abstract",
+                  "term": "feedback",
+                  "quote": "Feedback processes strongly influence student learning, yet their educational value depends on addressing tw",
+                  "start": 0,
+                  "end": 108
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "generative",
+                  "quote": "porting students to interpret, evaluate, and act on that feedback productively. Generative AI offers a credible means of addressing the provision challenge, but students' uptake of AI-genera",
+                  "start": 208,
+                  "end": 398
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "arxiv:2608.11705",
       "recordType": "preprint",
@@ -21321,497 +21951,6 @@
           "context": [],
           "population": [],
           "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.11152",
-      "recordType": "preprint",
-      "title": "Scheduling Mixed RL Rollouts Beyond Prefix Locality",
-      "abstract": "Modern reinforcement learning (RL) post-training pipelines for large language models (LLMs) increasingly combine rollout workloads across multiple domains and feedback paradigms. Prefix-aware routing improves inference efficiency through cache reuse and load balancing, but it does not control how heterogeneous rollout sessions compete for KV-cache capacity. When reinforcement learning with verifiable rewards (RLVR), reinforcement learning from human feedback (RLHF), and agentic rollouts share an asynchronous inference service, their distinct sequence structures, interaction patterns, and KV-residency times create substantially different serving demands. Rollout scheduling must account for this heterogeneity without distorting the workload mixture specified by the trainer. We present MISA-T, a routing-layer admission policy for mixed rollout serving. MISA-T combines adaptive session admission, workload-aware KV-capacity allocation, and residency-time-aware KV accounting. In rollout-only ablations on Step3.7 and Qwen3.6-35B-A3B, MISA-T improves rollout throughput over a sweep-tuned cache-aware vLLM Router by 53.3% and 43.6%, respectively, while maintaining high prefix-cache hit rates. In a matched 50-iteration Step3.7 experiment, it increases rollout throughput by 35.6% and reduces mean iteration time by 22.8%, while keeping the consumed workload mixture close to the trainer target and achieving comparable task scores.",
-      "doi": "10.48550/arxiv.2608.11152",
-      "externalIds": {
-        "openalex": "W7202286517"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7202286517"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-11",
-      "firstPublicDate": "2026-08-11",
-      "onlineDate": null,
-      "topics": [
-        "IoT and Edge/Fog Computing",
-        "Advanced Neural Network Applications",
-        "Multimodal Machine Learning Applications"
-      ],
-      "keywords": [
-        "Scheduling (production processes)",
-        "Reinforcement learning",
-        "Asynchronous communication",
-        "Workload",
-        "Cache",
-        "Inference",
-        "Reuse"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "agency",
-          "label": "Work Design & Agency",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "agency",
-              "conceptLabel": "Agency",
-              "matchedTerm": "agentic",
-              "sourceValue": "…rifiable rewards (RLVR), reinforcement learning from human feedback (RLHF), and agentic rollouts share an asynchronous inference service, their distinct sequence structures, interaction patterns, and KV-residency times create substantially different serving demands. Rollout scheduling must account for this heterogeneit…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "load",
-              "conceptLabel": "Kognitive Belastung",
-              "matchedTerm": "workload",
-              "sourceValue": "…raining pipelines for large language models (LLMs) increasingly combine rollout workloads across multiple domains and feedback paradigms. Prefix-aware routing improves inference efficiency through cache reuse and load balancing, but it does not control how heterogeneous rollout sessions compete for KV-cache capacity. W…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "load",
-              "conceptLabel": "Kognitive Belastung",
-              "matchedTerm": "workload",
-              "sourceValue": "Workload",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:agency": 2,
-        "topic:cognition": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "workload",
-        "agentic"
-      ],
-      "authors": [
-        {
-          "id": "A5120034746",
-          "name": "Zetao Hong",
-          "orcid": "https://orcid.org/0009-0008-0780-5799",
-          "affiliations": []
-        },
-        {
-          "id": "A5146982154",
-          "name": "Song Yuan",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5134762003",
-          "name": "Yuanhao Ding",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5141095120",
-          "name": "Yibo Zhu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5125956615",
-          "name": "Daxin Jiang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5146964250",
-          "name": "Zhibin Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5147059382",
-          "name": "Chen Tian",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.11152",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:28.143Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:28.143Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-28T11:43:28.143Z",
-      "preferredVersionId": "openalex:W7202286517",
-      "versions": [
-        {
-          "id": "openalex:W7202286517",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7202286517",
-          "doi": "10.48550/arxiv.2608.11152",
-          "url": "https://doi.org/10.48550/arxiv.2608.11152"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-253.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "nforcement learning with verifiable rewards (RLVR), reinforcement learning from human feedback (RLHF), and agentic rollouts share an asynchronous inference service, their distinct seque",
-              "start": 368,
-              "end": 553
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Modern reinforcement learning (RL) post-training pipelines for large language models (LLMs) increasingly combine rollout workloads across multiple domains and feedback paradigms. Prefi",
-              "start": 0,
-              "end": 184
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "Modern reinforcement learning (RL) post-training pipelines for large language models (LLMs) increasingly combine rollout workloads across multiple domains and feedback paradigms. Prefi",
-              "start": 0,
-              "end": 184
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": " reinforcement learning (RL) post-training pipelines for large language models (LLMs) increasingly combine rollout workloads across multiple domains and feedback paradigms. Prefix-awar",
-              "start": 6,
-              "end": 190
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "tutoring",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "feedback",
-                  "quote": "odels (LLMs) increasingly combine rollout workloads across multiple domains and feedback paradigms. Prefix-aware routing improves inference efficiency through cache reuse and load balancin",
-                  "start": 79,
-                  "end": 267
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Modern reinforcement learning (RL) post-training pipelines for large language models (LLMs) increasingly combine rollout workloads across multiple domains and feedback paradigms. Prefi",
-                  "start": 0,
-                  "end": 184
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "workload",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "workload",
-                  "quote": "raining pipelines for large language models (LLMs) increasingly combine rollout workloads across multiple domains and feedback paradigms. Prefix-aware routing improves inference efficiency ",
-                  "start": 41,
-                  "end": 230
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "es inference efficiency through cache reuse and load balancing, but it does not control how heterogeneous rollout sessions compete for KV-cache capacity. When reinforcement learning with ",
-                  "start": 206,
-                  "end": 393
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "hile maintaining high prefix-cache hit rates. In a matched 50-iteration Step3.7 experiment, it increases rollout throughput by 35.6% and reduces mean iteration time by 22.8%, while keeping t",
-                  "start": 1156,
-                  "end": 1346
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.11350",
-      "recordType": "preprint",
-      "title": "Self-Evolving Embodied Agents via Skill-Harness Evolution",
-      "abstract": "Embodied agents are increasingly built as systems around foundation models, where performance depends not only on model weights but also on the skills, context, action interfaces, and execution harness surrounding the model. While supervised fine-tuning and reinforcement learning can adapt agents to new environments, they require additional data, rewards, and training runs; meanwhile, many train-free code-centric approaches rely on programmable robot APIs that may be unavailable in fixed-interface settings. We propose SHAPER, a self-evolving framework for train-free embodied adaptation that keeps model parameters frozen and improves the non-parametric agent system by evolving reusable skills and a context-code harness through target-environment rollouts. In SHAPER, the same frozen model can serve as both planner and optimizer, refining its external skills and context-code harness without parameter updates. We evaluate SHAPER on VLABench and ESI-Bench, covering embodied agents with different low-level action interfaces, and compare against pure execution, supervised fine-tuning, and test-time-scaling baselines such as verifier-free selection and voting. Our results suggest that skill-and-harness optimization is a practical route to self-evolving embodied agents when model training is expensive, unavailable, or undesirable.",
-      "doi": "10.48550/arxiv.2608.11350",
-      "externalIds": {
-        "openalex": "W7202361045",
-        "arxiv": "2608.11350"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.11350"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-11",
-      "firstPublicDate": "2026-08-11",
-      "onlineDate": null,
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "Robot Manipulation and Learning",
-        "Artificial Intelligence in Games",
-        "cs.CL",
-        "cs.RO"
-      ],
-      "keywords": [
-        "Embodied cognition",
-        "Reinforcement learning",
-        "Embodied agent",
-        "Adaptation (eye)",
-        "Action (physics)",
-        "Robot",
-        "Planner",
-        "Humanoid robot"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 4,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "foundation model",
-        "foundation models",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5062250845",
-          "name": "Peidong Wang",
-          "orcid": "https://orcid.org/0000-0002-7042-0209",
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Ma, Zhiming",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5147089713",
-          "name": "Ying Chang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5129706914",
-          "name": "Xufang Luo",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5019710888",
-          "name": "Yu Zhang",
-          "orcid": "https://orcid.org/0000-0002-5961-8257",
-          "affiliations": []
-        },
-        {
-          "id": "A5151424357",
-          "name": "Zihan Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5124876516",
-          "name": "Xiaocui Yang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5151320061",
-          "name": "Shi Feng",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5127440551",
-          "name": "Yuqing Yang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5127142440",
-          "name": "Dongsheng Li",
-          "orcid": "https://orcid.org/0000-0002-1030-146X",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.11350",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-27T14:56:48.439Z",
-      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
-      "retrievedAt": "2026-09-28T11:43:28.143Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:28.143Z",
-      "preferredVersionId": "arxiv:2608.11350",
-      "versions": [
-        {
-          "id": "arxiv:2608.11350",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.11350",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.11350v2"
-        },
-        {
-          "id": "openalex:W7202361045",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7202361045",
-          "doi": "10.48550/arxiv.2608.11350",
-          "url": "https://doi.org/10.48550/arxiv.2608.11350"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        },
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-253.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "Embodied agents are increasingly built as systems around foundation models, where performance depends not only on model weights but also on the skills, context, action interf",
-              "start": 0,
-              "end": 174
-            },
-            {
-              "field": "abstract",
-              "term": "foundation models",
-              "quote": "Embodied agents are increasingly built as systems around foundation models, where performance depends not only on model weights but also on the skills, context, action interf",
-              "start": 0,
-              "end": 174
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "automation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "robot",
-                  "quote": "g runs; meanwhile, many train-free code-centric approaches rely on programmable robot APIs that may be unavailable in fixed-interface settings. We propose SHAPER, a self-evolving framew",
-                  "start": 369,
-                  "end": 554
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
           "outcomes": [],
           "studyDesign": []
         },

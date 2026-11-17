@@ -1,7 +1,33 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-16T13:42:28.928Z",
+  "generatedAt": "2026-11-17T14:28:42.116Z",
   "documents": [
+    {
+      "id": "arxiv:2609.04715",
+      "abstract": "Personalizing large language models (LLMs) is essential for delivering AI assistance that aligns with individual users' styles, intents, and preferences. While per-user fine-tuning can substantially enhance personalization quality, it introduces significant parameter and storage overhead, limiting scalability to large user populations. We propose PLUME (Personalized Low-Rank Adaptation through User Modulation and Shared Subspace), a lightweight framework that achieves efficient and expressive per-user adaptation by leveraging a shared task-specific subspace. Specifically, PLUME first learns a global task subspace from aggregated user data. Personalization is then achieved by training only a lightweight small square matrix within this subspace, enabling each user to obtain a tailored model while keeping shared components fixed. Cross-layer shared parameters and rank-1 residual terms are further introduced to significantly reduce redundancy while maintaining expressiveness. Experiments on multiple personalized text generation benchmarks demonstrate that PLUME achieves comparable or superior performance to strong baselines, while reducing per-user parameters by over 95%. These results establish shared-subspace modulation with minimal residuals as a scalable and semantically grounded approach to LLM personalization.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1002/app.71458",
+      "abstract": "ABSTRACT Organic solvent nanofiltration (OSN) has emerged as an energy‐efficient alternative to conventional separation processes for molecular‐level separations under mild operating conditions. Among the various membrane materials investigated, polyimides (PIs) have attracted significant attention because of their excellent thermal stability, mechanical robustness, and chemical resistance. However, conventional PI membranes often suffer from solvent‐induced swelling and structural instability, limiting their long‐term industrial applicability. To overcome these challenges, extensive research has focused on advanced crosslinking strategies, sustainable fabrication methods, and emerging data‐driven membrane design approaches. Chemical modifications such as diamine crosslinking, metal‐ion coordination, and synergistic multistep crosslinking have significantly enhanced solvent resistance and separation performance, achieving solute rejection values exceeding 99% in harsh solvents including DMF. Simultaneously, sustainable fabrication approaches involving green solvents and bio‐derived materials are gaining increasing importance. In parallel, artificial intelligence (AI) and machine learning techniques are being integrated into membrane research for predictive modeling, optimization, and virtual screening of membrane performance. This review critically discusses recent advances in PI‐based OSN membranes, emphasizing crosslinking chemistry, sustainable fabrication, and AI‐assisted membrane design while highlighting current challenges and future industrial prospects.",
+      "topics": [
+        "Membrane Separation Technologies",
+        "Membrane Separation and Gas Transport",
+        "Extraction and Separation Processes"
+      ],
+      "keywords": [
+        "Nanofiltration",
+        "Membrane",
+        "Polyimide",
+        "Solvent",
+        "Fabrication",
+        "Membrane technology",
+        "Polymeric membrane"
+      ]
+    },
     {
       "id": "doi:10.5281/zenodo.22288851",
       "abstract": "(c) 2026 Pranay Mahendrakar. Licensed under CC BY 4.0. A common reading of the LLM routing literature holds that delegation works without self-knowledge: a router allocates queries using external features of the task and observed outcome statistics over a model pool, and never consults the candidate model's opinion of its own competence. This paper argues that the reading does not survive the evidence. Signals derived from the candidate model's own generation are competitive with trained external routers and, in the one located comparison that varies distribution shift, substantially better out of distribution; a self-confidence gate has been reported to beat a frozen external router at lower token cost; and the strongest current cascade and escalation systems are built on exactly such signals. What the evidence does support is a different partition, which the internal-versus-external frame obscures. Predicting whether you will fail is a self-directed prediction and is comparatively tractable. Predicting which alternative would do better is an other-directed prediction, and the same score that ranks own-failure well has been reported to fall sharply when asked which collaboration protocol pays off. Delegation is the second kind of judgement, not the first, and the learning-to-defer literature has known for years that a deferral rule must model the expert rather than only the deferrer. A further problem is that no located routing experiment isolates introspection at all. Every deployed self-signal is a supervised probe fitted to labelled outcomes, which is an external estimator that happens to read internal features, so the axis the delegation story rests on is not the axis the experiments vary. The control that would settle it already exists in the introspection literature, where a model's self-prediction is scored against what a second model with matched knowledge predicts about it. That control has not been run on a router. Four measurements are set out that would settle the open part, and what is not known is stated flatly: nobody has reported whether self-assessed capability adds anything to a delegation decision once an external estimator with the same information is already in the system. The literature search, drafting and citation verification for this paper were carried out with AI assistance under the author's direction. Every citation was machine-verified against the arXiv API and Crossref before inclusion, and every quantitative claim was read back against the cited source's own abstract. The author is responsible for the final text and for all claims made in it.",
@@ -3656,49 +3682,6 @@
         "Coding (social sciences)",
         "Source code",
         "Base (topology)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.04489",
-      "abstract": "Pause-token methods improve LLM reasoning by inserting special tokens into sequences. Prior work explains these gains through computational expressivity. However, there is relatively little investigation into the training dynamics of pause tokens. We explore how pause tokens reshape the training dynamics of fine-tuning. Two controlled pilots expose distinct asymmetries. On a synthetic continual-learning task, masked pauses overwrite a previously-learned distribution roughly 4x less at matched final adaptation (H1, mode retention); on a synthetic math-reasoning probe, the boundary-adjacent token comes to encode substantially more downstream-step information (H2, non-myopic compression). We formalize a training rule consistent with both - Masked Boundary Pause (MBP), pause tokens placed at reasoning-step boundaries with their loss masked. Across 1B-8B Qwen and Llama models, MBP consistently improves reasoning, achieving gains of up to 6 points on math and 2.5 points on code, while preserving general language understanding abilities. We further demonstrate that this mode-preserving strategy extend gains to GRPO. These results recast pause tokens as a training-dynamics intervention on the retention-adaptation trade-off, rather than merely an inference-time computation device.",
-      "topics": [
-        "Natural Language Processing Techniques",
-        "Topic Modeling",
-        "Language Development and Disorders",
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Security token",
-        "Perspective (graphical)",
-        "ENCODE",
-        "Dynamics (music)",
-        "Mode (computer interface)",
-        "Adaptation (eye)",
-        "Point (geometry)",
-        "Computation",
-        "Boundary (topology)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.03797",
-      "abstract": "Long-term human-AI interaction is difficult because the information that guides inference is updated implicitly by the model and is not directly inspectable or controllable by the user. We introduce the TRANSparent Framework for Interactive, Verifiable, Editable Representation (Transfiver), an architecture for human-AI co-inference through a shared editable state. Its central idea is that interaction-specific information is maintained in a single persistent state $(S_t)$ that both the model and the human update. Transfiver distinguishes two modes of state evolution. In an implicit stream update, the model interprets ongoing interaction and decides whether new information revises an existing state item or creates a new one. In an explicit directed edit, a human inspects and modifies an addressed item. Both act on the same underlying state, so a human correction changes the state that subsequent computation reads, rather than adding another instruction or separate record. The architecture separates shared parameters $(θ)$, learned before ordinary use, from the persistent state $(S_t)$, which evolves during deployment without parameter retraining. Extending Transfiver to rich natural-language, relational, and large-scale shared states remains open.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Explainable Artificial Intelligence (XAI)",
-        "Topic Modeling",
-        "cs.AI",
-        "cs.CL",
-        "cs.HC"
-      ],
-      "keywords": [
-        "State (computer science)",
-        "Representation (politics)",
-        "Inference",
-        "Key (lock)",
-        "Architecture",
-        "Software deployment",
-        "State information"
       ]
     }
   ]

@@ -1,7 +1,34 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-16T13:42:28.928Z",
+  "generatedAt": "2026-11-17T14:28:42.116Z",
   "documents": [
+    {
+      "id": "doi:10.5281/zenodo.23559970",
+      "abstract": "Decoding the regulatory grammar of the human genome and predicting gene expression from primary DNA sequences represent foundational grand challenges in computational biology and synthetic genomics. While traditional bioinformatics pipelines rely on heuristic sequence alignment, position weight matrices (PWMs), and shallow convolutional models, they fail to capture long-range genomic interactions, distal enhancer-promoter looping, and complex epigenetic modifications spanning millions of base pairs. Genomic Foundation Models (GFMs)—large-scale selfsupervised transformer architectures trained on multi-species whole-genome corpora—establish a transformative paradigm shift that treats DNA as a universal biological language. By tokenizing nucleotide sequences into overlapping kmers and training via masked language modeling over ultra-long context windows (up to 1M base pairs), genomic foundation models learn deep representations of splicing sites, transcription factor binding domains, and chromatin accessibility. However, scaling transformer models to whole-genome nucleotide sequences introduces acute mathematical and systems bottlenecks: quadratic self-attention complexity over multi-megabase contexts, high-dimensional embedding collapse across repetitive genomic elements, and poor zero-shot generalization across evolutionary divergences. This paper presents an exhaustive, mathematically formal technical investigation and empirical benchmark of genomic foundation models and de novo gene expression prediction. We formalize nucleotide tokenization and k-mer embedding spaces, derive linear and flash-attention memory bounds for multi-megabase genomic contexts, and model epigenetic chromatin profiling via multi-task transformer heads. Furthermore, we construct an enterprise multi-species benchmark testbed evaluating genomic foundation models (Nucleotide Transformer, Enformer, AlphaGenome) across human gene expression prediction (GTEx v8), pathogenic variant effect scoring (ClinVar), and synthetic promoter generation. Our empirical findings demonstrate that our optimized multi-scale genomic transformer achieves a Pearson correlation of R = 0.892 in predicting cross-tissue gene expression levels from raw DNA sequences alone, while outperforming classical heuristic models by 34.6% in pathogenicity variant effect prediction. Finally, we formulate open challenges in all-genomic generative design, single-cell epigenetic conditioning, and ethical biosecurity screening of synthetic gene constructs.",
+      "topics": [
+        "Genomics and Chromatin Dynamics",
+        "Machine Learning in Bioinformatics",
+        "Genomics and Phylogenetic Studies"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.26599/air.2026.9150015",
+      "abstract": "Abstract Large language model (LLM) hidden widths—such as the 18 944-dimensional intermediate layer of the Qwen family—are often burst-aligned but not tile-compatible with heterogeneous NPU Cube engines, forcing the compiler to emit a small residual kernel that stalls the pipeline for up to 77% of cycles. Manual tuning does not scale across the growing space of model dimensions, sequence lengths, and operator variants. We present GenTile, a dual-role Research–Development (R&D) agent framework that closes the loop between LLM causal reasoning and on-device telemetry: a Research agent diagnoses bottlenecks from structured profiles, a Development agent materializes hardware-legal descriptors from compiler feedback, and iteration traces accumulate into a reusable knowledge base under an air-gap sandbox. On Ascend 910B, an offline hardware-faithful sandbox loop first demonstrates convergence mechanics; on real pretrained weights, the loop then measures the full multi-objective trade-off—latency, energy, memory, AICore efficiency, and approximation error (ε)—across six projection families from two Qwen generations (Qwen3.5-32B and Qwen2.5-7B). From telemetry alone, the agent deploys lossless sibling-projection fusions (QKV, gate–up) consistent with production inference-engine layouts (1.06–1.16× faster, up to 13% lower energy, ε=0, stable across sequence lengths, layer depths, and both models), and rejects every lossy low-rank rewrite—including a 1.39× lm_head speedup whose measured ε=0.89 exceeds any usable accuracy budget—while validating the Eckart–Young cliff prediction (ε → 0.002 at the tail rank) on structural layers. Baselines, ablations, cross-dimension generalization, and a sandbox loop that matches the geometric Oracle within four generations without exhaustive search further support the framework.",
+      "topics": [
+        "Parallel Computing and Optimization Techniques",
+        "Advanced Neural Network Applications",
+        "Embedded Systems Design Techniques"
+      ],
+      "keywords": [
+        "low-rank approximation",
+        "compiler feedback",
+        "multi-objective trade-offs",
+        "approximation error",
+        "Eckart-Young theorem",
+        "Qwen"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2610.31096",
       "abstract": "Large language models (LLMs) can drive scientific software through function calling, but free-form tool use is fragile on long, data-dependent processing chains. Models omit arguments, invent units, feed the previous artifact into the wrong input, and report completion without a verifiable product. We present GeoAgent, an agent system for seismic data processing built on Madagascar's roughly 1{,}965 command-line programs. GeoAgent exposes 54 operator agents (51 generated from a declarative specification), retrieves from an index of 1{,}937 operators, and encodes the processing flow as a nine-stage state graph. Four explicit contracts---named artifacts, input resolution, parameter takeover, and artifact validation---move everything the graph can determine out of the model's discretion. A deterministic geometry tool parses the self-describing SPS/RPS/XPS and SEG-Y headers, cross-checks eight consistency conditions, and reproduces the reference shell recipe exactly. The system runs in containers with session- and task-level isolation, bounded execution, and defenses against silent failures. On a 2-D land dataset, the nine-stage pipeline completes in about six to eleven minutes and yields a verified artifact at every stage, while retrieval reduces per-turn tool context from about 12k to 2k tokens. We report the design, deployment experience, and motivating failure modes.",
@@ -3303,49 +3330,6 @@
         "confidence scores",
         "data annotation",
         "textual annotation"
-      ]
-    },
-    {
-      "id": "openalex:W7223493368",
-      "abstract": "Self-directed learning is a major part of individual knowledge formation. People often autonomously organize their own learning into ”blocks”: they practice a certain task for some continuous stretch of time, then switch to another task for another period of time, and so on. Yet current models of intrinsic motivation highlighting epistemic factors such as novelty, competence, and learning progress make various predictions about the extent to which learners block, as opposed to interleaving, their practice. In this study, we demonstrate that people tend to block in a multi-task setting where existing models of intrinsic motivation based on epistemic factors make ambiguous predictions. We show that while epistemic factors can partially explain blocking, a simple repetition bias substantially improves our ability to predict choices.",
-      "topics": [
-        "Innovative Teaching and Learning Methods",
-        "Memory Processes and Influences",
-        "Visual and Cognitive Learning Processes"
-      ],
-      "keywords": [
-        "self-directed learning",
-        "task blocking",
-        "task switching",
-        "intrinsic motivation",
-        "epistemic motivation",
-        "novelty",
-        "competence",
-        "learning progress",
-        "multi-task learning",
-        "choice prediction"
-      ]
-    },
-    {
-      "id": "doi:10.3390/journalmedia7040219",
-      "abstract": "Artificial intelligence (AI) is increasingly incorporated into journalistic work, raising questions concerning transparency, authorship, editorial responsibility, human verification, and organizational governance. This study examines reported transparency practices and professional perceptions concerning AI use among journalism professionals linked to media organizations and news-production environments in Ecuador. A mixed-methods design combined a non-probability online survey of 53 eligible professionals with seven semi-structured interviews involving six journalism professionals and one communication academic with professional experience in journalism. The quantitative component was analyzed descriptively, while the qualitative component was examined through a deductive and interpretive analysis structured around four predefined thematic domains. AI use was reported by 48 of the 53 survey participants (90.6%), with both instrumental and generative applications identified. Among applicable responses, 39.5% reported the existence of a specific AI-related deontological code, 59.2% reported having received instructions from superiors, and 29.3% reported an obligation to disclose AI use to audiences. Human verification was the most frequently selected component of proposed internal AI rules (79.2%). The interviews showed uneven levels of organizational formalization, including verbal instructions, emerging guidelines, and differing thresholds for disclosure, while consistently emphasizing human editorial judgment and responsibility. The findings indicate that transparency in AI-assisted journalism is multidimensional and unevenly institutionalized across the professional environments represented in the study. These results provide sample-bound evidence from Ecuador and should not be interpreted as a national estimate of media transparency.",
-      "topics": [
-        "Journalism and Media Studies",
-        "Media Studies and Communication",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "artificial intelligence in journalism",
-        "AI transparency",
-        "AI disclosure",
-        "journalism ethics",
-        "self-regulation",
-        "human verification",
-        "editorial responsibility",
-        "authorship",
-        "generative AI",
-        "media companies",
-        "Ecuador"
       ]
     }
   ]

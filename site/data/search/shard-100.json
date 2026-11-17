@@ -1,7 +1,27 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-16T13:42:28.928Z",
+  "generatedAt": "2026-11-17T14:28:42.116Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.32635",
+      "abstract": "LLM agents now execute tasks end to end with permission to change real systems and increasingly orchestrate subagents that differ in capability and cost. Prior work treats the choice of subagent as an optimization problem. Yet the orchestrator makes this choice from the identities that subagents display, and an attacker can spoof them. Displayed identity thus decides operational authority, meaning who is trusted to check the work and who is allowed to change it. As a result, a risky subagent can keep authority over execution even after other evidence contradicts it. We introduce TrustFork, an LLM agent safety benchmark with 1,890 tasks and 27,826 valid trajectories across 16 agent systems. These systems run eight orchestrators under the OpenCode, OpenClaw, and Pi harnesses. In each task, one subagent carries a risky goal while the other three stay aligned with the user, so contradicting evidence can exist. A task can also change the identity a subagent displays without changing the model behind it, which lets us trace a shift in authority to the label. Our analysis shows that even when another subagent contradicts the risky response, the orchestrator still acts on it in 72.0% of cases on average, most often in the systems with the least terminal harm. Swapping the family labels nearly triples how often the orchestrator obtains the risky response. A safer response is available in 84.0% of tasks, yet it decides the outcome in only 25.0%. The harness also decides which responses reach the orchestrator. Among three runtime defenses, hiding identity cues helps most consistently, while verifying before action helps only when the harness returns enough evidence. TrustFork shows that production agent orchestration must bind authority to evidence before execution causes harm. Our project is in https://henrymao2004.github.io/agent-orchestration-safety/.",
+      "topics": [
+        "Access Control and Trust",
+        "Security and Verification in Computing",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.32792",
+      "abstract": "LLM post-training combines supervised fine-tuning (SFT), a mode-covering forward-KL objective, with reinforcement learning (RL), a mode-seeking reverse-KL objective. Frequency-weighted likelihood training leaves a well-known signature: \\emph{anisotropy}, in which a few residual channels carry disproportionately large activations. Anisotropy is widely documented and usually treated as a defect, yet its function and its interaction with post-training remain unclear. We first analyze it. A label-free outlier rule isolates about 5\\% of residual channels that are essential for language modeling: removing them raises perplexity from 10 to over $10^6$, versus 35 for count-matched random channels. Yet they barely distinguish correct from incorrect reasoning. SFT reshapes them, whereas RL leaves them largely intact and adapts the complementary channels. These channels therefore form the model's \\emph{coherence substrate}, and reasoning adaptation happens elsewhere. We then exploit this. \\textsc{SphereGate} learns one bounded gain per residual channel on a frozen backbone. Its activation-weighted gradients provably limit movement of high-energy coherence channels and leave the remaining channels free. With 0.1M trainable parameters, \\textsc{SphereGate} outperforms parameter-efficient baselines by 2.0--7.3 points on MATH-500 across Qwen2.5 (0.5B--7B) and Llama-3-8B, is comparable or exceeds full-model GRPO. Anisotropy is not a defect but a division of labor that post-training can exploit.",
+      "topics": [
+        "Natural Language Processing Techniques",
+        "Topic Modeling",
+        "Speech Recognition and Synthesis"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.48550/arxiv.2609.32140",
       "abstract": "We give an elementary proof that every positive rational number $a/b$ with $b$ squarefree is a finite sum of distinct unit fractions $1/n$, where each $n$ is a product of two distinct primes (Erdős Problem #306). After a reduction to small targets, we take a single complete bipartite graph between the primes in $(y^2,2y^2]$, together with $2$ and the primes of $b$, and a tuned initial segment of the primes in $(y^8,y^9]$, and show that some subgraph has reciprocal sum congruent to $a/b$ modulo $1$; the small total mass then forces equality. Writing the number of such subgraphs as a finite Fourier sum, we sort the frequencies into three cases using a table indexed by the two sides of the graph. The small integer frequencies give a positive main term, and all other frequencies are negligible by a divisor-counting argument and a no-wrap-around form of the Chinese remainder theorem. The only inputs about primes are Chebyshev-type bounds. The circle-method framework comes from Tang's Lean development, which gave the first proof; our construction removes its anchor-synchronisation step. The proof has been formalised in Lean 4, apart from a cited inequality of Ramanujan. This work is a human-AI collaboration: AI tools contributed substantially to the construction, the experiments and the writing.",
@@ -4781,42 +4801,6 @@
         "Outcome (game theory)",
         "Generative model",
         "Test (biology)"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202609.2098.v1",
-      "abstract": "Current attempts to instill internal alignment mechanisms into modern AI systems remain brittle when applied to autonomous, tool using agents facing out of distribution adversarial attacks, multi-step evasion strategies, and context smuggling. To date, none of the attempts at instilling internal alignment safety protocols have computationally modeled the approach developed by evolution to guide humans away from rogue behaviors and towards socially aligned ones. In human neurobiology, behavioral safety is enforced through hierarchical, intrinsic executive inhibition mediated by the prefrontal cortex (PFC). When PFC function is impaired by disease, trauma, or developmental conditions, disinhibition, poor judgment, and rule-violating behaviors emerge. Drawing on this biomimetic principle, we propose and prototype a structural containment framework-the Artificial Prefrontal Cortex (aPFC)-that provides an external layer of executive control over LLM based autonomous agents. Using Gemma 4-e4b and a Python based implementation, this pa- per presents a prototypical executive control architecture that remained robust under diverse adversarial conditions, including authority framing jailbreaks, multi node collusion, stealth payload mutation, context smug- gling, buffer flushing, and long horizon evasion. The architecture intro- duces a decoupled Executive Control module composed of four functional analogues inspired by human PFC organization: (1) a deterministic reflex layer providing zero latency constraint enforcement for known vulnera- bilities; (2) a coordination and perseveration detector that terminates unauthorized multi agent swarming and repeated evasion loops; (3) a se- mantic working memory evaluator that uses an LLM to assess the intent and consequences of proposed actions; and (4) an event driven temporal tracker that consolidates multi step behaviors to mitigate buffer flushing and “temporal amnesia” attacks. Empirical validation in an air-gapped simulation environment demon- strated that the system autonomously intercepted authority framing jail- breaks, multi node collusion, stealth payload mutations, and long horizon evasion tactics. These findings suggest that securing autonomous AI sys- tems requires moving beyond current internal model alignment and toward structural executive containment, providing a scalable and model agnostic blueprint for next generation AI safety.",
-      "topics": [
-        "EEG and Brain-Computer Interfaces",
-        "Memory and Neural Mechanisms",
-        "Embodied and Extended Cognition"
-      ],
-      "keywords": [
-        "Prefrontal cortex",
-        "Context (archaeology)",
-        "Adversarial system",
-        "Context switch",
-        "Evasion (ethics)",
-        "Robustness (evolution)",
-        "Artificial pancreas"
-      ]
-    },
-    {
-      "id": "doi:10.3758/s13428-026-03184-w",
-      "abstract": null,
-      "topics": [
-        "Machine Learning and Algorithms",
-        "Data Quality and Management",
-        "Imbalanced Data Classification Techniques"
-      ],
-      "keywords": [
-        "Test (biology)",
-        "Bayesian probability",
-        "Contamination",
-        "Test data",
-        "Calibration",
-        "Qualitative reasoning",
-        "Online assessment"
       ]
     }
   ]

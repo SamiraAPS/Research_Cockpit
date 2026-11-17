@@ -1,7 +1,42 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-16T13:42:28.928Z",
+  "generatedAt": "2026-11-17T14:28:42.116Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2608.17524",
+      "abstract": "This preliminary paper outlines a planned evaluation benchmark for Explainable Reinforcement Learning (XRL) methods. Current evaluations rely on functionally-grounded metrics like faithfulness and compactness, and on human-grounded proxies like subjective ratings or prediction accuracy. We suggest evaluating XRL methods by how effectively their generated explanations help to diagnose and fix malfunctioning reinforcement learning (RL) agents. We propose EvalXRL, a benchmark in which a Large Language Model (LLM) coding agent uses different XRL methods to diagnose a held-out malfunction in an RL agent, and then repair it. Our proposed benchmark iterates across (environment $\\times$ malfunction $\\times$ XRL method) tuples and uses the reward signal of the RL agents to form a final score for each XRL method. The coding agent may use the method interactively: invoke the XRL method, process its output, form new hypotheses on what is broken, and invoke the method again with parameters adjusted for testing these hypotheses. This closed-loop structure may be described as a simplified version of the scientific method. Some XRL methods provide self-evaluations that follow this pattern; we propose the first head-to-head comparison of multiple XRL methods in closed-loop usage.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": [
+        "Benchmark (surveying)",
+        "Reinforcement learning",
+        "Coding (social sciences)",
+        "Poison control",
+        "Iterated function"
+      ]
+    },
+    {
+      "id": "arxiv:2608.17360",
+      "abstract": "Reliable jailbreak evaluation is essential for assessing LLM safety, but most existing studies rely solely on attack success rate (ASR) without accounting for its dependence on attack budgets, resulting in unfair comparisons across methods. Existing compute-aware evaluations reduce heterogeneous resources into FLOPs, which is difficult to estimate for black-box models and fails to capture resource-specific constraints. To provide a comparable evaluation basis, we introduce Fair-ASR, an evaluation protocol for black-box jailbreak attacks under shared target-call budgets B, using target calls as a directly observable and method-agnostic comparison axis while tracking attacker calls separately for efficiency analysis. We re-evaluate 11 representative attacks under the Fair-ASR protocol and find that attack rankings change substantially across target-call budgets, simple stochastic perturbations and hand-crafted templates remain highly competitive under equal target access, and no evaluated LLM-driven method is efficient in both target and attacker calls. Motivated by this efficiency gap, we introduce ReCode, a compositional budget-efficient attack that combines desensitization rewriting with two effective low-cost primitives identified by Fair-ASR. Under a budget of 20 target calls, ReCode achieves 85% ASR on GPT-5 while requiring only 7.19 attacker calls per request on average, showing strong efficiency in both target and attacker calls.",
+      "topics": [
+        "Security and Verification in Computing",
+        "Network Security and Intrusion Detection",
+        "Advanced Malware Detection Techniques",
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Protocol (science)",
+        "Rewriting",
+        "Simple (philosophy)",
+        "Adversary",
+        "Cryptographic protocol",
+        "Budget constraint"
+      ]
+    },
     {
       "id": "doi:10.21203/rs.3.rs-10685167/v1",
       "abstract": null,
@@ -3635,45 +3670,6 @@
         "Intervention (counseling)",
         "Inference",
         "Trajectory"
-      ]
-    },
-    {
-      "id": "arxiv:2608.15138",
-      "abstract": "Designing an ABR algorithm for one network scenario takes an engineer months, and large language models now do this work in hours, matching or beating hand-built designs. But either way, the design fits only the world visible at its birth, and fails on the world that arrives after. We ask whether an ABR algorithm can keep pace with the world, redesigned in minutes as each scenario arrives, with every change proven harmless to every scenario already served. In this work, we propose ReForge, a continual heuristic learning framework that adapts to continuously changing scenarios. ReForge runs that routine with a large language model (LLM) in the loop. Each round the LLM reads where the current design falls short and proposes one small edit, and a replay over every network served so far decides. Specifically, what it edits is a single page of fuzzy rules that routes every decision to one of a frozen pool of pre-trained policies. The LLM writes the first page from measurements alone, then keeps improving it on its own. Each round it reads where the current rules fall short and proposes one small edit, and a replay over every network served so far decides whether the edit lands. We evaluate ReForge on nine real-world network families arriving one at a time as 3G, 4G, then 5G. A few edits per arrival lift mean QoE from 1.23 to 1.74, past the best single policy at 1.66 and to 94\\% of an oracle, and even repair families the loop never saw, one rising from 0.30 to 0.80. All code, data, and experiment records will be open-sourced upon cleanup.",
-      "topics": [
-        "ICT in Developing Communities",
-        "Software System Performance and Reliability",
-        "Natural Language Processing Techniques",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Pace",
-        "Lift (data mining)",
-        "Heuristic",
-        "Language model",
-        "Matching (statistics)",
-        "Point (geometry)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.15210",
-      "abstract": "The proliferation of deceptive content in social networks necessitates robust Fake News Detection (FND) systems. Existing pipelines either train detectors on labeled data or leverage Large Language Models (LLMs) for their reasoning ability. However, current approaches remain either limited in generalizability or prone to over-commitment to persuasive yet flawed rationales, lacking systematic experience and mechanisms to expose subtle reasoning errors. We propose \\textbf{RoE-FND} (\\textbf{\\underline{R}}eason \\textbf{\\underline{o}}n \\textbf{\\underline{E}}xperiences FND), an LLM-based framework that combines self-reflective experience building with deliberation through retrieved experiences for FND. RoE-FND builds an experience bank via reflective learning that compares an unconstrained analysis with a label-conditioned analysis using the ground-truth label as posterior supervision, then summarizes their critical divergence into reusable reasoning guidelines. During inference, RoE-FND generates two opposing deductions via a flipped pseudo-label provided as posterior, retrieves the most relevant experiences for resolving their key disagreement, and adjudicates the better-supported rationale as the final prediction. Experiments across five popular benchmarks, including text-only datasets, i.e., CHEF, Snopes, PolitiFact, and multimedia datasets, i.e., FakeTT, FakeSV, demonstrate that RoE-FND outperforms strong baselines without optimizing LLM parameters on dataset distributions, while exhibiting strong cross-dataset generalization.",
-      "topics": [
-        "Misinformation and Its Impacts",
-        "Topic Modeling",
-        "Spam and Phishing Detection"
-      ],
-      "keywords": [
-        "Experiential learning",
-        "Leverage (statistics)",
-        "Deliberation",
-        "Generalizability theory",
-        "Key (lock)",
-        "Social media",
-        "Fake news",
-        "Deception",
-        "Credibility",
-        "Motivated reasoning"
       ]
     }
   ]

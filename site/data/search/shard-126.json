@@ -1,7 +1,46 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-16T13:42:28.928Z",
+  "generatedAt": "2026-11-17T14:28:42.116Z",
   "documents": [
+    {
+      "id": "arxiv:2608.15138",
+      "abstract": "Designing an ABR algorithm for one network scenario takes an engineer months, and large language models now do this work in hours, matching or beating hand-built designs. But either way, the design fits only the world visible at its birth, and fails on the world that arrives after. We ask whether an ABR algorithm can keep pace with the world, redesigned in minutes as each scenario arrives, with every change proven harmless to every scenario already served. In this work, we propose ReForge, a continual heuristic learning framework that adapts to continuously changing scenarios. ReForge runs that routine with a large language model (LLM) in the loop. Each round the LLM reads where the current design falls short and proposes one small edit, and a replay over every network served so far decides. Specifically, what it edits is a single page of fuzzy rules that routes every decision to one of a frozen pool of pre-trained policies. The LLM writes the first page from measurements alone, then keeps improving it on its own. Each round it reads where the current rules fall short and proposes one small edit, and a replay over every network served so far decides whether the edit lands. We evaluate ReForge on nine real-world network families arriving one at a time as 3G, 4G, then 5G. A few edits per arrival lift mean QoE from 1.23 to 1.74, past the best single policy at 1.66 and to 94\\% of an oracle, and even repair families the loop never saw, one rising from 0.30 to 0.80. All code, data, and experiment records will be open-sourced upon cleanup.",
+      "topics": [
+        "ICT in Developing Communities",
+        "Software System Performance and Reliability",
+        "Natural Language Processing Techniques",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Pace",
+        "Lift (data mining)",
+        "Heuristic",
+        "Language model",
+        "Matching (statistics)",
+        "Point (geometry)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.15210",
+      "abstract": "The proliferation of deceptive content in social networks necessitates robust Fake News Detection (FND) systems. Existing pipelines either train detectors on labeled data or leverage Large Language Models (LLMs) for their reasoning ability. However, current approaches remain either limited in generalizability or prone to over-commitment to persuasive yet flawed rationales, lacking systematic experience and mechanisms to expose subtle reasoning errors. We propose \\textbf{RoE-FND} (\\textbf{\\underline{R}}eason \\textbf{\\underline{o}}n \\textbf{\\underline{E}}xperiences FND), an LLM-based framework that combines self-reflective experience building with deliberation through retrieved experiences for FND. RoE-FND builds an experience bank via reflective learning that compares an unconstrained analysis with a label-conditioned analysis using the ground-truth label as posterior supervision, then summarizes their critical divergence into reusable reasoning guidelines. During inference, RoE-FND generates two opposing deductions via a flipped pseudo-label provided as posterior, retrieves the most relevant experiences for resolving their key disagreement, and adjudicates the better-supported rationale as the final prediction. Experiments across five popular benchmarks, including text-only datasets, i.e., CHEF, Snopes, PolitiFact, and multimedia datasets, i.e., FakeTT, FakeSV, demonstrate that RoE-FND outperforms strong baselines without optimizing LLM parameters on dataset distributions, while exhibiting strong cross-dataset generalization.",
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Topic Modeling",
+        "Spam and Phishing Detection"
+      ],
+      "keywords": [
+        "Experiential learning",
+        "Leverage (statistics)",
+        "Deliberation",
+        "Generalizability theory",
+        "Key (lock)",
+        "Social media",
+        "Fake news",
+        "Deception",
+        "Credibility",
+        "Motivated reasoning"
+      ]
+    },
     {
       "id": "arxiv:2608.15165",
       "abstract": "Large language model (LLM) agents can continually improve without parameter updates by converting historical experience into reusable procedural knowledge. However, existing methods often consolidate experience based on semantic similarity or LLM judgments, which may merge superficially related but behaviorally incompatible strategies and thereby degrade performance. To address the issue, we propose SkillCommit, an online skill evolution framework that continuously transforms experience into a hierarchical library of reusable skills. Each new experience is initially preserved as an instance-specific patch, retaining the behavior validated in its local context. As related skills accumulate, SkillCommit abstracts those sharing a common behavioral mechanism into higher-level skills. Specifically, for each incoming skill, embedding-based retrieval first identifies candidate related skills. Cross-instance replay and an LLM-based mechanism check determine whether these skills transfer across cases and share a common underlying mechanism. Candidates that pass both checks are abstracted into a higher-level skill and committed only if it preserves the validated behavior of all constituent skills. Experiments on RuleArena, OpenExempt and KOR-Bench demonstrate that SkillCommit consistently improves agent performance across diverse domains. Moreover, the learned skills transfer across model scales and families, enabling cross-model experience transfer.",
@@ -3702,45 +3741,6 @@
         "Context (archaeology)",
         "Perspective (graphical)",
         "Search tree"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.11593",
-      "abstract": "Modern text-to-speech (TTS) is dominated by autoregressive (AR) codec language models, whose left-to-right decoding brings latency that grows with utterance length, error accumulation along the committed prefix, and an artificial generation order imposed on the Residual Vector Quantization (RVQ) token grid. We propose Luna-TTS Family, diffusion-language-model-based TTS systems pretrained on 1 million hours of speech across Chinese, English, Japanese, and Korean. The family is built by progressive adaptation of a pretrained AR text LLM, from causal to bidirectional and finally to block-causal attention, and comprises two variants sharing a single tokenizer, data pipeline, and 0.6B backbone lineage. Luna-TTS is fully non-autoregressive: it generates the entire RVQ token grid in a fixed number of parallel refinement steps, with zero-shot voice cloning and speech editing arising natively as infilling. Luna-TTS Realtime, derived by continual training, is autoregressive over blocks of 32 codec frames (1.28s) while denoising each block in parallel; it supports KV-cached blockwise generation and incremental audio delivery, achieving an end-to-end RTF of 0.0240 and 41.6 ms local first-block latency under the warmed serving protocol. An annealed fine-tuning stage adds explicit control over emotion and non-verbal vocalizations (NVVs), and a reinforcement-learning stage applies GRPO with policy ratios computed over the realized denoising trajectory. On Seed-TTS-Eval, Luna-TTS achieves the best results on all four metrics among compared open-source and commercial systems (0.73 CER / 79.7 SIM on test-zh, 1.49 WER / 76.8 SIM on test-en); on the harder in-the-wild CV3-Eval, it posts the lowest Mandarin and English error rates in our comparison. Against leading commercial systems, it achieves the best results on most objective, model-based, and human-rated metrics for NVV and emotion control.",
-      "topics": [
-        "Speech Recognition and Synthesis",
-        "Face recognition and analysis",
-        "Phonetics and Phonology Research"
-      ],
-      "keywords": [
-        "Security token",
-        "Autoregressive model",
-        "Codec",
-        "Decoding methods",
-        "Latency (audio)",
-        "Quantization (signal processing)",
-        "Noise reduction",
-        "Language model",
-        "Vector quantization"
-      ]
-    },
-    {
-      "id": "arxiv:2608.11625",
-      "abstract": "Feedback processes strongly influence student learning, yet their educational value depends on addressing two distinct challenges: providing high-quality, timely, and individualised feedback at scale, and supporting students to interpret, evaluate, and act on that feedback productively. Generative AI offers a credible means of addressing the provision challenge, but students' uptake of AI-generated feedback remains limited. We conducted a large-scale quasi-experimental sequential cohort study comparing three AI-mediated feedback workflows across 13,037 students and 51,296 student-authored resources. In Directed Feedback (n = 3,723), students received AI-generated feedback comments without structured support. In Self-Directed Feedback (n = 3,951), students could initiate optional AI-supported dialogue. In Enacted Feedback (n = 5,363), students were prompted to select feedback suggestions, evaluate their relevance, and engage in targeted AI-supported dialogue anchored to those selections. Enacted Feedback was associated with significantly higher uptake of AI-generated feedback, with an estimated probability of 26.2%, compared with 14.1% for Directed Feedback and 0.1% for Self-Directed Feedback. It was also associated with significantly higher self-assessment confidence and submitted-work quality than both comparison conditions. These findings suggest that the educational value of AI-generated feedback depends not only on the quality of feedback comments, but also on workflows that actively structure students' enactment of feedback literacy processes. The results have implications for the design of AI feedback systems that position learners as active participants in judgement, dialogue, and improvement rather than passive recipients of comments. Overall findings show that AI access alone is insufficient; purposeful workflow design is central to productive feedback use.",
-      "topics": [
-        "Student Assessment and Feedback",
-        "Intelligent Tutoring Systems and Adaptive Learning",
-        "AI in Service Interactions",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Peer feedback",
-        "Quality (philosophy)",
-        "Value (mathematics)",
-        "Feedback regulation",
-        "Workflow",
-        "Negative feedback",
-        "Feedback loop"
       ]
     }
   ]

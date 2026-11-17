@@ -1,12 +1,344 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-16T13:42:28.928Z",
+  "generatedAt": "2026-11-17T14:28:42.116Z",
   "page": 179,
   "pageSize": 100,
-  "totalItems": 40518,
+  "totalItems": 40573,
   "totalPages": 406,
   "nextPage": "./page-180.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2609.40359",
+      "recordType": "preprint",
+      "title": "Removing Timing Shortcuts Improves Non-Invasive Brain-to-Text",
+      "abstract": "We find that major reported improvements in decoding words from non-invasive brain recordings are largely reproducible without any brain data. In the influential work of d'Ascoli et al. (2025), time series of brain activity from subjects perceiving continuous speech are segmented into fixed-length windows starting at each word. A neural network then generates predictions for all of the words in a sentence together. Neighbouring windows partially overlap, implicitly revealing the interval between words. Since these intervals indicate the duration of the words spoken, and different words tend to have different durations - for example, \"the\" is much shorter than \"supercalifragilisticexpialidocious\" - the neural network can improve its predictions of words without relying on the underlying brain activity. Consistent with this, the method reaches 22.0% balanced accuracy on synthetic signals containing no brain information, compared with 22.3% on real brain recordings. To prevent the network from learning this shortcut, we make a single, simple change. Instead of jointly encoding all windows in a sentence, we process each independently. As a result, the neural network achieves better performance by learning underlying word-specific information from brain recordings. This makes two existing strategies become much more effective than before. Both aggregating predictions from distinct neural responses to the same word and using a pretrained LLM as a linguistic prior now substantially improve results. On our perceived speech benchmark, this simple recipe (SimpleB2T) achieves a word error rate of 36.6% with five observations per word, approaching past invasive speech decoding performance, albeit under different conditions. The results in this work expose an important shortcut in brain-to-text decoding and show that removing it leads to a simple and considerably more effective strategy.",
+      "doi": "10.48550/arxiv.2609.40359",
+      "externalIds": {
+        "openalex": "W7215108235"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7215108235"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-30",
+      "firstPublicDate": "2026-09-30",
+      "onlineDate": null,
+      "topics": [
+        "EEG and Brain-Computer Interfaces",
+        "Speech Recognition and Synthesis",
+        "Tactile and Sensory Interactions",
+        "Neural dynamics and brain function"
+      ],
+      "keywords": [
+        "speech perception",
+        "word error rate",
+        "shortcut learning",
+        "word duration",
+        "word segmentation",
+        "forecast aggregation",
+        "pre-trained language models",
+        "connected speech"
+      ],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 2,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5109690958",
+          "name": "Dulhan Jayalath",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5015428481",
+          "name": "Ōiwi Parker Jones",
+          "orcid": "https://orcid.org/0000-0003-0307-9837",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.40359",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-10-02T11:07:55.385Z",
+      "firstSeenRunId": "ingestion-2026-10-02T11:07:34.369Z",
+      "retrievedAt": "2026-10-07T11:48:57.396Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-07T11:48:57.396Z",
+      "preferredVersionId": "openalex:W7215108235",
+      "versions": [
+        {
+          "id": "openalex:W7215108235",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7215108235",
+          "doi": "10.48550/arxiv.2609.40359",
+          "publicationDate": "2026-09-30",
+          "url": "https://doi.org/10.48550/arxiv.2609.40359"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-179.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "dictions from distinct neural responses to the same word and using a pretrained LLM as a linguistic prior now substantially improve results. On our perceived speech benchmark, this si",
+              "start": 1376,
+              "end": 1559
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "erlying brain activity. Consistent with this, the method reaches 22.0% balanced accuracy on synthetic signals containing no brain information, compared with 22.3% on real brain recordings.",
+                  "start": 789,
+                  "end": 977
+                },
+                {
+                  "field": "abstract",
+                  "term": "error rate",
+                  "quote": " our perceived speech benchmark, this simple recipe (SimpleB2T) achieves a word error rate of 36.6% with five observations per word, approaching past invasive speech decoding performance, al",
+                  "start": 1519,
+                  "end": 1709
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.5281/zenodo.22915467",
+      "recordType": "publication",
+      "title": "Renewable Energy Innovation: Emerging Technologies, Challenges, Opportunities and Its Role in Sustainable Development",
+      "abstract": "Abstract Renewable energy innovation has become a critical component of the global transition toward a sustainable, secure, and low-carbon energy system. Growing energy demand, climate change, depletion of conventional fossil-fuel resources, and concerns regarding energy security have accelerated the development and adoption of renewable energy technologies. Innovation in solar photovoltaic systems, wind energy, hydropower, bioenergy, geothermal energy, green hydrogen, energy storage, smart grids, and digital energy-management systems is transforming the structure of modern energy systems. This research paper examines the concept, evolution, major technological developments, economic significance, environmental benefits, challenges, and future prospects of renewable energy innovation. It also discusses the role of artificial intelligence, Internet of Things technologies, advanced batteries, floating solar, offshore wind, green hydrogen, and decentralized energy systems in improving the efficiency and reliability of renewable energy. Particular attention is given to the Indian context, including India's renewable-energy potential, policy initiatives, technological development, and opportunities for sustainable economic growth. The paper adopts a descriptive and analytical research approach based primarily on secondary information from academic literature, institutional reports, government publications, and international energy organizations. The study finds that renewable energy innovation can reduce greenhouse-gas emissions, improve energy security, create employment, encourage technological development, and support inclusive economic growth. However, challenges such as intermittency, energy storage, high initial investment, grid integration, land requirements, financing constraints, supply-chain dependencies, and skill shortages must be addressed. The paper concludes that sustained investment in research and development, supportive public policy, private-sector participation, technological collaboration, and development of skilled human resources are essential for accelerating renewable energy innovation and achieving long-term sustainable development.",
+      "doi": "10.5281/zenodo.22915467",
+      "externalIds": {
+        "openalex": "W7214072832"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214072832"
+      },
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "publicationDate": "2026-09-30",
+      "firstPublicDate": "2026-09-30",
+      "onlineDate": null,
+      "topics": [
+        "Hybrid Renewable Energy Systems",
+        "Social Acceptance of Renewable Energy",
+        "Energy and Environmental Sustainability"
+      ],
+      "keywords": [
+        "renewable energy innovation",
+        "sustainable development",
+        "photovoltaics",
+        "wind energy",
+        "hydropower",
+        "bioenergy",
+        "geothermal energy",
+        "green hydrogen",
+        "energy storage",
+        "smart grid",
+        "artificial intelligence in energy",
+        "Internet of Things",
+        "floating photovoltaics",
+        "offshore wind energy",
+        "distributed energy systems",
+        "energy security",
+        "intermittency",
+        "grid integration",
+        "renewable energy policy",
+        "India",
+        "greenhouse gas emissions reduction",
+        "job creation",
+        "Renewable energy",
+        "Energy engineering",
+        "Energy security",
+        "Sustainable development",
+        "Feed-in tariff",
+        "Renewable energy credit",
+        "Energy subsidies",
+        "Photovoltaic system",
+        "Government (linguistics)"
+      ],
+      "classifiedThemes": [
+        {
+          "theme": "participation",
+          "label": "Partizipation & Fairness",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "participation",
+              "conceptLabel": "Partizipation",
+              "matchedTerm": "participation",
+              "sourceValue": "…nvestment in research and development, supportive public policy, private-sector participation, technological collaboration, and development of skilled human resources are essential for accelerating renewable energy innovation and achieving long-term sustainable development.",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "inclusion",
+              "conceptLabel": "Inklusion",
+              "matchedTerm": "inclusive",
+              "sourceValue": "…y security, create employment, encourage technological development, and support inclusive economic growth. However, challenges such as intermittency, energy storage, high initial investment, grid integration, land requirements, financing constraints, supply-chain dependencies, and skill shortages must be addressed. The…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "attention",
+              "conceptLabel": "Aufmerksamkeit",
+              "matchedTerm": "attention",
+              "sourceValue": "…ems in improving the efficiency and reliability of renewable energy. Particular attention is given to the Indian context, including India's renewable-energy potential, policy initiatives, technological development, and opportunities for sustainable economic growth. The paper adopts a descriptive and analytical research…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 4,
+        "topic:participation": 4,
+        "topic:cognition": 2,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "artificial intelligence",
+        "participation",
+        "inclusive",
+        "attention"
+      ],
+      "authors": [
+        {
+          "id": "A5134033193",
+          "name": "Prasad Laxman Pagdhare",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.5281/zenodo.22915467",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:22.197Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-10-01T11:38:29.956Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-10-01T11:38:29.956Z",
+      "preferredVersionId": "openalex:W7214072832",
+      "versions": [
+        {
+          "id": "openalex:W7214072832",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7214072832",
+          "doi": "10.5281/zenodo.22915467",
+          "publicationDate": "2026-09-30",
+          "url": "https://doi.org/10.5281/zenodo.22915467"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-179.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "e-sector participation, technological collaboration, and development of skilled human resources are essential for accelerating renewable energy innovation and achieving long-term sustai",
+              "start": 1988,
+              "end": 2173
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "artificial intelligence",
+              "quote": " future prospects of renewable energy innovation. It also discusses the role of artificial intelligence, Internet of Things technologies, advanced batteries, floating solar, offshore wind, green hydrogen",
+              "start": 746,
+              "end": 949
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.5281/zenodo.22915466",
       "recordType": "publication",
@@ -23465,458 +23797,6 @@
               "interpretation": "mentioned; role/outcome not confirmed"
             }
           ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.39661",
-      "recordType": "preprint",
-      "title": "The Evolution of Attention in Large Language Models: Mechanisms, Trade-offs, and Emerging Trends",
-      "abstract": "Self-attention gives LLMs fine-grained, query-dependent access to context, but dense token interactions incur quadratic prefill cost and a key--value cache growing with context length. Research thus spans explicit-memory compression, sparse access, recurrent state construction, structured state dynamics, and heterogeneous mechanism composition. This survey analyzes these developments as model-internal contextual memory. We introduce a five-dimensional lens---Memory Representation, Memory Update, Access, Readout, and Integration---describing what is represented, how it changes, what is query-eligible, how it is read, and how readouts form outputs. This lens compares overlapping research lines without imposing one computational model. We reconstruct mechanism-level developments and architectural adoption using 59 release-level records from 14 major model lineages and 11 high-performing open-weight endpoints. First, explicit-memory and recurrent-state methods retain distinct interfaces but increasingly control overlapping memory functions. Second, heterogeneous architectures increasingly coordinate across network depth: layer-wise composition distributes complementary memory processing across representational stages, while cross-layer reuse carries selected memory and routing artifacts forward. Depth thus becomes a dimension along which contextual memory is constructed and managed. Third, these developments motivate a stateful multidimensional memory-routing hypothesis: persistent memory is organized across temporal scope, network depth, substrate type, and representation granularity, while coordinated Sparse Write and Sparse Read determine what is maintained and what contributes to each query. Overall, efficient sequence architecture design increasingly concerns the organization, lifecycle, and selective use of contextual memory rather than an isolated Attention operator.",
-      "doi": "10.48550/arxiv.2609.39661",
-      "externalIds": {
-        "openalex": "W7215100025"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7215100025"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-30",
-      "firstPublicDate": "2026-09-30",
-      "onlineDate": null,
-      "topics": [
-        "Topic Modeling",
-        "Natural Language Processing Techniques",
-        "Multimodal Machine Learning Applications",
-        "Parallel Computing and Optimization Techniques",
-        "Graph Theory and Algorithms"
-      ],
-      "keywords": [
-        "self-attention",
-        "large language models",
-        "contextual memory",
-        "memory compression",
-        "sparse attention",
-        "recurrent states",
-        "key-value cache",
-        "heterogeneous architectures",
-        "memory representation",
-        "memory updating",
-        "memory integration"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 6,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "The Evolution of Attention in Large Language Models: Mechanisms, Trade-offs, and Emerging Trends",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "Self-attention gives LLMs fine-grained, query-dependent access to context, but dense token interactions incur quadratic prefill cost and a key--value cache growing with context length. Research thus spans explicit-memory compression, sparse access, recurrent state construction, structured state dynamics, and heterogene…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "self-attention",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 5,
-        "topic:cognition": 6,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "attention"
-      ],
-      "authors": [
-        {
-          "id": "A5153765014",
-          "name": "Zhentao Tan",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5154183480",
-          "name": "Jingyi Shen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5125574615",
-          "name": "Yanbo Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153798732",
-          "name": "Yao Liu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153851228",
-          "name": "Yue Wu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5153721789",
-          "name": "Jieping Ye",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.39661",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-02T11:07:55.385Z",
-      "firstSeenRunId": "ingestion-2026-10-02T11:07:34.369Z",
-      "retrievedAt": "2026-10-07T11:48:57.396Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-07T11:48:57.396Z",
-      "preferredVersionId": "openalex:W7215100025",
-      "versions": [
-        {
-          "id": "openalex:W7215100025",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7215100025",
-          "doi": "10.48550/arxiv.2609.39661",
-          "publicationDate": "2026-09-30",
-          "url": "https://doi.org/10.48550/arxiv.2609.39661"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-179.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "operator",
-              "quote": "cycle, and selective use of contextual memory rather than an isolated Attention operator.",
-              "start": 1813,
-              "end": 1902
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "large language model",
-              "quote": "The Evolution of Attention in Large Language Models: Mechanisms, Trade-offs, and Emerging Trends",
-              "start": 0,
-              "end": 96
-            },
-            {
-              "field": "title",
-              "term": "large language models",
-              "quote": "The Evolution of Attention in Large Language Models: Mechanisms, Trade-offs, and Emerging Trends",
-              "start": 0,
-              "end": 96
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "Self-attention gives LLMs fine-grained, query-dependent access to context, but dense token interactions incur quadratic prefi",
-              "start": 0,
-              "end": 125
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [
-            {
-              "value": "operators",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "operator",
-                  "quote": "cycle, and selective use of contextual memory rather than an isolated Attention operator.",
-                  "start": 1813,
-                  "end": 1902
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "large language model",
-                  "quote": "The Evolution of Attention in Large Language Models: Mechanisms, Trade-offs, and Emerging Trends",
-                  "start": 0,
-                  "end": 96
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "-memory and recurrent-state methods retain distinct interfaces but increasingly control overlapping memory functions. Second, heterogeneous architectures increasingly coordinate across ne",
-                  "start": 935,
-                  "end": 1122
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "survey",
-                  "quote": "ction, structured state dynamics, and heterogeneous mechanism composition. This survey analyzes these developments as model-internal contextual memory. We introduce a five-dimensional le",
-                  "start": 272,
-                  "end": 458
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.1007/s10515-026-00683-0",
-      "recordType": "publication",
-      "title": "The fools are certain; the wise are doubtful: Exploring LLM confidence in code completion",
-      "abstract": "Abstract Code completion entails the task of providing missing tokens given a surrounding context. It can boost developer productivity and serve as a code discovery tool. Code completion has recently been approached with Large Language Models (LLMs) fine-tuned on code (code LLMs). The performance of code LLMs can be assessed with downstream and intrinsic metrics. Downstream metrics are usually employed to evaluate the practical utility of a model, but can be unreliable and require complex calculations and domain-specific knowledge. In contrast, intrinsic metrics such as perplexity, entropy, and mutual information, which measure model confidence or uncertainty, are simple, versatile, and universal across LLMs and tasks, and have been proposed as proxies for functional correctness and hallucination risk in LLM-generated code. Motivated by this, we evaluate the confidence of LLMs when generating code by measuring code perplexity across programming languages, models, and datasets using various LLMs, and a sample of 2254 files from 881 GitHub projects. We find that strongly-typed languages exhibit lower perplexity than dynamically typed languages. Scripting languages also demonstrate higher perplexity. Shell appears universally high in perplexity, whereas Java appears low. Code perplexity depends on the employed LLM; under a fixed model, relative language-level rankings are largely stable across evaluation corpora. Although code comments modestly increase perplexity, the language ranking based on perplexity is barely affected by their presence. LLM researchers, developers, and users can use our findings to assess the suitability of LLM-based code completion in specific software projects based on how language, model choice, and code characteristics impact model confidence.",
-      "doi": "10.1007/s10515-026-00683-0",
-      "externalIds": {
-        "openalex": "W7214917679"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214917679"
-      },
-      "venue": "Automated Software Engineering",
-      "publicationDate": "2026-09-30",
-      "firstPublicDate": "2026-09-30",
-      "onlineDate": null,
-      "topics": [
-        "Software Engineering Research",
-        "Software Testing and Debugging Techniques",
-        "Software Engineering Techniques and Practices"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "… and have been proposed as proxies for functional correctness and hallucination risk in LLM-generated code. Motivated by this, we evaluate the confidence of LLMs when generating code by measuring code perplexity across programming languages, models, and datasets using various LLMs, and a sample of 2254 files from 881 G…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:safety": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": "A5031930371",
-          "name": "Zoe Kotti",
-          "orcid": "https://orcid.org/0000-0003-3816-9162",
-          "affiliations": []
-        },
-        {
-          "id": "A5039935301",
-          "name": "Konstantina Dritsa",
-          "orcid": "https://orcid.org/0000-0003-3395-2182",
-          "affiliations": []
-        },
-        {
-          "id": "A5021948425",
-          "name": "Diomidis D. Spinellis",
-          "orcid": "https://orcid.org/0000-0003-4231-1897",
-          "affiliations": []
-        },
-        {
-          "id": "A5065365299",
-          "name": "Πάνος Λουρίδας",
-          "orcid": "https://orcid.org/0000-0002-3971-4612",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.1007/s10515-026-00683-0",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-10-01T11:38:32.800Z",
-      "firstSeenRunId": "ingestion-2026-10-01T11:38:21.874Z",
-      "retrievedAt": "2026-10-01T11:38:32.800Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-01T11:38:32.800Z",
-      "preferredVersionId": "openalex:W7214917679",
-      "versions": [
-        {
-          "id": "openalex:W7214917679",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7214917679",
-          "doi": "10.1007/s10515-026-00683-0",
-          "publicationDate": "2026-09-30",
-          "url": "https://doi.org/10.1007/s10515-026-00683-0"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-179.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "rplexity is barely affected by their presence. LLM researchers, developers, and users can use our findings to assess the suitability of LLM-based code completion in specific software pr",
-              "start": 1519,
-              "end": 1704
-            },
-            {
-              "field": "abstract",
-              "term": "users",
-              "quote": "rplexity is barely affected by their presence. LLM researchers, developers, and users can use our findings to assess the suitability of LLM-based code completion in specific software pr",
-              "start": 1519,
-              "end": 1704
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "The fools are certain; the wise are doubtful: Exploring LLM confidence in code completion",
-              "start": 0,
-              "end": 89
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "rve as a code discovery tool. Code completion has recently been approached with Large Language Models (LLMs) fine-tuned on code (code LLMs). The performance of code LLMs can be assessed with downstream",
-              "start": 141,
-              "end": 342
-            },
-            {
-              "field": "abstract",
-              "term": "large language models",
-              "quote": "rve as a code discovery tool. Code completion has recently been approached with Large Language Models (LLMs) fine-tuned on code (code LLMs). The performance of code LLMs can be assessed with downstream",
-              "start": 141,
-              "end": 342
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "rve as a code discovery tool. Code completion has recently been approached with Large Language Models (LLMs) fine-tuned on code (code LLMs). The performance of code LLMs can be assessed with downstream",
-                  "start": 141,
-                  "end": 342
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
           "studyDesign": []
         },
         "personalFit": [],
