@@ -1,7 +1,59 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.19559",
+      "abstract": "Lipreading remains challenging due to the inherent ambiguity of visual speech cues and their sensitivity to head pose and video resolution. In this work, we propose FLARE, a framework for robust visual speech representation learning via cross-modal distillation and joint face-lip modeling. FLARE leverages semantically rich Whisper representations as the acoustic teacher signal, converting them into discrete distillation targets through a random-projection quantizer and pretraining the model with a masked prediction objective. To capture complementary visual information, FLARE employs a dual-stream architecture that jointly processes lip region-of-interest (ROI) and full-face inputs, where the lip stream captures finegrained articulatory motion and the face stream encodes broader facial dynamics. During pretraining, auxiliary audio input is incorporated to facilitate cross-modal alignment, and modality dropout is applied to encourage robust visual-only representations. For downstream lipreading, FLARE serves as a visual encoder coupled with either a lightweight Transformer decoder or an LLM-based decoder. Evaluated on LRS2, LRS3, and the out-of-domain WildVSR benchmark, FLARE achieves strong lipreading performance, with word error rates of 11.7%, 13.2%, and 34.3%, respectively. A progressive design study confirms the contribution of each major component. Further analyses demonstrate that joint face-lip modeling improves robustness under degraded video resolution and large head pose variation, while yielding more phoneme-discriminative visual representations. Code and pretrained models are available at https://github.com/jxzhanggg/FLARE.",
+      "topics": [
+        "Speech and Audio Processing",
+        "Multimodal Machine Learning Applications",
+        "Hand Gesture Recognition Systems"
+      ],
+      "keywords": [
+        "lip reading",
+        "cross-modal distillation",
+        "dual-stream architecture",
+        "modality dropout",
+        "head pose robustness",
+        "phoneme discrimination"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.19380",
+      "abstract": "User feedback enables LLMs to refine reusable personalized skills, but often mixes persistent preferences with request-specific corrections. Indiscriminately retaining both risks negative transfer, motivating selective retention at the level of individual requirements. We frame this challenge as selective transfer over atomic rules and propose SkillGrain, a framework for learning reusable personalized skills from user feedback. SkillGrain decomposes feedback into independently actionable rules, predicts their transferability, and retains only those suitable for future requests. To learn these decisions, we combine rubric-guided skill rewards with fine-grained credit assignment that separately evaluates rule content and retention decisions. We further jointly optimize skill induction and skill-conditioned generation through reinforcement learning, ensuring that learned skills support downstream personalization. We construct a benchmark spanning five personalized writing tasks to evaluate cross-request generalization. Experiments across three base models in both in-domain and out-of-domain settings show that SkillGrain achieves the best overall average performance among competing methods.",
+      "topics": [
+        "Domain Adaptation and Few-Shot Learning",
+        "Intelligent Tutoring Systems and Adaptive Learning",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "user feedback",
+        "negative transfer",
+        "selective retention",
+        "credit assignment",
+        "personalized writing",
+        "large language models"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.19663",
+      "abstract": "Clinical reasoning LLMs need external medical knowledge, but retrieved evidence and reasoning chains can be outdated, poisoned, or hallucinated. Harmful knowledge can cause regression: changing a correct answer into an incorrect one. We construct a medical knowledge-poisoning benchmark covering retrieved evidence and reasoning chains, with seven attack families filtered by a three-judge \"subtle-but-wrong\" vote and paired clean exams that separate poisoning effects from question difficulty. No fixed knowledge-use strategy is robust across these settings: strong RAG methods trade robustness to poisoned evidence against accuracy when evidence is useful. We formulate knowledge use as per-instance routing and introduce Med-TrustRouter, a lightweight controller that keeps the solver frozen. From leakage-free runtime signals, it estimates each action's expected correctness gain and uncertainty, preserving the base answer unless another action is confidently better. Across seven medical reasoning settings, Med-TrustRouter achieves 78.9 macro and 69.2 worst-case accuracy, matching the strongest competitor on macro accuracy while substantially improving the worst-case floor. Its gains transfer across solvers and evidence judges, unlike a hand-coded router using the same signals. Similar performance across linear, tree, and neural action-value heads suggests that the benefit comes from routing rather than estimator complexity. These results support learning when to trust external knowledge for robust clinical reasoning.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare"
+      ],
+      "keywords": [
+        "clinical reasoning",
+        "large language models",
+        "regression analysis",
+        "retrieval-augmented generation",
+        "trustworthiness estimation",
+        "hallucinations",
+        "robustness"
+      ]
+    },
     {
       "id": "doi:10.3389/frobt.2026.1832982",
       "abstract": "Search and Rescue (SAR) robotics increasingly depends on collaborative intelligence to operate effectively in dynamic, uncertain, and time-sensitive environments. Modern SAR missions require coordinated interaction among heterogeneous robotic agents as well as structured collaboration between humans and intelligent systems for perception, decision-making, and adaptive mission execution. This paper presents a structured narrative review supported by a systematic literature search of learning-enabled collaborative intelligence frameworks in SAR robotics, organized around three paradigms: human-to-machine (H2M), machine-to-machine (M2M), and machine-to-human (M2H) learning. The review examines recent developments in reinforcement learning, federated and decentralized learning, knowledge distillation, swarm intelligence, semantic communication, and the growing integration of large language models (LLMs) and vision-language models (VLMs) for knowledge grounding, transfer, and explainability. Beyond algorithmic advances, the analysis emphasizes deployment-oriented challenges including partial observability, communication constraints, uncertainty management, model reliability, and real-time operational requirements. Rather than conducting a fully PRISMA-compliant systematic review, this work synthesizes representative and influential studies to identify emerging trends, architectural trade-offs, deployment limitations, and future research directions for scalable and trustworthy collaborative SAR systems.",
@@ -2910,36 +2962,6 @@
         "functional correctness",
         "LLM agents"
       ]
-    },
-    {
-      "id": "doi:10.56201/ijemt.vol.11.no3.2025.pg209.229",
-      "abstract": "The growing transition to renewable energy sources, such as solar, wind, hydro, and geothermal, presents significant challenges due to their intermittent nature, requiring advanced optimization strategies for efficient integration into existing power systems. Artificial Intelligence (AI) has emerged as a transformative tool in addressing these challenges by enhancing energy forecasting, optimizing smart grid operations, and improving predictive maintenance. This study employs a secondary research methodology, conducting a qualitative analysis of existing literature, case studies, and technical reports on AI applications in renewable energy optimization. The study explores how machine learning (ML), deep learning (DL), and reinforcement learning (RL) enhance energy forecasting, real-time grid management, and fault detection. AI-driven models improve the accuracy of solar and wind energy predictions, allowing better supply-demand balancing. Additionally, AI-powered smart grids enhance energy distribution, reduce wastage, and increase grid reliability. AI also enables predictive maintenance, minimizing operational costs and infrastructure failures. The research is grounded in Systems Theory, Optimization Theory, and Technological Determinism, offering a structured framework for analyzing AI’ s impact on renewable energy systems. Despite its advantages, AI integration faces challenges such as high implementation costs, data privacy concerns, and infrastructure compatibility issues. By reviewing real-world case studies, the study demonstrates AI’ s effectiveness in optimizing renewable energy systems, emphasizing its potential to accelerate the transition toward a more sustainable and resilient energy future.",
-      "topics": [
-        "Smart Grid and Power Systems",
-        "Power Systems and Renewable Energy",
-        "Smart Grid Energy Management"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23360474",
-      "abstract": "The rapid development of artificial intelligence, machine learning, and digital communication has significantly increased the importance of technologies capable of processing human language. Every day, large volumes of textual information are generated through websites, scientific publications, social networks, digital libraries, and electronic communication platforms. Analyzing this information efficiently requires computational methods that can identify not only individual words but also the grammatical relationships that connect them. Natural language processing (NLP) has emerged as an interdisciplinary field that combines computer science, linguistics, statistics, and artificial intelligence to address these challenges.",
-      "topics": [
-        "Natural Language Processing Techniques",
-        "Syntax, Semantics, Linguistic Variation",
-        "Speech and dialogue systems"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23359741",
-      "abstract": "The growing use of artificial intelligence (AI) in English as a Foreign Language (EFL) education has created new opportunities for supporting students’ academic writing. AI-powered tools can provide immediate feedback, suggest vocabulary alternatives, and help learners identify grammatical and organisational problems. However, the effective integration of these tools requires more than technological access. Teachers play a crucial role in helping students interpret AI-generated suggestions, maintain their own ideas, and use digital resources responsibly. This paper explores the role of teacher scaffolding in AI-assisted EFL writing instruction through a conceptual analysis of relevant literature. It examines how structured guidance, modelling, guided practice, and reflective activities may help learners engage more critically with AI-generated feedback. The paper proposes a four-stage instructional approach consisting of teacher modelling, guided evaluation of AI suggestions, independent revision with appropriate support, and reflective assessment. Particular attention is given to maintaining the balance between technological assistance and the development of learners’ writing competence. The discussion suggests that teacher scaffolding can provide an important pedagogical foundation for integrating AI into writing instruction without replacing human judgement or teacher–learner interaction. The proposed approach may inform the design of AI-assisted writing activities in higher education EFL contexts, including Uzbekistan. Further empirical research is required to assess its effectiveness in classroom practice. Keywords: artificial intelligence, teacher scaffolding, EFL writing instruction, AI-assisted learning, pedagogical guidance, academic writing.",
-      "topics": [
-        "EFL/ESL Teaching and Learning",
-        "English Language Learning and Teaching",
-        "Artificial Intelligence in Education"
-      ],
-      "keywords": []
     }
   ]
 }

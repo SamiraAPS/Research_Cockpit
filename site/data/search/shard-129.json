@@ -1,7 +1,33 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "arxiv:2608.14684",
+      "abstract": "LLM judges increasingly evaluate responses against fine-grained rubric checklists. When a sample requires multiple rubrics, current methods typically assess each in a separate inference call. Evaluating all rubrics in a single pass is a natural alternative with greater efficiency, but we find that it introduces rubric interference: the verdict on one rubric shifts depending on which other rubrics are co-present. In a preliminary study, only one-third of samples receive fully consistent verdicts when evaluated under rubric sets of varying composition. We develop a measurement framework that probes interference through four controlled operations: rubric set expansion, subsetting, reordering, and noise injection. To mitigate interference without external supervision, we propose Self-Anchored Rubric Alignment (SARA). SARA uses a model's own single-rubric judgments as stable anchors and aligns multi-rubric reasoning with these anchors through on-policy self-distillation. We validate SARA on three datasets (HealthBench, FLASK, ResearchQA) and two model families (Qwen3, Llama-3.1). SARA consistently improves evaluation consistency while maintaining agreement with both base models and GPT-4.1 as a reference judge. Furthermore, the learned consistency transfers across datasets, confirming that SARA teaches a general capability rather than fitting dataset-specific patterns.",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.05409",
+      "abstract": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticated jailbreaks that sidestep established safeguards. For instance, prior work by Andriushchenko et al. (2025) has found that changing the grammatical tense from present to past can be enough to elicit harmful responses. In this work, we uncover a more general failure of non-imperative syntactic forms. We demonstrate that this syntactic vulnerability exists in 16 models up to 70B parameters, using behavioral evaluation. To investigate the root cause, we apply causal mediation analysis, finding that refusal is partially conditioned on upstream syntactic features. By steering these purely syntactic features we are able to trigger and suppress refusal. Finally, we trace this ill-conditioning to linguistically biased post-training data of open-source models and show that increasing syntactic diversity can mitigate the issue. Our findings suggest that current alignment approaches introduce confounders that prevent a pure semantic grounding of the refusal decision.",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.07581",
+      "abstract": "Group-based reinforcement learning methods for multimodal large language models typically rely on trajectory-level credit assignment that applies a single advantage to all tokens in a response. However, multimodal reasoning involves substantially higher perceptual uncertainty than text-only settings, where the model must repeatedly re-examine visual information to verify intermediate interpretations, and different visual groundings can lead to divergent reasoning paths, making such uniform credit assignment particularly inadequate and causing relative advantages to progressively degenerate toward zero. To address these challenges, we propose Multi-Branch Policy Optimization (MBPO), a tree-based framework that constructs reasoning trees at vision-language decision boundaries, enabling sibling branches to explore diverse visual hypotheses and assigning segment-level credit through branch-relative advantages. We further introduce a temporal replay buffer to reuse informative segments while controlling policy staleness. Experiments on several multimodal reasoning benchmarks show that MBPO outperforms representative baselines, improving both learning signal quality and optimization efficiency. The code is publicly available at https://github.com/ShuaiLyu0110/MBPO.",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.05076",
       "abstract": "Recent advances in machine learning have enabled training of wireless foundation models, which aim to support tasks such as channel estimation, beam prediction, and localization based on wireless signals. Existing wireless foundation models typically pretrain on channel tensors using masked reconstruction over subcarriers, antennas, or time but ignore the physical characteristics of wireless propagation. In this work, we propose to instead use multipath propagation as the fundamental pretraining object. We present MultiPathFormer, an autoregressive foundation model that represents each transmitter-receiver link as an ordered sequence of continuous-valued path tokens and pretrains with next-path prediction. We introduce an Environmental RAG (retrieval-augmented generation) mechanism and a first-path codebook on top of the transformer backbone, leveraging environment knowledge to improve path statistics estimation like delay and power by up to 59%. MultiPathFormer pretrained on 27 environments transfers to unseen users and, after scenario-specific fine-tuning, outperforms training the corresponding models from scratch in new environments. Across downstream tasks, it outperforms SOTA channel-based foundation models, achieving 5.57 m mean localization error, 0.914 top-3 beam accuracy, 0.994 line-of-sight classification accuracy, and 0.561 channel estimation NMSE. These results show that path-level pretraining can learn reusable representations of wireless propagation.",
@@ -1856,32 +1882,6 @@
       "topics": [
         "cs.AI",
         "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01234",
-      "abstract": "Large language model agents increasingly operate in dynamic environments where tool interfaces, APIs, and user requirements change after deployment. Existing self-evolution methods mainly follow two paradigms: harness-based approaches, which externalize feedback into editable memories or skills for rapid adaptation, and parameter-based approaches, which internalize experience into model parameters for deeper capability improvement. However, using either mechanism alone creates a trade-off between flexibility and performance. This paper asks how an agent can coordinate both channels to achieve robust self-evolution. We present COVE, a unified agent self-evolution framework that combines harness-based and parameter-based learning through task-aware routing, stage-aware scheduling, and knowledge optimization. Through this design, COVE treats self-evolution not as indiscriminate accumulation of experience, but as a coordinated process that matches tasks and knowledge types to appropriate learning mechanisms. Experiments across multiple task categories show that COVE outperforms single-channel evolution strategies, demonstrating more robust and efficient improvement under changing environments.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.01012",
-      "abstract": "Uncommon and off-guideline cases are difficult for clinical decision support, because physicians must make a series of management decisions under diagnostic uncertainty and rarely see the full case at once. Most large language model (LLM) benchmarks for medicine score only the final diagnosis, yet much of clinical care turns on the next appropriate action: the next test to order, the imaging study to obtain, the specialist to involve, or the differential to pursue. We introduce MedUPSQA, a dataset of 21,874 mid-stream clinical decision points built from 5,535 real case reports, and MedUPS, an alignment framework that supervises models on these intermediate decisions as they unfold along a patient's trajectory. We segment free-text case presentations into chronologically ordered, accumulating clinical chunks and align models to predict the next step with reinforcement learning (GRPO), using an external LLM-as-a-Judge reward. This objective mirrors how clinicians actually meet patients, reasoning forward from accumulating evidence toward the next decision, rather than committing to a final label. Across three backbones, mid-stream alignment raises next-step accuracy from 55.2 to 66.7 for Qwen3.6-27B, from 47.2 to 57.8 for Qwen3.5-9B, and from 37.8 to 44.4 for HuatuoGPT-3-8B, with 95% CI. In several model scales we test the objective improves accuracy more than scale, with smaller models surpassing larger, frontier models we evaluate. We further train supervised fine-tuning (SFT) baselines on the mid-stream task, SFT improves all backbones above base, indicating the target framwork carries signal independently of the optimizer. We release the dataset, code, and aligned checkpoints.",
-      "topics": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.02674",
-      "abstract": "With the widespread deployment of large foundation models (LFMs) in open environments, safety threats are shifting from black-box jailbreaks toward white-box attacks that directly identify and disrupt internal safety neurons or routes. However, existing safety defenses often rely on static safety units or fixed refusal pathways, leaving models highly vulnerable to targeted route-level white-box attacks. For that, we propose dynamic routing adaptive alignment (DRAA), a framework that introduces dynamic compensatory routes to preserve robust refusal behavior when the safety route is compromised. Specifically, we first identify and localize the model's safety route by contrasting internal activations between safe and unsafe calibration samples. DRAA then masks this safety route to induce causal failure cases and selectively mines the resulting defense failures, thereby constructing failure-aware preference pairs. Extensive experiments demonstrate that DRAA effectively restructures the underlying pathway dependence of model safety, substantially improving robustness against route-level white-box attacks, while preserving general utility.",
-      "topics": [
-        "cs.CR",
-        "cs.AI"
       ],
       "keywords": []
     }

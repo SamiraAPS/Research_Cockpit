@@ -1,12 +1,764 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "page": 193,
   "pageSize": 100,
-  "totalItems": 40573,
-  "totalPages": 406,
+  "totalItems": 40626,
+  "totalPages": 407,
   "nextPage": "./page-194.json",
   "items": [
+    {
+      "id": "doi:10.48550/arxiv.2609.33878",
+      "recordType": "preprint",
+      "title": "Curating Merchant-Matching Training Data with Two Confidence-Gated Local LLM Judges",
+      "abstract": "Merchant matching resolves a noisy payment descriptor to a retrieved merchant entity or returns no match. A key challenge in curating training labels is distinguishing teacher abstention from evidence that no acceptable entity exists: false no-match labels contaminate pseudo-labeled data, while conservative labeling reduces coverage. We investigate whether agreement between two local large language model judges improves pseudo-label reliability. A label is retained only when the judges agree, with separate ordered thresholds for selections and abstentions that guarantee disjoint positive and negative label sets. Retrospective replay on 2,000 expert-annotated queries shows that higher selection thresholds can improve positive-label purity, whereas higher abstention thresholds increase false no-match labels. At thresholds (0.86, 0.80), Muse Glimmer 30B and Gemma 4 31B jointly label 1,633 queries (81.7% coverage) at 96.88% purity; positive and negative purities are 99.47% and 93.38%. This exceeds either constituent model at the same thresholds by more than two percentage points, with lower coverage. A split-half check finds only 0.14 percentage points of threshold-selection optimism. A symmetric threshold of 0.86 adds 40 erroneous no-match labels, while 46 false abstentions persist even with no confidence threshold. Across five matched within-model comparisons, higher reasoning effort yields no clear F0.5 gain and increases median latency by 1.8-5.0 times. These results motivate separate thresholding and auditing for positive and negative pseudo-labels. The study establishes label purity, not student utility; fresh-data curation and student fine-tuning remain necessary to demonstrate downstream value.",
+      "doi": "10.48550/arxiv.2609.33878",
+      "externalIds": {
+        "openalex": "W7214717304"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214717304"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-27",
+      "firstPublicDate": "2026-09-27",
+      "onlineDate": null,
+      "topics": [
+        "Machine Learning and Data Classification",
+        "Text and Document Classification Technologies",
+        "Topic Modeling"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 3,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5153510341",
+          "name": "Donghao Huang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153545747",
+          "name": "Jinling Pei",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153544864",
+          "name": "Zhaoxia Wang",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.33878",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:36.788Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-09-30T11:11:36.788Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-09-30T11:11:36.788Z",
+      "preferredVersionId": "openalex:W7214717304",
+      "versions": [
+        {
+          "id": "openalex:W7214717304",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7214717304",
+          "doi": "10.48550/arxiv.2609.33878",
+          "publicationDate": "2026-09-27",
+          "url": "https://doi.org/10.48550/arxiv.2609.33878"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-193.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "student",
+              "quote": "or positive and negative pseudo-labels. The study establishes label purity, not student utility; fresh-data curation and student fine-tuning remain necessary to demonstrate downstream val",
+              "start": 1537,
+              "end": 1724
+            }
+          ],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "Curating Merchant-Matching Training Data with Two Confidence-Gated Local LLM Judges",
+              "start": 0,
+              "end": 83
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "e labeling reduces coverage. We investigate whether agreement between two local large language model judges improves pseudo-label reliability. A label is retained only when the judges agree, with sepa",
+              "start": 307,
+              "end": 507
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": "or positive and negative pseudo-labels. The study establishes label purity, not student utility; fresh-data curation and student fine-tuning remain necessary to demonstrate downstream val",
+                  "start": 1537,
+                  "end": 1724
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "students",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "student",
+                  "quote": "or positive and negative pseudo-labels. The study establishes label purity, not student utility; fresh-data curation and student fine-tuning remain necessary to demonstrate downstream val",
+                  "start": 1537,
+                  "end": 1724
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "e labeling reduces coverage. We investigate whether agreement between two local large language model judges improves pseudo-label reliability. A label is retained only when the judges agree, with sepa",
+                  "start": 307,
+                  "end": 507
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.33403",
+      "recordType": "preprint",
+      "title": "DataMagic: Authoring Data Videos through Declarative Multi-Agent Orchestration",
+      "abstract": "Data videos communicate data insights through dynamic charts, voice narration, and synchronized animations, and have become a widely adopted form of data storytelling. However, producing them requires expertise in data analysis, narrative design, and video editing. Static visualization tools lack narrative and animation capabilities; authoring tools rely on pre-prepared charts rather than raw data; and pixel-level models generate videos end-to-end but cannot guarantee data accuracy or provenance. End-to-end automatic generation faces two core challenges: how to uniformly represent charts, narration, and animations together with their temporal relationships, and how to efficiently search a vast design space for narrative-coherent compositions. We present DataMagic, which authors data videos from raw tabular data through declarative multi-agent orchestration. First, the declarative specification DVSpec unifies charts, narration, and animations with data-bound references and declarative synchronization, ensuring data provenance and automatic audio-visual alignment. Second, a \"Generate-then-Orchestrate\" multi-agent strategy generates candidate scenes in parallel and then optimizes narrative coherence through global orchestration. DVSpec provides a shared state for three complementary interaction modes, bridging full automation with fine-grained human control. Evaluations on 109 real-world samples show that even the most advanced LLM (e.g., GPT-5) achieves only 2.13/5 with execution success rates between 48.62% and 86.24%; DataMagic improves quality to 3.89 (+83%) with success rates above 95%, with the most significant gains in animation and narrative dimensions. A user study shows that, compared to a conversational LLM workflow, DataMagic improves creation efficiency (79.7% reduction in task time) and reduces perceived cognitive load. Project page: https://github.com/HKUSTDial/DataMagic.",
+      "doi": "10.48550/arxiv.2609.33403",
+      "externalIds": {
+        "openalex": "W7214759839"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214759839"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-27",
+      "firstPublicDate": "2026-09-27",
+      "onlineDate": null,
+      "topics": [
+        "Data Visualization and Analytics",
+        "Human Motion and Animation",
+        "Music Technology and Sound Studies"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "load",
+              "conceptLabel": "Kognitive Belastung",
+              "matchedTerm": "cognitive load",
+              "sourceValue": "…proves creation efficiency (79.7% reduction in task time) and reduces perceived cognitive load. Project page: https://github.com/HKUSTDial/DataMagic.",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "…me a widely adopted form of data storytelling. However, producing them requires expertise in data analysis, narrative design, and video editing. Static visualization tools lack narrative and animation capabilities; authoring tools rely on pre-prepared charts rather than raw data; and pixel-level models generate videos …",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "… visualization tools lack narrative and animation capabilities; authoring tools rely on pre-prepared charts rather than raw data; and pixel-level models generate videos end-to-end but cannot guarantee data accuracy or provenance. End-to-end automatic generation faces two core challenges: how to uniformly represent char…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:cognition": 2,
+        "topic:learning": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "LLM",
+        "expertise",
+        "cognitive load",
+        "rely"
+      ],
+      "authors": [
+        {
+          "id": "A5153519041",
+          "name": "Yupeng Xie",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153457387",
+          "name": "Zhenyang Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5057866408",
+          "name": "Liangwei Wang",
+          "orcid": "https://orcid.org/0000-0003-3481-3993",
+          "affiliations": []
+        },
+        {
+          "id": "A5153453905",
+          "name": "Jiayi Zhu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153402559",
+          "name": "Zhouan Shen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153438132",
+          "name": "Yuyu Luo",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.33403",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:37.993Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-09-30T11:11:37.993Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-09-30T11:11:37.993Z",
+      "preferredVersionId": "openalex:W7214759839",
+      "versions": [
+        {
+          "id": "openalex:W7214759839",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7214759839",
+          "doi": "10.48550/arxiv.2609.33403",
+          "publicationDate": "2026-09-27",
+          "url": "https://doi.org/10.48550/arxiv.2609.33403"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-193.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "ree complementary interaction modes, bridging full automation with fine-grained human control. Evaluations on 109 real-world samples show that even the most advanced LLM (e.g., GPT-5) a",
+              "start": 1283,
+              "end": 1468
+            },
+            {
+              "field": "abstract",
+              "term": "user",
+              "quote": "e 95%, with the most significant gains in animation and narrative dimensions. A user study shows that, compared to a conversational LLM workflow, DataMagic improves creation efficiency",
+              "start": 1609,
+              "end": 1793
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "control. Evaluations on 109 real-world samples show that even the most advanced LLM (e.g., GPT-5) achieves only 2.13/5 with execution success rates between 48.62% and 86.24%; DataMagi",
+              "start": 1369,
+              "end": 1552
+            },
+            {
+              "field": "abstract",
+              "term": "automation",
+              "quote": "rovides a shared state for three complementary interaction modes, bridging full automation with fine-grained human control. Evaluations on 109 real-world samples show that even the most adva",
+              "start": 1254,
+              "end": 1444
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "automation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "automation",
+                  "quote": "rovides a shared state for three complementary interaction modes, bridging full automation with fine-grained human control. Evaluations on 109 real-world samples show that even the most adva",
+                  "start": 1254,
+                  "end": 1444
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "workload",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "cognitive load",
+                  "quote": "proves creation efficiency (79.7% reduction in task time) and reduces perceived cognitive load. Project page: https://github.com/HKUSTDial/DataMagic.",
+                  "start": 1767,
+                  "end": 1916
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "ta; and pixel-level models generate videos end-to-end but cannot guarantee data accuracy or provenance. End-to-end automatic generation faces two core challenges: how to uniformly represen",
+                  "start": 398,
+                  "end": 586
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "mplementary interaction modes, bridging full automation with fine-grained human control. Evaluations on 109 real-world samples show that even the most advanced LLM (e.g., GPT-5) achieves ",
+                  "start": 1289,
+                  "end": 1476
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [
+          {
+            "topic": "high-skill-operations",
+            "evidence": [
+              {
+                "field": "abstract",
+                "term": "expertise",
+                "quote": "me a widely adopted form of data storytelling. However, producing them requires expertise in data analysis, narrative design, and video editing. Static visualization tools lack narrative an",
+                "start": 121,
+                "end": 310
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.33768",
+      "recordType": "preprint",
+      "title": "DEALS: Decentralized Expertise-Aware Load Serving for Multi-Agent LLM Systems",
+      "abstract": "Multi-agent systems (MAS) have recently emerged as an effective approach for coordinating large language model (LLM)-based agents to solve complex tasks through structured interactions. In practice, MASs often handle a stream of heterogeneous and complex tasks, requiring agents to decompose each task and then self-organize and self-evolve to adapt to incoming tasks while sharing execution resources. However, most early approaches to MASs rely on centralized controllers or fixed coordination patterns, which can limit scalability or adaptability. In contrast, existing decentralized and dynamic MASs often require training dedicated routers or invoking LLMs for agent selection, resulting in substantial computational costs and coordination overhead. To address these challenges and enable efficient task-level self-organization and self-evolution for task- and workload-level collaboration, we propose Decentralized Expertise-Aware Load Serving (DEALS), a decentralized and low-complexity framework that enables agents to self-organize and dynamically route concurrent tasks for processing. Specifically, each agent maintains local queues of incoming tasks, and its router decides whether to process a task locally or forward it to a neighbor based on differences in backlog and success rate. Meanwhile, executors process independent tasks concurrently within and across agents, and partially solved tasks can be resumed by other agents. Experiments show that DEALS not only improves performance along multiple dimensions (e.g., answer accuracy and task throughput) in both homogeneous and heterogeneous agent pools, but also balances agent expertise and workload in a self-organized manner, enabling effective decentralized coordination.",
+      "doi": "10.48550/arxiv.2609.33768",
+      "externalIds": {
+        "openalex": "W7214745288"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7214745288"
+      },
+      "venue": "arXiv (Cornell University)",
+      "publicationDate": "2026-09-27",
+      "firstPublicDate": "2026-09-27",
+      "onlineDate": null,
+      "topics": [
+        "Topic Modeling",
+        "Mobile Crowdsensing and Crowdsourcing",
+        "Multi-Agent Systems and Negotiation"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "DEALS: Decentralized Expertise-Aware Load Serving for Multi-Agent LLM Systems",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "expertise",
+              "conceptLabel": "Expertise",
+              "matchedTerm": "expertise",
+              "sourceValue": "…-evolution for task- and workload-level collaboration, we propose Decentralized Expertise-Aware Load Serving (DEALS), a decentralized and low-complexity framework that enables agents to self-organize and dynamically route concurrent tasks for processing. Specifically, each agent maintains local queues of incoming tasks…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "load",
+              "conceptLabel": "Kognitive Belastung",
+              "matchedTerm": "workload",
+              "sourceValue": "… enable efficient task-level self-organization and self-evolution for task- and workload-level collaboration, we propose Decentralized Expertise-Aware Load Serving (DEALS), a decentralized and low-complexity framework that enables agents to self-organize and dynamically route concurrent tasks for processing. Specifical…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "…tasks while sharing execution resources. However, most early approaches to MASs rely on centralized controllers or fixed coordination patterns, which can limit scalability or adaptability. In contrast, existing decentralized and dynamic MASs often require training dedicated routers or invoking LLMs for agent selection,…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:learning": 6,
+        "topic:cognition": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "large language model",
+        "LLM",
+        "expertise",
+        "workload",
+        "rely"
+      ],
+      "authors": [
+        {
+          "id": "A5148447702",
+          "name": "Jingjuan Huang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5153452042",
+          "name": "Wenbin Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5129990757",
+          "name": "Yanchuan Yin",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5067109059",
+          "name": "Alvaro Velasquez",
+          "orcid": "https://orcid.org/0000-0001-6757-105X",
+          "affiliations": []
+        },
+        {
+          "id": "A5153411690",
+          "name": "Jia Liu",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.48550/arxiv.2609.33768",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-30T11:11:37.993Z",
+      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
+      "retrievedAt": "2026-09-30T11:11:37.993Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-09-30T11:11:37.993Z",
+      "preferredVersionId": "openalex:W7214745288",
+      "versions": [
+        {
+          "id": "openalex:W7214745288",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7214745288",
+          "doi": "10.48550/arxiv.2609.33768",
+          "publicationDate": "2026-09-27",
+          "url": "https://doi.org/10.48550/arxiv.2609.33768"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-193.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "DEALS: Decentralized Expertise-Aware Load Serving for Multi-Agent LLM Systems",
+              "start": 0,
+              "end": 77
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "t systems (MAS) have recently emerged as an effective approach for coordinating large language model (LLM)-based agents to solve complex tasks through structured interactions. In practice, MASs often ",
+              "start": 10,
+              "end": 210
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "ecently emerged as an effective approach for coordinating large language model (LLM)-based agents to solve complex tasks through structured interactions. In practice, MASs often handl",
+              "start": 32,
+              "end": 215
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [
+            {
+              "value": "operators",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "controller",
+                  "quote": "execution resources. However, most early approaches to MASs rely on centralized controllers or fixed coordination patterns, which can limit scalability or adaptability. In contrast, existing ",
+                  "start": 382,
+                  "end": 573
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "t systems (MAS) have recently emerged as an effective approach for coordinating large language model (LLM)-based agents to solve complex tasks through structured interactions. In practice, MASs often ",
+                  "start": 10,
+                  "end": 210
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "workload",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "workload",
+                  "quote": " enable efficient task-level self-organization and self-evolution for task- and workload-level collaboration, we propose Decentralized Expertise-Aware Load Serving (DEALS), a decentralized",
+                  "start": 786,
+                  "end": 974
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": "hat DEALS not only improves performance along multiple dimensions (e.g., answer accuracy and task throughput) in both homogeneous and heterogeneous agent pools, but also balances agent exp",
+                  "start": 1461,
+                  "end": 1649
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "n and across agents, and partially solved tasks can be resumed by other agents. Experiments show that DEALS not only improves performance along multiple dimensions (e.g., answer accuracy and ",
+                  "start": 1363,
+                  "end": 1554
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [
+          {
+            "topic": "high-skill-operations",
+            "evidence": [
+              {
+                "field": "title",
+                "term": "expertise",
+                "quote": "DEALS: Decentralized Expertise-Aware Load Serving for Multi-Agent LLM Systems",
+                "start": 0,
+                "end": 77
+              },
+              {
+                "field": "abstract",
+                "term": "expertise",
+                "quote": "-evolution for task- and workload-level collaboration, we propose Decentralized Expertise-Aware Load Serving (DEALS), a decentralized and low-complexity framework that enables agents to sel",
+                "start": 841,
+                "end": 1030
+              }
+            ]
+          }
+        ],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.6084/m9.figshare.34005285.v1",
       "recordType": "publication",
@@ -22044,995 +22796,6 @@
           "studyDesign": []
         },
         "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33055",
-      "recordType": "preprint",
-      "title": "Large Language Models Substantially Compress Well-Being Inequality but Largely Preserve Its Socioeconomic Structure",
-      "abstract": "Research using large language models (LLMs) to generate synthetic populations has repeatedly shown that model outputs compress the diversity of human experience. This has raised doubts about whether LLM-generated data can capture meaningful differences within populations. We show that such compression does not necessarily erase the social structure of human heterogeneity. Using 93,901 respondents from 66 countries and territories in Wave 7 of the World Values Survey, we ask six LLMs to predict respondents' life satisfaction from demographic, socioeconomic, and attitudinal profiles. All six models substantially understate the overall dispersion of life satisfaction. Yet after normalizing for these differences in scale, they largely reproduce the human income gradient in well-being inequality: lower-income groups remain relatively more heterogeneous than higher-income groups. The pattern is robust to country fixed effects, equal-country weighting, WVS survey weights, and observed demographic composition, and it extends directionally to employment, education, and perceived control. Fidelity is weaker for extreme outcomes and country-specific gradients. These results show that the amount of heterogeneity preserved by an LLM and the way that heterogeneity is distributed across social groups are distinct properties. LLM-generated populations can therefore substantially compress human variation while retaining meaningful information about where that variation is concentrated.",
-      "doi": "10.48550/arxiv.2609.33055",
-      "externalIds": {
-        "openalex": "W7214702399"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214702399"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-09-27",
-      "firstPublicDate": "2026-09-27",
-      "onlineDate": null,
-      "topics": [
-        "Psychological Well-being and Life Satisfaction",
-        "Mental Health via Writing",
-        "Health disparities and outcomes"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "motivation",
-          "label": "Motivation & Wohlbefinden",
-          "score": 6,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "wellbeing",
-              "conceptLabel": "Wohlbefinden",
-              "matchedTerm": "well-being",
-              "sourceValue": "Large Language Models Substantially Compress Well-Being Inequality but Largely Preserve Its Socioeconomic Structure",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "wellbeing",
-              "conceptLabel": "Wohlbefinden",
-              "matchedTerm": "well-being",
-              "sourceValue": "…these differences in scale, they largely reproduce the human income gradient in well-being inequality: lower-income groups remain relatively more heterogeneous than higher-income groups. The pattern is robust to country fixed effects, equal-country weighting, WVS survey weights, and observed demographic composition, an…",
-              "weight": 2
-            },
-            {
-              "source": "external_topic",
-              "concept": "wellbeing",
-              "conceptLabel": "Wohlbefinden",
-              "matchedTerm": "well-being",
-              "sourceValue": "Psychological Well-being and Life Satisfaction",
-              "weight": 0
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:motivation": 6,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "well-being"
-      ],
-      "authors": [
-        {
-          "id": "A5072719097",
-          "name": "Nattavudh Powdthavee",
-          "orcid": "https://orcid.org/0000-0002-9345-4882",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2609.33055",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-30T11:11:36.788Z",
-      "firstSeenRunId": "ingestion-2026-09-30T11:11:12.969Z",
-      "retrievedAt": "2026-09-30T11:11:36.788Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-30T11:11:36.788Z",
-      "preferredVersionId": "openalex:W7214702399",
-      "versions": [
-        {
-          "id": "openalex:W7214702399",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7214702399",
-          "doi": "10.48550/arxiv.2609.33055",
-          "publicationDate": "2026-09-27",
-          "url": "https://doi.org/10.48550/arxiv.2609.33055"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-search-5.0.0:frontier:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-193.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "c populations has repeatedly shown that model outputs compress the diversity of human experience. This has raised doubts about whether LLM-generated data can capture meaningful differen",
-              "start": 64,
-              "end": 249
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "large language model",
-              "quote": "Large Language Models Substantially Compress Well-Being Inequality but Largely Preserve Its Socioeconomic Structure",
-              "start": 0,
-              "end": 115
-            },
-            {
-              "field": "title",
-              "term": "large language models",
-              "quote": "Large Language Models Substantially Compress Well-Being Inequality but Largely Preserve Its Socioeconomic Structure",
-              "start": 0,
-              "end": 115
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Research using large language models (LLMs) to generate synthetic populations has repeatedly shown that model outputs compress the diver",
-              "start": 0,
-              "end": 136
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "education",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "education",
-                  "quote": "d observed demographic composition, and it extends directionally to employment, education, and perceived control. Fidelity is weaker for extreme outcomes and country-specific gradients. The",
-                  "start": 982,
-                  "end": 1171
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "participants",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "respondent",
-                  "quote": "not necessarily erase the social structure of human heterogeneity. Using 93,901 respondents from 66 countries and territories in Wave 7 of the World Values Survey, we ask six LLMs to predict ",
-                  "start": 308,
-                  "end": 499
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "large language model",
-                  "quote": "Large Language Models Substantially Compress Well-Being Inequality but Largely Preserve Its Socioeconomic Structure",
-                  "start": 0,
-                  "end": 115
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Research using large language models (LLMs) to generate synthetic populations has repeatedly shown that model outputs compress the diver",
-                  "start": 0,
-                  "end": 136
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "mposition, and it extends directionally to employment, education, and perceived control. Fidelity is weaker for extreme outcomes and country-specific gradients. These results show that th",
-                  "start": 1007,
-                  "end": 1194
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "wellbeing",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "well being",
-                  "quote": "Large Language Models Substantially Compress Well-Being Inequality but Largely Preserve Its Socioeconomic Structure",
-                  "start": 0,
-                  "end": 115
-                },
-                {
-                  "field": "abstract",
-                  "term": "well being",
-                  "quote": "these differences in scale, they largely reproduce the human income gradient in well-being inequality: lower-income groups remain relatively more heterogeneous than higher-income groups. The",
-                  "start": 700,
-                  "end": 890
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": [
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "survey",
-                  "quote": "901 respondents from 66 countries and territories in Wave 7 of the World Values Survey, we ask six LLMs to predict respondents' life satisfaction from demographic, socioeconomic, and att",
-                  "start": 384,
-                  "end": 570
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.5281/zenodo.22989336",
-      "recordType": "publication",
-      "title": "Large Organismic Model: A Developmental Architecture for Embodied, Affective, and Self-Directed Artificial Intelligence",
-      "abstract": "We propose the Large Organismic Model (LOM), a developmental architecture for artificial intelligence. Rather than reporting the performance of an implemented system, this position paper formulates a testable computational hypothesis that integrates ideas from biology, developmental neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contemporary foundation models, LOM adopts a body-first developmental architecture: a persistent virtual body, interoceptive state, sensorimotor control, a body-conditioned world model, body-derived affective appraisal, episodic memory, and models of other agents are developed before language is introduced. Unless otherwise noted, \"body\" refers to a virtual body with persistent internal states rather than a biological body. LOM introduces a signed viability margin that quantifies the body's safety margin relative to the boundary of a viable region, and derives primitive valence from predicted changes in that margin. Nociception, fatigue, and resource deficits are not treated merely as externally assigned labels; instead, they are transformed into affective control signals through predictions of bodily and environmental consequences. Experiences are stored as episodes containing predictions, realized outcomes, affective evaluations, prediction errors, and provenance. Learning occurs on two time scales: rapid online adaptation and sleep-like offline consolidation involving replay, credit assignment, and counterfactual rollout. Because self-maintenance alone does not adequately account for spontaneous learning, LOM further defines a policy-relative viability set: the set of states the system can actually keep viable under its current skills and policy. Safe expansion of this set, together with empowerment, information gain, and learning progress, contributes to intrinsic motivation. The \"free-will-like behavior\" discussed here is not intended as a claim about philosophical free will. We use the operational term agentic autonomy to denote the capacity to generate and select exploratory goals from internal state, memory, and world-model predictions even in the absence of an immediate externally assigned task. We do not assume that experience of self-injury is sufficient to produce moral behavior. A self-generated pain-like aversive state may provide a computational basis for predicting harm to others through a body model, but avoiding harm to others additionally requires social appraisal, mutual viability, hard harm constraints, rights and fairness considerations, and related mechanisms. In the latter half of the paper, we discuss provenance-aware transmission of experience among multiple LOMs, cultural learning, and intergenerational inheritance. Finally, we interpret the J-space reported by Gurnee et al. (2026) through the lens of LOM and propose O-space (Organismic Workspace) as a hypothetical shared workspace spanning nine functional modules. We further advance the falsifiable hypothesis that affective salience acts as a gate regulating access to O-space.",
-      "doi": "10.5281/zenodo.22989336",
-      "externalIds": {
-        "openalex": "W7214529653"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214529653"
-      },
-      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-      "publicationDate": "2026-09-27",
-      "firstPublicDate": "2026-09-27",
-      "onlineDate": null,
-      "topics": [
-        "Embodied and Extended Cognition",
-        "Reinforcement Learning in Robotics",
-        "Neuroethics, Human Enhancement, Biomedical Innovations"
-      ],
-      "keywords": [
-        "virtual body",
-        "interoception",
-        "sensorimotor control",
-        "world models",
-        "emotional appraisal",
-        "episodic memory",
-        "intrinsic motivation",
-        "nociception",
-        "fatigue",
-        "replay",
-        "empowerment",
-        "free will",
-        "cultural learning",
-        "intergenerational inheritance",
-        "J-space",
-        "Counterfactual thinking",
-        "Artificial life",
-        "Set (abstract data type)",
-        "Adaptation (eye)",
-        "Margin (machine learning)",
-        "Architecture",
-        "Reinforcement learning"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "motivation",
-          "label": "Motivation & Wohlbefinden",
-          "score": 8,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "affect",
-              "conceptLabel": "Affekt",
-              "matchedTerm": "affective",
-              "sourceValue": "Large Organismic Model: A Developmental Architecture for Embodied, Affective, and Self-Directed Artificial Intelligence",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "motivation",
-              "conceptLabel": "Motivation",
-              "matchedTerm": "motivation",
-              "sourceValue": "…cience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contemporary foundation models, LOM adopts a body-first developmental architecture: a persistent virtual body, interoceptive state, sensor…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "affect",
-              "conceptLabel": "Affekt",
-              "matchedTerm": "affective",
-              "sourceValue": "…ptive state, sensorimotor control, a body-conditioned world model, body-derived affective appraisal, episodic memory, and models of other agents are developed before language is introduced. Unless otherwise noted, \"body\" refers to a virtual body with persistent internal states rather than a biological body. LOM introdu…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "motivation",
-              "conceptLabel": "Motivation",
-              "matchedTerm": "motivation",
-              "sourceValue": "intrinsic motivation",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "agency",
-          "label": "Work Design & Agency",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "agency",
-              "conceptLabel": "Agency",
-              "matchedTerm": "agentic",
-              "sourceValue": "… intended as a claim about philosophical free will. We use the operational term agentic autonomy to denote the capacity to generate and select exploratory goals from internal state, memory, and world-model predictions even in the absence of an immediate externally assigned task. We do not assume that experience of self…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "autonomy",
-              "conceptLabel": "Autonomie",
-              "matchedTerm": "autonomy",
-              "sourceValue": "…d as a claim about philosophical free will. We use the operational term agentic autonomy to denote the capacity to generate and select exploratory goals from internal state, memory, and world-model predictions even in the absence of an immediate externally assigned task. We do not assume that experience of self-injury …",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…s that integrates ideas from biology, developmental neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contemporary foundation models, LOM adopts a body-first developmental architectu…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "cultural learning",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "participation",
-          "label": "Partizipation & Fairness",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "fairness",
-              "conceptLabel": "Fairness",
-              "matchedTerm": "fairness",
-              "sourceValue": "… requires social appraisal, mutual viability, hard harm constraints, rights and fairness considerations, and related mechanisms. In the latter half of the paper, we discuss provenance-aware transmission of experience among multiple LOMs, cultural learning, and intergenerational inheritance. Finally, we interpret the J-…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…gical body. LOM introduces a signed viability margin that quantifies the body's safety margin relative to the boundary of a viable region, and derives primitive valence from predicted changes in that margin. Nociception, fatigue, and resource deficits are not treated merely as externally assigned labels; instead, they …",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 11,
-        "topic:motivation": 8,
-        "topic:agency": 4,
-        "topic:learning": 2,
-        "topic:participation": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 8
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "foundation model",
-        "foundation models",
-        "learning",
-        "intrinsic motivation",
-        "safety",
-        "affective",
-        "motivation",
-        "agentic",
-        "autonomy",
-        "fairness"
-      ],
-      "authors": [
-        {
-          "id": "A5153027733",
-          "name": "T Hajime",
-          "orcid": "https://orcid.org/0009-0001-4145-3554",
-          "affiliations": []
-        },
-        {
-          "id": "A5153111818",
-          "name": "T Masaki",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.5281/zenodo.22989336",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-29T08:11:12.732Z",
-      "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
-      "retrievedAt": "2026-10-03T10:26:03.250Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-03T10:26:03.250Z",
-      "preferredVersionId": "openalex:W7214529653",
-      "versions": [
-        {
-          "id": "openalex:W7214529653",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7214529653",
-          "doi": "10.5281/zenodo.22989336",
-          "publicationDate": "2026-09-27",
-          "url": "https://doi.org/10.5281/zenodo.22989336"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        },
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-193.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-factors",
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "intrinsic motivation",
-              "quote": "tal neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contempo",
-              "start": 280,
-              "end": 480
-            },
-            {
-              "field": "abstract",
-              "term": "motivation",
-              "quote": "cience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contempo",
-              "start": 290,
-              "end": 480
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": " Model: A Developmental Architecture for Embodied, Affective, and Self-Directed Artificial Intelligence",
-              "start": 16,
-              "end": 119
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "We propose the Large Organismic Model (LOM), a developmental architecture for artificial intelligence. Rather than reporting the performance of an implemented system, this position paper formulates a t",
-              "start": 0,
-              "end": 201
-            },
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": " contrast to the language-first developmental trajectory common in contemporary foundation models, LOM adopts a body-first developmental architecture: a persistent virtual body, interoceptive state",
-              "start": 405,
-              "end": 602
-            }
-          ],
-          "domain": [
-            {
-              "field": "abstract",
-              "term": "intrinsic motivation",
-              "quote": "tal neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contempo",
-              "start": 280,
-              "end": 480
-            }
-          ],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "motivation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "intrinsic motivation",
-                  "quote": "tal neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contempo",
-                  "start": 280,
-                  "end": 480
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "autonomy",
-                  "quote": "d as a claim about philosophical free will. We use the operational term agentic autonomy to denote the capacity to generate and select exploratory goals from internal state, memory, and wo",
-                  "start": 2036,
-                  "end": 2224
-                },
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "ntal architecture: a persistent virtual body, interoceptive state, sensorimotor control, a body-conditioned world model, body-derived affective appraisal, episodic memory, and models of o",
-                  "start": 537,
-                  "end": 724
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [
-          {
-            "topic": "motivation",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "intrinsic motivation",
-                "quote": "tal neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contempo",
-                "start": 280,
-                "end": 480
-              }
-            ]
-          }
-        ],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.5281/zenodo.22989335",
-      "recordType": "publication",
-      "title": "Large Organismic Model: A Developmental Architecture for Embodied, Affective, and Self-Directed Artificial Intelligence",
-      "abstract": "We propose the Large Organismic Model (LOM), a developmental architecture for artificial intelligence. Rather than reporting the performance of an implemented system, this position paper formulates a testable computational hypothesis that integrates ideas from biology, developmental neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contemporary foundation models, LOM adopts a body-first developmental architecture: a persistent virtual body, interoceptive state, sensorimotor control, a body-conditioned world model, body-derived affective appraisal, episodic memory, and models of other agents are developed before language is introduced. Unless otherwise noted, \"body\" refers to a virtual body with persistent internal states rather than a biological body. LOM introduces a signed viability margin that quantifies the body's safety margin relative to the boundary of a viable region, and derives primitive valence from predicted changes in that margin. Nociception, fatigue, and resource deficits are not treated merely as externally assigned labels; instead, they are transformed into affective control signals through predictions of bodily and environmental consequences. Experiences are stored as episodes containing predictions, realized outcomes, affective evaluations, prediction errors, and provenance. Learning occurs on two time scales: rapid online adaptation and sleep-like offline consolidation involving replay, credit assignment, and counterfactual rollout. Because self-maintenance alone does not adequately account for spontaneous learning, LOM further defines a policy-relative viability set: the set of states the system can actually keep viable under its current skills and policy. Safe expansion of this set, together with empowerment, information gain, and learning progress, contributes to intrinsic motivation. The \"free-will-like behavior\" discussed here is not intended as a claim about philosophical free will. We use the operational term agentic autonomy to denote the capacity to generate and select exploratory goals from internal state, memory, and world-model predictions even in the absence of an immediate externally assigned task. We do not assume that experience of self-injury is sufficient to produce moral behavior. A self-generated pain-like aversive state may provide a computational basis for predicting harm to others through a body model, but avoiding harm to others additionally requires social appraisal, mutual viability, hard harm constraints, rights and fairness considerations, and related mechanisms. In the latter half of the paper, we discuss provenance-aware transmission of experience among multiple LOMs, cultural learning, and intergenerational inheritance. Finally, we interpret the J-space reported by Gurnee et al. (2026) through the lens of LOM and propose O-space (Organismic Workspace) as a hypothetical shared workspace spanning nine functional modules. We further advance the falsifiable hypothesis that affective salience acts as a gate regulating access to O-space.",
-      "doi": "10.5281/zenodo.22989335",
-      "externalIds": {
-        "openalex": "W7214554343"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7214554343"
-      },
-      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
-      "publicationDate": "2026-09-27",
-      "firstPublicDate": "2026-09-27",
-      "onlineDate": null,
-      "topics": [
-        "Embodied and Extended Cognition",
-        "Reinforcement Learning in Robotics",
-        "Neuroethics, Human Enhancement, Biomedical Innovations"
-      ],
-      "keywords": [
-        "virtual body",
-        "interoception",
-        "sensorimotor control",
-        "world models",
-        "emotional appraisal",
-        "episodic memory",
-        "intrinsic motivation",
-        "nociception",
-        "fatigue",
-        "replay",
-        "empowerment",
-        "free will",
-        "cultural learning",
-        "intergenerational inheritance",
-        "J-space",
-        "Counterfactual thinking",
-        "Artificial life",
-        "Set (abstract data type)",
-        "Adaptation (eye)",
-        "Margin (machine learning)",
-        "Architecture",
-        "Reinforcement learning"
-      ],
-      "classifiedThemes": [
-        {
-          "theme": "motivation",
-          "label": "Motivation & Wohlbefinden",
-          "score": 8,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "affect",
-              "conceptLabel": "Affekt",
-              "matchedTerm": "affective",
-              "sourceValue": "Large Organismic Model: A Developmental Architecture for Embodied, Affective, and Self-Directed Artificial Intelligence",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "motivation",
-              "conceptLabel": "Motivation",
-              "matchedTerm": "motivation",
-              "sourceValue": "…cience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contemporary foundation models, LOM adopts a body-first developmental architecture: a persistent virtual body, interoceptive state, sensor…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "affect",
-              "conceptLabel": "Affekt",
-              "matchedTerm": "affective",
-              "sourceValue": "…ptive state, sensorimotor control, a body-conditioned world model, body-derived affective appraisal, episodic memory, and models of other agents are developed before language is introduced. Unless otherwise noted, \"body\" refers to a virtual body with persistent internal states rather than a biological body. LOM introdu…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "motivation",
-              "conceptLabel": "Motivation",
-              "matchedTerm": "motivation",
-              "sourceValue": "intrinsic motivation",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "agency",
-          "label": "Work Design & Agency",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "agency",
-              "conceptLabel": "Agency",
-              "matchedTerm": "agentic",
-              "sourceValue": "… intended as a claim about philosophical free will. We use the operational term agentic autonomy to denote the capacity to generate and select exploratory goals from internal state, memory, and world-model predictions even in the absence of an immediate externally assigned task. We do not assume that experience of self…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "autonomy",
-              "conceptLabel": "Autonomie",
-              "matchedTerm": "autonomy",
-              "sourceValue": "…d as a claim about philosophical free will. We use the operational term agentic autonomy to denote the capacity to generate and select exploratory goals from internal state, memory, and world-model predictions even in the absence of an immediate externally assigned task. We do not assume that experience of self-injury …",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "…s that integrates ideas from biology, developmental neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contemporary foundation models, LOM adopts a body-first developmental architectu…",
-              "weight": 2
-            },
-            {
-              "source": "keyword",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "cultural learning",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "participation",
-          "label": "Partizipation & Fairness",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "fairness",
-              "conceptLabel": "Fairness",
-              "matchedTerm": "fairness",
-              "sourceValue": "… requires social appraisal, mutual viability, hard harm constraints, rights and fairness considerations, and related mechanisms. In the latter half of the paper, we discuss provenance-aware transmission of experience among multiple LOMs, cultural learning, and intergenerational inheritance. Finally, we interpret the J-…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…gical body. LOM introduces a signed viability margin that quantifies the body's safety margin relative to the boundary of a viable region, and derives primitive valence from predicted changes in that margin. Nociception, fatigue, and resource deficits are not treated merely as externally assigned labels; instead, they …",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 11,
-        "topic:motivation": 8,
-        "topic:agency": 4,
-        "topic:learning": 2,
-        "topic:participation": 2,
-        "topic:safety": 2,
-        "classificationMaximum": 8
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "foundation model",
-        "foundation models",
-        "learning",
-        "intrinsic motivation",
-        "safety",
-        "affective",
-        "motivation",
-        "agentic",
-        "autonomy",
-        "fairness"
-      ],
-      "authors": [
-        {
-          "id": "A5153027733",
-          "name": "T Hajime",
-          "orcid": "https://orcid.org/0009-0001-4145-3554",
-          "affiliations": []
-        },
-        {
-          "id": "A5153111818",
-          "name": "T Masaki",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.5281/zenodo.22989335",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-29T08:11:13.903Z",
-      "firstSeenRunId": "ingestion-2026-09-29T08:11:06.124Z",
-      "retrievedAt": "2026-10-03T10:26:03.250Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-10-03T10:26:03.250Z",
-      "preferredVersionId": "openalex:W7214554343",
-      "versions": [
-        {
-          "id": "openalex:W7214554343",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7214554343",
-          "doi": "10.5281/zenodo.22989335",
-          "publicationDate": "2026-09-27",
-          "url": "https://doi.org/10.5281/zenodo.22989335"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        },
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-factors"
-        }
-      ],
-      "pagePath": "./works/page-193.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-factors",
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "intrinsic motivation",
-              "quote": "tal neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contempo",
-              "start": 280,
-              "end": 480
-            },
-            {
-              "field": "abstract",
-              "term": "motivation",
-              "quote": "cience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contempo",
-              "start": 290,
-              "end": 480
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": " Model: A Developmental Architecture for Embodied, Affective, and Self-Directed Artificial Intelligence",
-              "start": 16,
-              "end": 119
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "We propose the Large Organismic Model (LOM), a developmental architecture for artificial intelligence. Rather than reporting the performance of an implemented system, this position paper formulates a t",
-              "start": 0,
-              "end": 201
-            },
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": " contrast to the language-first developmental trajectory common in contemporary foundation models, LOM adopts a body-first developmental architecture: a persistent virtual body, interoceptive state",
-              "start": 405,
-              "end": 602
-            }
-          ],
-          "domain": [
-            {
-              "field": "abstract",
-              "term": "intrinsic motivation",
-              "quote": "tal neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contempo",
-              "start": 280,
-              "end": 480
-            }
-          ],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "motivation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "intrinsic motivation",
-                  "quote": "tal neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contempo",
-                  "start": 280,
-                  "end": 480
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "autonomy",
-                  "quote": "d as a claim about philosophical free will. We use the operational term agentic autonomy to denote the capacity to generate and select exploratory goals from internal state, memory, and wo",
-                  "start": 2036,
-                  "end": 2224
-                },
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "ntal architecture: a persistent virtual body, interoceptive state, sensorimotor control, a body-conditioned world model, body-derived affective appraisal, episodic memory, and models of o",
-                  "start": 537,
-                  "end": 724
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [
-          {
-            "topic": "motivation",
-            "evidence": [
-              {
-                "field": "abstract",
-                "term": "intrinsic motivation",
-                "quote": "tal neuroscience, reinforcement learning, world models, developmental robotics, intrinsic motivation, and episodic memory. In contrast to the language-first developmental trajectory common in contempo",
-                "start": 280,
-                "end": 480
-              }
-            ]
-          }
-        ],
         "finding": null,
         "findingStatus": "requires-reading",
         "abstractAvailable": true

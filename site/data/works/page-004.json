@@ -1,12 +1,573 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "page": 4,
   "pageSize": 100,
-  "totalItems": 40573,
-  "totalPages": 406,
+  "totalItems": 40626,
+  "totalPages": 407,
   "nextPage": "./page-005.json",
   "items": [
+    {
+      "id": "doi:10.21203/rs.3.rs-11565315/v1",
+      "recordType": "preprint",
+      "title": "NutriQA: A Traceable RAG Question-Answering Benchmark and Empirical Study on Official Chinese Nutrition Data",
+      "abstract": "Abstract Retrieval-augmented generation (RAG) faces a hard constraint in public-facing nutri-tion QA: answers must be faithful to official sources. Yet Chinese official nutrition data lacks an auditable evaluation benchmark —numeric faithfulness, refusal bound-aries, and hallucination suppression remain unquantified. We present NutriQA, a traceable RAG question-answering benchmark on official Chinese nutrition data: 200 items in a four-category taxonomy (composition 60 / guideline 50 / special 50 / re-fusal 40), a three-level gold-provenance system (official food-composition values, ver-batim guideline excerpts, gold-free refusal items), and fully auditable deterministic judgment rules (numeric ±1 tolerance + key-point coverage + fabrication detection). Full-scale experiments on three commercial models (qwen-plus, deepseek-chat, glm-5.3-flash) show: (1) hybrid retrieval (BM25 character-bigram + vector RRF, top_k=8) achieves a 160/160 hit rate, with retrieval method choice outweighing chunking gran-ularity; (2) retrieval optimization lifts RAG gain from ~0.15–0.17 to 0.20–0.225, de-coupling retrieval hit from the generator; (3) a novel boundary subclass (out-of-KB foods × numeric baits) quantifies 100% numeric fabrication by bare LLMs over out-of-KB objects with mutually exclusive cross-model intervals (3–4× apart), which RAG compresses to ~0–2.5% via“retrieved-not-covered → refuse”; (4) deterministic rules agree with human annotation at 0.949, outperforming a generic LLM judge at 0.846. Data, code, and full evidence are pinned at git tag v1.0.0 for independent verification and reproduction.",
+      "doi": "10.21203/rs.3.rs-11565315/v1",
+      "externalIds": {
+        "openalex": "W7225108163"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7225108163"
+      },
+      "venue": "Research Square",
+      "publicationDate": "2026-11-02",
+      "firstPublicDate": "2026-11-02",
+      "onlineDate": null,
+      "topics": [
+        "Topic Modeling",
+        "Information Retrieval and Search Behavior",
+        "Multimodal Machine Learning Applications"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 2,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": "A5159770721",
+          "name": "Yulin Zhao",
+          "orcid": "https://orcid.org/0009-0005-4623-8465",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.21203/rs.3.rs-11565315/v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-11-03T12:50:52.991Z",
+      "firstSeenRunId": "ingestion-2026-11-03T12:50:28.229Z",
+      "retrievedAt": "2026-11-03T12:50:52.991Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-11-03T12:50:52.991Z",
+      "preferredVersionId": "openalex:W7225108163",
+      "versions": [
+        {
+          "id": "openalex:W7225108163",
+          "type": "preprint",
+          "source": "OpenAlex",
+          "externalId": "W7225108163",
+          "doi": "10.21203/rs.3.rs-11565315/v1",
+          "publicationDate": "2026-11-02",
+          "url": "https://doi.org/10.21203/rs.3.rs-11565315/v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "frontier",
+          "queryVersion": "static-search-5.0.0:frontier:human-ai"
+        }
+      ],
+      "pagePath": "./works/page-004.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "~0–2.5% via“retrieved-not-covered → refuse”; (4) deterministic rules agree with human annotation at 0.949, outperforming a generic LLM judge at 0.846. Data, code, and full evidence are ",
+              "start": 1361,
+              "end": 1546
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "s (out-of-KB foods × numeric baits) quantifies 100% numeric fabrication by bare LLMs over out-of-KB objects with mutually exclusive cross-model intervals (3–4× apart), which RAG compre",
+              "start": 1169,
+              "end": 1353
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "(numeric ±1 tolerance + key-point coverage + fabrication detection). Full-scale experiments on three commercial models (qwen-plus, deepseek-chat, glm-5.3-flash) show: (1) hybrid retrieval (BM",
+                  "start": 695,
+                  "end": 886
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.1201/9781003740339-11",
+      "recordType": "publication",
+      "title": "Occupational Health and Disease Surveillance",
+      "abstract": "This chapter examines how AI is transforming occupational health and disease surveillance by strengthening disease detection, exposure assessment, predictive analytics, and integrated occupational health management. Building upon the ESH Management System and PRIM governance framework introduced in earlier chapters, it demonstrates how AI enables organizations to move beyond traditional, reactive surveillance toward continuous, data-driven prevention of occupational illness and disease. This chapter explores the three primary components of occupational surveillance – health surveillance, hazard surveillance, and sentinel surveillance – and illustrates how each contributes to the early identification of workplace hazards, disease trends, and emerging occupational health risks. It examines the application of machine learning, predictive analytics, wearable technologies, environmental monitoring systems, and decision-support tools to improve disease detection, real-time exposure monitoring, resource prioritization, and occupational health response. This chapter also explores the relationship between environmental conditions and disease patterns, demonstrating how environmental factors, workplace exposures, and public health surveillance influence occupational disease prevention and long-term worker health. Finally, it presents an integrated approach to predictive occupational health analysis by combining environmental monitoring, safety performance data, and occupational health information into unified analytical systems capable of identifying emerging risks before adverse health outcomes occur. Throughout this chapter, AI is presented as a decision-support technology that complements occupational health professionals while emphasizing responsible governance, interdisciplinary collaboration, data quality, and ethical implementation. Collectively, these capabilities strengthen occupational disease surveillance, improve worker protection, enhance regulatory compliance, and support more proactive, evidence-based occupational health management within the modern ESH Management System.",
+      "doi": "10.1201/9781003740339-11",
+      "externalIds": {
+        "openalex": "W7225126384"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7225126384"
+      },
+      "venue": "CRC Press eBooks",
+      "publicationDate": "2026-11-02",
+      "firstPublicDate": "2026-11-02",
+      "onlineDate": null,
+      "topics": [
+        "Occupational Health and Safety in Workplaces",
+        "Occupational Health and Safety Management",
+        "Occupational Health and Safety Research"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 4,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "… predictive occupational health analysis by combining environmental monitoring, safety performance data, and occupational health information into unified analytical systems capable of identifying emerging risks before adverse health outcomes occur. Throughout this chapter, AI is presented as a decision-support technolo…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "risk",
+              "conceptLabel": "Risiko",
+              "matchedTerm": "risks",
+              "sourceValue": "…fication of workplace hazards, disease trends, and emerging occupational health risks. It examines the application of machine learning, predictive analytics, wearable technologies, environmental monitoring systems, and decision-support tools to improve disease detection, real-time exposure monitoring, resource prioriti…",
+              "weight": 2
+            },
+            {
+              "source": "external_topic",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Occupational Health and Safety in Workplaces",
+              "weight": 0
+            }
+          ]
+        },
+        {
+          "theme": "cognition",
+          "label": "Kognitive Arbeit",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "decision",
+              "conceptLabel": "Entscheiden",
+              "matchedTerm": "decision support",
+              "sourceValue": "This chapter examines how AI is transforming occupational health and disease surveillance by strengthening disease detection, exposure assessment, predictive analytics, and integrated occupational health management. Building upon the ESH Management System and PRIM governance framework introduced in earlier chapters, it…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "participation",
+          "label": "Partizipation & Fairness",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "governance",
+              "conceptLabel": "Governance",
+              "matchedTerm": "governance",
+              "sourceValue": "…ccupational health management. Building upon the ESH Management System and PRIM governance framework introduced in earlier chapters, it demonstrates how AI enables organizations to move beyond traditional, reactive surveillance toward continuous, data-driven prevention of occupational illness and disease. This chapter …",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:safety": 4,
+        "topic:cognition": 2,
+        "topic:participation": 2,
+        "classificationMaximum": 4
+      },
+      "evidenceTerms": [
+        "learning",
+        "safety",
+        "occupational health",
+        "risks",
+        "decision support",
+        "governance"
+      ],
+      "authors": [
+        {
+          "id": "A5111002581",
+          "name": "Frances Alston",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": "A5160351179",
+          "name": "Emily Millikin",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.1201/9781003740339-11",
+      "openAccess": false,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-11-03T12:50:48.722Z",
+      "firstSeenRunId": "ingestion-2026-11-03T12:50:28.229Z",
+      "retrievedAt": "2026-11-03T12:50:48.722Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-11-03T12:50:48.722Z",
+      "preferredVersionId": "openalex:W7225126384",
+      "versions": [
+        {
+          "id": "openalex:W7225126384",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7225126384",
+          "doi": "10.1201/9781003740339-11",
+          "publicationDate": "2026-11-02",
+          "url": "https://doi.org/10.1201/9781003740339-11"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-factors"
+        }
+      ],
+      "pagePath": "./works/page-004.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-factors",
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "worker",
+              "quote": "lic health surveillance influence occupational disease prevention and long-term worker health. Finally, it presents an integrated approach to predictive occupational health analysis by c",
+              "start": 1230,
+              "end": 1416
+            },
+            {
+              "field": "abstract",
+              "term": "workplace",
+              "quote": "veillance – and illustrates how each contributes to the early identification of workplace hazards, disease trends, and emerging occupational health risks. It examines the application of mac",
+              "start": 632,
+              "end": 821
+            },
+            {
+              "field": "abstract",
+              "term": "professional",
+              "quote": "presented as a decision-support technology that complements occupational health professionals while emphasizing responsible governance, interdisciplinary collaboration, data quality, and ethica",
+              "start": 1651,
+              "end": 1844
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": "This chapter examines how AI is transforming occupational health and disease surveillance by strengthening disease detection, ex",
+              "start": 0,
+              "end": 128
+            }
+          ],
+          "domain": [
+            {
+              "field": "title",
+              "term": "occupational health",
+              "quote": "Occupational Health and Disease Surveillance",
+              "start": 0,
+              "end": 44
+            },
+            {
+              "field": "abstract",
+              "term": "occupational health",
+              "quote": "This chapter examines how AI is transforming occupational health and disease surveillance by strengthening disease detection, exposure assessment, predictive analyt",
+              "start": 0,
+              "end": 164
+            }
+          ],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [
+            {
+              "value": "workplace",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "workplace",
+                  "quote": "veillance – and illustrates how each contributes to the early identification of workplace hazards, disease trends, and emerging occupational health risks. It examines the application of mac",
+                  "start": 632,
+                  "end": 821
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [
+            {
+              "value": "workers",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "worker",
+                  "quote": "lic health surveillance influence occupational disease prevention and long-term worker health. Finally, it presents an integrated approach to predictive occupational health analysis by c",
+                  "start": 1230,
+                  "end": 1416
+                },
+                {
+                  "field": "abstract",
+                  "term": "professional",
+                  "quote": "presented as a decision-support technology that complements occupational health professionals while emphasizing responsible governance, interdisciplinary collaboration, data quality, and ethica",
+                  "start": 1651,
+                  "end": 1844
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "aiFunction": [
+            {
+              "value": "decisionSupport",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "decision support",
+                  "quote": "dictive analytics, wearable technologies, environmental monitoring systems, and decision-support tools to improve disease detection, real-time exposure monitoring, resource prioritization, and occ",
+                  "start": 839,
+                  "end": 1035
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "doi:10.17605/osf.io/k4c6u",
+      "recordType": "publication",
+      "title": "Occupational Health and Safety in Mining",
+      "abstract": "Rachmad, Yoesoep Edhie. 2015. Occupational Health and Safety in Mining. The United Nations and The Education Training Centre.",
+      "doi": "10.17605/osf.io/k4c6u",
+      "externalIds": {
+        "openalex": "W7225126195"
+      },
+      "source": {
+        "name": "OpenAlex",
+        "recordId": "W7225126195"
+      },
+      "venue": "Open Science Framework",
+      "publicationDate": "2026-11-02",
+      "firstPublicDate": "2026-11-02",
+      "onlineDate": null,
+      "topics": [
+        "Industrial and Mining Safety",
+        "Occupational Health and Safety in Workplaces",
+        "Occupational Health and Safety Management"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 6,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Occupational Health and Safety in Mining",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Rachmad, Yoesoep Edhie. 2015. Occupational Health and Safety in Mining. The United Nations and The Education Training Centre.",
+              "weight": 2
+            },
+            {
+              "source": "external_topic",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Industrial and Mining Safety",
+              "weight": 0
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:safety": 6,
+        "classificationMaximum": 6
+      },
+      "evidenceTerms": [
+        "safety",
+        "occupational health"
+      ],
+      "authors": [
+        {
+          "id": "A5080306669",
+          "name": "Yoesoep Edhie Rachmad",
+          "orcid": "https://orcid.org/0000-0001-6414-3252",
+          "affiliations": []
+        }
+      ],
+      "url": "https://doi.org/10.17605/osf.io/k4c6u",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-11-03T12:50:48.722Z",
+      "firstSeenRunId": "ingestion-2026-11-03T12:50:28.229Z",
+      "retrievedAt": "2026-11-03T12:50:48.722Z",
+      "dataStatus": "stale",
+      "lastVerifiedAt": "2026-11-03T12:50:48.722Z",
+      "preferredVersionId": "openalex:W7225126195",
+      "versions": [
+        {
+          "id": "openalex:W7225126195",
+          "type": "journal",
+          "source": "OpenAlex",
+          "externalId": "W7225126195",
+          "doi": "10.17605/osf.io/k4c6u",
+          "publicationDate": "2026-11-02",
+          "url": "https://doi.org/10.17605/osf.io/k4c6u"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "openalex",
+          "mode": "broad",
+          "queryVersion": "static-search-5.0.0:broad:human-factors"
+        }
+      ],
+      "pagePath": "./works/page-004.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-factors"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [],
+          "ai": [],
+          "domain": [
+            {
+              "field": "title",
+              "term": "occupational health",
+              "quote": "Occupational Health and Safety in Mining",
+              "start": 0,
+              "end": 40
+            },
+            {
+              "field": "abstract",
+              "term": "occupational health",
+              "quote": "Rachmad, Yoesoep Edhie. 2015. Occupational Health and Safety in Mining. The United Nations and The Education Training Centre.",
+              "start": 0,
+              "end": 125
+            }
+          ],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [
+            {
+              "value": "education",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "education",
+                  "quote": "hie. 2015. Occupational Health and Safety in Mining. The United Nations and The Education Training Centre.",
+                  "start": 19,
+                  "end": 125
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.1201/9781003740339-10",
       "recordType": "publication",
@@ -21984,803 +22545,6 @@
                   "quote": " AI Information Quality, AI Data Quality, and AI Infrastructure. A quantitative survey was administered to 189 corporate practitioners who have utilized enterprise-wide AI systems for at",
                   "start": 678,
                   "end": 864
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.5530/jppcm.20270004",
-      "recordType": "publication",
-      "title": "The Evolving Role of Clinical Pharmacists in Pre-, Peri-, and Post-Operative and Critical Care Settings: A Comprehensive Review",
-      "abstract": "Surgery is increasingly recognized as a complex, longitudinal therapeutic process spanning preoperative preparation, anesthesia, intraoperative care, and postoperative recovery rather than an isolated operating room event. Because this continuum is highly medication-intensive and subject to challenges like polypharmacy, rapid drug administration, physiological instability, multiple transitions of care, and communication failures, the perioperative environment carries a high risk for preventable medication errors. This review explores the evolving role of the clinical pharmacist, transitioning from a passive dispenser to an active, multidisciplinary collaborator throughout the surgical pathway. In the preoperative phase, clinical pharmacists improve patient safety by constructing a best possible medication history, clarifying continuation or cessation plans for high-risk home therapies (such as anticoagulants and antidiabetics), and delivering patient education to reduce morning-of-surgery non-adherence. In the intraoperative phase, they support anesthesia providers through system-level and case-level interventions, including the standardization of medication trays and labeling, antimicrobial prophylaxis stewardship, and multimodal analgesic design. Postoperatively, pharmacists collaborate with anesthesiologists to optimize acute pain management, support opioid stewardship, manage thromboembolism prophylaxis, and coordinate comprehensive discharge reconciliation to prevent drug duplication or omission. Collaborative models-such as joint acute pain services and pre-anesthesia consultations-render medication reviews clinically actionable and significantly enhance therapy optimization. Although challenges like staffing constraints, training gaps, and inconsistent clinical integration persist, the future of perioperative pharmacy lies in proactive, technology-enabled care incorporating clinical decision support, barcode administration, and artificial intelligence to solidify clinical pharmacists as core contributors to surgical patient safety.",
-      "doi": "10.5530/jppcm.20270004",
-      "externalIds": {
-        "openalex": "W7225094304"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7225094304"
-      },
-      "venue": "Journal of Pharmacy Practice and Community Medicine",
-      "publicationDate": "2026-11-02",
-      "firstPublicDate": "2026-11-02",
-      "onlineDate": null,
-      "topics": [
-        "Pharmacy and Medical Practices",
-        "Pharmaceutical Practices and Patient Outcomes",
-        "Patient Safety and Medication Errors"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 8,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…rgical pathway. In the preoperative phase, clinical pharmacists improve patient safety by constructing a best possible medication history, clarifying continuation or cessation plans for high-risk home therapies (such as anticoagulants and antidiabetics), and delivering patient education to reduce morning-of-surgery non…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "critical",
-              "conceptLabel": "Sicherheitskritisch",
-              "matchedTerm": "high risk",
-              "sourceValue": "…ns of care, and communication failures, the perioperative environment carries a high risk for preventable medication errors. This review explores the evolving role of the clinical pharmacist, transitioning from a passive dispenser to an active, multidisciplinary collaborator throughout the surgical pathway. In the preo…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "… care, and communication failures, the perioperative environment carries a high risk for preventable medication errors. This review explores the evolving role of the clinical pharmacist, transitioning from a passive dispenser to an active, multidisciplinary collaborator throughout the surgical pathway. In the preoperat…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "failure",
-              "conceptLabel": "Fehler",
-              "matchedTerm": "failures",
-              "sourceValue": "…ion, physiological instability, multiple transitions of care, and communication failures, the perioperative environment carries a high risk for preventable medication errors. This review explores the evolving role of the clinical pharmacist, transitioning from a passive dispenser to an active, multidisciplinary collabo…",
-              "weight": 2
-            },
-            {
-              "source": "external_topic",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Patient Safety and Medication Errors",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision support",
-              "sourceValue": "…tive pharmacy lies in proactive, technology-enabled care incorporating clinical decision support, barcode administration, and artificial intelligence to solidify clinical pharmacists as core contributors to surgical patient safety.",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 2,
-        "topic:safety": 8,
-        "topic:cognition": 2,
-        "classificationMaximum": 8
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "safety",
-        "high risk",
-        "risk",
-        "failures",
-        "decision support"
-      ],
-      "authors": [
-        {
-          "id": "A5160380163",
-          "name": "Pragatheesh Pragatheesh N",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5160381424",
-          "name": "Nandana Nandana S",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5103423539",
-          "name": "Sri Sriram",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5038796426",
-          "name": "Sam Johnson Udaya Chander J.",
-          "orcid": "https://orcid.org/0000-0002-6756-5167",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.5530/jppcm.20270004",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-11-03T12:50:44.554Z",
-      "firstSeenRunId": "ingestion-2026-11-03T12:50:28.229Z",
-      "retrievedAt": "2026-11-03T12:50:44.554Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-11-03T12:50:44.554Z",
-      "preferredVersionId": "openalex:W7225094304",
-      "versions": [
-        {
-          "id": "openalex:W7225094304",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7225094304",
-          "doi": "10.5530/jppcm.20270004",
-          "publicationDate": "2026-11-02",
-          "url": "https://doi.org/10.5530/jppcm.20270004"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-004.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "patient",
-              "quote": "t the surgical pathway. In the preoperative phase, clinical pharmacists improve patient safety by constructing a best possible medication history, clarifying continuation or cessation pla",
-              "start": 679,
-              "end": 866
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "abled care incorporating clinical decision support, barcode administration, and artificial intelligence to solidify clinical pharmacists as core contributors to surgical patient safety.",
-              "start": 1889,
-              "end": 2074
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "healthcare",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "clinical",
-                  "quote": "The Evolving Role of Clinical Pharmacists in Pre-, Peri-, and Post-Operative and Critical Care Settings: A Comprehensive Review",
-                  "start": 0,
-                  "end": 127
-                },
-                {
-                  "field": "abstract",
-                  "term": "clinical",
-                  "quote": "or preventable medication errors. This review explores the evolving role of the clinical pharmacist, transitioning from a passive dispenser to an active, multidisciplinary collaborator thr",
-                  "start": 485,
-                  "end": 673
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "education",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "education",
-                  "quote": "me therapies (such as anticoagulants and antidiabetics), and delivering patient education to reduce morning-of-surgery non-adherence. In the intraoperative phase, they support anesthesia pr",
-                  "start": 885,
-                  "end": 1074
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "decisionSupport",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "decision support",
-                  "quote": "tive pharmacy lies in proactive, technology-enabled care incorporating clinical decision support, barcode administration, and artificial intelligence to solidify clinical pharmacists as core contr",
-                  "start": 1843,
-                  "end": 2039
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "longitudinal",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "longitudinal",
-                  "quote": "Surgery is increasingly recognized as a complex, longitudinal therapeutic process spanning preoperative preparation, anesthesia, intraoperative care, and postope",
-                  "start": 0,
-                  "end": 161
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.54097/g0jpqq78",
-      "recordType": "publication",
-      "title": "The Impact of AI Assistance on the Academic Writing Self-Efficacy of Undergraduates with Different Writing Abilities",
-      "abstract": "Against digital education background, generative AI has become common writing assistance for undergraduates. Existing studies mainly focus on second-language writing and ignore stratified comparisons across learners, while the dual effects of AI on academic writing self-efficacy remain understudied. Based on self-efficacy theory, this paper distributes questionnaires and divides respondents into three proficiency groups by CET-4 scores. Descriptive statistics, group difference tests and correlation analysis are adopted for empirical analysis. The results reveal prevalent AI over-dependence despite its polishing functions. Participants’ writing self-efficacy stays at medium-upper level yet hampered by writing anxiety. AI delivers short-term confidence promotion but impairs independent writing competence in the long run, with stronger influences on low-proficiency students. This stratified dual-path framework offers empirical references for standardized AI application in university writing teaching.",
-      "doi": "10.54097/g0jpqq78",
-      "externalIds": {
-        "openalex": "W7225121249"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7225121249"
-      },
-      "venue": "Journal of Education and Educational Research",
-      "publicationDate": "2026-11-02",
-      "firstPublicDate": "2026-11-02",
-      "onlineDate": null,
-      "topics": [
-        "EFL/ESL Teaching and Learning",
-        "Artificial Intelligence in Education",
-        "Writing and Handwriting Education"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learners",
-              "sourceValue": "…ainly focus on second-language writing and ignore stratified comparisons across learners, while the dual effects of AI on academic writing self-efficacy remain understudied. Based on self-efficacy theory, this paper distributes questionnaires and divides respondents into three proficiency groups by CET-4 scores. Descri…",
-              "weight": 2
-            },
-            {
-              "source": "external_topic",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "EFL/ESL Teaching and Learning",
-              "weight": 0
-            }
-          ]
-        },
-        {
-          "theme": "motivation",
-          "label": "Motivation & Wohlbefinden",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "strain",
-              "conceptLabel": "Beanspruchung",
-              "matchedTerm": "anxiety",
-              "sourceValue": "…ants’ writing self-efficacy stays at medium-upper level yet hampered by writing anxiety. AI delivers short-term confidence promotion but impairs independent writing competence in the long run, with stronger influences on low-proficiency students. This stratified dual-path framework offers empirical references for stand…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:learning": 2,
-        "topic:motivation": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "generative AI",
-        "learning",
-        "learners",
-        "anxiety"
-      ],
-      "authors": [
-        {
-          "id": "A5078847185",
-          "name": "Minming Gong",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.54097/g0jpqq78",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-11-03T12:50:46.020Z",
-      "firstSeenRunId": "ingestion-2026-11-03T12:50:28.229Z",
-      "retrievedAt": "2026-11-03T12:50:46.020Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-11-03T12:50:46.020Z",
-      "preferredVersionId": "openalex:W7225121249",
-      "versions": [
-        {
-          "id": "openalex:W7225121249",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7225121249",
-          "doi": "10.54097/g0jpqq78",
-          "publicationDate": "2026-11-02",
-          "url": "https://doi.org/10.54097/g0jpqq78"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-004.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "participant",
-              "quote": "he results reveal prevalent AI over-dependence despite its polishing functions. Participants’ writing self-efficacy stays at medium-upper level yet hampered by writing anxiety. AI delivers sho",
-              "start": 550,
-              "end": 742
-            },
-            {
-              "field": "abstract",
-              "term": "participants",
-              "quote": "he results reveal prevalent AI over-dependence despite its polishing functions. Participants’ writing self-efficacy stays at medium-upper level yet hampered by writing anxiety. AI delivers sho",
-              "start": 550,
-              "end": 742
-            },
-            {
-              "field": "abstract",
-              "term": "student",
-              "quote": "writing competence in the long run, with stronger influences on low-proficiency students. This stratified dual-path framework offers empirical references for standardized AI application in",
-              "start": 795,
-              "end": 983
-            },
-            {
-              "field": "abstract",
-              "term": "students",
-              "quote": "writing competence in the long run, with stronger influences on low-proficiency students. This stratified dual-path framework offers empirical references for standardized AI application in",
-              "start": 795,
-              "end": 983
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "AI",
-              "quote": "The Impact of AI Assistance on the Academic Writing Self-Efficacy of Undergraduates with Different Writing Abilities",
-              "start": 0,
-              "end": 116
-            },
-            {
-              "field": "abstract",
-              "term": "generative AI",
-              "quote": "Against digital education background, generative AI has become common writing assistance for undergraduates. Existing studies mainly focus on second-la",
-              "start": 0,
-              "end": 151
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": "Against digital education background, generative AI has become common writing assistance for undergraduates. Existing studies mainly focus on second-la",
-              "start": 0,
-              "end": 151
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [
-            {
-              "value": "education",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "education",
-                  "quote": "Against digital education background, generative AI has become common writing assistance for undergraduates. Existing studies",
-                  "start": 0,
-                  "end": 125
-                },
-                {
-                  "field": "abstract",
-                  "term": "student",
-                  "quote": "writing competence in the long run, with stronger influences on low-proficiency students. This stratified dual-path framework offers empirical references for standardized AI application in",
-                  "start": 795,
-                  "end": 983
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "students",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "student",
-                  "quote": "writing competence in the long run, with stronger influences on low-proficiency students. This stratified dual-path framework offers empirical references for standardized AI application in",
-                  "start": 795,
-                  "end": 983
-                },
-                {
-                  "field": "abstract",
-                  "term": "learner",
-                  "quote": "ainly focus on second-language writing and ignore stratified comparisons across learners, while the dual effects of AI on academic writing self-efficacy remain understudied. Based on self-",
-                  "start": 127,
-                  "end": 315
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "participants",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "participant",
-                  "quote": "he results reveal prevalent AI over-dependence despite its polishing functions. Participants’ writing self-efficacy stays at medium-upper level yet hampered by writing anxiety. AI delivers sho",
-                  "start": 550,
-                  "end": 742
-                },
-                {
-                  "field": "abstract",
-                  "term": "respondent",
-                  "quote": "ased on self-efficacy theory, this paper distributes questionnaires and divides respondents into three proficiency groups by CET-4 scores. Descriptive statistics, group difference tests and c",
-                  "start": 302,
-                  "end": 493
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "generative",
-                  "quote": "Against digital education background, generative AI has become common writing assistance for undergraduates. Existing studies mainly focus on second",
-                  "start": 0,
-                  "end": 148
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "survey",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "questionnaire",
-                  "quote": "cacy remain understudied. Based on self-efficacy theory, this paper distributes questionnaires and divides respondents into three proficiency groups by CET-4 scores. Descriptive statistics, grou",
-                  "start": 275,
-                  "end": 469
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "doi:10.30525/2256-0742/2026-12-5-58-70",
-      "recordType": "publication",
-      "title": "THE IMPACT OF DIGITAL BANKING AND ARTIFICIAL INTELLIGENCE ON PRIVATE BANKING IN SWITZERLAND: ARE CHANGES AHEAD?",
-      "abstract": "Subject of Research. This study focuses on the digital banking landscape and the integration of artificial intelligence (AI) in private banking and wealth management in Switzerland. More specifically, it examines how technological innovations – ranging from process automation and generative AI to advanced data analytics – alter the operational dynamics, customer relations, and structural competitiveness of Swiss private banks in the context of shifting client expectations and rigorous regulatory environments. Methodology. The research employs a qualitative analytical research design that uses triangulation of secondary evidence. It systematically integrates and cross-checks academic literature on digital finance, fintech adoption and robo-advisory trust, alongside empirical data, regulatory frameworks and market insights from reputable Swiss and international organisations. The primary data sources analysed were supervisory guides from the Swiss Financial Market Supervisory Authority (FINMA), reports from the Swiss Bankers Association, digital maturity benchmarks from Deloitte Switzerland and private banking market profitability assessments from KPMG and PwC Switzerland. Purpose. The main objective of this paper is to provide a comprehensive assessment of the impact of digital transformation and the deployment of AI on the traditional Swiss private banking model. By analysing seven key dimensions – technological progress, customer expectations, process optimization, data analytics, risk and security, regulation/compliance, and market trajectories – the study aims to clarify the economic mechanisms driving digital adaptation, identify the structural barriers preventing rapid technology adoption, and evaluate the strategic options available to Swiss banks facing intense global competition and margin compression. Findings and Conclusion. The study reveals a significant discrepancy between Switzerland's position as a global leader in asset management, with CHF 9.3 trillion under management, and its digital banking maturity score of 39 out of 60. Although private banking clients continue to establish relationships based on traditional factors such as reputation, trust and personal referrals, they are also demanding friction-free digital execution, personalised dashboards and virtual investment simulations. AI has been proven to have high economic value when acting as a productivity layer centred around advisors, optimising processes such as client onboarding, document extraction, compliance screening and portfolio monitoring. However, it is not as effective when acting as an autonomous replacement for human relationship managers. Ultimately, the integration of digital banking and AI is causing a clear market polarisation. Large-scale institutions are successfully absorbing the substantial fixed costs associated with technology, data governance and regulatory compliance under the frameworks of FINMA and the European Union (such as DORA and the EU AI Act). Conversely, smaller Swiss private banks are under severe pressure to increase their profitability and consolidate, unless they adopt highly focused niche advisory models. The paper therefore concludes that urgent regulatory attention and strategic repositioning are necessary to preserve the overall image and international attractiveness of the Swiss private banking ecosystem.",
-      "doi": "10.30525/2256-0742/2026-12-5-58-70",
-      "externalIds": {
-        "openalex": "W7225113135"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7225113135"
-      },
-      "venue": "Baltic Journal of Economic Studies",
-      "publicationDate": "2026-11-02",
-      "firstPublicDate": "2026-11-02",
-      "onlineDate": null,
-      "topics": [
-        "Digital Transformation in Financial Services",
-        "FinTech, Crowdfunding, Digital Finance",
-        "Banking Systems and Strategies"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "attention",
-              "conceptLabel": "Aufmerksamkeit",
-              "matchedTerm": "attention",
-              "sourceValue": "…sed niche advisory models. The paper therefore concludes that urgent regulatory attention and strategic repositioning are necessary to preserve the overall image and international attractiveness of the Swiss private banking ecosystem.",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "participation",
-          "label": "Partizipation & Fairness",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "governance",
-              "conceptLabel": "Governance",
-              "matchedTerm": "governance",
-              "sourceValue": "…essfully absorbing the substantial fixed costs associated with technology, data governance and regulatory compliance under the frameworks of FINMA and the European Union (such as DORA and the EU AI Act). Conversely, smaller Swiss private banks are under severe pressure to increase their profitability and consolidate, u…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "risk",
-              "conceptLabel": "Risiko",
-              "matchedTerm": "risk",
-              "sourceValue": "…ological progress, customer expectations, process optimization, data analytics, risk and security, regulation/compliance, and market trajectories – the study aims to clarify the economic mechanisms driving digital adaptation, identify the structural barriers preventing rapid technology adoption, and evaluate the strate…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "trust",
-              "conceptLabel": "Vertrauen",
-              "matchedTerm": "trust",
-              "sourceValue": "…ecks academic literature on digital finance, fintech adoption and robo-advisory trust, alongside empirical data, regulatory frameworks and market insights from reputable Swiss and international organisations. The primary data sources analysed were supervisory guides from the Swiss Financial Market Supervisory Authority…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:cognition": 2,
-        "topic:participation": 2,
-        "topic:safety": 2,
-        "topic:trust": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "artificial intelligence",
-        "generative AI",
-        "trust",
-        "attention",
-        "governance",
-        "risk"
-      ],
-      "authors": [
-        {
-          "id": "A5029005283",
-          "name": "Karina Kapliar",
-          "orcid": "https://orcid.org/0000-0002-3502-4980",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.30525/2256-0742/2026-12-5-58-70",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-11-03T12:50:46.020Z",
-      "firstSeenRunId": "ingestion-2026-11-03T12:50:28.229Z",
-      "retrievedAt": "2026-11-03T12:50:46.020Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-11-03T12:50:46.020Z",
-      "preferredVersionId": "openalex:W7225113135",
-      "versions": [
-        {
-          "id": "openalex:W7225113135",
-          "type": "journal",
-          "source": "OpenAlex",
-          "externalId": "W7225113135",
-          "doi": "10.30525/2256-0742/2026-12-5-58-70",
-          "publicationDate": "2026-11-02",
-          "url": "https://doi.org/10.30525/2256-0742/2026-12-5-58-70"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "broad",
-          "queryVersion": "static-search-5.0.0:broad:human-ai"
-        }
-      ],
-      "pagePath": "./works/page-004.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "g. However, it is not as effective when acting as an autonomous replacement for human relationship managers. Ultimately, the integration of digital banking and AI is causing a clear mar",
-              "start": 2564,
-              "end": 2749
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "artificial intelligence",
-              "quote": "THE IMPACT OF DIGITAL BANKING AND ARTIFICIAL INTELLIGENCE ON PRIVATE BANKING IN SWITZERLAND: ARE CHANGES AHEAD?",
-              "start": 0,
-              "end": 111
-            },
-            {
-              "field": "abstract",
-              "term": "artificial intelligence",
-              "quote": "rch. This study focuses on the digital banking landscape and the integration of artificial intelligence (AI) in private banking and wealth management in Switzerland. More specifically, it examines how te",
-              "start": 16,
-              "end": 219
-            },
-            {
-              "field": "abstract",
-              "term": "generative AI",
-              "quote": "it examines how technological innovations – ranging from process automation and generative AI to advanced data analytics – alter the operational dynamics, customer relations, and structural com",
-              "start": 201,
-              "end": 394
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "generative",
-                  "quote": "it examines how technological innovations – ranging from process automation and generative AI to advanced data analytics – alter the operational dynamics, customer relations, and structural ",
-                  "start": 201,
-                  "end": 391
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "automation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "automation",
-                  "quote": " specifically, it examines how technological innovations – ranging from process automation and generative AI to advanced data analytics – alter the operational dynamics, customer relations, ",
-                  "start": 186,
-                  "end": 376
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "qualitative",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "qualitative",
-                  "quote": "tions and rigorous regulatory environments. Methodology. The research employs a qualitative analytical research design that uses triangulation of secondary evidence. It systematically integra",
-                  "start": 471,
-                  "end": 662
                 }
               ],
               "interpretation": "mentioned; role/outcome not confirmed"

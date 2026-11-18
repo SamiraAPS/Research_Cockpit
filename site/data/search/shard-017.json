@@ -1,7 +1,57 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.37905",
+      "abstract": "Public disclosure repositories such as SEC EDGAR support informed investment through web access to corporate filings. Supporting their review with language model agents requires discovering unstated deficiencies across related documents, acquiring missing company facts, and verifying that requested revisions satisfy evidence-backed requirements. Existing financial question-answering evaluations provide limited evidence of these interactive capabilities. We introduce \\textbf{FilingLoop}, an interactive benchmark and a self-evolving agent framework for corporate disclosure review and revision. Grounded in historical U.S.\\ Securities and Exchange Commission correspondence, FilingLoop reconstructs 380 predominantly IPO review tasks from 96 companies under distinct information constraints. An evaluator separate from the acting agents scores final filings and responses against 6,099 eligible requirements and audits unsupported claims and harmful revisions. Our framework couples iterative review and revision within each case with procedural learning across cases, converting requirement-level evaluation feedback into role-specific guidance without updating model weights. Updates affect only subsequent cases, allowing procedural adaptation to be assessed without retrying scored tasks. On the evaluated stream, evolution increases requirement fulfillment from 24.28\\% to 27.96\\% and full comment resolution from 16.90\\% to 20.75\\%, with a 5.8\\% increase in total cost over the fixed-policy variant. FilingLoop connects the concerns an agent discovers with the company facts it obtains and the revisions it commits, providing requirement-level feedback for procedures used in later review tasks.",
+      "topics": [
+        "Topic Modeling",
+        "Financial Reporting and XBRL",
+        "Artificial Intelligence in Law"
+      ],
+      "keywords": [
+        "SEC EDGAR",
+        "language model agents",
+        "self-evolving agents",
+        "procedural learning",
+        "financial question answering",
+        "agent evaluation"
+      ]
+    },
+    {
+      "id": "doi:10.1007/s10458-026-09772-6",
+      "abstract": null,
+      "topics": [
+        "Sentiment Analysis and Opinion Mining",
+        "Multi-Agent Systems and Negotiation",
+        "Opinion Dynamics and Social Influence"
+      ],
+      "keywords": [
+        "multi-agent systems",
+        "large language models",
+        "stance detection",
+        "expert elicitation",
+        "consensus building",
+        "deliberation"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.37481",
+      "abstract": "Fine-tuning Large Language Models (LLMs) on instruction data can quietly erode their safety, even when no training example looks harmful. Because this safety-degrading data looks benign, standard content filters struggle to catch it. We tackle this problem by developing SimpleLoRIF, a scalable gradient embedding method that identifies fine-tuning examples whose gradients align with unsafe behavior. By simplifying a low-rank attribution method and restricting backpropagation to the final four transformer blocks, SimpleLoRIF can embed datasets on the order of a million examples, boosting gradient attribution from a small-scale analysis tool into a practical filter for full post-training datasets. We first validate it on emergent misalignment, where we find that gradients can connect insecure-code training data to the broadly harmful behaviors that appear after fine-tuning, with AUC as high as 0.865 in the gradient space of misaligned models. We then use SimpleLoRIF to build SafeTulu, a version of Tulu 3 with the 20% of examples most gradient-aligned with unsafe responses removed. Training on SafeTulu reduces GCG attack success rate by up to 22% across Qwen, Llama, and Olmo, outperforming both LLM-as-a-judge and prior gradient-based filtering, while largely preserving or even improving capability. Finally, we analyzed the removed data and identify possibly under-studied sources of safety degradation, such as tool-execution failures and narrative arithmetic. We release SafeTulu along with a Hugging Face Space that lets researchers build their own customized versions of SafeTulu to fine-tune on, such as by changing the removal fraction or filtering only certain subsets.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Hate Speech and Cyberbullying Detection",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "large language model safety",
+        "fine-tuning",
+        "training data filtering",
+        "emergent misalignment",
+        "content filtering"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2610.36580",
       "abstract": "As machine learning systems make increasingly greater decisions about people's lives, it is critical to provide users with actionable recourse about how they can achieve their desired outcomes. This problem is currently tackled by relying on expensive human supervision which involves hand-designing a cost function before searching for low-cost actions that achieve the desired outcome. In this paper, we propose \\textit{``Data-Driven Action Recourse\"} (DDAR), the first approach for providing action recourse without requiring costly supervision from humans about action costs. We build upon the notion that highly likely trajectories in the historical user data should be associated with lower costs. With this, DDAR first builds a dynamics model of historical user trajectories. Under this model, it then searches for trajectories that achieve the desired outcome. In experiments, we find that this simple approach recommends plausible action recourse without requiring human supervision, achieving lower action costs than the existing approaches.",
@@ -3732,59 +3782,6 @@
         "intervention timing",
         "task completion",
         "error prediction"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.37561",
-      "abstract": "Background. Selective prediction systems improve the safety of clinical artificial intelligence by deferring ambiguous cases to human experts while automating high-confidence decisions. However, this safety mechanism relies entirely on the premise that uncertainty scores accurately reflect clinical ambiguity. In prognostic tasks characterized by severe class imbalance, where the clinical outcome of interest is a minority, this assumption breaks down. Standard uncertainty measures cease to capture clinically aligned ambiguity; instead, they become a proxy for class membership, systematically penalizing minority patients regardless of their individual predictive clarity. Results. Across 56 synthetic conditions and three neurodegenerative cohorts spanning severe class imbalance to near-balanced conditions (multiple sclerosis, Parkinson's Disease, Alzheimer's Disease), our framework consistently maintained bounded, balanced risk across trajectories. In contrast, global metrics either collapsed minority Sensitivity or protected the minority at the expense of majority patients. Applying CCR with standard entropy fails to protect the minority because it breaks within-class monotonicity when tau=0.5. Combining CCR with threshold-aware metrics restores strict monotonicity, correctly identifies ambiguous patients, and safely mitigates minority exclusion. Conclusions. Under clinical class imbalance, standard uncertainty quantification measures dataset sparsity rather than clinical ambiguity, creating a systemic illusion of safety. This bias is a correctable structural flaw. Clinical pipelines deploying selective prediction under imbalance should adopt threshold-aligned uncertainty measures and class-stratified evaluation. This reduces class-specific risk imbalance, supporting safer selective prediction under the evaluated conditions without silently excluding the most vulnerable patients.",
-      "topics": [
-        "Imbalanced Data Classification Techniques",
-        "Artificial Intelligence in Healthcare and Education",
-        "Machine Learning in Healthcare"
-      ],
-      "keywords": [
-        "selective prediction",
-        "uncertainty quantification",
-        "class imbalance",
-        "clinical decision support",
-        "multiple sclerosis",
-        "Parkinson's disease",
-        "Alzheimer's disease"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.37430",
-      "abstract": "For reliable deployment, multimodal large language models (MLLMs) should recognize when an image provides insufficient evidence to answer a question and withhold unsupported answers. Yet refusal alone is not necessarily evidence of such recognition: models may refuse because of unrelated safety constraints or without identifying the missing evidence. We study how refusal on visually unanswerable questions is shaped by three sources of control: inference-time instructions, post-training, and internal activation interventions. Across three MLLMs on the MoHoBench benchmark, we systematically manipulate the meaning and placement of refusal instructions, compare supervised and preference-based post-training, and intervene on a refusal-related activation direction derived from naturally answered and refused examples. We find that refusal is highly sensitive to both the meaning and placement of instructions, with model-specific changes at the sample level that are obscured by aggregate refusal rates. Evidence-aware and general refusal instructions have stronger effects than an intentionally mismatched safety instruction. Post-training produces larger increases in refusal, but can also induce responses that combine refusal language with attempted answers. In contrast, activation intervention produces smaller yet transferable changes across prompt conditions, without evidence of indiscriminate refusal on tested visually answerable samples. These findings show that refusal is jointly shaped by external instructions, post-training, and internal representations, highlighting the need to disentangle evidence recognition from a model's learned propensity to refuse.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Explainable Artificial Intelligence (XAI)",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "multimodal large language models",
-        "refusal behavior",
-        "post-training",
-        "safety instructions",
-        "visual question answering",
-        "internal representations",
-        "model interpretability"
-      ]
-    },
-    {
-      "id": "doi:10.1145/3858359",
-      "abstract": "Transport behaviors are a major contributor to carbon emissions, and decisions are often made at the household level around what form of transport to take and when. Technology, primarily eco-feedback interfaces (EFIs) have been suggested to support users in making environmentally friendly choices. However, there is a lack in understanding of how the underlying social dynamics of households influence decisions around sustainable practices, particularly through the lens of mobility. To understand how to design technology to better support households in negotiating around sustainable mobility choices, the research team interviewed 21 participants across nine households, probing them with four low-fidelity mockups representative of EFIs from prior work. We found that the varied mobility-related responsibilities among household members, as well as varying perspectives on the environment, can cause friction in the utility of EFIs in the home. We suggest that designs can account for these factors through acknowledging varied roles and perspectives.",
-      "topics": [
-        "Innovative Human-Technology Interaction",
-        "Environmental Education and Sustainability",
-        "Green IT and Sustainability"
-      ],
-      "keywords": [
-        "sustainable transport",
-        "household dynamics",
-        "CO2 emissions",
-        "transport behavior",
-        "domestic roles",
-        "environmental attitudes"
       ]
     }
   ]

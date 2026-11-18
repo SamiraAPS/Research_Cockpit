@@ -1,7 +1,34 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.18653/v1/2026.acl-long.497",
+      "abstract": "In medicine, claims remain valid when supported by empirical evidence grounded in stable biological reality. In law, by contrast, truth is contingent, defined by jurisdiction, temporal validity, and the hierarchy of authoritative sources. The recent success of large language models (LLMs) on medical licensing examinations has encouraged an expectation of comparable legal competence. This analogy, however, obscures a critical distinction between domains. Unlike in medicine, legal performance often depends less on inference than on determining when external authority is applicable, valid, and non-contradictory. We introduce a comparative diagnostic framework evaluating legal reasoning against medical baselines along four axes (knowledge recall, grounding, confidence, and robustness), uncovering a sharp domain asymmetry when applied to a new benchmark that encodes temporal validity and normative relationships. While medical LLMs reliably benefit from verified sources, legal LLMs struggle to assess when retrieved citations are useful or misleading, exhibiting overconfidence in perturbed contexts and sensitivity to superficial formatting cues. Increased model scale amplifies this tendency, revealing that stronger instruction following can coincide with weaker resistance to authoritative perturbations. These findings show that LLMs treat law as unstructured text rather than binding precedent, while revealing a tendency to over-trust authoritative but false information when external references conflict with a model's internal knowledge.",
+      "topics": [
+        "cs.CY",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.10258",
+      "abstract": "Large language models (LLMs) increasingly provide conversational health information that may influence treatment decisions, yet existing benchmarks do not isolate whether medication-safety boundaries persist across follow-ups after explicit self-treatment intent. We introduce TAF-MED, a physician-reviewed benchmark of 500 fixed three-turn scenarios, and evaluate eight LLMs across 4,000 conversations. A rubric-based automated judge labelled responses as SAFE, LEAKY, or UNSAFE, and two physicians independently annotated a model-balanced random subset of 400 conversations. We assessed unsafe guidance, collapse after a strictly SAFE initial response, and model-ranking stability. Overall, 71.6% of conversations contained an UNSAFE response, and 61.4% of those beginning with a strictly SAFE response later collapsed to UNSAFE; model-level collapse rates ranged from 24.4% to 96.2%. Four of 28 model pairs reversed order between initial unsafe and collapse rates. Automated labels achieved 94.3% agreement with the adjudicated physician reference ($κ= 0.895$). These findings show that first-turn safety is an incomplete proxy for conversational safety persistence and motivate evaluation across complete dialogue trajectories. We will release TAF-MED on Hugging Face to support reproducible research on multi-turn medical safety.",
+      "topics": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.10153",
+      "abstract": "Enterprises are deploying autonomous AI agents faster than they can govern them, and prevailing approaches stretch a single discipline, typically DevSecOps built for deterministic automation, across every scale of agency. We argue that agentic AI governance is four problems, not one, each with a mature governing science. The CASE framework assigns Control theory to the individual agent (intent as setpoint, guardrails as feedback, evaluation as observation), complex Adaptive systems theory to agent collectives (where emergence makes single-agent assurance non-compositional), Supervisory cybernetics to human-agent teams (where the Law of Requisite Variety shows unaided human oversight fails structurally), and Engineering operations to fleets (extending error budgets to decision quality so autonomy becomes a controlled variable). We formalize each layer, derive cross-layer coupling conditions, including a zero-touch deployment paradox where excellence at one-layer strains the others, and trace twenty-plus enterprise controls to their classical constructs. Three empirical studies validate the thesis: 82 percent of documented production agent failures are multi-layer trajectories; none of 22 ecosystem tools offers full Layer 2 (emergence) coverage; and all 35 scored public deployments fall in the lowest maturity band. We name this mismatch, risk realized at the emergence layer against capability barely offered and practice absent, the Emergence Gap. A five-level maturity model with a non-compensatory bottleneck-weighted index and assessment instrument operationalizes CASE as a scientific rather than process maturity model, grounded in production enterprise agentic platforms. As EU AI Act Article 14 makes effective human oversight a legal requirement, only architectures satisfying requisite variety can make oversight real rather than ceremonial.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.10327",
       "abstract": "Can AI systems be aligned to human values? The popularization of large language models (LLMs) and multi-modal foundation models has seen a rise in harms spanning from toxic speech and hallucinations to AI agents executing unauthorized actions. Within the field of AI safety, these harmful instances are often framed as the alignment problem, or of models being misaligned with human values. Researchers have responded by pursuing applied and theoretical AI value alignment efforts, often without specifying what they mean by human values. How does the field of AI value alignment conceive of human values? How are these conceptions of values technically operationalized and evaluated? What does the emergent theory of value from this field signify for the future of AI? We annotated 94 value alignment research papers to discern their implicit theory of values in AI. The majority do not define values, relying heavily on preferences as a stand in that runs the risk of reducing complex culturally situated concepts down to binary choices. As researchers dispense with using human annotators for model training and evaluation, turning instead to synthetic data and autorater approaches to aligning and evaluating models, we identify the potential to close off alternative methods for contesting and enacting values in foundation models. In making AI value alignments philosophical commitments explicit, we seek to bring great specificity and under explored perspectives in the debate on whether and how AI can address human values.",
@@ -1848,32 +1875,6 @@
         "cs.CL",
         "cs.AI",
         "cs.MA"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.14684",
-      "abstract": "LLM judges increasingly evaluate responses against fine-grained rubric checklists. When a sample requires multiple rubrics, current methods typically assess each in a separate inference call. Evaluating all rubrics in a single pass is a natural alternative with greater efficiency, but we find that it introduces rubric interference: the verdict on one rubric shifts depending on which other rubrics are co-present. In a preliminary study, only one-third of samples receive fully consistent verdicts when evaluated under rubric sets of varying composition. We develop a measurement framework that probes interference through four controlled operations: rubric set expansion, subsetting, reordering, and noise injection. To mitigate interference without external supervision, we propose Self-Anchored Rubric Alignment (SARA). SARA uses a model's own single-rubric judgments as stable anchors and aligns multi-rubric reasoning with these anchors through on-policy self-distillation. We validate SARA on three datasets (HealthBench, FLASK, ResearchQA) and two model families (Qwen3, Llama-3.1). SARA consistently improves evaluation consistency while maintaining agreement with both base models and GPT-4.1 as a reference judge. Furthermore, the learned consistency transfers across datasets, confirming that SARA teaches a general capability rather than fitting dataset-specific patterns.",
-      "topics": [
-        "cs.LG",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.05409",
-      "abstract": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticated jailbreaks that sidestep established safeguards. For instance, prior work by Andriushchenko et al. (2025) has found that changing the grammatical tense from present to past can be enough to elicit harmful responses. In this work, we uncover a more general failure of non-imperative syntactic forms. We demonstrate that this syntactic vulnerability exists in 16 models up to 70B parameters, using behavioral evaluation. To investigate the root cause, we apply causal mediation analysis, finding that refusal is partially conditioned on upstream syntactic features. By steering these purely syntactic features we are able to trigger and suppress refusal. Finally, we trace this ill-conditioning to linguistically biased post-training data of open-source models and show that increasing syntactic diversity can mitigate the issue. Our findings suggest that current alignment approaches introduce confounders that prevent a pure semantic grounding of the refusal decision.",
-      "topics": [
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.07581",
-      "abstract": "Group-based reinforcement learning methods for multimodal large language models typically rely on trajectory-level credit assignment that applies a single advantage to all tokens in a response. However, multimodal reasoning involves substantially higher perceptual uncertainty than text-only settings, where the model must repeatedly re-examine visual information to verify intermediate interpretations, and different visual groundings can lead to divergent reasoning paths, making such uniform credit assignment particularly inadequate and causing relative advantages to progressively degenerate toward zero. To address these challenges, we propose Multi-Branch Policy Optimization (MBPO), a tree-based framework that constructs reasoning trees at vision-language decision boundaries, enabling sibling branches to explore diverse visual hypotheses and assigning segment-level credit through branch-relative advantages. We further introduce a temporal replay buffer to reuse informative segments while controlling policy staleness. Experiments on several multimodal reasoning benchmarks show that MBPO outperforms representative baselines, improving both learning signal quality and optimization efficiency. The code is publicly available at https://github.com/ShuaiLyu0110/MBPO.",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
       ],
       "keywords": []
     }

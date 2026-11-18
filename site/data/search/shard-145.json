@@ -1,7 +1,320 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2604.12951",
+      "abstract": "The most cited calibration result in deep learning -- post-temperature-scaling ECE of 0.012 on CIFAR-100 (Guo et al., 2017) -- is below the statistical noise floor. We prove this is not a failure of the experiment but a law: the minimax rate for estimating calibration error with model error rate epsilon is Theta((Lepsilon/m)^{1/3}), and no estimator can beat it. This \"verification tax\" implies that as AI models improve, verifying their calibration becomes fundamentally harder -- with the same exponent in opposite directions. We establish four results that contradict standard evaluation practice: (1) self-evaluation without labels provides exactly zero information about calibration, bounded by a constant independent of compute; (2) a sharp phase transition at mepsilon approx 1 below which miscalibration is undetectable; (3) active querying eliminates the Lipschitz constant, collapsing estimation to detection; (4) verification cost grows exponentially with pipeline depth at rate L^K. We validate across five benchmarks (MMLU, TruthfulQA, ARC-Challenge, HellaSwag, WinoGrande; ~27,000 items) with 6 LLMs from 5 families (8B-405B parameters, 27 benchmark-model pairs with logprob-based confidence), 95% bootstrap CIs, and permutation tests. Self-evaluation non-significance holds in 80% of pairs. Across frontier models, 23% of pairwise comparisons are indistinguishable from noise, implying that credible calibration claims must report verification floors and prioritize active querying once gains approach benchmark resolution.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)",
+        "Machine Learning and Data Classification"
+      ],
+      "keywords": [
+        "minimax rates",
+        "temperature scaling",
+        "large language models",
+        "confidence calibration",
+        "verification costs"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12231",
+      "abstract": "Large language models (LLMs) have transformed AI research thanks to their powerful internal capabilities and knowledge. However, existing LLMs still fail to effectively incorporate the massive external knowledge when interacting with the world. Although retrieval-augmented LLMs are proposed to mitigate the issue, they are still fundamentally constrained by the context length of LLMs, as they can only retrieve top-K raw data chunks from the external knowledge base which often consists of millions of data chunks. Here we propose Thought-Retriever, a novel model-agnostic algorithm that helps LLMs generate output conditioned on arbitrarily long external data, without being constrained by the context length or number of retrieved data chunks. Our key insight is to let an LLM fully leverage its intermediate responses generated when solving past user queries (thoughts), filtering meaningless and redundant thoughts, organizing them in thought memory, and retrieving the relevant thoughts when addressing new queries. This effectively equips LLM-based agents with a self-evolving long-term memory that grows more capable through continuous interaction. Besides algorithmic innovation, we further meticulously prepare a novel benchmark, AcademicEval, which requires an LLM to faithfully leverage ultra-long context to answer queries based on real-world academic papers. Extensive experiments on AcademicEval and two other public datasets validate that Thought-Retriever remarkably outperforms state-of-the-art baselines, achieving an average increase of at least 7.6% in F1 score and 16% in win rate across various tasks. More importantly, we further demonstrate two exciting findings: (1) Thought-Retriever can indeed help LLM self-evolve after solving more user queries; (2) Thought-Retriever learns to leverage deeper thoughts to answer more abstract user queries.",
+      "topics": [
+        "Topic Modeling",
+        "Big Data and Digital Economy",
+        "Multimodal Machine Learning Applications"
+      ],
+      "keywords": [
+        "long-term memory",
+        "retrieval-augmented generation",
+        "self-evolving agents"
+      ]
+    },
+    {
+      "id": "doi:10.4467/20801335pbw.26.011.23373",
+      "abstract": "Regulation (EU) 2022/2554 of the European Parliament and of the Council of 14 December 2022 on digital operational resilience for the financial sector (Digital Operational Resilience Act, DORA) launched a new model for testing the digital resilience of financial services operating in the Polish financial market into the EU and thus into the domestic legal framework. The primary purpose of this article is to discuss and evaluate the Threat-Led Penetration Testing (TLPT) model. TLPT tests can include both technical and sociotechnical components. The hypothesis of the article is that TLPT testing will have a positive impact on enhancing the digital resilience of financial stakeholders because these tests are designed to simulate real-world cyber attacks, enabling organisations to understand their resilience to threats and initiate relevant countermeasures. The results obtained from the analysis confirm the validity of the proposed research hypothesis. This follows from the fact that the main premise of TLPT testing is to replicate realworld attack scenarios as accurately as possible, thereby enabling a more reliable and detailed assessment of organisation’s security level. The authors emphasise that such an approach allows not only for the verification of the effectiveness of information system safeguards, but also for the evaluation of the resilience of operational processes and the level of employee awareness regarding cyber threats.",
+      "topics": [
+        "Information and Cyber Security",
+        "Web Application Security Vulnerabilities",
+        "Network Security and Intrusion Detection"
+      ],
+      "keywords": [
+        "Digital Operational Resilience Act",
+        "DORA",
+        "financial services",
+        "cyberattack simulation",
+        "Polish financial market"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12401",
+      "abstract": "Federated Learning (FL) offers a promising pathway for collaboratively fine-tuning Large Language Models (LLMs) at the edge; however, this paradigm faces a critical bottleneck: the prohibitive communication and memory overheads incurred by exchanging high-dimensional gradients. Furthermore, recent studies reveal that user training data can still be recovered from these local gradients, undermining the core privacy promise of FL. In this paper, we address this trilemma of communication, memory, and privacy by proposing pAirZero, a novel framework that synergizes Zeroth-Order (ZO) optimization with Over-the-Air (OTA) computation. Uniquely, pAirZero enables resource-constrained devices to submit their local gradient with only bit-level communication loads while participating in federated fine-tuning of LLMs with inference-level memory costs. This approach not only eliminates the high memory requirements needed for LLM fine-tuning but also alleviates the strict synchronization requirements that plague conventional OTA methods. We further formulate a rigorous optimization model to adaptively determine the optimal transmit power and noise levels, ensuring consistent privacy protection regardless of channel conditions. Numerical experiments demonstrate the superiority of pAirZero in enabling secure, efficient LLM fine-tuning over wireless networks, with only 25% peak memory cost on OPT-125M and communication load orders of magnitude lower than conventional methods.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Stochastic Gradient Optimization Techniques",
+        "IoT and Edge/Fog Computing"
+      ],
+      "keywords": [
+        "federated learning",
+        "LLM fine-tuning",
+        "derivative-free optimization",
+        "over-the-air computation",
+        "memory-efficient training",
+        "transmit power optimization",
+        "noise injection",
+        "edge computing"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12216",
+      "abstract": "The widespread use of Large Language Models (LLMs) in text generation has raised increasing concerns about intellectual property disputes. Watermarking techniques, which embed meta information into AI-generated content (AIGC), have the potential to serve as judicial evidence. However, existing methods rely on statistical signals in token distributions, leading to inherently probabilistic detection and reduced reliability, especially in multi-bit encoding (e.g., timestamps). Moreover, such methods introduce detectable statistical patterns, making them vulnerable to forgery attacks and enabling model providers to fabricate arbitrary watermarks. To address these issues, we propose the concept of trustworthy watermark, which achieves reliable recovery with 100% identification accuracy while resisting both user-side statistical attacks and provider-side forgery. We focus on trustworthy time watermarking for use as judicial evidence. Our framework integrates cryptographic techniques and encodes time information into time-dependent secret keys under regulatory supervision, preventing arbitrary timestamp fabrication. The watermark payload is decoupled from time and generated as a random, non-stored bit sequence for each instance, eliminating statistical patterns. To ensure verifiability, we design a two-stage encoding mechanism, which, combined with error-correcting codes, enables reliable recovery of generation time with theoretically perfect accuracy. Both theoretical analysis and experiments demonstrate that our framework satisfies the reliability requirements for judicial evidence and offers a practical solution for future AIGC-related intellectual property disputes.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Physical Unclonable Functions (PUFs) and Hardware Security",
+        "Digital Media Forensic Detection"
+      ],
+      "keywords": [
+        "AI-generated content",
+        "large language models",
+        "intellectual property disputes",
+        "evidence law",
+        "error-correcting codes"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12648",
+      "abstract": "Despite the recent success of large language models (LLMs) in time-series forecasting, most existing methods still adopt a Deep Synchronous Fusion strategy, where dense interactions between textual and temporal features are enforced at every layer of the network. This design overlooks the inherent granularity mismatch between modalities and leads to what we term semantic perceptual dissonance: high-level abstract semantics provided by the LLM become inappropriately entangled with the low-level, fine-grained numerical dynamics of time series, making it difficult for semantic priors to effectively guide forecasting. To address this issue, we propose TimeSAF, a new framework based on hierarchical asynchronous fusion. Unlike synchronous approaches, TimeSAF explicitly decouples unimodal feature learning from cross-modal interaction. It introduces an independent cross-modal semantic fusion trunk, which uses learnable queries to aggregate global semantics from the temporal and prompt backbones in a bottom-up manner, and a stage-wise semantic refinement decoder that asynchronously injects these high-level signals back into the temporal backbone. This mechanism provides stable and efficient semantic guidance while avoiding interference with low-level temporal dynamics. Extensive experiments on standard long-term forecasting benchmarks show that TimeSAF significantly outperforms state-of-the-art baselines, and further exhibits strong generalization in both few-shot and zero-shot transfer settings.",
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Traffic Prediction and Management Techniques",
+        "Time Series Analysis and Forecasting"
+      ],
+      "keywords": [
+        "time series forecasting",
+        "large language models",
+        "cross-modal fusion",
+        "hierarchical fusion",
+        "long-term forecasting",
+        "few-shot transfer",
+        "zero-shot transfer",
+        "semantic guidance",
+        "temporal dynamics"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12931",
+      "abstract": "In generative semantic communication, semantic tokens guide receiver-side generative models to synthesize high-dimensional content. In challenging network environments, however, frequent token erasure distorts the conveyed semantics beyond what receiver-side recovery can restore. In this paper, we propose a token encoding framework (TokCode) for robust semantic recovery, achieving erasure resilience by restructuring redundancy in the semantic domain. TokCode uses a lightweight adapter to recast a general-purpose large language model (LLM) at the transmitter into a token encoder, exploiting the LLM's pretrained semantic prior to avoid introducing a dedicated deep model. To optimize the adapter efficiently and make it applicable across diverse channels, we develop a channel-quality-aware distillation approach for token encoder training~(CADET). Using a differentiable sentence-level semantic surrogate, CADET tunes T5 foundation models into experts for distinct erasure rates and distills them into a single reconfigurable low-rank adapter, enabling subsequent reinforcement learning (RL) to start above the plateau where direct RL stalls. Simulation results on token-based generative image transmission show that TokCode improves the image-level similarity over the best-performing receiver-side recovery benchmark by 14.1%--22.4%, closing 71.9%--76.5% of its gap to the erasure-aware oracle encoding, when only 20% to 50% of the tokens survive.",
+      "topics": [
+        "Wireless Signal Modulation Classification",
+        "Advanced Wireless Communication Technologies",
+        "Wireless Communication Security Techniques"
+      ],
+      "keywords": [
+        "semantic recovery",
+        "large language models",
+        "knowledge distillation",
+        "T5",
+        "reinforcement learning",
+        "semantic tokens"
+      ]
+    },
+    {
+      "id": "doi:10.20944/preprints202604.0920.v1",
+      "abstract": "Contemporary large language models (LLMs) generate text by sampling from probability distributions over vocabulary tokens, implicitly asserting that uncertainty about language is well-modeled by calibrated stochastic processes. This paper argues that such probabilistic closure is epistemically unjustified in the regime of language: meaning is bounded by admissible interpretation, not governed by frequentist statistics. The precise claim is not that probability cannot model language but that probabilistic closure is an epistemically overcommitted representation for token uncertainty under bounded admissibility—one that prevents the architecture from representing categorical inadmissibility and compels the assignment of positive probability mass to tokens that should not exist in the support at all. We propose the Possibilistic Language Model (PLM), a novel architecture grounding language generation in possibility theory and the Epistemic Support-Point Filter (ESPF) framework of Jah and Haslett (2025). The PLM replaces softmax probability distributions over tokens with possibilistic compatibility fields over vocabulary support sets; it replaces maximum-likelihood training with a Possibilistic Cramér–Rao regularized entropy-minimization objective; and it replaces standard scaled dot-product attention with Epistemic Possibilistic Attention (EPA), a falsification-driven attention operator that gates keys by admissible innovation geometry rather than by likelihood weighting. The PLM is not merely compatible with these foundations: it is the unique architecture forced by the TEAG axioms when instantiated over a discrete vocabulary manifold. The governing equation of token generation is a tropical Hamilton–Jacobi equation in the max-plus semiring, with the vocabulary surprisal field as Hamiltonian and the PCRB as minimum action per generation step. Epistemic Possibilistic Attention is the discretized Lax–Oleinik operator of this system. The minimax medoid commitment is proved to be the geodesic attractor of the surviving vocabulary well, not a heuristic selection rule. We define (not merely propose) the vocabulary possibility distribution and EPA operator; we derive the PCRB regularization from established ESPF theory inherited from Jah (2026a); we prove, conditionally on VFI maintenance, that the PLM produces non-degenerate generation from actual vocabulary tokens; and we prove that the PLM recovers a standard transformer in the Gaussian epistemic limit, which is the zero-temperature limit of the tropical Hamilton–Jacobi framework established in Jah (2026d). We are explicit throughout about what is fully self-contained here, what is inherited from prior TEAG works, and what remains as open proof obligations. The architecture naturally produces diagnostics—necessity, epistemic width, and surprisal—that quantify when a generation step is epistemically supported versus epistemically strained. We discuss initialization, training, inference, and multi-modal extensions, and identify open theoretical obligations alongside a concrete research agenda. The PLM is not presented as a drop-in replacement for probabilistic LLMs, but as a principled alternative for language tasks where epistemic humility, interpretability, and bounded admissibility matter more than distributional calibration.",
+      "topics": [
+        "Topic Modeling",
+        "Computational and Text Analysis Methods",
+        "Text Readability and Simplification"
+      ],
+      "keywords": [
+        "possibility theory",
+        "token generation",
+        "tropical semiring",
+        "epistemic commitment"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12321",
+      "abstract": "Existing Chinese toxic content detection methods mainly target sentence-level classification but often fail to provide readable and contiguous toxic evidence spans. We propose \\textbf{ToxiTrace}, an explainability-oriented method for BERT-style encoders with three components: (1) \\textbf{CuSA}, which refines encoder-derived saliency cues into fine-grained toxic spans with lightweight LLM guidance; (2) \\textbf{GCLoss}, a gradient-constrained objective that concentrates token-level saliency on toxic evidence while suppressing irrelevant activations; and (3) \\textbf{ARCL}, which constructs sample-specific contrastive reasoning pairs to sharpen the semantic boundary between toxic and non-toxic content. Experiments show that ToxiTrace improves classification accuracy and toxic span extraction while preserving efficient encoder-based inference and producing more coherent, human-readable explanations. We have released the model at https://huggingface.co/ArdLi/ToxiTrace.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Topic Modeling",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "keywords": [
+        "explainable AI",
+        "saliency maps",
+        "contrastive reasoning",
+        "BERT encoder",
+        "gradient alignment"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12717",
+      "abstract": "LLM-based autonomous agents perform well on general reasoning tasks but still struggle to reliably use task structure, key constraints, and prior experience in complex real-world settings. We propose a case-based learning framework that converts experience from past tasks into reusable knowledge assets, allowing agents to transfer prior case experience to new tasks and perform more structured analysis. Unlike methods based mainly on pretrained knowledge or static prompts, our framework emphasizes extracting and reusing task-relevant knowledge, analytical prompts, and operational skills from real cases. We evaluate the method on a unified benchmark of six complex task categories and compare it with Zero-Shot, Few-Shot, Checklist Prompt, and Rule Memory baselines. Results show that our method achieves consistently strong performance across all tasks and matches or outperforms the best baseline in every case, with especially clear gains on more complex tasks. Further analysis shows that the advantage of case-based learning increases with task complexity, and that practical knowledge acquired by one agent can be reused by others. These findings suggest that case-based learning offers a promising path for building professional agents for real-world work.",
+      "topics": [
+        "AI-based Problem Solving and Planning",
+        "Explainable Artificial Intelligence (XAI)",
+        "Multimodal Machine Learning Applications"
+      ],
+      "keywords": [
+        "case-based learning",
+        "autonomous agents",
+        "large language models",
+        "knowledge transfer",
+        "task structure",
+        "operational skills",
+        "task complexity",
+        "knowledge reuse"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12184",
+      "abstract": "TRUST Agents is a collaborative multi-agent framework for explainable fact verification and fake news detection. Rather than treating verification as a simple true-or-false classification task, the system identifies verifiable claims, retrieves relevant evidence, compares claims against that evidence, reasons under uncertainty, and generates explanations that humans can inspect. The baseline pipeline consists of four specialized agents. A claim extractor uses named entity recognition, dependency parsing, and LLM-based extraction to identify factual claims. A retrieval agent performs hybrid sparse and dense search using BM25 and FAISS. A verifier agent compares claims with retrieved evidence and produces verdicts with calibrated confidence. An explainer agent then generates a human-readable report with explicit evidence citations. To handle complex claims more effectively, we introduce a research-oriented extension with three additional components: a decomposer agent inspired by LoCal-style claim decomposition, a Delphi-inspired multi-agent jury with specialized verifier personas, and a logic aggregator that combines atomic verdicts using conjunction, disjunction, negation, and implication. We evaluate both pipelines on the LIAR benchmark against fine-tuned BERT, fine-tuned RoBERTa, and a zero-shot LLM baseline. Although supervised encoders remain stronger on raw metrics, TRUST Agents improves interpretability, evidence transparency, and reasoning over compound claims. Results also show that retrieval quality and uncertainty calibration remain the main bottlenecks in trustworthy automated fact verification.",
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Topic Modeling",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "fake news detection",
+        "fact-checking",
+        "multi-agent systems",
+        "claim extraction",
+        "evidence retrieval",
+        "uncertainty calibration",
+        "claim decomposition",
+        "LLM agents"
+      ]
+    },
+    {
+      "id": "doi:10.1080/10447318.2026.2648805",
+      "abstract": "As generative AI becomes embedded in adolescents’ everyday lives, it is important to understand what young users want from these systems, what concerns they hold, and how these perspectives should shape youth-centered AI design. This study investigates early adolescents’ perspectives on generative AI through a four-week art-based participatory workshop with 55 middle school students. Using comic storytelling, AI-themed clay modeling, and reflective discussions, participants expressed their understandings, concerns, and expectations through visual and narrative artifacts. Inductive qualitative analysis revealed recurring patterns in how youths imagined AI’s roles, articulated tensions around autonomy, dependency, and responsibility, and identified values important for maintaining agentic relationships with AI. Our findings show that participants came to recognize the importance of autonomy, critical understanding, and relational boundaries in engaging with AI. Based on these insights, we propose design implications for youth-centered AI systems that support agency and developmentally appropriate, ethically grounded engagement.",
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Teaching and Learning Programming",
+        "Innovative Human-Technology Interaction"
+      ],
+      "keywords": [
+        "generative AI",
+        "adolescents",
+        "participatory design",
+        "clay modeling",
+        "autonomy",
+        "dependency",
+        "responsibility",
+        "relational boundaries",
+        "junior high school students",
+        "Participatory design",
+        "Perspective (graphical)",
+        "Agency (philosophy)",
+        "Citizen journalism",
+        "Context (archaeology)",
+        "Government (linguistics)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.12817",
+      "abstract": "Adversarial training (AT) is an effective defense for large language models (LLMs) against jailbreak attacks, but performing AT on LLMs is costly. To improve the efficiency of AT for LLMs, recent studies propose continuous AT (CAT) that searches for adversarial inputs within the continuous embedding space of LLMs during AT. While CAT has achieved empirical success, its underlying mechanism, i.e., why adversarial perturbations in the embedding space can help LLMs defend against jailbreak prompts synthesized in the input token space, remains unknown. This paper presents the first theoretical analysis of CAT on LLMs based on in-context learning (ICL) theory. For linear transformers trained with adversarial examples from the embedding space on in-context linear regression tasks, we prove a robust generalization bound that has a negative correlation with the perturbation radius in the embedding space. This clearly explains why CAT can defend against jailbreak prompts from the LLM's token space. Further, the robust bound shows that the robustness of an adversarially trained LLM is closely related to the singular values of its embedding matrix. Based on this, we propose to improve LLM CAT by introducing an additional regularization term, which depends on singular values of the LLM's embedding matrix, into the objective function of CAT. Experiments on real-world LLMs demonstrate that our method can help LLMs achieve a better jailbreak robustness-utility tradeoff. The code is available at https://github.com/fshp971/continuous-adv-icl.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Topic Modeling",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "keywords": [
+        "large language models",
+        "jailbreak attacks",
+        "in-context learning",
+        "adversarial perturbations",
+        "embedding space",
+        "linear transformer",
+        "singular values",
+        "adversarial examples"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2606.00019",
+      "abstract": "Ambient artificial intelligence (AI) documentation tools are increasingly deployed to reduce clinician documentation burden, but their implications for biased language in clinical notes remain unclear. We conducted a large-scale comparison analysis of AI drafts and corresponding clinician finalized notes to quantify stigmatizing language changes pre- and post-editing. Using a lexicon-based natural language processing (NLP) pipeline, we measured (1) the prevalence of stigmatizing language in AI drafts, (2) the prevalence and term composition in final notes, and (3) the frequency of removal or introduction of stigmatizing terms. Across 66,297 paired note sections, 21.4% of AI draft sections contained at least one stigmatizing language mention, rising to 24.0% in clinician finalized versions. Introductions occurred more often than removals, suggesting clinician editing can be a net source of stigmatizing language entering the EHR with using Ambient AI.",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Electronic Health Records Systems",
+        "Clinical Reasoning and Diagnostic Skills"
+      ],
+      "keywords": [
+        "stigmatizing language",
+        "clinical documentation",
+        "ambient AI",
+        "electronic health records",
+        "language bias",
+        "health disparities"
+      ]
+    },
+    {
+      "id": "doi:10.3389/fmed.2026.1798546",
+      "abstract": "Introduction: This scoping review examines the use of extended reality head-mounted displays (XRHMD), including virtual, augmented, and mixed reality, across medical and nursing educational settings. Methods: A comprehensive search of PubMed, CINAHL, and Scopus identified 29 U.S.-based studies that met the inclusion criteria. Results: Based on the studies examined, XR modalities were utilized across various skill and knowledge domains, including anatomy instruction, procedural rehearsal, emergency response, and surgical training. Most studies reported high learner satisfaction, citing enhanced engagement, spatial understanding, and opportunities for repeated, standardized practice. Knowledge gains were mixed, with 60% of studies showing improvement, while others demonstrated no significant advantage over traditional methods. Examination of feasibility outcomes highlighted the promise of XR for scalable, remote, and immersive instruction; however, implementation challenges were frequently reported, including technical limitations (battery life, connectivity, field of view), ergonomic concerns, and mild physiological side effects such as dizziness and visual strain. Discussion: Despite noted barriers, XR demonstrated benefits for complex spatial learning and procedural skill development, particularly when integrated into curricula with structured pre-briefing and debriefing. This review supports that XRHMD is a feasible, engaging, and educationally valuable modality, with greatest impact within blended, mastery-oriented health care education curricula where opportunities for repeated, standardized practice and three-dimensional visualization are critical for enhancing skill acquisition and spatial understanding. However, further longitudinal and standardized research is needed to inform best practices and long-term outcomes.",
+      "topics": [
+        "Augmented Reality Applications",
+        "Virtual Reality Applications and Impacts",
+        "Surgical Simulation and Training"
+      ],
+      "keywords": [
+        "extended reality",
+        "head-mounted displays",
+        "virtual reality",
+        "augmented reality",
+        "mixed reality",
+        "medical education",
+        "nursing education",
+        "anatomy education",
+        "procedural training",
+        "surgical training",
+        "emergency response training",
+        "student satisfaction",
+        "debriefing",
+        "immersive learning",
+        "blended learning"
+      ]
+    },
+    {
+      "id": "doi:10.1080/14739879.2026.2633733",
+      "abstract": "In primary care settings, clinicians' awareness of the situations surrounding physician-patient interactions is crucial for clinical reasoning and decision-making. However, there are limited opportunities to cultivate situational awareness explicitly. To bridge this gap, we conducted a novel one-day workshop informed by ethnographic fieldwork, in which participants were encouraged to attend to compare clinical encounters with other encounters in conspicuously different situations and to engage in 'frame reflection'. In the work, through considering why some areas had a different atmosphere or shop assistants' smiles seemed smarmy, participants found that their interpretations are affected by the typically taken-for-granted notion. One participant then realised that he could have missed the signs and the clues arising both from the patient and the surrounding circumstances. In conclusion, our ethnographic fieldwork session to perform quasi-clinical tasks in unfamiliar settings helped participants to recognise how tacit knowledge and frames guided and influenced their observations and interpretations. This, in turn, led to a reflection on what is taken for granted in familiar clinical encounters. An ethnographic fieldwork with quasi-clinical tasks can facilitate comparative reflection of clinical tasks between familiar and unfamiliar settings, which broadens and sharpens situational awareness through frame reflection.",
+      "topics": [
+        "Clinical Reasoning and Diagnostic Skills",
+        "Empathy and Medical Education",
+        "Innovations in Medical Education"
+      ],
+      "keywords": [
+        "situational awareness",
+        "ethnographic fieldwork",
+        "clinical reasoning",
+        "physician-patient interaction",
+        "tacit knowledge",
+        "clinical decision-making",
+        "primary care education",
+        "workshop design"
+      ]
+    },
+    {
+      "id": "doi:10.1080/20473869.2026.2653019",
+      "abstract": "Objectives This study aimed to design, implement, and evaluate a robotic exercise coaching system for children, with the focus on children with special educational needs (SEN). A preliminary evaluation was conducted to examine its effects on psychological need satisfaction, intrinsic motivation, and enjoyment of physical activity among children with SEN.Methods An initial evaluation was conducted with 16 children with SEN. Psychological need satisfaction and intrinsic motivation were assessed using the Basic Psychological Needs in Physical Education scale (BPN-PE) and the Intrinsic Motivation Inventory (IMI), respectively, administered after the first and the final session. Enjoyment was measured at the final session using Physical Activity Enjoyment Scale (PACES-S). Pre–post differences were analysed using Wilcoxon Signed-Rank tests with effect sizes calculated, while PACES-S data were analysed descriptively to capture affective responses.Results Results indicated statistically significant improvements across all BPN-PE subscales, with the largest effect observed for competence satisfaction, followed by relatedness and autonomy satisfaction. IMI results showed significant increases in Interest/Enjoyment, Perceived competence, and Effort/Importance, alongside a significant reduction in Pressure/Tension. PACES-S results revealed high levels of enjoyment associated with the robot-supported physical activity sessions.Conclusions The findings suggest that robot-supported exercise system may represent a promising approach for enhancing motivation and participation among children with SEN.",
+      "topics": [
+        "Motivation and Self-Concept in Sports",
+        "Social Robot Interaction and HRI",
+        "Inclusion and Disability in Education and Sport"
+      ],
+      "keywords": [
+        "children with special educational needs",
+        "intrinsic motivation",
+        "psychological need satisfaction",
+        "physical activity enjoyment",
+        "autonomy satisfaction",
+        "relatedness satisfaction",
+        "competence satisfaction",
+        "physical education"
+      ]
+    },
     {
       "id": "doi:10.1080/15459624.2026.2649753",
       "abstract": "The digital transformation of the economy and rising labor demands have increased the relevance of psychosocial risk management. The Copenhagen Psychosocial Questionnaire (COPSOQ) is a widely used international tool for assessing these risks. This study aimed to validate the Russian version of COPSOQ III (COPSOQ-RU) to ensure its reliability and applicability for assessing psychosocial risks in Russian workplaces. The questionnaire was translated, culturally adapted, and piloted with 290 participants. The main survey included 1,075 valid responses. Internal consistency was evaluated using Cronbach's alpha (all dimensions > 0.60). Construct validity was assessed through exploratory factor analysis (EFA), which identified 22 factors explaining 65.9% of the variance. Confirmatory factor analysis (CFA) demonstrated excellent model fit (CFI = 0.99, RMSEA = 0.049, SRMR = 0.056). Most dimensions demonstrated satisfactory reliability and exhibited valid factor structures. However, certain items required revision. Strong correlations were identified between psychosocial risk dimensions and outcomes such as burnout and job satisfaction. The COPSOQ-RU was shown to be a valid and reliable tool for assessing psychosocial risks in Russian workplaces. Its implementation can support evidence-based occupational health interventions and contribute to improving employee well-being and working conditions in Russia.",
@@ -3603,327 +3916,6 @@
         "subset principle",
         "numerical magnitude representation",
         "neural network model"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.10971",
-      "abstract": "In the progress of industrial anomaly detection, general anomaly detection (GAD) is an emerging trend and also the ultimate goal. Unlike the conventional single- and multi-class AD, general AD aims to train a general AD model that can directly detect anomalies in diverse novel classes without any retraining or fine-tuning on the target data. Recently, Multimodal Large Language Models (MLLMs) have shown great promise in achieving general anomaly detection due to their revolutionary visual understanding and language reasoning capabilities. However, MLLM's general AD ability remains underexplored due to: (1) MLLMs are pretrained on amounts of data sourced from the Web, these data still have significant gaps with the data in AD scenarios. Moreover, the image-text pairs during pretraining are also not specifically for AD tasks. (2) The current mainstream AD datasets are image-based and not yet suitable for post-training MLLMs. To facilitate MLLM-based general AD research, we present MMR-AD, which is a comprehensive benchmark for both training and evaluating MLLM-based AD models. With MMR-AD, we reveal that the AD performance of current SOTA generalist MLLMs still falls far behind the industrial requirements. Based on MMR-AD, we also propose a baseline model, Anomaly-R1, which is a reasoning-based AD model that learns from the CoT data in MMR-AD and is further enhanced by reinforcement learning. Extensive experiments show that our Anomaly-R1 achieves remarkable improvements over generalist MLLMs in both anomaly detection and localization.",
-      "topics": [
-        "Anomaly Detection Techniques and Applications",
-        "Software System Performance and Reliability",
-        "Machine Fault Diagnosis Techniques"
-      ],
-      "keywords": [
-        "multimodal large language models",
-        "benchmarking",
-        "industrial anomaly detection",
-        "anomaly localization",
-        "reinforcement learning",
-        "image-text pairs"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.11259",
-      "abstract": "Mobile GUI agents powered by Multimodal Large Language Models (MLLMs) can execute complex tasks on mobile devices. Despite this progress, most existing systems still optimize task success or efficiency, neglecting users' privacy personalization. In this paper, we study the often-overlooked problem of agent personalization. We observe that personalization can induce systematic structural heterogeneity in execution trajectories. For example, privacy-first users often prefer protective actions, e.g., refusing permissions, logging out, and minimizing exposure, leading to logically different execution trajectories from utility-first users. Such variable-length and structurally different trajectories make standard preference optimization unstable and less informative. To address this issue, we propose Trajectory Induced Preference Optimization (TIPO), which uses preference-intensity weighting to emphasize key privacy-related steps and padding gating to suppress alignment noise. Results on our Privacy Preference Dataset show that TIPO improves persona alignment and distinction while preserving strong task executability, achieving 65.60% SR, 46.22 Compliance, and 66.67% PD, outperforming existing optimization methods across various GUI tasks. The code and dataset will be publicly released at https://github.com/Zhixin-L/TIPO.",
-      "topics": [
-        "Recommender Systems and Techniques",
-        "Advanced Malware Detection Techniques",
-        "Persona Design and Applications"
-      ],
-      "keywords": [
-        "mobile GUI agents",
-        "preference optimization",
-        "multimodal large language models",
-        "trajectory heterogeneity"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s44430-026-00026-4",
-      "abstract": "Search and rescue (SAR) operations in post-disaster environments often involve complex terrain, limited visibility, and high safety risks for human responders. While unmanned aerial vehicles (UAVs) are effective for rapid exploration and target localization, their limited payload capacity and endurance restrict their ability to perform sustained ground-level tasks. Quadruped robots, in contrast, are well suited for traversing unstructured terrain and carrying equipment, but they typically lack global situational awareness. Based on the multi-agent reinforcement learning (MARL) framework and hierarchical multi-stage reinforcement learning (HMRL) algorithm, this paper proposes a multi-stage hierarchical multi-agent reinforcement learning method (MHMARL). This method is introduced to train a heterogeneous multi-agent collaborative system consisting of a UAV and a robotic dog (ANYmal-C), enabling the UAV to guide the dog to complete SAR operations in post disaster rescue scenarios. The proposed approach is evaluated in a high-fidelity simulation environment built on Isaac Lab. Experimental results demonstrate that, compared with direct end-to-end MARL training, the proposed method achieves more stable training and reliable UAV-quadruped coordination across multiple SAR scenarios.",
-      "topics": [
-        "UAV Applications and Optimization",
-        "Distributed Control Multi-Agent Systems",
-        "Robotics and Sensor-Based Localization"
-      ],
-      "keywords": [
-        "search and rescue",
-        "multi-agent reinforcement learning",
-        "post-disaster rescue",
-        "heterogeneous multi-agent systems"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.11730",
-      "abstract": "Using behavioural science, health interventions focus on behaviour change by providing a framework to help patients acquire and maintain healthy habits that improve medical outcomes. In-person interventions are costly and difficult to scale, especially in resource-limited regions. Digital health interventions offer a cost-effective approach, potentially supporting independent living and self-management. Automating such interventions, especially through machine learning, has recently gained considerable attention. Ambivalence and hesitancy (A/H) play a primary role for individuals to delay, avoid, or abandon health interventions. A/H are subtle and conflicting emotions that place a person in a state between positive and negative evaluations of a behaviour, or between acceptance and refusal to engage in it. They manifest as affective inconsistency across modalities or within a modality, such as language, facial, vocal expressions, and body language. While experts can be trained to recognize A/H, integrating them into digital health interventions is costly and less effective. Automatic A/H recognition is therefore critical for the personalization and cost-effectiveness of digital health interventions. Here, we explore the application of deep learning models for A/H recognition in videos, a multi-modal task by nature. In particular, this paper covers three learning setups: supervised learning, unsupervised domain adaptation for personalization, and zero-shot inference via large language models (LLMs). Our experiments are conducted on the unique and recently published BAH video dataset for A/H recognition. Our results show limited performance, suggesting that more adapted multi-modal models are required for accurate A/H recognition. Better methods for modeling spatio-temporal and multimodal fusion are necessary to leverage conflicts within/across modalities.",
-      "topics": [
-        "Emotion and Mood Recognition",
-        "Digital Mental Health Interventions",
-        "Mental Health via Writing"
-      ],
-      "keywords": [
-        "multimodal emotion recognition",
-        "video analysis",
-        "digital health interventions",
-        "personalized health interventions",
-        "domain adaptation",
-        "zero-shot inference",
-        "large language models",
-        "spatiotemporal fusion",
-        "behavior change"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.12076",
-      "abstract": "The Identifiable Victim Effect (IVE) $-$ the tendency to allocate greater resources to a specific, narratively described victim than to a statistically characterized group facing equivalent hardship $-$ is one of the most robust findings in moral psychology and behavioural economics. As large language models (LLMs) assume consequential roles in humanitarian triage, automated grant evaluation, and content moderation, a critical question arises: do these systems inherit the affective irrationalities present in human moral reasoning? We present the first systematic, large-scale empirical investigation of the IVE in LLMs, comprising N=51,955 validated API trials across 16 frontier models spanning nine organizational lineages (Google, Anthropic, OpenAI, Meta, DeepSeek, xAI, Alibaba, IBM, and Moonshot). Using a suite of ten experiments $-$ porting and extending canonical paradigms from Small et al. (2007) and Kogut and Ritov (2005) $-$ we find that the IVE is prevalent but strongly modulated by alignment training. Instruction-tuned models exhibit extreme IVE (Cohen's d up to 1.56), while reasoning-specialized models invert the effect (down to d=-0.85). The pooled effect (d=0.223, p=2e-6) is approximately twice the single-victim human meta-analytic baseline (d$\\approx$0.10) reported by Lee and Feeley (2016) $-$ and likely exceeds the overall human pooled effect by a larger margin, given that the group-victim human effect is near zero. Standard Chain-of-Thought (CoT) prompting $-$ contrary to its role as a deliberative corrective $-$ nearly triples the IVE effect size (from d=0.15 to d=0.41), while only utilitarian CoT reliably eliminates it. We further document psychophysical numbing, perfect quantity neglect, and marginal in-group/out-group cultural bias, with implications for AI deployment in humanitarian and ethical decision-making contexts.",
-      "topics": [
-        "Psychology of Moral and Emotional Judgment",
-        "Ethics and Social Impacts of AI",
-        "Innovation, Sustainability, Human-Machine Systems"
-      ],
-      "keywords": [
-        "identifiable victim effect",
-        "large language models",
-        "moral reasoning",
-        "AI alignment",
-        "chain-of-thought prompting",
-        "utilitarian reasoning",
-        "in-group favoritism",
-        "humanitarian decision-making",
-        "content moderation"
-      ]
-    },
-    {
-      "id": "doi:10.1177/15413446261442461",
-      "abstract": "Examining generative AI through the lens of transformative learning theory, this article conceptualizes AI as a potential disorienting dilemma for adult learners and educators. Critiquing AI applications using Mezirow’s (Cranton & Taylor, 2012) learning theory, this article shows that generative AI simultaneously short-circuits the kinds of cognitive engagement needed for transformative learning and upsets the learners’ most basic assumptions about expertise, intelligence, and learning. This article reworks the logic of transformative learning theory and establishes specific conditions that make AI-mediated learning possible as well as certain conditions in which AI-mediated learning precludes perspective transformation. The article has three theoretical contributions: (1) transformational learning necessitates irreducible personal engagement with premise-level complexity, (2) technological disruption triggers transformational learning only when it upends ontological, as opposed to procedural, assumptions, and (3) AI-mediated learning can only scaffold but not replace critical reflection, situating it as a “sophisticated” disorienting dilemma.",
-      "topics": [
-        "Adult and Continuing Education Topics",
-        "Educational Leadership and Innovation",
-        "Digital Education and Society"
-      ],
-      "keywords": [
-        "generative AI",
-        "transformative learning",
-        "disorienting dilemma",
-        "adult education",
-        "continuing education",
-        "Mezirow",
-        "critical reflection",
-        "AI-mediated learning",
-        "technological disruption",
-        "homography",
-        "ontological assumptions"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.chaos.2026.118340",
-      "abstract": null,
-      "topics": [
-        "Traffic control and management",
-        "Vehicle Dynamics and Control Systems",
-        "Traffic Prediction and Management Techniques"
-      ],
-      "keywords": [
-        "traffic flow stability",
-        "nonlinear dynamics",
-        "car-following model",
-        "stop-and-go waves",
-        "string stability",
-        "linear stability analysis",
-        "connected and automated vehicles",
-        "mixed traffic",
-        "vehicle platooning",
-        "driver characteristics",
-        "time delay",
-        "road geometry",
-        "traffic waves"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.11543",
-      "abstract": "Novelty is a core requirement in academic publishing and a central focus of peer review, yet the growing volume of submissions has placed increasing pressure on human reviewers. While large language models (LLMs), including those fine-tuned on peer review data, have shown promise in generating review comments, the absence of a dedicated benchmark has limited systematic evaluation of their ability to assess research novelty. To address this gap, we introduce NovBench, the first large-scale benchmark designed to evaluate LLMs' capability to generate novelty evaluations in support of human peer review. NovBench comprises 1,684 paper-review pairs from a leading NLP conference, including novelty descriptions extracted from paper introductions and corresponding expert-written novelty evaluations. We focus on both sources because the introduction provides a standardized and explicit articulation of novelty claims, while expert-written novelty evaluations constitute one of the current gold standards of human judgment. Furthermore, we propose a four-dimensional evaluation framework (including Relevance, Correctness, Coverage, and Clarity) to assess the quality of LLM-generated novelty evaluations. Extensive experiments on both general and specialized LLMs under different prompting strategies reveal that current models exhibit limited understanding of scientific novelty, and that fine--tuned models often suffer from instruction-following deficiencies. These findings underscore the need for targeted fine-tuning strategies that jointly improve novelty comprehension and instruction adherence.",
-      "topics": [
-        "Expert finding and Q&A systems",
-        "Text Readability and Simplification",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "peer review",
-        "large language models",
-        "benchmark",
-        "LLM fine-tuning",
-        "instruction following",
-        "novelty evaluation",
-        "evaluation framework",
-        "prompting strategies"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.10866",
-      "abstract": "AI agents are expected to perform professional work across hundreds of occupational domains (from emergency department triage to nuclear reactor safety monitoring to customs import processing), yet existing benchmarks can only evaluate agents in the few domains where public environments exist. We introduce OccuBench, a benchmark covering 100 real-world professional task scenarios across 10 industry categories and 65 specialized domains, enabled by Language Environment Simulators (LESs) that simulate domain-specific environments through LLM-driven tool response generation. Our multi-agent synthesis pipeline automatically produces evaluation instances with guaranteed solvability, calibrated difficulty, and document-grounded diversity. OccuBench evaluates agents along two complementary dimensions: task completion across professional domains and environmental robustness under controlled fault injection (explicit errors, implicit data degradation, and mixed faults). We evaluate 15 frontier models across 8 model families and find that: (1) no single model dominates all industries, as each has a distinct occupational capability profile; (2) implicit faults (truncated data, missing fields) are harder than both explicit errors (timeouts, 500s) and mixed faults, because they lack overt error signals and require the agent to independently detect data degradation; (3) larger models, newer generations, and higher reasoning effort consistently improve performance. GPT-5.2 improves by 27.5 points from minimal to maximum reasoning effort; and (4) strong agents are not necessarily strong environment simulators. Simulator quality is critical for LES-based evaluation reliability. OccuBench provides the first systematic cross-industry evaluation of AI agents on professional occupational tasks.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Topic Modeling",
-        "Multimodal Machine Learning Applications"
-      ],
-      "keywords": [
-        "AI agent evaluation",
-        "professional tasks",
-        "fault injection",
-        "data degradation",
-        "GPT-5.2",
-        "reasoning effort"
-      ]
-    },
-    {
-      "id": "doi:10.6084/m9.figshare.31991190.v1",
-      "abstract": "This paper presents a comprehensive survey of computational models of human vision, ranging from basic optical models and retinal sampling mechanisms to higher-level cognitive processes involving Bayesian inference and stochastic dynamics. While existing literature often treats these models in isolation, this work aims to compare and contrast them within a unifying framework centered on the inherent stochasticity of visual processing. The central objective is to quantitatively assess how well different models capture the uncertainty present at various stages of vision, and to understand their predictive power under noisy or ambiguous conditions. To achieve this, we propose a comparative stochastic analysis approach. For deterministic models such as those based on geometrical optics or Gestalt principles, we introduce stochastic perturbations by modeling key parameters as random variables. We then analyze the behavior of these models, alongside inherently stochastic models like those based on Partial Differential Equations (PDEs) with noisy terms or Markov Chain Levy Walk frameworks for eye movements, using analytical techniques and Monte Carlo simulations to characterize the resulting probability distributions of their outputs. These implementations were performed numerically via numerical methods for stochastic processes such as Milstein, Euler-Maruyama, Rosenbrock and Stochastic Galerkin Methods. The performance of each model is evaluated using quantitative metrics, including predictive accuracy in psychophysical tasks, robustness to input noise, statistical efficiency, and explicit representation of uncertainty. We examine how forward backward stochastic differential equations can be used to perform these tasks as well. The preliminary findings suggest that more sophisticated stochastic models, particularly those incorporating hierarchical Bayesian inference and stochastic dynamics, better capture human performance in complex visual tasks compared to purely deterministic or simplified stochastic models. Further the hybrid Markov Chain and Levy Walk model provide better insight on saccades based eye movement vision. The findings of the study provide insights into the mathematical underpinnings of human vision. The models presented offer a way to simulate and understand how the brain processes visual information. The generalized PDE model and the FBSDE model provide frameworks for future research. The numerical implementation and simulation methods offer practical tools for further exploration of these models.",
-      "topics": [
-        "Visual perception and processing mechanisms",
-        "Neural and Behavioral Psychology Studies",
-        "Visual Attention and Saliency Detection"
-      ],
-      "keywords": [
-        "uncertainty quantification",
-        "Bayesian inference",
-        "stochastic differential equations",
-        "forward-backward stochastic differential equations",
-        "eye movements",
-        "saccades",
-        "retinal sampling",
-        "geometrical optics",
-        "Gestalt principles",
-        "stochastic Galerkin method",
-        "Monte Carlo simulation",
-        "psychophysics",
-        "noise robustness"
-      ]
-    },
-    {
-      "id": "doi:10.6084/m9.figshare.31991190",
-      "abstract": "This paper presents a comprehensive survey of computational models of human vision, ranging from basic optical models and retinal sampling mechanisms to higher-level cognitive processes involving Bayesian inference and stochastic dynamics. While existing literature often treats these models in isolation, this work aims to compare and contrast them within a unifying framework centered on the inherent stochasticity of visual processing. The central objective is to quantitatively assess how well different models capture the uncertainty present at various stages of vision, and to understand their predictive power under noisy or ambiguous conditions. To achieve this, we propose a comparative stochastic analysis approach. For deterministic models such as those based on geometrical optics or Gestalt principles, we introduce stochastic perturbations by modeling key parameters as random variables. We then analyze the behavior of these models, alongside inherently stochastic models like those based on Partial Differential Equations (PDEs) with noisy terms or Markov Chain Levy Walk frameworks for eye movements, using analytical techniques and Monte Carlo simulations to characterize the resulting probability distributions of their outputs. These implementations were performed numerically via numerical methods for stochastic processes such as Milstein, Euler-Maruyama, Rosenbrock and Stochastic Galerkin Methods. The performance of each model is evaluated using quantitative metrics, including predictive accuracy in psychophysical tasks, robustness to input noise, statistical efficiency, and explicit representation of uncertainty. We examine how forward backward stochastic differential equations can be used to perform these tasks as well. The preliminary findings suggest that more sophisticated stochastic models, particularly those incorporating hierarchical Bayesian inference and stochastic dynamics, better capture human performance in complex visual tasks compared to purely deterministic or simplified stochastic models. Further the hybrid Markov Chain and Levy Walk model provide better insight on saccades based eye movement vision. The findings of the study provide insights into the mathematical underpinnings of human vision. The models presented offer a way to simulate and understand how the brain processes visual information. The generalized PDE model and the FBSDE model provide frameworks for future research. The numerical implementation and simulation methods offer practical tools for further exploration of these models.",
-      "topics": [
-        "Visual perception and processing mechanisms",
-        "Neural and Behavioral Psychology Studies",
-        "Visual Attention and Saliency Detection"
-      ],
-      "keywords": [
-        "uncertainty quantification",
-        "Bayesian inference",
-        "stochastic differential equations",
-        "forward-backward stochastic differential equations",
-        "eye movements",
-        "saccades",
-        "retinal sampling",
-        "geometrical optics",
-        "Gestalt principles",
-        "stochastic Galerkin method",
-        "Monte Carlo simulation",
-        "psychophysics",
-        "noise robustness"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.11477",
-      "abstract": "The alignment of Multi-Agent Systems (MAS) for autonomous software engineering is constrained by evaluator epistemic uncertainty. Current paradigms, such as Reinforcement Learning from Human Feedback (RLHF) and AI Feedback (RLAIF), frequently induce model sycophancy, while execution-based environments suffer from adversarial \"Test Evasion\" by unconstrained agents. In this paper, we introduce an objective alignment paradigm: \\textbf{Out-of-Money Reinforcement Learning (OOM-RL)}. By deploying agents into the non-stationary, high-friction reality of live financial markets, we utilize critical capital depletion as an un-hackable negative gradient. Our longitudinal 20-month empirical study (July 2024 -- February 2026) chronicles the system's evolution from a high-turnover, sycophantic baseline to a robust, liquidity-aware architecture. We demonstrate that the undeniable ontological consequences of financial loss forced the MAS to abandon overfitted hallucinations in favor of the \\textbf{Strict Test-Driven Agentic Workflow (STDAW)}, which enforces a Byzantine-inspired uni-directional state lock (RO-Lock) anchored to a deterministically verified $\\geq 95\\%$ code coverage constraint matrix. Our results show that while early iterations suffered severe execution decay, the final OOM-RL-aligned system achieved a stable equilibrium with an annualized Sharpe ratio of 2.06 in its mature phase. We conclude that substituting subjective human preference with rigorous economic penalties provides a robust methodology for aligning autonomous agents in high-stakes, real-world environments, laying the groundwork for generalized paradigms where computational billing acts as an objective physical constraint",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "Mobile Crowdsensing and Crowdsourcing",
-        "Advanced Software Engineering Methodologies"
-      ],
-      "keywords": [
-        "multi-agent systems",
-        "LLM alignment",
-        "financial markets",
-        "code coverage",
-        "fines",
-        "reinforcement learning from human feedback"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.12048",
-      "abstract": "Large-scale migration of legacy C code to Rust offers a promising path toward improving memory safety, but LLM-based C-to-Rust translation remains challenging due to limited context windows and hallucinations. Prior approaches are evaluated primarily on small programs or datasets skewed toward small codebases, providing limited insight into scalability on real-world systems. They also rely on static context construction, which breaks down in the presence of complex cross-module dependencies and often requires manual intervention. Recent coding agents offer a promising alternative through dynamic codebase navigation and context curation. When used out of the box, however, they frequently produce incomplete translations that appear superficially correct. We present ORBIT, an autonomous agentic framework for project-level C-to-Rust translation that combines dynamic context collection with dependency-guided orchestration and iterative verification. ORBIT constructs a dependency-aware translation graph, generates Rust interfaces, maps C functions to Rust counterparts, and coordinates multiple specialized agents. We evaluate ORBIT on 24 programs from CRUST-Bench, with 91.7% of the programs exceeding 1,000 lines of code. ORBIT achieves 100% compilation success and 91.7% test success in both expert-interface and automatically generated-interface settings, substantially outperforming C2Rust and CRUST-Bench, while reducing unsafe Rust code blocks to nearly zero. We further evaluate ORBIT on challenging cases from the DARPA TRACTOR benchmark, where it achieves competitive performance relative to participating systems.",
-      "topics": [
-        "Software Testing and Debugging Techniques",
-        "Logic, programming, and type systems",
-        "Parallel Computing and Optimization Techniques"
-      ],
-      "keywords": [
-        "legacy code migration",
-        "Rust",
-        "large language models",
-        "coding agents",
-        "multi-agent orchestration",
-        "memory safety"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.10959",
-      "abstract": "Intelligent Transportation Systems increasingly depend on heterogeneous data from roadside cameras, UAV imagery, LiDAR, and in-vehicle sensors, yet the lack of unified data standards, model interfaces, and evaluation protocols across these sources hampers reproducibility, cross-dataset benchmarking, and cross-region transferability of research findings. Existing trajectory datasets follow incompatible conventions for coordinate systems, object representations, and metadata fields, forcing researchers to build custom preprocessing pipelines for each dataset and simulator combination. To address these challenges, we propose Ozone, a unified platform for transportation research organized around five interconnected layers -- Hardware, Data, Model, Evaluation, and Prototype -- each with standardized schemas, automated conversion pipelines, and interoperable interfaces. In the first release, the data schema unifies four trajectory datasets -- NGSIM, highD, CitySim, and UTE -- into a canonical format with oriented bounding boxes, kinematic variables, and pre-computed surrogate safety measures. Digital-twin maps in CARLA and calibrated traffic models provide integrated benchmarking environments. Case studies in human-factor research, traffic scene generation, and safety-critical modeling demonstrate that Ozone reduces experiment setup time by 85%, achieves 91% cross-city transfer efficiency for safety models, and improves cross-dataset reproducibility to within 3% variance. The source code and datasets are publicly available.",
-      "topics": [
-        "cs.DB",
-        "cs.CY",
-        "Traffic Prediction and Management Techniques",
-        "Traffic and Road Safety",
-        "Vehicle emissions and performance"
-      ],
-      "keywords": [
-        "Interoperability",
-        "Benchmarking",
-        "Metadata",
-        "Correctness",
-        "Data integration",
-        "Data modeling",
-        "Trajectory",
-        "Preprocessor",
-        "Pipeline transport"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.11808",
-      "abstract": "Generating high-fidelity 3D indoor scenes remains a significant challenge due to data scarcity and the complexity of modeling intricate spatial relations. Current methods often struggle to scale beyond training distribution to dense scenes or rely on LLMs/VLMs that lack the ability for precise spatial reasoning. Building on top of the observation that object placement relies mainly on local dependencies instead of information-redundant global distributions, in this paper, we propose Pair2Scene, a novel procedural generation framework that integrates learned local rules with scene hierarchies and physics-based algorithms. These rules mainly capture two types of inter-object relations, namely support relations that follow physical hierarchies, and functional relations that reflect semantic links. We model these rules through a network, which estimates spatial position distributions of dependent objects conditioned on position and geometry of the anchor ones. Accordingly, we curate a dataset 3D-Pairs from existing scene data to train the model. During inference, our framework can generate scenes by recursively applying our model within a hierarchical structure, leveraging collision-aware rejection sampling to align local rules into coherent global layouts. Extensive experiments demonstrate that our framework outperforms existing methods in generating complex environments that go beyond training data while maintaining physical and semantic plausibility.",
-      "topics": [
-        "3D Shape Modeling and Analysis",
-        "Robotics and Sensor-Based Localization",
-        "Robotic Path Planning Algorithms"
-      ],
-      "keywords": [
-        "procedural scene generation",
-        "support relations",
-        "functional relationships",
-        "spatial reasoning"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2604.11004",
-      "abstract": "In this work, we introduce a new perspective on comparative image assessment by representing an image pair as a structured composition of its regions. In contrast, existing methods focus on whole image analysis, while implicitly relying on region-level understanding. We extend the intra-image notion of a scene graph to inter-image, and propose a novel task of Distortion Graph (DG). DG treats paired images as a structured topology grounded in regions, and represents dense degradation information such as distortion type, severity, comparison and quality score in a compact interpretable graph structure. To realize the task of learning a distortion graph, we contribute (i) a region-level dataset, PandaSet, (ii) a benchmark suite, PandaBench, with varying region-level difficulty, and (iii) an efficient architecture, Panda, to generate distortion graphs. We demonstrate that PandaBench poses a significant challenge for state-of-the-art multimodal large language models (MLLMs) as they fail to understand region-level degradations even when fed with explicit region cues. We show that training on PandaSet or prompting with DG elicits region-wise distortion understanding, opening a new direction for fine-grained, structured pairwise image assessment.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Generative Adversarial Networks and Image Synthesis",
-        "Domain Adaptation and Few-Shot Learning"
-      ],
-      "keywords": [
-        "multimodal large language models"
-      ]
-    },
-    {
-      "id": "doi:10.23969/jp.v11i02.44870",
-      "abstract": "The advancement of technology in the office sector has brought significant changes to employee work methods and administrative procedures. Office machines, as a form of modern technology, play a crucial role in enhancing efficiency and productivity within the office environment. This article comprehensively discusses the impact of office machine usage on employee work productivity, focusing on the benefits gained, changes in work procedures, the role of modern technology and ergonomics, as well as the challenges and drawbacks encountered during implementation. The use of office machines has been proven to accelerate the completion of administrative tasks, improve accuracy and quality of work output, and facilitate communication and coordination among departments. Additionally, the application of ergonomic principles in the use of office machines contributes to increased comfort and health of employees, which indirectly boosts motivation and performance. However, the implementation of office machines also faces various obstacles such as resistance to change, the need for training, acquisition and maintenance costs, and data security risks. Therefore, organizations need to manage the use of office machines optimally by considering technical aspects, human resources, and organizational culture to maximize benefits and minimize risks. This article aims to provide insights for practitioners and academics in understanding and managing office technology to sustainably improve work productivity.",
-      "topics": [
-        "Occupational Health and Safety Management",
-        "Facilities and Workplace Management",
-        "Ergonomics and Musculoskeletal Disorders"
-      ],
-      "keywords": [
-        "office equipment",
-        "labor productivity",
-        "workplace technology",
-        "human factors",
-        "administrative procedure",
-        "resistance to change",
-        "employee training",
-        "data security",
-        "office automation",
-        "organizational culture"
       ]
     }
   ]

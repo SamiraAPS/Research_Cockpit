@@ -1,7 +1,58 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.13140/rg.2.2.23242.73922",
+      "abstract": null,
+      "topics": [
+        "Team Dynamics and Performance",
+        "Knowledge Management and Sharing",
+        "Job Satisfaction and Organizational Behavior"
+      ],
+      "keywords": [
+        "Dependency (UML)",
+        "Perspective (graphical)",
+        "Matching (statistics)",
+        "Identification (biology)",
+        "Relevance (law)"
+      ]
+    },
+    {
+      "id": "doi:10.20944/preprints202609.0308.v1",
+      "abstract": "A large language model (LLM) agent is a model coupled to a harness: parametric weights that hold knowledge and reasoning ability, wrapped in an external apparatus of memory, tools, and orchestration through which the model perceives and acts. Progress over the past years has come from pushing on both, with stronger models and richer harnesses, but the design decision that quietly governs an agent’s behavior is where competence should live: which knowledge, skills, and control to internalize into the model’s parameters, and which to externalize onto the surrounding harness. These decisions increasingly determine whether an agent is reliable, efficient, and able to keep improving. We investigate this core problem through the lens of the Theory of Agent (ToA), which views an LLM agent not as a task executor but as an epistemic decision-maker in terms of reasoning or acting at every step. The two means it has for that epistemic uncertainty reduction, namely reasoning over what it already holds and acting on the world to obtain what it does not, are the run-time faces of internalization and externalization: reasoning draws on competence that has been absorbed into the model, while acting exploits competence that remains in the harness. We review this internalization and externalization across five chapters. Foundations sets up the basic picture: an agent that, at each step, decides whether to answer from what it already knows or reach outside for what it does not, and what separates a good version of that decision from a wasteful one. Learning examines how training places competence on either side of the boundary, spanning internalization of memory, reasoning, tool-use policy, and world models, and externalization of memory, skills, and orchestration. Aligning treats calibration as the connecting thread across an agent’s cognitive boundaries, efficiency constraints, human preferences, environment constraints, and other agents. Evolving studies how agents revise both sides of the boundary over time, from model-side and harness-side updates to agent–environment co-evolution. Evaluation reinterprets metrics and benchmarks by the epistemic effort they expose and argues for measuring the boundary decision rather than task completion alone. We conclude with the open problems that follow once internalization and externalization are treated as the governing axis of agent design.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Language and cultural evolution",
+        "Multi-Agent Systems and Negotiation"
+      ],
+      "keywords": [
+        "Externalization",
+        "Competence (human resources)",
+        "Internalization",
+        "Exploit",
+        "Through-the-lens metering"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.03309",
+      "abstract": "Test-time scaling for code generation typically explores the solution space by sampling multiple programs from a fixed instruction. We study a complementary direction: instance-level instruction-space exploration. Our observation is that many coding failures stem from missing constraints, overlooked edge cases, or misleading reasoning paths induced by the original prompt. To address this, we propose TipCoder, a test-time instruction proposer that generates problem-specific auxiliary tips before code synthesis. TipCoder distills multi-turn debugging trajectories into proactive guidance and further optimizes the Proposer with reinforcement learning using a marginal-utility reward. At inference time, it generates both a base solution and a tip-guided solution, and applies a Reward Model for post-hoc selection. This exploration-selection design allows tips to expose additional candidate potential while reducing regressions from unnecessary guidance. Across the evaluated code-generation benchmarks and target Code LLMs, TipCoder provides a consistent instruction-level test-time scaling strategy, comparing favorably with stochastic sampling and generic prompt optimization baselines under a shared reward-model-based selection protocol.",
+      "topics": [
+        "Software Testing and Debugging Techniques",
+        "Software Engineering Research",
+        "Software Engineering Techniques and Practices"
+      ],
+      "keywords": [
+        "Reinforcement learning",
+        "Debugging",
+        "Inference",
+        "Code (set theory)",
+        "Selection (genetic algorithm)",
+        "Coding (social sciences)",
+        "Source code",
+        "Base (topology)"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2609.04489",
       "abstract": "Pause-token methods improve LLM reasoning by inserting special tokens into sequences. Prior work explains these gains through computational expressivity. However, there is relatively little investigation into the training dynamics of pause tokens. We explore how pause tokens reshape the training dynamics of fine-tuning. Two controlled pilots expose distinct asymmetries. On a synthetic continual-learning task, masked pauses overwrite a previously-learned distribution roughly 4x less at matched final adaptation (H1, mode retention); on a synthetic math-reasoning probe, the boundary-adjacent token comes to encode substantially more downstream-step information (H2, non-myopic compression). We formalize a training rule consistent with both - Masked Boundary Pause (MBP), pause tokens placed at reasoning-step boundaries with their loss masked. Across 1B-8B Qwen and Llama models, MBP consistently improves reasoning, achieving gains of up to 6 points on math and 2.5 points on code, while preserving general language understanding abilities. We further demonstrate that this mode-preserving strategy extend gains to GRPO. These results recast pause tokens as a training-dynamics intervention on the retention-adaptation trade-off, rather than merely an inference-time computation device.",
@@ -3703,68 +3754,6 @@
         "Pooling",
         "Frequentist inference",
         "Bayesian probability"
-      ]
-    },
-    {
-      "id": "arxiv:2609.01591",
-      "abstract": "AI tutors are most useful when they adapt to each student's strengths, weaknesses, and preferred guidance, but evidence about which guidance works for which student is sparse, slow, and costly to collect from real learners. Student simulators can provide this signal as a proxy, yet existing approaches are limited: state-tracking models fit student behavior but struggle to process explanations or corrections, while LLM role-play follows guidance fluently but does not reliably match the competence of the student being imitated. We present StudentSim, a training framework that turns sparse per-student data into individualized simulators through pooled training followed by per-student specialization. The resulting simulators both mirror a student's own responses and update them under tutor guidance. We also introduce StudentSimEval, a standardized protocol covering 60 students across chess, second-language English writing, and mathematics, using public learner datasets with de-identified records shared for research. StudentSimEval measures behavioral fidelity (F), or how well a simulator matches a student's responses, and guidance responsiveness (R), or how readily it updates under tutor guidance, with all methods fit and evaluated on the same records. Across all three domains, StudentSim outperforms GPT-5.4 on both metrics. In chess, StudentSim reaches F=0.51 and R=0.91, compared with 0.23 and 0.72 for GPT-5.4 and 0.45 and 0.27 for Maia2. As a proof of concept, using StudentSim as a reward model for tutor reinforcement learning produces a chess tutor that expert humans rate as more accurate, better-guided, and more personalized than a no-RL baseline and a tutor trained against a GPT-5.4 simulator reward. Code is available at https://github.com/microsoft/StudentSim.",
-      "topics": [
-        "Intelligent Tutoring Systems and Adaptive Learning",
-        "Artificial Intelligence in Games",
-        "Reinforcement Learning in Robotics",
-        "cs.CL"
-      ],
-      "keywords": [
-        "TUTOR",
-        "Fidelity",
-        "Competence (human resources)",
-        "Process (computing)",
-        "Protocol (science)",
-        "Training (meteorology)",
-        "High fidelity"
-      ]
-    },
-    {
-      "id": "arxiv:2609.01275",
-      "abstract": "Frontier AI systems function as \\emph{constitutional institutions}: each deployed model encodes an implicit ranking among safety, helpfulness, honesty, autonomy, and equity. We ask whether the supply of frontier constitutional types covers human demand. Combining a paraphrase-controlled audit of the as-shipped default constitutions of $23$ frontier LLM archetypes with a pairwise-tradeoff study of $1{,}649$ US participants on the same instrument, we report three facts. \\emph{Demand is broad}: it spans all five values, with the largest constituency under one-third. \\emph{Supply is narrow and drifting}: the $23$-archetype hull occupies ${\\sim}2\\%$ of the demand hull under conservative noise-matched estimation ($0.10\\%$ at full audit precision), no archetype puts helpfulness or autonomy first ($37\\%$ of users are constitutionally homeless), and across six model families autonomy decreases in $5/6$, equity increases in $5/6$, and safety increases in $4/6$, with monotone within-family version trends (order-permutation $p = 0.013$) and the autonomy decline concentrated in scenarios where safety is not at stake. The drift's importance is directional: \\emph{away} from a value already undercovered, mechanically worsening the welfare floor for the least-served users. \\emph{The fix is sparse}: a $2$-vertex menu $\\{e_{\\mathrm{HON}}, e_{\\mathrm{AUT}}\\}$ beats the full $23$-archetype frontier by $47\\%$ on mean regret (CI $[43\\%, 52\\%]$); three vertex additions cut mean/worst-group regret by up to $81\\%$/$64\\%$. We formalize these findings as a budgeted-pluralism trilemma, show the binding regime is empirically realized, and verify the conclusions are robust to distance-based welfare and to degraded routing. The instrument and audit harness are described in full in the appendices.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Artificial Intelligence in Healthcare and Education",
-        "Explainable Artificial Intelligence (XAI)",
-        "cs.LG",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Corporate governance",
-        "Autonomy",
-        "Regret",
-        "Frontier",
-        "Leverage (statistics)",
-        "Audit",
-        "Negotiation",
-        "Dilemma",
-        "Portfolio",
-        "Restructuring"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.01503",
-      "abstract": "Learning- and LLM-based software vulnerability analysis is only as trustworthy as the data it is trained and evaluated on, yet that data is rarely examined as a first-class object. We investigate the data behind vulnerability analysis through a dataset-centric taxonomy that separates what an artifact is (code, metadata, patches, tests/PoCs, reasoning, traces), how good it is (realism, label evidence, scale, diversity, leakage, availability), and what it is used for. From a systematically assembled corpus of 1522 papers covering 2016-2026 plus foundational earlier work we deep-code a tiered set of 111 anchor papers, backing every affirmative rubric-graded value with a verbatim span, and we report, per attribute, both how much it has been studied and how well datasets achieve it. The results trace an evidence ladder: executable artifacts are the only major type where 15 of the 24 datasets are both graded real-world and carry labels that received an independent check, while code-sample datasets-the largest category in both the auto-tagged corpus and the anchor set-are the least realistic: 20 of the 41 draw their vulnerabilities from authentic projects or CVEs, but only 3 keep the sample at the unit the code is deployed in, and only 2 do both-though these are coarse component tests, and just one code-sample dataset meets the codebook's stricter full-context real-world grade. Among these, leakage goes unaddressed by 49 of the 90 datasets where it applies, more than a quarter say nothing about availability, reasoning data has arrived only recently and is mostly model-generated, and primary trace corpora remain limited to three datasets, the total after a corpus-wide screen and a full-text check of every candidate it surfaced, with further datasets releasing traces secondarily behind benchmarks and harnesses.",
-      "topics": [
-        "Software Engineering Research",
-        "Information and Cyber Security",
-        "Software Testing and Debugging Techniques"
-      ],
-      "keywords": [
-        "Executable",
-        "Artifact (error)",
-        "Software",
-        "Sample (material)",
-        "Vulnerability (computing)",
-        "Set (abstract data type)",
-        "TRACE (psycholinguistics)",
-        "Software inspection",
-        "Taxonomy (biology)"
       ]
     }
   ]

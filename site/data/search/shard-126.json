@@ -1,7 +1,64 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "arxiv:2608.15311",
+      "abstract": "Federated instruction fine-tuning enables Large Language Models (LLMs) to adapt to decentralized, privacy-sensitive data without requiring data sharing. Recent Mixture-of-Experts (MoE) LLMs are particularly attractive for federated learning because their sparse activation reduces computation and communication while scaling model capacity. However, existing federated MoE methods primarily focus on parameter aggregation and personalization, overlooking the routing behavior of MoE models as a source of information for client collaboration. Under heterogeneous instruction distributions, indiscriminate aggregation can lead to negative transfer, highlighting the need to identify which clients should collaborate during federated optimization. We propose ClientMorpher, a routing-aware, personalized federated instruction fine-tuning framework that leverages routing signatures from pretrained MoE models to organize client collaboration prior to aggregation. We investigate two complementary clustering strategies: ClientMorpher-C, which directly clusters clients using expert activation profiles, and ClientMorpher-E, which first clusters experts based on their cross-client usage signatures and then derives client collaboration groups. We evaluate ClientMorpher for federated instruction fine-tuning on the Databricks Dolly-15K dataset, using pathological and Dirichlet-based heterogeneous client distributions across multiple instruction-following tasks. Experimental results show that routing-aware collaboration consistently improves personalized performance compared to conventional federated averaging and local training, while maintaining the same communication cost. Furthermore, our study shows that client-centric and expert-centric clustering provides an effective and scalable approach for personalized federated instruction fine-tuning of sparse MoE LLMs.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "Advanced Graph Neural Networks",
+        "Big Data and Digital Economy",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Cluster analysis",
+        "Scalability",
+        "Federated learning",
+        "Focus (optics)",
+        "Routing (electronic design automation)",
+        "Computation",
+        "Component (thermodynamics)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.15436",
+      "abstract": "Frontier AI models have advanced rapidly, but they still struggle with telecom-specific tasks. We present Open Telco (OTel), an open telecom AI resource with derived datasets for retrieval, reranking, instruction tuning, and safety/abstention, plus 30 full-parameter post-trained baselines across embedding, reranking, and language models. The community has already engaged substantially with the resource: as of May 3, 2026, the released models have been downloaded over 16 million times, and the project has received 157+ pieces of media coverage worldwide. Building on prior open telecom datasets and benchmarks, OTel provides documented telecom data sources, held-out evaluation partitions, trained embedding models, rerankers, context-grounded LLMs, and safety/abstention data in one unified resource. OTel post-training improves performance across all three model families: embedding retrieval reaches 93.5% NDCG@10, reranking reaches 0.952 MRR@10, and language-model correctness reaches 88.2%. We release OTel as a reproducible starting point and invite the community to expand the data, improve embedding and reranking models, and build stronger context-grounded telecom LLMs.",
+      "topics": [
+        "Wireless Signal Modulation Classification",
+        "Advanced Data and IoT Technologies",
+        "Advanced Graph Neural Networks",
+        "cs.AI",
+        "cs.NI"
+      ],
+      "keywords": [
+        "Embedding",
+        "Correctness",
+        "Point (geometry)",
+        "Frontier",
+        "Resource (disambiguation)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.15309",
+      "abstract": "Continuous multimodal sensing now allows human physiology to be observed throughout daily life rather than only during occasional clinical visits. However, most health artificial intelligence systems are designed to recognize current states, estimate risks or analyse individual biomarkers. They do not directly model how physiological states change in response to real-world events, behaviours, contexts and interventions. Here we propose the Physiological World Model (PWM), an event-conditioned framework for learning these changes at the level of the whole person. We introduce the HumanState Transition Token, a structured, quality-scored unit that connects the physiological state before an event with the event or action, relevant context and intervention information, the physiological trajectory after the event, observed outcomes and data quality. We describe four capability levels, from state representation to bounded intervention planning, together with four data acquisition and validation protocols. We also propose six benchmark tasks covering HumanState representation, forecasting across multiple timescales, individualized response prediction, simulation of alternative interventions, bounded planning and reliability under distribution shift. Together, this framework provides a practical path towards personalized health management, behavioural intervention design and clinician-supervised decision support, while clearly separating prediction from causal inference and making uncertainty, safety, governance and limits of use explicit.",
+      "topics": [
+        "Machine Learning in Healthcare",
+        "Digital Mental Health Interventions",
+        "Mental Health Research Topics",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Context (archaeology)",
+        "Benchmark (surveying)",
+        "Event (particle physics)",
+        "Reliability (semiconductor)",
+        "Representation (politics)",
+        "Intervention (counseling)",
+        "Inference",
+        "Trajectory"
+      ]
+    },
     {
       "id": "arxiv:2608.15138",
       "abstract": "Designing an ABR algorithm for one network scenario takes an engineer months, and large language models now do this work in hours, matching or beating hand-built designs. But either way, the design fits only the world visible at its birth, and fails on the world that arrives after. We ask whether an ABR algorithm can keep pace with the world, redesigned in minutes as each scenario arrives, with every change proven harmless to every scenario already served. In this work, we propose ReForge, a continual heuristic learning framework that adapts to continuously changing scenarios. ReForge runs that routine with a large language model (LLM) in the loop. Each round the LLM reads where the current design falls short and proposes one small edit, and a replay over every network served so far decides. Specifically, what it edits is a single page of fuzzy rules that routes every decision to one of a frozen pool of pre-trained policies. The LLM writes the first page from measurements alone, then keeps improving it on its own. Each round it reads where the current rules fall short and proposes one small edit, and a replay over every network served so far decides whether the edit lands. We evaluate ReForge on nine real-world network families arriving one at a time as 3G, 4G, then 5G. A few edits per arrival lift mean QoE from 1.23 to 1.74, past the best single policy at 1.66 and to 94\\% of an oracle, and even repair families the loop never saw, one rising from 0.30 to 0.80. All code, data, and experiment records will be open-sourced upon cleanup.",
@@ -3680,67 +3737,6 @@
         "Order (exchange)",
         "Heuristic",
         "Strategic planning"
-      ]
-    },
-    {
-      "id": "arxiv:2608.11583",
-      "abstract": "Safety alignment in large language models is often treated as a distributed property of the entire network, yet its practical brittleness suggests that refusal behavior may be concentrated in a smaller set of parameters. This work addresses where safety-aligned refusal is encoded by transplanting weights from aligned models into matched unaligned base models at multiple levels of granularity. Using two open-weight model pairs and four safety benchmarks, we conducted experiments to compare the effects of replacing attention weights, MLP weights, contiguous layer regions, and MLP blocks. Across both model families, refusal transfer is dominated by MLP weights: replacing MLP parameters recovers substantially more malicious-prompt refusal than replacing attention parameters, with gains of at least 2.7 times more across benchmarks. Within the MLP stack, refusal-relevant parameters exhibit a consistent mid-network concentration, as the block spanning layers 8-11 is selected first in all six greedy searches over model-dataset pairs. The results also show that the composition of safety-relevant components is non-additive: in five of six greedy trajectories, adding more aligned blocks can reduce refusal performance, and selective block subsets can outperform full MLP transplantation on malicious refusal, benign over-refusal, or both. Finally, greedy orders transferred to OR-Bench vary with the source benchmark used to derive them, indicating a benchmark-dependent precision-coverage trade-off. These results suggest that safety alignment in current LLMs is both localized and interaction-sensitive, offering insight into alignment brittleness and potential avenues for targeted safety interventions.",
-      "topics": [
-        "Topic Modeling",
-        "Natural Language Processing Techniques",
-        "Adversarial Robustness in Machine Learning",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Block (permutation group theory)",
-        "Set (abstract data type)",
-        "Greedy algorithm",
-        "Benchmark (surveying)",
-        "Layer (electronics)",
-        "Language model",
-        "Transfer (computing)",
-        "ENCODE"
-      ]
-    },
-    {
-      "id": "arxiv:2608.11922",
-      "abstract": "Predictive-distribution entropy is a strong answer-selection rule in retrieval-augmented generation (RAG) for question answering: across five QA benchmarks, selecting the answer a frozen respondent LLM produces with the lowest answer-token entropy lifts mean $F_1$ from 0.4769 to 0.5148 over the retriever's top-ranked passage, without gold answers. Yet this rule, which prior entropy-based selectors adopt, fails: a misleading passage makes the respondent confidently wrong, driving entropy down where the uncertainty signal looks most trustworthy. The failure comes from the passage the respondent reads, and the context it is read in is an input we can intervene on. We introduce LODESTAR: to our knowledge the first method to score a text intervention by the uncertainty it induces in a third-party frozen respondent, compared within one question. LODESTAR uses reinforcement learning (GRPO) to train, once and offline, a polarizer -- a short fixed natural-language string inserted into the respondent's prompt and never into its weights, directing entropy so that entropy-based answer selection stays robust to misleading passages; training labels are built from gold answers and two LLM judges, and inference reads neither. With every competing selector under the same frozen respondent and candidate pools on 5,008 questions, LODESTAR attains the highest mean $F_1$ of any inference-ready selector (0.5339), the highest macro exact match (0.4136), and the highest GPT-4o judge score of the frozen-respondent configurations judged (0.6435); its three-seed mean wins all 70 $F_1$ cells against fourteen published configurations and is paired-significant on $F_1$ against every one. The gain holds in-domain on NQ-Open and out-of-domain over SQuAD, TriviaQA, EntityQuestions and WebQuestions. Ablating the polarizer shows it is what makes the respondent read a misleading passage less often (26.0% vs 30.3%).",
-      "topics": [
-        "Topic Modeling",
-        "Expert finding and Q&A systems",
-        "Sentiment Analysis and Opinion Mining",
-        "cs.CL",
-        "cs.IR",
-        "cs.LG"
-      ],
-      "keywords": [
-        "Respondent",
-        "Entropy (arrow of time)",
-        "Trustworthiness",
-        "Inference",
-        "Polarizer",
-        "Context (archaeology)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.11967",
-      "abstract": "Large language model agents increasingly rely on long-horizon reasoning to solve complex tasks involving planning, tool use, and memory. A critical capability in such settings is reflection: assessing trajectory progress, identifying missing evidence and unreliable intermediate states, and deciding whether to continue, revise, or abandon the current branch. Learning effective reflection, however, is challenging because reflection is performed locally within the current branch, whereas its utility can only be determined by its contribution to the final trajectory outcome. This local-global mismatch makes outcome-based reinforcement learning provide only local, sparse and delayed supervision for reflective decisions. To solve these, we propose LoongReflect, a training framework that formulates reflection as a memory-control policy. The agent operates over a reversible trajectory tree using explicit reflect and backtrack actions. Reflection consolidates verified facts, missing evidence, and branch-specific risks into working memory, while backtracking removes an unreliable branch from the active context and preserves a concise corrective lesson. To learn this policy, LoongReflect combines two complementary signals through a look-ahead, extragradient-style coordination mechanism. A fast channel distills globally informed reflective behavior from a privileged teacher, with supervision restricted to reflection and backtracking tokens. A slow channel optimizes complete trajectories using outcome-based GRPO, aligning local control decisions with final task success. Experiments on multi-hop retrieval-augmented generation and mathematical reasoning benchmarks demonstrate consistent improvements over outcome-only reinforcement learning and self-distillation baselines.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Topic Modeling",
-        "Reinforcement Learning in Robotics",
-        "cs.LG",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Boosting (machine learning)",
-        "Backtracking",
-        "Reinforcement learning",
-        "Reflection (computer programming)",
-        "Trajectory",
-        "Context (archaeology)",
-        "Perspective (graphical)",
-        "Search tree"
       ]
     }
   ]

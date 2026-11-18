@@ -1,12 +1,628 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "page": 258,
   "pageSize": 100,
-  "totalItems": 40573,
-  "totalPages": 406,
+  "totalItems": 40626,
+  "totalPages": 407,
   "nextPage": "./page-259.json",
   "items": [
+    {
+      "id": "arxiv:2608.04007",
+      "recordType": "preprint",
+      "title": "TurnSight: Turn-Level Hindsight Self-Distillation for Tool-Integrated Reasoning",
+      "abstract": "Tool-Integrated Reasoning (TIR) enables LLMs to solve complex tasks through iterative tool interactions. However, existing reinforcement learning methods often rely on trajectory-level supervision, limiting fine-grained credit assignment in long-horizon TIR scenarios. On-policy self-distillation offers denser signals through teacher branches with privileged context, but existing approaches typically derive such context from ground-truth answers or retrieved skills, which may not reflect the states actually visited by the agent. Moreover, token-level supervision fails to capture the turn-level structure of tool interactions. To address this, we propose TurnSight, a turn-level hindsight self-distillation framework that derives supervision directly from execution-conditioned hindsight. It then constructs multiple hindsight views with different lookahead horizons and selects reliable supervision through cross-horizon directional agreement. Finally, the selected hindsight signal is normalized across sibling rollouts and used to adaptively modulate RL advantages while preserving their original optimization direction. Extensive experiments on three benchmarks demonstrate the effectiveness of TurnSight. Our codes are available at https://github.com/quchangle1/TurnSight.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.04007"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.04007"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-04",
+      "firstPublicDate": "2026-08-04",
+      "onlineDate": "2026-08-04",
+      "topics": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 2,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Changle Qu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Sunhao Dai",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Hengyi Cai",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yuqi Zhou",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Xinran Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Simon",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Jun Xu",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.04007v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:33.208Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:33.208Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:33.208Z",
+      "preferredVersionId": "arxiv:2608.04007",
+      "versions": [
+        {
+          "id": "arxiv:2608.04007",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.04007",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.04007v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-258.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "Tool-Integrated Reasoning (TIR) enables LLMs to solve complex tasks through iterative tool interactions. However, existing reinforcement learnin",
+              "start": 0,
+              "end": 144
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "RL advantages while preserving their original optimization direction. Extensive experiments on three benchmarks demonstrate the effectiveness of TurnSight. Our codes are available at https://",
+                  "start": 1059,
+                  "end": 1250
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.03137",
+      "recordType": "preprint",
+      "title": "Verifiable Memory: Learning Unified Memory Management with Local and Global Verifiers for Large Language Model Agents",
+      "abstract": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlier evidence during long-horizon interaction. Existing methods commonly optimize long-term memory (LTM) and short-term memory (STM) separately, while unified policies are often trained primarily with trajectory-level feedback, which provides weak credit for individual memory decisions. We present Verifiable Memory (VerMem), a framework that represents LTM, active context, and episodic history as distinct states and controls them with one memory operation policy. Seven atomic operations let the policy add, revise, or soft-delete LTM entries; retrieve LTM into the active context; filter or summarize the active context; and restore selected episodic fragments. VerMem is initialized by supervised fine-tuning and trained with a three-stage reinforcement-learning curriculum. The local verifier scores executable memory transitions, and a global verifier assesses evidence coherence and terminal-memory consistency after task completion. These scores are combined with programmatically computed task, evidence-recall, efficiency, and constraint signals through hierarchical credit assignment. The verifiers are used only during training. Across five benchmarks and two LLM backbones, VerMem achieves the best result on the vast majority of reported metrics and consistently outperforms strong memory baselines. Under controlled online-token budgets on three interactive benchmarks, it also achieves the strongest efficiency--performance frontier among the compared methods. Code is available at https://github.com/Sun-SYSU-24/VerMem.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.03137"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.03137"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-04",
+      "firstPublicDate": "2026-08-04",
+      "onlineDate": "2026-08-04",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 3,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "LLM",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Xiaolong Sun",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Qichao Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Hangyu Li",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Liang Chen",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.03137v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:33.208Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:33.208Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:33.208Z",
+      "preferredVersionId": "arxiv:2608.03137",
+      "versions": [
+        {
+          "id": "arxiv:2608.03137",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.03137",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.03137v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-258.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "large language model",
+              "quote": " Memory: Learning Unified Memory Management with Local and Global Verifiers for Large Language Model Agents",
+              "start": 10,
+              "end": 117
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlie",
+              "start": 0,
+              "end": 120
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlier evi",
+              "start": 0,
+              "end": 125
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "tutoring",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "feedback",
+                  "quote": "ately, while unified policies are often trained primarily with trajectory-level feedback, which provides weak credit for individual memory decisions. We present Verifiable Memory (VerMem),",
+                  "start": 255,
+                  "end": 443
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            },
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "large language model",
+                  "quote": " Memory: Learning Unified Memory Management with Local and Global Verifiers for Large Language Model Agents",
+                  "start": 10,
+                  "end": 117
+                },
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlie",
+                  "start": 0,
+                  "end": 120
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [
+            {
+              "value": "autonomy",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "control",
+                  "quote": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlier evidence during long-horizon interaction. Existing me",
+                  "start": 0,
+                  "end": 175
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.03979",
+      "recordType": "preprint",
+      "title": "Video-DeepResearch: Towards the Next-Generation Multimodal Deepresearch Agent",
+      "abstract": "We introduce Video-DeepResearch (Video-DR), extending multimodal agents from static images to continuous video streams, a setting that demands dense spatiotemporal grounding coupled with open-web exploration. Preliminary evaluations reveal two critical bottlenecks in current models: (1) modality bias, where agents bypass visual tools in favor of textual search, and (2) parametric knowledge leakage, where models rely on internal memory rather than genuine tool-augmented execution. To address these challenges, we propose Video-DR, featuring a decoupled perception-exploration pipeline with stage-wise tool unlocking that compels exhaustive cross-frame visual grounding prior to web retrieval. Our framework adopts a two-stage training recipe: supervised fine-tuning followed by Group Relative Policy Optimization (GRPO), enabling autonomous exploration that breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstrate that our Video-DeepResearch-35B-A3B establishes a new state-of-the-art of 64.0% average accuracy, surpassing proprietary Claude-4.5-Sonnet (59.0%) by 5.0 points and significantly outperforming GPT-5 (52.5%) and Gemini 2.5 Pro (57.5%). The 30B-A3B variant achieves 59.3%, competitive with Claude-4.5-Sonnet and demonstrating the effectiveness of our training paradigm even at compact scale. Code: https://github.com/Osilly/Vision-DeepResearch.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.03979"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.03979"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-04",
+      "firstPublicDate": "2026-08-04",
+      "onlineDate": "2026-08-04",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "learning",
+          "label": "Lernen & Deskilling",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "learning",
+              "conceptLabel": "Lernen",
+              "matchedTerm": "learning",
+              "sourceValue": "… Optimization (GRPO), enabling autonomous exploration that breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstrate that our Video-DeepResearch-35B-A3B establishes a new state-of-the-ar…",
+              "weight": 2
+            }
+          ]
+        },
+        {
+          "theme": "trust",
+          "label": "Vertrauen & Reliance",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "reliance",
+              "conceptLabel": "Reliance",
+              "matchedTerm": "rely",
+              "sourceValue": "… in favor of textual search, and (2) parametric knowledge leakage, where models rely on internal memory rather than genuine tool-augmented execution. To address these challenges, we propose Video-DR, featuring a decoupled perception-exploration pipeline with stage-wise tool unlocking that compels exhaustive cross-frame…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 2,
+        "topic:learning": 2,
+        "topic:trust": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "human-AI",
+        "learning",
+        "rely"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Zhen Fang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yu Zeng",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Wenxuan Huang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yiming Zhao",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Shiting Huang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Tianfei Ren",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Qi Lu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Qingnan Ren",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Qisheng Su",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Lionel Z. Wang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Qingyu Yin",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Shuang Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Zehui Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Lin Chen",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Zhenfei Yin",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yao Hu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Shaohui Lin",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Wanli Ouyang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Shaosheng Cao",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Feng Zhao",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.03979v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:33.208Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:33.208Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:33.208Z",
+      "preferredVersionId": "arxiv:2608.03979",
+      "versions": [
+        {
+          "id": "arxiv:2608.03979",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.03979",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.03979v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-258.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "included",
+          "areas": [
+            "human-ai"
+          ],
+          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
+          "human": [
+            {
+              "field": "abstract",
+              "term": "human",
+              "quote": "breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demon",
+              "start": 862,
+              "end": 1047
+            }
+          ],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "human-AI",
+              "quote": "breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstr",
+              "start": 862,
+              "end": 1050
+            },
+            {
+              "field": "abstract",
+              "term": "AI",
+              "quote": " the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstr",
+              "start": 868,
+              "end": 1050
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": " Video-DeepResearch-35B-A3B establishes a new state-of-the-art of 64.0% average accuracy, surpassing proprietary Claude-4.5-Sonnet (59.0%) by 5.0 points and significantly outperforming GPT",
+                  "start": 1062,
+                  "end": 1250
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "doi:10.1177/07439156251328237",
       "recordType": "preprint",
@@ -20606,712 +21222,6 @@
                   "quote": "ty communities based on topological compactness and boundary clarity. Extensive experiments on real-world datasets demonstrate that LUCID, as an unsupervised approach, achieves state-of-the-a",
                   "start": 1413,
                   "end": 1604
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.01234",
-      "recordType": "preprint",
-      "title": "Learning What to Remember and What to Internalize in LLM Self-Evolution via Adaptive Memory-Parameter Coordination",
-      "abstract": "Large language model agents increasingly operate in dynamic environments where tool interfaces, APIs, and user requirements change after deployment. Existing self-evolution methods mainly follow two paradigms: harness-based approaches, which externalize feedback into editable memories or skills for rapid adaptation, and parameter-based approaches, which internalize experience into model parameters for deeper capability improvement. However, using either mechanism alone creates a trade-off between flexibility and performance. This paper asks how an agent can coordinate both channels to achieve robust self-evolution. We present COVE, a unified agent self-evolution framework that combines harness-based and parameter-based learning through task-aware routing, stage-aware scheduling, and knowledge optimization. Through this design, COVE treats self-evolution not as indiscriminate accumulation of experience, but as a coordinated process that matches tasks and knowledge types to appropriate learning mechanisms. Experiments across multiple task categories show that COVE outperforms single-channel evolution strategies, demonstrating more robust and efficient improvement under changing environments.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.01234"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.01234"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-02",
-      "firstPublicDate": "2026-08-02",
-      "onlineDate": "2026-08-02",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 6,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "Learning What to Remember and What to Internalize in LLM Self-Evolution via Adaptive Memory-Parameter Coordination",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "… agent self-evolution framework that combines harness-based and parameter-based learning through task-aware routing, stage-aware scheduling, and knowledge optimization. Through this design, COVE treats self-evolution not as indiscriminate accumulation of experience, but as a coordinated process that matches tasks and k…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:learning": 6,
-        "classificationMaximum": 6
-      },
-      "evidenceTerms": [
-        "large language model",
-        "LLM",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Tianyun Ji",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Zhenya Huang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Jiayu Liu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Zirui Liu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yu Su",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Hongbin Pei",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.01234v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:37.139Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:37.139Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:37.139Z",
-      "preferredVersionId": "arxiv:2608.01234",
-      "versions": [
-        {
-          "id": "arxiv:2608.01234",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.01234",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.01234v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-258.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "user",
-              "quote": "s increasingly operate in dynamic environments where tool interfaces, APIs, and user requirements change after deployment. Existing self-evolution methods mainly follow two paradigms: ",
-              "start": 26,
-              "end": 210
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "LLM",
-              "quote": "Learning What to Remember and What to Internalize in LLM Self-Evolution via Adaptive Memory-Parameter Coordination",
-              "start": 0,
-              "end": 114
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Large language model agents increasingly operate in dynamic environments where tool interfaces, APIs, and user requireme",
-              "start": 0,
-              "end": 120
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "tutoring",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "feedback",
-                  "quote": "ethods mainly follow two paradigms: harness-based approaches, which externalize feedback into editable memories or skills for rapid adaptation, and parameter-based approaches, which intern",
-                  "start": 174,
-                  "end": 362
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Large language model agents increasingly operate in dynamic environments where tool interfaces, APIs, and user requireme",
-                  "start": 0,
-                  "end": 120
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "cess that matches tasks and knowledge types to appropriate learning mechanisms. Experiments across multiple task categories show that COVE outperforms single-channel evolution strategies, dem",
-                  "start": 940,
-                  "end": 1131
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.01012",
-      "recordType": "preprint",
-      "title": "MedUPS: Towards Diagnostic Assistance in Uncommon Medical Cases with Large Language Models",
-      "abstract": "Uncommon and off-guideline cases are difficult for clinical decision support, because physicians must make a series of management decisions under diagnostic uncertainty and rarely see the full case at once. Most large language model (LLM) benchmarks for medicine score only the final diagnosis, yet much of clinical care turns on the next appropriate action: the next test to order, the imaging study to obtain, the specialist to involve, or the differential to pursue. We introduce MedUPSQA, a dataset of 21,874 mid-stream clinical decision points built from 5,535 real case reports, and MedUPS, an alignment framework that supervises models on these intermediate decisions as they unfold along a patient's trajectory. We segment free-text case presentations into chronologically ordered, accumulating clinical chunks and align models to predict the next step with reinforcement learning (GRPO), using an external LLM-as-a-Judge reward. This objective mirrors how clinicians actually meet patients, reasoning forward from accumulating evidence toward the next decision, rather than committing to a final label. Across three backbones, mid-stream alignment raises next-step accuracy from 55.2 to 66.7 for Qwen3.6-27B, from 47.2 to 57.8 for Qwen3.5-9B, and from 37.8 to 44.4 for HuatuoGPT-3-8B, with 95% CI. In several model scales we test the objective improves accuracy more than scale, with smaller models surpassing larger, frontier models we evaluate. We further train supervised fine-tuning (SFT) baselines on the mid-stream task, SFT improves all backbones above base, indicating the target framwork carries signal independently of the optimizer. We release the dataset, code, and aligned checkpoints.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.01012"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.01012"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-02",
-      "firstPublicDate": "2026-08-02",
-      "onlineDate": "2026-08-02",
-      "topics": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "cognition",
-          "label": "Kognitive Arbeit",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "decision",
-              "conceptLabel": "Entscheiden",
-              "matchedTerm": "decision support",
-              "sourceValue": "Uncommon and off-guideline cases are difficult for clinical decision support, because physicians must make a series of management decisions under diagnostic uncertainty and rarely see the full case at once. Most large language model (LLM) benchmarks for medicine score only the final diagnosis, yet much of clinical care…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 4,
-        "topic:cognition": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "large language model",
-        "large language models",
-        "LLM",
-        "learning",
-        "decision support"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Ofir Ben Shoham",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Oriel Perets",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Nir Grinberg",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Nadav Rappoport",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.01012v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:37.139Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:37.139Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:37.139Z",
-      "preferredVersionId": "arxiv:2608.01012",
-      "versions": [
-        {
-          "id": "arxiv:2608.01012",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.01012",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.01012v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-258.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "clinician",
-              "quote": "ing (GRPO), using an external LLM-as-a-Judge reward. This objective mirrors how clinicians actually meet patients, reasoning forward from accumulating evidence toward the next decision, rath",
-              "start": 885,
-              "end": 1075
-            },
-            {
-              "field": "abstract",
-              "term": "patient",
-              "quote": "k that supervises models on these intermediate decisions as they unfold along a patient's trajectory. We segment free-text case presentations into chronologically ordered, accumulating cl",
-              "start": 618,
-              "end": 805
-            }
-          ],
-          "ai": [
-            {
-              "field": "title",
-              "term": "large language model",
-              "quote": "MedUPS: Towards Diagnostic Assistance in Uncommon Medical Cases with Large Language Models",
-              "start": 0,
-              "end": 90
-            },
-            {
-              "field": "title",
-              "term": "large language models",
-              "quote": "MedUPS: Towards Diagnostic Assistance in Uncommon Medical Cases with Large Language Models",
-              "start": 0,
-              "end": 90
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "cisions under diagnostic uncertainty and rarely see the full case at once. Most large language model (LLM) benchmarks for medicine score only the final diagnosis, yet much of clinical care turns on th",
-              "start": 132,
-              "end": 332
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [
-            {
-              "value": "healthcare",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "clinical",
-                  "quote": "Uncommon and off-guideline cases are difficult for clinical decision support, because physicians must make a series of management decisions under diagnostic un",
-                  "start": 0,
-                  "end": 159
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "population": [
-            {
-              "value": "clinicians",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "physician",
-                  "quote": "on and off-guideline cases are difficult for clinical decision support, because physicians must make a series of management decisions under diagnostic uncertainty and rarely see the full cas",
-                  "start": 6,
-                  "end": 196
-                },
-                {
-                  "field": "abstract",
-                  "term": "clinician",
-                  "quote": "ing (GRPO), using an external LLM-as-a-Judge reward. This objective mirrors how clinicians actually meet patients, reasoning forward from accumulating evidence toward the next decision, rath",
-                  "start": 885,
-                  "end": 1075
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "aiFunction": [
-            {
-              "value": "decisionSupport",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "decision support",
-                  "quote": "Uncommon and off-guideline cases are difficult for clinical decision support, because physicians must make a series of management decisions under diagnostic uncertainty and rar",
-                  "start": 0,
-                  "end": 176
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "large language model",
-                  "quote": "MedUPS: Towards Diagnostic Assistance in Uncommon Medical Cases with Large Language Models",
-                  "start": 0,
-                  "end": 90
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "cisions under diagnostic uncertainty and rarely see the full case at once. Most large language model (LLM) benchmarks for medicine score only the final diagnosis, yet much of clinical care turns on th",
-                  "start": 132,
-                  "end": 332
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": "to a final label. Across three backbones, mid-stream alignment raises next-step accuracy from 55.2 to 66.7 for Qwen3.6-27B, from 47.2 to 57.8 for Qwen3.5-9B, and from 37.8 to 44.4 for Huat",
-                  "start": 1094,
-                  "end": 1282
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.02674",
-      "recordType": "preprint",
-      "title": "Moving the Safety Barrier: Dynamic Routing Adaptive Alignment Against White-Box Attacks",
-      "abstract": "With the widespread deployment of large foundation models (LFMs) in open environments, safety threats are shifting from black-box jailbreaks toward white-box attacks that directly identify and disrupt internal safety neurons or routes. However, existing safety defenses often rely on static safety units or fixed refusal pathways, leaving models highly vulnerable to targeted route-level white-box attacks. For that, we propose dynamic routing adaptive alignment (DRAA), a framework that introduces dynamic compensatory routes to preserve robust refusal behavior when the safety route is compromised. Specifically, we first identify and localize the model's safety route by contrasting internal activations between safe and unsafe calibration samples. DRAA then masks this safety route to induce causal failure cases and selectively mines the resulting defense failures, thereby constructing failure-aware preference pairs. Extensive experiments demonstrate that DRAA effectively restructures the underlying pathway dependence of model safety, substantially improving robustness against route-level white-box attacks, while preserving general utility.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.02674"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.02674"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-02",
-      "firstPublicDate": "2026-08-02",
-      "onlineDate": "2026-08-02",
-      "topics": [
-        "cs.CR",
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "safety",
-          "label": "Sicherheit & Resilienz",
-          "score": 8,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "title",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "Moving the Safety Barrier: Dynamic Routing Adaptive Alignment Against White-Box Attacks",
-              "weight": 4
-            },
-            {
-              "source": "abstract",
-              "concept": "safety",
-              "conceptLabel": "Sicherheit",
-              "matchedTerm": "safety",
-              "sourceValue": "…e widespread deployment of large foundation models (LFMs) in open environments, safety threats are shifting from black-box jailbreaks toward white-box attacks that directly identify and disrupt internal safety neurons or routes. However, existing safety defenses often rely on static safety units or fixed refusal pathwa…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "failure",
-              "conceptLabel": "Fehler",
-              "matchedTerm": "failure",
-              "sourceValue": "… unsafe calibration samples. DRAA then masks this safety route to induce causal failure cases and selectively mines the resulting defense failures, thereby constructing failure-aware preference pairs. Extensive experiments demonstrate that DRAA effectively restructures the underlying pathway dependence of model safety,…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 4,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "reliance",
-              "conceptLabel": "Reliance",
-              "matchedTerm": "rely",
-              "sourceValue": "…rupt internal safety neurons or routes. However, existing safety defenses often rely on static safety units or fixed refusal pathways, leaving models highly vulnerable to targeted route-level white-box attacks. For that, we propose dynamic routing adaptive alignment (DRAA), a framework that introduces dynamic compensat…",
-              "weight": 2
-            },
-            {
-              "source": "abstract",
-              "concept": "calibration",
-              "conceptLabel": "Kalibrierung",
-              "matchedTerm": "calibration",
-              "sourceValue": "…odel's safety route by contrasting internal activations between safe and unsafe calibration samples. DRAA then masks this safety route to induce causal failure cases and selectively mines the resulting defense failures, thereby constructing failure-aware preference pairs. Extensive experiments demonstrate that DRAA eff…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 3,
-        "topic:safety": 8,
-        "topic:trust": 4,
-        "classificationMaximum": 8
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "foundation models",
-        "safety",
-        "failure",
-        "rely",
-        "calibration"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Shangze Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Chuancheng Shi",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Simiao Xie",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Lingzhi He",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Cheng Ji",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Zifeng Cheng",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Fei Shen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Chao Wu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Tat-Seng Chua",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.02674v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:37.139Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:37.139Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:37.139Z",
-      "preferredVersionId": "arxiv:2608.02674",
-      "versions": [
-        {
-          "id": "arxiv:2608.02674",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.02674",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.02674v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-258.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "uncertain",
-          "areas": [],
-          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "With the widespread deployment of large foundation models (LFMs) in open environments, safety threats are shifting from black-box jailbreaks toward white-box",
-              "start": 0,
-              "end": 157
-            },
-            {
-              "field": "abstract",
-              "term": "foundation models",
-              "quote": "With the widespread deployment of large foundation models (LFMs) in open environments, safety threats are shifting from black-box jailbreaks toward white-box",
-              "start": 0,
-              "end": 157
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "efense failures, thereby constructing failure-aware preference pairs. Extensive experiments demonstrate that DRAA effectively restructures the underlying pathway dependence of model safety, s",
-                  "start": 854,
-                  "end": 1045
                 }
               ],
               "interpretation": "mentioned; role/outcome not confirmed"

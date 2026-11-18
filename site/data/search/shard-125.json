@@ -1,7 +1,55 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "arxiv:2608.17843",
+      "abstract": "Large language models (LLMs) have demonstrated strong performance on structured reasoning tasks, but what they encode and whether it informs model behavior remain unclear. We investigate this question through geometric reasoning, using parametric CAD constraints as a controlled testbed for separating local pairwise relations from sketch-level constraint status. By probing the hidden states of six frozen decoder-only LLMs, we examine four properties: linear decodability, forced-choice generation, activation-level influence, and behavioral steerability. Pretraining substantially improves the decoding of local geometric relations, and this advantage persists after accounting for positional cues with shuffled-order controls. In contrast, sketch-level DOF status is already highly decodable from randomly initialized representations and improves only modestly with pretraining, indicating that much of its probe performance is available without learned weights. Further analyses show that decodable information is not always actionable. Generation often fails to express this information, and on the two intervention-tested backbones, activation-restoration effects at the patched entity position vanish while decodability persists across depth. Mean-difference steering also does not reliably control outputs. These results show that decodability, generation, activation-level influence, and steerability can diverge in the tested setting. The audit provides a controlled way to distinguish failures to encode geometric structure from failures to express or control encoded information.",
+      "topics": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.17700",
+      "abstract": "Cross-distribution generalization remains a critical bottleneck in deepfake detection. While recent efforts leverage the semantic priors of large-scale visual foundation models (VFMs), a noteworthy yet underexplored challenge remains: the susceptibility of these semantic priors to environmental interference from factors such as lighting and style. Crucially, this interference establishes spurious correlations between forgery cues and environmental patterns that severely limit generalization. To address this fundamental challenge, we propose an innovative Environment-Invariant Subspace Learning (EISL) framework. The core contribution of EISL is that it aims to disentangle features into orthogonal forgery-relevant invariant factors and environment-related residual factors via a learnable low-rank projection. To facilitate robust feature disentanglement, we also design an Environmental Intervention module that generates diverse and challenging intervention pairs, simulating out-of-distribution environmental shifts to guide the model toward discovering truly invariant forgery representations. Experiments across cross-dataset, cross-generator, whole-face synthesis, and corruption settings show consistent gains and competitive or leading performance against strong detectors, demonstrating improved robustness to unseen forgery types and environmental variations. This work provides a new perspective and a valuable exploration for understanding and tackling the generalization barriers of VFMs in deepfake detection.",
+      "topics": [
+        "Generative Adversarial Networks and Image Synthesis",
+        "Face recognition and analysis",
+        "Digital Media Forensic Detection"
+      ],
+      "keywords": [
+        "Spurious relationship",
+        "Leverage (statistics)",
+        "Prior probability",
+        "Robustness (evolution)",
+        "Pooling",
+        "Generalization",
+        "Exploit",
+        "Subspace topology",
+        "Categorization"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10695464/v1",
+      "abstract": null,
+      "topics": [
+        "Educational Strategies and Epistemologies",
+        "Digital Education and Society",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "Normative",
+        "Argumentative",
+        "Agency (philosophy)",
+        "Scholarship",
+        "Testimonial",
+        "Quality (philosophy)",
+        "Argument (complex analysis)",
+        "Conceptual framework"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.17524",
       "abstract": "This preliminary paper outlines a planned evaluation benchmark for Explainable Reinforcement Learning (XRL) methods. Current evaluations rely on functionally-grounded metrics like faithfulness and compactness, and on human-grounded proxies like subjective ratings or prediction accuracy. We suggest evaluating XRL methods by how effectively their generated explanations help to diagnose and fix malfunctioning reinforcement learning (RL) agents. We propose EvalXRL, a benchmark in which a Large Language Model (LLM) coding agent uses different XRL methods to diagnose a held-out malfunction in an RL agent, and then repair it. Our proposed benchmark iterates across (environment $\\times$ malfunction $\\times$ XRL method) tuples and uses the reward signal of the RL agents to form a final score for each XRL method. The coding agent may use the method interactively: invoke the XRL method, process its output, form new hypotheses on what is broken, and invoke the method again with parameters adjusted for testing these hypotheses. This closed-loop structure may be described as a simplified version of the scientific method. Some XRL methods provide self-evaluations that follow this pattern; we propose the first head-to-head comparison of multiple XRL methods in closed-loop usage.",
@@ -3614,63 +3662,6 @@
         "cs.AI"
       ],
       "keywords": []
-    },
-    {
-      "id": "arxiv:2608.15311",
-      "abstract": "Federated instruction fine-tuning enables Large Language Models (LLMs) to adapt to decentralized, privacy-sensitive data without requiring data sharing. Recent Mixture-of-Experts (MoE) LLMs are particularly attractive for federated learning because their sparse activation reduces computation and communication while scaling model capacity. However, existing federated MoE methods primarily focus on parameter aggregation and personalization, overlooking the routing behavior of MoE models as a source of information for client collaboration. Under heterogeneous instruction distributions, indiscriminate aggregation can lead to negative transfer, highlighting the need to identify which clients should collaborate during federated optimization. We propose ClientMorpher, a routing-aware, personalized federated instruction fine-tuning framework that leverages routing signatures from pretrained MoE models to organize client collaboration prior to aggregation. We investigate two complementary clustering strategies: ClientMorpher-C, which directly clusters clients using expert activation profiles, and ClientMorpher-E, which first clusters experts based on their cross-client usage signatures and then derives client collaboration groups. We evaluate ClientMorpher for federated instruction fine-tuning on the Databricks Dolly-15K dataset, using pathological and Dirichlet-based heterogeneous client distributions across multiple instruction-following tasks. Experimental results show that routing-aware collaboration consistently improves personalized performance compared to conventional federated averaging and local training, while maintaining the same communication cost. Furthermore, our study shows that client-centric and expert-centric clustering provides an effective and scalable approach for personalized federated instruction fine-tuning of sparse MoE LLMs.",
-      "topics": [
-        "Privacy-Preserving Technologies in Data",
-        "Advanced Graph Neural Networks",
-        "Big Data and Digital Economy",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Cluster analysis",
-        "Scalability",
-        "Federated learning",
-        "Focus (optics)",
-        "Routing (electronic design automation)",
-        "Computation",
-        "Component (thermodynamics)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.15436",
-      "abstract": "Frontier AI models have advanced rapidly, but they still struggle with telecom-specific tasks. We present Open Telco (OTel), an open telecom AI resource with derived datasets for retrieval, reranking, instruction tuning, and safety/abstention, plus 30 full-parameter post-trained baselines across embedding, reranking, and language models. The community has already engaged substantially with the resource: as of May 3, 2026, the released models have been downloaded over 16 million times, and the project has received 157+ pieces of media coverage worldwide. Building on prior open telecom datasets and benchmarks, OTel provides documented telecom data sources, held-out evaluation partitions, trained embedding models, rerankers, context-grounded LLMs, and safety/abstention data in one unified resource. OTel post-training improves performance across all three model families: embedding retrieval reaches 93.5% NDCG@10, reranking reaches 0.952 MRR@10, and language-model correctness reaches 88.2%. We release OTel as a reproducible starting point and invite the community to expand the data, improve embedding and reranking models, and build stronger context-grounded telecom LLMs.",
-      "topics": [
-        "Wireless Signal Modulation Classification",
-        "Advanced Data and IoT Technologies",
-        "Advanced Graph Neural Networks",
-        "cs.AI",
-        "cs.NI"
-      ],
-      "keywords": [
-        "Embedding",
-        "Correctness",
-        "Point (geometry)",
-        "Frontier",
-        "Resource (disambiguation)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.15309",
-      "abstract": "Continuous multimodal sensing now allows human physiology to be observed throughout daily life rather than only during occasional clinical visits. However, most health artificial intelligence systems are designed to recognize current states, estimate risks or analyse individual biomarkers. They do not directly model how physiological states change in response to real-world events, behaviours, contexts and interventions. Here we propose the Physiological World Model (PWM), an event-conditioned framework for learning these changes at the level of the whole person. We introduce the HumanState Transition Token, a structured, quality-scored unit that connects the physiological state before an event with the event or action, relevant context and intervention information, the physiological trajectory after the event, observed outcomes and data quality. We describe four capability levels, from state representation to bounded intervention planning, together with four data acquisition and validation protocols. We also propose six benchmark tasks covering HumanState representation, forecasting across multiple timescales, individualized response prediction, simulation of alternative interventions, bounded planning and reliability under distribution shift. Together, this framework provides a practical path towards personalized health management, behavioural intervention design and clinician-supervised decision support, while clearly separating prediction from causal inference and making uncertainty, safety, governance and limits of use explicit.",
-      "topics": [
-        "Machine Learning in Healthcare",
-        "Digital Mental Health Interventions",
-        "Mental Health Research Topics",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Context (archaeology)",
-        "Benchmark (surveying)",
-        "Event (particle physics)",
-        "Reliability (semiconductor)",
-        "Representation (politics)",
-        "Intervention (counseling)",
-        "Inference",
-        "Trajectory"
-      ]
     }
   ]
 }

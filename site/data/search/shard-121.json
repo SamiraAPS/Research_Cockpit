@@ -1,7 +1,57 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.2139/ssrn.7245419",
+      "abstract": "Autonomous large language model (LLM) agents increasingly face reliability, context consumption, and execution stability bottlenecks when deployed on complex, long-horizon tasks. While monolithic prompt engineering and stateless tool-calling paradigms struggle to scale, the field is rapidly converging toward \\emph{agentic skills}: modular procedural abstractions that externalize execution knowledge into reusable, executable, and portable artifacts. This paper establishes a unified systems foundation and reference architecture for the agentic skills ecosystem. We formalize skills as externalized procedural knowledge bridging high-level cognitive planning with deterministic execution environments, and systematically delineate the architecture across a nine-stage lifecycle: autonomous discovery, authoring and representation formats, memory storage, dynamic retrieval and routing, composition and orchestration, execution and repair, lifelong adaptation, empirical evaluation, and security governance. We further examine marketplace dynamics, public registries, and emerging adversarial threat vectors, alongside runtime verification and defense mechanisms. Finally, we categorize system implementations across software engineering, operating system navigation, embodied robotics, and scientific discovery, while highlighting critical open challenges in continual learning and benchmark realism. This work establishes agentic skills as a foundational paradigm for building scalable, robust, and verifiable autonomous language agents.",
+      "topics": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2609.00057",
+      "abstract": "Value signals are aggregated user-level moral representations that capture users' inferred value-related tendencies from their online discourse. User behavior on social media is shaped not only by what users say or whom they interact with, but also by the value signal through which they express attitudes. Existing user representation methods largely miss this value-relevant dimension. We propose ValueGraph, a graph pre-training framework that uses automatically inferred moral-value signals as noisy auxiliary signals for contextualized user representation. From post-reply graphs, ValueGraph learns semantic and structural representations and further aligns users through relative value similarity with contrastive and clustering objectives. Rather than treating inferred values as gold psychological labels, ValueGraph uses them as soft constraints for representation learning. Experiments on stance detection and twitter bot detection show consistent gains over strong text-based, graph-based, and text-only LLM baselines, highlighting value-signal guidance as a useful inductive bias for socially informed user modeling.",
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Sentiment Analysis and Opinion Mining",
+        "Misinformation and Its Impacts",
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": [
+        "Representation (politics)",
+        "Graph",
+        "Similarity (geometry)",
+        "Cluster analysis",
+        "Value (mathematics)",
+        "Social media"
+      ]
+    },
+    {
+      "id": "arxiv:2608.29936",
+      "abstract": "Safety alignment of large language models (LLMs) degrades across languages, yet the internal mechanism driving this asymmetry remains poorly understood. Our work, therefore, presents a systematic mechanistic analysis of multilingual safety using sparse autoencoder (SAE) features, sparse interpretable directions in the residual stream associated with harmful and harmless model behavior across three instruction-tuned LLMs, eight languages, and all model layers. We observe that safety-relevant features are architecture-dependent in terms of where they are located and how they are distributed across layers. Additionally, they are geometrically entangled with language identity and exhibit cross-lingual sharing patterns, i.e., languages share safety features to varying degrees across model depths and architectures. This safety-language entanglement has direct consequences such that ablating safety features impacts not only harmful response rates but also target language, with the degree of intervention predicted by the relationship between safety and language features. Our findings qualify the language-universality of safety alignment as architecture-dependent and offer a mechanistic account of multilingual safety interventions.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)",
+        "Topic Modeling",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "keywords": [
+        "Identity (music)",
+        "Mechanism (biology)",
+        "Quantum entanglement",
+        "Intervention (counseling)",
+        "Poison control",
+        "Abstraction",
+        "Vulnerability (computing)"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.30083",
       "abstract": "Multi-agent AI platforms move quickly from staging to production, but the way agents establish trust remains rudimentary: an agent either transmits raw data to a peer or accepts that peer's natural-language self-report that a value complies with policy. The first over-shares; the second is unverifiable and is exactly the channel prompt injection attacks. Prevailing responses emphasise identity, visibility, and post-hoc detection, and recent proposals for cryptographically enforced agent policy have been evaluated in simulation rather than execution. We take provable data minimisation between agents from proposal to running system. In our Zero-Knowledge Proof Gateway, agents exchange proofs of governance-defined predicates over private data rather than the data itself, so exposure is prevented by design rather than detected afterwards; because no interoperability protocol can carry such a proof, we propose a slot and implement it on both MCP and Agent2Agent from one endpoint. A 32-bit threshold predicate proves in 6.2 ms and verifies in 1.0 ms with a 608-byte Bulletproofs proof on one commodity vCPU; eleven adversarial experiments and nineteen protocol checks pass; and the system is deployed to Kubernetes with empirically verified network isolation. Our case study proves a retail client order is within its limit without revealing the amount, instantiating the GDPR data-minimisation principle as an enforced technical measure of the kind EU law now names explicitly. We then address the limitation no comparable work resolves: a predicate proof binds a statement to a committed value, never to the system of record. We give a construction fusing an enclave attestation with the proof in both directions, so verifying one artifact certifies jointly that the predicate holds and that the value was read by a specific measured binary, and test it against a mock authority.",
@@ -3631,64 +3681,6 @@
         "Mechanism (biology)",
         "Space (punctuation)",
         "Key (lock)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.25379",
-      "abstract": "Chain-of-thought prompting can expose and amplify demographic stereotypes within an LLM's intermediate reasoning and create a failure mode that final-answer debiasing alone cannot address. Mitigating such bias during generation presents a fundamental timing problem: intervening too late allows biased reasoning to propagate, while unnecessarily intervening can disrupt otherwise correct reasoning. Existing approaches largely avoid this decision by either evaluating completed reasoning chains post hoc or intervening at predetermined steps, leaving open when a developing reasoning trajectory provides sufficient evidence to warrant correction. We formulate this decision as an online change-point detection problem. A per-step bias signal updates a CUSUM statistic and a targeted correction is injected only when accumulated evidence crosses a detector-specific threshold calibrated on held-out data. We instantiate the framework with a white-box signal derived from next-token probabilities and a black-box signal obtained from an LLM judge, enabling deployment with both open-weight and hosted models. On gpt-4o-mini adaptive black-box triggering recovers most of the disambiguated-context accuracy lost under fixed-interval intervention while requiring substantially fewer interventions. That result holds even with an independent judge. Across six open-weight models, the white-box signal improves ambiguous-item accuracy on all six but reduces disambiguated-item accuracy on five because it cannot distinguish unsupported stereotype reliance from correct, stereotype-congruent evidence.",
-      "topics": [
-        "Topic Modeling",
-        "Ethics and Social Impacts of AI",
-        "Explainable Artificial Intelligence (XAI)",
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Debiasing",
-        "SIGNAL (programming language)",
-        "Confirmation bias",
-        "Trajectory",
-        "Statistic",
-        "CUSUM"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.25518",
-      "abstract": "A common strategy for scaling world models is to train on more crawled video with more compute. We argue that this strategy is inefficient: scaling world models also requires a recursive data engine that offers grounded reward signals. The success of code agents illustrates why this matters. As code is executable, compilers and runtimes can provide high-quality rewards for Reinforcement Learning (RL) post-training of LLMs. By contrast, spatial generation still relies largely on fuzzy proxies such as CLIP scores. These signals are fuzzy and biased, making them hard to support RL post-training. Compared with these, game development provides a missing reward environment for spatial world models. A scene encoded by a game engine is an executable world specification: the engine can efficiently check collision, physics, navigability and bounded playability, while the developer provides the global verification signal by judging whether the scene should be accepted. Game development also provides real-world long-horizon trajectory data for RL post-training. We therefore propose Reinforcement Learning with Human-Engine Verification (RLHEV), a post-training paradigm that combines dense engine signals with implicit human acceptance feedback from the development process.",
-      "topics": [
-        "Human Motion and Animation",
-        "Social Robot Interaction and HRI",
-        "Autonomous Vehicle Technology and Safety",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Executable",
-        "Reinforcement learning",
-        "Trajectory",
-        "Fuzzy logic",
-        "Code (set theory)",
-        "Verifiable secret sharing",
-        "Video game",
-        "Cloud computing"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10809231/v1",
-      "abstract": null,
-      "topics": [
-        "FinTech, Crowdfunding, Digital Finance",
-        "Sustainable Finance and Green Bonds",
-        "Innovation, Sustainability, Human-Machine Systems"
-      ],
-      "keywords": [
-        "Structural equation modeling",
-        "Mediation",
-        "Partial least squares regression",
-        "Investment (military)",
-        "Key (lock)",
-        "Asset (computer security)",
-        "Corporate governance",
-        "Investment decisions"
       ]
     }
   ]

@@ -1,7 +1,33 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "arxiv:2608.01234",
+      "abstract": "Large language model agents increasingly operate in dynamic environments where tool interfaces, APIs, and user requirements change after deployment. Existing self-evolution methods mainly follow two paradigms: harness-based approaches, which externalize feedback into editable memories or skills for rapid adaptation, and parameter-based approaches, which internalize experience into model parameters for deeper capability improvement. However, using either mechanism alone creates a trade-off between flexibility and performance. This paper asks how an agent can coordinate both channels to achieve robust self-evolution. We present COVE, a unified agent self-evolution framework that combines harness-based and parameter-based learning through task-aware routing, stage-aware scheduling, and knowledge optimization. Through this design, COVE treats self-evolution not as indiscriminate accumulation of experience, but as a coordinated process that matches tasks and knowledge types to appropriate learning mechanisms. Experiments across multiple task categories show that COVE outperforms single-channel evolution strategies, demonstrating more robust and efficient improvement under changing environments.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.01012",
+      "abstract": "Uncommon and off-guideline cases are difficult for clinical decision support, because physicians must make a series of management decisions under diagnostic uncertainty and rarely see the full case at once. Most large language model (LLM) benchmarks for medicine score only the final diagnosis, yet much of clinical care turns on the next appropriate action: the next test to order, the imaging study to obtain, the specialist to involve, or the differential to pursue. We introduce MedUPSQA, a dataset of 21,874 mid-stream clinical decision points built from 5,535 real case reports, and MedUPS, an alignment framework that supervises models on these intermediate decisions as they unfold along a patient's trajectory. We segment free-text case presentations into chronologically ordered, accumulating clinical chunks and align models to predict the next step with reinforcement learning (GRPO), using an external LLM-as-a-Judge reward. This objective mirrors how clinicians actually meet patients, reasoning forward from accumulating evidence toward the next decision, rather than committing to a final label. Across three backbones, mid-stream alignment raises next-step accuracy from 55.2 to 66.7 for Qwen3.6-27B, from 47.2 to 57.8 for Qwen3.5-9B, and from 37.8 to 44.4 for HuatuoGPT-3-8B, with 95% CI. In several model scales we test the objective improves accuracy more than scale, with smaller models surpassing larger, frontier models we evaluate. We further train supervised fine-tuning (SFT) baselines on the mid-stream task, SFT improves all backbones above base, indicating the target framwork carries signal independently of the optimizer. We release the dataset, code, and aligned checkpoints.",
+      "topics": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.02674",
+      "abstract": "With the widespread deployment of large foundation models (LFMs) in open environments, safety threats are shifting from black-box jailbreaks toward white-box attacks that directly identify and disrupt internal safety neurons or routes. However, existing safety defenses often rely on static safety units or fixed refusal pathways, leaving models highly vulnerable to targeted route-level white-box attacks. For that, we propose dynamic routing adaptive alignment (DRAA), a framework that introduces dynamic compensatory routes to preserve robust refusal behavior when the safety route is compromised. Specifically, we first identify and localize the model's safety route by contrasting internal activations between safe and unsafe calibration samples. DRAA then masks this safety route to induce causal failure cases and selectively mines the resulting defense failures, thereby constructing failure-aware preference pairs. Extensive experiments demonstrate that DRAA effectively restructures the underlying pathway dependence of model safety, substantially improving robustness against route-level white-box attacks, while preserving general utility.",
+      "topics": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.00937",
       "abstract": "Autonomous AI agents, increasingly empowered by large language models, are becoming important components of human-machine systems for high-stakes decision support in digital twin ecosystems. However, existing multi-agent systems often lack robust verification for identity, capability, and policy compliance, especially in decentralized environments spanning multiple institutions. This paper proposes a neuro-symbolic decentralized governance framework for verifiable agents in collaborative digital twin environments. By representing agents through multi-layer semantic profiles, the framework bridges probabilistic neural reasoning with deterministic institutional governance, thereby supporting trustworthy human-AI collaboration and meaningful human oversight. Capabilities are grounded in formal domain ontologies to enable machine-interpretable, policy-aware, and context-sensitive participation. These credentials, issued by organizational authorities, are validated via blockchain-based smart contracts, ensuring auditable participation without exposing sensitive data. We demonstrate the framework using a decision-support prototype with clinic, digital twin, and wearable provider agents effectively prevents unauthorized interaction and enforces institutional policies with manageable overhead. Our findings suggest that neuro-symbolic decentralized governance provides a scalable and trustworthy pathway for safe human-machine collaboration across institutional boundaries.",
@@ -1836,34 +1862,6 @@
       "abstract": "Content-moderation classifiers are usually evaluated in isolation, but deployment requires choosing where to intervene and what follows a flag. We evaluate these choices using two end-to-end customer-outcome metrics rather than component accuracy: Usefulness, the fraction of turns with a shown, non-harmful, relevant response, and Harmful Exposure, the fraction with a shown harmful response. Latency and error rates are diagnostics. We compare Input only, Response only, and Input + response hard blocking on a human-labelled product benchmark and public ToxicChat evaluation. At the evaluated operating points, Response only achieves the highest filter-only Usefulness in both settings, while Input + response achieves lower Harmful Exposure. Replacing Response only blocking with Response + rewrite recovers most blocked traffic and yields the same observed Harmful Exposure count as Response only blocking for the selected configuration; this equality is not an equivalence result. Probe routing substantially reduces conditional route-and-generation time relative to LLM routing at comparable measured outcomes. A focused output review shows how rewrites balance filter passage with usefulness by generalizing triggering language while retaining benign intent and safe redirection; some sensitive-domain outputs nevertheless omit potentially safety-relevant support information. These results support comparing moderation configurations under deployment-specific safety and latency constraints rather than applying a universal placement rule. Code and public artifacts are available at https://github.com/microsoft/mod-frontier",
       "topics": [
         "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.26179",
-      "abstract": "LLMs are widely regarded as alien intelligences, systems whose cognitive operations are fundamentally unlike our own. Apparent similarities to human cognition are therefore often seen as the result of anthropomorphic projection. We argue that this framing is mistaken. LLMs clearly differ from humans in important respects, including their physical substrate, learning history, and the environments with which they interact. These differences make it all the more striking that contemporary LLM-based systems converge with human cognition on a number of principles of cognitive organization with longstanding support in cognitive science. We identify structural correspondences across five dimensions: inferential organization, computational architecture, representational structure, prediction-driven learning, and reinforcement-learning-like mechanisms supporting goal-directed action. These correspondences support a broader model of intelligent cognition in which core principles long used to explain human intelligence also characterize contemporary LLM-based systems.",
-      "topics": [
-        "q-bio.NC",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.25408",
-      "abstract": "A growing body of 2026 work applies control theory to LLM agents: Lyapunov-certified stability for tool-mediated controllers (Prinos et al., \"Stable Agentic Control\", 2026), sample-complexity bounds for sparse policies over massive discrete tool universes (Majumdar, \"Sparse Agentic Control\", 2026), and regulatory-control decompositions of multi-agent systems into auditable feedback loops (Nogueira and Skogestad, 2026). We do not claim to introduce control theory to LLM agents -- that ship has sailed. Our narrower claim is about what the controlled variable is. Prior work controls tool selection, inter-agent message routing, or the agent's raw action stream. We instead treat context assembly itself -- which prompt template, which few-shot demonstrations, how much retrieved context, how many planning/verification passes -- as the controlled variable, learned online by a contextual bandit or REINFORCE policy sitting outside a frozen model. This paper develops the formal decomposition (inner frozen policy $π_θ$, outer context policy $π_φ$), gives a stability argument for the online controller in the sense used by Zhang et al. (2026) (non-decreasing expected reward under bounded policy change), and reports an uncertainty-calibration analysis of the controller's own confidence against realized task outcomes. The applied counterpart to this paper instantiates the same controller across three domains and two model providers and releases the dataset, trajectory logs, and a deployment recipe; here we focus on the formal framing and the stability/uncertainty evidence a control-theoretic claim requires.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.26236",
-      "abstract": "AI-generated counterspeech offers a scalable and effective strategy to mitigate online toxicity by promoting more constructive dialogue. Yet, existing approaches adopt a generic, one-size-fits-all paradigm, overlooking the conversational context and characteristics of the targeted users. Here, we propose and evaluate multiple strategies for generating contextualized counterspeech that is adapted to the moderation setting and personalized to the moderated user. In detail, we explore a range of configurations that integrate different forms of contextual information and fine-tuning techniques. We conduct a comprehensive evaluation combining quantitative indicators with a pre-registered, mixed-design crowdsourcing experiment. To ensure robustness, we implement algorithmic measures of counterspeech quality based on ROUGE, BLEU, and BERTScore, observing overall consistent results across metrics. Furthermore, we analyze which characteristics of both the generated counterspeech and the moderated toxic message most strongly influence perceived persuasiveness, yielding insights into how contextualized interventions can be made more effective. Our findings show that personalization can be effective, but not uniformly so. Lightweight strategies combining conversational context and user history improve perceived adequacy and persuasiveness, whereas several other contextualization strategies degrade human-perceived counterspeech quality. Taken together, these results provide actionable directions for developing more personalized, effective, and responsible counterspeech systems, ultimately advancing human-AI collaboration in online content moderation.",
-      "topics": [
-        "cs.HC",
-        "cs.AI",
-        "cs.CY"
       ],
       "keywords": []
     }

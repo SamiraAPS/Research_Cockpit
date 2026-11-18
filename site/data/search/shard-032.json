@@ -1,7 +1,67 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.1016/j.euromechsol.2026.106440",
+      "abstract": null,
+      "topics": [
+        "Welding Techniques and Residual Stresses",
+        "Advanced Welding Techniques Analysis",
+        "High Temperature Alloys and Creep"
+      ],
+      "keywords": [
+        "dissimilar metal welding",
+        "thermal expansion mismatch",
+        "weld microstructure",
+        "weld interface",
+        "residual stress",
+        "neutron diffraction",
+        "creep-fatigue interaction",
+        "tensile properties",
+        "digital image correlation",
+        "nuclear reactor components",
+        "high-temperature bonding"
+      ]
+    },
+    {
+      "id": "doi:10.20944/preprints202610.2001.v1",
+      "abstract": "The increasing availability of social media data has created new opportunities for using artificial intelligence (AI) to study and support mental health awareness. This paper presents an offline machine learning framework that leverages natural language processing (NLP) to classify Reddit posts into distinct mental health categories based on linguistic patterns. The dataset was collected using the PRAW API from 26 subreddits on mental health, addiction, and control topics, yielding approximately 80,000 anonymized text samples. A pre-trained DistilBERT-base-uncased transformer model was fine-tuned for multi-class classification across eleven diagnostic categories, including anxiety, depression, stress, and addiction disorders. Texts were preprocessed through normalization, keyword filtering, and category mapping. Model training employed a weighted cross-entropy loss to mitigate class imbalance, with optimization performed using the AdamW algorithm in a fully offline Jupyter Notebook environment. The model achieved an overall accuracy of 77%, a macro-averaged F1 Score of 0.736, and a weighted F1 Score of 0.772. These results indicate that transformer-based NLP models can reliably distinguish between multiple forms of mental health discourse, demonstrating their potential as supportive tools for early detection or population-level analysis. The study underscores the importance of ethical data handling, transparency, and responsible AI design when applying language models to sensitive domains such as mental health.",
+      "topics": [
+        "Mental Health via Writing",
+        "Sentiment Analysis and Opinion Mining",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "keywords": [
+        "DistilBERT",
+        "mental health detection",
+        "Reddit posts",
+        "multi-class text classification",
+        "anxiety",
+        "depression",
+        "stress",
+        "addiction",
+        "social media discourse",
+        "class imbalance",
+        "weighted cross-entropy loss"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.29063",
+      "abstract": "Time series anomalies take diverse forms, and individual detectors encode different anomaly scoring principles that rarely cover all anomaly types. Recent unsupervised time-series anomaly detectors provide complementary scoring signals, yet deploying them as an ensemble preserves the inference and maintenance cost of every individual detector. We study whether heterogeneous teacher detectors can be distilled into a single lightweight detector in the unsupervised setting, where no anomaly labels are available to define a shared target. AnoMix addresses this by extracting weak pairwise supervision from the training-set anomaly scores of frozen teachers. It normalizes each teacher score sequence independently and trains the student with CoRank, a multi-teacher ranking-distillation objective that converts teacher score gaps into pairwise supervision through teacher consensus. Across seven benchmark datasets, AnoMix successfully integrates complementary teacher scoring principles into a single deployable model, improving over individual detectors and static score ensembles while using a compact student with under 80k parameters on the benchmark settings. A zero-shot variant further shows that the distilled ranking signal transfers to unseen datasets and can outperform large pretrained time-series foundation models for anomaly detection.",
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Time Series Analysis and Forecasting",
+        "Software System Performance and Reliability"
+      ],
+      "keywords": [
+        "time series anomaly detection",
+        "knowledge distillation",
+        "unsupervised anomaly detection",
+        "zero-shot transfer",
+        "corank"
+      ]
+    },
     {
       "id": "doi:10.5281/zenodo.23534277",
       "abstract": "District hospitals in Zambia discharge trauma survivors into a follow-up system that rarely reaches them, and post-traumatic stress disorder (PTSD) assessment attendance is the point at which the system most visibly fails. Text-message reminders are widely assumed to help, but the timing of those reminders has never been treated as a design parameter with its own behavioural logic. The framework distinguishes three timing dimensions: the interval between discharge and reminder, the interval between reminder and appointment, and the spacing of repeated reminders. It proposes that these dimensions operate through prospective memory, planning fallacy correction, and salience decay, and that their effects are likely to be non-monotonic. A worked design is presented for a three-arm randomised evaluation in which participants are allocated to a standard single reminder, a front-loaded schedule, or a spaced schedule, with attendance at PTSD assessment as the primary outcome. Reminder timing should be pre-specified as a schedule rather than a single send time, that the primary estimand should be attendance at the first scheduled assessment, and that the design should be powered to detect a difference of ten percentage points. The contribution is a transferable template for nudge-schedule evaluation in low-resource trauma care, not a report of trial findings.",
@@ -3060,53 +3120,6 @@
         "convergence bounds",
         "aggregation weights",
         "laboratory information systems"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23543576",
-      "abstract": "Split learning enables privacy-preserving collaborative training of crop disease classifiers by partitioning a neural network between resource-constrained rural devices and a remote aggregation server, yet its feasibility under intermittent connectivity remains unquantified. The analysis characterises the operating characteristics of the design under a declared variance structure (between-cluster SD = 6.0, residual SD = 4.5, intraclass correlation = 0.640), with power estimated across 2000 design cells. Results indicate that the intraclass correlation of 0.64 substantially inflates the cluster count required to detect small accuracy differences, with 54 clusters needed for 5 percentage-point effects at 80% power. The findings establish boundary conditions under which split learning is communication-viable for rural plant disease diagnosis and identify the split-layer position that minimises uplink cost without degrading accuracy beyond a specified tolerance.",
-      "topics": [
-        "Smart Agriculture and AI",
-        "Privacy-Preserving Technologies in Data",
-        "IoT and Edge/Fog Computing"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.30363",
-      "abstract": "Activation probes are computed directions in a language model's residual stream, used both to detect safety-relevant behaviours and, by adding their direction back into the stream, to steer them. We explore how the main design choices behind such probes interact, within one pipeline, on one model (Llama-3.1-8B-Instruct), and across three behaviours: deception, high-stakes awareness and sycophancy. The pipeline crosses two estimators (difference-of-means and logistic regression) with three token-pooling schemes (last, mean and learned attention), selects appropriate layers to detect or steer a behaviour, and evaluates every direction twice: as a detector of the behaviour, and as a steering vector to push outputs towards the behaviour. Prior work read together suggests a read/write dissociation, in which logistic regression reads (detects) best but difference-of-means directions write (steer) best. We find that it holds for deception and high-stakes but not for sycophancy, where the pattern reverses. The reversal appears to follow partially from the data rather than from the estimators. The best pooling technique and the layer choice depend on the behaviour and data, and the layer that steers best can sit well before the layer that detects best. The right steering metric to use between changing a model's perception and eliciting behaviour depends on the task - and the two can disagree outright. The exported probes and directions power an interactive interface through which a user can score and steer text directly.",
-      "topics": [
-        "Explainable Artificial Intelligence (XAI)",
-        "Adversarial Robustness in Machine Learning",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "residual stream",
-        "steering vectors",
-        "deception detection",
-        "sycophancy",
-        "large language models",
-        "Llama-3.1-8B-Instruct",
-        "mean difference",
-        "logistic regression",
-        "layer selection"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.29367",
-      "abstract": "EEG foundation models are advancing at an unprecedented pace, yet their evaluation is driven by downstream accuracy, which reveals little about whether their predictions rely on physiologically interpretable signal structure. We introduce a set of perturbation probes in two grounding axes: spatial grounding in channel identity and topographic locality, and spectral grounding in oscillatory content and waveform morphology. We apply these probes to five published EEG foundation models across motor-imagery and seizure recordings. Our experiments reveal differences in both representational sensitivity and downstream reliance. Electrode identity may be encoded without influencing downstream classification: permuting LaBraM's positional codes heavily displaced its embeddings yet reduced motor-imagery accuracy by only 1.2 points, while spectral details may be discriminable without producing specific responses to simulated clinical markers, as only REVE exceeded a spectral baseline on this task. These dissociations are hidden in common benchmarks, demonstrating how grounding probes can complement performance-based evaluation by revealing what EEG foundation models encode and what their predictions depend on.",
-      "topics": [
-        "EEG and Brain-Computer Interfaces",
-        "Emotion and Mood Recognition",
-        "Machine Learning in Healthcare"
-      ],
-      "keywords": [
-        "EEG foundation models",
-        "spatial grounding",
-        "waveform morphology",
-        "motor imagery classification",
-        "seizure classification",
-        "model evaluation"
       ]
     }
   ]

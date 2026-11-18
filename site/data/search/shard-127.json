@@ -1,7 +1,68 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "arxiv:2608.11583",
+      "abstract": "Safety alignment in large language models is often treated as a distributed property of the entire network, yet its practical brittleness suggests that refusal behavior may be concentrated in a smaller set of parameters. This work addresses where safety-aligned refusal is encoded by transplanting weights from aligned models into matched unaligned base models at multiple levels of granularity. Using two open-weight model pairs and four safety benchmarks, we conducted experiments to compare the effects of replacing attention weights, MLP weights, contiguous layer regions, and MLP blocks. Across both model families, refusal transfer is dominated by MLP weights: replacing MLP parameters recovers substantially more malicious-prompt refusal than replacing attention parameters, with gains of at least 2.7 times more across benchmarks. Within the MLP stack, refusal-relevant parameters exhibit a consistent mid-network concentration, as the block spanning layers 8-11 is selected first in all six greedy searches over model-dataset pairs. The results also show that the composition of safety-relevant components is non-additive: in five of six greedy trajectories, adding more aligned blocks can reduce refusal performance, and selective block subsets can outperform full MLP transplantation on malicious refusal, benign over-refusal, or both. Finally, greedy orders transferred to OR-Bench vary with the source benchmark used to derive them, indicating a benchmark-dependent precision-coverage trade-off. These results suggest that safety alignment in current LLMs is both localized and interaction-sensitive, offering insight into alignment brittleness and potential avenues for targeted safety interventions.",
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Adversarial Robustness in Machine Learning",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Block (permutation group theory)",
+        "Set (abstract data type)",
+        "Greedy algorithm",
+        "Benchmark (surveying)",
+        "Layer (electronics)",
+        "Language model",
+        "Transfer (computing)",
+        "ENCODE"
+      ]
+    },
+    {
+      "id": "arxiv:2608.11922",
+      "abstract": "Predictive-distribution entropy is a strong answer-selection rule in retrieval-augmented generation (RAG) for question answering: across five QA benchmarks, selecting the answer a frozen respondent LLM produces with the lowest answer-token entropy lifts mean $F_1$ from 0.4769 to 0.5148 over the retriever's top-ranked passage, without gold answers. Yet this rule, which prior entropy-based selectors adopt, fails: a misleading passage makes the respondent confidently wrong, driving entropy down where the uncertainty signal looks most trustworthy. The failure comes from the passage the respondent reads, and the context it is read in is an input we can intervene on. We introduce LODESTAR: to our knowledge the first method to score a text intervention by the uncertainty it induces in a third-party frozen respondent, compared within one question. LODESTAR uses reinforcement learning (GRPO) to train, once and offline, a polarizer -- a short fixed natural-language string inserted into the respondent's prompt and never into its weights, directing entropy so that entropy-based answer selection stays robust to misleading passages; training labels are built from gold answers and two LLM judges, and inference reads neither. With every competing selector under the same frozen respondent and candidate pools on 5,008 questions, LODESTAR attains the highest mean $F_1$ of any inference-ready selector (0.5339), the highest macro exact match (0.4136), and the highest GPT-4o judge score of the frozen-respondent configurations judged (0.6435); its three-seed mean wins all 70 $F_1$ cells against fourteen published configurations and is paired-significant on $F_1$ against every one. The gain holds in-domain on NQ-Open and out-of-domain over SQuAD, TriviaQA, EntityQuestions and WebQuestions. Ablating the polarizer shows it is what makes the respondent read a misleading passage less often (26.0% vs 30.3%).",
+      "topics": [
+        "Topic Modeling",
+        "Expert finding and Q&A systems",
+        "Sentiment Analysis and Opinion Mining",
+        "cs.CL",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "keywords": [
+        "Respondent",
+        "Entropy (arrow of time)",
+        "Trustworthiness",
+        "Inference",
+        "Polarizer",
+        "Context (archaeology)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.11967",
+      "abstract": "Large language model agents increasingly rely on long-horizon reasoning to solve complex tasks involving planning, tool use, and memory. A critical capability in such settings is reflection: assessing trajectory progress, identifying missing evidence and unreliable intermediate states, and deciding whether to continue, revise, or abandon the current branch. Learning effective reflection, however, is challenging because reflection is performed locally within the current branch, whereas its utility can only be determined by its contribution to the final trajectory outcome. This local-global mismatch makes outcome-based reinforcement learning provide only local, sparse and delayed supervision for reflective decisions. To solve these, we propose LoongReflect, a training framework that formulates reflection as a memory-control policy. The agent operates over a reversible trajectory tree using explicit reflect and backtrack actions. Reflection consolidates verified facts, missing evidence, and branch-specific risks into working memory, while backtracking removes an unreliable branch from the active context and preserves a concise corrective lesson. To learn this policy, LoongReflect combines two complementary signals through a look-ahead, extragradient-style coordination mechanism. A fast channel distills globally informed reflective behavior from a privileged teacher, with supervision restricted to reflection and backtracking tokens. A slow channel optimizes complete trajectories using outcome-based GRPO, aligning local control decisions with final task success. Experiments on multi-hop retrieval-augmented generation and mathematical reasoning benchmarks demonstrate consistent improvements over outcome-only reinforcement learning and self-distillation baselines.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Topic Modeling",
+        "Reinforcement Learning in Robotics",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Boosting (machine learning)",
+        "Backtracking",
+        "Reinforcement learning",
+        "Reflection (computer programming)",
+        "Trajectory",
+        "Context (archaeology)",
+        "Perspective (graphical)",
+        "Search tree"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.11593",
       "abstract": "Modern text-to-speech (TTS) is dominated by autoregressive (AR) codec language models, whose left-to-right decoding brings latency that grows with utterance length, error accumulation along the committed prefix, and an artificial generation order imposed on the Residual Vector Quantization (RVQ) token grid. We propose Luna-TTS Family, diffusion-language-model-based TTS systems pretrained on 1 million hours of speech across Chinese, English, Japanese, and Korean. The family is built by progressive adaptation of a pretrained AR text LLM, from causal to bidirectional and finally to block-causal attention, and comprises two variants sharing a single tokenizer, data pipeline, and 0.6B backbone lineage. Luna-TTS is fully non-autoregressive: it generates the entire RVQ token grid in a fixed number of parallel refinement steps, with zero-shot voice cloning and speech editing arising natively as infilling. Luna-TTS Realtime, derived by continual training, is autoregressive over blocks of 32 codec frames (1.28s) while denoising each block in parallel; it supports KV-cached blockwise generation and incremental audio delivery, achieving an end-to-end RTF of 0.0240 and 41.6 ms local first-block latency under the warmed serving protocol. An annealed fine-tuning stage adds explicit control over emotion and non-verbal vocalizations (NVVs), and a reinforcement-learning stage applies GRPO with policy ratios computed over the realized denoising trajectory. On Seed-TTS-Eval, Luna-TTS achieves the best results on all four metrics among compared open-source and commercial systems (0.73 CER / 79.7 SIM on test-zh, 1.49 WER / 76.8 SIM on test-en); on the harder in-the-wild CV3-Eval, it posts the lowest Mandarin and English error rates in our comparison. Against leading commercial systems, it achieves the best results on most objective, model-based, and human-rated metrics for NVV and emotion control.",
@@ -3303,33 +3364,6 @@
         "cs.LG",
         "cs.AI",
         "stat.ML"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.18653/v1/2026.acl-long.497",
-      "abstract": "In medicine, claims remain valid when supported by empirical evidence grounded in stable biological reality. In law, by contrast, truth is contingent, defined by jurisdiction, temporal validity, and the hierarchy of authoritative sources. The recent success of large language models (LLMs) on medical licensing examinations has encouraged an expectation of comparable legal competence. This analogy, however, obscures a critical distinction between domains. Unlike in medicine, legal performance often depends less on inference than on determining when external authority is applicable, valid, and non-contradictory. We introduce a comparative diagnostic framework evaluating legal reasoning against medical baselines along four axes (knowledge recall, grounding, confidence, and robustness), uncovering a sharp domain asymmetry when applied to a new benchmark that encodes temporal validity and normative relationships. While medical LLMs reliably benefit from verified sources, legal LLMs struggle to assess when retrieved citations are useful or misleading, exhibiting overconfidence in perturbed contexts and sensitivity to superficial formatting cues. Increased model scale amplifies this tendency, revealing that stronger instruction following can coincide with weaker resistance to authoritative perturbations. These findings show that LLMs treat law as unstructured text rather than binding precedent, while revealing a tendency to over-trust authoritative but false information when external references conflict with a model's internal knowledge.",
-      "topics": [
-        "cs.CY",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.10258",
-      "abstract": "Large language models (LLMs) increasingly provide conversational health information that may influence treatment decisions, yet existing benchmarks do not isolate whether medication-safety boundaries persist across follow-ups after explicit self-treatment intent. We introduce TAF-MED, a physician-reviewed benchmark of 500 fixed three-turn scenarios, and evaluate eight LLMs across 4,000 conversations. A rubric-based automated judge labelled responses as SAFE, LEAKY, or UNSAFE, and two physicians independently annotated a model-balanced random subset of 400 conversations. We assessed unsafe guidance, collapse after a strictly SAFE initial response, and model-ranking stability. Overall, 71.6% of conversations contained an UNSAFE response, and 61.4% of those beginning with a strictly SAFE response later collapsed to UNSAFE; model-level collapse rates ranged from 24.4% to 96.2%. Four of 28 model pairs reversed order between initial unsafe and collapse rates. Automated labels achieved 94.3% agreement with the adjudicated physician reference ($κ= 0.895$). These findings show that first-turn safety is an incomplete proxy for conversational safety persistence and motivate evaluation across complete dialogue trajectories. We will release TAF-MED on Hugging Face to support reproducible research on multi-turn medical safety.",
-      "topics": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.10153",
-      "abstract": "Enterprises are deploying autonomous AI agents faster than they can govern them, and prevailing approaches stretch a single discipline, typically DevSecOps built for deterministic automation, across every scale of agency. We argue that agentic AI governance is four problems, not one, each with a mature governing science. The CASE framework assigns Control theory to the individual agent (intent as setpoint, guardrails as feedback, evaluation as observation), complex Adaptive systems theory to agent collectives (where emergence makes single-agent assurance non-compositional), Supervisory cybernetics to human-agent teams (where the Law of Requisite Variety shows unaided human oversight fails structurally), and Engineering operations to fleets (extending error budgets to decision quality so autonomy becomes a controlled variable). We formalize each layer, derive cross-layer coupling conditions, including a zero-touch deployment paradox where excellence at one-layer strains the others, and trace twenty-plus enterprise controls to their classical constructs. Three empirical studies validate the thesis: 82 percent of documented production agent failures are multi-layer trajectories; none of 22 ecosystem tools offers full Layer 2 (emergence) coverage; and all 35 scored public deployments fall in the lowest maturity band. We name this mismatch, risk realized at the emergence layer against capability barely offered and practice absent, the Emergence Gap. A five-level maturity model with a non-compensatory bottleneck-weighted index and assessment instrument operationalizes CASE as a scientific rather than process maturity model, grounded in production enterprise agentic platforms. As EU AI Act Article 14 makes effective human oversight a legal requirement, only architectures satisfying requisite variety can make oversight real rather than ceremonial.",
-      "topics": [
-        "cs.AI"
       ],
       "keywords": []
     }

@@ -1,7 +1,49 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.1080/1358684x.2026.2736825",
+      "abstract": "Generative artificial intelligence (GenAI) is increasingly used to provide feedback and support revision in English writing. Existing debate has largely examined the quality, accuracy, and effectiveness of AI-generated feedback. This conceptual paper argues that such concerns risk overlooking a more fundamental pedagogical issue: the redistribution of evaluative work between learner and system. Drawing on feedback literacy and evaluative judgement, the paper introduces evaluative outsourcing to describe the delegation of interpretive, judgemental, and decision-making work in feedback engagement to AI. It argues that GenAI can enable substantial textual improvement while requiring limited learner participation in the evaluation underlying revision, creating an AI feedback paradox in which better revision does not necessarily indicate better judgement. The paper proposes four principles for retaining learner evaluative agency: making evaluative decisions visible, designing for comparison, preserving consequential decisions for learners, and creating opportunities for evaluative transfer.",
+      "topics": [
+        "Student Assessment and Feedback",
+        "EFL/ESL Teaching and Learning",
+        "Artificial Intelligence in Education"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.21316",
+      "abstract": "Contribution guidelines help newcomers participate in open-source software projects, yet often contain incomplete or outdated information. Existing studies characterize newcomers' information needs and documentation gaps, but revising these guidelines requires recovering and validating project-specific knowledge from scattered sources. We present ContribAlign, a framework for automatically revising CONTRIBUTING files through category-guided evidence integration. A qualitative analysis yields a taxonomy of 30 fine-grained guidance types across six contribution categories. ContribAlign uses a classifier to diagnose coverage of the six categories in the original guidance, then uses the taxonomy to collect and organize project-specific evidence. It filters detected conflicts and uses a large language model to generate category-level revisions. The classifier achieves a weighted F1 score of 0.764, improving on the existing classifier by 0.156, while the verifier detects factual conflicts with 97.3% precision and 91.5% estimated recall. Human evaluation shows that ContribAlign achieves the highest overall quality among the original guidelines and three baselines, with significant improvements in usefulness, beginner-friendliness, and completeness. These results suggest that ContribAlign can help maintain more accurate and useful contribution guidelines.",
+      "topics": [
+        "Software Engineering Research",
+        "Open Source Software Innovations",
+        "Software Engineering Techniques and Practices"
+      ],
+      "keywords": [
+        "contribution guidelines",
+        "open source software",
+        "guideline revision",
+        "newcomer onboarding",
+        "evidence integration",
+        "large language models"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.21139",
+      "abstract": "Large language models (LLMs) are increasingly used upstream of decision-making to clean data, detect label errors, and reconstruct missing values. Yet LLM-assisted data curation creates a new operational tradeoff: higher-fidelity models and richer prompts can be substantially more expensive, while the value of this additional fidelity depends on the downstream optimization accuracy. This raises the central question of this work: when should one pay for a better LLM, given a specific downstream task at hand? We study this question through stochastic optimization with mixed-fidelity first-order oracles, which can have systematic bias and state-dependent variance. We develop two cost-aware algorithmic frameworks that allow adaptive switching between stochastic oracles. With known bias, the first meta-algorithm applies a restarted, cost-aware policy that adaptively selects oracle fidelity across optimization stages. Its cumulative cost is no larger than that of the best fixed oracle in hindsight and can be substantially smaller. With unknown bias, we develop a budgeted certification scheme that uses occasional trusted-gradient evaluations to certify the optimization progress and eliminate unsuccessful oracle sources, and show an explicit tradeoff between certification cost and delayed detection of biased sources. We provide concrete realizations of these meta-algorithms by applying biased stochastic gradient extrapolation (SGE) and recursive regularization under state-dependent noise as subroutines. Synthetic and LLM-completion experiments illustrate the qualitative switching behavior predicted by the theory: the adaptive policy skips several expensive LLM oracles and substantially reduces cumulative cost relative to fixed high-fidelity alternatives while achieving comparable accuracy.",
+      "topics": [
+        "Stochastic Gradient Optimization Techniques",
+        "Advanced Optimization Algorithms Research",
+        "Advanced Bandit Algorithms Research"
+      ],
+      "keywords": [
+        "large language models",
+        "stochastic optimization",
+        "state-dependent noise",
+        "meta-algorithms"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2610.22068",
       "abstract": "Multimodal large language models (MLLMs) can act unsafely when individually benign images and texts are interpreted jointly. Beyond implicit reasoning risk, where reasoning drifts toward harm, we identify intent-level risk, where cross-modal ambiguity silently commits the model to a hazardous premise that path-level optimization alone cannot correct. We propose SAFE-PRO, which uses a Risk-Conditioned Uncertainty (RCU) signal, combining predictive entropy with a learned cross-modal risk score, to decide when to ask safety-grounded clarifying questions and where to apply path optimization, under a reward that prioritizes safety and penalizes over-refusal. We also build SSUI-Dialog, a multimodal multi-turn dataset with dual-intent supervision, and theoretically analyze gradient variance and unsafe-completion risk under RCU. Across seven benchmarks and two base MLLMs, SAFE-PRO consistently improves safety over SRPO, roughly halves its over-refusal, and surpasses GPT-4o and Claude-3.5-Sonnet in average single-turn safety.",
@@ -2745,51 +2787,6 @@
         "photoplethysmography",
         "auditory oddball paradigm"
       ]
-    },
-    {
-      "id": "doi:10.1201/9781003794370-7",
-      "abstract": "This chapter introduces three prominent large language models (LLMs): Claude 4.6 (the latest version from Anthropic, as this book goes to print), Perplexity, and Grok. This chapter begins with a detailed discussion of Claude 4, describing it as an advanced, safety-focused model developed with Constitutional AI principles to ensure helpful, harmless, and honest responses. It highlights Claude’s core strengths—strong reasoning, coding proficiency, creative writing, analytical thinking, multi-language support, and the ability to create and maintain persistent “artifacts” (interactive code, documents, and diagrams). This chapter also notes Claude’s competitive advantages in nuanced reasoning, transparency about limitations, and ethical decision-making, while acknowledging potential weaknesses such as occasional hallucinations and limited third-party integrations. This chapter then covers Perplexity, emphasizing its real-time web search integration, citation accuracy, and strengths in research-oriented tasks, while noting limitations in creative writing and occasional latency under heavy load. Python code samples demonstrate how to interact with the Perplexity API and compare its features with other LLMs. The Grok section discusses its design philosophy (built by xAI, focused on truth-seeking and humor), strengths (uncensored responses, real-time knowledge via X integration), and weaknesses (potential bias and inconsistent performance), along with practical use cases. This chapter underscores how these models complement each other in different workflows. The final section of this chapter explores how these LLMs (particularly Claude, Perplexity, and Grok) can generate Python/Matplotlib code from natural-language prompts to create artistic and mathematical graphics based on polar equations (Archimedean spiral, Cardioid, Cochleoid, Conchoid, and Lituus). No prior knowledge of polar equations is required, as the models produce complete, runnable code. Each example includes explanations and placeholders for figures (e.g., Buckingham Palace, landscapes, Colosseum, and Space Needle). This chapter concludes by reinforcing the versatility of these LLMs in both practical programming and creative visualization tasks, positioning them as powerful tools for developers, researchers, and educators.",
-      "topics": [
-        "Artificial Intelligence Applications",
-        "Topic Modeling",
-        "Natural Language Processing Techniques"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.20944/preprints202610.1332.v1",
-      "abstract": "Introduction Digitized archives and health records offer growing opportunities for research, but approaches to extracting unstructured data remain heterogeneous. Large language models (LLMs) and generative artificial intelligence (GenAI) may facilitate extraction and synthesis, yet reporting guidance remains limited. This study develops CLEAR-Arch, a preliminary framework for transparent and reproducible reporting of LLM-assisted research. Method A scoping review–informed conceptual synthesis identified methodological and reporting considerations relevant to AI-assisted extraction, archival research, health informatics, and evidence synthesis. Candidate items were consolidated into reporting domains and used to develop performance indicators and a preliminary checklist. Results CLEAR-Arch proposes domains covering model specification, prompt design, document processing, extraction procedures, human validation, auditability, and data governance. Candidate indicators include precision, recall, F1-score, contextual accuracy, temporal fidelity, source-groundedness, inter-coder reliability, cross-source consistency, validation accuracy, and auditability. Conclusions CLEAR-Arch provides a preliminary, literature-informed framework for improving transparency, reproducibility, and methodological rigour in LLM-assisted research. Its domains, indicators, and reporting items are provisional, not established standards. Empirical validation, stakeholder consultation, content-validity assessment, and formal consensus development are needed before it can be considered standardized reporting guidance.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Meta-analysis and systematic reviews",
-        "Computational and Text Analysis Methods"
-      ],
-      "keywords": [
-        "large language models",
-        "reporting guidelines",
-        "health records",
-        "digitized archives",
-        "unstructured data extraction",
-        "prompt engineering",
-        "human validation",
-        "auditability",
-        "data governance",
-        "performance indicators",
-        "reproducibility",
-        "transparency",
-        "evidence synthesis",
-        "health informatics"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23374636",
-      "abstract": "The clinical adoption of artificial intelligence (AI) in medical diagnostics is frequently justified by retrospective metrics of algorithmic accuracy (such as AUROC and sensitivity), under the implicit assumption that early disease detection naturally improves patient prognosis. However, the translation of algorithmic inference into tangible clinical benefit is not self-evident and carries substantial risks of overdiagnosis, lead-time bias, false reassurance, and costly diagnostic cascades. This paper provides an epistemological and evidence-based analysis of AI-assisted diagnosis across five major clinical domains: oncology, neurodegeneration (Alzheimer’s disease), sepsis, acute ischemic stroke, and cardiovascular diseases. Drawing on seminal prospective and randomized clinical trials—including MASAI, GOLDEN BRIDGE II, EAGLE, and multi-site sepsis evaluations (TREWS, Epic Sepsis Model)—we demonstrate that diagnostic AI cannot be evaluated through a single universal benchmark. Instead, clinical utility depends heavily on disease-specific temporal horizons, confirmatory testing capacity, and actionable downstream care pathways. Furthermore, we differentiate metrological calibration (physical measurement traceability) from statistical calibration and GUM-defined measurement uncertainty, highlighting the critical role of data quality and reporting frameworks (TRIPOD+AI, DECIDE-AI, CONSORT-AI). Finally, we examine the human-AI interaction dyad, full lifecycle health economics, ethical-legal accountability, and health equity challenges in national contexts such as Türkiye. We conclude that the ultimate justification for medical AI is not to proliferate pathology labels, but to reliably alter clinical pathways and reduce preventable patient harm.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Artificial Intelligence in Healthcare",
-        "Clinical Reasoning and Diagnostic Skills"
-      ],
-      "keywords": []
     }
   ]
 }

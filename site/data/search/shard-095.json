@@ -1,7 +1,69 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.34581",
+      "abstract": "Temporal video grounding is a key capability of advanced Multimodal Large Language Models (MLLMs) for the thorough understanding of video events, which is however often limited by repeated actions and visually similar contexts in long videos. In this paper, we study this issue from the perspective of On-policy distillation (OPD) and propose a new training regime for MLLMs termed Counterfactual Attention Policy Distillation (CAPD). In particular, OPD is a viable solution for MLLMs via providing dense teacher supervision on student-generated trajectories. But its next-token based teacher-student distillation is hard to identify the specific video segments supporting each predicted timestamp, which is critical for temporal grounding. In this case, CAPD measures how masking each temporal group changes the teacher's output distribution. The resulting counterfactual influence calibrates the teacher's attention and weights token-level distillation, allowing the student to learn the temporal evidence that affects boundary prediction. To validate CAPD, we trained it on Qwen3-VL-8B-Instruct using only 2,500 samples for one epoch, and evaluated it on the TimeLens and multiple general video benchmarks. Experimental results show that CAPD improves average recall by 12.0% relative to GRPO on TimeLens while preserving general video understanding, achieving comparable accuracy to the base model.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Human Pose and Action Recognition",
+        "Generative Adversarial Networks and Image Synthesis"
+      ],
+      "keywords": [
+        "on-policy distillation",
+        "multimodal large language models",
+        "teacher-student distillation"
+      ]
+    },
+    {
+      "id": "doi:10.3389/fcogn.2026.1893765",
+      "abstract": "Creativity has traditionally been studied at different levels of analysis, focusing on neural mechanisms, cognitive abilities, individual characteristics, or environmental influences. Although each approach has provided important insights, none alone fully explains why the same factors may support creativity under some conditions but constrain it under others, or why creative potential is expressed differently across individuals, domains, developmental stages, and sociocultural contexts. Building on biopsychosocial, systemic, sociocultural, and interactionist approaches, this Perspective conceptualizes creativity as a multilevel, developmentally situated, and sociotechnically mediated phenomenon emerging from interactions among biological, psychological, sociocultural, and technological processes. The central proposition is that no single factor is inherently creative or uncreative; its contribution depends on how it interacts with other factors under particular conditions. The framework therefore shifts the unit of explanation from isolated determinants to changing configurations of relationships across levels. Four mechanisms, i.e., constraint, affordance, regulation, and feedback/selection, describe how these relationships may develop over time and generate testable predictions concerning differences across individuals, stages of the creative process, developmental periods, and levels of analysis. Evidence from neuroscience, psychology, sociocultural research, education, organizational studies, and generative artificial intelligence illustrates how apparently contradictory findings may partly reflect these differences. Methodologically, the framework calls for greater conceptual and measurement specificity and for ecological, longitudinal, multilevel, and interdisciplinary research. Rather than asking which factors universally increase creativity, it asks for whom, under which conditions, at which stage and level, and over what timescale particular factors support or constrain creative activity.",
+      "topics": [
+        "Creativity in Education and Neuroscience",
+        "Action Observation and Synchronization",
+        "Neural and Behavioral Psychology Studies"
+      ],
+      "keywords": [
+        "creativity",
+        "biopsychosocial model",
+        "socio-technical approach",
+        "multilevel analysis",
+        "affordances",
+        "regulation",
+        "creative process stages",
+        "individual differences in creativity",
+        "sociocultural context",
+        "technology and creativity",
+        "generative AI",
+        "interactionism",
+        "Creativity",
+        "Sociocultural evolution",
+        "Perspective (graphical)",
+        "Sociotechnical system",
+        "Generative grammar",
+        "Biopsychosocial model",
+        "Agency (philosophy)",
+        "Phenomenon"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.35082",
+      "abstract": "Group-based reinforcement learning such as GRPO trains LLM agents by comparing rollouts sampled for each task, without a learned critic. In long-horizon settings, these rollouts revisit shared anchor states, offering cross-rollout evidence for step-level credit. Ideally, step-level credit should incorporate evidence beyond the realized suffixes observed at an anchor while aggregating alternative continuations according to their empirical frequencies. Visit-local averaging pools realized suffix returns at shared anchors and respects observed frequencies, but does not recursively propagate evidence across rollouts, whereas shortest-path estimators have global reach but allow a rarely observed route to dominate an anchor's value. We introduce Cross-Rollout Bellman Closure (CRBC), which merges each rollout group into a finite empirical process with absorbing success and failure boundaries and evaluates its behavior-policy Bellman fixed point with one linear solve. This fixed point uses the same empirical action and transition frequencies to propagate evidence through shared anchors and aggregate alternative continuations. Backing up the resulting state values through observed transitions yields action values, whose gain over the corresponding state value provides step-level credit. A corresponding finite-depth family recovers visit-local return averaging at zero depth and converges to the exact closure as depth increases. The normalized closure credit is combined with the trajectory-level group advantage for policy optimization, without additional environment rollouts. Across ALFWorld, WebShop, and Sokoban benchmarks with multiple model scales, CRBC consistently improves final performance and learning efficiency. For example, CRBC outperforms the strongest evaluated baseline by 5.59 percentage points on ALFWorld with Qwen2.5-1.5B-Instruct.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Explainable Artificial Intelligence (XAI)",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "keywords": [
+        "Group Relative Policy Optimization",
+        "LLM agents",
+        "policy optimization",
+        "ALFWorld",
+        "WebShop",
+        "Sokoban"
+      ]
+    },
     {
       "id": "doi:10.36348/gajeb.2026.v08i05.038",
       "abstract": "As energy, water, transport, telecommunications, healthcare, finance and government services migrate to cloud platforms, industrial internet connectivity, remote operations and data-driven automation, Saudi Arabia’s critical national infrastructure is becoming more digitally integrated. The integration enhances operational capability, but also provides routes for ransomware and advanced persistent threats (APTs) to move from information technology to operational technology, disrupt essential services, manipulate trusted identities and exploit supplier relationships. This review integrates recent peer-reviewed evidence on cyber resilience against these threats and interprets it for the Saudi critical-infrastructure context. The choice of a structured integrative review is due to the evidence being across the fields of cyber resilience, ransomware, APT behaviour, industrial control systems, zero trust, situational awareness, risk governance and recovery engineering. The synthesis suggests that prevention alone cannot deliver resilient infrastructure. It calls for service-centric governance, separation of business and operational environments, identity-based access control, threat-informed monitoring, secure and tested recovery, supplier assurance, and continuous adaptation after exercises or incidents. Ransomware and APTs differ in speed and goals, but both take advantage of weak identity, lack of asset visibility, trusted administrative pathways, and poor recovery design. The paper therefore proposes a Critical Infrastructure Cyber-Resilience Loop that incorporates govern, anticipate, withstand, detect, contain, recover and adapt functions around minimum viable service delivery. The review provides a practical framework for Saudi operators and policymakers, and also highlights research gaps in OT-specific resilience measurement, cross-sector dependency modelling, recovery assurance, and empirical evaluation of national cybersecurity controls.",
@@ -3636,58 +3698,6 @@
         "multi-agent systems",
         "risk assessment framework",
         "protocol security"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.34970",
-      "abstract": "Safety-aligned LLMs can exhibit emergent misalignment (EM): narrow domain adaptation unexpectedly triggers catastrophic safety failures across unrelated domains. Prior static analyses leave training dynamics unmapped, while existing defenses rely on heuristics that degrade utility. We present a dynamic, second-order geometric study of EM. Tracking training trajectories reveals that directional Hessian curvature concentrates sharply on semantic pivot tokens. Grassmannian projections show that, in most settings, harmful-safe gap widens mainly because safe-gradient overlap declines. Leveraging these insights, we introduce a parameter-level Geometric Mitigation Framework that orthogonally projects empirical harmful gradient subspace out of parameter updates. On Qwen2.5-14B-IT, our defense suppresses free-generation EM by up to 80.0%; across the other three of four open-weight instruction-based model families (3B--20B), where single-layer behavioral EM is already near zero, teacher-forced evaluation shows same harmful subspace controls the conditional support of frozen EM responses. Crucially, these diagnostics unmask the illusion of behavioral safety: the same subspace remains measurable and steerable in models where behavioral EM is near zero. Code: https://github.com/WeiqiaoQUE/mechanistic-emergent-misalignment.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Reinforcement Learning in Robotics",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "emergent misalignment",
-        "large language models",
-        "safety alignment",
-        "training dynamics",
-        "domain adaptation"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.trf.2026.103830",
-      "abstract": "Vehicle-to-Vehicle (V2V) cooperative driving can improve traffic safety and efficiency, but it also introduces information asymmetry between drivers and automated systems, which may lead to human-machine conflict. This study introduces V2V cooperative process transparency, defined as the level of detail with which the interface reveals the Awareness-Negotiation-Execution process of V2V communication to the driver. Using an augmented reality HMI in a driving simulator, we examined how different levels of V2V cooperative process transparency affect driver cognition during cooperative lane changes. Three interface conditions were compared: a baseline condition with no V2V cooperation information, a limited-transparency condition presenting only the final cooperation outcome, and a high-transparency condition presenting the full cooperation process. Twenty-five participants completed the experiment, and subjective, performance, and qualitative data were collected. The results showed that V2V cooperative process transparency significantly affected drivers’ subjective responses. Compared with the baseline condition, both the limited- and high-transparency conditions significantly improved overall situation awareness and reduced workload. The limited-transparency condition also significantly increased trust and system usability, whereas the differences in trust and system usability between the high-transparency and baseline conditions were not significant. Compared with the limited-transparency condition, the high-transparency condition significantly improved overall situation awareness, whereas overall workload, trust, and system usability did not differ significantly; at the workload-dimension level, however, Temporal Demand was significantly lower under high transparency. No significant differences were found in task performance across conditions. Qualitative interviews indicated that most participants considered the richer interface understandable and acceptable, although some reported possible information overload. These findings highlight V2V cooperative process transparency as an important design variable for cooperative driving HMI design.",
-      "topics": [
-        "Human-Automation Interaction and Safety",
-        "Autonomous Vehicle Technology and Safety",
-        "Traffic control and management"
-      ],
-      "keywords": [
-        "vehicle-to-vehicle communication",
-        "cooperative driving",
-        "process transparency",
-        "lane changing",
-        "driver cognition",
-        "situational awareness",
-        "driver workload",
-        "trust in automation",
-        "human-machine conflict",
-        "information asymmetry",
-        "interface design",
-        "information overload"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.34736",
-      "abstract": "Large language model (LLM) routing aims to select the most suitable model for each incoming query. Most existing routers learn this decision directly from query embeddings, model representations, preference data, or clusters of similar examples. Such approaches can be effective, yet the representation used for routing rarely states what a query actually requires. We introduce SeLMRoute, a routing framework that separates the extraction of candidate-independent semantic evidence from the learning of candidate performance and the application of deployment objectives. A decision model first evaluates a set of interpretable questions about the query, such as its reasoning requirements and use of external knowledge, with each judgment retained as a probability distribution. The resulting probabilistic semantic state is used by a lightweight supervised router to estimate candidate model performance. Routing objectives are applied after performance estimation, which allows the same semantic state to support performance-oriented and cost-aware decisions. On the LLMRouterBench (15 datasets, 20 candidate models, 11,481 queries), SeLMRoute achieves an average accuracy of $72.08\\% \\pm 0.45$, while grouped five-fold out-of-fold evaluation reaches $72.64\\%$, compared with $69.23\\%$ for the strongest fixed candidate. The representation achieves the highest mean performance among the evaluated semantic, dense, lexical, and domain-level representations. In a separate 13-model performance-cost setting, SeLMRoute improves performance in all five grouped splits, with a mean PerfGain of $2.66\\%$. Our code is available at https://github.com/Indigma-Innovations/SeLMRoute.",
-      "topics": [
-        "Advanced Graph Neural Networks",
-        "Advanced Neural Network Applications",
-        "Complex Network Analysis Techniques"
-      ],
-      "keywords": [
-        "model performance estimation",
-        "cost-aware routing"
       ]
     }
   ]

@@ -1,7 +1,37 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.33878",
+      "abstract": "Merchant matching resolves a noisy payment descriptor to a retrieved merchant entity or returns no match. A key challenge in curating training labels is distinguishing teacher abstention from evidence that no acceptable entity exists: false no-match labels contaminate pseudo-labeled data, while conservative labeling reduces coverage. We investigate whether agreement between two local large language model judges improves pseudo-label reliability. A label is retained only when the judges agree, with separate ordered thresholds for selections and abstentions that guarantee disjoint positive and negative label sets. Retrospective replay on 2,000 expert-annotated queries shows that higher selection thresholds can improve positive-label purity, whereas higher abstention thresholds increase false no-match labels. At thresholds (0.86, 0.80), Muse Glimmer 30B and Gemma 4 31B jointly label 1,633 queries (81.7% coverage) at 96.88% purity; positive and negative purities are 99.47% and 93.38%. This exceeds either constituent model at the same thresholds by more than two percentage points, with lower coverage. A split-half check finds only 0.14 percentage points of threshold-selection optimism. A symmetric threshold of 0.86 adds 40 erroneous no-match labels, while 46 false abstentions persist even with no confidence threshold. Across five matched within-model comparisons, higher reasoning effort yields no clear F0.5 gain and increases median latency by 1.8-5.0 times. These results motivate separate thresholding and auditing for positive and negative pseudo-labels. The study establishes label purity, not student utility; fresh-data curation and student fine-tuning remain necessary to demonstrate downstream value.",
+      "topics": [
+        "Machine Learning and Data Classification",
+        "Text and Document Classification Technologies",
+        "Topic Modeling"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.33403",
+      "abstract": "Data videos communicate data insights through dynamic charts, voice narration, and synchronized animations, and have become a widely adopted form of data storytelling. However, producing them requires expertise in data analysis, narrative design, and video editing. Static visualization tools lack narrative and animation capabilities; authoring tools rely on pre-prepared charts rather than raw data; and pixel-level models generate videos end-to-end but cannot guarantee data accuracy or provenance. End-to-end automatic generation faces two core challenges: how to uniformly represent charts, narration, and animations together with their temporal relationships, and how to efficiently search a vast design space for narrative-coherent compositions. We present DataMagic, which authors data videos from raw tabular data through declarative multi-agent orchestration. First, the declarative specification DVSpec unifies charts, narration, and animations with data-bound references and declarative synchronization, ensuring data provenance and automatic audio-visual alignment. Second, a \"Generate-then-Orchestrate\" multi-agent strategy generates candidate scenes in parallel and then optimizes narrative coherence through global orchestration. DVSpec provides a shared state for three complementary interaction modes, bridging full automation with fine-grained human control. Evaluations on 109 real-world samples show that even the most advanced LLM (e.g., GPT-5) achieves only 2.13/5 with execution success rates between 48.62% and 86.24%; DataMagic improves quality to 3.89 (+83%) with success rates above 95%, with the most significant gains in animation and narrative dimensions. A user study shows that, compared to a conversational LLM workflow, DataMagic improves creation efficiency (79.7% reduction in task time) and reduces perceived cognitive load. Project page: https://github.com/HKUSTDial/DataMagic.",
+      "topics": [
+        "Data Visualization and Analytics",
+        "Human Motion and Animation",
+        "Music Technology and Sound Studies"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.33768",
+      "abstract": "Multi-agent systems (MAS) have recently emerged as an effective approach for coordinating large language model (LLM)-based agents to solve complex tasks through structured interactions. In practice, MASs often handle a stream of heterogeneous and complex tasks, requiring agents to decompose each task and then self-organize and self-evolve to adapt to incoming tasks while sharing execution resources. However, most early approaches to MASs rely on centralized controllers or fixed coordination patterns, which can limit scalability or adaptability. In contrast, existing decentralized and dynamic MASs often require training dedicated routers or invoking LLMs for agent selection, resulting in substantial computational costs and coordination overhead. To address these challenges and enable efficient task-level self-organization and self-evolution for task- and workload-level collaboration, we propose Decentralized Expertise-Aware Load Serving (DEALS), a decentralized and low-complexity framework that enables agents to self-organize and dynamically route concurrent tasks for processing. Specifically, each agent maintains local queues of incoming tasks, and its router decides whether to process a task locally or forward it to a neighbor based on differences in backlog and success rate. Meanwhile, executors process independent tasks concurrently within and across agents, and partially solved tasks can be resumed by other agents. Experiments show that DEALS not only improves performance along multiple dimensions (e.g., answer accuracy and task throughput) in both homogeneous and heterogeneous agent pools, but also balances agent expertise and workload in a self-organized manner, enabling effective decentralized coordination.",
+      "topics": [
+        "Topic Modeling",
+        "Mobile Crowdsensing and Crowdsourcing",
+        "Multi-Agent Systems and Negotiation"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.6084/m9.figshare.34005285.v1",
       "abstract": "The decolonisation of African Studies has become an increasingly important field of debate concerning knowledge production, epistemic authority, research methodology, language, and African intellectual agency. This paper develops a critical reflection on the Toyin Falola Masterclass on the Decolonization of African Studies, held online on 5 May 2026, and situates the ideas encountered during the session within wider scholarship on decolonisation and African knowledge production. The paper argues that decolonisation should not be understood simply as the removal of colonial content from African Studies or as the wholesale rejection of Western scholarship. Rather, it involves interrogating the historical and institutional conditions through which particular forms of knowledge acquired universal authority, while creating greater space for African intellectual traditions, indigenous knowledge systems, African languages, locally grounded methodologies, and African agency in the production and interpretation of knowledge. Drawing on the work of scholars including Ngũgĩ wa Thiong’o, Chinua Achebe, Linda Tuhiwai Smith, Valentin-Yves Mudimbe, Achille Mbembe, Sabelo J. Ndlovu-Gatsheni, and Toyin Falola, the paper examines the relationship between coloniality, language, representation, research, and epistemic justice. It also considers the continuing relevance of these questions in relation to digital technologies and artificial intelligence. The paper concludes that decolonising African Studies requires neither intellectual isolation nor the abandonment of globally developed scholarship. Instead, it requires epistemic plurality, critical reflexivity, African participation in defining research agendas, and recognition of indigenous and African intellectual traditions as sources of theory, methodology, and knowledge rather than merely objects of study.",
@@ -3155,45 +3185,6 @@
         "Patent law",
         "Industrial property",
         "European commission"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33589",
-      "abstract": "Efficient exploration often remains a central bottleneck in reinforcement learning with verifiable rewards (RLVR). Although temperature control and test-time scaling strategies can increase rollout diversity of large language models (LLMs), they either expand the sample budget at rollout time or leave the benefit of exploration unquantified. To this end, we propose Temperature-Grouped Reinforcement Learning (TGRL), which turns temperature-induced diversity into an explicit training signal. For each prompt, TGRL partitions its rollout group into low- and high-temperature subsets, estimates exploration gain through their reward contrast, and allocates this group-level signal as token-level credit using Jensen--Shannon (JS) divergence between the corresponding temperature-scaled next-token distributions induced by the same logits. Notably, TGRL reaches equivalent accuracy up to 36% faster than strong RLVR baselines without expanding the rollout budget. Across 11 benchmarks from diverse domains, TGRL broadly improves over strong RLVR baselines: it improves the six-benchmark math average by 1.6% at 32B, raises CodeForces rating by 196.7 points and LiveCodeBench Pass@16 by 4.4%, and improves ALFWorld/WebShop success rates by 6.3%/4.9%. Comprehensive ablations and wall-clock analysis confirm the efficacy of all proposed components. Code is available at https://github.com/1229095296/TGRL/tree/main.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Reinforcement Learning in Robotics",
-        "Topic Modeling"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33738",
-      "abstract": "Large language models are increasingly used as interactive writing tools, where users develop stories, revise ideas, and introduce new requirements across multiple turns rather than specifying a complete brief upfront. Yet most evidence on multi-turn instruction degradation comes from tasks with objectively verifiable outcomes, leaving unclear whether incremental interaction harms creative artifacts in ways that explicit requirement checks cannot capture. We study this question using 160 human-authored creative-writing tasks across six genres, presenting each intended specification either upfront or progressively over 5-9 turns to six distinct open-weight model families, yielding 960 matched pairs. Progressive delivery reduces explicit constraint adherence and produces its largest writing-quality degradation in structure/coherence. The structural gap persists among outputs with equal observed adherence, suggesting that measured requirement loss alone does not explain the observed structural difference. We define Creative Integrity as a compact measure of joint adherence and narrative structure; under incremental delivery, models retain 71.2% of FULL Creative Integrity (95% CI [68.2%, 74.3%]). A three-rater human study over 50 matched pairs independently recovers FULL advantages in structure/coherence, craft, and genre effectiveness, while automated scores remain positively associated with aggregated human ratings. These findings show that interactive creative-writing systems should be evaluated not only on whether requirements survive conversation, but also on whether evolving requirements remain coherently integrated into the final artifact. Our dataset, benchmarks, and source code are available at: https://github.com/solusops/SISTER-2026-Team19",
-      "topics": [
-        "Artificial Intelligence in Games",
-        "Writing and Handwriting Education",
-        "Machine Learning in Materials Science"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.22988932",
-      "abstract": "Artificial Intelligence (AI) has become a strategic enabler of modern cybersecurity by enhancing organizations' ability to detect, predict, and respond to increasingly sophisticated cyber threats. However, the rapid advancement of AI has also empowered cyber adversaries to develop more intelligent attacks, including AI-generated phishing, deepfake-enabled fraud, adaptive malware, and adversarial machine learning techniques. This study presents a structured narrative review of recent literature to examine the evolving role of AI in cybersecurity from both defensive and offensive perspectives. The review synthesizes current evidence on AI-driven cyber defense, emerging AI-enabled threats, and the technical, ethical, and governance challenges associated with AI adoption. Building on these findings, the paper proposes an AI-Driven Adaptive Cybersecurity Framework (AI-ACF) that integrates threat intelligence, AI analytics, explainable decision support, and adaptive response to support resilient cybersecurity operations. The review highlights that while AI has significantly improved threat detection, predictive intelligence, and automated incident response, its effectiveness depends on high-quality data, robust governance, explainable models, and meaningful human oversight. The study contributes to the growing body of knowledge by providing a balanced synthesis of AI's dual role in cybersecurity and offering a conceptual framework that can guide future research and organizational implementation. Future studies should empirically validate the proposed framework across diverse operational environments to assess its effectiveness in enhancing cyber resilience. Keywords: Artificial Intelligence; Cybersecurity; Machine Learning; Threat Intelligence; Explainable Artificial Intelligence; Adaptive Cybersecurity; Cyber Resilience.",
-      "topics": [
-        "Internet of Things and AI",
-        "Organizational and Employee Performance",
-        "Explainable Artificial Intelligence (XAI)"
-      ],
-      "keywords": [
-        "Resilience (materials science)",
-        "Enabling",
-        "Offensive",
-        "Conceptual framework",
-        "Adaptive learning",
-        "Cyber-physical system",
-        "Adversarial system",
-        "Corporate governance"
       ]
     }
   ]

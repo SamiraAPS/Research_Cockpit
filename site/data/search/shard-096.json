@@ -1,7 +1,59 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.34970",
+      "abstract": "Safety-aligned LLMs can exhibit emergent misalignment (EM): narrow domain adaptation unexpectedly triggers catastrophic safety failures across unrelated domains. Prior static analyses leave training dynamics unmapped, while existing defenses rely on heuristics that degrade utility. We present a dynamic, second-order geometric study of EM. Tracking training trajectories reveals that directional Hessian curvature concentrates sharply on semantic pivot tokens. Grassmannian projections show that, in most settings, harmful-safe gap widens mainly because safe-gradient overlap declines. Leveraging these insights, we introduce a parameter-level Geometric Mitigation Framework that orthogonally projects empirical harmful gradient subspace out of parameter updates. On Qwen2.5-14B-IT, our defense suppresses free-generation EM by up to 80.0%; across the other three of four open-weight instruction-based model families (3B--20B), where single-layer behavioral EM is already near zero, teacher-forced evaluation shows same harmful subspace controls the conditional support of frozen EM responses. Crucially, these diagnostics unmask the illusion of behavioral safety: the same subspace remains measurable and steerable in models where behavioral EM is near zero. Code: https://github.com/WeiqiaoQUE/mechanistic-emergent-misalignment.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Reinforcement Learning in Robotics",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "emergent misalignment",
+        "large language models",
+        "safety alignment",
+        "training dynamics",
+        "domain adaptation"
+      ]
+    },
+    {
+      "id": "doi:10.1016/j.trf.2026.103830",
+      "abstract": "Vehicle-to-Vehicle (V2V) cooperative driving can improve traffic safety and efficiency, but it also introduces information asymmetry between drivers and automated systems, which may lead to human-machine conflict. This study introduces V2V cooperative process transparency, defined as the level of detail with which the interface reveals the Awareness-Negotiation-Execution process of V2V communication to the driver. Using an augmented reality HMI in a driving simulator, we examined how different levels of V2V cooperative process transparency affect driver cognition during cooperative lane changes. Three interface conditions were compared: a baseline condition with no V2V cooperation information, a limited-transparency condition presenting only the final cooperation outcome, and a high-transparency condition presenting the full cooperation process. Twenty-five participants completed the experiment, and subjective, performance, and qualitative data were collected. The results showed that V2V cooperative process transparency significantly affected drivers’ subjective responses. Compared with the baseline condition, both the limited- and high-transparency conditions significantly improved overall situation awareness and reduced workload. The limited-transparency condition also significantly increased trust and system usability, whereas the differences in trust and system usability between the high-transparency and baseline conditions were not significant. Compared with the limited-transparency condition, the high-transparency condition significantly improved overall situation awareness, whereas overall workload, trust, and system usability did not differ significantly; at the workload-dimension level, however, Temporal Demand was significantly lower under high transparency. No significant differences were found in task performance across conditions. Qualitative interviews indicated that most participants considered the richer interface understandable and acceptable, although some reported possible information overload. These findings highlight V2V cooperative process transparency as an important design variable for cooperative driving HMI design.",
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Autonomous Vehicle Technology and Safety",
+        "Traffic control and management"
+      ],
+      "keywords": [
+        "vehicle-to-vehicle communication",
+        "cooperative driving",
+        "process transparency",
+        "lane changing",
+        "driver cognition",
+        "situational awareness",
+        "driver workload",
+        "trust in automation",
+        "human-machine conflict",
+        "information asymmetry",
+        "interface design",
+        "information overload"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34736",
+      "abstract": "Large language model (LLM) routing aims to select the most suitable model for each incoming query. Most existing routers learn this decision directly from query embeddings, model representations, preference data, or clusters of similar examples. Such approaches can be effective, yet the representation used for routing rarely states what a query actually requires. We introduce SeLMRoute, a routing framework that separates the extraction of candidate-independent semantic evidence from the learning of candidate performance and the application of deployment objectives. A decision model first evaluates a set of interpretable questions about the query, such as its reasoning requirements and use of external knowledge, with each judgment retained as a probability distribution. The resulting probabilistic semantic state is used by a lightweight supervised router to estimate candidate model performance. Routing objectives are applied after performance estimation, which allows the same semantic state to support performance-oriented and cost-aware decisions. On the LLMRouterBench (15 datasets, 20 candidate models, 11,481 queries), SeLMRoute achieves an average accuracy of $72.08\\% \\pm 0.45$, while grouped five-fold out-of-fold evaluation reaches $72.64\\%$, compared with $69.23\\%$ for the strongest fixed candidate. The representation achieves the highest mean performance among the evaluated semantic, dense, lexical, and domain-level representations. In a separate 13-model performance-cost setting, SeLMRoute improves performance in all five grouped splits, with a mean PerfGain of $2.66\\%$. Our code is available at https://github.com/Indigma-Innovations/SeLMRoute.",
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Advanced Neural Network Applications",
+        "Complex Network Analysis Techniques"
+      ],
+      "keywords": [
+        "model performance estimation",
+        "cost-aware routing"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2609.34967",
       "abstract": "Semantic uncertainty quantification for large language models rests on a common template: sample several answers, measure how much they agree, and treat disagreement as uncertainty. We first formalize this template as two separate roles: an operator that compares two answers, and an aggregator that combines all pairwise comparisons into a scalar. Existing methods differ almost entirely in how they aggregate, while taking the operator off the shelf, typically an NLI model or a generic sentence encoder. We show that this reliance on off-the-shelf operators is the primary bottleneck of semantic UQ: they do not accurately measure factual equivalence of multiple answers to the same question. We resolve this with a deliberately simple recipe: a single encoder trained contrastively to isolate the targeted fact, utilizing synthetic data generated by an LLM and dataset both disjoint from all evaluation settings. Integrating the resulting operator into existing methods improves performance on 120 of 126 evaluation settings (95%) spanning 18 model dataset combinations across language and vision-language models. The best variant reaches 0.76 mean AUROC against 0.68 for the strongest baseline, while replacing the quadratic cross-encoder comparisons of entailment-based operators with one encoder pass per answer. The uniformity of the improvement supports the view that the operator, not the aggregator, is the limiting factor. The same operator also improves single generation token-level estimators: the norm it assigns to each token measures how much that token bears on the answer, and reweighting token log-likelihoods accordingly sharpens the estimate.",
@@ -3529,36 +3581,6 @@
         "Training (meteorology)",
         "Image segmentation"
       ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33878",
-      "abstract": "Merchant matching resolves a noisy payment descriptor to a retrieved merchant entity or returns no match. A key challenge in curating training labels is distinguishing teacher abstention from evidence that no acceptable entity exists: false no-match labels contaminate pseudo-labeled data, while conservative labeling reduces coverage. We investigate whether agreement between two local large language model judges improves pseudo-label reliability. A label is retained only when the judges agree, with separate ordered thresholds for selections and abstentions that guarantee disjoint positive and negative label sets. Retrospective replay on 2,000 expert-annotated queries shows that higher selection thresholds can improve positive-label purity, whereas higher abstention thresholds increase false no-match labels. At thresholds (0.86, 0.80), Muse Glimmer 30B and Gemma 4 31B jointly label 1,633 queries (81.7% coverage) at 96.88% purity; positive and negative purities are 99.47% and 93.38%. This exceeds either constituent model at the same thresholds by more than two percentage points, with lower coverage. A split-half check finds only 0.14 percentage points of threshold-selection optimism. A symmetric threshold of 0.86 adds 40 erroneous no-match labels, while 46 false abstentions persist even with no confidence threshold. Across five matched within-model comparisons, higher reasoning effort yields no clear F0.5 gain and increases median latency by 1.8-5.0 times. These results motivate separate thresholding and auditing for positive and negative pseudo-labels. The study establishes label purity, not student utility; fresh-data curation and student fine-tuning remain necessary to demonstrate downstream value.",
-      "topics": [
-        "Machine Learning and Data Classification",
-        "Text and Document Classification Technologies",
-        "Topic Modeling"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33403",
-      "abstract": "Data videos communicate data insights through dynamic charts, voice narration, and synchronized animations, and have become a widely adopted form of data storytelling. However, producing them requires expertise in data analysis, narrative design, and video editing. Static visualization tools lack narrative and animation capabilities; authoring tools rely on pre-prepared charts rather than raw data; and pixel-level models generate videos end-to-end but cannot guarantee data accuracy or provenance. End-to-end automatic generation faces two core challenges: how to uniformly represent charts, narration, and animations together with their temporal relationships, and how to efficiently search a vast design space for narrative-coherent compositions. We present DataMagic, which authors data videos from raw tabular data through declarative multi-agent orchestration. First, the declarative specification DVSpec unifies charts, narration, and animations with data-bound references and declarative synchronization, ensuring data provenance and automatic audio-visual alignment. Second, a \"Generate-then-Orchestrate\" multi-agent strategy generates candidate scenes in parallel and then optimizes narrative coherence through global orchestration. DVSpec provides a shared state for three complementary interaction modes, bridging full automation with fine-grained human control. Evaluations on 109 real-world samples show that even the most advanced LLM (e.g., GPT-5) achieves only 2.13/5 with execution success rates between 48.62% and 86.24%; DataMagic improves quality to 3.89 (+83%) with success rates above 95%, with the most significant gains in animation and narrative dimensions. A user study shows that, compared to a conversational LLM workflow, DataMagic improves creation efficiency (79.7% reduction in task time) and reduces perceived cognitive load. Project page: https://github.com/HKUSTDial/DataMagic.",
-      "topics": [
-        "Data Visualization and Analytics",
-        "Human Motion and Animation",
-        "Music Technology and Sound Studies"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33768",
-      "abstract": "Multi-agent systems (MAS) have recently emerged as an effective approach for coordinating large language model (LLM)-based agents to solve complex tasks through structured interactions. In practice, MASs often handle a stream of heterogeneous and complex tasks, requiring agents to decompose each task and then self-organize and self-evolve to adapt to incoming tasks while sharing execution resources. However, most early approaches to MASs rely on centralized controllers or fixed coordination patterns, which can limit scalability or adaptability. In contrast, existing decentralized and dynamic MASs often require training dedicated routers or invoking LLMs for agent selection, resulting in substantial computational costs and coordination overhead. To address these challenges and enable efficient task-level self-organization and self-evolution for task- and workload-level collaboration, we propose Decentralized Expertise-Aware Load Serving (DEALS), a decentralized and low-complexity framework that enables agents to self-organize and dynamically route concurrent tasks for processing. Specifically, each agent maintains local queues of incoming tasks, and its router decides whether to process a task locally or forward it to a neighbor based on differences in backlog and success rate. Meanwhile, executors process independent tasks concurrently within and across agents, and partially solved tasks can be resumed by other agents. Experiments show that DEALS not only improves performance along multiple dimensions (e.g., answer accuracy and task throughput) in both homogeneous and heterogeneous agent pools, but also balances agent expertise and workload in a self-organized manner, enabling effective decentralized coordination.",
-      "topics": [
-        "Topic Modeling",
-        "Mobile Crowdsensing and Crowdsourcing",
-        "Multi-Agent Systems and Negotiation"
-      ],
-      "keywords": []
     }
   ]
 }

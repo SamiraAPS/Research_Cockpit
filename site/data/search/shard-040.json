@@ -1,7 +1,59 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.24928",
+      "abstract": "LLM planning research has traditionally focused on discrete-state domains, where actions form a finite, enumerable set. Existing LLM planning frameworks largely assume actions are enumerable, modeling planning as a search process over candidate actions. However, in continuous-state domains, where actions form a continuum and cannot be enumerated, this assumption breaks down. We find a remedy in Newell and Simon's Means-Ends Analysis (MEA), a general problem-solving technique rooted in heuristics from human psychology. We develop Medaka, an MEA-inspired structured prompting framework that encourages recursive goal decomposition, algebraic derivation, and per-step state tracking. To evaluate native LLM planning abilities in continuous-state domains, we develop Liquidworld, a systematic testbed on liquid mixing. On Liquidworld, Medaka can improve performance across model families, suggesting that classical means-ends analysis elicits LLM-native reasoning abilities that are helpful for continuous-state planning.",
+      "topics": [
+        "AI-based Problem Solving and Planning",
+        "Reinforcement Learning in Robotics",
+        "Natural Language Processing Techniques"
+      ],
+      "keywords": [
+        "means-ends analysis",
+        "structured prompting",
+        "medaka",
+        "liquid mixing",
+        "algebraic derivation",
+        "state tracking",
+        "heuristic problem solving"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.25127",
+      "abstract": "Memory serves as the core component of LLM-based agents, enabling personalized responses via extracting and using user preferences from past interactions. However, its use may reduce response diversity, thereby narrowing the range of information available to users. Existing evaluations rely largely on synthetic interactions and cover few memory systems, leaving the effects of memory on response diversity insufficiently evaluated in real-world scenarios. We introduce MemBubble, a benchmark of 1000 instances built on preferences extracted from real user-assistant conversations. To measure the extent to which memory concentrates response distributions, we construct test queries in scenarios distinct from user preferences while preserving topical relevance through shared preference categories. Across multiple LLMs and memory mechanisms, entropy decreases by 34.7% on average compared with directly providing the full interaction history, highlighting the important role of memory processing in diversity loss. We also explore simple user-side interventions and changes in information availability but find that these do not effectively close the diversity gap. Our findings highlight the need to consider preserving diversity and user access to information alongside improvements in personalization when designing and using agent memory systems.",
+      "topics": [
+        "Speech and dialogue systems",
+        "Information Retrieval and Search Behavior",
+        "Recommender Systems and Techniques"
+      ],
+      "keywords": [
+        "LLM agents",
+        "agent memory",
+        "response diversity",
+        "personalization",
+        "user preferences",
+        "benchmark",
+        "information availability",
+        "memory mechanisms",
+        "entropy (information theory)"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.25123",
+      "abstract": "Agents now act on the Web, publishing packages, models and datasets through registry APIs, and remembering past verifications spares them the work. But a verdict rests on premises. When a signing key is revoked, everything built on it stops passing, yet the advisory names only the key, and the old verdicts of its dependents may never share a retrieval window with it. This non-locality of invalidation turns memory into a liability: in long simulated chats, an agent reading a memory of atomic facts publishes 62% of the objects whose failure lies upstream, each backed by a record that was true when written. Yet derivation is local even when invalidation is not. Tether records, at write time, the exact versions each verdict derives from, and at read time withdraws any verdict whose support has failed anywhere in the store; the agent reads the same fields as before. On Fallout, a generator of versioned worlds with hypothesis-blind simulated histories shared by every memory, Tether publishes 0.3% of upstream-failing objects across three domains when relations are stated with their verdicts, with 37% fewer verification calls than checking everything. A-Mem and Graphiti re-verify most candidates (0.83-0.86 checks per candidate), which limits their savings, yet publish 9% of upstream-failing objects; Mem0 relies on memory more and publishes 42%. Flushing every verdict on any failure is as safe as Tether but costs 32% more checks. The gain over fact memory holds with three open-weight backbones and against a whole-store window. These gains depend on capturing dependencies: when relations arrive in sessions apart from their verdicts, Tether's downstream unsafe publication rate rises to 9.4-22.1%, and a weak writer that misses edges loses safety in the same way.",
+      "topics": [
+        "Advanced Database Systems and Queries",
+        "Scientific Computing and Data Management",
+        "Software Engineering Research"
+      ],
+      "keywords": [
+        "LLM agents",
+        "invalidation",
+        "memory safety"
+      ]
+    },
     {
       "id": "doi:10.1002/hfm.70065",
       "abstract": "ABSTRACT This paper provides a notion for the use of electroencephalography (EEG) in the field of cognitive science. In particular, we investigated the brain activity of operators while spotting the differences in similar‐looking pictures at three levels of difficulty. As many practical loads are fundamentally intrinsic, the task was designed to specifically induce intrinsic workload (the productive load as per Cognitive Load Theory (CLT)). The experiment used the task: Spot the Difference to create a workload scenario comprising three difficulty levels: spotting five differences, three more differences, and two more differences (along with retaining the previous differences from working memory). The task was designed intrinsically as the operators are generally occupied with tasks involving working memory and requiring attention towards the varying number of resources. By utilising the brain signatures a mental workload model was developed employing a Support Vector Machine (SVM) as the classifier. The workload levels were classified within an accuracy range of 84% to 98% ( p < 0.05). Moreover, using subjective ratings about the workload on NASA's Task Load Index (NASA‐TLX) rating scale, workload scores were obtained for validation corresponding to the difficulty levels. Finally, a correlation study showed the association of different EEG features with the workload score within a correlation coefficient range of 0.306 to 0.748 ( p < 0.05 2‐tailed). The reported results can also provide new insights into the cognitive workload assessment of the operators at various phases of task loads. Findings of this type may lead to the industrial and professional measurement and improvement of cognitive aptitude soon.",
@@ -3761,57 +3813,6 @@
         "shared authority",
         "AI governance",
         "open-source platform"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.24379",
-      "abstract": "Recent work shows that attackers can implant dormant malicious behaviors that remain hidden at release but emerge after benign fine-tuning. As foundation models are used as agents, whether dormant poisoning extends to harmful agent actions and multimodal settings remains unclear. We show two agentic risks: (1) harmful behaviors activated by benign fine-tuning can extend to unseen actions; (2) multiple harmful behaviors can coexist and be jointly activated by benign downstream fine-tuning. Existing defenses often rely on external safe responses, which are hard to obtain for agent actions, or a trusted clean reference model. We exploit a key property of dormant poisoning: the attacker must preserve safe behavior at release to conceal poisoning, and this behavior can serve as a safety reference. Leveraging this property, we automatically construct a Safety Buffer pairing harmful inputs with the released model's responses and benign versions generated by the same model to remove harmful intent. The Safety Buffer can replace external safe responses in existing defenses, but these defenses do not distinguish updates that weaken safety from those that preserve it, often increasing over-refusal or reducing utility. To address this limitation, we introduce LookAhead Defense, which previews benign fine-tuning updates using the Safety Buffer and penalizes only updates predicted to weaken safe behavior on harmful inputs or increase the likelihood of refusals on benign versions in the Safety Buffer. Across language models, language agents, and multimodal agents, LookAhead Defense reduces harmful behavior in agents from up to 93.9% to at most 14.2% and harmful responses in language models from up to 92.5% to at most 2.0% versus vanilla fine-tuning, while maintaining competitive utility and low over-refusal. It remains effective against other poisoning methods.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Security and Verification in Computing",
-        "Hate Speech and Cyberbullying Detection"
-      ],
-      "keywords": [
-        "language agents",
-        "multimodal agents",
-        "foundation models",
-        "safety buffer",
-        "over-refusal",
-        "poisoning defense"
-      ]
-    },
-    {
-      "id": "doi:10.1177/27523543261499453",
-      "abstract": "Artificial general intelligence (AGI) has changed from a scientific aim to a moving goalpost of industrial AI ambitions. As far as the AI industry is concerned, it is simultaneously the most consequential invention in human history and a manageable, iterative technology. But what is AGI, aside from a future promise? This paper identifies four rhetorical registers through which AGI is defined, in the words of those giving it shape. In doing so, we base ourselves on the AI industry’s own discussions of AGI, including the 2026 India AI Impact Summit, AI companies’ blog posts, and journalistic coverage. Taken together, these source materials are treated as institutionalized performances of a collectively held sociotechnical imaginary through which AGI is stabilized and reproduced. As such, AGI is positioned as the next supposedly inevitable threshold on the road to superintelligence, imbued with the promise to solve all problems (a techno-solutionist register), bring prosperity (techno-utopian), pose an existential threat to humanity (techno-apocalyptic), and become no less than god (techno-theological). These rhetorical registers together capture AGI as an ineluctable sociotechnical imaginary, as it is being spoken into existence.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Cybernetics and Technology in Society",
-        "Artificial Intelligence Applications"
-      ],
-      "keywords": [
-        "artificial general intelligence",
-        "sociotechnical imaginaries",
-        "superintelligence",
-        "techno-solutionism",
-        "techno-utopianism",
-        "existential risk"
-      ]
-    },
-    {
-      "id": "doi:10.1038/s41598-026-74348-z",
-      "abstract": "Aiming at the problems that the abnormal state of high-speed liquid packaging production lines is difficult to identify in time, the computing power of edge controller is limited, and the energy consumption regulation and condition monitoring are separated from each other, a multimodal lightweight artificial intelligence (AI) system embedded in Tech-Long production controller is constructed; this realizes the collaborative optimization of abnormal operation window identification and energy consumption of the whole line. First, this study collects vibration, acoustic, and thermal signals from the bottle blowing, filling, and packaging sections; it also constructs cross-sectional anomaly characterization through time synchronization, feature-level alignment, and hierarchical fusion. Subsequently, Feather Convolutional Neural Network (FeatherCNN) is reconstructed using kernel fusion, channel compression, and 4-bit Integer (INT4) quantization to reduce model computation and storage load; thus, the network can adapt to resource-constrained Advanced RISC Machine (ARM) edge controllers. Finally, a dual-layer control chain is built, composed of continuous basic energy-saving and anomaly risk-weighted correction, so that anomaly scores influence the updates of temperature zones, valve openings, and heat-sealing parameters via dynamic weights and adjustment gains. The experimental results demonstrate that the anomaly window recognition accuracy of multimodal FeatherCNN reaches 0.931, which is superior to traditional machine learning models, deep learning baselines and various single-modal structures. The lightweight processing reduces Floating-Point Operations (FLOPs) from 3.42×10⁹ to 0.58×10⁹, a decrease of approximately 83%. The inference latency of the complete model on the ARM controller is shortened from 18.63 milliseconds (ms) to 7.41 ms. Under the controlled conditions of fixed production line speed, material specifications, and statistical windows, the dual-layer collaborative control has reduced the overall energy consumption of the whole line by 26%. The results show that multimodal anomaly identification, model lightweighting, and energy-saving parameter tuning can work together in the same edge decision chain. The framework verifies the feasibility of resource-constrained controllers supporting abnormal monitoring and energy consumption regulation of the entire packaging line; meanwhile, it provides an engineering reference for edge intelligent deployment of similar high-speed liquid packaging lines.",
-      "topics": [
-        "Industrial Vision Systems and Defect Detection",
-        "IoT and Edge/Fog Computing",
-        "Anomaly Detection Techniques and Applications"
-      ],
-      "keywords": [
-        "edge computing",
-        "lightweight AI models",
-        "multimodal anomaly detection",
-        "energy optimization",
-        "production line monitoring",
-        "industrial automation"
       ]
     }
   ]

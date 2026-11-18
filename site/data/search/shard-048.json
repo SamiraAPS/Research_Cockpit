@@ -1,7 +1,55 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.21074",
+      "abstract": "Computational biologists increasingly delegate substantial analyses to AI agents in long-horizon, multi-turn sessions, yet most benchmarks of agents' bioinformatics capabilities pose a single short task with a single-shot prompt. We present OmicsBench, a long-horizon, multi-turn bioinformatics benchmark for AI agents. Each of its 97 tasks links dependent subtasks into a directed acyclic graph, for 662 underlying subtasks in all. Each subtask is posed as one user turn and graded deterministically against an answer key, with optional in-context feedback on incorrect answers. Across 12 models on three harnesses, the slowest agent averages 3.6 hours per task, and no combination comes near saturating the benchmark, with mean scores of 0.43 to 0.57 out of a possible 1 without in-context feedback and 0.54 to 0.67 with it. Multi-turn evaluation also uncovers behavior that single-shot prompts cannot, as agents score lower on subtasks that depend on earlier subtasks, and in-context feedback helps agents recover some of that loss. Because deterministic scoring gives no qualitative account of how an agent failed, we also introduce an unsupervised failure mode discovery pipeline that describes, embeds, and clusters agents' failed attempts to surface emergent failure modes. Applied to OmicsBench, this pipeline exposes qualitative shortcomings in how agents carry out bioinformatics analyses, ranging from agents applying their own statistical filters in place of the specified ones to agents writing whole answers from memory.",
+      "topics": [
+        "Scientific Computing and Data Management",
+        "Artificial Intelligence in Healthcare and Education",
+        "Artificial Intelligence Applications"
+      ],
+      "keywords": [
+        "directed acyclic graphs",
+        "unsupervised clustering",
+        "omics data analysis",
+        "bioinformatics",
+        "LLM agents"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.22092",
+      "abstract": "Aerial robots operating near people must treat a pedestrian, a parked car, and a wall differently, yet conventional perception--planning stacks reduce all of them to occupied geometry---a \\emph{human-aware safety gap} in which category-specific clearance is unavailable to the planner and temporary occlusions remove pedestrian-specific constraints from its map. We present a modular, fully onboard pipeline that closes this gap by turning visual observations into context-dependent safety constraints for real-time UAV navigation. A shared BLIP encoder drives scene captioning and text-conditioned segmentation, which is fused with depth to localize obstacles in 3D. Obstacle-specific risk is inferred by a lightweight LLM (Qwen-2.5-0.5B) stabilized with retrieval-augmented generation and grammar-constrained decoding that restricts its output to a planner-compatible JSON schema. The LLM reasons once per object category rather than per frame: its verdicts are cached per class, so previously seen categories are resolved without inference and new ones trigger a fresh retrieval-grounded query; detections are additionally given persistent identities and held in the map across occlusions. The perception pipeline runs at 10\\,Hz on a Jetson Orin NX, while fallback LLM queries take approximately 0.8\\,s and remain off the control-critical path. In Gazebo, low-altitude urban navigation among pedestrians and vehicles shows a roughly $3\\times$ reduction in collision events over a geometric planner, and semantics-aware landing among moving actors raises success from 34\\% to 96\\%. The 224-pixel encoder input limits reliable small-object perception at range; conservative pedestrian margins and short-term persistence mitigate this limitation during navigation.",
+      "topics": [
+        "Advanced Neural Network Applications",
+        "Robotic Path Planning Algorithms",
+        "Aerospace Engineering and Control Systems"
+      ],
+      "keywords": [
+        "safety constraints",
+        "retrieval-augmented generation",
+        "obstacle localization",
+        "collision avoidance",
+        "semantic segmentation",
+        "Jetson Orin NX"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.21983",
+      "abstract": "Learning from experience requires recovering reusable knowledge and determining when it applies to a new situation. We introduce OntoAct, a hypothesis-based neuro-symbolic framework built on ontological abstraction. OntoAct turns individual experiences into axioms over entity types, relations, and conditions, making their underlying patterns reusable across situations. A large language model (LLM) uses this world knowledge to propose hypotheses and actions, while a symbolic verifier assesses their supporting conditions against current observations. Verification identifies missing evidence, and new observations and intervention outcomes update hypothesis assessments and guide subsequent actions. We also introduce Tacit-FLE, a benchmark built on the Factorio Learning Environment (FLE) for diagnosing and repairing hidden faults in existing factories using inherited operational records. Its synthetic maintenance corpus distributes evidence across records, and an executed repair may leave the fault unresolved, requiring agents to reassess their diagnoses through interaction. Across Tacit-FLE, Mars, and ALFWorld, OntoAct achieves leading task performance with efficient interaction and inference.",
+      "topics": [
+        "AI-based Problem Solving and Planning",
+        "Logic, Reasoning, and Knowledge",
+        "Reinforcement Learning in Robotics"
+      ],
+      "keywords": [
+        "knowledge reuse",
+        "large language models",
+        "symbolic verification",
+        "ALFWorld"
+      ]
+    },
     {
       "id": "doi:10.5281/zenodo.23381753",
       "abstract": "This thesis reconstructs and critically evaluates Operation Dark Clark, a Russia-origin influence operation that OpenAI reportedly disrupted and publicly documented on 8 October 2026. It assesses the operation as the first influence campaign ever classified by the company in Category 5 of the IO Breakout Scale—its highest rating for a disrupted operation—and the most complex false-front identity it had dismantled in two and a half years of systematic reporting. The operation combined generative artificial intelligence with classical intelligence tradecraft. It recruited unwitting employees in Latin America to staff a seemingly legitimate organization called the “Social Research Center” (SRC), which was controlled through a fabricated persona named “Mia Clark.” Her published corpus comprised more than sixty original research articles examining public opinion on BRICS and comparing the Brazilian economy under Presidents Jair Bolsonaro and Luiz Inácio Lula da Silva. Drawing on an open-source intelligence (OSINT) verification protocol that distinguishes documented and verified facts from attributed claims and editorial speculation, the thesis traces the operation’s activities across Argentina, Bolivia, Ecuador, Peru, Panama, and Brazil. It reconstructs the operation’s institutional lineage, from Soviet active measures through the Internet Research Agency, PeaceData (2020), and the Prigozhin-linked “Politology”/“La Compañia” network, reportedly now under the control of Russia’s Foreign Intelligence Service (SVR). The study situates the case within the broader industrialization of AI-enabled information confrontation, examining the contemporaneous Iranian “Bogus Bylines” operation and the transnational Pravda network. A dedicated chapter investigates the October 2026 Ukrainian strikes on Yandex data centers and the observed 94% collapse in automated traffic across the Yandex network, cautioning against unwarranted causal interpretations of the relationship between these events. The thesis argues that Dark Clark represents a doctrinal evolution from platform-based amplification toward institutional laundering: the introduction of synthetic or co-opted authority into established media organizations and academic institutions. It contends that effective democratic resilience requires a multilayered response combining platform transparency, institutional source verification, provenance standards, and robust fact-checking capacity. The analysis deliberately refrains from endorsing the unverified assertion circulating in Brazilian political commentary that the operation materially influenced Brazilian electoral outcomes.",
@@ -2812,48 +2860,6 @@
         "expertise",
         "AI assurance",
         "capability development"
-      ]
-    },
-    {
-      "id": "doi:10.1080/1358684x.2026.2736825",
-      "abstract": "Generative artificial intelligence (GenAI) is increasingly used to provide feedback and support revision in English writing. Existing debate has largely examined the quality, accuracy, and effectiveness of AI-generated feedback. This conceptual paper argues that such concerns risk overlooking a more fundamental pedagogical issue: the redistribution of evaluative work between learner and system. Drawing on feedback literacy and evaluative judgement, the paper introduces evaluative outsourcing to describe the delegation of interpretive, judgemental, and decision-making work in feedback engagement to AI. It argues that GenAI can enable substantial textual improvement while requiring limited learner participation in the evaluation underlying revision, creating an AI feedback paradox in which better revision does not necessarily indicate better judgement. The paper proposes four principles for retaining learner evaluative agency: making evaluative decisions visible, designing for comparison, preserving consequential decisions for learners, and creating opportunities for evaluative transfer.",
-      "topics": [
-        "Student Assessment and Feedback",
-        "EFL/ESL Teaching and Learning",
-        "Artificial Intelligence in Education"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.21316",
-      "abstract": "Contribution guidelines help newcomers participate in open-source software projects, yet often contain incomplete or outdated information. Existing studies characterize newcomers' information needs and documentation gaps, but revising these guidelines requires recovering and validating project-specific knowledge from scattered sources. We present ContribAlign, a framework for automatically revising CONTRIBUTING files through category-guided evidence integration. A qualitative analysis yields a taxonomy of 30 fine-grained guidance types across six contribution categories. ContribAlign uses a classifier to diagnose coverage of the six categories in the original guidance, then uses the taxonomy to collect and organize project-specific evidence. It filters detected conflicts and uses a large language model to generate category-level revisions. The classifier achieves a weighted F1 score of 0.764, improving on the existing classifier by 0.156, while the verifier detects factual conflicts with 97.3% precision and 91.5% estimated recall. Human evaluation shows that ContribAlign achieves the highest overall quality among the original guidelines and three baselines, with significant improvements in usefulness, beginner-friendliness, and completeness. These results suggest that ContribAlign can help maintain more accurate and useful contribution guidelines.",
-      "topics": [
-        "Software Engineering Research",
-        "Open Source Software Innovations",
-        "Software Engineering Techniques and Practices"
-      ],
-      "keywords": [
-        "contribution guidelines",
-        "open source software",
-        "guideline revision",
-        "newcomer onboarding",
-        "evidence integration",
-        "large language models"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.21139",
-      "abstract": "Large language models (LLMs) are increasingly used upstream of decision-making to clean data, detect label errors, and reconstruct missing values. Yet LLM-assisted data curation creates a new operational tradeoff: higher-fidelity models and richer prompts can be substantially more expensive, while the value of this additional fidelity depends on the downstream optimization accuracy. This raises the central question of this work: when should one pay for a better LLM, given a specific downstream task at hand? We study this question through stochastic optimization with mixed-fidelity first-order oracles, which can have systematic bias and state-dependent variance. We develop two cost-aware algorithmic frameworks that allow adaptive switching between stochastic oracles. With known bias, the first meta-algorithm applies a restarted, cost-aware policy that adaptively selects oracle fidelity across optimization stages. Its cumulative cost is no larger than that of the best fixed oracle in hindsight and can be substantially smaller. With unknown bias, we develop a budgeted certification scheme that uses occasional trusted-gradient evaluations to certify the optimization progress and eliminate unsuccessful oracle sources, and show an explicit tradeoff between certification cost and delayed detection of biased sources. We provide concrete realizations of these meta-algorithms by applying biased stochastic gradient extrapolation (SGE) and recursive regularization under state-dependent noise as subroutines. Synthetic and LLM-completion experiments illustrate the qualitative switching behavior predicted by the theory: the adaptive policy skips several expensive LLM oracles and substantially reduces cumulative cost relative to fixed high-fidelity alternatives while achieving comparable accuracy.",
-      "topics": [
-        "Stochastic Gradient Optimization Techniques",
-        "Advanced Optimization Algorithms Research",
-        "Advanced Bandit Algorithms Research"
-      ],
-      "keywords": [
-        "large language models",
-        "stochastic optimization",
-        "state-dependent noise",
-        "meta-algorithms"
       ]
     }
   ]

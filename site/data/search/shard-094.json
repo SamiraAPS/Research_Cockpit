@@ -1,7 +1,46 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.36968",
+      "abstract": "Unsupervised tabular anomaly detection (TAD) aims to identify anomalous rows in tabular data using normal training samples. While conventional methods rely on dataset-specific training and configuration search, recent tabular foundation models (TFMs) enable zero-shot anomaly detection on unseen datasets via in-context learning. Most TFM-based approaches, however, require anomaly-specific pretraining from scratch, making detection inherently dependent on synthetic TAD-specific priors and costly to update. Some approaches instead repurpose pretrained general-purpose TFMs for TAD to avoid this burden, but rely on computationally expensive formulations with restrictive anomaly inductive biases. In this work, we introduce TaskBridge, a new framework that efficiently repurposes pretrained general-purpose TFMs for unsupervised TAD by constructing virtual supervised tasks that directly recast anomaly detection as supervised in-context inference of TFMs. The resulting virtual tasks induce predictive structures under which normal queries and their target pairs receive high support, whereas anomalies tend to violate the induced structures and receive lower support, providing direct anomaly evidence. Across 790 real-world datasets, TaskBridge consistently outperforms 30 baselines, including state-of-the-art TFM-based approaches, without anomaly-specific TFM pretraining or dataset-specific model optimization.",
+      "topics": [
+        "Anomaly Detection Techniques and Applications",
+        "Machine Learning and Data Classification",
+        "Software System Performance and Reliability"
+      ],
+      "keywords": [
+        "tabular foundation models",
+        "in-context learning",
+        "zero-shot anomaly detection"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.37356",
+      "abstract": "Generating optimization instances that are both feasible and computationally challenging is crucial for benchmarking solvers and training learning-based optimization algorithms. Existing non-LLM generators rely on seed instances or parameter tuning, resulting in high test-time computational cost, while existing LLM generators lack explicit hardness measures. Recent reinforcement learning methods with verifier feedback evaluate only binary correctness, which is misaligned with generating challenging problems. We note that an optimization solver reports the cost of solving at several stages of its pipeline, and leverage this to design a reward that scores both the solvability and the hardness of generated problems, measured by branch-and-bound nodes and post-cut relaxation gaps. Our key idea is a challenger-solver asymmetric self-play approach, where an LLM challenger generates progressively harder instances and the solver verifies feasibility and hardness, so no seed or training MILP instances are required. We fine-tune Gemma-4-12B and Qwen3.5-4B with GRPO and a size curriculum into OptiScribe-12B and OptiScribe-4B, which generate feasible yet challenging MILP problems from natural language instructions. On capacitated facility location and max-cut, OptiScribe-12B raises median SCIP search nodes by 1.7-5x and post-cut gaps by 1.1-1.7x over its base model and improves the feasibility rate on facility location by 9-19 points, while OptiScribe-4B raises median nodes by up to 15.6x. The problems cover a wider difficulty range than public benchmarks of the same size, follow instructions on density and difficulty, and can tune solver settings for families that public libraries lack. These results indicate that optimization-specific rewards, used in self-play mode, can teach LLMs to generate high-difficulty optimization benchmarks. We will release our code and models publicly on acceptance.",
+      "topics": [
+        "Logic, programming, and type systems",
+        "Natural Language Processing Techniques",
+        "Constraint Satisfaction and Optimization"
+      ],
+      "keywords": [
+        "problem difficulty",
+        "capacitated facility location",
+        "MaxCut",
+        "learning-based optimization"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.38391",
+      "abstract": "Document text forgery has evolved beyond simple pixel-level manipulation: modern attacks alter not only the appearance of a document but also its meaning, and increasingly target the OCR & LLM pipelines that consume such documents. The ACM MM 2026 GenText-Forensics challenge therefore requires systems that not only decide whether a multilingual text image is forged, but also localize the point of manipulation, identify the attack type, and produce a human-readable forensic report with supporting evidence. We present our solution, a decomposed chain-of-thought (CoT) pipeline that combines a document tampering detector (DTD) with two Qwen3-VL-32B vision-language models, each LoRA-adapted to a distinct sub-task. DTD produces tampering probability maps that are converted into numbered candidate regions; a first model (the Filterer) validates these regions and assigns a preliminary forgery type, while a second model (the Semantic Detective) merges and re-grounds the surviving regions, searches for purely semantic anomalies that are invisible to pixel-level detectors, and writes the final report. Both models are trained by distilling chain-of-thought traces from a privileged Qwen3-VL-235B teacher that has access to ground-truth masks and reports. Our approach secured third place in the ACM MM 2026 GenText-Forensics challenge. We describe the data preparation, test-time augmentation, region rendering, distillation protocol, and training configuration in detail, and report ablations over detector thresholds, prompt designs, and pipeline decompositions.",
+      "topics": [
+        "Digital Media Forensic Detection",
+        "Handwritten Text Recognition Techniques",
+        "Digital and Cyber Forensics"
+      ],
+      "keywords": []
+    },
     {
       "id": "doi:10.3389/fpubh.2026.1947463",
       "abstract": "Whole-body vibration (WBV) is a common occupational exposure among heavy machinery operators and has traditionally been investigated in relation to musculoskeletal, spinal, and neurological disorders. However, its potential impact on male reproductive health remains insufficiently characterized. This narrative review critically evaluates current occupational, experimental, and mechanobiological evidence concerning the potential association between chronic WBV exposure and male reproductive dysfunction. Particular attention is given to mechanotransduction and its potential interaction with oxidative stress, mitochondrial dysfunction, microvascular alterations, blood-testis barrier disruption, inflammation, endocrine alterations, and impaired spermatogenesis. Available evidence suggests biological plausibility but remains heterogeneous and insufficient to establish a causal relationship between occupational WBV and male infertility. We introduce the concept of Testicular Ergonomics as a hypothesis-generating framework for integrating male reproductive health into occupational vibration research and prevention. This framework emphasizes improved vibration exposure assessment, engineering and administrative controls, and standardized reproductive-health evaluation while accounting for relevant occupational and lifestyle confounders. Future prospective human and mechanistic studies integrating standardized WBV measurements with reproductive and molecular outcomes are required to determine whether chronic occupational vibration represents an independent risk to male reproductive health and to inform evidence-based preventive strategies.",
@@ -3305,68 +3344,6 @@
         "agent cooperation",
         "attack scenarios",
         "execution traces"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.34581",
-      "abstract": "Temporal video grounding is a key capability of advanced Multimodal Large Language Models (MLLMs) for the thorough understanding of video events, which is however often limited by repeated actions and visually similar contexts in long videos. In this paper, we study this issue from the perspective of On-policy distillation (OPD) and propose a new training regime for MLLMs termed Counterfactual Attention Policy Distillation (CAPD). In particular, OPD is a viable solution for MLLMs via providing dense teacher supervision on student-generated trajectories. But its next-token based teacher-student distillation is hard to identify the specific video segments supporting each predicted timestamp, which is critical for temporal grounding. In this case, CAPD measures how masking each temporal group changes the teacher's output distribution. The resulting counterfactual influence calibrates the teacher's attention and weights token-level distillation, allowing the student to learn the temporal evidence that affects boundary prediction. To validate CAPD, we trained it on Qwen3-VL-8B-Instruct using only 2,500 samples for one epoch, and evaluated it on the TimeLens and multiple general video benchmarks. Experimental results show that CAPD improves average recall by 12.0% relative to GRPO on TimeLens while preserving general video understanding, achieving comparable accuracy to the base model.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Human Pose and Action Recognition",
-        "Generative Adversarial Networks and Image Synthesis"
-      ],
-      "keywords": [
-        "on-policy distillation",
-        "multimodal large language models",
-        "teacher-student distillation"
-      ]
-    },
-    {
-      "id": "doi:10.3389/fcogn.2026.1893765",
-      "abstract": "Creativity has traditionally been studied at different levels of analysis, focusing on neural mechanisms, cognitive abilities, individual characteristics, or environmental influences. Although each approach has provided important insights, none alone fully explains why the same factors may support creativity under some conditions but constrain it under others, or why creative potential is expressed differently across individuals, domains, developmental stages, and sociocultural contexts. Building on biopsychosocial, systemic, sociocultural, and interactionist approaches, this Perspective conceptualizes creativity as a multilevel, developmentally situated, and sociotechnically mediated phenomenon emerging from interactions among biological, psychological, sociocultural, and technological processes. The central proposition is that no single factor is inherently creative or uncreative; its contribution depends on how it interacts with other factors under particular conditions. The framework therefore shifts the unit of explanation from isolated determinants to changing configurations of relationships across levels. Four mechanisms, i.e., constraint, affordance, regulation, and feedback/selection, describe how these relationships may develop over time and generate testable predictions concerning differences across individuals, stages of the creative process, developmental periods, and levels of analysis. Evidence from neuroscience, psychology, sociocultural research, education, organizational studies, and generative artificial intelligence illustrates how apparently contradictory findings may partly reflect these differences. Methodologically, the framework calls for greater conceptual and measurement specificity and for ecological, longitudinal, multilevel, and interdisciplinary research. Rather than asking which factors universally increase creativity, it asks for whom, under which conditions, at which stage and level, and over what timescale particular factors support or constrain creative activity.",
-      "topics": [
-        "Creativity in Education and Neuroscience",
-        "Action Observation and Synchronization",
-        "Neural and Behavioral Psychology Studies"
-      ],
-      "keywords": [
-        "creativity",
-        "biopsychosocial model",
-        "socio-technical approach",
-        "multilevel analysis",
-        "affordances",
-        "regulation",
-        "creative process stages",
-        "individual differences in creativity",
-        "sociocultural context",
-        "technology and creativity",
-        "generative AI",
-        "interactionism",
-        "Creativity",
-        "Sociocultural evolution",
-        "Perspective (graphical)",
-        "Sociotechnical system",
-        "Generative grammar",
-        "Biopsychosocial model",
-        "Agency (philosophy)",
-        "Phenomenon"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.35082",
-      "abstract": "Group-based reinforcement learning such as GRPO trains LLM agents by comparing rollouts sampled for each task, without a learned critic. In long-horizon settings, these rollouts revisit shared anchor states, offering cross-rollout evidence for step-level credit. Ideally, step-level credit should incorporate evidence beyond the realized suffixes observed at an anchor while aggregating alternative continuations according to their empirical frequencies. Visit-local averaging pools realized suffix returns at shared anchors and respects observed frequencies, but does not recursively propagate evidence across rollouts, whereas shortest-path estimators have global reach but allow a rarely observed route to dominate an anchor's value. We introduce Cross-Rollout Bellman Closure (CRBC), which merges each rollout group into a finite empirical process with absorbing success and failure boundaries and evaluates its behavior-policy Bellman fixed point with one linear solve. This fixed point uses the same empirical action and transition frequencies to propagate evidence through shared anchors and aggregate alternative continuations. Backing up the resulting state values through observed transitions yields action values, whose gain over the corresponding state value provides step-level credit. A corresponding finite-depth family recovers visit-local return averaging at zero depth and converges to the exact closure as depth increases. The normalized closure credit is combined with the trajectory-level group advantage for policy optimization, without additional environment rollouts. Across ALFWorld, WebShop, and Sokoban benchmarks with multiple model scales, CRBC consistently improves final performance and learning efficiency. For example, CRBC outperforms the strongest evaluated baseline by 5.59 percentage points on ALFWorld with Qwen2.5-1.5B-Instruct.",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "Explainable Artificial Intelligence (XAI)",
-        "Domain Adaptation and Few-Shot Learning"
-      ],
-      "keywords": [
-        "Group Relative Policy Optimization",
-        "LLM agents",
-        "policy optimization",
-        "ALFWorld",
-        "WebShop",
-        "Sokoban"
       ]
     }
   ]

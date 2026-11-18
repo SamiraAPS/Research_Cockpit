@@ -1,7 +1,70 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "arxiv:2608.23041",
+      "abstract": "LLM agents remain unreliable on long-horizon tasks, where small local failures can compound over extended interactions and lead to overall task failure. Although external harnesses can substantially improve robustness, harness design remains a manual and expensive process that requires searching over a large space of prompts, tool configurations, and control logic. We propose AutoSaddler, an automatic harness optimization framework that formulates harness improvement as an offline learning problem and iteratively updates the harness using failure signals from mini-batches. AutoSaddler combines failure-trace diagnosis, structured patch generation that treats the harness as code, and validation-based update selection. Experiments on GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0 show that AutoSaddler substantially improves agent performance over the corresponding base harnesses, achieving gains of 9.0, 9.6, and 10.0 percentage points, respectively. Ablation studies further suggest that effective harness optimization benefits from three ingredients: deep debugging rather than shallow reflection, targeted modifications rather than unconstrained editing, and generalization-aware selection rather than trajectory-specific repair. Together, these results suggest that automatic harness optimization is a promising path toward more performant and reliable agent systems.",
+      "topics": [
+        "AI-based Problem Solving and Planning",
+        "Reinforcement Learning in Robotics",
+        "Multi-Agent Systems and Negotiation",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.MA",
+        "cs.SE"
+      ],
+      "keywords": [
+        "Debugging",
+        "Task (project management)",
+        "Process (computing)",
+        "Selection (genetic algorithm)",
+        "Domain (mathematical analysis)",
+        "Cable harness",
+        "Path (computing)"
+      ]
+    },
+    {
+      "id": "arxiv:2608.23566",
+      "abstract": "Group-based reinforcement learning methods such as GRPO for large language models avoid training a critic by sampling multiple responses for each prompt. A reliable critic could instead estimate token-level advantages from one response, but standard critic-based training recipes are often unstable. We study this instability and develop **Best Practice Critic Optimization (BPCO)**, a recipe that combines DPPO, value predictions bounded to the reward range, Monte Carlo value targets, unnormalized policy advantages, and length-adaptive generalized advantage estimation. Because the critic is used only during training, BPCO can also condition it on reward-defining information, such as a reference answer or grading rubric, that is hidden from the policy. Controlled experiments isolate the effect of each design choice. Across mathematical reasoning tasks with models ranging from 1.5B parameters to 30B-A3B mixtures of experts, BPCO improves a strong critic-based baseline consistently, and matches or exceeds a group-based baseline while sampling one response per prompt. The same recipe also improves learning with rubric-based rewards. These results show that a carefully designed critic provides a reliable alternative to group-relative advantage estimation. Code is available at https://github.com/QPHutu/golden_critic.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications",
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Reinforcement learning",
+        "Baseline (sea)",
+        "Sampling (signal processing)",
+        "Ranging",
+        "Recipe",
+        "Importance sampling",
+        "Monte Carlo method"
+      ]
+    },
+    {
+      "id": "arxiv:2608.22753",
+      "abstract": "Large language models (LLMs) excel at text understanding and generation, yet still struggle to reliably understand and apply externally provided procedural rules at scale. To evaluate this capability, we introduce RuleWorld, a large-scale benchmark that reformulates rules as globally reusable abstract units rather than instance-specific facts. In RuleWorld, several scenarios, including single-rule, parallel multi-rule, and multi-hop reasoning, are settled for comprehensive evaluation. We further propose DynaRule, an end-to-end framework that injects the given rules into the KV cache and turns retrieval into an internal, learnable, step-wise process. Specifically, DynaRule employs Stacked Step-Level Attention Training with a special token to enable dynamic rule re-attention and updating during inference. In this way, the model can re-attend to the most relevant rules at each step, dynamically replacing outdated ones to support more stable multi-step reasoning. Experiments on RuleWorld show that existing LLMs face challenges under large rule pools, while DynaRule improves average QA accuracy by up to 19 points and achieves over 85% Recall@1 at 10K rules, outperforming strong baselines by large margins. We make our code and dataset available here: https://github.com/SharkSpicy-NLP/Beyond-Factual-Knowledge.",
+      "topics": [
+        "Topic Modeling",
+        "Natural Language Processing Techniques",
+        "Text Readability and Simplification",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Benchmarking",
+        "Benchmark (surveying)",
+        "Security token",
+        "Face (sociological concept)",
+        "Code (set theory)",
+        "Cache",
+        "Language model"
+      ]
+    },
     {
       "id": "arxiv:2608.23858",
       "abstract": "The Agent Payments Protocol (AP2), introduced by Google, enables large language model (LLM)-driven shopping agents to authorize and execute payments on behalf of users. Its signed Checkout and Payment Mandates protect the integrity of transaction data after signing. Agent interactions and external inputs that shape a transaction before authorization remain outside that protection, including Agent-to-Agent Protocol (A2A) messages and Model Context Protocol (MCP) tool calls. Prior work identified replay and prompt-injection attacks in AP2 v0.1. AP2 v0.2 addresses some of these issues but adds capabilities and deployment assumptions that require renewed analysis. We present a systematic security analysis of AP2 v0.2 based on its roles, transaction lifecycle, deployment architectures, and trust boundaries. We divide the lifecycle into five phases and identify five deployment architectures. Using MAESTRO (Multi-Agent Environment, Security, Threat, Risk, Outcome), we model four threat actors, eleven attack surfaces, eighteen adversary capabilities, and six attacker goals. The resulting catalog contains 48 threats spanning five attack families. We score these threats with the Artificial Intelligence Vulnerability Scoring System (AIVSS), identifying eight that reach the High band in at least one architecture. Because no complete public AP2 deployment was available, we build a testbed spanning all five architectures and develop five proof-of-concept demonstrations covering all eight High-risk threats and their mitigations. We also develop a deployment-aware scanner that maps applicable threats to static, cross-role consistency, and adversarial checks. Our analysis shows that valid mandate signatures alone do not ensure that an agent-mediated transaction reflects the user's intent when its pre-authorization context is manipulated.",
@@ -3664,58 +3727,6 @@
         "Formal verification",
         "Formal methods",
         "Proof assistant"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.20865",
-      "abstract": "Accurate electricity price forecasting is critical for smart grid stability, yet the heavy reliance on historical price lags in modern predictive models often obscures the fundamental physical drivers of market volatility. This paper proposes a regime-sensitive, explainable artificial intelligence (XAI) framework to unmask the hidden roles of load, climate, and calendar variables in the ERCOT Day-Ahead Market (2014-2024). Utilizing a Histogram-based Gradient Boosting Regressor (HGBR), we introduce a Suppression Ratio to quantify how price lags overshadow physical parameters. Our analysis reveals that while lags provide short-term memory during normal conditions, they fail to capture extreme dynamics; notably, their inclusion increased forecasting error (MAE/RMSE) during price spikes. By isolating these effects, the study revealed that price spikes are not merely the result of continuously rising temperatures, but rather emerge from the system reacting sharply within a specific temperature range. These findings underscore the importance of moving beyond lag-based models to uncover the true drivers of extreme price events.",
-      "topics": [
-        "Energy Load and Power Forecasting",
-        "Smart Grid Energy Management",
-        "Electric Power System Optimization"
-      ],
-      "keywords": [
-        "Electricity price",
-        "Electricity market",
-        "Boosting (machine learning)",
-        "Electricity",
-        "Electricity price forecasting",
-        "Gradient boosting",
-        "Market price"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202608.1530.v1",
-      "abstract": "Large language models are rapidly evolving from general-purpose assistants into personalized AI systems that collaborate with individuals over long periods of time. Emerging applications increasingly seek not only to answer questions, but also to reason, communicate, and act in ways that faithfully reflect a particular person. Recent systems have begun to distill personal knowledge, workplace experience, communication history, and behavioral traces into AI assistants, skill libraries, memory systems, and personalized agents. Despite this rapid progress, the field remains fragmented. Existing work differs substantially in the evidence it uses, the aspects of a person it preserves, the representations it constructs, the methods it employs, and the way it evaluates fidelity, leaving no common conceptual foundation for person distillation. This paper presents the first comprehensive framework for person distillation: the problem of transforming heterogeneous traces of a particular real person into faithful, evidence-grounded, and revisable computational representations. We organize the field as an end-to-end lifecycle consisting of four tightly coupled components: source evidence, distilled person representations, distillation methods, and evaluation. For each component, we develop a taxonomy that unifies existing research and identifies open design choices. We further organize the methodological landscape into six complementary families, ranging from prompt-based trace-to-profile distillation to memory-based, parametric and adapter-based, preference- and reward-based, behavioral and trajectory-based, and hybrid and revisable distillation. Finally, we propose a comprehensive evaluation framework covering person-fidelity objectives, benchmark construction protocols, quantitative metrics, and diagnostic analyses for measuring evidence grounding, person specificity, boundary awareness, and evaluation reliability. Beyond surveying existing work, this paper establishes a common vocabulary, a conceptual framework, and a research agenda for person distillation. By connecting advances in role-playing LLMs, personalized generation, agent memory, skill learning, and preference modeling, we identify the fundamental challenges that distinguish modeling a particular real person from modeling generic users, roles, or personas. As AI systems become increasingly personalized, collaborative, and long-lived, we believe person distillation will become a foundational capability for the next generation of AI assistants, digital coworkers, and human-centered intelligent systems.",
-      "topics": [
-        "Persona Design and Applications",
-        "Social Robot Interaction and HRI",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "Field (mathematics)",
-        "Conceptual framework",
-        "Taxonomy (biology)",
-        "Heuristics",
-        "Benchmark (surveying)",
-        "Conceptual model"
-      ]
-    },
-    {
-      "id": "openalex:W7204064158",
-      "abstract": "This study compared human–human and human–AI collaboration in creative performance and perspective-taking behavior and further examined whether the relationship between perspective-taking and creative performance differed between the two forms of collaboration. According to the actor–partner interdependence model, an individual’s creative performance is influenced not only by their own perspective-taking behavior (actor effect) but also by their partner’s perspective-taking behavior (partner effect). The results showed that: (1) In both the Alternative Uses Task (AUT) and Product Improvement Task (PIT), human–AI collaboration produced significantly higher mean idea novelty and more frequent perspective-taking behavior than human–human collaboration. (2) The effects of perspective-taking on creative performance differed between the two forms of collaboration. In human–human collaboration, both actor and partner effects of perspective-taking significantly and positively predicted idea fluency in both tasks; in the PIT, partner perspective-taking also significantly and positively predicted idea flexibility. In human–AI collaboration, in the AUT, AI’s immediate perspective-taking significantly and positively predicted both its own and its human partner’s idea fluency, whereas humans’ immediate perspective-taking significantly and negatively predicted both their own and AI’s idea flexibility. In the PIT, humans’ delayed perspective-taking significantly and positively predicted both their own and their AI partner’s idea fluency and flexibility, whereas AI’s delayed perspective-taking significantly and negatively predicted both its own and its human partner’s idea novelty. These findings indicate that perspective-taking operates differently in human–AI collaboration than in human–human collaboration and that its effects vary by collaborator role for specific tasks and creativity indicators, providing new evidence for understanding the mechanisms of creative interaction in human–AI collaboration.",
-      "topics": [
-        "Creativity in Education and Neuroscience",
-        "Action Observation and Synchronization",
-        "Team Dynamics and Performance"
-      ],
-      "keywords": [
-        "Fluency",
-        "Creativity",
-        "Novelty",
-        "Perspective (graphical)",
-        "Task (project management)",
-        "Product (mathematics)"
       ]
     }
   ]

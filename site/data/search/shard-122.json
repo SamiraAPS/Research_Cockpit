@@ -1,7 +1,65 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "arxiv:2608.25379",
+      "abstract": "Chain-of-thought prompting can expose and amplify demographic stereotypes within an LLM's intermediate reasoning and create a failure mode that final-answer debiasing alone cannot address. Mitigating such bias during generation presents a fundamental timing problem: intervening too late allows biased reasoning to propagate, while unnecessarily intervening can disrupt otherwise correct reasoning. Existing approaches largely avoid this decision by either evaluating completed reasoning chains post hoc or intervening at predetermined steps, leaving open when a developing reasoning trajectory provides sufficient evidence to warrant correction. We formulate this decision as an online change-point detection problem. A per-step bias signal updates a CUSUM statistic and a targeted correction is injected only when accumulated evidence crosses a detector-specific threshold calibrated on held-out data. We instantiate the framework with a white-box signal derived from next-token probabilities and a black-box signal obtained from an LLM judge, enabling deployment with both open-weight and hosted models. On gpt-4o-mini adaptive black-box triggering recovers most of the disambiguated-context accuracy lost under fixed-interval intervention while requiring substantially fewer interventions. That result holds even with an independent judge. Across six open-weight models, the white-box signal improves ambiguous-item accuracy on all six but reduces disambiguated-item accuracy on five because it cannot distinguish unsupported stereotype reliance from correct, stereotype-congruent evidence.",
+      "topics": [
+        "Topic Modeling",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)",
+        "cs.CL",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Debiasing",
+        "SIGNAL (programming language)",
+        "Confirmation bias",
+        "Trajectory",
+        "Statistic",
+        "CUSUM"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.25518",
+      "abstract": "A common strategy for scaling world models is to train on more crawled video with more compute. We argue that this strategy is inefficient: scaling world models also requires a recursive data engine that offers grounded reward signals. The success of code agents illustrates why this matters. As code is executable, compilers and runtimes can provide high-quality rewards for Reinforcement Learning (RL) post-training of LLMs. By contrast, spatial generation still relies largely on fuzzy proxies such as CLIP scores. These signals are fuzzy and biased, making them hard to support RL post-training. Compared with these, game development provides a missing reward environment for spatial world models. A scene encoded by a game engine is an executable world specification: the engine can efficiently check collision, physics, navigability and bounded playability, while the developer provides the global verification signal by judging whether the scene should be accepted. Game development also provides real-world long-horizon trajectory data for RL post-training. We therefore propose Reinforcement Learning with Human-Engine Verification (RLHEV), a post-training paradigm that combines dense engine signals with implicit human acceptance feedback from the development process.",
+      "topics": [
+        "Human Motion and Animation",
+        "Social Robot Interaction and HRI",
+        "Autonomous Vehicle Technology and Safety",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Executable",
+        "Reinforcement learning",
+        "Trajectory",
+        "Fuzzy logic",
+        "Code (set theory)",
+        "Verifiable secret sharing",
+        "Video game",
+        "Cloud computing"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10809231/v1",
+      "abstract": null,
+      "topics": [
+        "FinTech, Crowdfunding, Digital Finance",
+        "Sustainable Finance and Green Bonds",
+        "Innovation, Sustainability, Human-Machine Systems"
+      ],
+      "keywords": [
+        "Structural equation modeling",
+        "Mediation",
+        "Partial least squares regression",
+        "Investment (military)",
+        "Key (lock)",
+        "Asset (computer security)",
+        "Corporate governance",
+        "Investment decisions"
+      ]
+    },
     {
       "id": "doi:10.21203/rs.3.rs-10723576/v1",
       "abstract": null,
@@ -3662,69 +3720,6 @@
         "TRACE (psycholinguistics)",
         "Exception handling",
         "Topology (electrical circuits)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.23041",
-      "abstract": "LLM agents remain unreliable on long-horizon tasks, where small local failures can compound over extended interactions and lead to overall task failure. Although external harnesses can substantially improve robustness, harness design remains a manual and expensive process that requires searching over a large space of prompts, tool configurations, and control logic. We propose AutoSaddler, an automatic harness optimization framework that formulates harness improvement as an offline learning problem and iteratively updates the harness using failure signals from mini-batches. AutoSaddler combines failure-trace diagnosis, structured patch generation that treats the harness as code, and validation-based update selection. Experiments on GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0 show that AutoSaddler substantially improves agent performance over the corresponding base harnesses, achieving gains of 9.0, 9.6, and 10.0 percentage points, respectively. Ablation studies further suggest that effective harness optimization benefits from three ingredients: deep debugging rather than shallow reflection, targeted modifications rather than unconstrained editing, and generalization-aware selection rather than trajectory-specific repair. Together, these results suggest that automatic harness optimization is a promising path toward more performant and reliable agent systems.",
-      "topics": [
-        "AI-based Problem Solving and Planning",
-        "Reinforcement Learning in Robotics",
-        "Multi-Agent Systems and Negotiation",
-        "cs.AI",
-        "cs.CL",
-        "cs.LG",
-        "cs.MA",
-        "cs.SE"
-      ],
-      "keywords": [
-        "Debugging",
-        "Task (project management)",
-        "Process (computing)",
-        "Selection (genetic algorithm)",
-        "Domain (mathematical analysis)",
-        "Cable harness",
-        "Path (computing)"
-      ]
-    },
-    {
-      "id": "arxiv:2608.23566",
-      "abstract": "Group-based reinforcement learning methods such as GRPO for large language models avoid training a critic by sampling multiple responses for each prompt. A reliable critic could instead estimate token-level advantages from one response, but standard critic-based training recipes are often unstable. We study this instability and develop **Best Practice Critic Optimization (BPCO)**, a recipe that combines DPPO, value predictions bounded to the reward range, Monte Carlo value targets, unnormalized policy advantages, and length-adaptive generalized advantage estimation. Because the critic is used only during training, BPCO can also condition it on reward-defining information, such as a reference answer or grading rubric, that is hidden from the policy. Controlled experiments isolate the effect of each design choice. Across mathematical reasoning tasks with models ranging from 1.5B parameters to 30B-A3B mixtures of experts, BPCO improves a strong critic-based baseline consistently, and matches or exceeds a group-based baseline while sampling one response per prompt. The same recipe also improves learning with rubric-based rewards. These results show that a carefully designed critic provides a reliable alternative to group-relative advantage estimation. Code is available at https://github.com/QPHutu/golden_critic.",
-      "topics": [
-        "Reinforcement Learning in Robotics",
-        "Topic Modeling",
-        "Multimodal Machine Learning Applications",
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Reinforcement learning",
-        "Baseline (sea)",
-        "Sampling (signal processing)",
-        "Ranging",
-        "Recipe",
-        "Importance sampling",
-        "Monte Carlo method"
-      ]
-    },
-    {
-      "id": "arxiv:2608.22753",
-      "abstract": "Large language models (LLMs) excel at text understanding and generation, yet still struggle to reliably understand and apply externally provided procedural rules at scale. To evaluate this capability, we introduce RuleWorld, a large-scale benchmark that reformulates rules as globally reusable abstract units rather than instance-specific facts. In RuleWorld, several scenarios, including single-rule, parallel multi-rule, and multi-hop reasoning, are settled for comprehensive evaluation. We further propose DynaRule, an end-to-end framework that injects the given rules into the KV cache and turns retrieval into an internal, learnable, step-wise process. Specifically, DynaRule employs Stacked Step-Level Attention Training with a special token to enable dynamic rule re-attention and updating during inference. In this way, the model can re-attend to the most relevant rules at each step, dynamically replacing outdated ones to support more stable multi-step reasoning. Experiments on RuleWorld show that existing LLMs face challenges under large rule pools, while DynaRule improves average QA accuracy by up to 19 points and achieves over 85% Recall@1 at 10K rules, outperforming strong baselines by large margins. We make our code and dataset available here: https://github.com/SharkSpicy-NLP/Beyond-Factual-Knowledge.",
-      "topics": [
-        "Topic Modeling",
-        "Natural Language Processing Techniques",
-        "Text Readability and Simplification",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Benchmarking",
-        "Benchmark (surveying)",
-        "Security token",
-        "Face (sociological concept)",
-        "Code (set theory)",
-        "Cache",
-        "Language model"
       ]
     }
   ]

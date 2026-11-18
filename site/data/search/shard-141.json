@@ -1,7 +1,323 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "documents": [
+    {
+      "id": "doi:10.1097/ms9.0000000000004885",
+      "abstract": "Chan et al made a strict comparison of the application of deepseek-r1 and gpt-4 in complex medical diagnosis[1], revealing that they have comparable core accuracy, but their inherent limitations highlight the irreplaceable nature of human experts. This study used 100 clinical pathological cases of The New England Journal of Medicine, and showed that although the diagnostic matching rate of the two large language models (LLMs) was similar (35% vs 39%), and the quality scores were different, their performance was still far from reaching the reliability of human level. This correspondence adheres to the TITAN guidelines[2]. It is worth noting that the low correct diagnostic inclusion rate of deepseek-r1 (48% vs 64% of gpt-4) and the long list of differences (11.9 ± 2.0 vs 9.0 ± 1.4) highlight a key defect: the lack of specific judgment of human clinicians on the rationality of the algorithm. LLM generates diagnosis based on statistical patterns in the data, but human experts integrate contextual nuances that cannot be fully captured by structured case files, such as patient history, physical examination results, and clinical intuition. Even among human raters, moderate inter-rater consistency (κ = 0.565) further emphasizes the complexity of diagnostic judgment, which is a skill honed through years of practice. The advantage of this research lies in its controllable design, which eliminates “cheating” through pre training or internet access, thus reflecting the inherent ability of the model. However, this also exposes their rigidity: LLM cannot adapt to unforeseen clinical scenarios, nor can it incorporate real-time patient feedback, which is the core advantage of human experts. Although the open-source nature and reasoning strategy of deepseek-r1 bring hope to artificial intelligence (AI) auxiliary tools, its 35% diagnostic accuracy emphasizes that LLM is a supplement to human judgment, not a substitute. Ethically and practically, medical diagnosis requires more than statistical accuracy – it requires accountability, empathy and moral reasoning[3,4],. LLM lacks the ability to deal with ethical dilemmas or sympathize with diagnosis, which are indispensable for human medical practice[5]. The limitations of this study, including selection bias and subjective quality score, further highlight the need for human supervision in verifying and contextualizing AI output. In conclusion, the research of Chan et al not only confirmed the potential of LLM in enhancing clinical decision-making but also strengthened the irreplaceable nature of human experts. The gap between algorithmic rationality and specific clinical practice – rooted in experience, intuition and ethical judgment – ensures that human clinicians remain at the core of complex medical diagnosis. The future development of AI should focus on the collaboration model using the advantages of LLM, while retaining the human factors that are crucial to high-quality health care.",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Clinical Reasoning and Diagnostic Skills",
+        "Artificial Intelligence in Healthcare"
+      ],
+      "keywords": [
+        "diagnosis",
+        "large language models",
+        "DeepSeek-R1",
+        "GPT-4",
+        "diagnostic accuracy",
+        "clinical intuition",
+        "inter-rater reliability",
+        "AI-assisted clinical decision-making",
+        "AI limitations",
+        "human-AI collaboration",
+        "embodied practice",
+        "clinical reasoning",
+        "reproducibility",
+        "reproducibility checklist"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.17820",
+      "abstract": "Block-based programming environments such as Scratch are widely used in introductory computing education, yet scalable and reliable automated assessment remains elusive. Scratch programs are highly heterogeneous, event-driven, and visually grounded, which makes traditional assertion-based or test-based grading brittle and difficult to scale. As a result, assessment in real Scratch classrooms still relies heavily on manual inspection and delayed feedback, introducing inconsistency across instructors and limiting scalability. We present Raven, an automated assessment framework for Scratch that replaces program-specific state assertions with instructor-specified, task-level video generation rules shared across all student submissions. Raven integrates large language models with video analysis to evaluate whether a program's observed visual and interactive behaviors satisfy grading criteria, without requiring explicit test cases or predefined outputs. This design enables consistent evaluation despite substantial diversity in implementation strategies and interaction sequences. We evaluate Raven on 13 real Scratch assignments comprising over 140 student submissions with ground-truth labels from human graders. The results show that Raven significantly outperforms prior automated assessment tools in both grading accuracy and robustness across diverse programming styles. A classroom study with 30 students and 10 instructors further demonstrates strong user acceptance and practical applicability. Together, these findings highlight the effectiveness of task-level behavioral abstractions for scalable assessment of open-ended, event-driven programs.",
+      "topics": [
+        "Teaching and Learning Programming",
+        "Online Learning and Analytics",
+        "Educational Technology and Assessment"
+      ],
+      "keywords": [
+        "automated assessment",
+        "Scratch",
+        "block-based programming",
+        "large language models",
+        "video analysis",
+        "event-driven programming",
+        "introductory computing education"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.17807",
+      "abstract": "Text-to-motion (T2M) generation aims to control the behavior of a target character via textual descriptions. Leveraging text-motion paired datasets, existing T2M models have achieved impressive performance in generating high-quality motions within the distribution of their training data. However, their performance deteriorates notably when the motion descriptions differ significantly from the training texts. To address this issue, we propose Re$^2$MoGen, a Reasoning and Refinement open-vocabulary Motion Generation framework that leverages enhanced Large Language Model (LLM) reasoning to generate an initial motion planning and then refine its physical plausibility via reinforcement learning (RL) post-training. Specifically, Re$^2$MoGen consists of three stages: We first employ Monte Carlo tree search to enhance the LLM's reasoning ability in generating reasonable keyframes of the motion based on text prompts, specifying only the root and several key joints' positions to ease the reasoning process. Then, we apply a human pose model as a prior to optimize the full-body poses based on the planned keyframes and use the resulting incomplete motion to supervise fine-tuning a pre-trained motion generator via a dynamic temporal matching objective, enabling spatiotemporal completion. Finally, we use post-training with physics-aware reward to refine motion quality to eliminate physical implausibility in LLM-planned motions. Extensive experiments demonstrate that our framework can generate semantically consistent and physically plausible motions and achieve state-of-the-art performance in open-vocabulary motion generation.",
+      "topics": [
+        "Human Motion and Animation",
+        "3D Shape Modeling and Analysis",
+        "Generative Adversarial Networks and Image Synthesis"
+      ],
+      "keywords": [
+        "text-to-motion generation",
+        "large language model reasoning",
+        "motion planning",
+        "Monte Carlo tree search",
+        "reinforcement learning post-training",
+        "physically plausible motion",
+        "motion refinement"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.18575",
+      "abstract": "Story Visualization aims to generate a sequence of images that faithfully depicts a textual narrative that preserve character identity, spatial configuration, and stylistic coherence as the narratives unfold. Maintaining such cross-frame consistency has traditionally relied on explicit memory banks, architectural expansion, or auxiliary language models, resulting in substantial parameter growth and inference overhead. We introduce ReCap, a lightweight consistency framework that improves character stability and visual fidelity without modifying the base diffusion backbone. ReCap's CORE (COnditional frame REferencing) module treats anaphors, in our case pronouns, as visual anchors, activating only when characters are referred to by a pronoun and conditioning on the preceding frame to propagate visual identity. This selective design avoids unconditional cross-frame conditioning and introduces only 149K additional parameters, a fraction of the cost of memory-bank and LLM-augmented approaches. To further stabilize identity, we incorporate SemDrift (Guided Semantic Drift Correction) applied only during training. When text is vague or referential, the denoiser lacks a visual anchor for identity-defining attributes, causing character appearance to drift across frames, SemDrift corrects this by aligning denoiser representations with pretrained DINOv3 visual embeddings, enforcing semantic identity stability at zero inference cost. ReCap outperforms previous state-of-the-art, StoryGPT-V, on the two main benchmarks for story visualization by 2.63% Character-Accuracy on FlintstonesSV and by 5.65% on PororoSV, establishing a new state-of-the-art character consistency on both benchmarks. Furthermore, we extend story visualization to human-centric narratives derived from real films, demonstrating the capability of ReCap beyond stylized cartoon domains.",
+      "topics": [
+        "Generative Adversarial Networks and Image Synthesis",
+        "Multimodal Machine Learning Applications",
+        "Digital Media and Visual Art"
+      ],
+      "keywords": [
+        "story visualization",
+        "visual anchors",
+        "anaphors",
+        "pronouns",
+        "diffusion models",
+        "text-to-image generation"
+      ]
+    },
+    {
+      "id": "doi:10.3389/fcomp.2026.1770049",
+      "abstract": "Flipped classrooms require learners to actively regulate their learning processes, yet the relationships among self-regulated learning (SRL), engagement, social–emotional intelligence (SEI), and academic performance remain insufficiently integrated within learning analytics research. This study examined 96 third-year Computer Science and Engineering students enrolled in a semester-long Database Management Systems course implementing a flipped SRL framework. A mixed-methods approach was used to analyse academic performance across Continuous Assessment Tests 1 and 2 (CAT 1, CAT 2) and Final Assessment Test (FAT), engagement analytics from Microsoft Teams, SEI survey responses, affective indicators through Reflect app and machine learning models to explore associative and predictive relationships among these constructs. Results indicated strong positive associations between SRL behaviours, engagement, and final assessment outcomes, with engagement partially explaining the relationship between SRL and performance. Correlation and clustering analyses revealed alignment among self-regulation, cognitive engagement, and emotional competencies, while predictive modelling (XGBoost, R 2 = 0.83) demonstrated that SRL-related indicators effectively model academic performance patterns. Overall, the findings provide theoretically informed evidence of meaningful associations among cognitive, behavioural, and emotional regulation processes in flipped learning environments, highlighting the value of integrating SRL theory with learning analytics for data-informed instructional design in higher education.",
+      "topics": [
+        "Online Learning and Analytics",
+        "Innovative Teaching and Learning Methods",
+        "Innovative Teaching Methods"
+      ],
+      "keywords": [
+        "student self-regulation",
+        "flipped classroom",
+        "student engagement",
+        "social-emotional intelligence",
+        "academic performance",
+        "learning analytics",
+        "cognitive engagement",
+        "emotion regulation",
+        "Microsoft Teams"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2605.16302",
+      "abstract": "Reinforcement learning for multi-step reasoning with large language models (LLMs) typically relies on sparse terminal rewards, which creates a poorly conditioned credit-assignment problem: the final feedback is propagated uniformly across all intermediate decisions. This leads to high gradient variance, unstable training, and many ineffective updates, ultimately limiting sustained model improvement. We propose a counterfactual-comparison framework for credit assignment. For each input, the framework samples multiple reasoning trajectories and treats their differences as implicit approximations to alternative decisions. This yields an implicit process-level advantage estimator that converts sparse terminal rewards into step-sensitive learning signals. Building on this framework, we introduce Implicit Behavior Policy Optimization (IBPO), which substantially improves training stability and the performance ceiling on mathematical and code-reasoning benchmarks. Our results point to a promising direction for unlocking the reasoning potential of LLMs.",
+      "topics": [
+        "Reinforcement Learning in Robotics",
+        "Topic Modeling",
+        "Natural Language Processing Techniques"
+      ],
+      "keywords": [
+        "credit assignment",
+        "counterfactual reasoning",
+        "large language models",
+        "multi-step reasoning",
+        "gradient variance",
+        "training stability",
+        "code reasoning",
+        "mathematical reasoning"
+      ]
+    },
+    {
+      "id": "doi:10.1145/3805689.3806790",
+      "abstract": "A series of high-profile tragedies involving companion chatbots has triggered an unusually rapid regulatory response. Several jurisdictions, including Australia, California, and New York, have introduced enforceable regulation, while regulators elsewhere have signaled growing concern about risks posed by companion chatbots, particularly to children. In parallel, leading providers, notably OpenAI, appear to have strengthened their self-regulatory approaches. Drawing on legal textual analysis and insights from regulatory theory, psychology, and information systems research, this paper critically examines these recent interventions. We examine what is regulated and who is regulated, identifying regulatory targets, scope, and modalities. We classify interventions by method and priority, showing how emerging regimes combine \"locks and blocks\", such as access gating and content moderation, with measures addressing toxic relationship features and process-based accountability requirements. We argue that effective regulation of companion chatbots must integrate all three dimensions. More, however, is required. Current regimes tend to focus on discrete harms, narrow conceptions of vulnerability, or highly specified accountability processes, while failing to confront deeper power asymmetries between providers and users. Providers of companion chatbots increasingly control artificial intimacy at scale, creating unprecedented opportunities for control through intimacy. We suggest that a general, open-ended duty of care would be an important first step toward constraining that power and addressing a fundamental source of chatbot risk. The paper contributes to debates on companion chatbot regulation and is relevant to regulators, platform providers, and scholars concerned with digital intimacy, law and technology, and fairness, accountability, and transparency in sociotechnical systems.",
+      "topics": [
+        "cs.CY",
+        "cs.AI",
+        "cs.ET"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.18893",
+      "abstract": "A series of high-profile tragedies involving companion chatbots has triggered an unusually rapid regulatory response. Several jurisdictions, including Australia, California, and New York, have introduced enforceable regulation, while regulators elsewhere have signaled growing concern about risks posed by companion chatbots, particularly to children. In parallel, leading providers, notably OpenAI, appear to have strengthened their self-regulatory approaches. Drawing on legal textual analysis and insights from regulatory theory, psychology, and information systems research, this paper critically examines these recent interventions. We examine what is regulated and who is regulated, identifying regulatory targets, scope, and modalities. We classify interventions by method and priority, showing how emerging regimes combine \"locks and blocks\", such as access gating and content moderation, with measures addressing toxic relationship features and process-based accountability requirements. We argue that effective regulation of companion chatbots must integrate all three dimensions. More, however, is required. Current regimes tend to focus on discrete harms, narrow conceptions of vulnerability, or highly specified accountability processes, while failing to confront deeper power asymmetries between providers and users. Providers of companion chatbots increasingly control artificial intimacy at scale, creating unprecedented opportunities for control through intimacy. We suggest that a general, open-ended duty of care would be an important first step toward constraining that power and addressing a fundamental source of chatbot risk. The paper contributes to debates on companion chatbot regulation and is relevant to regulators, platform providers, and scholars concerned with digital intimacy, law and technology, and fairness, accountability, and transparency in sociotechnical systems.",
+      "topics": [
+        "AI in Service Interactions",
+        "Digital Mental Health Interventions",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "Accountability",
+        "Sociotechnical system",
+        "Transparency (behavior)",
+        "Chatbot",
+        "Legal aspects of computing",
+        "Control (management)",
+        "Duty",
+        "Confidentiality"
+      ]
+    },
+    {
+      "id": "doi:10.1201/9781003677918-1",
+      "abstract": "The mining business is challenging, with the demand for metals increasing while regulations continue to change and develop. There is a clear trend toward strengthening regulations, especially in air quality, where ventilation systems play a crucial role. Collaboration with Occupational Health and Hygiene teams is required for effective planning and management of ventilation systems to control airborne hazards. Data collection and analysis are key for understanding workplace air quality conditions, identifying sources of contaminants, and determining necessary actions to manage conditions. Ventilation professionals are typically involved in mine planning, future expansion studies, and air distribution infrastructure but must also coordinate with other fields, such as mobile equipment specialists, fuel procurement and industrial hygienists, to comply with rigorous air quality rules. This paper examines regulatory changes and discusses Vale Base Metals adherence to recent regulation changes in Ontario.",
+      "topics": [
+        "Industrial and Mining Safety",
+        "Occupational Health and Safety in Workplaces",
+        "Air Quality and Health Impacts"
+      ],
+      "keywords": [
+        "mine ventilation design",
+        "mining regulation",
+        "regulatory change",
+        "workplace air quality",
+        "airborne hazards",
+        "mine planning"
+      ]
+    },
+    {
+      "id": "doi:10.59324/ejahss.2026.3(3).01",
+      "abstract": "South Africa’s vocational and occupational education and training system is underpinned by an extensive statutory and institutional framework, yet labour-market absorption remains structurally weak, particularly among young job-seekers. This paper argues that the core constraint is systemic misalignment: vocational and occupational education are positioned primarily as regulatory and compliance functions rather than as economic infrastructure, and should be evaluated on competence, credibility, workplace integration, and productivity-linked outcomes. Using a conceptual policy analysis methodology, the study synthesises national legislation and policy governing skills development, QCTO accreditation and assessment policy (including the role of external integrated summative assessment), and labour-market evidence drawn from Statistics South Africa’s Quarterly Labour Force Survey, complemented by comparative vocational education and training scholarship. The analysis advances two interrelated claims. First, occupational competence standards should be prescribed primarily by organised industry structures embedded in productive systems, with the state retaining responsibility for validation, equity, portability, and public-interest safeguards. Competence, defined by evolving technologies, work organisation, and performance tolerances, cannot be specified at scale by regulators operating at informational distance from production. Second, the learner and educator “mentality” manifesting as credentialism, compliance-oriented cognition, authority bias, and extrinsic motivation operates as a system-level impediment to the formation and transfer of deep competence. The paper proposes a repositioning framework that integrates industry-authored standards, authentic and integrated assessment, structured workplace learning and absorption instruments, outcome-linked funding, digital competence verification, and deliberate cognitive-cultural interventions to shift the system toward mastery, adaptive expertise, and sustained labour-market participation.",
+      "topics": [
+        "Education Systems and Policy",
+        "Vocational Education and Training",
+        "Vocational and Entrepreneurial Education"
+      ],
+      "keywords": [
+        "skill development",
+        "industry governance",
+        "competence standards",
+        "labor absorption",
+        "youth employment",
+        "credentialism",
+        "cognitive barriers",
+        "workplace learning",
+        "adaptive expertise",
+        "South Africa"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2606.07523",
+      "abstract": "Legal domains in high-resource languages like English have widely adopted artificial intelligence for legal question answering. However, data scarcity in low resource languages such as Nepali has limited the training of large language models on Nepali legal texts. This study presents the first application of a Retrieval Augmented Generation based model for Nepali legal question answering using case laws extracted from the Nepal Kanun Patrika digital archive. Using BM25 on chunked documents, the approach achieved a top precision at one of 91 percent, and up to 75 percent with the multilingual E5 large model. Evaluation of generated answers showed 74 percent groundedness, 85 percent truthfulness according to an automated judge model, and 84 percent human evaluated truthfulness when using BM25 document retrieval, with a 92 percent successful answer generation rate. These results demonstrate that the RAG pipeline can effectively address the gap in legal question answering for low resource languages and provide a foundation for reliable AI systems in the Nepali legal domain.",
+      "topics": [
+        "Artificial Intelligence in Law",
+        "Topic Modeling",
+        "Information Retrieval and Search Behavior"
+      ],
+      "keywords": [
+        "retrieval-augmented generation",
+        "legal question answering",
+        "Nepali language",
+        "low-resource languages",
+        "case law searching",
+        "BM25"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.18112",
+      "abstract": "In recent years, multimodal multidomain fake news detection has garnered increasing attention. Nevertheless, this direction presents two significant challenges: (1) Failure to Capture Cross-Instance Narrative Consistency: existing models usually evaluate each news in isolation, fail to capture cross-instance narrative consistency, and thus struggle to address the spread of cluster based fake news driven by social media; (2) Lack of Domain Specific Knowledge for Reasoning: conventional models, which rely solely on knowledge encoded in their parameters during training, struggle to generalize to new or data-scarce domains (e.g., emerging events or niche topics). To tackle these challenges, we introduce Retrieval-Augmented Multimodal Model for Fake News Detection (RAMM). First, RAMM employs a Multimodal Large Language Model (MLLM) as its backbone to capture cross-modal semantic information from news samples. Second, RAMM incorporates an Abstract Narrative Alignment Module. This component adaptively extracts abstract narrative consistency from diverse instances across distinct domains, aggregates relevant knowledge, and thereby enables the modeling of high-level narrative information. Finally, RAMM introduces a Semantic Representation Alignment Module, which aligns the model's decision-making paradigm with that of humans - specifically, it shifts the model's reasoning process from direct inference on multimodal features to an instance-based analogical reasoning process. Extensive experimental results on three public datasets validate the efficacy of our proposed approach. Our code is available at the following link: https://github.com/li-yiheng/RAMM",
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Multimodal Machine Learning Applications",
+        "Spam and Phishing Detection"
+      ],
+      "keywords": [
+        "fake news detection",
+        "multimodal large language models",
+        "narrative consistency",
+        "domain knowledge",
+        "analogical reasoning",
+        "social media misinformation"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.17769",
+      "abstract": "Ensuring the safety of large language models (LLMs) requires robust red teaming, yet the systematic synthesis of high-quality toxic data remains under-explored. We propose Reverse Constitutional AI (R-CAI), a framework for automated and controllable adversarial data generation that moves beyond isolated jailbreak prompts. By inverting a harmless constitution into a constitution of toxicity and iteratively refining model outputs through a critique--revision pipeline, R-CAI enables scalable synthesis of multi-dimensional adversarial data without human annotation. Optimizing solely for toxicity-related rewards, however, can lead to reward hacking and degraded semantic coherence. To address this challenge, we introduce probability clamping within reinforcement learning from AI feedback, which stabilizes adversarial optimization while preserving adversarial intent. Experiments demonstrate that R-CAI generates diverse, high-quality toxic data and that probability clamping substantially improves semantic coherence (15%) without sacrificing adversarial strength. Overall, R-CAI provides a fully automated framework for red teaming data generation and systematic safety evaluation of aligned language models.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Hate Speech and Cyberbullying Detection",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "red teaming",
+        "large language model safety",
+        "reward hacking",
+        "jailbreak prompts",
+        "semantic coherence"
+      ]
+    },
+    {
+      "id": "doi:10.5281/zenodo.22043776",
+      "abstract": "Artificial Intelligence (AI) has emerged as a transformative force in higher education and academic research, reshaping the ways knowledge is created, disseminated, and assessed. From intelligent tutoring systems and learning analytics to automated data processing and predictive modelling, AI now influences teaching practices, research methodologies, and institutional decision-making. In recent years, universities across the world have increasingly integrated AI tools to improve learning outcomes, enhance research efficiency, and support data-driven governance. These technologies assist educators in designing personalised and adaptive learning environments, while also helping researchers handle large datasets, identify patterns, and generate new insights with greater accuracy and speed. This research article critically examines the role of AI in research and higher education, highlights theoretical frameworks such as Constructivism, Connectivism, Activity Theory, and Sociotechnical Systems Theory, and evaluates opportunities and challenges associated with AI adoption. The article concludes that while AI enhances productivity, personalisation, and innovation, concerns regarding ethics, data privacy, algorithmic bias, and academic integrity must be addressed through robust institutional policies to ensure responsible and equitable use.",
+      "topics": [
+        "Artificial Intelligence in Education",
+        "Artificial Intelligence Applications",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "keywords": [
+        "artificial intelligence in higher education",
+        "intelligent tutoring systems",
+        "learning analytics",
+        "automated data processing",
+        "predictive modeling",
+        "adaptive learning",
+        "personalized learning",
+        "AI adoption barriers",
+        "AI ethics",
+        "data privacy",
+        "algorithmic bias",
+        "academic integrity",
+        "institutional AI policies",
+        "constructivism",
+        "connectivism",
+        "activity theory",
+        "socio-technical systems theory"
+      ]
+    },
+    {
+      "id": "openalex:W7155259369",
+      "abstract": "Human planning often involves mentally simulating (``rolling out'') potential action sequences to evaluate future outcomes. While rollout-based models have seen great success in artificial intelligence, cognitive models that describe how people use rollouts remain scarce, in part because they are difficult to fit to behavioral data. Existing methods rely on computationally intensive simulations that result in approximate, noisy estimates of latent planning parameters. We introduce ROSETTE (Rollouts with Stochastic Early Termination and Tractable Estimation), a new model that overcomes these challenges by providing analytically-tractable, simulation-free model fitting. ROSETTE treats planning as a sequence of mental simulations formalized as an absorbing Markov chain. The model updates the action policy after each rollout and performs a variable number of rollouts. We fit ROSETTE to data from human participants in two multi-step planning tasks and found that it well accounted for a rich set of summary statistics of behavior. By making rollout-based models tractable, our framework opens new avenues for understanding how people simulate and evaluate possible futures.",
+      "topics": [
+        "AI-based Problem Solving and Planning",
+        "Decision-Making and Behavioral Economics",
+        "Cognitive Science and Education Research"
+      ],
+      "keywords": [
+        "human planning",
+        "mental simulation",
+        "absorbing Markov chains",
+        "rosettes",
+        "multi-stage planning",
+        "planning behavior",
+        "cognitive modeling"
+      ]
+    },
+    {
+      "id": "openalex:W7219957841",
+      "abstract": "Introduction: Exposure to industrial noise is a recognized risk factor for hearing loss; however, its acute impact on the cardiovascular system in young workers is less studied. Objective: To analyze the correlation between environmental noise and simultaneously the blood pressure response. Methods: Simultaneous monitoring of noise dosimetry and Ambulatory Blood Pressure Monitoring was performed on a clinically healthy 22-year-old male worker in a metalworking plant. Results: Dosimetry recorded variable noise levels with a mean of 86.8 decibels and peaks reaching 108 decibels. At the same time, the subject presented an average systolic blood pressure of 140.8 millimeters of mercury and a mean heart rate of 88.1 beats per minute. Conclusion: Noise exposure exceeding 85 decibels was associated with a sustained systolic hypertensive response, even in a young subject with no history of cardiovascular disease. This suggests that noise acts as a continuous stressor, highlighting the need for cardiovascular surveillance within occupational health protocols",
+      "topics": [
+        "Noise Effects and Management",
+        "Blood Pressure and Hypertension Studies",
+        "Occupational Health and Safety in Workplaces"
+      ],
+      "keywords": [
+        "occupational noise exposure",
+        "metalworking industry",
+        "cardiovascular effects of noise",
+        "systolic hypertension",
+        "blood pressure response",
+        "heart rate",
+        "noise dosimetry",
+        "ambulatory blood pressure monitoring",
+        "young workers",
+        "occupational health surveillance"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.17691",
+      "abstract": "Safety alignment in large language models is remarkably shallow: it is concentrated in the first few output tokens and reversible by fine-tuning on as few as 100 adversarial examples. This fragility becomes critical in real-world deployment, where models undergo sequential adaptation across domains such as medicine, law, and code, causing safety guardrails to erode cumulatively. Yet all existing safety-preserving methods target only single-task fine-tuning, leaving the multi-domain sequential setting entirely unaddressed. We introduce SafeAnchor, a framework that anchors safety in place throughout continual adaptation. SafeAnchor first identifies low-rank safety subspaces in LoRA parameter space via Fisher Information eigendecomposition, then constrains domain-specific gradient updates to the orthogonal complement of these subspaces, and finally monitors for residual safety drift with threshold-triggered corrective replay. Evaluated on Llama-2-7B-Chat and Mistral-7B-Instruct across a three-domain pipeline and eight benchmarks, SafeAnchor retains 93.2% of original safety alignment, outperforming all baselines by 18-42 points, while matching unconstrained fine-tuning to within 1.5 points on domain tasks.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Domain Adaptation and Few-Shot Learning",
+        "Ethics and Social Impacts of AI"
+      ],
+      "keywords": [
+        "large language model safety",
+        "LoRa",
+        "gradient projection",
+        "adversarial fine-tuning"
+      ]
+    },
     {
       "id": "doi:10.1016/j.fusengdes.2026.115780",
       "abstract": null,
@@ -3678,396 +3994,6 @@
         "ocular hypertension",
         "high myopia",
         "head posture"
-      ]
-    },
-    {
-      "id": "doi:10.37547/tajiir/book-26-02",
-      "abstract": "In the context of profound structural transformation of the maritime industry driven by the implementation of the Industry 4.0 concept and the consistent tightening of environmental requirements by the International Maritime Organization (IMO), the digital modernization of fleet technical operation processes becomes strategically critical and becomes a key prerequisite for maintaining the long-term competitiveness of shipping companies. The study focuses on assessing the effectiveness of integrating digital solutions across the full spectrum of operations: from the transition to electronic watchkeeping logs and intelligent checklists to the implementation of predictive analytics systems aimed at optimizing fuel efficiency and monitoring the technical condition of heat-exchange equipment. The methodological basis of the work relies on a system analysis of empirical data for 2024–2025, drawing on reports of leading classification societies (DNV, Lloyd’s Register), design and operational documentation from manufacturers of marine equipment, as well as a current corpus of scientific publications. Based on the analysis performed, it is substantiated that the transition from fragmented paper-based document management to integrated digital ecosystems makes it possible to reduce the number of human-factor-related errors by 70–80%, which fundamentally increases the reliability of technical operation procedures. It is shown that the use of machine learning (ML) algorithms for continuous monitoring of operating parameters of heat exchangers and separators provides the possibility of abandoning the traditional model of planned preventive maintenance (PPM) in favor of the condition-based maintenance (CBM) concept. Such a transformation of maintenance strategies leads to a reduction in total operating costs and a decrease in the vessel’s carbon footprint, ensuring alignment with regulatory requirements for the Carbon Intensity Indicator (CII) and the Energy Efficiency Existing Ship Index (EEXI). Particular emphasis is placed on the analysis of mandatory requirements for the digitalization of bunkering operations entering into force in Singapore in 2025, which establish a new global benchmark in the field of transparency, traceability, and verifiability of fuel operations and exert a catalytic influence on the formation of unified international standards for digital control of fuel logistics.",
-      "topics": [
-        "Maritime Transport Emissions and Efficiency",
-        "Digital Transformation in Industry",
-        "Marine and Coastal Research"
-      ],
-      "keywords": [
-        "electronic checklists",
-        "remote monitoring",
-        "fuel economy",
-        "condition-based maintenance",
-        "predictive maintenance",
-        "heat exchangers",
-        "machine learning",
-        "Carbon Intensity Indicator",
-        "Energy Efficiency Existing Ship Index",
-        "human error reduction",
-        "maritime environmental regulation"
-      ]
-    },
-    {
-      "id": "doi:10.1002/aiv2.70002",
-      "abstract": "ABSTRACT Artificial intelligence (AI) has become a foundational component of contemporary social, economic, and political life. Yet, the ways in which AI reshapes patterns of exclusion beyond questions of access and technical capability remain insufficiently theorized. This article argues that the AI divide is best understood as a multidimensional sociotechnical phenomenon, in which technological inequality is intertwined with psychological, institutional, and geopolitical dynamics that shape both participation and agency. Drawing on digital inequality studies, philosophy of technology, and psychology, and supported by a synthesis of recent empirical findings, the article conceptualizes the AI divide across three interrelated dimensions—access, use, and outcomes—while foregrounding the role of power asymmetries, opaque governance structures, and market concentration in producing unequal participation in AI‐mediated systems. Building on this structural framework, the analysis advances a second contribution by integrating the psychological consequences of AI‐related exclusion: algorithmic anxiety, diminished self‐efficacy, technostress, and collective vulnerability, operating across individual, organizational, and societal levels. This study demonstrates that these psychological effects are not merely secondary consequences but actively reproduce and intensify technological inequality by weakening agency, undermining trust, and constraining sociotechnical imaginaries. These dynamics are better understood as contingent on governance, design, and patterns of use rather than as inevitable outcomes of AI deployment. By linking structural conditions with psychological experience, the study underscores the normative importance of transparency, explicability, and participatory governance as prerequisites for more inclusive and human‐centered AI systems. Finally, the paper outlines concrete and operational policy recommendations, including algorithmic impact assessments and regulatory sandboxes, to mitigate these multidimensional inequalities.",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Information Society and Technology Trends",
-        "Technology's Impact on Media"
-      ],
-      "keywords": [
-        "AI divide",
-        "digital inequality",
-        "technological inequality",
-        "self-efficacy",
-        "technostress",
-        "collective vulnerability",
-        "power imbalance",
-        "AI governance",
-        "market concentration",
-        "participatory governance",
-        "transparency and explainability",
-        "algorithmic impact assessment",
-        "regulatory sandboxes",
-        "human-centered AI",
-        "sociotechnical imaginaries"
-      ]
-    },
-    {
-      "id": "doi:10.65881/jistecs.v1i1.50",
-      "abstract": "Purpose: to develop an integrated information security strategy to enhance data protection and evaluate the effectiveness of advanced technologies in mitigating cyber threats. Method: this study employs a qualitative approach with a descriptive-analytical design, using a literature review of recent scholarly sources. Data are analyzed through thematic and comparative methods to identify and synthesize effective information security strategies. Findings: effective data protection requires an integrated approach combining layered security, advanced technologies such as AI and machine learning, strong governance, and user awareness. This approach enhances threat detection, reduces security risks, and improves organizational resilience against cyber threats. Implications: organizations should adopt a holistic and adaptive information security strategy that integrates technology, governance, and human factors to effectively enhance data protection and resilience against evolving cyber threats. Originality: lies in its integrated and holistic approach, combining advanced technologies, governance frameworks, and human factors into a comprehensive and adaptive information security strategy for enhanced data protection.",
-      "topics": [
-        "Information and Cyber Security",
-        "Cybersecurity and Information Systems",
-        "Information Technology Governance and Strategy"
-      ],
-      "keywords": [
-        "data protection",
-        "information security strategy",
-        "cyber threat mitigation",
-        "layered security",
-        "artificial intelligence for security",
-        "machine learning for threat detection",
-        "security governance",
-        "user awareness",
-        "organizational resilience"
-      ]
-    },
-    {
-      "id": "doi:10.37547/ijp/volume06issue04-75",
-      "abstract": "The article explores the effectiveness of spiritual and enlightenment activities as a cognitive factor in developing the intellectual potential of students in higher pedagogical education. The study addresses the existing gap between traditional moral upbringing and students’ cognitive development. Based on a research experiment conducted at secondary school No. 41 in Andijan with 12 practicing students, the author proposes a structural model for integrating interactive technologies, including debates, case studies, and project-based learning. The results, analyzed using qualitative and quantitative indicators, demonstrate a significant increase in students’ analytical thinking (28%), creativity (34%), and metacognitive control (26%). The findings confirm that transforming students from passive listeners into active organizers of educational events fosters critical thinking and professional competence.",
-      "topics": [
-        "Educational methodologies and cognitive development",
-        "Values and Moral Education",
-        "Education and Character Development"
-      ],
-      "keywords": [
-        "cognitive engagement",
-        "educational events",
-        "pedagogical universities",
-        "moral education",
-        "intellectual potential",
-        "interactive technologies",
-        "case studies",
-        "project-based learning",
-        "debate",
-        "analytical thinking",
-        "creativity",
-        "metacognitive regulation",
-        "critical thinking",
-        "professional competence",
-        "student active participation"
-      ]
-    },
-    {
-      "id": "doi:10.60164/cft04ppwoy",
-      "abstract": "Question: What are the main ergonomic risk factors that contribute to musculoskeletal disorders (MSDs) among construction workers performing physically demanding tasks? Purpose: The purpose of this study is to analyze ergonomic risks in construction work by applying the Rapid Upper Limb Assessment (RULA) and Rapid Entire Body Assessment (REBA) methods, supported by the Nordic Body Map (NBM) questionnaire. The aim is to identify high-risk postures, quantify risk levels, and propose effective interventions to reduce physical strain and improve worker productivity. Research Method: This study employed field observation and quantitative posture assessment conducted at a renovation project of PT Hutama Karya in Bandung, Indonesia. Data were collected through direct observation of 20 workers engaged in tasks such as bricklaying, rebar work, concrete pouring, and manual cement mixing. Each activity was evaluated using RULA and REBA scoring sheets, while the NBM questionnaire was used to identify musculoskeletal discomfort in specific body regions. Findings: Manual cement mixing was found to have the highest ergonomic risk, with RULA and REBA scores exceeding 8 and NBM scores above 72, indicating very high musculoskeletal stress. Other activities—such as brick lifting and concrete pouring—showed medium to high risk levels. The findings confirm that awkward postures, repetitive motions, and heavy manual handling are dominant contributors to MSDs in construction sites. Limitations: This study was limited to one project location and did not include mechanical or environmental stressors such as vibration or temperature. Broader site variations may yield different results. Implications: Failure to implement ergonomic improvements such as mechanical aids, posture training, and task rotation can increase injury risk, reduce productivity, and raise project costs. Integrating ergonomic assessments into construction risk management can significantly enhance safety and efficiency. Value for authors: This study provides practical guidance on how to assess and manage ergonomic risks using combined RULA, REBA, and NBM methods—helping practitioners design safer, more efficient construction workplaces. Keywords: ergonomics, body posture, RULA, REBA, musculoskeletal disorders, construction safety Paper type: Case Study",
-      "topics": [
-        "Ergonomics and Musculoskeletal Disorders",
-        "Occupational Health and Safety in Workplaces",
-        "Occupational Health and Safety Management"
-      ],
-      "keywords": [
-        "ergonomic risk assessment",
-        "musculoskeletal disorders",
-        "construction workers",
-        "awkward postures",
-        "RULA",
-        "REBA",
-        "Nordic Body Map",
-        "bricklaying",
-        "concrete placement",
-        "repetitive manual tasks",
-        "construction safety",
-        "postural training",
-        "job rotation"
-      ]
-    },
-    {
-      "id": "doi:10.1038/s41598-026-48126-w",
-      "abstract": "Japan's human papillomavirus (HPV) vaccine coverage remains low, highlighting the need for engaging education for young adults. An escape-room intervention, a traditional lecture, and a non-intervention control were compared in Japanese female university students. Questionnaires were completed at baseline, immediately post-intervention, and three months later. Knowledge and vaccination intention were assessed at all time points; satisfaction and perceived comprehension were assessed immediately post-intervention; and HPV vaccination initiation was assessed at three months. Open-ended responses from the escape-room group were analyzed using quantitative content analysis based on Fink's taxonomy. For the 267 students (escape room n = 92; lecture n = 75; control n = 100), the lecture produced greater immediate gains in knowledge and intention. At three months, both intervention groups retained higher knowledge than the control group, with no difference between escape room and lecture. In participants unvaccinated at baseline (0 doses), vaccination intention increased more from baseline to three months in the escape-room group than in the control group, whereas vaccination initiation was significantly higher in the lecture group. Qualitative findings suggested the escape room promoted emotional engagement, intrinsic motivation, and peer collaboration. Escape rooms may complement traditional vaccine education by providing an interactive, low-resource format that supports learning and motivation.",
-      "topics": [
-        "Educational Games and Gamification",
-        "Cervical Cancer and HPV Research",
-        "Innovative Teaching Methodologies in Social Sciences"
-      ],
-      "keywords": [
-        "HPV vaccine",
-        "escape rooms",
-        "vaccine education",
-        "university students",
-        "vaccination intention",
-        "vaccine knowledge",
-        "interactive learning",
-        "intrinsic motivation",
-        "peer collaboration",
-        "emotional engagement",
-        "Japanese women",
-        "vaccine hesitancy"
-      ]
-    },
-    {
-      "id": "doi:10.25105/jmpj.v19i1.22787",
-      "abstract": "Despite the recognition of artificial intelligence (AI) as an innovative banking frontier, its full-scale activation is limited by an insufficient understanding of user adoption behaviors, particularly among specific demographics in emerging markets. This study explores the behavioral indicators affecting the adoption of AI among potential digital banking adopters in Indonesia classified as Gen Z. The theoretical underpinnings of the unified theory of acceptance of technology (UTAUT2) and technology acceptance model (TAM), data from 414 respondents, and the structural equation modeling (SEM) technique were used to identify the behavioral indicators of AI adoption. The empirical findings reveal that intrinsic motivations (perceived ease of use, usefulness, performance expectancy, effort expectancy, and hedonic motivation) significantly drive AI adoption among Gen Z in Indonesian digital banking. Notably, external factors such as social influence and facilitating conditions, along with demographic variables such as gender and age, were found to be insignificant, challenging the established models in this context. Conversely, the level of education and job role emerged as significant drivers. This study refines the integrated UTAUT2 and TAM framework by demonstrating how the unique characteristics of Gen Z in an emerging digital economy reshape the influence of external factors, thereby establishing crucial boundary conditions for these models. These findings offer actionable insights for banking professionals to design targeted digital marketing strategies and policies that resonate with this crucial demographic, especially in contexts similar to Indonesia's digital development stage.",
-      "topics": [
-        "Technology Adoption and User Behaviour",
-        "AI in Service Interactions",
-        "Health, Technology, Consumer Behavior"
-      ],
-      "keywords": [
-        "artificial intelligence adoption",
-        "Generation Z",
-        "digital banking",
-        "UTAUT2",
-        "technology acceptance model",
-        "intrinsic motivation",
-        "perceived ease of use",
-        "perceived usefulness",
-        "performance expectancy",
-        "effort expectancy",
-        "hedonic motivation",
-        "social influence",
-        "facilitating conditions",
-        "educational attainment",
-        "job roles",
-        "emerging markets",
-        "Indonesia"
-      ]
-    },
-    {
-      "id": "doi:10.31014/aior.1992.09.02.712",
-      "abstract": "Aims: This paper argues that even a single business undertaking such as telework implementation demands multifaceted and composite perspectives and analysis through interdisciplinary research. Interdisciplinarity is both necessary and effective. It constructs a matrix that organizes the comprehensive considerations for telework implementation by classifying the multifaceted meanings of telework into eight dimensions, synthesizing prior research that has been fragmented across individual academic disciplines. It advances the thesis that historical and cultural conditions undergird the other analytical dimensions, thereby demonstrating the foundational positioning of the humanities and historical perspective within interdisciplinary research. These eight dimensions exert multilayered and cyclical influences on three actor levels involved in telework adoption: the micro level (individual teleworker), the meso level (intermediate organizations such as labor unions and corporations), and the macro level (government/policy). The discussion focusses on comparative analysis of telework adoption patterns across EU member states and Japan, review of prior research in management science, labor economics, sociology, and organizational psychology. The analysis of the divergent national responses to uniform national-level lockdowns during the COVID-19 crisis reveals that cultural factors exert foundational influence across all three actor levels. Examining positive and negative factors affecting telework adoption rates by country, the Netherlands is identified as an exemplary case in which tripartite cooperation among government, labor, and management—rooted in the cultural heritage of Christian Democracy and personalism—has structurally enabled flexible working. Taking this cultural perspective into account, the paper demonstrates that historical and cultural conditions do not merely constitute one dimension among many, but function as the bottom line of foundational stratum undergirding law and policy, corporate systems, job design, and individual psychology. From this perspective, the distinctive feature of telework adoption in Japan is identified in the spontaneous civic behavior of workers within non-institutionalized and non-discretionary domains. The proposed eight-domain matrix model provides a bird’s-eye framework that foregrounds the foundational positioning of the humanities and historical perspective within interdisciplinary research on telework.",
-      "topics": [
-        "Work-Family Balance Challenges",
-        "Employment, Labor, and Gender Studies",
-        "Labor Law and Work Dynamics"
-      ],
-      "keywords": [
-        "remote work",
-        "telework implementation",
-        "interdisciplinarity",
-        "cultural factors",
-        "historical conditions",
-        "matrix models",
-        "telework adoption",
-        "flexible work arrangements",
-        "trilateral cooperation",
-        "Christian Democracy",
-        "personalism",
-        "COVID-19 lockdown",
-        "Netherlands",
-        "Japan",
-        "EU member states",
-        "trade unions",
-        "public policy"
-      ]
-    },
-    {
-      "id": "doi:10.6084/m9.figshare.32049432",
-      "abstract": "Aims: This paper argues that even a single business undertaking such as telework implementation demands multifaceted and composite perspectives and analysis through interdisciplinary research. Interdisciplinarity is both necessary and effective. It constructs a matrix that organizes the comprehensive considerations for telework implementation by classifying the multifaceted meanings of telework into eight dimensions, synthesizing prior research that has been fragmented across individual academic disciplines. It advances the thesis that historical and cultural conditions undergird the other analytical dimensions, thereby demonstrating the foundational positioning of the humanities and historical perspective within interdisciplinary research. These eight dimensions exert multilayered and cyclical influences on three actor levels involved in telework adoption: the micro level (individual teleworker), the meso level (intermediate organizations such as labor unions and corporations), and the macro level (government/policy). The discussion focusses on comparative analysis of telework adoption patterns across EU member states and Japan, review of prior research in management science, labor economics, sociology, and organizational psychology. The analysis of the divergent national responses to uniform national-level lockdowns during the COVID-19 crisis reveals that cultural factors exert foundational influence across all three actor levels. Examining positive and negative factors affecting telework adoption rates by country, the Netherlands is identified as an exemplary case in which tripartite cooperation among government, labor, and management—rooted in the cultural heritage of Christian Democracy and personalism—has structurally enabled flexible working. Taking this cultural perspective into account, the paper demonstrates that historical and cultural conditions do not merely constitute one dimension among many, but function as the bottom line of foundational stratum undergirding law and policy, corporate systems, job design, and individual psychology. From this perspective, the distinctive feature of telework adoption in Japan is identified in the spontaneous civic behavior of workers within non-institutionalized and non-discretionary domains. The proposed eight-domain matrix model provides a bird’s-eye framework that foregrounds the foundational positioning of the humanities and historical perspective within interdisciplinary research on telework.",
-      "topics": [
-        "Work-Family Balance Challenges",
-        "Employment, Labor, and Gender Studies",
-        "Labor Law and Work Dynamics"
-      ],
-      "keywords": [
-        "remote work",
-        "telework implementation",
-        "interdisciplinarity",
-        "organizational culture",
-        "flexible work arrangements",
-        "COVID-19 lockdown",
-        "trilateral cooperation",
-        "Christian Democracy",
-        "personalism",
-        "Netherlands",
-        "Japan",
-        "EU member states",
-        "telework adoption",
-        "history of work"
-      ]
-    },
-    {
-      "id": "doi:10.70109/jinher.v2i1.44",
-      "abstract": "Introduction: Hospital nutrition installations play a crucial role in supporting patient recovery through safe and hygienic food service delivery. However, food service operations in hospitals involve multiple occupational hazards, including biological, physical, chemical, ergonomic, mechanical, and psychosocial risks. Inadequate identification and control of these hazards may increase the likelihood of workplace accidents and occupational diseases. Therefore, systematic risk management using the Hazard Identification, Risk Assessment, and Risk Control (HIRARC) method is essential to ensure occupational health and safety (OHS) compliance within hospital nutrition units. Objectives: This study aims to systematically identify occupational hazards, evaluate their risk levels, and propose appropriate control measures using the HIRARC approach within the hospital nutrition installation. Methods: This study employed a descriptive observational design using the HIRARC approach to identify potential hazards, assess risk levels, and determine appropriate control measures in a hospital nutrition installation. Data were collected through direct observation and structured assessment of ten key work processes, including receiving raw materials, storage, food preparation, cooking, distribution, equipment washing, waste disposal, and administrative tasks. Risk levels were calculated based on the multiplication of likelihood (L) and severity (S) scores to categorize risks into low, moderate, and high levels. Results: The findings identified multiple occupational hazards across all work processes. High-risk activities were found in food preparation (L×S = 12) and cooking processes (L×S = 16), primarily due to sharp tools, exposure to hot surfaces, steam, and hot oil. In this assessment, L (Likelihood) refers to the probability or frequency of a hazard occurring, while S (Severity) represents the potential impact or seriousness of the injury or health consequence resulting from the hazard. The overall risk level was determined by multiplying Likelihood (L) and Severity (S) scores. Moderate risks were observed in raw material handling, storage, lifting heavy equipment, food distribution, equipment washing, waste management, and kitchen cleaning. Low risk was identified in administrative tasks, mainly related to ergonomic and psychosocial factors. The dominant types of hazards included mechanical, thermal, biological, ergonomic, and chemical risks. Conclusion: The HIRARC analysis demonstrates that hospital nutrition installations are exposed to varying levels of occupational risks, with food preparation and cooking identified as high-risk activities. Implementing comprehensive and continuous OHS risk management strategies is essential to enhance worker safety, minimize workplace incidents, and improve overall service quality in hospital nutrition departments.",
-      "topics": [
-        "Occupational Health and Safety Management",
-        "Occupational Health and Safety in Workplaces",
-        "Occupational Health and Safety Research"
-      ],
-      "keywords": [
-        "occupational hazards",
-        "occupational health and safety",
-        "risk assessment",
-        "risk control",
-        "food service safety",
-        "ergonomic risk factors",
-        "thermal hazard",
-        "biological hazards",
-        "psychosocial risks",
-        "chemical hazards",
-        "mechanical hazards",
-        "risk management"
-      ]
-    },
-    {
-      "id": "openalex:W7220503335",
-      "abstract": "Occupational health evaluations in the informal printing service sector, which has high physical demands and static postures, are still minimally conducted. The research aims to determine the risk level of Musculoskeletal Disorders (MSDs) complaints among printing service workers in Tawang District, Tasikmalaya City. This study used an observational analytical design with a cross-sectional approach. The sample was 32 respondents from printing service workers. The sampling technique used accidental sampling. The research instrument used the Nordic Body Map (NBM) questionnaire to map the location and severity of muscle pain. The data were analyzed quantitatively based on NBM scoring. The results showed that the majority of respondents worked beyond normal time limits with an average of 12 hours per day. The risk level of musculoskeletal complaints was mostly low for 29 respondents (90.6%), and moderate for 3 respondents (9.4%). Although the current complaint level is classified as low, extreme working hours and static sitting postures create a latent injury threat. Ergonomic work positions and regular stretching are highly necessary to minimize the risk of long-term musculoskeletal injuries.",
-      "topics": [
-        "Ergonomics and Musculoskeletal Disorders",
-        "Occupational Health and Safety in Workplaces",
-        "Occupational Health and Safety Management"
-      ],
-      "keywords": [
-        "musculoskeletal disorders",
-        "Nordic Body Map",
-        "occupational health",
-        "working hours",
-        "myalgia",
-        "Tasikmalaya"
-      ]
-    },
-    {
-      "id": "doi:10.1108/bepam-08-2025-0238",
-      "abstract": "Purpose This study systematically analyzes existing research at the intersection of Industry 4.0 (I4.0) and the emerging Industry 5.0 (I5.0) paradigm in construction materials. It identifies dominant themes, temporal trends and research gaps, with particular attention to performance, sustainability and digital technologies. Design/methodology/approach This study offers a thematic analysis of 1,797 documents sourced from Scopus and Google Scholar. This method is followed based on Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guideline and analyzed by Biblioshiny approaches within 2016–2025. The analysis is suggested based on co-occurrence networks, thematic maps and temporal Sankey diagrams. Findings Although compressive strength (203 occurrences) and mechanical properties (143 occurrences), including compressive, split tensile and flexural strengths, are still essential for I4.0, there is an increasing focus on sustainability and resiliency. However, the human centricity is still unexplored since the I5.0 is in the very early stage, and its impacts on human factors are yet in the steady phase. Thematic mapping results suggest emerging areas including machine learning, graphene, basalt fiber, composites and sustainable building. Practical implications The results provide essential insights for academics, practitioners and policymakers informing policy development, guiding material innovation and shaping regulatory standards. Originality/value The work offers, for the first time, the relationship between I4.0 with construction material context from basic compressive strength and mechanical properties to emerging technological and social aspects.",
-      "topics": [
-        "BIM and Construction Integration",
-        "Digital Transformation in Industry",
-        "Innovations in Concrete and Construction Materials"
-      ],
-      "keywords": [
-        "Industry 4.0",
-        "Industry 5.0",
-        "building materials",
-        "circular economy",
-        "compressive strength",
-        "mechanical properties",
-        "digital technologies in construction",
-        "human-centricity",
-        "machine learning",
-        "graphene",
-        "basalt fiber",
-        "composite materials",
-        "sustainable construction",
-        "research trends"
-      ]
-    },
-    {
-      "id": "doi:10.24193/ed21.2026.33.09",
-      "abstract": "Educational materials are indispensable for literacy development, cognitive engagement, and knowledge acquisition in education, especially at primary and secondary levels. While readability research covers many contexts (designing textbooks for different domains), this field is particularly underexplored in Romania. Studies on linguistic overload in Romanian textbooks suggest that modern materials frequently exceed students’ cognitive capacities, and reveal a correlation between increased linguistic complexity and declining student performance. The transition from a single-textbook system to a multi-textbook model in post-communist Romania offers more diverse resources, but increased lexical/syntactic complexity, potentially obstructing student engagement. We propose a comparative-analysis framework for evaluating literature textbooks, using corpus-based approaches. We compare Romanian textbooks used in high schools from two periods: ROTEX-OLD (pre-1989, communist state-approved textbooks), and ROTEX-NEW (2014-2024, diversified textbooks currently in use). Findings indicate an increase in linguistic complexity (i.e. low readability) in contemporary textbooks. Corpus analyses reveal that modern textbooks often exceed grade-appropriate readability levels, increasing cognitive strain. Sentiment analysis highlights a shift in emotional tone, with ROTEX-OLD textbooks characterized by patriotic and propagandistic themes, while ROTEX-NEW materials incorporate a more pessimistic perspective. This shift is correlated with linguistic features. The study advocates for linguistics-supported textbook readability assessments to balance linguistic complexity and pedagogical accessibility.",
-      "topics": [
-        "Text Readability and Simplification",
-        "Linguistic research and analysis",
-        "Second Language Acquisition and Learning"
-      ],
-      "keywords": [
-        "textbook readability",
-        "linguistic complexity",
-        "post-communist Romania",
-        "sentiment analysis",
-        "cognitive load"
-      ]
-    },
-    {
-      "id": "doi:10.31234/osf.io/kabz7_v1",
-      "abstract": "People tend to seek and engage with information that aligns with their pre-existing beliefs rather than challenges them, reinforcing ideological echo chambers and polarization. While prior research has focused on high-level choices (e.g., what people want to read and how they evaluate it), the present study asks whether motivated cognition manifests at the fundamental level of reading. Using eye-tracking, we monitored participants (N=76) - half vegetarian and half non-vegetarian - each reading short factual paragraphs about the positive and negative implications of vegetarianism, resulting in a total of 756 trials (i.e., reads of passages). Consistent with our hypothesis, there was a significant interaction between participants’ stance and the text’s argument on reading behavior: Readers skipped more words when texts opposed rather than aligned with their stance, indicating reduced cognitive engagement with attitude-incongruent content. This attitude-congruency effect emerged in both overall and first-run skipping measures. This research reveals that existing beliefs don’t just dictate what we read, they change how we read. By reducing engagement with incongruent content, this selective skimming acts as an underlying mechanism that creates a cognitive barrier, preventing new information from being fully processed. These findings suggest that motivated cognition operates already during early information intake, revealing a mechanism through which worldview-consistent biases take root.",
-      "topics": [
-        "Behavioral Health and Interventions",
-        "Educational Strategies and Epistemologies",
-        "Health Literacy and Information Accessibility"
-      ],
-      "keywords": [
-        "Reading (process)",
-        "Cognition",
-        "Argument (complex analysis)",
-        "Eye movement",
-        "Mechanism (biology)",
-        "Cognitive bias",
-        "Ideology",
-        "Motivated reasoning"
-      ]
-    },
-    {
-      "id": "doi:10.1016/j.sna.2026.117854",
-      "abstract": null,
-      "topics": [
-        "Advanced Sensor and Energy Harvesting Materials",
-        "Advanced Multi-Objective Optimization Algorithms",
-        "Soft Robotics and Applications"
-      ],
-      "keywords": [
-        "plantar pressure measurement",
-        "Miura origami",
-        "flexible pressure sensors",
-        "thermoplastic polyurethane",
-        "3D-printed sensors",
-        "active learning (machine learning)",
-        "multi-objective optimization",
-        "Gaussian process regression",
-        "NSGA-II",
-        "sensor array design",
-        "adaptive calibration",
-        "hysteresis compensation",
-        "gait analysis",
-        "piezoresistive sensors"
-      ]
-    },
-    {
-      "id": "doi:10.24193/ed21.2026.33.02",
-      "abstract": "Neuroeducation integrates findings from cognitive neuroscience and psychology to inform effective teaching practices, offering a valuable framework for biology education. Contemporary research demonstrates that learning is not purely cognitive but is strongly influenced by emotions, motivation, and attentional processes. Emotional engagement, mediated by the limbic system, modulates memory consolidation, attention, and cognitive resource allocation, enhancing retention of complex biological concepts. Intrinsic motivation further supports persistence, metacognitive strategies, and active exploration, particularly in abstract or counterintuitive topics such as genetics, cellular processes, and ecological systems. Biology instruction can leverage these principles through narrative-based teaching, problem-solving tasks, inquiry-oriented activities, and real-life contextualization that connects scientific content to students’ experiences. However, translating neuroscience findings into classroom practice faces challenges, including methodological limitations, differences in levels of analysis, and the persistence of neuromyths. Teacher training, ethical considerations, and evidence-based curricular design are essential to ensure responsible application. Integrating neuroeducational principles promotes multisystemic learning, fostering attention, memory, emotional engagement, and curiosity-driven exploration. By aligning teaching strategies with the brain’s natural learning mechanisms, neuroeducation enhances conceptual understanding, engagement, and positive attitudes toward science. It provides educators with a scientifically grounded guide for designing biology lessons that are both effective and meaningful.",
-      "topics": [
-        "Neuroscience, Education and Cognitive Function",
-        "Undergraduate Neuroscience Education and Research",
-        "Science Education and Pedagogy"
-      ],
-      "keywords": [
-        "neuroeducation",
-        "biology education",
-        "emotional engagement",
-        "intrinsic motivation",
-        "attention",
-        "memory consolidation",
-        "limbic system",
-        "neuromyths",
-        "teacher professional development",
-        "inquiry-based learning",
-        "storytelling in teaching",
-        "metacognition",
-        "curriculum development",
-        "attitudes toward science"
-      ]
-    },
-    {
-      "id": "doi:10.1007/s11548-026-03623-1",
-      "abstract": "PURPOSE: Robotic-assisted surgery (RAS) is becoming increasingly popular with one of its praised benefits being improved ergonomics. While other types of interventions like open or laparoscopic surgery have been assessed regarding the noise exposure and evaluations regarding the ergonomics are based on these findings, there are no studies analyzing the changed environment of tele-operated RAS. METHODS: Twelve robotic interventions with an average length of 3.5 h, including (hemi-)colectomies, anterior rectum resections and sigmoidectomies were assessed using a sound level meter. Recordings were monitored by a medical expert, manually annotating individual phases of the intervention from the patient's entry till the exit of the operating room. Measured sound data were afterward mapped to one out of six corresponding surgical phases. RESULTS: The data showed an average noise level of 60.5(±3.35) dB(A) and a L(A)eq of 63.49 dB(A) with the robotic phase being significantly, but only 0.15 dB(A) louder than the non-robotic surgical part (60.4(±3.14) dB(A)). Overall the peri-surgical phase was louder than the surgery itself with the post-surgical phase being the loudest of all phases with a level of 61.2 (±4.82) dB(A). CONCLUSIONS: Regarding sound levels tele-operated RAS seems comparable with open and laparoscopic surgery, despite the robotic phase being to a small extent louder within this evaluation. Nevertheless sound levels appear high and further reduction should be considered in order to improve ergonomics and patient safety.",
-      "topics": [
-        "Noise Effects and Management",
-        "Surgical Simulation and Training",
-        "Vehicle Noise and Vibration Control"
-      ],
-      "keywords": [
-        "robotic surgery",
-        "occupational noise exposure",
-        "surgical ergonomics",
-        "patient safety",
-        "colectomy",
-        "rectal resection",
-        "sigmoidectomy"
       ]
     }
   ]

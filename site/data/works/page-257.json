@@ -1,12 +1,530 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-17T14:28:42.116Z",
+  "generatedAt": "2026-11-18T14:02:47.761Z",
   "page": 257,
   "pageSize": 100,
-  "totalItems": 40573,
-  "totalPages": 406,
+  "totalItems": 40626,
+  "totalPages": 407,
   "nextPage": "./page-258.json",
   "items": [
+    {
+      "id": "arxiv:2608.14684",
+      "recordType": "preprint",
+      "title": "Mitigating Rubric Interference in LLM Judges via On-Policy Self-Distillation",
+      "abstract": "LLM judges increasingly evaluate responses against fine-grained rubric checklists. When a sample requires multiple rubrics, current methods typically assess each in a separate inference call. Evaluating all rubrics in a single pass is a natural alternative with greater efficiency, but we find that it introduces rubric interference: the verdict on one rubric shifts depending on which other rubrics are co-present. In a preliminary study, only one-third of samples receive fully consistent verdicts when evaluated under rubric sets of varying composition. We develop a measurement framework that probes interference through four controlled operations: rubric set expansion, subsetting, reordering, and noise injection. To mitigate interference without external supervision, we propose Self-Anchored Rubric Alignment (SARA). SARA uses a model's own single-rubric judgments as stable anchors and aligns multi-rubric reasoning with these anchors through on-policy self-distillation. We validate SARA on three datasets (HealthBench, FLASK, ResearchQA) and two model families (Qwen3, Llama-3.1). SARA consistently improves evaluation consistency while maintaining agreement with both base models and GPT-4.1 as a reference judge. Furthermore, the learned consistency transfers across datasets, confirming that SARA teaches a general capability rather than fitting dataset-specific patterns.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.14684"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.14684"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-05",
+      "firstPublicDate": "2026-08-05",
+      "onlineDate": "2026-08-05",
+      "topics": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 1,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "LLM"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Dingyao Yu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Tong Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yutao Mou",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yunxiao Zhang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Wei Ye",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Shikun Zhang",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.14684v2",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:29.380Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:29.380Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
+      "preferredVersionId": "arxiv:2608.14684",
+      "versions": [
+        {
+          "id": "arxiv:2608.14684",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.14684",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.14684v2"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-257.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "LLM",
+              "quote": "Mitigating Rubric Interference in LLM Judges via On-Policy Self-Distillation",
+              "start": 0,
+              "end": 76
+            },
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "LLM judges increasingly evaluate responses against fine-grained rubric checklists. When a sample requir",
+              "start": 0,
+              "end": 103
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.05409",
+      "recordType": "preprint",
+      "title": "Mood Matters: How Syntactic Sensitivity Undermines Safety Alignment",
+      "abstract": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticated jailbreaks that sidestep established safeguards. For instance, prior work by Andriushchenko et al. (2025) has found that changing the grammatical tense from present to past can be enough to elicit harmful responses. In this work, we uncover a more general failure of non-imperative syntactic forms. We demonstrate that this syntactic vulnerability exists in 16 models up to 70B parameters, using behavioral evaluation. To investigate the root cause, we apply causal mediation analysis, finding that refusal is partially conditioned on upstream syntactic features. By steering these purely syntactic features we are able to trigger and suppress refusal. Finally, we trace this ill-conditioning to linguistically biased post-training data of open-source models and show that increasing syntactic diversity can mitigate the issue. Our findings suggest that current alignment approaches introduce confounders that prevent a pure semantic grounding of the refusal decision.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.05409"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.05409"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-05",
+      "firstPublicDate": "2026-08-05",
+      "onlineDate": "2026-08-05",
+      "topics": [
+        "cs.CL"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 8,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "title",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Mood Matters: How Syntactic Sensitivity Undermines Safety Alignment",
+              "weight": 4
+            },
+            {
+              "source": "abstract",
+              "concept": "safety",
+              "conceptLabel": "Sicherheit",
+              "matchedTerm": "safety",
+              "sourceValue": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticated jailbreaks that sidestep established safeguards. For instance, prior work by Andriushchenko et al. (2025) has found that changing the grammatical tense from present to past can be enough to elicit…",
+              "weight": 2
+            },
+            {
+              "source": "abstract",
+              "concept": "failure",
+              "conceptLabel": "Fehler",
+              "matchedTerm": "failure",
+              "sourceValue": "… be enough to elicit harmful responses. In this work, we uncover a more general failure of non-imperative syntactic forms. We demonstrate that this syntactic vulnerability exists in 16 models up to 70B parameters, using behavioral evaluation. To investigate the root cause, we apply causal mediation analysis, finding th…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 3,
+        "topic:safety": 8,
+        "classificationMaximum": 8
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "safety",
+        "failure"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Alina Klerings",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Jannik Brinkmann",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Heiner Stuckenschmidt",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Simone Paolo Ponzetto",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.05409v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:29.380Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:29.380Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
+      "preferredVersionId": "arxiv:2608.05409",
+      "versions": [
+        {
+          "id": "arxiv:2608.05409",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.05409",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.05409v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-257.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticat",
+              "start": 0,
+              "end": 121
+            },
+            {
+              "field": "abstract",
+              "term": "large language models",
+              "quote": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticat",
+              "start": 0,
+              "end": 121
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Large language models typically undergo post-training to align them with safety policies but there exist many sophisticat",
+                  "start": 0,
+                  "end": 121
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
+    {
+      "id": "arxiv:2608.07581",
+      "recordType": "preprint",
+      "title": "Multi-Branch Policy Optimization for Multimodal Large Language Models",
+      "abstract": "Group-based reinforcement learning methods for multimodal large language models typically rely on trajectory-level credit assignment that applies a single advantage to all tokens in a response. However, multimodal reasoning involves substantially higher perceptual uncertainty than text-only settings, where the model must repeatedly re-examine visual information to verify intermediate interpretations, and different visual groundings can lead to divergent reasoning paths, making such uniform credit assignment particularly inadequate and causing relative advantages to progressively degenerate toward zero. To address these challenges, we propose Multi-Branch Policy Optimization (MBPO), a tree-based framework that constructs reasoning trees at vision-language decision boundaries, enabling sibling branches to explore diverse visual hypotheses and assigning segment-level credit through branch-relative advantages. We further introduce a temporal replay buffer to reuse informative segments while controlling policy staleness. Experiments on several multimodal reasoning benchmarks show that MBPO outperforms representative baselines, improving both learning signal quality and optimization efficiency. The code is publicly available at https://github.com/ShuaiLyu0110/MBPO.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.07581"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.07581"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-05",
+      "firstPublicDate": "2026-08-05",
+      "onlineDate": "2026-08-05",
+      "topics": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [],
+      "scores": {
+        "ingestionEvidence": 3,
+        "classificationMaximum": 0
+      },
+      "evidenceTerms": [
+        "large language model",
+        "large language models",
+        "learning"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Shuai Lyu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yuning Gong",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Ruiling Gao",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Xiaoran Shang",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Zhonghong Ou",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Ping Zong",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yifan Zhu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yuan Sun",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Yang Qin",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Peng Hu",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.07581v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-28T11:43:29.380Z",
+      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
+      "retrievedAt": "2026-09-28T11:43:29.380Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-28T11:43:29.380Z",
+      "preferredVersionId": "arxiv:2608.07581",
+      "versions": [
+        {
+          "id": "arxiv:2608.07581",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.07581",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.07581v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-257.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "excluded",
+          "areas": [],
+          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
+          "human": [],
+          "ai": [
+            {
+              "field": "title",
+              "term": "large language model",
+              "quote": "Multi-Branch Policy Optimization for Multimodal Large Language Models",
+              "start": 0,
+              "end": 69
+            },
+            {
+              "field": "title",
+              "term": "large language models",
+              "quote": "Multi-Branch Policy Optimization for Multimodal Large Language Models",
+              "start": 0,
+              "end": 69
+            },
+            {
+              "field": "abstract",
+              "term": "large language model",
+              "quote": "Group-based reinforcement learning methods for multimodal large language models typically rely on trajectory-level credit assignment that applies a single advantage to all tokens ",
+              "start": 0,
+              "end": 179
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "machine-mentioned",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [
+            {
+              "value": "generation",
+              "evidence": [
+                {
+                  "field": "title",
+                  "term": "large language model",
+                  "quote": "Multi-Branch Policy Optimization for Multimodal Large Language Models",
+                  "start": 0,
+                  "end": 69
+                },
+                {
+                  "field": "abstract",
+                  "term": "large language model",
+                  "quote": "Group-based reinforcement learning methods for multimodal large language models typically rely on trajectory-level credit assignment that applies a single advantage to all tokens ",
+                  "start": 0,
+                  "end": 179
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "outcomes": [],
+          "studyDesign": [
+            {
+              "value": "experiment",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "experiment",
+                  "quote": "replay buffer to reuse informative segments while controlling policy staleness. Experiments on several multimodal reasoning benchmarks show that MBPO outperforms representative baselines, imp",
+                  "start": 952,
+                  "end": 1143
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ]
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "arxiv:2608.05076",
       "recordType": "preprint",
@@ -20389,622 +20907,6 @@
               "interpretation": "mentioned; role/outcome not confirmed"
             }
           ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.04007",
-      "recordType": "preprint",
-      "title": "TurnSight: Turn-Level Hindsight Self-Distillation for Tool-Integrated Reasoning",
-      "abstract": "Tool-Integrated Reasoning (TIR) enables LLMs to solve complex tasks through iterative tool interactions. However, existing reinforcement learning methods often rely on trajectory-level supervision, limiting fine-grained credit assignment in long-horizon TIR scenarios. On-policy self-distillation offers denser signals through teacher branches with privileged context, but existing approaches typically derive such context from ground-truth answers or retrieved skills, which may not reflect the states actually visited by the agent. Moreover, token-level supervision fails to capture the turn-level structure of tool interactions. To address this, we propose TurnSight, a turn-level hindsight self-distillation framework that derives supervision directly from execution-conditioned hindsight. It then constructs multiple hindsight views with different lookahead horizons and selects reliable supervision through cross-horizon directional agreement. Finally, the selected hindsight signal is normalized across sibling rollouts and used to adaptively modulate RL advantages while preserving their original optimization direction. Extensive experiments on three benchmarks demonstrate the effectiveness of TurnSight. Our codes are available at https://github.com/quchangle1/TurnSight.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.04007"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.04007"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-04",
-      "firstPublicDate": "2026-08-04",
-      "onlineDate": "2026-08-04",
-      "topics": [
-        "cs.CL",
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 2,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "LLM",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Changle Qu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Sunhao Dai",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Hengyi Cai",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yuqi Zhou",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Xinran Chen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Simon",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Jun Xu",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.04007v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:33.208Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:33.208Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:33.208Z",
-      "preferredVersionId": "arxiv:2608.04007",
-      "versions": [
-        {
-          "id": "arxiv:2608.04007",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.04007",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.04007v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-257.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "Tool-Integrated Reasoning (TIR) enables LLMs to solve complex tasks through iterative tool interactions. However, existing reinforcement learnin",
-              "start": 0,
-              "end": 144
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": "RL advantages while preserving their original optimization direction. Extensive experiments on three benchmarks demonstrate the effectiveness of TurnSight. Our codes are available at https://",
-                  "start": 1059,
-                  "end": 1250
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.03137",
-      "recordType": "preprint",
-      "title": "Verifiable Memory: Learning Unified Memory Management with Local and Global Verifiers for Large Language Model Agents",
-      "abstract": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlier evidence during long-horizon interaction. Existing methods commonly optimize long-term memory (LTM) and short-term memory (STM) separately, while unified policies are often trained primarily with trajectory-level feedback, which provides weak credit for individual memory decisions. We present Verifiable Memory (VerMem), a framework that represents LTM, active context, and episodic history as distinct states and controls them with one memory operation policy. Seven atomic operations let the policy add, revise, or soft-delete LTM entries; retrieve LTM into the active context; filter or summarize the active context; and restore selected episodic fragments. VerMem is initialized by supervised fine-tuning and trained with a three-stage reinforcement-learning curriculum. The local verifier scores executable memory transitions, and a global verifier assesses evidence coherence and terminal-memory consistency after task completion. These scores are combined with programmatically computed task, evidence-recall, efficiency, and constraint signals through hierarchical credit assignment. The verifiers are used only during training. Across five benchmarks and two LLM backbones, VerMem achieves the best result on the vast majority of reported metrics and consistently outperforms strong memory baselines. Under controlled online-token budgets on three interactive benchmarks, it also achieves the strongest efficiency--performance frontier among the compared methods. Code is available at https://github.com/Sun-SYSU-24/VerMem.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.03137"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.03137"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-04",
-      "firstPublicDate": "2026-08-04",
-      "onlineDate": "2026-08-04",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 3,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "large language model",
-        "LLM",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Xiaolong Sun",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Qichao Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Hangyu Li",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Liang Chen",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.03137v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:33.208Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:33.208Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:33.208Z",
-      "preferredVersionId": "arxiv:2608.03137",
-      "versions": [
-        {
-          "id": "arxiv:2608.03137",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.03137",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.03137v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-257.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "title",
-              "term": "large language model",
-              "quote": " Memory: Learning Unified Memory Management with Local and Global Verifiers for Large Language Model Agents",
-              "start": 10,
-              "end": 117
-            },
-            {
-              "field": "abstract",
-              "term": "large language model",
-              "quote": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlie",
-              "start": 0,
-              "end": 120
-            },
-            {
-              "field": "abstract",
-              "term": "LLM",
-              "quote": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlier evi",
-              "start": 0,
-              "end": 125
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [
-            {
-              "value": "tutoring",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "feedback",
-                  "quote": "ately, while unified policies are often trained primarily with trajectory-level feedback, which provides weak credit for individual memory decisions. We present Verifiable Memory (VerMem),",
-                  "start": 255,
-                  "end": 443
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            },
-            {
-              "value": "generation",
-              "evidence": [
-                {
-                  "field": "title",
-                  "term": "large language model",
-                  "quote": " Memory: Learning Unified Memory Management with Local and Global Verifiers for Large Language Model Agents",
-                  "start": 10,
-                  "end": 117
-                },
-                {
-                  "field": "abstract",
-                  "term": "large language model",
-                  "quote": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlie",
-                  "start": 0,
-                  "end": 120
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "outcomes": [
-            {
-              "value": "autonomy",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "control",
-                  "quote": "Large language model (LLM) agents must retain reusable information, control a bounded active context, and recover earlier evidence during long-horizon interaction. Existing me",
-                  "start": 0,
-                  "end": 175
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
-      }
-    },
-    {
-      "id": "arxiv:2608.03979",
-      "recordType": "preprint",
-      "title": "Video-DeepResearch: Towards the Next-Generation Multimodal Deepresearch Agent",
-      "abstract": "We introduce Video-DeepResearch (Video-DR), extending multimodal agents from static images to continuous video streams, a setting that demands dense spatiotemporal grounding coupled with open-web exploration. Preliminary evaluations reveal two critical bottlenecks in current models: (1) modality bias, where agents bypass visual tools in favor of textual search, and (2) parametric knowledge leakage, where models rely on internal memory rather than genuine tool-augmented execution. To address these challenges, we propose Video-DR, featuring a decoupled perception-exploration pipeline with stage-wise tool unlocking that compels exhaustive cross-frame visual grounding prior to web retrieval. Our framework adopts a two-stage training recipe: supervised fine-tuning followed by Group Relative Policy Optimization (GRPO), enabling autonomous exploration that breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstrate that our Video-DeepResearch-35B-A3B establishes a new state-of-the-art of 64.0% average accuracy, surpassing proprietary Claude-4.5-Sonnet (59.0%) by 5.0 points and significantly outperforming GPT-5 (52.5%) and Gemini 2.5 Pro (57.5%). The 30B-A3B variant achieves 59.3%, competitive with Claude-4.5-Sonnet and demonstrating the effectiveness of our training paradigm even at compact scale. Code: https://github.com/Osilly/Vision-DeepResearch.",
-      "doi": null,
-      "externalIds": {
-        "arxiv": "2608.03979"
-      },
-      "source": {
-        "name": "arXiv",
-        "recordId": "2608.03979"
-      },
-      "venue": "arXiv",
-      "publicationDate": "2026-08-04",
-      "firstPublicDate": "2026-08-04",
-      "onlineDate": "2026-08-04",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "keywords": [],
-      "classifiedThemes": [
-        {
-          "theme": "learning",
-          "label": "Lernen & Deskilling",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "learning",
-              "conceptLabel": "Lernen",
-              "matchedTerm": "learning",
-              "sourceValue": "… Optimization (GRPO), enabling autonomous exploration that breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstrate that our Video-DeepResearch-35B-A3B establishes a new state-of-the-ar…",
-              "weight": 2
-            }
-          ]
-        },
-        {
-          "theme": "trust",
-          "label": "Vertrauen & Reliance",
-          "score": 2,
-          "classificationVersion": "text-supported-lexical-4.0.0",
-          "ontologyVersion": "human-work-themes-4.0.0",
-          "evidence": [
-            {
-              "source": "abstract",
-              "concept": "reliance",
-              "conceptLabel": "Reliance",
-              "matchedTerm": "rely",
-              "sourceValue": "… in favor of textual search, and (2) parametric knowledge leakage, where models rely on internal memory rather than genuine tool-augmented execution. To address these challenges, we propose Video-DR, featuring a decoupled perception-exploration pipeline with stage-wise tool unlocking that compels exhaustive cross-frame…",
-              "weight": 2
-            }
-          ]
-        }
-      ],
-      "scores": {
-        "ingestionEvidence": 2,
-        "topic:learning": 2,
-        "topic:trust": 2,
-        "classificationMaximum": 2
-      },
-      "evidenceTerms": [
-        "human-AI",
-        "learning",
-        "rely"
-      ],
-      "authors": [
-        {
-          "id": null,
-          "name": "Zhen Fang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yu Zeng",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Wenxuan Huang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yiming Zhao",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Shiting Huang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Tianfei Ren",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Qi Lu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Qingnan Ren",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Qisheng Su",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Lionel Z. Wang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Qingyu Yin",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Shuang Chen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Zehui Chen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Lin Chen",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Zhenfei Yin",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Yao Hu",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Shaohui Lin",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Wanli Ouyang",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Shaosheng Cao",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": null,
-          "name": "Feng Zhao",
-          "orcid": null,
-          "affiliations": []
-        }
-      ],
-      "url": "https://arxiv.org/abs/2608.03979v1",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:33.208Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:33.208Z",
-      "dataStatus": "current",
-      "lastVerifiedAt": "2026-09-28T11:43:33.208Z",
-      "preferredVersionId": "arxiv:2608.03979",
-      "versions": [
-        {
-          "id": "arxiv:2608.03979",
-          "type": "preprint",
-          "source": "arXiv",
-          "externalId": "2608.03979",
-          "doi": null,
-          "url": "https://arxiv.org/abs/2608.03979v1"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "arxiv",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-257.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "included",
-          "areas": [
-            "human-ai"
-          ],
-          "reason": "Hinweise auf menschlichen/arbeitsbezogenen Kontext in Titel, Abstract oder einer Fachzeitschrift.",
-          "human": [
-            {
-              "field": "abstract",
-              "term": "human",
-              "quote": "breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demon",
-              "start": 862,
-              "end": 1047
-            }
-          ],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "human-AI",
-              "quote": "breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstr",
-              "start": 862,
-              "end": 1050
-            },
-            {
-              "field": "abstract",
-              "term": "AI",
-              "quote": " the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstr",
-              "start": 868,
-              "end": 1050
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "unknown",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [
-            {
-              "value": "performance",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "accuracy",
-                  "quote": " Video-DeepResearch-35B-A3B establishes a new state-of-the-art of 64.0% average accuracy, surpassing proprietary Claude-4.5-Sonnet (59.0%) by 5.0 points and significantly outperforming GPT",
-                  "start": 1062,
-                  "end": 1250
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ],
-          "studyDesign": []
         },
         "personalFit": [],
         "finding": null,
