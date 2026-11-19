@@ -1,7 +1,28 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-18T14:02:47.761Z",
+  "generatedAt": "2026-11-19T14:28:50.700Z",
   "documents": [
+    {
+      "id": "arxiv:2608.23670",
+      "abstract": "LLM-based agents execute multi-step tasks, but their behavioral structure remains opaque: long unstructured traces resist the safety auditing and runtime monitoring that deployment requires. Existing approaches operate per-trace or success-only, so they miss the cross-run topology that links next-step and failure prediction. To recover that shared structure, we collapse an entire trace corpus into a single, compact finite-state machine (FSM) that serves as a structural substrate for the otherwise unpredictable behavior of LLM agents. Across twelve public datasets, the FSMs are compact (7-43 states), replay held-out data at >=0.997 fitness with near-identical topology across splits, and build in milliseconds. This substrate addresses both prediction goals. For next-step prediction, FSM-state context outperforms Agent Workflow Memory on every ground-truth-matched dataset. For failure prediction, per-state behavioral features reach held-out AUROC up to 0.94, and an online monitor ranks failing runs above passing ones from a partial trace, triggering early stopping well before completion. Behavioral topology thus appears shaped more by the deployment harness than by the LLM, providing a model-agnostic structural primitive for safety auditing and runtime monitoring.",
+      "topics": [
+        "Mobile Agent-Based Network Management",
+        "Formal Methods in Verification",
+        "Software System Performance and Reliability",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "keywords": [
+        "Software deployment",
+        "Workflow",
+        "Context (archaeology)",
+        "Automaton",
+        "TRACE (psycholinguistics)",
+        "Exception handling",
+        "Topology (electrical circuits)"
+      ]
+    },
     {
       "id": "arxiv:2608.23041",
       "abstract": "LLM agents remain unreliable on long-horizon tasks, where small local failures can compound over extended interactions and lead to overall task failure. Although external harnesses can substantially improve robustness, harness design remains a manual and expensive process that requires searching over a large space of prompts, tool configurations, and control logic. We propose AutoSaddler, an automatic harness optimization framework that formulates harness improvement as an offline learning problem and iteratively updates the harness using failure signals from mini-batches. AutoSaddler combines failure-trace diagnosis, structured patch generation that treats the harness as code, and validation-based update selection. Experiments on GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0 show that AutoSaddler substantially improves agent performance over the corresponding base harnesses, achieving gains of 9.0, 9.6, and 10.0 percentage points, respectively. Ablation studies further suggest that effective harness optimization benefits from three ingredients: deep debugging rather than shallow reflection, targeted modifications rather than unconstrained editing, and generalization-aware selection rather than trajectory-specific repair. Together, these results suggest that automatic harness optimization is a promising path toward more performant and reliable agent systems.",
@@ -3707,26 +3728,6 @@
         "Comprehension",
         "Sentence",
         "Reuse"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.21516",
-      "abstract": "Formal verification provides the strongest correctness guarantees for software, and verification-aware languages can produce sound, machine-checked proofs. Recent AI coding agents have sharply lowered the cost of constructing such proofs. Yet few mainstream developers benefit: most use languages without formal-verification support, and formalizing properties and modeling execution environments demand formal-methods expertise. Proof therefore remains reserved for a few notable artifacts, while production software is attested mainly through review and testing. We introduce neuro-formal verification (NFV), which brings this automation to mainstream languages. An AI coding agent formalizes a source-level verification problem into a proof obligation in a verification-aware language, discharged by an established sound verifier aided by agentic proof search. Staged, goal-blind transformations reduce the risk of proving an artifact that does not faithfully represent the source program, property, or environment. Since NFV cannot ensure the soundness of this formalization, it optimizes for empirical accuracy rather than end-to-end soundness, while insisting on machine-checked evidence for every verdict. Experiments with current frontier models on a balanced dataset of correct and buggy Python solutions demonstrate the effectiveness of our approach. NFV with Dafny correctly resolves 57% of all entries, at 92% precision among its verdicts; with a CBMC backend, it produces a counterexample for 63% of the buggy programs at 90% precision. In contrast, an LLM-as-judge baseline achieves only 72% precision while answering every entry without any checkable artifact, and an unstaged agent-verifier combination proves 98% of both the correct and the known-buggy programs, yielding only 50% precision. Together, they confirm that both proofs and staging benefit an AI agent's formal program reasoning.",
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Formal Methods in Verification",
-        "Topic Modeling"
-      ],
-      "keywords": [
-        "Correctness",
-        "Automation",
-        "Automated reasoning",
-        "Counterexample",
-        "Mainstream",
-        "Compiler",
-        "Formal verification",
-        "Formal methods",
-        "Proof assistant"
       ]
     }
   ]

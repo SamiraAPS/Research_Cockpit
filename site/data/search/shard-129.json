@@ -1,7 +1,17 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-18T14:02:47.761Z",
+  "generatedAt": "2026-11-19T14:28:50.700Z",
   "documents": [
+    {
+      "id": "arxiv:2608.04307",
+      "abstract": "Text summarization is deceptively difficult. While condensing information seems straightforward, real-world enterprise summarization of support tickets, legal documents, incident reports, and more, demands strict adherence to domain-specific guidelines, output formats, and organizational conventions. Crafting prompts that reliably satisfy these constraints is labor-intensive, requiring significant human expertise and continuous maintenance as requirements evolve. Existing automated prompt optimization methods reduce this burden through Large Language Model (LLM) critique-driven refinement, yet remain limited by static prompts that cannot adapt to the diversity of summary applications. We propose Multi-LLM Iterative Data-Adaptive Summarization (MIDAS), a multi-LLM framework that extends this paradigm with data-driven pattern learning and use-case-specific personalization, enabling automatic adaptation to different summarization requirements without manual prompt engineering. Applied to enterprise customer ticket summarization across five output formats, MIDAS achieves the strongest overall performance against state-of-the-art critique-driven optimization frameworks such as CriSPO and ZERA, improving ROUGE-1 by up to 11.0%, ROUGE-2 by up to 18.2%, and ROUGE-L by up to 8.0%, while consistently improving BERTScore F1 across all formats and output types. We additionally demonstrate cross-model and cross-domain generalization through multi-LLM configurations and finance-domain summarization benchmarks.",
+      "topics": [
+        "cs.CL",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.14684",
       "abstract": "LLM judges increasingly evaluate responses against fine-grained rubric checklists. When a sample requires multiple rubrics, current methods typically assess each in a separate inference call. Evaluating all rubrics in a single pass is a natural alternative with greater efficiency, but we find that it introduces rubric interference: the verdict on one rubric shifts depending on which other rubrics are co-present. In a preliminary study, only one-third of samples receive fully consistent verdicts when evaluated under rubric sets of varying composition. We develop a measurement framework that probes interference through four controlled operations: rubric set expansion, subsetting, reordering, and noise injection. To mitigate interference without external supervision, we propose Self-Anchored Rubric Alignment (SARA). SARA uses a model's own single-rubric judgments as stable anchors and aligns multi-rubric reasoning with these anchors through on-policy self-distillation. We validate SARA on three datasets (HealthBench, FLASK, ResearchQA) and two model families (Qwen3, Llama-3.1). SARA consistently improves evaluation consistency while maintaining agreement with both base models and GPT-4.1 as a reference judge. Furthermore, the learned consistency transfers across datasets, confirming that SARA teaches a general capability rather than fitting dataset-specific patterns.",
@@ -1873,15 +1883,6 @@
       "topics": [
         "cs.CL",
         "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.06402",
-      "abstract": "Community detection is a fundamental task in graph analytics that aims to identify cohesive groups of entities with similar behaviors or interests. Classic objective-driven methods struggle with complex graph structures, while deep-learning approaches improve performance at the expense of interpretability and rely on labeled data and training. Large language models (LLMs), with strong reasoning capabilities and world knowledge, are promising for interpretable, label-free community detection. To leverage these strengths, we propose LUCID, an LLM-guided, interpretable, training-free, and unsupervised community detection method. Inspired by phase-transition kinetics in natural systems, where complex structures emerge through initialization, merging, refinement, and selection, LUCID is designed as a four-stage pipeline. Within this pipeline, the LLM induces formal rules that translate implicit knowledge into explicit and interpretable logical structures. Specifically, (1) the Local-View Community Initialization stage encodes local graph structures using k-ego contexts and unsupervised node roles; (2) the Multi-factor Community Merge stage uses LLM-induced rules to iteratively merge local communities; (3) the Multi-grain Community Refinement stage applies LLM-induced coarse-to-fine rules in parallel to reduce boundary noise; and (4) the Global-view Community Selection stage identifies high-quality communities based on topological compactness and boundary clarity. Extensive experiments on real-world datasets demonstrate that LUCID, as an unsupervised approach, achieves state-of-the-art performance and consistently outperforms leading unsupervised and semi-supervised baselines.",
-      "topics": [
-        "cs.AI",
-        "cs.LG"
       ],
       "keywords": []
     }

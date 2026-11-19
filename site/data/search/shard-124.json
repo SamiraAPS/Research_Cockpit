@@ -1,7 +1,27 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-18T14:02:47.761Z",
+  "generatedAt": "2026-11-19T14:28:50.700Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2608.21516",
+      "abstract": "Formal verification provides the strongest correctness guarantees for software, and verification-aware languages can produce sound, machine-checked proofs. Recent AI coding agents have sharply lowered the cost of constructing such proofs. Yet few mainstream developers benefit: most use languages without formal-verification support, and formalizing properties and modeling execution environments demand formal-methods expertise. Proof therefore remains reserved for a few notable artifacts, while production software is attested mainly through review and testing. We introduce neuro-formal verification (NFV), which brings this automation to mainstream languages. An AI coding agent formalizes a source-level verification problem into a proof obligation in a verification-aware language, discharged by an established sound verifier aided by agentic proof search. Staged, goal-blind transformations reduce the risk of proving an artifact that does not faithfully represent the source program, property, or environment. Since NFV cannot ensure the soundness of this formalization, it optimizes for empirical accuracy rather than end-to-end soundness, while insisting on machine-checked evidence for every verdict. Experiments with current frontier models on a balanced dataset of correct and buggy Python solutions demonstrate the effectiveness of our approach. NFV with Dafny correctly resolves 57% of all entries, at 92% precision among its verdicts; with a CBMC backend, it produces a counterexample for 63% of the buggy programs at 90% precision. In contrast, an LLM-as-judge baseline achieves only 72% precision while answering every entry without any checkable artifact, and an unstaged agent-verifier combination proves 98% of both the correct and the known-buggy programs, yielding only 50% precision. Together, they confirm that both proofs and staging benefit an AI agent's formal program reasoning.",
+      "topics": [
+        "Adversarial Robustness in Machine Learning",
+        "Formal Methods in Verification",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "Correctness",
+        "Automation",
+        "Automated reasoning",
+        "Counterexample",
+        "Mainstream",
+        "Compiler",
+        "Formal verification",
+        "Formal methods",
+        "Proof assistant"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2608.20865",
       "abstract": "Accurate electricity price forecasting is critical for smart grid stability, yet the heavy reliance on historical price lags in modern predictive models often obscures the fundamental physical drivers of market volatility. This paper proposes a regime-sensitive, explainable artificial intelligence (XAI) framework to unmask the hidden roles of load, climate, and calendar variables in the ERCOT Day-Ahead Market (2014-2024). Utilizing a Histogram-based Gradient Boosting Regressor (HGBR), we introduce a Suppression Ratio to quantify how price lags overshadow physical parameters. Our analysis reveals that while lags provide short-term memory during normal conditions, they fail to capture extreme dynamics; notably, their inclusion increased forecasting error (MAE/RMSE) during price spikes. By isolating these effects, the study revealed that price spikes are not merely the result of continuously rising temperatures, but rather emerge from the system reacting sharply within a specific temperature range. These findings underscore the importance of moving beyond lag-based models to uncover the true drivers of extreme price events.",
@@ -3664,28 +3684,6 @@
         "Edge computing",
         "Wireless",
         "Enhanced Data Rates for GSM Evolution"
-      ]
-    },
-    {
-      "id": "arxiv:2608.17941",
-      "abstract": "Reinforcement learning with verifiable rewards (RLVR) improves the reasoning capabilities of large language models but relies on costly rollout exploration. Assigning the same exploration budget to samples with different difficulty levels is inefficient: easy samples may receive redundant rollouts, whereas difficult but learnable samples may receive too little exploration. Existing adaptive schedulers address this mismatch through curriculum-based sample selection or non-uniform rollout allocation based on estimated sample difficulty. However, obtaining reliable online difficulty estimates remains challenging: dedicated probing adds substantial generation overhead, whereas history-based estimators face a cold start with no initial observations and stale feedback, and typically ignore relations among samples. To address these limitations, we propose a plug-and-play graph-based online difficulty estimator that shares rollout feedback across related samples and continuously updates their difficulty estimates, mitigating cold start and staleness without dedicated probing. Specifically, we first construct a difficulty-aware sample graph based on semantic and reasoning similarities. Based on this graph, we introduce latent difficulty states and use a Potts prior to encourage neighboring samples to share the same state. We then employ a state-level Beta-Binomial model to aggregate the rollout outcomes associated with each state. Finally, we use an online mean-field variational algorithm to continuously update the latent-state assignments and state-level difficulty as new feedback arrives. Our framework can be integrated into sample-selection and rollout-allocation schedulers, enabling difficulty-adaptive exploration without dedicated probing. Experiments across multiple base models, RL schedulers, and benchmarks demonstrate that our framework achieves better performance.",
-      "topics": [
-        "Topic Modeling",
-        "Natural Language Processing Techniques",
-        "Domain Adaptation and Few-Shot Learning",
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Estimator",
-        "Scheduling (production processes)",
-        "Reinforcement learning",
-        "Reuse",
-        "Sample (material)",
-        "Base (topology)",
-        "Graph",
-        "Selection (genetic algorithm)"
       ]
     }
   ]

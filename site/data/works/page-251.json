@@ -1,12 +1,157 @@
 {
   "schemaVersion": "works-page-1.1.0",
-  "generatedAt": "2026-11-18T14:02:47.761Z",
+  "generatedAt": "2026-11-19T14:28:50.700Z",
   "page": 251,
   "pageSize": 100,
-  "totalItems": 40626,
+  "totalItems": 40627,
   "totalPages": 407,
   "nextPage": "./page-252.json",
   "items": [
+    {
+      "id": "arxiv:2608.15445",
+      "recordType": "preprint",
+      "title": "Measuring Reward Hacking and Reasoning-Answer Decoupling Under Position-Confounded Optimization",
+      "abstract": "When a reward is correct on every training example yet consistent with more than one goal, a model can acquire an unintended one, a failure known as goal misgeneralization. Endpoint accuracy on the training distribution cannot tell the two apart, because solving the task and exploiting a surface feature can satisfy the reward equally well. We treat this as a measurement problem: what does a benchmark score measure once a model has been optimized against a correct but confounded signal? We train language models with GRPO on multiple-choice math problems where the correct answer is always option A, then evaluate on an unseen test set with unbiased answer positions. Across Qwen2.5, Llama 3.x and Gemma-3 models, biased training often drives option-A rates above 0.90 in smaller models and collapses unbiased accuracy toward chance, so accuracy stops measuring math ability and instead measures an answer-position policy. We further find reasoning-answer decoupling: capable models generate reasoning that reaches the correct numeric answer while still selecting A. We track this with numeric extraction and an LLM judge (GPT-4.1-mini; Qwen2.5-3B decoupling rate is about 0.66). The broken construct generalizes beyond the training domain: biased models inflate A-rates on out-of-domain MMLU and value-laden prompts. Continued training on unbiased data reverses the in-domain shift unevenly and only partially reverses the out-of-domain one, so a model can appear restored on its training distribution while remaining biased on unseen inputs. Reasoning-answer decoupling rate, together with answer distributions and out-of-domain behavior, separates capability loss from a learned, transferable shortcut.",
+      "doi": null,
+      "externalIds": {
+        "arxiv": "2608.15445"
+      },
+      "source": {
+        "name": "arXiv",
+        "recordId": "2608.15445"
+      },
+      "venue": "arXiv",
+      "publicationDate": "2026-08-15",
+      "firstPublicDate": "2026-08-15",
+      "onlineDate": "2026-08-15",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": [],
+      "classifiedThemes": [
+        {
+          "theme": "safety",
+          "label": "Sicherheit & Resilienz",
+          "score": 2,
+          "classificationVersion": "text-supported-lexical-4.0.0",
+          "ontologyVersion": "human-work-themes-4.0.0",
+          "evidence": [
+            {
+              "source": "abstract",
+              "concept": "failure",
+              "conceptLabel": "Fehler",
+              "matchedTerm": "failure",
+              "sourceValue": "…et consistent with more than one goal, a model can acquire an unintended one, a failure known as goal misgeneralization. Endpoint accuracy on the training distribution cannot tell the two apart, because solving the task and exploiting a surface feature can satisfy the reward equally well. We treat this as a measurement…",
+              "weight": 2
+            }
+          ]
+        }
+      ],
+      "scores": {
+        "ingestionEvidence": 1,
+        "topic:safety": 2,
+        "classificationMaximum": 2
+      },
+      "evidenceTerms": [
+        "LLM",
+        "failure"
+      ],
+      "authors": [
+        {
+          "id": null,
+          "name": "Suyash Maniyar",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Armaan Sandhu",
+          "orcid": null,
+          "affiliations": []
+        },
+        {
+          "id": null,
+          "name": "Abhishek Mishra",
+          "orcid": null,
+          "affiliations": []
+        }
+      ],
+      "url": "https://arxiv.org/abs/2608.15445v1",
+      "openAccess": true,
+      "citedByCount": 0,
+      "firstSeenAt": "2026-09-27T14:56:44.562Z",
+      "firstSeenRunId": "ingestion-2026-09-27T14:56:23.639Z",
+      "retrievedAt": "2026-09-27T14:56:44.562Z",
+      "dataStatus": "current",
+      "lastVerifiedAt": "2026-09-27T14:56:44.562Z",
+      "preferredVersionId": "arxiv:2608.15445",
+      "versions": [
+        {
+          "id": "arxiv:2608.15445",
+          "type": "preprint",
+          "source": "arXiv",
+          "externalId": "2608.15445",
+          "doi": null,
+          "url": "https://arxiv.org/abs/2608.15445v1"
+        }
+      ],
+      "discoveredBy": [
+        {
+          "provider": "arxiv",
+          "mode": "frontier",
+          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
+        }
+      ],
+      "pagePath": "./works/page-251.json",
+      "research": {
+        "methodVersion": "research-evidence-1.0.0",
+        "method": "rules-with-exact-text-spans",
+        "validation": "not-human-validated",
+        "relevance": {
+          "status": "uncertain",
+          "areas": [],
+          "reason": "Menschlicher oder arbeitsbezogener Bezug anhand der Metadaten nicht ausreichend bestimmbar.",
+          "human": [],
+          "ai": [
+            {
+              "field": "abstract",
+              "term": "LLM",
+              "quote": "ic answer while still selecting A. We track this with numeric extraction and an LLM judge (GPT-4.1-mini; Qwen2.5-3B decoupling rate is about 0.66). The broken construct generalizes be",
+              "start": 1036,
+              "end": 1219
+            }
+          ],
+          "domain": [],
+          "venueEvidence": null
+        },
+        "learner": "unknown",
+        "fields": {
+          "context": [],
+          "population": [],
+          "aiFunction": [],
+          "outcomes": [
+            {
+              "value": "performance",
+              "evidence": [
+                {
+                  "field": "abstract",
+                  "term": "accuracy",
+                  "quote": " acquire an unintended one, a failure known as goal misgeneralization. Endpoint accuracy on the training distribution cannot tell the two apart, because solving the task and exploiting a s",
+                  "start": 102,
+                  "end": 290
+                }
+              ],
+              "interpretation": "mentioned; role/outcome not confirmed"
+            }
+          ],
+          "studyDesign": []
+        },
+        "personalFit": [],
+        "finding": null,
+        "findingStatus": "requires-reading",
+        "abstractAvailable": true
+      }
+    },
     {
       "id": "arxiv:2608.15311",
       "recordType": "preprint",
@@ -20475,181 +20620,6 @@
         "finding": null,
         "findingStatus": "requires-reading",
         "abstractAvailable": false
-      }
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.13197",
-      "recordType": "preprint",
-      "title": "Beyond Simulated Benchmarks: Evaluating Motion Representations for Fall Detection Under Real-World Data Scarcity",
-      "abstract": "Falls are a major health concern for older adults, and wearable sensors have been widely explored for detecting falls and enabling timely intervention. However, real-world falls are extremely rare: collecting 100 of them requires an estimated 100,000 days of monitoring, resulting in severely limited labelled data for training machine learning models. Consequently, many approaches rely on simulated datasets, often reporting high laboratory performance but limited real-world generalisation. We present a systematic evaluation of motion representations for wearable fall detection under real-world data scarcity. Using accelerometer signals, we compare interval-based, kernel-based, symbolic, and foundation model representations. As an interpretable baseline, we additionally investigate a lightweight symbolic representation that converts short motion segments into symbolic sentences augmented with physically-grounded impact descriptors. Experiments use FallAllD, a simulated falls dataset, and FARSEEING, a clinically verified real-world falls dataset. Through cross-validation, controlled data scarcity, and cross-dataset transfer, we examine how representation choices affect robustness under realistic deployment. Our results reveal that highly parameterised kernel and foundation models excel on simulated data but degrade severely under both data scarcity and domain shift. Although the interval-based representation achieves the strongest absolute real-world performance, augmenting a symbolic representation with physically-grounded impact descriptors yields the smallest degradation under domain shift and retains detection sensitivity under extreme scarcity, albeit at lower precision. These findings highlight the importance of evaluating beyond simulated benchmarks and show that representation choice is critical for deployable fall detection given the scarcity of real-world data.",
-      "doi": "10.48550/arxiv.2608.13197",
-      "externalIds": {
-        "openalex": "W7203446685"
-      },
-      "source": {
-        "name": "OpenAlex",
-        "recordId": "W7203446685"
-      },
-      "venue": "arXiv (Cornell University)",
-      "publicationDate": "2026-08-13",
-      "firstPublicDate": "2026-08-13",
-      "onlineDate": null,
-      "topics": [
-        "Context-Aware Activity Recognition Systems",
-        "Balance, Gait, and Falls Prevention",
-        "Human Pose and Action Recognition"
-      ],
-      "keywords": [
-        "Robustness (evolution)",
-        "Wearable computer",
-        "Representation (politics)",
-        "Accelerometer",
-        "Motion capture",
-        "Motion (physics)",
-        "Domain (mathematical analysis)",
-        "Wearable technology"
-      ],
-      "classifiedThemes": [],
-      "scores": {
-        "ingestionEvidence": 3,
-        "classificationMaximum": 0
-      },
-      "evidenceTerms": [
-        "foundation model",
-        "foundation models",
-        "learning"
-      ],
-      "authors": [
-        {
-          "id": "A5011937029",
-          "name": "Timilehin B. Aderinola",
-          "orcid": "https://orcid.org/0000-0002-4770-5871",
-          "affiliations": []
-        },
-        {
-          "id": "A5035144482",
-          "name": "Ilaria D’Ascanio",
-          "orcid": "https://orcid.org/0009-0000-1568-7149",
-          "affiliations": []
-        },
-        {
-          "id": "A5014286353",
-          "name": "Luca Palmerini",
-          "orcid": "https://orcid.org/0000-0003-4758-662X",
-          "affiliations": []
-        },
-        {
-          "id": "A5012299262",
-          "name": "Lorenzo Chiari",
-          "orcid": "https://orcid.org/0000-0002-2318-4370",
-          "affiliations": []
-        },
-        {
-          "id": "A5074892585",
-          "name": "Jochen Klenk",
-          "orcid": "https://orcid.org/0000-0002-5987-447X",
-          "affiliations": []
-        },
-        {
-          "id": "A5079072330",
-          "name": "Clemens Becker",
-          "orcid": "https://orcid.org/0000-0003-1624-8353",
-          "affiliations": []
-        },
-        {
-          "id": "A5139704642",
-          "name": "Brian Caulfield",
-          "orcid": null,
-          "affiliations": []
-        },
-        {
-          "id": "A5054845773",
-          "name": "Georgiana Ifrim",
-          "orcid": "https://orcid.org/0000-0002-8400-2972",
-          "affiliations": []
-        }
-      ],
-      "url": "https://doi.org/10.48550/arxiv.2608.13197",
-      "openAccess": true,
-      "citedByCount": 0,
-      "firstSeenAt": "2026-09-28T11:43:24.972Z",
-      "firstSeenRunId": "ingestion-2026-09-28T11:43:03.895Z",
-      "retrievedAt": "2026-09-28T11:43:24.972Z",
-      "dataStatus": "stale",
-      "lastVerifiedAt": "2026-09-28T11:43:24.972Z",
-      "preferredVersionId": "openalex:W7203446685",
-      "versions": [
-        {
-          "id": "openalex:W7203446685",
-          "type": "preprint",
-          "source": "OpenAlex",
-          "externalId": "W7203446685",
-          "doi": "10.48550/arxiv.2608.13197",
-          "url": "https://doi.org/10.48550/arxiv.2608.13197"
-        }
-      ],
-      "discoveredBy": [
-        {
-          "provider": "openalex",
-          "mode": "frontier",
-          "queryVersion": "static-openalex-arxiv-frontier-4.0.0"
-        }
-      ],
-      "pagePath": "./works/page-251.json",
-      "research": {
-        "methodVersion": "research-evidence-1.0.0",
-        "method": "rules-with-exact-text-spans",
-        "validation": "not-human-validated",
-        "relevance": {
-          "status": "excluded",
-          "areas": [],
-          "reason": "Technischer ML-Kontext ohne gefundenen menschlichen Untersuchungsbezug.",
-          "human": [],
-          "ai": [
-            {
-              "field": "abstract",
-              "term": "foundation model",
-              "quote": "g accelerometer signals, we compare interval-based, kernel-based, symbolic, and foundation model representations. As an interpretable baseline, we additionally investigate a lightweight symbolic r",
-              "start": 619,
-              "end": 815
-            },
-            {
-              "field": "abstract",
-              "term": "foundation models",
-              "quote": "r realistic deployment. Our results reveal that highly parameterised kernel and foundation models excel on simulated data but degrade severely under both data scarcity and domain shift. Although th",
-              "start": 1200,
-              "end": 1397
-            }
-          ],
-          "domain": [],
-          "venueEvidence": null
-        },
-        "learner": "machine-mentioned",
-        "fields": {
-          "context": [],
-          "population": [],
-          "aiFunction": [],
-          "outcomes": [],
-          "studyDesign": [
-            {
-              "value": "experiment",
-              "evidence": [
-                {
-                  "field": "abstract",
-                  "term": "experiment",
-                  "quote": " into symbolic sentences augmented with physically-grounded impact descriptors. Experiments use FallAllD, a simulated falls dataset, and FARSEEING, a clinically verified real-world falls data",
-                  "start": 864,
-                  "end": 1055
-                }
-              ],
-              "interpretation": "mentioned; role/outcome not confirmed"
-            }
-          ]
-        },
-        "personalFit": [],
-        "finding": null,
-        "findingStatus": "requires-reading",
-        "abstractAvailable": true
       }
     }
   ]
