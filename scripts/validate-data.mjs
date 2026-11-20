@@ -189,12 +189,21 @@ function isPathField(key) {
 
 function looksLikeAbsoluteLocalPath(key, value) {
   const candidate = value.trim();
-  if (/^[A-Za-z]:[\\/]/.test(candidate) || /^file:\/\//i.test(candidate)) return true;
-  if (/^\\\\[A-Za-z0-9._$-]+[\\/][^\\/\r\n]+/.test(candidate)) return true;
+  if (isPathField(key)) {
+    if (/^[A-Za-z]:[\\/]/.test(candidate) || /^file:\/\//i.test(candidate)) return true;
+    if (/^\\\\[A-Za-z0-9._$-]+[\\/][^\\/\r\n]+/.test(candidate)) return true;
+    return /^(?:\/|\\)/.test(candidate);
+  }
 
-  // Leading slashes and backslashes are common in URLs, formulas, LaTeX and
-  // scientific excerpts. Treat them as local paths only in path-bearing fields.
-  return isPathField(key) && /^(?:\/|\\)/.test(candidate);
+  // Titles, abstracts and evidence quotes are prose from the sources. Text such
+  // as "A:/B comparison" or "N:/A" starts like a drive letter without being a
+  // path, so prose only counts when the whole value is one path-shaped token.
+  if (/\s/.test(candidate)) return false;
+  if (/^file:\/\/\S/i.test(candidate)) return true;
+  const pathShaped = /[\\/][^\\/]+[\\/]|\.[A-Za-z0-9]{1,5}$/;
+  if (/^[A-Za-z]:[\\/]/.test(candidate)) return pathShaped.test(candidate.slice(2));
+  if (/^\\\\[A-Za-z0-9._$-]+[\\/][^\\/]+/.test(candidate)) return true;
+  return false;
 }
 
 function validateSecurityRecursively(ctx, value, pointer = "") {
