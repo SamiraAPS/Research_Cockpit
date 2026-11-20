@@ -26,6 +26,24 @@ function retryAfterMs(response) {
   return Number.isFinite(reset) ? Math.max(0, reset * 1_000) : null;
 }
 
+// The response body says which filter or parameter was rejected. Keys and
+// addresses are removed because the message ends up in public status files.
+async function errorReason(response) {
+  const body = await response.text().catch(() => "");
+  let text = body;
+  try {
+    const parsed = JSON.parse(body);
+    text = [parsed.error, parsed.message].filter((part) => typeof part === "string").join(" – ") || body;
+  } catch {}
+  return text
+    .replace(/<[^>]*>/g, " ")
+    .replace(/(api_key|mailto)=[^&\s"']*/gi, "$1=…")
+    .replace(/https?:\/\/\S+/gi, "[URL]")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 240);
+}
+
 const defaultSleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
 export async function fetchWithRetry(url, options = {}) {
@@ -57,7 +75,8 @@ export async function fetchWithRetry(url, options = {}) {
 
       if (response.status === 429) rateLimitEvents += 1;
       if (!RETRYABLE_STATUSES.has(response.status) || attempt === maxAttempts) {
-        throw new SourceRequestError(source, `${source} antwortete mit HTTP ${response.status}`, {
+        const reason = await errorReason(response);
+        throw new SourceRequestError(source, `${source} antwortete mit HTTP ${response.status}${reason ? `: ${reason}` : ""}`, {
           httpStatus: response.status,
           attempts: attempt,
           latencyMs: Date.now() - startedAt,

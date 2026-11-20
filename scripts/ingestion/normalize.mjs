@@ -57,7 +57,7 @@ export function normalizeOpenAlexWork(work, context) {
   const source = work.primary_location?.source ?? {};
   const sourceId = shortExternalId(source.id);
   const sourceIsConference = source.type === "conference" || context.conferenceIds.has(sourceId);
-  const sourceType = work.type === "preprint" ? "preprint" : sourceIsConference || work.type === "proceedings-article" ? "proceedings" : "journal";
+  const sourceType = work.type === "preprint" ? "preprint" : sourceIsConference || work.type === "conference-paper" || work.type === "proceedings-article" ? "proceedings" : "journal";
   const topics = uniqueStrings((work.topics ?? []).map((topic) => topic?.display_name));
   const keywords = uniqueStrings((work.keywords ?? []).map((keyword) => keyword?.display_name));
   const doi = normalizeDoi(work.doi);
