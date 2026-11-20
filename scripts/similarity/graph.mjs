@@ -75,7 +75,9 @@ export function authorEdges(seeds) {
   return [...shared].map(([key, count]) => [...key.split(":").map(Number), count]).sort((x, y) => x[0] - y[0] || x[1] - y[1]);
 }
 
-const bareDoi = value => String(value ?? "").toLowerCase().replace(/^https?:\/\/(dx\.)?doi\.org\//, "").trim();
+const bareDoi = value => String(value ?? "").trim().toLowerCase().replace(/^(https?:\/\/(dx\.)?doi\.org\/|doi\s*:?\s*)/, "");
+// Only well-formed DOIs go into a request: anything else could be read as filter syntax.
+const DOI_PATTERN = /^10\.\d{4,9}\/[^\s,|]+$/;
 const shortId = value => String(value ?? "").replace(/^https?:\/\/openalex\.org\//i, "");
 
 // Directed links [citing, cited] between works that are both in the library.
@@ -108,8 +110,7 @@ export function citationKey(seeds) {
 }
 
 export async function fetchSeedRecords(seeds, { apiKey, fetchImpl, timeoutMs = 20000 } = {}) {
-  // A comma or pipe inside a DOI would be read as filter syntax.
-  const dois = [...new Set(seeds.map(seed => bareDoi(seed.doi)).filter(doi => doi && !/[,|\s]/.test(doi)))];
+  const dois = [...new Set(seeds.map(seed => bareDoi(seed.doi)).filter(doi => DOI_PATTERN.test(doi)))];
   const records = [];
   for (let offset = 0; offset < dois.length; offset += DOI_BATCH) {
     const url = new URL("https://api.openalex.org/works");

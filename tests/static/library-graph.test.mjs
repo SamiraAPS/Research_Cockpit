@@ -30,6 +30,15 @@ test("links works that cite each other inside the library only", () => {
   assert.deepEqual(citationEdges(seeds, records), { resolved: 3, edges: [[0, 2], [1, 0]] });
 });
 
+test("requests only well-formed DOIs, without prefixes that read as filter syntax", async () => {
+  const requested = [];
+  const fetchImpl = async (url) => { requested.push(new URL(url).searchParams.get("filter")); return new Response(JSON.stringify({ results: [] }), { status: 200 }); };
+  const { fetchSeedRecords } = await import("../../scripts/similarity/graph.mjs");
+  const result = await fetchSeedRecords([{ doi: "doi: 10.1145/353071.353106" }, { doi: "https://doi.org/10.1016/0001-6918(81)90033-0" }, { doi: "10.1/a|type:preprint" }, { doi: "not-a-doi" }, {}], { fetchImpl });
+  assert.deepEqual(requested, ["doi:10.1145/353071.353106|10.1016/0001-6918(81)90033-0"]);
+  assert.equal(result.requested, 2);
+});
+
 test("connects each work to its closest works above the floor", () => {
   const vectors = [[1, 0, 0], [0.9, 0.436, 0], [0, 1, 0], [0, 0, 1]].map(values => Float32Array.from(values));
   assert.deepEqual(similarityEdges(vectors, 1, 0.4), [[0, 1, 0.9], [1, 2, 0.44]]);
