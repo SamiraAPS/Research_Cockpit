@@ -110,7 +110,7 @@ function libraryContract(similarity) {
   if (!similarity) return null;
   return {
     generatedAt: similarity.generatedAt, methodVersion: similarity.methodVersion, model: similarity.model, method: similarity.method,
-    profiles: similarity.profiles, seeds: similarity.seeds, thresholds: similarity.thresholds, coverage: similarity.coverage
+    profiles: similarity.profiles, seeds: similarity.seeds, seedDois: similarity.seedDois ?? [], thresholds: similarity.thresholds, coverage: similarity.coverage
   };
 }
 

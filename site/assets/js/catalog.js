@@ -13,7 +13,8 @@ export function catalogDocument(work) {
       providers: [...new Set((work.discoveredBy ?? []).map(d => d.provider))],
       areas: work.research?.relevance.areas ?? [], relevance: work.research?.relevance.status ?? "uncertain",
       personalFit: work.research?.personalFit.map(f => f.topic) ?? [],
-      library: work.research?.library ?? null }
+      library: work.research?.library ?? null,
+      libraryCitations: work.libraryCitations ?? [] }
   };
 }
 
@@ -25,6 +26,6 @@ export function catalogWork(doc, themeLabels = {}) {
     dataStatus: s.dataStatus, preferredVersionId: "preferred", versions: [{ id: "preferred", type: s.kind }],
     discoveredBy: [...s.modes.map(mode => ({ mode })), ...s.providers.map(provider => ({ provider }))],
     classifiedThemes: doc.themes.map(theme => ({ theme, label: themeLabels[theme] ?? theme, evidence: [] })),
-    research: { relevance: { areas: s.areas, status: s.relevance }, personalFit: s.personalFit.map(topic => ({ topic })), library: s.library ?? null },
+    research: { relevance: { areas: s.areas, status: s.relevance }, personalFit: s.personalFit.map(topic => ({ topic })), library: s.library ?? null }, libraryCitations: s.libraryCitations ?? [],
     _summary: true };
 }

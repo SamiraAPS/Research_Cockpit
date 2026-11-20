@@ -27,7 +27,7 @@ test("links works that cite each other inside the library only", () => {
     { id: "https://openalex.org/W3", doi: "https://doi.org/10.1/c", referenced_works: [] },
     { id: "https://openalex.org/W4", doi: "https://doi.org/10.9/unrelated", referenced_works: ["https://openalex.org/W1"] }
   ];
-  assert.deepEqual(citationEdges(seeds, records), { resolved: 3, edges: [[0, 2], [1, 0]] });
+  assert.deepEqual(citationEdges(seeds, records), { resolved: 3, ids: ["W1", "W2", "W3", null], edges: [[0, 2], [1, 0]] });
 });
 
 test("requests only well-formed DOIs, without prefixes that read as filter syntax", async () => {

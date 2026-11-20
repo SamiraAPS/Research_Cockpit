@@ -97,6 +97,28 @@ Der Workflow "Check library ranking" führt genau das mit dem echten Modell aus
 und zeigt die nächsten Arbeiten je Profil. Nach Änderungen an der Bibliothek:
 Datei ersetzen, der nächste Lauf bewertet den Bestand neu.
 
+## Zitationssuche und Nachholen der Kernquellen
+
+Die Zitationssuche findet Arbeiten, die Referenzen der persönlichen Bibliothek
+zitieren, unabhängig von Suchbegriffen und Zeitschrift. Grundlage sind die
+Literaturlisten von OpenAlex. Behalten wird eine neue Arbeit, wenn sie mindestens
+zwei Referenzen der Bibliothek zitiert; eine einzelne gemeinsame Quelle ist bei
+Klassikern kein Hinweis auf inhaltliche Nähe. Jeder Lauf prüft die letzten 14 Tage
+und holt die Zeit ab 2019 in Quartalsschritten nach. Beim Nachholen gilt eine
+Schwelle von drei Referenzen, damit der Korpus nicht um ein Vielfaches wächst.
+
+Bei jeder aus OpenAlex abgerufenen Arbeit wird festgehalten, welche Referenzen der
+Bibliothek sie zitiert (Karte, Filter "Zitiert meine Bibliothek", Sortierung).
+Für Arbeiten, die vor dieser Funktion in den Korpus kamen, ist das erst nach einem
+erneuten Abruf bekannt.
+
+Die Kernquellen im Bereich Human–AI werden ab 2018 in Jahresschritten nachgeholt,
+bei jedem Lauf. Nur dort gilt ein erweiterter Wortschatz (algorithm, automation,
+decision support, recommender system, robot …), weil er in der offenen Suche zu
+viele fachfremde Treffer brächte.
+
+    node scripts/check-citation-search.mjs --doi=10.1287/orsc.2022.16738
+
 ## Abstracts
 
 Vollständige Abstracts werden nur für frei zugängliche Arbeiten veröffentlicht

@@ -70,6 +70,7 @@ export function searchAndFilterWorks(works, documents, filters = {}) {
     if (filters.area && filters.area !== "all" && (filters.area === "personal" ? !work.research?.personalFit?.length : !work.research?.relevance.areas.includes(filters.area))) return [];
     if (filters.relevanceStatus && filters.relevanceStatus !== "all" && work.research?.relevance.status !== filters.relevanceStatus) return [];
     if (!matchesLibrary(work.research?.library, filters.library, filters.profile)) return [];
+    if (Number(filters.cites) > 0 && (work.libraryCitations?.length ?? 0) < Number(filters.cites)) return [];
     if (filters.workId && work.id !== filters.workId) return [];
     if (!matchesNovelty(work, filters.novelty, filters.noveltyContext)) return [];
     const document = documentsById.get(work.id) ?? work;
@@ -92,6 +93,7 @@ export function searchAndFilterWorks(works, documents, filters = {}) {
 
 export function sortWorkResults(results, sort = "newest") {
   return [...results].sort((left, right) => {
+    if (sort === "cites") return (right.work.libraryCitations?.length ?? 0) - (left.work.libraryCitations?.length ?? 0) || (right.work.research?.library?.score ?? -2) - (left.work.research?.library?.score ?? -2);
     if (sort === "library") return (right.work.research?.library?.score ?? -2) - (left.work.research?.library?.score ?? -2) || String(right.work.publicationDate ?? "").localeCompare(String(left.work.publicationDate ?? ""));
     if (sort === "personal") return (right.work.research?.personalFit?.length ?? 0) - (left.work.research?.personalFit?.length ?? 0) || String(right.work.publicationDate ?? "").localeCompare(String(left.work.publicationDate ?? ""));
     if (sort === "relevance") return right.relevance - left.relevance || String(right.work.publicationDate ?? "").localeCompare(String(left.work.publicationDate ?? ""));

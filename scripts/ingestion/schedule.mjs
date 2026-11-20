@@ -1,4 +1,4 @@
-import { STATIC_SEARCH_CONFIG_VERSION, RESEARCH_AREAS } from "./config.mjs";
+import { CITATION_SEARCH, STATIC_SEARCH_CONFIG_VERSION, RESEARCH_AREAS } from "./config.mjs";
 import { dateRange } from "./openalex.mjs";
 
 const day = 86400000;
@@ -18,6 +18,14 @@ export function planDiscoveryRuns(meta, options, modes) {
     const add = (lane, extra) => jobs.push({ ...stream, lane, key: `${streamKey}:${lane}`, ...extra });
     // Always start with the newest window, irrespective of older incomplete cursors.
     add("fresh", { range: dateRange(options.freshDays ?? 14, now), maxPages: options.maxPages ?? 5 });
+    // Core venues, Human–AI: the past is caught up in year steps on every run,
+    // because the volume is small and gaps here hide the most relevant work.
+    if (stream.provider === "openalex" && stream.mode === "core" && stream.researchArea === "human-ai") {
+      const prior = state[`${streamKey}:history`];
+      const from = prior && !prior.complete ? prior.range.from : prior ? nextDay(prior.range.to) : "2018-01-01";
+      const end = iso(Date.parse(from) + 364 * day);
+      if (from <= today) add("history", { range: prior && !prior.complete ? prior.range : { from, to: end < today ? end : today }, cursor: prior && !prior.complete ? prior.cursor : null, maxPages: options.historyPages ?? 15 });
+    }
     // Background work has its own cursor, date range and budget.
     if (![rotation, (rotation + 1) % streams.length].includes(index)) continue;
     const prior = state[`${streamKey}:backfill`];
@@ -30,6 +38,16 @@ export function planDiscoveryRuns(meta, options, modes) {
     if (lateFrom > iso(now.getTime() - 14 * day)) lateFrom = iso(now.getTime() - 180 * day);
     add("recheck", { range: late && !late.complete ? late.range : { from: lateFrom, to: iso(Math.min(Date.parse(lateFrom) + 6 * day, now.getTime())) }, cursor: late && !late.complete ? late.cursor : null, start: late && !late.complete ? late.start : 0, maxPages: options.backgroundPages ?? 2 });
   }
+  // Citation search: one stream per batch of library references.
+  (options.citationBatches ?? []).forEach((citedWorkIds, batch) => {
+    const streamKey = `openalex:citation:${batch + 1}`;
+    const add = (lane, extra) => jobs.push({ provider: "openalex", mode: "citation", researchArea: "library", citedWorkIds, lane, key: `${streamKey}:${lane}`, ...extra });
+    add("fresh", { range: dateRange(options.freshDays ?? 14, now), maxPages: options.maxPages ?? 5 });
+    const prior = state[`${streamKey}:history`];
+    const from = prior && !prior.complete ? prior.range.from : prior ? nextDay(prior.range.to) : CITATION_SEARCH.historyFrom;
+    const end = iso(Date.parse(from) + 89 * day);
+    if (from <= today) add("history", { range: prior && !prior.complete ? prior.range : { from, to: end < today ? end : today }, cursor: prior && !prior.complete ? prior.cursor : null, maxPages: options.citationHistoryPages ?? 6, minCited: CITATION_SEARCH.minCitedHistory });
+  });
   return jobs;
 }
 

@@ -50,6 +50,17 @@ export function evidenceTermsFor(record) {
   return uniqueStrings([...AI_TERMS, ...HUMAN_WORK_TERMS].filter((term) => haystack.includes(normalizeTitle(term)))).slice(0, 24);
 }
 
+// DOIs of the library references that appear in a work's reference list.
+export function libraryCitations(referencedWorks, libraryIds) {
+  if (!libraryIds?.size || !Array.isArray(referencedWorks)) return [];
+  const cited = new Set();
+  for (const reference of referencedWorks) {
+    const doi = libraryIds.get(shortExternalId(reference));
+    if (doi) cited.add(doi);
+  }
+  return [...cited].sort();
+}
+
 export function normalizeOpenAlexWork(work, context) {
   const title = String(work.display_name ?? work.title ?? "").trim();
   const openAlexId = shortExternalId(work.id);
@@ -90,6 +101,7 @@ export function normalizeOpenAlexWork(work, context) {
       ?? `https://openalex.org/${openAlexId}`,
     openAccess: typeof work.open_access?.is_oa === "boolean" ? work.open_access.is_oa : null,
     citedByCount: Number.isInteger(work.cited_by_count) ? work.cited_by_count : null,
+    libraryCitations: libraryCitations(work.referenced_works, context.libraryIds),
     topics,
     keywords,
     retrievedAt: context.retrievedAt,

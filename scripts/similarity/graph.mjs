@@ -99,8 +99,11 @@ export function citationEdges(seeds, records) {
       if (cited !== undefined && cited !== index) edges.add(`${index}:${cited}`);
     }
   }
+  const ids = new Array(seeds.length).fill(null);
+  for (const [index, record] of resolved) ids[index] = shortId(record.id);
   return {
     resolved: resolved.length,
+    ids,
     edges: [...edges].map(key => key.split(":").map(Number)).sort((x, y) => x[0] - y[0] || x[1] - y[1])
   };
 }
@@ -249,6 +252,7 @@ export function buildLibraryGraph({ library, seedVectors, seedProfiles, citation
     nodes: seeds.map((seed, index) => ({
       label: seedLabel(seed), title: seed.title, year: seed.year ?? null, authors: seed.authors ?? [], doi: seed.doi ?? null,
       profile: library.profiles[groups[index]]?.id ?? null,
+      openalex: citations.ids?.[index] ?? null,
       positions: Object.fromEntries(Object.keys(edges).map(mode => [mode, positions[mode][index]]))
     })),
     edges
@@ -259,17 +263,19 @@ export function buildLibraryGraph({ library, seedVectors, seedProfiles, citation
 export async function resolveCitations(seeds, previous, { apiKey, fetchImpl, now = new Date(), fetchRecords = fetchSeedRecords } = {}) {
   const key = citationKey(seeds);
   const last = previous?.modes?.citations;
-  const reusable = last?.status === "ready" && last.libraryKey === key && Array.isArray(previous?.edges?.citations);
+  // The ids of the references are needed by the citation search, so a graph without them is fetched again.
+  const reusable = last?.status === "ready" && last.libraryKey === key && Array.isArray(previous?.edges?.citations)
+    && previous.nodes?.length === seeds.length && previous.nodes.some(node => node.openalex);
   const age = last?.fetchedAt ? (now.getTime() - Date.parse(last.fetchedAt)) / 86_400_000 : Infinity;
-  const kept = () => ({ status: "ready", fetchedAt: last.fetchedAt, key, resolved: last.resolvedWorks ?? 0, requested: last.requestedWorks ?? 0, edges: previous.edges.citations, message: null });
+  const kept = () => ({ status: "ready", fetchedAt: last.fetchedAt, key, resolved: last.resolvedWorks ?? 0, requested: last.requestedWorks ?? 0, edges: previous.edges.citations, ids: previous.nodes.map(node => node.openalex ?? null), message: null });
   if (reusable && age < CITATION_MAX_AGE_DAYS) return kept();
   try {
     const { records, requested } = await fetchRecords(seeds, { apiKey, fetchImpl });
-    const { resolved, edges } = citationEdges(seeds, records);
-    return { status: "ready", fetchedAt: now.toISOString(), key, resolved, requested, edges, message: null };
+    const { resolved, edges, ids } = citationEdges(seeds, records);
+    return { status: "ready", fetchedAt: now.toISOString(), key, resolved, requested, edges, ids, message: null };
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     if (reusable) return { ...kept(), message: `Aktualisierung fehlgeschlagen, älterer Stand wird gezeigt: ${message}` };
-    return { status: "unavailable", fetchedAt: null, key, resolved: 0, requested: 0, edges: [], message };
+    return { status: "unavailable", fetchedAt: null, key, resolved: 0, requested: 0, edges: [], ids: [], message };
   }
 }

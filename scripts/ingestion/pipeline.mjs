@@ -2,17 +2,7 @@ import { mkdir, readdir, readFile, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { ingestArxiv } from "./arxiv.mjs";
-import {
-  INGESTION_ANALYSIS_VERSION,
-  META_SCHEMA_VERSION,
-  ONTOLOGY_VERSION,
-  OUTPUT_PAGE_SIZE,
-  SEARCH_INDEX_SCHEMA_VERSION,
-  SOURCE_HEALTH_SCHEMA_VERSION,
-  STATIC_SEARCH_CONFIG_VERSION,
-  WORKS_SCHEMA_VERSION,
-  selectedModes
-} from "./config.mjs";
+import { INGESTION_ANALYSIS_VERSION, META_SCHEMA_VERSION, ONTOLOGY_VERSION, OUTPUT_PAGE_SIZE, SEARCH_INDEX_SCHEMA_VERSION, SOURCE_HEALTH_SCHEMA_VERSION, STATIC_SEARCH_CONFIG_VERSION, WORKS_SCHEMA_VERSION, selectedModes, CITATION_SEARCH } from "./config.mjs";
 import { enrichWithCrossref } from "./crossref.mjs";
 import { deduplicateRecords, staticWorkToRecord } from "./deduplicate.mjs";
 import { SourcePaginationError, ingestOpenAlex } from "./openalex.mjs";
@@ -274,14 +264,19 @@ export async function runStaticIngestion(options = {}) {
       ? { ...options, range: previous.range, cursor: previous.cursor, start: previous.start }
       : options;
   }
-  const jobs = options.splitLanes ? planDiscoveryRuns(previousMeta, options, modes) : [
+  // OpenAlex ids of the library references, written by the last ranking run.
+  const libraryGraph = await readJson(path.join(dataDirectory, "library-graph.json"), null);
+  const libraryIds = new Map((libraryGraph?.nodes ?? []).filter(node => node.openalex && node.doi).map(node => [node.openalex, String(node.doi).toLowerCase()]));
+  const citationBatches = [];
+  for (let offset = 0, ids = [...libraryIds.keys()]; offset < ids.length; offset += CITATION_SEARCH.batchSize) citationBatches.push(ids.slice(offset, offset + CITATION_SEARCH.batchSize));
+  const jobs = options.splitLanes ? planDiscoveryRuns(previousMeta, { ...options, citationBatches }, modes) : [
     ...modes.map(mode => ({ ...resumed("openalex", mode), provider: "openalex", mode })),
     ...(modes.includes("frontier") ? [{ ...resumed("arxiv", "frontier"), provider: "arxiv", mode: "frontier" }] : [])
   ];
   for (const job of jobs) {
     let result;
     try {
-      const args = { ...options, ...job };
+      const args = { ...options, ...job, libraryIds };
       result = job.provider === "arxiv" ? await ingestArxiv(args) : await ingestOpenAlex(job.mode, args);
     } catch (error) {
       if (!(error instanceof SourcePaginationError)) throw error;

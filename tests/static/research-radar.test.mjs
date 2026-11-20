@@ -29,7 +29,10 @@ test("fresh retrieval cannot inherit an old historical cursor; budgets are indep
   const fresh = jobs.filter(job => job.lane === "fresh");
   assert.equal(fresh.length, 8);
   assert.ok(fresh.every(job => job.range.to === "2026-09-28" && job.range.from === "2026-09-14" && !job.cursor && job.maxPages === 5));
-  assert.ok(jobs.filter(job => job.lane !== "fresh").every(job => job.maxPages === 2));
+  assert.ok(jobs.filter(job => !["fresh", "history"].includes(job.lane)).every(job => job.maxPages === 2));
+  // Core venues catch up on the past in year steps with a budget of their own.
+  const history = jobs.filter(job => job.lane === "history");
+  assert.deepEqual(history.map(job => [job.key, job.range.from, job.range.to, job.maxPages]), [["openalex:core:human-ai:history", "2018-01-01", "2018-12-31", 15]]);
   const next = advanceRetrievalState(null, [{ provider: "openalex", modes: ["core"], status: "degraded", foundCount: 900, recordCount: 200, parameters: { streamKey: "openalex:core:human-ai:backfill", lane: "backfill", researchArea: "human-ai", fromDate: "2018-01-01", toDate: "2018-01-30", nextCursor: "cursor-2" } }], at);
   assert.equal(next.streams["openalex:core:human-ai:backfill"].cursor, "cursor-2");
   assert.equal(next.streams["openalex:core:human-ai:backfill"].complete, false);

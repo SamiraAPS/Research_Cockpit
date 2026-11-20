@@ -192,6 +192,7 @@ export async function rankLibrarySimilarity({ works, library, embed, cache, mode
     method: `Mittel der ${TOP_SEEDS} höchsten Kosinus-Ähnlichkeiten zwischen Titel/Abstract einer Arbeit und den Titeln der Referenzarbeiten eines Profils; es zählt das nächste Profil.`,
     profiles: library.profiles.map((profile, position) => ({ id: profile.id, label: profile.label, seedCount: seedProfiles.filter(list => list.includes(position)).length })),
     seeds: library.seeds.map(seedLabel),
+    seedDois: library.seeds.map(seed => seed.doi ? String(seed.doi).toLowerCase() : null),
     thresholds: Object.fromEntries(Object.entries(thresholds).map(([id, value]) => [id, value === null ? null : Math.round(value * 1000) / 1000])),
     coverage: { totalWorks: works.length, scoredWorks: entries.size, embeddedThisRun: embedded, pendingWorks: works.length - entries.size, carriedForward: carriedCount, tierCounts },
     scores

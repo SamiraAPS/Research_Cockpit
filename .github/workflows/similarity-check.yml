@@ -9,6 +9,9 @@ on:
       - 'scripts/rank-similarity.mjs'
       - 'scripts/similarity/**'
       - 'config/reference-library.json'
+      - 'scripts/check-citation-search.mjs'
+      - 'scripts/ingestion/openalex.mjs'
+      - 'scripts/ingestion/schedule.mjs'
       - '.github/workflows/similarity-check.yml'
   workflow_dispatch:
     inputs:
@@ -38,3 +41,11 @@ jobs:
           mkdir -p work
           node scripts/rank-similarity.mjs --limit=${{ inputs.limit || '3000' }} --minutes=8 --output-dir=work --cache-dir=work/similarity-cache --sample=1 | tee work/similarity-report.md
           cat work/similarity-report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Run the citation search for one window
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: |
+          node scripts/check-citation-search.mjs --doi="10.1287/orsc.2022.16738" | tee work/citation-report.md
+          cat work/citation-report.md >> "$GITHUB_STEP_SUMMARY"
+          node scripts/check-citation-search.mjs --from=2025-01-01 --to=2025-03-31 --pages=3 | tee work/citation-history.md
+
