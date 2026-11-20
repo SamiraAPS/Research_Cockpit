@@ -131,19 +131,19 @@ export const SEARCH_MODES = {
     queryVersion: "static-openalex-core-4.0.0",
     providers: ["openalex"],
     sourceIds: [...CORE_JOURNALS, ...CORE_CONFERENCES].map((source) => source.id),
-    workTypes: ["article", "review", "book-chapter", "proceedings-article"]
+    workTypes: ["article", "review", "book-chapter", "conference-paper"]
   },
   broad: {
     queryVersion: "static-openalex-broad-4.0.0",
     providers: ["openalex"],
     sourceIds: [],
-    workTypes: ["article", "review", "book-chapter", "proceedings-article"]
+    workTypes: ["article", "review", "book-chapter", "conference-paper"]
   },
   frontier: {
     queryVersion: "static-openalex-arxiv-frontier-4.0.0",
     providers: ["openalex", "arxiv"],
     sourceIds: [...FRONTIER_REPOSITORIES, ...CORE_CONFERENCES, { id: "S4363607762" }].map((source) => source.id),
-    workTypes: ["preprint", "article", "proceedings-article"]
+    workTypes: ["preprint", "article", "conference-paper"]
   }
 };
 

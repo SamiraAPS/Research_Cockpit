@@ -101,13 +101,17 @@ test("classifies more than three themes and retains weighted source evidence", (
 test("persists classification version, score and triggering evidence", async (context) => {
   const db = await createTestD1(root);
   context.after(() => db.close());
-  const sourceId = await ensureIngestionSource(db, "core", "2026-08-28T10:00:00.000Z");
+  // Relative dates: the dashboard reads a rolling 90-day window from today.
+  const startedAt = new Date(Date.now() - 2 * 86_400_000).toISOString();
+  const endedAt = new Date(Date.parse(startedAt) + 60_000).toISOString();
+  const publicationDate = new Date(Date.now() - 10 * 86_400_000).toISOString().slice(0, 10);
+  const sourceId = await ensureIngestionSource(db, "core", startedAt);
   const run = await createIngestionRun(db, {
     sourceId,
     scope: "ai",
     searchLayer: "core",
     queryVersion: "test-query",
-    startedAt: "2026-08-28T10:00:00.000Z",
+    startedAt,
   });
   await persistWork(db, {
     provider: "openalex",
@@ -123,7 +127,7 @@ test("persists classification version, score and triggering evidence", async (co
     sourceName: "Test Journal",
     sourceKind: "journal",
     sourceType: "journal",
-    publicationDate: "2026-08-20",
+    publicationDate,
     onlineDate: null,
     url: "https://example.org/theme-evidence",
     isOpenAccess: true,
@@ -132,7 +136,7 @@ test("persists classification version, score and triggering evidence", async (co
     topics: ["Work Design"],
     keywords: ["meaningful work", "trust calibration"],
     themes: [],
-    retrievedAt: "2026-08-28T10:00:00.000Z",
+    retrievedAt: startedAt,
   }, {
     ingestionRunId: run.id,
     scope: "ai",
@@ -158,7 +162,7 @@ test("persists classification version, score and triggering evidence", async (co
     newCount: 1,
     updatedCount: 0,
     errorCount: 0,
-    endedAt: "2026-08-28T10:01:00.000Z",
+    endedAt,
   });
   const dashboard = await readRadarData(db, { days: 90, scope: "ai", layers: ["core"] });
   assert.equal(dashboard.works.length, 1);

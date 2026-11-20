@@ -12,7 +12,7 @@ export async function fetchFieldCounts(previous, options = {}) {
       let publicUrl;
       for (const preprintsOnly of [false, true]) {
         const { url } = buildOpenAlexUrl("broad", { researchArea: area, range: { from: "2018-01-01", to: now.toISOString().slice(0, 10) } });
-        url.searchParams.set("filter", url.searchParams.get("filter").replace(/type:[^,]+/, preprintsOnly ? "type:preprint" : "type:article|review|book-chapter|proceedings-article|preprint"));
+        url.searchParams.set("filter", url.searchParams.get("filter").replace(/type:[^,]+/, preprintsOnly ? "type:preprint" : "type:article|review|book-chapter|conference-paper|preprint"));
         for (const key of ["select", "sort", "cursor"]) url.searchParams.delete(key);
         url.searchParams.set("group_by", "publication_year"); url.searchParams.set("per_page", "200");
         if (!preprintsOnly) publicUrl = url.toString();
