@@ -1,0 +1,39 @@
+name: Check library ranking
+
+# Runs the real embedding model on a sample of the corpus and prints the
+# closest works per profile, so a change to the ranking can be judged by
+# reading its output before it reaches the published data.
+on:
+  pull_request:
+    paths:
+      - 'scripts/rank-similarity.mjs'
+      - 'scripts/similarity/**'
+      - 'config/reference-library.json'
+      - '.github/workflows/similarity-check.yml'
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Number of newest works to rank
+        default: '3000'
+
+permissions:
+  contents: read
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Install embedding library
+        run: npm install --prefix "$RUNNER_TEMP/similarity" --no-audit --no-fund @huggingface/transformers@4.3.2
+      - name: Rank a sample with the real model
+        env:
+          SIMILARITY_MODULE_DIR: ${{ runner.temp }}/similarity
+        run: |
+          mkdir -p work
+          node scripts/rank-similarity.mjs --limit=${{ inputs.limit || '3000' }} --minutes=8 --output-dir=work --cache-dir=work/similarity-cache --sample=1 | tee work/similarity-report.md
+          cat work/similarity-report.md >> "$GITHUB_STEP_SUMMARY"

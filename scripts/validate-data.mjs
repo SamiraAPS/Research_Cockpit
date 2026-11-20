@@ -420,6 +420,26 @@ function validateSearchIndex(ctx, data) {
   });
 }
 
+function validateSimilarity(ctx, data) {
+  if (!requireFields(ctx, data, ["schemaVersion", "generatedAt", "methodVersion", "model", "profiles", "seeds", "thresholds", "coverage", "scores"])) return;
+  validateVersion(ctx, data.schemaVersion, "/schemaVersion");
+  expectString(ctx, data.model, "/model");
+  expectStringArray(ctx, data.seeds, "/seeds");
+  if (!expectArray(ctx, data.profiles, "/profiles")) return;
+  if (!isObject(data.scores)) { ctx.error("invalid-type", "/scores", "muss ein Objekt sein"); return; }
+  data.profiles.forEach((profile, index) => {
+    if (!requireFields(ctx, profile, ["id", "label", "seedCount"], `/profiles/${index}`)) return;
+    expectString(ctx, profile.id, `/profiles/${index}/id`);
+    expectString(ctx, profile.label, `/profiles/${index}/label`);
+  });
+  for (const [id, value] of Object.entries(data.scores)) {
+    const valid = Array.isArray(value) && value.length === 3 && Number.isFinite(value[0]) && value[0] >= -1 && value[0] <= 1
+      && Number.isInteger(value[1]) && value[1] >= 0 && value[1] < data.profiles.length
+      && Number.isInteger(value[2]) && value[2] >= 0 && value[2] < data.seeds.length;
+    if (!valid) { ctx.error("invalid-similarity", `/scores/${id}`, "erwartet [Ähnlichkeit, Profilindex, Referenzindex]"); break; }
+  }
+}
+
 function validateCalls(ctx, data) {
   if (!requireFields(ctx, data, ["schemaVersion", "generatedAt", "status", "registryVersion", "closingWindowDays", "counts", "sourceStatus", "items"])) return;
   validateVersion(ctx, data.schemaVersion, "/schemaVersion");
@@ -893,6 +913,7 @@ export async function validateDataDirectory(directory) {
     else if (/^works\/page-\d+\.json$/.test(file)) validateWorksPage(ctx, data);
     else if (file === "search-index.json") validateSearchIndex(ctx, data);
     else if (file === "research-radar.json" || /^search\/shard-\d+\.json$/.test(file)) validateVersion(ctx, data.schemaVersion, "/schemaVersion");
+    else if (file === "similarity.json") validateSimilarity(ctx, data);
     else if (file === "calls.json") validateCalls(ctx, data);
     else if (file === "agenda-signals.json") validateAgendaSignals(ctx, data);
     else if (file === "trends.json") validateTrends(ctx, data);

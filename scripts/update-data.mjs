@@ -7,6 +7,7 @@ import { runAnalysisPipeline } from "./analysis/pipeline.mjs";
 import { validateDataDirectory } from "./validate-data.mjs";
 import { resolveConferences } from "./ingestion/conferences.mjs";
 import { fetchFieldCounts } from "./ingestion/field-counts.mjs";
+import { updateLibrarySimilarity } from "./rank-similarity.mjs";
 
 // Stage a whole generation; never replace the last usable dataset with half-written files.
 export async function updateData(options = {}) {
@@ -33,13 +34,24 @@ export async function updateData(options = {}) {
     refreshedMeta.fieldCounts = await fetchFieldCounts(baseMeta.fieldCounts, { apiKey: process.env.OPENALEX_API_KEY, now: options.now, fetchImpl: options.fetchImpl });
     await writeFile(path.join(stage, "meta.json"), JSON.stringify(refreshedMeta, null, 2));
     const calls = await runCallsIngestion({ dataDirectory: stage, timeoutMs: 12000, maxAttempts: 2 });
+    // Optional and never fatal: without a model the previous ranking stays in place.
+    let similarity = "skipped";
+    if (options.similarity ?? process.env.SIMILARITY_MODEL) {
+      try {
+        const ranked = await updateLibrarySimilarity({ dataDirectory: stage, model: process.env.SIMILARITY_MODEL, minutes: options.similarityMinutes, ...(options.similarity === true ? {} : options.similarity) });
+        similarity = { model: ranked.model, totalWorks: ranked.totalWorks, scoredWorks: ranked.scoredWorks, embeddedThisRun: ranked.embeddedThisRun, pendingWorks: ranked.pendingWorks, seconds: ranked.seconds };
+      } catch (error) {
+        similarity = { failed: error instanceof Error ? error.message : String(error) };
+        console.warn(`Bibliotheks-Ranking übersprungen: ${similarity.failed}`);
+      }
+    }
     await runAnalysisPipeline({ dataDirectory: stage });
     const validation = await validateDataDirectory(stage);
     if (!validation.valid) throw new Error(JSON.stringify(validation.errors));
     await rename(target, backup);
     try { await rename(stage, target); published = true; }
     catch (error) { await rename(backup, target); throw error; }
-    const report = { publications: publications.status, calls: calls.status, works: publications.counts.canonicalWorks, validated: true };
+    const report = { publications: publications.status, calls: calls.status, works: publications.counts.canonicalWorks, similarity, validated: true };
     await mkdir("work", { recursive: true });
     await writeFile("work/update-report.json", JSON.stringify(report, null, 2));
     return report;
@@ -59,7 +71,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
     return n;
   };
   const range = args.from ? { from: args.from, to: args.to ?? new Date().toISOString().slice(0, 10) } : undefined;
-  updateData({ dataDirectory: args.output, mode: args.mode ?? "all", days: numeric("days", 90), maxPages: numeric("max-pages", 5), range, resume: !range })
+  updateData({ similarityMinutes: args["similarity-minutes"] ? numeric("similarity-minutes", 10) : undefined, dataDirectory: args.output, mode: args.mode ?? "all", days: numeric("days", 90), maxPages: numeric("max-pages", 5), range, resume: !range })
     .then(report => console.log(JSON.stringify(report, null, 2)))
     .catch(error => { console.error(error); process.exitCode = 1; });
 }

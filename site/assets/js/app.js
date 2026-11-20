@@ -49,7 +49,7 @@ const elements = Object.fromEntries([
   "export-bibtex", "export-csv", "work-result-count", "search-scope-note", "work-results", "work-pagination", "new-since-copy",
   "landscape-chart", "composition-summary", "question-list", "emerging-notice", "emerging-grid", "call-filters", "deadline-filter", "call-query",
   "call-sort", "calls-table-body", "calls-caption", "calls-empty", "opportunity-notice", "opportunity-grid", "method-cards", "version-list",
-  "warning-list", "source-table-body", "footer-version", "footer-updated", "filter-novelty", "mark-reviewed", "save-search", "restore-search", "export-audit", "coverage-summary", "research-profile"
+  "warning-list", "source-table-body", "footer-version", "footer-updated", "filter-novelty", "mark-reviewed", "save-search", "restore-search", "export-audit", "coverage-summary", "research-profile", "filter-library", "filter-profile"
 ].map((id) => [id.replaceAll("-", "_"), document.getElementById(id)]));
 elements.nav = document.querySelector(".primary-nav");
 elements.navLinks = [...document.querySelectorAll(".nav-link")];
@@ -254,7 +254,7 @@ function renderOverview() {
   const totalSources = health?.sources?.length ?? 0;
   elements.source_summary.textContent = totalSources ? `${healthy}/${totalSources} Publikationsquellen aktuell · ${(calls?.sourceStatus ?? []).filter(s => s.status === "verified" && freshness(s.checkedAt) === "current").length}/${calls?.sourceStatus?.length ?? 0} Call-Quellen verifiziert` : "nicht geladen";
 
-  const newest = sortWorkResults(works.filter(work => state.newWorkIds.has(work.id)).map((work) => ({ work, document: work, relevance: 0 })), "personal").slice(0, 3);
+  const newest = sortWorkResults(works.filter(work => state.newWorkIds.has(work.id)).map((work) => ({ work, document: work, relevance: 0 })), state.library ? "library" : "personal").slice(0, 3);
   if (!newest.length) renderEmpty(elements.overview_new_list, "Daten noch nicht verfügbar", "Im letzten Lauf kamen keine neuen Arbeiten hinzu. Der bisherige Korpus bleibt in der Suche verfügbar.");
   else {
     elements.overview_new_list.replaceChildren();
@@ -265,7 +265,7 @@ function renderOverview() {
       const link = node("a", null, work.title);
       link.href = `#new?work=${encodeURIComponent(work.id)}`;
       title.append(link);
-      item.append(metaLine, title, node("p", "muted-copy", work.research?.personalFit.length ? `Passend zu: ${work.research.personalFit.map(f => f.topic).join(", ")}` : "Neu im Korpus; persönliche Passung nicht festgestellt."));
+      item.append(metaLine, title, node("p", "muted-copy", libraryNote(work) ?? (work.research?.personalFit.length ? `Passend zu: ${work.research.personalFit.map(f => f.topic).join(", ")}` : "Neu im Korpus; persönliche Passung nicht festgestellt.")));
       elements.overview_new_list.append(item);
     }
   }
@@ -323,6 +323,22 @@ function populateWorkFilters() {
   populateSelect(elements.filter_year, years);
   populateSelect(elements.filter_source, sources);
   populateSelect(elements.filter_theme, themes.map(([id]) => id), (id) => themes.find(([theme]) => theme === id)?.[1] ?? id);
+  while (elements.filter_profile.options.length > 1) elements.filter_profile.remove(1);
+  const profiles = state.library?.profiles ?? [];
+  populateSelect(elements.filter_profile, profiles.map(profile => profile.id), id => profiles.find(profile => profile.id === id)?.label ?? id);
+  for (const select of [elements.filter_library, elements.filter_profile]) select.disabled = !profiles.length;
+}
+
+const LIBRARY_TIER_LABELS = { core: "sehr nah", near: "nah", edge: "Randzone" };
+
+// One line that says how close a work is to the reference library and why.
+function libraryNote(work) {
+  const library = work.research?.library;
+  if (!library || !state.library) return null;
+  const profile = state.library.profiles?.find(entry => entry.id === library.profile)?.label ?? library.profile;
+  const seed = state.library.seeds?.[library.seed];
+  const tier = LIBRARY_TIER_LABELS[library.tier];
+  return `Nähe zu meiner Bibliothek: ${library.score.toFixed(2)}${tier ? ` (${tier})` : ""} · ${profile}${seed ? ` · ähnlichste Referenz: ${seed}` : ""}`;
 }
 
 function publicationCard(result) {
@@ -340,6 +356,8 @@ function publicationCard(result) {
   const authors = node("p", "publication-authors", (work.authors ?? []).map((author) => author.name).join(", ") || "Autor:innen nicht verfügbar");
   copy.append(meta, title, authors, node("p", "muted-copy", `Erstmals gefunden: ${formatDate(work.firstSeenAt)} · Fachbezug: ${work.research?.relevance.status ?? "ungeprüft"}`));
   if (work.research?.personalFit.length) copy.append(node("p", "muted-copy", `Warum passend: ${work.research.personalFit.map(f => f.topic).join(", ")}`));
+  const closeness = libraryNote(work);
+  if (closeness) copy.append(node("p", "muted-copy library-note", closeness));
   const shortlistButton = node("button", "shortlist-button", state.shortlist.has(work.id) ? "Gemerkt" : "Merken");
   shortlistButton.type = "button";
   shortlistButton.dataset.shortlistId = work.id;
@@ -578,6 +596,7 @@ function renderMethod() {
   for (const work of state.data.works) { const year = work.publicationDate?.slice(0, 4) ?? "unbekannt"; byYear.set(year, (byYear.get(year) ?? 0) + 1); }
   elements.coverage_summary.append(node("p", null, "Die Forschungsanalysen berücksichtigen relevante Core-, Broad- und Frontier-Treffer einschließlich Preprints. Beide Forschungsbereiche werden getrennt ausgewertet. Die folgenden Jahreszahlen beschreiben den gesamten abgerufenen Bestand inklusive unsicherer und ausgeschlossener Treffer."));
   for (const [year, count] of [...byYear].sort()) elements.coverage_summary.append(node("span", "data-chip", `${year}: ${count} Arbeiten`));
+  if (state.library) elements.coverage_summary.append(node("p", "muted-copy", `Nähe zur Referenzbibliothek: ${state.library.coverage.scoredWorks} von ${state.library.coverage.totalWorks} Arbeiten bewertet (${state.library.seeds.length} Referenzarbeiten in ${state.library.profiles.length} Profilen, Modell ${state.library.model}, Stand ${formatDate(state.library.generatedAt)}). ${state.library.method} Die Ähnlichkeit ordnet den Bestand; sie ist kein Urteil über Qualität oder Relevanz.`));
   for (const [key, progress] of Object.entries(meta?.retrievalState?.streams ?? meta?.ingestionProgress ?? {})) elements.coverage_summary.append(node("p", "muted-copy", `${key}: ${progress.range.from} bis ${progress.range.to} · ${progress.retrieved}/${progress.found ?? "unbekannt"} Quellentreffer · ${progress.complete ? "Abruf abgeschlossen" : "unvollständig; Fortsetzung erforderlich"}`));
   if (freshness(meta?.lastSuccessfulIngestionAt) === "stale") elements.warning_list.append(node("li", "warning-warning", "Letzter vollständiger erfolgreicher Publikationslauf liegt mehr als acht Tage zurück."));
   elements.source_table_body.replaceChildren();
@@ -616,7 +635,7 @@ async function loadDashboard() {
   }
   pageCache.clear();
   state.fullSearchPromise = null; state.fullSearchLoaded = false;
-  const searchPromise = fetchJson(DATA_URLS.search).then(data => { state.searchShards = data.shards ?? []; state.themeLabels = data.themeLabels ?? {}; return data.documents ?? []; });
+  const searchPromise = fetchJson(DATA_URLS.search).then(data => { state.searchShards = data.shards ?? []; state.themeLabels = data.themeLabels ?? {}; state.library = data.library ?? null; return data.documents ?? []; });
   const loaders = { works: searchPromise.then(documents => documents.length && documents.every(d => d.summary && d.pagePath) ? documents.map(d => catalogWork(d, state.themeLabels)) : loadWorks()).catch(() => loadWorks()), documents: searchPromise, calls: fetchJson(DATA_URLS.calls), trends: fetchJson(DATA_URLS.trends), questions: fetchJson(DATA_URLS.questions), health: fetchJson(DATA_URLS.health), radar: fetchJson(DATA_URLS.radar) };
   const entries = Object.entries(loaders);
   const results = await Promise.allSettled(entries.map(([, promise]) => promise));
@@ -646,6 +665,7 @@ async function syncWorkFilters() {
     sort: elements.work_sort.value,
     shortlistOnly: elements.shortlist_only.checked
     , area: document.getElementById("filter-area").value, relevanceStatus: document.getElementById("filter-relevance").value
+    , library: elements.filter_library.value, profile: elements.filter_profile.value
   };
   state.workPage = 1;
   if (state.workFilters.query && !state.fullSearchLoaded && state.searchShards.length) {
@@ -692,7 +712,7 @@ elements.restore_search.addEventListener("click", () => {
   try {
     const filters = JSON.parse(safeStorageGet("radar.saved-search.v1") ?? "null");
     if (!filters) { announce("Noch keine gespeicherte Suche."); return; }
-    for (const [key, element] of Object.entries({ query: elements.work_query, year: elements.filter_year, source: elements.filter_source, type: elements.filter_type, theme: elements.filter_theme, mode: elements.filter_mode, dataStatus: elements.filter_data_status, sort: elements.work_sort, novelty: elements.filter_novelty, area: document.getElementById("filter-area"), relevanceStatus: document.getElementById("filter-relevance") })) {
+    for (const [key, element] of Object.entries({ query: elements.work_query, year: elements.filter_year, source: elements.filter_source, type: elements.filter_type, theme: elements.filter_theme, mode: elements.filter_mode, dataStatus: elements.filter_data_status, sort: elements.work_sort, novelty: elements.filter_novelty, area: document.getElementById("filter-area"), relevanceStatus: document.getElementById("filter-relevance"), library: elements.filter_library, profile: elements.filter_profile })) {
       if (typeof filters[key] === "string") element.value = filters[key];
       if (!element.value && element.tagName === "SELECT") element.selectedIndex = 0;
     }
