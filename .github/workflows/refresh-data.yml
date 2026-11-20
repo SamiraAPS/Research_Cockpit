@@ -7,6 +7,9 @@ on:
       - 'scripts/ingestion/**'
       - 'scripts/calls/**'
       - 'scripts/update-data.mjs'
+      - 'scripts/rank-similarity.mjs'
+      - 'scripts/similarity/**'
+      - 'config/reference-library.json'
       - 'config/manual-calls.json'
   schedule:
     - cron: '17 5 * * *'
@@ -22,7 +25,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 50
     permissions:
       contents: write
     outputs:
@@ -34,11 +37,31 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-      - name: Fetch, analyze and validate a complete generation
+      # Ranking by closeness to the reference library. The embedding library is
+      # installed into its own folder; the vectors are cached between runs and
+      # never committed. A failure here leaves the previous ranking in place.
+      - name: Restore embedding cache
+        uses: actions/cache/restore@v4
+        with:
+          path: analysis-cache/similarity
+          key: similarity-v1-${{ github.run_id }}
+          restore-keys: similarity-v1-
+      - name: Install embedding library
+        continue-on-error: true
+        run: npm install --prefix "$RUNNER_TEMP/similarity" --no-audit --no-fund @huggingface/transformers@4.3.2
+      - name: Fetch, rank, analyze and validate a complete generation
         env:
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
           CROSSREF_MAILTO: ${{ secrets.CROSSREF_MAILTO }}
-        run: node scripts/update-data.mjs --max-pages=5
+          SIMILARITY_MODEL: Xenova/all-MiniLM-L6-v2
+          SIMILARITY_MODULE_DIR: ${{ runner.temp }}/similarity
+        run: node scripts/update-data.mjs --max-pages=5 --similarity-minutes=8
+      - name: Save embedding cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: analysis-cache/similarity
+          key: similarity-v1-${{ github.run_id }}
       - name: Report coverage
         run: |
           echo '### Research data update' >> "$GITHUB_STEP_SUMMARY"

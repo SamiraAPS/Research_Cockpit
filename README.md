@@ -73,6 +73,30 @@ Hypothesen, keine bestätigten Forschungslücken oder Zukunftsprognosen.
 Der frühere Opportunity-Gesamtscore ist zurückgezogen. Alte Zwei-/Vierjahresaggregate
 bleiben nur zur Kompatibilität historischer Datenverträge erhalten.
 
+## Nähe zur Referenzbibliothek
+
+config/reference-library.json enthält die inhaltlichen Arbeiten der persönlichen
+Literaturbibliothek (Titel, Erstautor:in, Jahr, DOI; ohne Methodenliteratur),
+gegliedert in Themenprofile. Der tägliche Lauf berechnet für jede Arbeit im Korpus,
+wie nah sie diesen Referenzen inhaltlich liegt: ein kleines offenes Sprachmodell
+(Xenova/all-MiniLM-L6-v2, läuft auf dem GitHub-Runner) bildet Titel und Abstract
+als Vektor ab; gewertet wird das Mittel der drei ähnlichsten Referenzen des
+nächsten Profils. Daraus entstehen drei Stufen: sehr nah (oberste 2 %), nah
+(oberste 10 %) und Randzone (10–20 %).
+
+Die Suche bleibt breit; die Nähe ordnet und filtert nur die Anzeige. Sie ist kein
+Urteil über Qualität oder Relevanz. Jede Karte nennt Profil und ähnlichste Referenz.
+
+Neue und geänderte Arbeiten werden zuerst berechnet, pro Lauf höchstens acht
+Minuten lang; der Rest folgt in den nächsten Läufen. Die Vektoren liegen nur im
+Actions-Cache. Fällt das Modell aus, bleibt die letzte Rangfolge bestehen.
+
+    node scripts/rank-similarity.mjs --limit=3000 --sample=1
+
+Der Workflow "Check library ranking" führt genau das mit dem echten Modell aus
+und zeigt die nächsten Arbeiten je Profil. Nach Änderungen an der Bibliothek:
+Datei ersetzen, der nächste Lauf bewertet den Bestand neu.
+
 ## Persönlicher Arbeitsbereich und Ladeverhalten
 
 Shortlist, Lesestand, gespeicherte Suche, Notizen und Projektboard bleiben auf

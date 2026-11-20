@@ -19,6 +19,7 @@ import { buildQuestions } from "./questions.mjs";
 import { buildResearchRadar, coverageFor } from "./radar.mjs";
 import { catalogDocument } from "../../site/assets/js/catalog.js";
 import { acceptedSemanticEntry } from "./semantic.mjs";
+import { libraryEntries } from "../similarity/rank.mjs";
 
 function stableStringify(value) {
   if (Array.isArray(value)) return `[${value.map(stableStringify).join(",")}]`;
@@ -105,9 +106,18 @@ function corpusIsComplete(meta) {
     && !meta.dataQualityWarnings?.some((warning) => incompleteCodes.has(warning.code));
 }
 
-function updateSearchIndex(searchIndex, works, generatedAt) {
+function libraryContract(similarity) {
+  if (!similarity) return null;
+  return {
+    generatedAt: similarity.generatedAt, methodVersion: similarity.methodVersion, model: similarity.model, method: similarity.method,
+    profiles: similarity.profiles, seeds: similarity.seeds, thresholds: similarity.thresholds, coverage: similarity.coverage
+  };
+}
+
+function updateSearchIndex(searchIndex, works, generatedAt, similarity) {
   return {
     ...searchIndex,
+    library: libraryContract(similarity),
     schemaVersion: "search-index-2.0.0",
     generatedAt,
     ontologyVersion: ONTOLOGY_VERSION,
@@ -231,6 +241,10 @@ export async function runAnalysisPipeline(options = {}) {
     const entry = acceptedSemanticEntry(work, semanticCache.entries?.[work.id]);
     if (entry) { semanticEntries[work.id] = entry; work.research.semantic = { model: entry.model, generatedAt: entry.generatedAt, ...entry.extraction }; }
   }
+  // Closeness to the personal reference library, computed by scripts/rank-similarity.mjs.
+  const similarity = await readJson(path.join(dataDirectory, "similarity.json")).catch(error => { if (error.code === "ENOENT") return null; throw error; });
+  const library = libraryEntries(similarity);
+  for (const work of works) work.research.library = library.get(work.id) ?? null;
   inputHash = sha256({ corpus: inputHash, semanticEntries, retrievalState: meta.retrievalState ?? null, analysisVersion: ANALYSIS_VERSION });
   const metrics = buildStaticMetrics({
     generatedAt,
@@ -293,7 +307,7 @@ export async function runAnalysisPipeline(options = {}) {
     snapshots: [...retainedEntries, snapshotEntry].sort((left, right) => left.generatedAt.localeCompare(right.generatedAt))
   };
   const updatedMeta = updateMeta(meta, generatedAt, metrics, questions, snapshotIndex.snapshots.length, works.length);
-  const updatedSearchIndex = updateSearchIndex(searchIndex, works, generatedAt);
+  const updatedSearchIndex = updateSearchIndex(searchIndex, works, generatedAt, similarity);
   const shards = [];
   await mkdir(path.join(dataDirectory, "search"), { recursive: true });
   for (let offset = 0; offset < works.length; offset += 200) {
