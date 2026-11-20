@@ -43,9 +43,13 @@ function canonicalId(value) {
   return String(value).replace(/^https?:\/\/(?:export\.)?arxiv\.org\/abs\//i, "").replace(/v\d+$/i, "");
 }
 
-function arxivTerm(term) {
-  return `(ti:"${term.replaceAll('"', '\\"')}" OR abs:"${term.replaceAll('"', '\\"')}")`;
-}
+const quoted = term => `"${term.replaceAll('"', '\\"')}"`;
+// Title or abstract; the compact form searches all fields with one clause per term.
+const arxivTerm = term => `(ti:${quoted(term)} OR abs:${quoted(term)})`;
+const compactTerm = term => `all:${quoted(term)}`;
+
+// arXiv rejects request lines above 4094 bytes ("Request Line is too large").
+export const ARXIV_MAX_REQUEST_LINE = 3800;
 
 function arxivDate(value, endOfDay = false) {
   return `${value.replaceAll("-", "")}${endOfDay ? "2359" : "0000"}`;
@@ -54,17 +58,23 @@ function arxivDate(value, endOfDay = false) {
 export function buildArxivUrl(options = {}) {
   const range = options.range ?? dateRange(options.days ?? 90, options.now);
   const categories = `(${ARXIV_CATEGORIES.map((category) => `cat:${category}`).join(" OR ")})`;
-  const ai = `(${AI_TERMS.map(arxivTerm).join(" OR ")})`;
-  const human = `(${[...HUMAN_WORK_TERMS, ...HUMAN_CONTEXT_TERMS].map(arxivTerm).join(" OR ")})`;
-  const domain = `(${HUMAN_FACTORS_TERMS.map(arxivTerm).join(" OR ")})`;
   const submitted = `submittedDate:[${arxivDate(range.from)} TO ${arxivDate(range.to, true)}]`;
-  const url = new URL("https://export.arxiv.org/api/query");
-  url.searchParams.set("search_query", `${categories} AND ${options.researchArea === "human-factors" ? domain : `${ai} AND ${human}`} AND ${submitted}`);
-  url.searchParams.set("start", String(options.start ?? 0));
-  url.searchParams.set("max_results", String(options.maxResults ?? ARXIV_PAGE_SIZE));
-  url.searchParams.set("sortBy", "submittedDate");
-  url.searchParams.set("sortOrder", "descending");
-  return { url, range };
+  const build = (term) => {
+    const group = terms => `(${terms.map(term).join(" OR ")})`;
+    const topic = options.researchArea === "human-factors" ? group(HUMAN_FACTORS_TERMS) : `${group(AI_TERMS)} AND ${group([...HUMAN_WORK_TERMS, ...HUMAN_CONTEXT_TERMS])}`;
+    const url = new URL("https://export.arxiv.org/api/query");
+    url.searchParams.set("search_query", `${categories} AND ${topic} AND ${submitted}`);
+    url.searchParams.set("start", String(options.start ?? 0));
+    url.searchParams.set("max_results", String(options.maxResults ?? ARXIV_PAGE_SIZE));
+    url.searchParams.set("sortBy", "submittedDate");
+    url.searchParams.set("sortOrder", "descending");
+    return url;
+  };
+  // Precise where it fits; otherwise the same terms across all fields. That is
+  // slightly broader, and the ranking by closeness to the library sorts it afterwards.
+  const precise = build(arxivTerm);
+  const compact = precise.pathname.length + precise.search.length > ARXIV_MAX_REQUEST_LINE;
+  return { url: compact ? build(compactTerm) : precise, range, compact };
 }
 
 export function parseArxivFeed(xml, context) {

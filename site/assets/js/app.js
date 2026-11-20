@@ -203,13 +203,22 @@ function setDashboardState(dashboardState, message) {
   document.body.dataset.dashboardState = dashboardState;
   elements.loading_state.hidden = dashboardState !== "loading";
   elements.error_state.hidden = dashboardState !== "error";
-  elements.data_integrity_bar.hidden = !["partial", "ready", "empty"].includes(dashboardState);
+  // A page budget that continues in the next run is normal operation. The bar and
+  // the amber dot are reserved for sources that did not answer and for files that failed to load.
+  const failedSources = (state.data.health?.sources ?? []).filter(source => ["stale", "unavailable", "failed", "error"].includes(source.status));
+  const attention = dashboardState === "empty" || state.loadErrors.size > 0 || failedSources.length > 0;
+  elements.data_integrity_bar.hidden = !["partial", "ready", "empty"].includes(dashboardState) || !attention;
   elements.dashboard_views.hidden = !["partial", "ready", "empty"].includes(dashboardState);
   elements.dashboard_views.setAttribute("aria-busy", String(dashboardState === "loading"));
   const badgeText = { loading: "Daten werden geladen", ready: "Daten verfügbar", partial: "Daten teilweise verfügbar", empty: "Daten noch nicht verfügbar", error: "Datenfehler" }[dashboardState];
-  elements.data_status_badge.className = `status-badge ${dashboardState}`;
-  elements.data_status_badge.lastElementChild.textContent = badgeText;
-  if (message) elements.data_status_message.textContent = message;
+  const loaded = ["partial", "ready"].includes(dashboardState);
+  const updated = loaded && state.data.meta?.generatedAt ? `Aktualisiert ${formatDate(state.data.meta.generatedAt, true)}` : badgeText;
+  const sourceNote = loaded && failedSources.length ? ` · ${failedSources.length} ${failedSources.length === 1 ? "Quelle" : "Quellen"} ohne Antwort` : "";
+  elements.data_status_badge.className = `status-badge ${loaded ? (attention ? "partial" : "ready") : dashboardState}`;
+  elements.data_status_badge.lastElementChild.textContent = `${updated}${sourceNote}`;
+  if (failedSources.length && loaded && !state.loadErrors.size) {
+    elements.data_status_message.textContent = `${failedSources.length === 1 ? "Eine Quelle hat" : `${failedSources.length} Quellen haben`} beim letzten Lauf nicht geantwortet: ${failedSources.map(source => source.source).join(", ")}. Der vorhandene Bestand bleibt nutzbar; Einzelheiten stehen im Bereich Method.`;
+  } else if (message) elements.data_status_message.textContent = message;
   if (dashboardState !== "loading") updateDatasetStatuses();
 }
 
@@ -358,6 +367,7 @@ function libraryNote(work) {
 function publicationCard(result) {
   const { work, kind } = result;
   const article = node("article", "publication-card");
+  if (work.research?.library?.tier) article.dataset.libraryTier = work.research.library.tier;
   article.dataset.workId = work.id;
   const heading = node("div", "publication-heading");
   const copy = node("div");
@@ -633,7 +643,7 @@ function renderAll() {
   renderCalls();
   renderMethod();
   renderRadarViews({ radar: state.data.radar, works: state.data.works, calls: state.data.calls, meta: state.data.meta, evidenceLinks, announce, download });
-  elements.footer_version.textContent = state.data.meta?.analysisVersion ?? "Statisches GitHub-Pages-Dashboard";
+  elements.footer_version.textContent = state.data.meta?.analysisVersion ?? "";
   elements.footer_updated.textContent = `Letzter Abruf ${formatDate(state.data.meta?.lastIngestionAt, true)} · Analyse ${formatDate(state.data.meta?.generatedAt, true)}`;
 }
 

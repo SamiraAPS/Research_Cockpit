@@ -91,3 +91,16 @@ test("dashboard helpers count links per work and keep direction", () => {
   assert.deepEqual(degreeTable(4, [[0, 2], [1, 0]]), [2, 1, 1, 0]);
   assert.deepEqual(neighbourLists(3, [[0, 2], [1, 0]]), { out: [[2], [0], []], incoming: [[1], [], [0]] });
 });
+
+test("arXiv query stays below the request line limit by searching all fields when needed", async () => {
+  const { ARXIV_MAX_REQUEST_LINE, buildArxivUrl } = await import("../../scripts/ingestion/arxiv.mjs");
+  for (const researchArea of ["human-ai", "human-factors"]) {
+    const { url } = buildArxivUrl({ researchArea, now: new Date("2026-11-20T00:00:00.000Z") });
+    assert.ok(url.pathname.length + url.search.length <= ARXIV_MAX_REQUEST_LINE, `${researchArea} query fits`);
+    assert.match(url.searchParams.get("search_query"), /submittedDate:\[\d{12} TO \d{12}\]$/);
+  }
+  const broad = buildArxivUrl({ researchArea: "human-ai" });
+  assert.equal(broad.compact, true);
+  assert.match(broad.url.searchParams.get("search_query"), /all:"/);
+  assert.equal(buildArxivUrl({ researchArea: "human-factors" }).compact, false);
+});
