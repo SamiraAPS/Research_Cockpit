@@ -97,6 +97,16 @@ Der Workflow "Check library ranking" führt genau das mit dem echten Modell aus
 und zeigt die nächsten Arbeiten je Profil. Nach Änderungen an der Bibliothek:
 Datei ersetzen, der nächste Lauf bewertet den Bestand neu.
 
+## Abstracts
+
+Vollständige Abstracts werden nur für frei zugängliche Arbeiten veröffentlicht
+(Open Access laut OpenAlex, arXiv-Preprints). Für alle anderen Arbeiten enthalten
+die veröffentlichten Daten nur einen Auszug von höchstens 300 Zeichen; der Eintrag
+verlinkt auf die Originalpublikation. Der volle Text wird im Lauf nur für die
+Rangfolge nach Nähe zur Bibliothek verwendet und danach nicht gespeichert.
+Themenzuordnung und Textbelege dieser Arbeiten stützen sich auf Titel, Auszug und
+Schlagwörter und sind entsprechend weniger vollständig.
+
 ## Netzwerk der Referenzbibliothek
 
 Der Bereich Library zeigt die Referenzarbeiten als Netzwerk. Drei Knöpfe wählen,

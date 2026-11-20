@@ -14,7 +14,7 @@ async function readWorks(dataDirectory) {
   const names = (await readdir(directory)).filter(name => /^page-\d+\.json$/.test(name)).sort();
   const pages = await Promise.all(names.map(name => readJson(path.join(directory, name))));
   return pages.flatMap(page => page.items.map(work => ({
-    id: work.id, title: work.title, abstract: work.abstract, firstSeenAt: work.firstSeenAt ?? work.retrievedAt, publicationDate: work.publicationDate
+    id: work.id, title: work.title, abstract: work.abstract, abstractDigest: work.abstractRestricted ? work.abstractDigest : undefined, firstSeenAt: work.firstSeenAt ?? work.retrievedAt, publicationDate: work.publicationDate
   })));
 }
 

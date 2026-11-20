@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 
 import { analysisFields, evidenceTermsFor, normalizeDoi, normalizeTitle, unique } from "./normalize.mjs";
+import { restrictionMarkers } from "./restrict-abstracts.mjs";
 
 function authorSurnames(authors) {
   return (authors ?? []).flatMap((author) => {
@@ -234,6 +235,7 @@ function canonicalWork(group, context) {
     authors,
     url: preferred.url,
     openAccess: preferred.openAccess,
+    ...restrictionMarkers(variants.map(variant => variant.existingWork), abstract),
     citedByCount: variants.map((variant) => variant.citedByCount).filter(Number.isInteger).sort((a, b) => b - a)[0] ?? null,
     firstSeenAt: variants.map(v => v.existingWork?.firstSeenAt ?? v.existingWork?.retrievedAt ?? v.retrievedAt).filter(Boolean).sort()[0] ?? context.generatedAt,
     firstSeenRunId: variants.find(v => v.existingWork)?.existingWork.firstSeenRunId ?? (variants.some(v => v.existingWork) ? "legacy-import" : context.runId ?? context.generatedAt),

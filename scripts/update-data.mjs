@@ -7,6 +7,7 @@ import { runAnalysisPipeline } from "./analysis/pipeline.mjs";
 import { validateDataDirectory } from "./validate-data.mjs";
 import { resolveConferences } from "./ingestion/conferences.mjs";
 import { fetchFieldCounts } from "./ingestion/field-counts.mjs";
+import { restrictAbstracts } from "./ingestion/restrict-abstracts.mjs";
 import { updateLibrarySimilarity } from "./rank-similarity.mjs";
 
 // Stage a whole generation; never replace the last usable dataset with half-written files.
@@ -45,13 +46,16 @@ export async function updateData(options = {}) {
         console.warn(`Bibliotheks-Ranking übersprungen: ${similarity.failed}`);
       }
     }
+    // After the ranking has seen the full text and before anything is analysed or
+    // published: works that are not open access keep an excerpt of their abstract only.
+    const abstracts = await restrictAbstracts(stage);
     await runAnalysisPipeline({ dataDirectory: stage });
     const validation = await validateDataDirectory(stage);
     if (!validation.valid) throw new Error(JSON.stringify(validation.errors));
     await rename(target, backup);
     try { await rename(stage, target); published = true; }
     catch (error) { await rename(backup, target); throw error; }
-    const report = { publications: publications.status, calls: calls.status, works: publications.counts.canonicalWorks, similarity, validated: true };
+    const report = { publications: publications.status, calls: calls.status, works: publications.counts.canonicalWorks, similarity, abstracts, validated: true };
     await mkdir("work", { recursive: true });
     await writeFile("work/update-report.json", JSON.stringify(report, null, 2));
     return report;

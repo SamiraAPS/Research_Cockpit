@@ -143,15 +143,18 @@ export async function rankLibrarySimilarity({ works, library, embed, cache, mode
   const { seedVectors, seedProfiles } = seeds ?? await embedLibrary(library, embed, batchSize);
 
   const texts = new Map(works.map(work => [work.id, workText(work)]));
+  // A work published with an excerpt only keeps the fingerprint of its full text,
+  // so the vector computed from the full text stays valid.
+  const fingerprints = new Map(works.map(work => [work.id, work.abstractDigest ?? textFingerprint(texts.get(work.id))]));
   const pending = works
-    .filter((work) => cache.get(work.id)?.fingerprint !== textFingerprint(texts.get(work.id)))
+    .filter((work) => cache.get(work.id)?.fingerprint !== fingerprints.get(work.id))
     .sort((a, b) => String(b.firstSeenAt ?? b.publicationDate ?? "").localeCompare(String(a.firstSeenAt ?? a.publicationDate ?? "")));
   let embedded = 0;
   for (let offset = 0; offset < pending.length && now() < deadline; offset += batchSize) {
     const batch = pending.slice(offset, offset + batchSize);
     const vectors = await embed(batch.map(work => texts.get(work.id)));
     batch.forEach((work, index) => {
-      cache.set(work.id, { fingerprint: textFingerprint(texts.get(work.id)), vector: quantize(normalize(vectors[index])) });
+      cache.set(work.id, { fingerprint: fingerprints.get(work.id), vector: quantize(normalize(vectors[index])) });
     });
     embedded += batch.length;
   }
@@ -163,7 +166,7 @@ export async function rankLibrarySimilarity({ works, library, embed, cache, mode
   let carriedCount = 0;
   for (const work of works) {
     const cached = cache.get(work.id);
-    if (cached && cached.fingerprint === textFingerprint(texts.get(work.id))) {
+    if (cached && cached.fingerprint === fingerprints.get(work.id)) {
       entries.set(work.id, scoreVector(unit(cached.vector), seedVectors, seedProfiles, library.profiles.length));
     } else if (Array.isArray(carried[work.id])) {
       const [score, profile, seed] = carried[work.id];
