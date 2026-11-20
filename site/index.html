@@ -12,9 +12,8 @@
 
     <header class="topbar">
       <div class="topbar-inner">
-        <a class="brand-lockup" href="#overview" aria-label="Human–AI Research Radar – Overview">
-          <span class="radar-mark" aria-hidden="true"><span></span></span>
-          <span><span class="eyebrow">Research intelligence workspace</span><span class="brand-title">Human–AI Research Radar</span></span>
+        <a class="brand-lockup" href="#overview" aria-label="Research Cockpit – Overview">
+          <span class="brand-title">Research Cockpit</span>
         </a>
         <div class="header-actions">
           <button id="shortlist-jump" class="header-button" type="button" aria-label="Shortlist im New-Bereich öffnen">
@@ -43,7 +42,6 @@
           <li><a class="nav-link" href="#method">Method</a></li>
         </ul>
       </nav>
-      <p class="static-label"><span aria-hidden="true">●</span> Statisches Dashboard</p>
     </div>
 
     <main id="main-content" class="dashboard-shell" tabindex="-1">
@@ -72,9 +70,9 @@
       <div id="dashboard-views" class="dashboard-views" aria-busy="true" hidden>
         <section id="view-overview" class="dashboard-view" data-view="overview" aria-labelledby="overview-title" tabindex="-1">
           <header class="view-intro overview-intro">
-            <div><p class="section-kicker">Aktueller Radar-Lauf</p><h1 id="overview-title">Evidence before signal.</h1><p>Reale Publikationen, offizielle Calls und reproduzierbare Analysen – mit sichtbaren Lücken statt Ersatzwerten.</p></div>
+            <div><p class="section-kicker">Aktueller Radar-Lauf</p><h1 id="overview-title">Overview</h1><p>Was neu im Korpus ist, welche Deadlines anstehen und welche Themen sich abzeichnen.</p></div>
             <dl class="freshness-grid">
-              <div><dt>Letzter Datenabruf (auch teilweise)</dt><dd id="freshness-value">–</dd></div>
+              <div><dt>Letzter Datenabruf</dt><dd id="freshness-value">–</dd></div>
               <div><dt>Letzter vollständig erfolgreicher Abruf</dt><dd id="complete-refresh-value">–</dd></div>
               <div><dt>Korpus</dt><dd id="corpus-value">–</dd></div>
               <div><dt>Quellen</dt><dd id="source-summary">–</dd></div>
@@ -99,7 +97,7 @@
         </section>
 
         <section id="view-new" class="dashboard-view" data-view="new" aria-labelledby="new-title" tabindex="-1" hidden>
-          <header class="view-intro compact-intro"><div><p class="section-kicker">Statischer Forschungskorpus</p><h1 id="new-title">New & Search</h1><p id="new-since-copy">Neue Arbeiten und Preprints aus dem aktuellen Datenstand.</p></div><span class="view-number" aria-hidden="true">02</span></header>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Statischer Forschungskorpus</p><h1 id="new-title">New &amp; Search</h1><p id="new-since-copy">Neue Arbeiten und Preprints aus dem aktuellen Datenstand.</p></div></header>
           <form id="work-filters" class="filter-panel" role="search">
             <div class="search-field"><label for="work-query">Korpus durchsuchen</label><input id="work-query" name="query" type="search" placeholder="Titel, Abstract, Autor:in, Thema …" autocomplete="off" /></div>
             <div class="filter-grid">
@@ -133,7 +131,7 @@
         </section>
 
         <section id="view-landscape" class="dashboard-view" data-view="landscape" aria-labelledby="landscape-title" tabindex="-1" hidden>
-          <header class="view-intro compact-intro"><div><p class="section-kicker">Korpusstruktur</p><h1 id="landscape-title">Landscape</h1><p>Themenhäufigkeiten, Publikationstypen und evidenzgebundene Forschungsfragen.</p></div><span class="view-number" aria-hidden="true">03</span></header>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Korpusstruktur</p><h1 id="landscape-title">Landscape</h1><p>Themenhäufigkeiten, Publikationstypen und evidenzgebundene Forschungsfragen.</p></div></header>
           <article class="panel content-panel spaced-panel"><h2>Publikationsentwicklung</h2><label>Forschungsbereich<select id="trend-area"><option value="human-ai">Psychologie, Arbeit &amp; Human–AI</option><option value="human-factors">Human Factors, Ergonomie &amp; Work Design</option></select></label><p>Auch Preprints werden berücksichtigt. Neue Suchbereiche werden erst aufgebaut; Größenänderungen können aus der Erfassung entstehen.</p><h3>Breite Datenbankabfrage</h3><p>Anzahl der OpenAlex-Suchtreffer unabhängig vom Downloadbudget. Die fachliche Suchgenauigkeit ist noch nicht validiert.</p><div id="field-series"></div><h3>Langfristige Entwicklung im heruntergeladenen Korpus</h3><div id="annual-series"></div><h3>Aktuelle Entwicklung im Korpus</h3><div id="monthly-series"></div><h3>Themenvergleich abgeschlossener Quartale</h3><div id="quarter-comparison" class="question-grid"></div></article>
           <div class="two-column-grid">
             <article class="panel content-panel"><header class="panel-heading"><div><p class="section-kicker">Mehrfachklassifikation möglich</p><h2>Themen im Korpus</h2></div></header><div id="landscape-chart" class="chart-host"></div></article>
@@ -143,13 +141,13 @@
         </section>
 
         <section id="view-emerging" class="dashboard-view" data-view="emerging" aria-labelledby="emerging-title" tabindex="-1" hidden>
-          <header class="view-intro compact-intro"><div><p class="section-kicker">Kandidaten für künftige Projekte</p><h1 id="emerging-title">Emerging Signals</h1><p>Offene Themencluster aus Publikationen und Preprints, ergänzt durch thematische Calls.</p></div><span class="view-number" aria-hidden="true">04</span></header>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Kandidaten für künftige Projekte</p><h1 id="emerging-title">Emerging Signals</h1><p>Offene Themencluster aus Publikationen und Preprints, ergänzt durch thematische Calls.</p></div></header>
           <div id="emerging-notice" class="inline-notice"></div>
           <div id="emerging-grid" class="analysis-grid"></div>
         </section>
 
         <section id="view-calls" class="dashboard-view" data-view="calls" aria-labelledby="calls-title" tabindex="-1" hidden>
-          <header class="view-intro compact-intro"><div><p class="section-kicker">Offizielle Quellen</p><h1 id="calls-title">Calls & Deadlines</h1><p>Calls for Papers, Special Issues, Konferenzen und Workshops mit Verifikationsstatus.</p></div><span class="view-number" aria-hidden="true">05</span></header>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Offizielle Quellen</p><h1 id="calls-title">Calls & Deadlines</h1><p>Calls for Papers, Special Issues, Konferenzen und Workshops mit Verifikationsstatus.</p></div></header>
           <form id="call-filters" class="filter-panel compact-filters">
             <label>Deadline<select id="deadline-filter"><option value="upcoming">Alle kommenden</option><option value="30">Nächste 30 Tage</option><option value="90">Nächste 90 Tage</option><option value="closing-soon">Closing soon</option><option value="open">Open</option><option value="expired">Abgelaufen</option><option value="all">Alle inklusive ungeprüft</option></select></label>
             <label>Call durchsuchen<input id="call-query" type="search" placeholder="Venue, Titel oder Thema …" /></label>
@@ -167,14 +165,14 @@
         </section>
 
         <section id="view-opportunities" class="dashboard-view" data-view="opportunities" aria-labelledby="opportunities-title" tabindex="-1" hidden>
-          <header class="view-intro compact-intro"><div><p class="section-kicker">Von Literatur zu Studienideen</p><h1 id="opportunities-title">Projektideen</h1><p>Beobachtungen, Belege und konkrete Studienvorschläge. Neuheit bleibt zu prüfen.</p></div><span class="view-number" aria-hidden="true">06</span></header>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Von Literatur zu Studienideen</p><h1 id="opportunities-title">Projektideen</h1><p>Beobachtungen, Belege und konkrete Studienvorschläge. Neuheit bleibt zu prüfen.</p></div></header>
           <article class="panel content-panel spaced-panel"><h2>Mein Projektboard</h2><p>Notizen und Projekte bleiben auf diesem Gerät. Mit Export und Import kannst du sie sichern oder auf ein anderes Gerät übertragen.</p><button id="export-workspace" class="secondary-button" type="button">Projekte &amp; Notizen exportieren</button><label class="import-control">Projektdatei importieren<input id="import-workspace" type="file" accept="application/json,.json" /></label><div id="project-board" class="question-grid"></div></article>
           <div id="opportunity-notice" class="inline-notice"></div>
           <div id="opportunity-grid" class="analysis-grid"></div>
         </section>
 
         <section id="view-method" class="dashboard-view" data-view="method" aria-labelledby="method-title" tabindex="-1" hidden>
-          <header class="view-intro compact-intro"><div><p class="section-kicker">Transparenz vor Interpretation</p><h1 id="method-title">Method</h1><p>Versionen, Zeitfenster, Mindestfallzahlen, Datenqualität und Quellenzustand des aktuellen Laufs.</p></div><span class="view-number" aria-hidden="true">07</span></header>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Transparenz vor Interpretation</p><h1 id="method-title">Method</h1><p>Versionen, Zeitfenster, Mindestfallzahlen, Datenqualität und Quellenzustand des aktuellen Laufs.</p></div></header>
           <article class="panel content-panel"><h2>Abdeckung & fachliche Prüfung</h2><p id="research-profile"></p><div id="coverage-summary"></div><p>Studienkontext, Population, Studiendesign und Outcomes werden im Audit manuell erfasst; sie werden nicht aus Stichworten als gesicherte Fakten abgeleitet.</p></article>
           <article class="panel content-panel spaced-panel"><h2>Qualität des Forschungsradars</h2><div id="radar-coverage"></div><p>Precision, Recall, Neuheit und Prognosegüte sind noch nicht wissenschaftlich validiert. Ein geschichtetes Pilotset und getrennte Prüfdatensätze sind im Repository vorbereitet.</p></article>
           <div id="method-cards" class="method-grid"></div>
@@ -191,13 +189,16 @@
         </section>
 
         <section id="view-library" class="dashboard-view" data-view="library" aria-labelledby="library-title" tabindex="-1" hidden>
-          <header class="view-intro compact-intro"><div><p class="section-kicker">Meine Referenzbibliothek</p><h1 id="library-title">Library Network</h1><p>Wie die Arbeiten meiner Bibliothek zusammenhängen: über Zitationen, inhaltliche Nähe oder gemeinsame Autor:innen.</p></div><span class="view-number" aria-hidden="true">08</span></header>
+          <header class="view-intro compact-intro"><div><p class="section-kicker">Meine Referenzbibliothek</p><h1 id="library-title">Library Network</h1><p>Wie die Arbeiten meiner Bibliothek zusammenhängen: über Zitationen, inhaltliche Nähe oder gemeinsame Autor:innen.</p></div></header>
           <article class="panel content-panel"><div id="library-graph" class="library-graph"><p class="muted-copy">Der Netzwerkgraph wird geladen …</p></div></article>
         </section>
       </div>
     </main>
 
-    <footer class="dashboard-footer"><span>Human–AI Research Radar</span><span id="footer-version">Statisches GitHub-Pages-Dashboard</span><span id="footer-updated">Keine Daten geladen</span></footer>
+    <footer class="dashboard-footer">
+      <p class="footer-sources">Bibliografische Daten: <a href="https://openalex.org/" rel="noopener noreferrer">OpenAlex</a> (CC0) und <a href="https://arxiv.org/" rel="noopener noreferrer">arXiv</a>. Thank you to arXiv for use of its open access interoperability. Die Rechte an Abstracts und Volltexten liegen bei den Autor:innen und Verlagen; jeder Eintrag verlinkt auf die Originalpublikation.</p>
+      <span>Research Cockpit</span><span id="footer-version">–</span><span id="footer-updated">Keine Daten geladen</span>
+    </footer>
     <script type="module" src="./assets/js/app.js"></script>
   </body>
 </html>
