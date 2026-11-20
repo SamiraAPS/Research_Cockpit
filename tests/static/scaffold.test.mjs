@@ -34,7 +34,7 @@ test("uses relative static asset references compatible with a project page", asy
 
 test("provides all hash-routed dashboard views", async () => {
   const html = await readFile(path.join(site, "index.html"), "utf8");
-  const views = ["overview", "new", "landscape", "emerging", "calls", "opportunities", "method"];
+  const views = ["overview", "new", "landscape", "emerging", "calls", "opportunities", "library", "method"];
 
   for (const view of views) {
     assert.match(html, new RegExp(`href="#${view}"`));

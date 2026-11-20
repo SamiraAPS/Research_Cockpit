@@ -1,8 +1,8 @@
 name: Check library ranking
 
 # Runs the real embedding model on a sample of the corpus and prints the
-# closest works per profile, so a change to the ranking can be judged by
-# reading its output before it reaches the published data.
+# closest works per profile and the size of the library network, so a change
+# can be judged by reading its output before it reaches the published data.
 on:
   pull_request:
     paths:
@@ -33,6 +33,7 @@ jobs:
       - name: Rank a sample with the real model
         env:
           SIMILARITY_MODULE_DIR: ${{ runner.temp }}/similarity
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
         run: |
           mkdir -p work
           node scripts/rank-similarity.mjs --limit=${{ inputs.limit || '3000' }} --minutes=8 --output-dir=work --cache-dir=work/similarity-cache --sample=1 | tee work/similarity-report.md

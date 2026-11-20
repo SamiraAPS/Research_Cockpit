@@ -14,8 +14,8 @@ const DATA_URLS = {
   health: "./data/source-health.json"
   , radar: "./data/research-radar.json"
 };
-const VIEW_IDS = ["overview", "new", "landscape", "emerging", "calls", "opportunities", "method"];
-const VIEW_TITLES = { overview: "Overview", new: "New & Search", landscape: "Landscape", emerging: "Emerging Signals", calls: "Calls", opportunities: "Opportunities", method: "Method" };
+const VIEW_IDS = ["overview", "new", "landscape", "emerging", "calls", "opportunities", "library", "method"];
+const VIEW_TITLES = { overview: "Overview", new: "New & Search", landscape: "Landscape", emerging: "Emerging Signals", calls: "Calls", opportunities: "Opportunities", library: "Library Network", method: "Method" };
 const STORAGE_KEYS = { shortlist: "human-ai-research-radar.shortlist.v1", lastRun: "human-ai-research-radar.last-run.v1" };
 const PAGE_SIZE = 8;
 const DATE_FORMAT = new Intl.DateTimeFormat("de-CH", { day: "2-digit", month: "short", year: "numeric" });
@@ -154,7 +154,21 @@ function showView(viewId, { moveFocus = false } = {}) {
     state.workFilters = { query: "", year: "all", source: "all", type: "all", theme: "all", mode: "all", dataStatus: "all", area: "all", relevanceStatus: "all", sort: "newest", shortlistOnly: false, novelty: "all", workId: focusedId };
     state.workPage = 1; renderWorkResults();
   }
+  if (active === "library") loadLibraryGraph();
   if (moveFocus && !elements.dashboard_views.hidden) document.querySelector(`[data-view="${active}"]`)?.focus({ preventScroll: true });
+}
+
+// The network of the reference library is loaded on first visit only.
+let libraryGraphRequest = null;
+function loadLibraryGraph() {
+  if (libraryGraphRequest || !state.data.meta) return;
+  const container = document.getElementById("library-graph");
+  libraryGraphRequest = Promise.all([fetchJson("./data/library-graph.json"), import("./library-graph.js")])
+    .then(([graph, module]) => module.renderLibraryGraph(container, graph))
+    .catch(() => {
+      libraryGraphRequest = null;
+      container.replaceChildren(node("p", "muted-copy", "Der Netzwerkgraph ist noch nicht verfügbar. Er entsteht beim nächsten Datenlauf zusammen mit der Rangfolge nach Nähe zur Bibliothek."));
+    });
 }
 
 function statusChip(status, extra = "") {

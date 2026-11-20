@@ -97,6 +97,20 @@ Der Workflow "Check library ranking" führt genau das mit dem echten Modell aus
 und zeigt die nächsten Arbeiten je Profil. Nach Änderungen an der Bibliothek:
 Datei ersetzen, der nächste Lauf bewertet den Bestand neu.
 
+## Netzwerk der Referenzbibliothek
+
+Der Bereich Library zeigt die Referenzarbeiten als Netzwerk. Drei Knöpfe wählen,
+welche Verbindungen gezeichnet werden: Zitationen (wer zitiert wen innerhalb der
+Bibliothek; Literaturlisten aus OpenAlex, wöchentlich aktualisiert), inhaltliche
+Nähe (die drei ähnlichsten Arbeiten je Arbeit) und gemeinsame Autor:innen
+(Abgleich über Nachname und ersten Vornamensbuchstaben; Verwechslungen sind möglich).
+Die Farbe zeigt das Themenprofil, die Punktgrösse die Anzahl Verbindungen.
+
+Arbeiten ohne DOI haben keine Zitationsdaten. Arbeiten ohne Verbindung stehen in
+Reihen unter dem Netzwerk. Die Anordnung wird im Datenlauf berechnet und liegt mit
+den Verbindungen in site/data/library-graph.json; dieselben Angaben stehen im
+Dashboard als Tabelle bereit.
+
 ## Persönlicher Arbeitsbereich und Ladeverhalten
 
 Shortlist, Lesestand, gespeicherte Suche, Notizen und Projektboard bleiben auf
