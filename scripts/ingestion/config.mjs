@@ -38,6 +38,25 @@ export const AI_TERMS = [
   "human-machine systems"
 ];
 
+// Core venues only: these words are too common for the open search, but inside
+// the selected journals they catch work that does not call itself "AI"
+// (organisation research writes of algorithms, automation and decision support).
+export const CORE_EXTRA_AI_TERMS = [
+  "algorithm", "algorithms", "algorithmic", "automation", "automated", "decision support",
+  "recommender system", "recommender systems", "recommendation tool", "recommendation tools", "robot", "robots"
+];
+
+// Citation search: works that cite references of the personal library, found
+// through OpenAlex reference lists and independent of any search term.
+export const CITATION_SEARCH = Object.freeze({
+  queryVersion: "static-openalex-citation-1.0.0",
+  workTypes: ["article", "review", "book-chapter", "conference-paper", "preprint"],
+  // A work must cite at least this many references of the library to be kept.
+  minCited: 2,
+  batchSize: 90,
+  historyFrom: "2019-01-01"
+});
+
 export const HUMAN_WORK_TERMS = [
   "learning",
   "deskilling",

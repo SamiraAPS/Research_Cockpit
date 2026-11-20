@@ -1,13 +1,4 @@
-import {
-  AI_TERMS,
-  CORE_CONFERENCES,
-  HUMAN_WORK_TERMS,
-  HUMAN_FACTORS_TERMS,
-  HUMAN_CONTEXT_TERMS,
-  STATIC_SEARCH_CONFIG_VERSION,
-  OPENALEX_PAGE_SIZE,
-  SEARCH_MODES
-} from "./config.mjs";
+import { AI_TERMS, CORE_CONFERENCES, HUMAN_WORK_TERMS, HUMAN_FACTORS_TERMS, HUMAN_CONTEXT_TERMS, STATIC_SEARCH_CONFIG_VERSION, OPENALEX_PAGE_SIZE, SEARCH_MODES, CITATION_SEARCH, CORE_EXTRA_AI_TERMS } from "./config.mjs";
 import { fetchWithRetry } from "./http.mjs";
 import { normalizeOpenAlexWork } from "./normalize.mjs";
 
@@ -38,18 +29,27 @@ export function dateRange(days, now = new Date()) {
 }
 
 export function buildOpenAlexUrl(mode, options = {}) {
-  const config = SEARCH_MODES[mode];
+  const citation = mode === "citation";
+  const config = citation ? { ...CITATION_SEARCH, sourceIds: [] } : SEARCH_MODES[mode];
   if (!config) throw new Error(`Unbekannter OpenAlex-Modus ${mode}`);
   const range = options.range ?? dateRange(options.days ?? 90, options.now);
+  const aiTerms = mode === "core" ? [...AI_TERMS, ...CORE_EXTRA_AI_TERMS] : AI_TERMS;
   const filters = [
     `from_publication_date:${range.from}`,
     `to_publication_date:${range.to}`,
     "is_retracted:false",
     `type:${config.workTypes.join("|")}`,
-    `title_and_abstract.search:${options.researchArea === "human-factors" ? booleanTerms(HUMAN_FACTORS_TERMS) : `${booleanTerms(AI_TERMS)} AND ${booleanTerms([...HUMAN_WORK_TERMS, ...HUMAN_CONTEXT_TERMS])}`}`
+    `title_and_abstract.search:${options.researchArea === "human-factors" ? booleanTerms(HUMAN_FACTORS_TERMS) : `${booleanTerms(aiTerms)} AND ${booleanTerms([...HUMAN_WORK_TERMS, ...HUMAN_CONTEXT_TERMS])}`}`
   ];
+  if (citation) {
+    // Works citing any of the given library references; no search terms, no venue filter.
+    const cited = (options.citedWorkIds ?? []).filter(id => /^W\d+$/.test(id));
+    if (!cited.length) throw new Error("Zitationssuche ohne Referenzarbeiten");
+    filters.pop();
+    filters.push(`cites:${cited.join("|")}`);
+  }
   if (mode === "core" && options.researchArea === "human-factors") filters.pop();
-  const sourceIds = [...new Set([...config.sourceIds, ...(mode === "broad" ? [] : options.conferenceSourceIds ?? [])])];
+  const sourceIds = [...new Set([...config.sourceIds, ...(mode === "broad" || citation ? [] : options.conferenceSourceIds ?? [])])];
   if (sourceIds.length > 0) filters.unshift(`locations.source.id:${sourceIds.join("|")}`);
 
   const url = new URL("https://api.openalex.org/works");
@@ -58,8 +58,8 @@ export function buildOpenAlexUrl(mode, options = {}) {
   url.searchParams.set("per_page", String(OPENALEX_PAGE_SIZE));
   url.searchParams.set("cursor", "*");
   url.searchParams.set("corpus", "all");
-  url.searchParams.set("select", "id,doi,display_name,publication_date,type,cited_by_count,abstract_inverted_index,authorships,primary_location,best_oa_location,open_access,topics,keywords");
-  return { url, range, config: { ...config, queryVersion: `${STATIC_SEARCH_CONFIG_VERSION}:${mode}:${options.researchArea ?? "human-ai"}` } };
+  url.searchParams.set("select", "id,doi,display_name,publication_date,type,cited_by_count,abstract_inverted_index,authorships,primary_location,best_oa_location,open_access,topics,keywords,referenced_works");
+  return { url, range, config: { ...config, queryVersion: citation ? `${CITATION_SEARCH.queryVersion}:citation` : `${STATIC_SEARCH_CONFIG_VERSION}:${mode}:${options.researchArea ?? "human-ai"}` } };
 }
 
 function statsBase(mode, queryVersion, range, url) {
@@ -129,12 +129,16 @@ export async function ingestOpenAlex(mode, options = {}) {
       if (stats.pageCount === 1) stats.foundCount = Number.isInteger(payload.meta?.count) ? payload.meta.count : payload.results.length;
       const retrievedAt = options.now?.toISOString?.() ?? new Date().toISOString();
       for (const work of payload.results) {
-        records.push(normalizeOpenAlexWork(work, {
+        const record = normalizeOpenAlexWork(work, {
           mode,
           queryVersion: config.queryVersion,
           conferenceIds,
-          retrievedAt
-        }));
+          retrievedAt,
+          libraryIds: options.libraryIds
+        });
+        // A single shared reference is weak evidence: a classic is cited everywhere.
+        if (mode === "citation" && record.libraryCitations.length < CITATION_SEARCH.minCited) continue;
+        records.push(record);
       }
       const nextCursor = payload.meta?.next_cursor ?? null;
       cursor = payload.results.length > 0 ? nextCursor : null;

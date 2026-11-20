@@ -114,6 +114,7 @@ export function staticWorkToRecord(work) {
     url: work.url ?? null,
     openAccess: work.openAccess ?? null,
     citedByCount: work.citedByCount ?? null,
+    libraryCitations: work.libraryCitations ?? [],
     topics: work.topics ?? [],
     keywords: work.keywords ?? [],
     retrievedAt: work.lastVerifiedAt ?? work.retrievedAt,
@@ -236,6 +237,7 @@ function canonicalWork(group, context) {
     url: preferred.url,
     openAccess: preferred.openAccess,
     ...restrictionMarkers(variants.map(variant => variant.existingWork), abstract),
+    ...citedLibraryReferences(variants),
     citedByCount: variants.map((variant) => variant.citedByCount).filter(Number.isInteger).sort((a, b) => b - a)[0] ?? null,
     firstSeenAt: variants.map(v => v.existingWork?.firstSeenAt ?? v.existingWork?.retrievedAt ?? v.retrievedAt).filter(Boolean).sort()[0] ?? context.generatedAt,
     firstSeenRunId: variants.find(v => v.existingWork)?.existingWork.firstSeenRunId ?? (variants.some(v => v.existingWork) ? "legacy-import" : context.runId ?? context.generatedAt),
@@ -246,6 +248,13 @@ function canonicalWork(group, context) {
     versions,
     discoveredBy
   };
+}
+
+// A fresh reference list replaces the stored one; otherwise what is known is kept.
+function citedLibraryReferences(variants) {
+  const fresh = variants.filter(variant => !variant.existingWork && variant.provider === "openalex");
+  const cited = unique((fresh.length ? fresh : variants).flatMap(variant => variant.libraryCitations ?? [])).sort();
+  return cited.length ? { libraryCitations: cited } : {};
 }
 
 export function deduplicateRecords(records, context = {}) {

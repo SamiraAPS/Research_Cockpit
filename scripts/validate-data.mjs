@@ -380,7 +380,7 @@ function validateWork(ctx, work, pointer) {
       const discoveryPointer = `${pointer}/discoveredBy/${index}`;
       if (!requireFields(ctx, discovery, ["provider", "mode", "queryVersion"], discoveryPointer)) return;
       expectEnum(ctx, discovery.provider, new Set(["openalex", "arxiv"]), `${discoveryPointer}/provider`);
-      expectEnum(ctx, discovery.mode, new Set(["core", "broad", "frontier"]), `${discoveryPointer}/mode`);
+      expectEnum(ctx, discovery.mode, new Set(["core", "broad", "frontier", "citation"]), `${discoveryPointer}/mode`);
       expectString(ctx, discovery.queryVersion, `${discoveryPointer}/queryVersion`);
     });
   }
@@ -702,7 +702,7 @@ function validateSourceHealth(ctx, data) {
     if (Object.hasOwn(source, "role")) expectEnum(ctx, source.role, new Set(["discovery", "enrichment"]), `${pointer}/role`);
     if (Object.hasOwn(source, "modes")) {
       if (expectArray(ctx, source.modes, `${pointer}/modes`)) source.modes.forEach((mode, modeIndex) =>
-        expectEnum(ctx, mode, new Set(["core", "broad", "frontier"]), `${pointer}/modes/${modeIndex}`)
+        expectEnum(ctx, mode, new Set(["core", "broad", "frontier", "citation"]), `${pointer}/modes/${modeIndex}`)
       );
     }
     for (const field of ["requestCount", "pageCount", "attempts", "retryCount", "rateLimitEvents"]) {

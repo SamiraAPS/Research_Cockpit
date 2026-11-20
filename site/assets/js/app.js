@@ -49,7 +49,7 @@ const elements = Object.fromEntries([
   "export-bibtex", "export-csv", "work-result-count", "search-scope-note", "work-results", "work-pagination", "new-since-copy",
   "landscape-chart", "composition-summary", "question-list", "emerging-notice", "emerging-grid", "call-filters", "deadline-filter", "call-query",
   "call-sort", "calls-table-body", "calls-caption", "calls-empty", "opportunity-notice", "opportunity-grid", "method-cards", "version-list",
-  "warning-list", "source-table-body", "footer-version", "footer-updated", "filter-novelty", "mark-reviewed", "save-search", "restore-search", "export-audit", "coverage-summary", "research-profile", "filter-library", "filter-profile"
+  "warning-list", "source-table-body", "footer-version", "footer-updated", "filter-novelty", "mark-reviewed", "save-search", "restore-search", "export-audit", "coverage-summary", "research-profile", "filter-library", "filter-profile", "filter-cites"
 ].map((id) => [id.replaceAll("-", "_"), document.getElementById(id)]));
 elements.nav = document.querySelector(".primary-nav");
 elements.navLinks = [...document.querySelectorAll(".nav-link")];
@@ -343,6 +343,17 @@ function populateWorkFilters() {
   for (const select of [elements.filter_library, elements.filter_profile]) select.disabled = !profiles.length;
 }
 
+// Which references of the library a work cites, by name where the label is known.
+function citationNote(work) {
+  const dois = work.libraryCitations ?? [];
+  if (!dois.length) return null;
+  const seedDois = state.library?.seedDois ?? [];
+  const names = dois.map(doi => state.library?.seeds?.[seedDois.indexOf(doi)]?.split(":")[0]).filter(Boolean);
+  const shown = names.slice(0, 4).join("; ");
+  const rest = dois.length - Math.min(names.length, 4);
+  return `Zitiert ${dois.length} ${dois.length === 1 ? "Arbeit" : "Arbeiten"} meiner Bibliothek${shown ? `: ${shown}${rest > 0 ? ` und ${rest} weitere` : ""}` : ""}`;
+}
+
 const LIBRARY_TIER_LABELS = { core: "sehr nah", near: "nah", edge: "Randzone" };
 
 // One line that says how close a work is to the reference library and why.
@@ -372,6 +383,8 @@ function publicationCard(result) {
   if (work.research?.personalFit.length) copy.append(node("p", "muted-copy", `Warum passend: ${work.research.personalFit.map(f => f.topic).join(", ")}`));
   const closeness = libraryNote(work);
   if (closeness) copy.append(node("p", "muted-copy library-note", closeness));
+  const cited = citationNote(work);
+  if (cited) copy.append(node("p", "muted-copy library-note", cited));
   const shortlistButton = node("button", "shortlist-button", state.shortlist.has(work.id) ? "Gemerkt" : "Merken");
   shortlistButton.type = "button";
   shortlistButton.dataset.shortlistId = work.id;
@@ -680,7 +693,7 @@ async function syncWorkFilters() {
     sort: elements.work_sort.value,
     shortlistOnly: elements.shortlist_only.checked
     , area: document.getElementById("filter-area").value, relevanceStatus: document.getElementById("filter-relevance").value
-    , library: elements.filter_library.value, profile: elements.filter_profile.value
+    , library: elements.filter_library.value, profile: elements.filter_profile.value, cites: elements.filter_cites.value
   };
   state.workPage = 1;
   if (state.workFilters.query && !state.fullSearchLoaded && state.searchShards.length) {
@@ -727,7 +740,7 @@ elements.restore_search.addEventListener("click", () => {
   try {
     const filters = JSON.parse(safeStorageGet("radar.saved-search.v1") ?? "null");
     if (!filters) { announce("Noch keine gespeicherte Suche."); return; }
-    for (const [key, element] of Object.entries({ query: elements.work_query, year: elements.filter_year, source: elements.filter_source, type: elements.filter_type, theme: elements.filter_theme, mode: elements.filter_mode, dataStatus: elements.filter_data_status, sort: elements.work_sort, novelty: elements.filter_novelty, area: document.getElementById("filter-area"), relevanceStatus: document.getElementById("filter-relevance"), library: elements.filter_library, profile: elements.filter_profile })) {
+    for (const [key, element] of Object.entries({ query: elements.work_query, year: elements.filter_year, source: elements.filter_source, type: elements.filter_type, theme: elements.filter_theme, mode: elements.filter_mode, dataStatus: elements.filter_data_status, sort: elements.work_sort, novelty: elements.filter_novelty, area: document.getElementById("filter-area"), relevanceStatus: document.getElementById("filter-relevance"), library: elements.filter_library, profile: elements.filter_profile, cites: elements.filter_cites })) {
       if (typeof filters[key] === "string") element.value = filters[key];
       if (!element.value && element.tagName === "SELECT") element.selectedIndex = 0;
     }
