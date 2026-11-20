@@ -46,7 +46,7 @@ export function planDiscoveryRuns(meta, options, modes) {
     const prior = state[`${streamKey}:history`];
     const from = prior && !prior.complete ? prior.range.from : prior ? nextDay(prior.range.to) : CITATION_SEARCH.historyFrom;
     const end = iso(Date.parse(from) + 89 * day);
-    if (from <= today) add("history", { range: prior && !prior.complete ? prior.range : { from, to: end < today ? end : today }, cursor: prior && !prior.complete ? prior.cursor : null, maxPages: options.citationHistoryPages ?? 6 });
+    if (from <= today) add("history", { range: prior && !prior.complete ? prior.range : { from, to: end < today ? end : today }, cursor: prior && !prior.complete ? prior.cursor : null, maxPages: options.citationHistoryPages ?? 6, minCited: CITATION_SEARCH.minCitedHistory });
   });
   return jobs;
 }

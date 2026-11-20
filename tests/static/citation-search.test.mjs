@@ -47,6 +47,8 @@ test("citation search keeps works that cite at least two library references", as
   assert.equal(CITATION_SEARCH.minCited, 2);
   assert.deepEqual(records.map(record => [record.sourceRecordId, record.libraryCitations]), [["W1", ["10.1/lee", "10.1/parasuraman"]], ["W4", ["10.1/hackman", "10.1/lee", "10.1/parasuraman"]]]);
   assert.equal(records[0].mode, "citation");
+  const strict = await ingestOpenAlex("citation", { citedWorkIds: ["W10", "W11", "W12"], libraryIds, fetchImpl, minCited: CITATION_SEARCH.minCitedHistory, range: { from: "2025-01-01", to: "2025-03-31" } });
+  assert.deepEqual(strict.records.map(record => record.sourceRecordId), ["W4"], "the catch-up of past years asks for three");
   assert.equal(stats.foundCount, 4);
 
   // Other searches keep everything and still record what is cited.
@@ -77,6 +79,7 @@ test("plans one fresh and one history stream per batch of references and continu
   const now = new Date("2026-11-20T06:00:00.000Z");
   const batches = [["W10", "W11"], ["W12"]];
   const jobs = planDiscoveryRuns({}, { now, maxPages: 5, citationBatches: batches }, ["core"]).filter(job => job.mode === "citation");
+  assert.deepEqual(jobs.map(job => job.minCited), [undefined, 3, undefined, 3]);
   assert.deepEqual(jobs.map(job => [job.key, job.range.from, job.range.to, job.maxPages, job.citedWorkIds.length]), [
     ["openalex:citation:1:fresh", "2026-11-06", "2026-11-20", 5, 2], ["openalex:citation:1:history", "2019-01-01", "2019-03-31", 6, 2],
     ["openalex:citation:2:fresh", "2026-11-06", "2026-11-20", 5, 1], ["openalex:citation:2:history", "2019-01-01", "2019-03-31", 6, 1]

@@ -137,7 +137,7 @@ export async function ingestOpenAlex(mode, options = {}) {
           libraryIds: options.libraryIds
         });
         // A single shared reference is weak evidence: a classic is cited everywhere.
-        if (mode === "citation" && record.libraryCitations.length < CITATION_SEARCH.minCited) continue;
+        if (mode === "citation" && record.libraryCitations.length < (options.minCited ?? CITATION_SEARCH.minCited)) continue;
         records.push(record);
       }
       const nextCursor = payload.meta?.next_cursor ?? null;

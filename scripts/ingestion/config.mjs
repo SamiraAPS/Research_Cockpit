@@ -52,7 +52,10 @@ export const CITATION_SEARCH = Object.freeze({
   queryVersion: "static-openalex-citation-1.0.0",
   workTypes: ["article", "review", "book-chapter", "conference-paper", "preprint"],
   // A work must cite at least this many references of the library to be kept.
+  // New work: two. The catch-up of past years is stricter, because seven years
+  // of citing work would otherwise double the corpus.
   minCited: 2,
+  minCitedHistory: 3,
   batchSize: 90,
   historyFrom: "2019-01-01"
 });

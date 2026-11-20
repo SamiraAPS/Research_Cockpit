@@ -38,7 +38,7 @@ let found = 0;
 const kept = new Map();
 for (let offset = 0, batch = 1; offset < all.length; offset += CITATION_SEARCH.batchSize, batch += 1) {
   const citedWorkIds = all.slice(offset, offset + CITATION_SEARCH.batchSize);
-  const { records: rows, stats } = await ingestOpenAlex("citation", { citedWorkIds, libraryIds, apiKey, range, maxPages: Number(args.pages ?? 6) });
+  const { records: rows, stats } = await ingestOpenAlex("citation", { citedWorkIds, libraryIds, apiKey, range, maxPages: Number(args.pages ?? 6), minCited: args.min ? Number(args.min) : undefined });
   found += stats.foundCount;
   for (const row of rows) kept.set(row.sourceRecordId, row);
   console.log(`- Stapel ${batch}: ${stats.foundCount} zitierende Arbeiten gefunden, ${stats.pageCount} Seiten gelesen, ${rows.length} behalten, Status ${stats.status}${stats.message ? ` (${stats.message})` : ""}`);

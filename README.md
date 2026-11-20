@@ -101,10 +101,11 @@ Datei ersetzen, der nächste Lauf bewertet den Bestand neu.
 
 Die Zitationssuche findet Arbeiten, die Referenzen der persönlichen Bibliothek
 zitieren, unabhängig von Suchbegriffen und Zeitschrift. Grundlage sind die
-Literaturlisten von OpenAlex. Behalten wird eine Arbeit, wenn sie mindestens zwei
-Referenzen der Bibliothek zitiert; eine einzelne gemeinsame Quelle ist bei
+Literaturlisten von OpenAlex. Behalten wird eine neue Arbeit, wenn sie mindestens
+zwei Referenzen der Bibliothek zitiert; eine einzelne gemeinsame Quelle ist bei
 Klassikern kein Hinweis auf inhaltliche Nähe. Jeder Lauf prüft die letzten 14 Tage
-und holt die Zeit ab 2019 in Quartalsschritten nach.
+und holt die Zeit ab 2019 in Quartalsschritten nach. Beim Nachholen gilt eine
+Schwelle von drei Referenzen, damit der Korpus nicht um ein Vielfaches wächst.
 
 Bei jeder aus OpenAlex abgerufenen Arbeit wird festgehalten, welche Referenzen der
 Bibliothek sie zitiert (Karte, Filter "Zitiert meine Bibliothek", Sortierung).
