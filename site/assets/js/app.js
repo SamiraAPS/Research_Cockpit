@@ -397,7 +397,8 @@ function publicationCard(result) {
     doiLine.append(doiLink);
     body.append(doiLine);
   } else body.append(node("p", "muted-copy", "DOI nicht verfügbar."));
-  body.append(node("h3", null, "Abstract"), node("p", "abstract-copy", work.abstract ?? "Abstract nicht verfügbar."));
+  body.append(node("h3", null, work.abstractRestricted ? "Abstract (Auszug)" : "Abstract"), node("p", "abstract-copy", work.abstract ?? "Abstract nicht verfügbar."));
+  if (work.abstractRestricted) body.append(node("p", "muted-copy", "Diese Arbeit ist nicht frei zugänglich, deshalb steht hier nur ein Auszug. Den vollständigen Abstract findest du bei der Originalpublikation."));
   if (work.research?.fields) {
     body.append(node("h3", null, "Inhaltsmerkmale mit Textbelegen"), node("p", "muted-copy", "Automatisch erkannte Erwähnungen; keine bestätigten Studienmerkmale oder Wirkungsnachweise."));
     const names = { context: "Kontext", population: "Population", aiFunction: "KI-Funktion", outcomes: "Outcomes", studyDesign: "Studiendesign" };
