@@ -111,3 +111,55 @@ test("the graph keeps the OpenAlex id of each reference and refetches a graph th
   await resolveCitations(seeds, withoutIds, { now, fetchRecords });
   assert.equal(calls, 2);
 });
+
+test("a full ingestion run with citation streams writes valid data and records what each work cites", async (context) => {
+  const { cp, mkdtemp, readFile, readdir, rm, writeFile } = await import("node:fs/promises");
+  const os = await import("node:os");
+  const path = await import("node:path");
+  const { runStaticIngestion } = await import("../../scripts/ingestion/pipeline.mjs");
+  const { validateDataDirectory } = await import("../../scripts/validate-data.mjs");
+  const root = path.resolve(import.meta.dirname, "../..");
+  const directory = await mkdtemp(path.join(os.tmpdir(), "radar-citation-"));
+  context.after(() => rm(directory, { recursive: true, force: true }));
+  await cp(path.join(root, "tests/fixtures/static-data/valid"), directory, { recursive: true });
+
+  // The graph of the previous run supplies the OpenAlex ids of the library references.
+  const node = (title, doi, openalex) => ({ label: title, title, year: 2004, authors: [], doi, profile: "p", openalex, positions: { citations: [0.5, 0.5] } });
+  await writeFile(path.join(directory, "library-graph.json"), JSON.stringify({
+    schemaVersion: "library-graph-1.0.0", generatedAt: "2026-08-31T00:00:00.000Z", profiles: [{ id: "p", label: "P" }],
+    modes: { citations: { label: "Zitationen", directed: true, status: "ready" } },
+    nodes: [node("Trust in automation", "10.1/lee", "W10"), node("Levels of automation", "10.1/parasuraman", "W11"), node("Book", null, null)], edges: { citations: [] }
+  }));
+
+  const citing = openAlexWork("W901", ["W10", "W11", "W77"], { display_name: "Calibrating trust in automated train dispatching", doi: "https://doi.org/10.9999/citing" });
+  const single = openAlexWork("W902", ["W10"], { display_name: "A work citing one reference", doi: "https://doi.org/10.9999/single" });
+  const filters = [];
+  const fetchImpl = async (input) => {
+    const url = new URL(String(input));
+    if (url.hostname === "export.arxiv.org") return new Response("<feed xmlns=\"http://www.w3.org/2005/Atom\" xmlns:opensearch=\"http://a9.com/-/spec/opensearch/1.1/\"><opensearch:totalResults>0</opensearch:totalResults></feed>", { status: 200 });
+    if (url.hostname !== "api.openalex.org") throw new Error(`unexpected ${url}`);
+    const filter = url.searchParams.get("filter");
+    filters.push(filter);
+    const results = /(^|,)cites:/.test(filter) && filter.includes("from_publication_date:2026-08-18") ? [citing, single] : [];
+    return new Response(JSON.stringify({ meta: { count: results.length, next_cursor: null }, results }), { status: 200 });
+  };
+  const report = await runStaticIngestion({ dataDirectory: directory, mode: "all", splitLanes: true, crossref: false, now: new Date("2026-09-01T12:00:00Z"), fetchImpl, sleep: async () => {} });
+  assert.ok(["ready", "partial"].includes(report.status), report.status);
+
+  const citationFilters = filters.filter(filter => /(^|,)cites:/.test(filter));
+  assert.equal(citationFilters.length, 2, "one fresh and one history request for the single batch");
+  assert.ok(citationFilters.every(filter => filter.endsWith("cites:W10|W11")));
+
+  const validation = await validateDataDirectory(directory);
+  assert.equal(validation.valid, true, validation.errors.map(error => JSON.stringify(error)).join("\n"));
+  const pages = (await readdir(path.join(directory, "works"))).filter(name => name.startsWith("page-"));
+  const works = (await Promise.all(pages.map(async name => JSON.parse(await readFile(path.join(directory, "works", name), "utf8")).items))).flat();
+  const found = works.find(work => work.doi === "10.9999/citing");
+  assert.deepEqual(found.libraryCitations, ["10.1/lee", "10.1/parasuraman"]);
+  assert.ok(found.discoveredBy.some(entry => entry.mode === "citation"));
+  assert.equal(works.some(work => work.doi === "10.9999/single"), false, "one shared reference is not enough");
+
+  const meta = JSON.parse(await readFile(path.join(directory, "meta.json"), "utf8"));
+  assert.ok(meta.retrievalState.streams["openalex:citation:1:history"], "the catch-up position is stored");
+  assert.ok(meta.retrievalState.streams["openalex:core:human-ai:history"]);
+});
