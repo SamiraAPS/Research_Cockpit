@@ -440,6 +440,26 @@ function validateSimilarity(ctx, data) {
   }
 }
 
+function validateLibraryGraph(ctx, data) {
+  if (!requireFields(ctx, data, ["schemaVersion", "generatedAt", "profiles", "modes", "nodes", "edges"])) return;
+  validateVersion(ctx, data.schemaVersion, "/schemaVersion");
+  if (!expectArray(ctx, data.nodes, "/nodes") || !expectArray(ctx, data.profiles, "/profiles")) return;
+  if (!isObject(data.modes) || !isObject(data.edges)) { ctx.error("invalid-type", "/modes", "muss ein Objekt sein"); return; }
+  const modes = Object.keys(data.modes);
+  const inUnit = value => Array.isArray(value) && value.length === 2 && value.every(n => Number.isFinite(n) && n >= 0 && n <= 1);
+  data.nodes.forEach((node, index) => {
+    const pointer = `/nodes/${index}`;
+    if (!requireFields(ctx, node, ["label", "title", "authors", "positions"], pointer)) return;
+    expectString(ctx, node.title, `${pointer}/title`);
+    if (!modes.every(mode => inUnit(node.positions?.[mode]))) ctx.error("invalid-graph", `${pointer}/positions`, "erwartet je Ansicht ein Koordinatenpaar zwischen 0 und 1");
+  });
+  for (const mode of modes) {
+    if (!expectArray(ctx, data.edges[mode], `/edges/${mode}`)) continue;
+    const invalid = data.edges[mode].findIndex(edge => !Array.isArray(edge) || edge.length < 2 || !edge.slice(0, 2).every(n => Number.isInteger(n) && n >= 0 && n < data.nodes.length) || edge[0] === edge[1]);
+    if (invalid >= 0) ctx.error("invalid-graph", `/edges/${mode}/${invalid}`, "verweist auf keine zwei verschiedenen Arbeiten der Bibliothek");
+  }
+}
+
 function validateCalls(ctx, data) {
   if (!requireFields(ctx, data, ["schemaVersion", "generatedAt", "status", "registryVersion", "closingWindowDays", "counts", "sourceStatus", "items"])) return;
   validateVersion(ctx, data.schemaVersion, "/schemaVersion");
@@ -914,6 +934,7 @@ export async function validateDataDirectory(directory) {
     else if (file === "search-index.json") validateSearchIndex(ctx, data);
     else if (file === "research-radar.json" || /^search\/shard-\d+\.json$/.test(file)) validateVersion(ctx, data.schemaVersion, "/schemaVersion");
     else if (file === "similarity.json") validateSimilarity(ctx, data);
+    else if (file === "library-graph.json") validateLibraryGraph(ctx, data);
     else if (file === "calls.json") validateCalls(ctx, data);
     else if (file === "agenda-signals.json") validateAgendaSignals(ctx, data);
     else if (file === "trends.json") validateTrends(ctx, data);

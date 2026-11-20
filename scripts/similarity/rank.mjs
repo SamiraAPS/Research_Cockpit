@@ -130,12 +130,17 @@ export function tierFor(score, thresholds) {
  * @param {(texts:string[]) => Promise<ArrayLike<number>[]>} input.embed
  * @param {Map<string,{fingerprint:string,vector:Int8Array}>} input.cache  updated in place
  * @param {object|null} input.previous  last similarity.json, used to carry scores over when vectors are missing
+ * @param {{seedVectors:Float32Array[],seedProfiles:number[][]}} [input.seeds]  result of embedLibrary, if already computed
  */
-export async function rankLibrarySimilarity({ works, library, embed, cache, model, previous = null, generatedAt = new Date().toISOString(), deadline = Infinity, batchSize = 32, now = () => Date.now() }) {
+export async function embedLibrary(library, embed, batchSize = 32) {
   if (!library.seeds.length || !library.profiles.length) throw new Error("Referenzbibliothek ohne Profile oder Arbeiten");
-  const libraryHash = libraryFingerprint(library, model);
   const seedVectors = (await embedAll(library.seeds.map(seed => seed.title), embed, batchSize)).map(normalize);
-  const seedProfiles = assignProfiles(library, seedVectors);
+  return { seedVectors, seedProfiles: assignProfiles(library, seedVectors) };
+}
+
+export async function rankLibrarySimilarity({ works, library, embed, cache, model, previous = null, seeds = null, generatedAt = new Date().toISOString(), deadline = Infinity, batchSize = 32, now = () => Date.now() }) {
+  const libraryHash = libraryFingerprint(library, model);
+  const { seedVectors, seedProfiles } = seeds ?? await embedLibrary(library, embed, batchSize);
 
   const texts = new Map(works.map(work => [work.id, workText(work)]));
   const pending = works

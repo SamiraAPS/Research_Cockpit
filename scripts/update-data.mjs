@@ -39,7 +39,7 @@ export async function updateData(options = {}) {
     if (options.similarity ?? process.env.SIMILARITY_MODEL) {
       try {
         const ranked = await updateLibrarySimilarity({ dataDirectory: stage, model: process.env.SIMILARITY_MODEL, minutes: options.similarityMinutes, ...(options.similarity === true ? {} : options.similarity) });
-        similarity = { model: ranked.model, totalWorks: ranked.totalWorks, scoredWorks: ranked.scoredWorks, embeddedThisRun: ranked.embeddedThisRun, pendingWorks: ranked.pendingWorks, seconds: ranked.seconds };
+        similarity = { model: ranked.model, totalWorks: ranked.totalWorks, scoredWorks: ranked.scoredWorks, embeddedThisRun: ranked.embeddedThisRun, pendingWorks: ranked.pendingWorks, graph: ranked.graph, seconds: ranked.seconds };
       } catch (error) {
         similarity = { failed: error instanceof Error ? error.message : String(error) };
         console.warn(`Bibliotheks-Ranking übersprungen: ${similarity.failed}`);
