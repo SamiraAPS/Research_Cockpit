@@ -440,6 +440,19 @@ function validateSimilarity(ctx, data) {
   }
 }
 
+function validateCorpusLimit(ctx, data) {
+  if (!requireFields(ctx, data, ["schemaVersion", "generatedAt", "model", "minScore", "keptWorks", "excludedWorks", "excluded"])) return;
+  validateVersion(ctx, data.schemaVersion, "/schemaVersion");
+  expectString(ctx, data.model, "/model");
+  expectInteger(ctx, data.keptWorks, "/keptWorks");
+  if (!Number.isFinite(data.minScore) || data.minScore < -1 || data.minScore > 1) ctx.error("invalid-corpus-limit", "/minScore", "erwartet eine Ähnlichkeit zwischen -1 und 1");
+  if (!isObject(data.excluded)) { ctx.error("invalid-type", "/excluded", "muss ein Objekt sein"); return; }
+  const entries = Object.entries(data.excluded);
+  if (data.excludedWorks !== entries.length) ctx.error("inconsistent-total", "/excludedWorks", `deklariert ${data.excludedWorks}, enthalten sind ${entries.length}`);
+  const invalid = entries.find(([, value]) => !Array.isArray(value) || value.length !== 2 || !Number.isFinite(value[0]) || ![0, 1].includes(value[1]));
+  if (invalid) ctx.error("invalid-corpus-limit", `/excluded/${invalid[0]}`, "erwartet [Ähnlichkeit, Abstract vorhanden]");
+}
+
 function validateLibraryGraph(ctx, data) {
   if (!requireFields(ctx, data, ["schemaVersion", "generatedAt", "profiles", "modes", "nodes", "edges"])) return;
   validateVersion(ctx, data.schemaVersion, "/schemaVersion");
@@ -935,6 +948,7 @@ export async function validateDataDirectory(directory) {
     else if (file === "research-radar.json" || /^search\/shard-\d+\.json$/.test(file)) validateVersion(ctx, data.schemaVersion, "/schemaVersion");
     else if (file === "similarity.json") validateSimilarity(ctx, data);
     else if (file === "library-graph.json") validateLibraryGraph(ctx, data);
+    else if (file === "corpus-limit.json") validateCorpusLimit(ctx, data);
     else if (file === "calls.json") validateCalls(ctx, data);
     else if (file === "agenda-signals.json") validateAgendaSignals(ctx, data);
     else if (file === "trends.json") validateTrends(ctx, data);

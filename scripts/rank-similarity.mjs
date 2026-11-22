@@ -6,6 +6,7 @@ import { createEmbedder, DEFAULT_MODEL } from "./similarity/embedder.mjs";
 import { buildLibraryGraph, resolveCitations } from "./similarity/graph.mjs";
 import { embedLibrary, rankLibrarySimilarity } from "./similarity/rank.mjs";
 import { loadVectorCache, saveVectorCache } from "./similarity/store.mjs";
+import { readExcludedScores } from "./ingestion/corpus-limit.mjs";
 
 const readJson = async file => JSON.parse(await readFile(file, "utf8"));
 
@@ -36,8 +37,10 @@ export async function updateLibrarySimilarity(options = {}) {
   const embed = options.embed ?? await createEmbedder({ model });
   const cache = options.cache ?? await loadVectorCache(cacheDirectory, model);
   const seeds = await embedLibrary(library, embed);
+  const present = new Set(works.map(work => work.id));
+  const referenceScores = Object.entries(await readExcludedScores(dataDirectory)).filter(([id, value]) => !present.has(id) && Number.isFinite(value?.[0])).map(([, value]) => value[0]);
   const similarity = await rankLibrarySimilarity({
-    works, library, embed, cache, model, previous, seeds,
+    works, library, embed, cache, model, previous, seeds, referenceScores,
     generatedAt: options.generatedAt ?? new Date().toISOString(),
     deadline: startedAt + (options.minutes ?? 10) * 60_000
   });

@@ -8,7 +8,18 @@ import { validateDataDirectory } from "./validate-data.mjs";
 import { resolveConferences } from "./ingestion/conferences.mjs";
 import { fetchFieldCounts } from "./ingestion/field-counts.mjs";
 import { restrictAbstracts } from "./ingestion/restrict-abstracts.mjs";
+import { limitCorpus } from "./ingestion/corpus-limit.mjs";
 import { updateLibrarySimilarity } from "./rank-similarity.mjs";
+
+// Never fatal: without the limit the corpus is merely larger than it needs to be.
+async function applyLimit(stage) {
+  try { return await limitCorpus(stage); }
+  catch (error) {
+    const reason = error instanceof Error ? error.message : String(error);
+    console.warn(`Korpusgrenze übersprungen: ${reason}`);
+    return { applied: false, reason };
+  }
+}
 
 // Stage a whole generation; never replace the last usable dataset with half-written files.
 export async function updateData(options = {}) {
@@ -35,6 +46,8 @@ export async function updateData(options = {}) {
     refreshedMeta.fieldCounts = await fetchFieldCounts(baseMeta.fieldCounts, { apiKey: process.env.OPENALEX_API_KEY, now: options.now, fetchImpl: options.fetchImpl });
     await writeFile(path.join(stage, "meta.json"), JSON.stringify(refreshedMeta, null, 2));
     const calls = await runCallsIngestion({ dataDirectory: stage, timeoutMs: 12000, maxAttempts: 2 });
+    // Works dropped in an earlier run are removed again before they cost ranking time.
+    let corpusLimit = await applyLimit(stage);
     // Optional and never fatal: without a model the previous ranking stays in place.
     let similarity = "skipped";
     if (options.similarity ?? process.env.SIMILARITY_MODEL) {
@@ -46,6 +59,11 @@ export async function updateData(options = {}) {
         console.warn(`Bibliotheks-Ranking übersprungen: ${similarity.failed}`);
       }
     }
+    // Newly ranked works that are too far from the library leave the corpus here.
+    if (similarity !== "skipped" && !similarity.failed) {
+      const after = await applyLimit(stage);
+      corpusLimit = after.applied && corpusLimit.applied ? { ...after, droppedThisRun: after.droppedThisRun + corpusLimit.droppedThisRun } : after;
+    }
     // After the ranking has seen the full text and before anything is analysed or
     // published: works that are not open access keep an excerpt of their abstract only.
     const abstracts = await restrictAbstracts(stage);
@@ -55,7 +73,7 @@ export async function updateData(options = {}) {
     await rename(target, backup);
     try { await rename(stage, target); published = true; }
     catch (error) { await rename(backup, target); throw error; }
-    const report = { publications: publications.status, calls: calls.status, works: publications.counts.canonicalWorks, similarity, abstracts, validated: true };
+    const report = { publications: publications.status, calls: calls.status, works: corpusLimit.applied ? corpusLimit.keptWorks : publications.counts.canonicalWorks, collected: publications.counts.canonicalWorks, corpusLimit, similarity, abstracts, validated: true };
     await mkdir("work", { recursive: true });
     await writeFile("work/update-report.json", JSON.stringify(report, null, 2));
     return report;
