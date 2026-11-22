@@ -1,7 +1,147 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-21T13:36:07.821Z",
+  "generatedAt": "2026-11-22T12:43:33.018Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2609.34681",
+      "abstract": "Learning-rate (LR) scheduling plays a central role in large language model (LLM) pretraining, yet current practice still relies heavily on hand-crafted heuristics such as Warmup-Cosine-Decay and Warmup-Stable-Decay. Because these schedules are fixed in advance, they cannot adapt to evolving optimization dynamics. Online learned scheduling within the Learning to Optimize (L2O) framework offers a dynamic alternative, but remains brittle at LLM scale due to noisy signals, delayed feedback, and the risk of catastrophic divergence. We propose SOLAR (State-driven Online Learning rAte scheduleR), a stabilized framework for reliable online LR adaptation. SOLAR uses a base schedule as a reference and learns bounded, state-dependent residual corrections for individual parameter groups. Each correction re-anchors to the base at every step, allowing the policy to adapt the LR without relearning the warmup-decay profile. A lightweight state representation and progress-aware reward guide online learning, while a Circuit-Breaker restores training after rare unsafe actions. Across autoregressive language-model pretraining, SOLAR improves final perplexity over tuned static schedules and automatic LR tuners for dense models from 60M to 1B, AdamW and Muon, and two MoE settings up to 3B. Matched 130M controls show that adding base anchoring and action bounds improves a global PPO controller from 27.09 to 23.74 final PPL, while group-wise control reaches 22.87 on the same two seeds. A residual policy trained on a 60M proxy can also be frozen and reused at larger dense scales without target PPO updates, remaining effective across a fourfold base-LR range. These results establish SOLAR as a practical learned LR controller for LLM pretraining.",
+      "topics": [
+        "Advanced Neural Network Applications",
+        "Machine Learning in Materials Science",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "keywords": [
+        "large language model pretraining",
+        "learning to optimize",
+        "circuit breakers",
+        "PPO",
+        "perplexity",
+        "MoE models",
+        "AdamW",
+        "Muon optimizer"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.35440",
+      "abstract": "Large language models are trained with backpropagation, whose global gradient coordinates all layers but forces each to hold its activations and wait for the gradient to pass back through every deeper layer. Conventional local learning removes this update locking by training each module to predict the target through its own readout, but has not scaled to billion-parameter pretraining. We identify these private readouts as a key weakness, since they leave each module without information from deeper modules. We propose Shared-Output LOcal learning (SOLO), which replaces them with a shared, read-only copy of the final module's readout, the only one trained on the output of the whole network. Taken from the previous step, the copy transmits information from the final module without passing gradients between modules or reintroducing update locking. SOLO approaches backpropagation on Transformers of 340M to 2B parameters pretrained on 15B tokens, staying within one point in average zero-shot accuracy with a perplexity gap that narrows with scale. Readout ablations attribute SOLO's improvement over private readouts to sharing. Without update locking, each of p pipeline stages holds activations for O(1) micro-batches instead of O(p). The freed memory permits larger micro-batches, which reach up to 1.44x the best measured throughput of pipeline backpropagation on the same partition. To our knowledge, SOLO is the first local learning method to show such memory and throughput gains in billion-parameter language-model pretraining. Local learning thus becomes a practical alternative to backpropagation for large-scale pretraining.",
+      "topics": [
+        "Domain Adaptation and Few-Shot Learning",
+        "Advanced Neural Network Applications",
+        "Generative Adversarial Networks and Image Synthesis"
+      ],
+      "keywords": [
+        "local learning",
+        "large language model pretraining",
+        "backpropagation",
+        "pipeline parallelism",
+        "memory efficiency",
+        "transformer training",
+        "perplexity"
+      ]
+    },
+    {
+      "id": "doi:10.21203/rs.3.rs-10383312/v1",
+      "abstract": null,
+      "topics": [
+        "Neurogenesis and neuroplasticity mechanisms",
+        "Fetal and Pediatric Neurological Disorders",
+        "Barrier Structure and Function Studies"
+      ],
+      "keywords": [
+        "mouse embryo development",
+        "cerebellar arteries",
+        "superior cerebellar artery",
+        "anterior inferior cerebellar artery",
+        "posterior inferior cerebellar artery",
+        "cerebellar foliation",
+        "cerebellar neurogenesis",
+        "tissue clearing",
+        "light-sheet microscopy"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34111",
+      "abstract": "The rapid advancement of artificial intelligence has observed increased application in predicting vehicle interior noise levels within the automotive industry. However, the collection of labeled data for training models in this context involves significant costs. Previous studies in semi-supervised regression (SSR) have effectively mitigated the reliance on labeled data by incorporating unlabeled data. Nonetheless, these approaches often introduce a high computational cost due to the training of multiple models and data sampling. This study introduces SpecRegMatch, a novel SSR method aimed at addressing the computational cost associated with training by leveraging a single model, thus eliminating the need for multiple data samplings. SpecRegMatch integrates consistency regularization and information maximization to robustly train the model, achieved through various augmentations applied to both the embedding vectors and predicted values. Experimental results demonstrate that SpecRegMatch achieves state-of-the-art performance across various scenarios, even when using a single model. It attains a remarkable performance, as indicated by an R^2 score of 0.434. This is especially noteworthy in scenarios where labeled data is scarce. You can access the code for our proposed method at https://github.com/sejin-sim/SpecRegMatch.",
+      "topics": [
+        "Vehicle Noise and Vibration Control",
+        "Acoustic Wave Phenomena Research",
+        "Noise Effects and Management"
+      ],
+      "keywords": [
+        "semi-supervised regression",
+        "consistency regularization",
+        "information maximization",
+        "data augmentation",
+        "unlabeled data",
+        "computational efficiency",
+        "limited labeled data"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34242",
+      "abstract": "AI agents require memory that preserves information across user-agent exchanges, user-to-user conversations, and group conversations with or without agent participation, while supporting updates as evidence changes or is removed. We present Stashbird, an agent memory system that links source episodes to derived memory state through explicit provenance. Stashbird organizes memory into episodic records, semantic relations, community summaries, and persisted graph state, with lifecycle operations for incremental updates and episode-level deletion. We evaluate question-answering accuracy and model-facing workload across four long-term memory benchmarks. On LoCoMo, Stashbird uses 76.4x fewer ingestion prompt tokens than Graphiti. Compared with reproduced Hindsight on the same benchmark, it uses 8.1x fewer retrieval prompt tokens, with accuracy 1.6 percentage points lower. It achieves higher accuracy than Hindsight on LongMemEval-S and GroupMemBench and comparable accuracy on EverMemBench.",
+      "topics": [
+        "Topic Modeling",
+        "Multimodal Machine Learning Applications",
+        "AI-based Problem Solving and Planning"
+      ],
+      "keywords": [
+        "agent memory",
+        "chatbots",
+        "episodic memory",
+        "provenance",
+        "long-term memory",
+        "memory graph",
+        "incremental updates",
+        "question answering",
+        "prompt efficiency",
+        "LoCoMo"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.34134",
+      "abstract": "LLM-based agents have shown strong capabilities in automated data analysis and are increasingly moving toward long-horizon, multi-stage analytical workflows. However, as the analytical process evolves, constraints, variables, and conclusions remain implicitly embedded in interaction histories, making it difficult for agents to track which analytical artifacts remain valid over increasingly long horizons and changing dependencies. Consequently, stale artifacts may be silently inherited, propagating errors to downstream stages. To address this challenge, we propose StateGuard, an analytical-state validity management framework for long-horizon data agents. StateGuard externalizes evolving analytical progress into a state graph containing constraints, versioned variables, intermediate conclusions, and cross-state relations, treating each state as an executable, verifiable, and traceable object rather than textual memory alone. StateGuard maintains state validity through evidence-grounded verification and hierarchical intervention. To equip StateGuard with these capabilities, we first introduce Manager-Oriented Counterfactual Supervision, which constructs 3K state-centric trajectories through counterfactual runtime synthesis to fine-tune StateGuard for state maintenance, verification, and repair. We then apply Validity-Guided Policy Optimization, using runtime validity evidence to provide fine-grained learning signals for protocol correctness, state grounding, and intervention quality. Experiments on three diverse long-horizon data-analysis benchmarks show that StateGuard consistently improves data-agent performance while reducing dependency-induced downstream error propagation, demonstrating the advantages of explicit analytical-state management for reliable long-horizon data analysis.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Scientific Computing and Data Management",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": [
+        "state diagrams",
+        "error propagation"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.36362",
+      "abstract": "Agentic artificial intelligence (AI) is moving beyond research demonstrations toward production use at scientific user facilities, including light sources, neutron sources, nanoscience centers, and autonomous laboratories. Its scientific value extends beyond increasing throughput. Agents can perform repeatable tasks in calibration, measurement execution, and quality control, as well as initial analyses that turn data into reviewable evidence, allowing scientists to focus on hypotheses, unexpected observations, and interpretation. Drawing on deployments of LLM-driven agents at the APS, this perspective distills practical strategies with an emphasis on elements that can be reused across instruments and facilities. We discuss agent harnesses for beamline control, facility knowledge retrieval, and data analysis while keeping the underlying design principles independent of any specific implementation. These principles cover inference endpoints, tool-server architectures, non-text data, computationally intensive services, reusable skills, and governed learning throughout an instrument's lifecycle. We also consider how network and Linux operations, governed shared memory, and deterministic orchestration can extend these patterns across facility services. Because LLM capabilities continue to evolve, these recommendations represent a snapshot of the technology as of the date on the cover.",
+      "topics": [
+        "Scientific Computing and Data Management",
+        "Machine Learning in Materials Science",
+        "Multi-Agent Systems and Negotiation"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.35400",
+      "abstract": "Artificial intelligence is increasingly deployed in critical industrial domains, including healthcare, energy grids, subsurface exploration, where failures can have severe consequences for human safety, system stability, and economic outcomes. Yet AI is still evaluated primarily through benchmark accuracy, a model-centric metric that fails to capture the structural complexity and risks of real-world deployment. We propose a framework that views industrial AI reliability as a problem of structural alignment across four interacting worlds: physical, representational, machine, and human cognitive. These worlds are connected through two interfaces: digitalization, linking physical reality to computational representations, and goal encoding, translating human cognition to the machine objectives. Together, they define the space of admissible solutions. We characterize the solution space through four attributes: existence, non-uniqueness, robustness, and interpretability and show how mismatches arise at interfaces and propagate across worlds to produce reliability failures. Applications to healthcare, energy grids, and subsurface exploration illustrate that although dominant failure modes differ across domains, for example, interpretability in healthcare, robustness in energy grids, and non-uniqueness in subsurface exploration, all originate from a shared structural mechanism. By shifting the focus from model-centric evaluation to system-level alignment, this framework offers a principled foundation for assessing and governing reliability in industrial AI systems.",
+      "topics": [
+        "Healthcare Technology and Patient Monitoring",
+        "Risk and Safety Analysis",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "keywords": [
+        "structural alignment",
+        "AI safety",
+        "digitalization",
+        "human intent",
+        "interpretability",
+        "robustness",
+        "artificial intelligence in healthcare",
+        "subsurface investigation",
+        "system-level evaluation",
+        "safety governance"
+      ]
+    },
     {
       "id": "doi:10.58421/gehu.v5i5.1906",
       "abstract": "The growing use of generative artificial intelligence, particularly ChatGPT, has created new opportunities and challenges for higher education. This study examines students' perceptions of ChatGPT utilization in Educational Economics learning at Universitas Jambi, Indonesia. A descriptive cross-sectional survey was conducted among 78 students in the Economic Education Study Program who took the Educational Economics course during the 2025/2026 academic year. Using total sampling, data were collected through a 16-item, four-point Likert-scale questionnaire covering five dimensions: ease of use, knowledge, satisfaction, motivation, and activity. Data were analyzed using descriptive statistics based on mean scores and predetermined categories. The findings indicate generally positive student perceptions across all five dimensions. Ease of use received the highest mean score (M = 3.12), followed by knowledge (M = 3.02), satisfaction (M = 2.94), motivation (M = 2.83), and activity (M = 2.81). Students perceived ChatGPT as accessible and helpful for understanding course materials and obtaining rapid responses. However, perceptions were comparatively lower regarding response accuracy, critical thinking, and motivation for academic writing. These findings suggest that students perceive ChatGPT as a potentially valuable complementary learning resource, while recognizing its limitations for higher-order learning activities. Appropriate pedagogical guidance is therefore needed to encourage critical evaluation of AI-generated information, independent learning, and responsible use of ChatGPT in Educational Economics learning.",
@@ -3424,119 +3564,6 @@
         "Bachelor",
         "Empirical research"
       ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10454340/v1",
-      "abstract": null,
-      "topics": [
-        "Colorectal Cancer Screening and Detection",
-        "Gastric Cancer Management and Outcomes",
-        "Gastrointestinal Bleeding Diagnosis and Treatment"
-      ],
-      "keywords": [
-        "Chromoendoscopy",
-        "Metric (unit)",
-        "Magnification",
-        "Contrast (vision)",
-        "Indigo carmine",
-        "Visibility",
-        "Color difference",
-        "Pattern recognition (psychology)"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33803",
-      "abstract": "Reward models underpin the alignment of large language models, yet the dominant designs reduce each prompt--response pair to a point estimate or to a distribution from a fixed parametric family. This is at odds with human preference, which is inherently multimodal: the same response can be reasonably judged in many ways, and no single family covers all of them. To better fit this structure, we introduce DRM, a Diffusion Reward Model that recasts reward modeling as conditional density estimation over $p(\\mathbf{r}\\mid x,y)$. Conditioned on a frozen LLM encoder, a lightweight Diffusion Transformer denoises Gaussian noise into a reward vector, placing no parametric assumption on the output distribution and naturally representing its multimodal structure. A single architecture handles both multi-attribute regression and pairwise preference data, and at inference $N$ samples form an empirical reward distribution that can be aggregated into a scalar, a variance, or quantiles. Across five benchmarks, DRM matches or surpasses baselines under matched data and backbone, stays competitive with much larger discriminative, distributional, and generative RMs despite its modest training scale, and recovers multimodal reward structure where conventional heads collapse to a point. Uncertainty-aware rejection and lower-confidence-bound (LCB) aggregation further demonstrate that DRM can exploit distributional information beyond a scalar reward to improve reward-model decisions. Downstream RLHF experiments additionally show that using DRM as the training-time reward leads to improved policy performance, directly validating the practical benefit of diffusion-based reward modeling for RLHF training.",
-      "topics": [
-        "Topic Modeling",
-        "Explainable Artificial Intelligence (XAI)",
-        "Recommender Systems and Techniques"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23000421",
-      "abstract": "The article examines the use of digital educational technologies in the development of students’ mathematical thinking. The main focus is not on the technical characteristics of digital tools, but on the types of mathematical activity that arise when they are used: visualization of abstract objects, study of dependencies, formulation and testing of assumptions, construction of algorithms, selection of a solution strategy, and analysis of the obtained result. The research material consists of modern publications devoted to the use of GeoGebra, MATLAB, Mathematica, Python, digital learning platforms, and artificial intelligence technologies in mathematics education. A comparison of the research results shows that digital tools have the greatest pedagogical value, combining the visual representation of a mathematical object, the possibility of its interactive modification and direct feedback.",
-      "topics": [
-        "Artificial Intelligence in Education",
-        "Innovative Educational Technologies",
-        "Educational Innovations and Challenges"
-      ],
-      "keywords": [
-        "Visualization",
-        "Selection (genetic algorithm)",
-        "Representation (politics)",
-        "Focus (optics)",
-        "Digital learning",
-        "Digital transformation",
-        "Data visualization"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.23000420",
-      "abstract": "The article examines the use of digital educational technologies in the development of students’ mathematical thinking. The main focus is not on the technical characteristics of digital tools, but on the types of mathematical activity that arise when they are used: visualization of abstract objects, study of dependencies, formulation and testing of assumptions, construction of algorithms, selection of a solution strategy, and analysis of the obtained result. The research material consists of modern publications devoted to the use of GeoGebra, MATLAB, Mathematica, Python, digital learning platforms, and artificial intelligence technologies in mathematics education. A comparison of the research results shows that digital tools have the greatest pedagogical value, combining the visual representation of a mathematical object, the possibility of its interactive modification and direct feedback.",
-      "topics": [
-        "Artificial Intelligence in Education",
-        "Innovative Educational Technologies",
-        "Educational Innovations and Challenges"
-      ],
-      "keywords": [
-        "Visualization",
-        "Selection (genetic algorithm)",
-        "Representation (politics)",
-        "Focus (optics)",
-        "Digital learning",
-        "Digital transformation",
-        "Data visualization"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33485",
-      "abstract": "While Large Language Models (LLMs) advertise million-token context windows, reasoning quality often collapses as inputs grow -- a phenomenon termed context rot. This failure stems from a structural entanglement in monolithic architectures, where the massive search burden of contextual grounding exhausts the representational capacity needed for complex reasoning. To resolve this, we propose Grounding-Reasoning Disaggregation via DIStributed long COntext scaling (DISCO). Inspired by distributed computing frameworks like Apache Spark, DISCO partitions long context across a fleet of Worker LLMs dedicated exclusively to parallel, localized grounding. A central Driver LLM, trained via Reinforcement Learning (GRPO) to optimize planning, orchestrates execution by dynamically mapping queries into atomic extraction tasks and reducing the gathered evidence to synthesize a final answer. By isolating reasoning from raw context noise, DISCO effectively eliminates context rot. On RULER-QA (1M tokens), it maintains 78.4% accuracy where standard baselines collapse. Furthermore, it outperforms full-context models by up to 9.8 points on LongBench v2 and matches frontier models like Gemini-3-Pro-Preview while reducing inference costs by over 80%, establishing a highly efficient paradigm for robust long-context inference.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Topic Modeling",
-        "Big Data and Digital Economy"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.11591/ijere.v15i5.40066",
-      "abstract": "This study aimed to assess the detection accuracy and usefulness of determinants for distinguishing artificial intelligence (AI)-generated and real images among senior high school students in Western Visayas during the academic year 2025–2026. It examined the significant differences in the two mentioned constructs across students’ demographic profiles. It employed a quantitative design- the descriptive-comparative approach. A random sample of 104 students was involved, using a validated, reliability-tested 33-item researcher-made questionnaire. Descriptive and comparative statistical analyses were employed. Mean, standard deviation (SD), Mann-Whitney U test, and Kruskal-Wallis H test were used. The findings revealed that the students demonstrated a moderate level of detection accuracy (M=5.16, SD=1.61). The students rated the usefulness of the determinants as helpful (M=3.78, SD=0.74). Additionally, it was found that there is a significant difference in detection accuracy when grouped by school type [U=965.500, p=0.011] compared to its counterparts. Significant differences were found in the usefulness of determinants for distinguishing AI from real images when grouped by type of school [U=815.000, p=0.001] and frequency of use of AI [H(2)=11.989, p=0.002]. The findings of the study may provide teachers with insights into developing instructional strategies and interventions to enhance students’ critical thinking and digital literacy skills.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "E-Learning and COVID-19",
-        "Scientific Research and Technology"
-      ],
-      "keywords": [
-        "Sample (material)",
-        "Literacy",
-        "Test (biology)",
-        "Psychological intervention",
-        "Statistical analysis",
-        "Descriptive statistics",
-        "Sample size determination"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33791",
-      "abstract": "Since the advent of knowledge distillation, KL divergence has been the standard loss in distillation. Recently, on-policy distillation (OPD) has emerged as an efficient post-training paradigm for LLMs. As a distillation method, OPD naturally inherits KL divergence as its standard loss. However, in this work, we find that KL divergence may not be necessary for OPD. We show that simply preserving the update direction is sufficient for effective OPD. As long as the update direction is toward the teacher, OPD works. More precisely, it is not the direction of every token, but the direction of a small subset of tokens where the teacher and student disagree strongly. We first show that simply assigning a reward of (+1) to tokens where the teacher probability is higher than the student probability and (-1) where it is lower, which merely encourages updates toward the teacher, reproduces almost the same training mode as OPD with reverse KL. We further show that only the direction of a small subset of tokens with large teacher-student disagreement is critical, and training works as long as their update direction is toward the teacher, even if other tokens are pulled away from the teacher. And as an application of these findings, we introduce Consensus Multi-Teacher On-Policy Distillation (C-MOPD) to improve Multi-Teacher On-Policy Distillation (MOPD). Unlike MOPD, which routes each sample to a single teacher and may cause capability conflicts across domains, C-MOPD lets every sample be supervised by all teachers. Experiments show that C-MOPD consistently outperforms MOPD on both math and code benchmarks. Our code is available at https://github.com/LeapLabTHU/KL-Free-OPD.",
-      "topics": [
-        "Topic Modeling",
-        "Natural Language Processing Techniques",
-        "Text Readability and Simplification"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2609.33166",
-      "abstract": "In-context reinforcement learning (ICRL) enables large language model agents to adapt to new environments using their interaction history without updating model parameters. However, repeatedly conditioning on growing histories can lead to substantial token cost. We propose a bounded-history context-management framework that predicts the task-dependent downstream effect of removing historical interactions to guide history selection and determine a decision-dependent context budget. Formally, our framework uses the full rolling history as a reference. The predictor evaluates removal effects, defines a deletion ordering, and applies a shared selection criterion to determine how much history to retain at each decision. We evaluate the method in closed-loop SUMO driving under held-out in-distribution, unseen-domain, and unseen-route settings, and in ScienceWorld under a continual ICRL protocol. Relative to a baseline using the full context, our method reduces total token usage by 25.7%, 25.8%, and 23.2% across the three driving settings while maintaining comparable closed-loop driving performance. In ScienceWorld, it reduces total token usage by 52.1% compared to full context and uses 30.2% and 37.8% fewer tokens than the Recent and Similarity baselines, respectively, while maintaining performance.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Topic Modeling",
-        "Reinforcement Learning in Robotics"
-      ],
-      "keywords": []
     }
   ]
 }

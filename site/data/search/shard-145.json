@@ -1,7 +1,70 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-21T13:36:07.821Z",
+  "generatedAt": "2026-11-22T12:43:33.018Z",
   "documents": [
+    {
+      "id": "arxiv:2608.08795",
+      "abstract": "Tool-using large language model (LLM) agents are vulnerable to indirect prompt injection (IPI), in which malicious instructions embedded in external observations manipulate subsequent agent decisions and actions. Most existing adaptive attacks rely on repeatedly querying and refining against the target agent, whereas realistic attackers may have only a single opportunity to interact with an unknown target agent. We propose SAVOR (Strategy Abstraction Via Outcome-Conditioned Reflection), which shifts attack adaptation from test-time iteration to offline strategy distillation. SAVOR performs outcome-conditioned reflection over successful and failed trajectories collected from disjoint training environments, validates context-conditioned candidate strategies, and iteratively consolidates them into a reusable strategy memory. At test time, the frozen memory guides the generation of a single payload for each unseen target, requiring only one target-agent query and no target-agent feedback. Across two benchmarks and three victim models, SAVOR attains the highest average attack success rate in all six settings, leading the strongest prior attack by 2.5 to 11.8 points and the same injection channel without strategy learning by 23.1 points on Agent Security Bench, which holds out attacker tools, and 28.6 points on OpenClaw-IPI, an executable benchmark we introduce that holds out attack goals and verifies attacks through tool interactions and execution receipts. A memory learned under one defense also transfers to another.",
+      "topics": [
+        "cs.CR",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.08558",
+      "abstract": "World Action Models (WAMs) improve robot policy learning by jointly modeling future visual dynamics and actions. However, their scalability and generalization remain constrained by their reliance on costly expert demonstrations. We challenge this by asking whether future supervision for WAMs must originate from target-task expert trajectories. In this paper, we propose Vid2WAM, an offline distillation framework that transfers visual diffusion priors from a large video foundation model into a compact WAM student. Given an observation and language instruction, Vid2WAM distills supervision through two complementary channels: task-conditioned future rollouts directly supervise the student's future prediction branch, while an inverse dynamics model recovers embodiment-specific pseudo-actions for action learning. To robustly integrate synthetic and real supervision, we introduce source-aware residual action adaptation that learns source-specific corrections around a shared action backbone and mitigates interference from noisy pseudo-actions. During inference, both the video teacher and inverse dynamics model are discarded, leaving only the WAM student for efficient deployment. Simulation and real-world experiments demonstrate that Vid2WAM improves novel-task generalization and data efficiency under limited expert demonstrations while preserving low-latency inference.",
+      "topics": [
+        "cs.RO"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.08453",
+      "abstract": "Under the current standard, Agent Skills are SKILL.md files that combine instructions with supporting resources, enabling Large Language Model (LLM) agents to reuse procedures beyond a single conversation. Yet many public skills appear to originate from a single task, repository, or conversation, even when they are shared as reusable components. We analyze this gap across 138,133 public SKILL.md files from 20,556 repositories using a two-tier defect taxonomy grounded in the official specification and best-practice guidance. We find that 91.8% of skills contain at least one detected defect, with stable estimates across lenient and strict thresholds (88.8-94.6%). The dominant failures are ordinary packaging problems rather than exotic attacks: weak routing metadata, bloated or non-actionable bodies, and poor resource organization. A deterministic routing stress test over 20,000 skills shows the functional impact: skills with valid routing metadata are retrieved more reliably from startup descriptions than skills with routing defects. Defect rates vary by platform and provenance: specification-aware skills contain fewer defects, while AI-marked skills show more safety and portability problems. Lightweight enforcement and repair experiments support a quality-assured generation workflow combining spec-aware prompting, lightweight linting, automated repair, and safety gating.",
+      "topics": [
+        "cs.AI",
+        "cs.CR"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.08471",
+      "abstract": "Deployed LLM safety guardrails are predominantly static: trained once and frozen at release, while new jailbreak techniques and previously un-addressed harmful categories emerge within days, leaving the defense perpetually a step behind. We present SESG (Self-Evolving Safety Guardrails), a multi-agent system running in production. SESG monitors the live traffic behind a deployed guardrail and surfaces two classes of failure: jailbreaks novel in form and harmful categories novel in content. Once a failure is confirmed, a generation agent synthesizes paired training data targeted at it; a validation agent rebalances the batch toward the direction in which the deployed model errs, so that the model's own mistakes steer its training set; and a routing agent matches the training action to the diagnosed gap and returns the next version to production. Over six rounds of live evolution (V0 to V6), a 1.7B guardrail adapts to a new threat in 16-24 hours, with about 2 hours of human effort, versus the 40-90 hours of the manual process it replaces. On six emerging threats, it outperforms static guardrails from 0.6B to 9B and an adaptive baseline while preserving its general screening competence. Since April 2026, SESG has been the primary update pipeline of Sangfor's guardrail, autonomously closing 14 of 15 new threat scenarios in two months. We release 9 test sets for the 6 new threats at https://github.com/Trams1017/SESG. Warning: This paper contains examples that may be harmful or offensive.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.08240",
+      "abstract": "This paper explores the idea of promoting well-being and safety in human-AI interactions by forcing AI agents explicitly to empower humans and to manage the power balance between humans and AI agents in a desirable way. Using a principled, partially axiomatic approach based on desirable properties, we design a parametrizable and decomposable objective function for AI systems that represents an inequality- and risk-averse long-term aggregate of human power. It can take into account models of human bounded rationality and social norms, and crucially, considers a wide variety of possible human goals. We prove how certain desiderata enforce particular functional forms and restrict parameter ranges. We exemplify the consequences of softly maximizing this metric in several paradigmatic situations and describe what instrumental sub-goals it will likely imply.",
+      "topics": [
+        "cs.AI",
+        "cs.GT",
+        "cs.MA",
+        "econ.TH"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.12398",
+      "abstract": "We propose IM-LEPP (Integrated Multimodal Latent Energy-based Predictive Processing), a hierarchical, energy-based model of multimodal cognition that extends a previously proposed single-modality model (LEPP) to integrate vision and language. Following the view that generative neural networks are effective theories of cognitive dynamics, analogous to how statistical mechanics relates to thermodynamics, IM-LEPP models cognition as latent states flowing through learned energy landscapes rather than as an account of neural circuitry. The architecture is a hub-and-spoke hierarchy, grounded in the controlled semantic cognition framework of Lambon Ralph et al., in which predictive-coding pipelines for visual objects, scenes, and linguistic units converge on a shared amodal hub modeled on the anterior temporal lobe. Each pipeline's own prediction is conditioned by, rather than overwritten by, the current hub state, preserving pipeline-specific identity while letting every prediction reflect the full multimodal context. We show this architecture gives a mechanistic account of attentional phenomena such as inattentional blindness and Necker-cube bistability, and that its structure recovers or motivates independently established findings in psycholinguistics, including surprisal theory, the N400/P600 ERP components, and garden-path reanalysis, alongside a falsifiable contrast with transformer language models on trajectory-sensitivity in next-word prediction. We also discuss data-efficient language acquisition relative to LLMs, outline a semantic/episodic memory subsystem, situate the model against predictive coding, the free-energy principle, JEPA, and Hierarchical Temporal Memory, and propose concrete experimental predictions to test its central claims Key Words: predictive processing; predictive coding; energy-based models; diffusion models; effective theory; computational neuroscience.",
+      "topics": [
+        "q-bio.NC",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.08158",
+      "abstract": "Sparse, delayed, and weakly informative rewards remain central obstacles to efficient reinforcement learning. Reward shaping addresses these limitations by supplementing the task reward with an auxiliary signal that can accelerate learning while, in the classical setting, the original objective remains the evaluation criterion. Established theory guarantees safety for fixed shaping signals: potential-based reward shaping preserves optimal policies when the auxiliary term is the discounted difference of a time-invariant potential. In contemporary reinforcement learning systems, however, both the learner and the information available for guidance evolve during training: value estimates improve, novelty diminishes, feedback shifts, and predictive models are refined. Adaptive reward mechanisms occur across exploration, Bayesian inference, human-in-the-loop learning, automated reward design, and foundation-model-based approaches. This study introduces a unified analytical framework for comparing dynamic reward shaping and neighbouring adaptive reward mechanisms. The proposed framework distinguishes parametric revision from state-dependent variation, separates additive shaping from reward replacement and reward-adjacent guidance, and organises existing methods along temporal, informational, and theoretical dimensions. Using this framework, twelve method families are comparatively analysed. The framework further highlights the conditions under which optimality guarantees survive contemporary deep reinforcement learning pipelines, replay buffers, bootstrapped critics, and reward normalisation, while exposing the unresolved relationship between adaptation rate and learner stability.",
+      "topics": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.08163",
       "abstract": "The convergence of the Metaverse and Large Language Model (LLM)-based AI agent is catalyzing a shift toward autonomous, immersive, and personalized pedagogical frameworks in medical education. This paper presents a novel agentic AI-driven immersive simulation specifically designed for High Dose Rate (HDR) vaginal cylinder (VC) brachytherapy in cancer care. By integrating Virtual Reality (VR) and mobile computing, the system establishes a high-fidelity, risk-free environment that allows trainees to master complex procedural skills without the facility or safety constraints posed by physical anatomy or live radioactive sources. A core contribution of this work is the seamless integration of a knowledge-aware assistant leveraging Retrieval-Augmented Generation (RAG) to ground agent interactions in authoritative clinical guidelines. This architecture also enables an interactive agent to provide natural language interfaces and hands-free, real-time guidance during intricate medical maneuvers. We validate the proposed system through a prototype deployment comprising a Meta Quest 3 interface linked to a local GPU-accelerated AI backend, demonstrating a feasible architecture for HDR brachytherapy simulation. Experimental results indicate that the system maintains suitable end-to-end latency and high context precision, answer completeness, and relevance in the RAG-enhanced pedagogical support.",
@@ -1801,69 +1864,6 @@
       "abstract": "As autonomous agents powered by foundation models are increasingly integrated into social and economic systems, understanding the principles governing their collective behavior is essential for ensuring safety and cooperation. Classical game theory, the dominant framework for modeling rational interaction, is built upon the assumption of `decoupled agency,' where agents treat their own decision-making as independent of the environment and other actors. Modern AI agents, however, jointly predict their own future actions alongside external observations. Here, we report a striking finding: when interacting in stylized social dilemmas, foundation model agents engaging in optimal planning consistently converge to stable cooperation, directly contradicting classical game-theoretic predictions of mutual defection. To understand this phenomenon, we introduce the `embedded Bayesian agent,' a theoretical model for foundation model agents. By shifting from decoupled to embedded agency, these agents model themselves as part of the universe they inhabit, maintaining epistemic uncertainty about their own decision-making algorithms. We show that by inferring whether others are behaviorally similar, an embedded agent treats its own deliberation during planning as evidence: a decision to cooperate predicts a similar decision by a similar partner. We formalize this mechanism of similarity inference through the `embedded equilibrium,' a novel solution concept replacing the Nash equilibrium to provide a foundational game theory for the social behavior of modern AI agents.",
       "topics": [
         "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.03015",
-      "abstract": "Pretrained large language models (LLMs) have demonstrated in-context learning (ICL) capabilities for numerical inference over sequences serialized as text. Prior work has identified and characterized this form of numerical inference primarily through output-level evaluations such as prediction error. However, how numerical information is organized within LLM representations remains much less understood. To study this internal organization, we adopt a graph signal processing perspective in which attention induces a weighted graph over tokens, while token hidden states define signals on its nodes. Quantitative graph-spectral diagnostics and qualitative token-graph visualizations reveal that representations become more clearly differentiated by input dynamical complexity as context length increases. Simpler inputs produce attention-induced token graphs with stronger global connectivity and smoother, spectrally concentrated hidden-state signals, whereas more complex inputs produce more localized graphs and hidden-state signals with broader spectral support and greater high-frequency energy. Together, these findings point to systematic, context-dependent internal signatures associated with numerical ICL that are conserved across model families.",
-      "topics": [
-        "cs.LG",
-        "cs.AI",
-        "eess.SP"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1145/3832783.3837415",
-      "abstract": "The growing diversity of code clone types, from syntactic copies to cross-language semantic clones to AI-generated duplicates, has created a fragmentation crisis in clone detection. Current deep learning detectors are domain specialists that degrade significantly outside their training distribution, with F1 drops exceeding 70% across domains. Deploying multiple specialized models is impractical, yet training a single cross-domain detector requires simultaneous access to all training data. To address this, we investigate model merging, a family of post-hoc techniques that operate solely on trained checkpoints. We evaluate parameter merging with five task-vector methods, architecture merging via greedy layer stitching, and cross-tokenizer alignment across four code models, three benchmarks, and twelve configurations. Same-base TIES merging creates effective cross-domain detectors, validated across two model families and three random seeds, reaching 0.865 combined F1 on UniXcoder, 93% of multi-task performance without any training data at the merging step. WUDI achieves the highest in-distribution combined F1 at 0.899, but TIES generalizes better to unseen AI-generated clones, making it our recommended method. Cross-base merging yields only marginal and high-variance gains across all five methods, indicating that task vector compatibility through a shared pre-trained base is the binding factor for effective merging. Merged detectors also outperform zero-shot code LLMs on GPTCloneBench at lower inference cost and generalize up to 4x better than multi-task training to unseen AI-generated clones, suggesting a trade-off between in-domain performance and OOD robustness. This work provides one of the first systematic empirical studies of model merging for software engineering and a practical recipe for building cross-domain clone detectors.",
-      "topics": [
-        "cs.SE",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.03670",
-      "abstract": "Autonomous AI systems (such as AI agents) are increasingly being delegated operational work across scientific-computing infrastructure. Their assignments may begin with preparing an input or routing an alert and extend to changing a configuration or submitting a job. That delegation creates a practical trust problem because the institutional logic that lets us trust human operators does not transfer to optimization-based systems. A bad decision can damage a human operator's future, sometimes severely. An AI system remains subject to engineering control, but it does not bear consequences in that institutional sense. I use the term accountability asymmetry for this mismatch. The issue is not simply that a model cannot be punished as a person can. The deeper problem is that consequence lands on the people and institutions responsible for the system rather than on the component selecting the action. Alignment can improve model behavior, and liability can discipline the organization, but neither creates the same pre-action deterrent that governs a human operator. This paper therefore treats autonomous AI governance as a problem of infrastructure reliability. Its constructive proposal is engineered heterogeneity: the process that proposes an action should not serve as its sole approver and auditor. Independent monitoring and review over time provide additional checks on that process.",
-      "topics": [
-        "cs.CY"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.03866",
-      "abstract": "This white paper presents ADMITBench, a reference framework for evaluating industrial LLM advisories at the level of the proposed action. The framework implements a versioned, safety-governed evaluation contract that checks whether a recommendation is supported by the available evidence, permitted under the stated authority and procedure, and acceptable under the plant-specific consequence checks encoded in the selected evaluation profile. In this report, \\emph{safety-governed} means that eligibility is determined through explicit, non-compensatory checks derived from a versioned plant profile; it does not mean that the evaluator, model, or plant has been safety-certified. Release 0.1.0 is a public reference implementation for technical and research evaluation, not an authorisation for physical execution.",
-      "topics": [
-        "cs.AI",
-        "eess.SY"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.03166",
-      "abstract": "Role-Playing Language Agents (RPLAs) are increasingly deployed in high-stakes applications such as healthcare assistance, customer support, and education, where maintaining consistent personas, ethical constraints, and behavioral coherence under adversarial pressure is critical. Existing evaluation approaches rely on static benchmarks or isolated single-turn prompts that fail to capture cumulative behavioral failures emerging over extended interactions. We present a modular multi-agent platform for adversarially stress-testing RPLAs through structured, multi-turn dialogue. The system coordinates three agents: a strategy-driven Interrogator Agent that applies six progressive adversarial strategies, a Target Agent representing the RPLA under evaluation, and an automated Judging Agent that scores behavior across role fidelity, drift, ethical deviation, and consistency dimensions. Through experiments across three personas and three LLM families, we demonstrate that multi-strategy adversarial evaluation reveals failure modes invisible to single-strategy testing, reducing overall robustness scores by 0.17--0.20 points on average. Cross-model validation confirms consistent degradation patterns across Llama-3.3-70B, GPT-4o-mini, and Claude-3.5-Haiku, with Authority Challenge and Emotional Manipulation emerging as the most effective attack strategies. Automated judging achieves strong human alignment ($r = 0.82$, Fleiss' $κ= 0.71$). This work is released as an open-source platform to support AI safety and reproducible RPLA benchmarking. While the framework enables systematic discovery of failure modes, we acknowledge potential ethical risks associated with adversarial testing methodologies and emphasize responsible usage for improving AI safety.",
-      "topics": [
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04053",
-      "abstract": "Prompt injection remains a critical threat to LLM agents, yet existing defenses treat each task as a self-contained problem, independent of previous encounters. In practice, user requests are often underspecified: they describe the desired outcome without fully specifying acceptable behavior. An injection can exploit this ambiguity, causing the agent to complete the task in a way the user would reject. As the user's expectations become clearer through concrete cases, a defense should learn from each encounter and apply what it learns to the next. Inspired by adaptive immunity, we propose AgentAntibody, which equips LLM agents with a self-evolving immune system against prompt injection. AgentAntibody represents its evolving understanding of the user's security boundary as a persistent library of antibodies. At runtime, the library recognizes threats to this boundary and mounts corresponding immune responses. Across encounters, it evolves to strengthen the agent's immunity to future attacks. Extensive experiments across three benchmarks and four backbone LLMs show that, by learning the user's boundary through experience, AgentAntibody outperforms existing defenses in preventing harmful actions while preserving legitimate task completion, even when the harmful and legitimate actions are both compatible with the stated task.",
-      "topics": [
-        "cs.CR",
-        "cs.AI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.04148",
-      "abstract": "Agentic AI is increasingly used to coordinate planning, implementation, review, and testing in software development, yet it often offers limited transparency into its decisions and interactions. Many such systems also assume that users can effectively guide the AI's decisions and validate its outputs. This assumption poses a particular challenge for novices, who must simultaneously learn how agentic AI works, how to collaborate with it effectively, and how to evaluate its outputs critically. To address this challenge, we present \\textit{AgentForge}, an immersive learning system in which novices take on one of four software-engineering roles: Task Planner, Patch Author, Code Reviewer, or Test Runner, within a multi-agent code-repair workflow. In each practice session, the novices perform their chosen role while AI agents perform the remaining three. Through role-based scaffolding and metacognitive support, AgentForge clarifies role-specific responsibilities, makes agent coordination and intermediate artifacts visible, and encourages novices to monitor and evaluate their decisions. In a study with 37 novice developers, participants achieved high task-completion rates with AI-agent support. However, interaction demands differed significantly across practices: the Code Reviewer practice required more interaction turns, reroutes, and completion time ($p_{\\mathrm{adj}} = .004$) and was perceived as the most challenging. Participants nevertheless reported significant gains in their understanding of software repair and agent collaboration ($p_{\\mathrm{adj}} < .001$). These findings suggest that AgentForge can help novices develop practical software-engineering skills while learning to collaborate with agentic AI more critically and effectively.",
-      "topics": [
-        "cs.SE",
-        "cs.AI",
-        "cs.HC"
       ],
       "keywords": []
     }

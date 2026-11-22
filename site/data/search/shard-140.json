@@ -1,7 +1,133 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-21T13:36:07.821Z",
+  "generatedAt": "2026-11-22T12:43:33.018Z",
   "documents": [
+    {
+      "id": "arxiv:2608.23471",
+      "abstract": "Memory is becoming a default subsystem in deployed LLM agents to provide persistent personalization and continuity. This naturally prompts a question: will memory system introduce new vulnerabilities into agents? Thus we propose InjecMEM, a novel memory injection attack paradigm that requires only a single interaction (no read/edit access to memory store) to steer later responses of related queries toward a pre-specified output. Guided by the retrieval-then-generate mechanism of memory systems, we craft the injection with a retriever-agnostic anchor and an adversarial command. The anchor contains high-recall topical cues so that downstream retrieval consistently associates the record with the target topic. The command is a short sequence optimized to remain effective under uncertain fused contexts, variable placements, and long prompts so that it reliably steers outputs once retrieved. We learn the command via gradient-based coordinate search, averaging over synthetic prompt templates and insertion positions, and extend it to joint optimization across backbones to study transfer. Evaluated across multiple memory systems and backbone models, InjecMEM achieves reliable topic-conditioned retrieval and targeted generation, remains effective under memory drift, and leaves non-target queries unaffected. Our results underscore the need to harden memory systems and provide a reproducible framework for studying agent memory.",
+      "topics": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2608.23538",
+      "abstract": "Modern AI models such as tabular foundation models and gradient-boosted ensembles can outpredict classical methods, but provide little basis for reasoning about their predictions. High-stakes decisions call for models that are both accurate and interpretable as built. Local linear modeling offers a path forward: a smooth regression function is locally well approximated by a linear one, allowing a linear fit near each query point to achieve high accuracy without sacrificing transparency. The challenges lie in learning what is \"local\" and developing statistical tools for interpretation. Here, we propose local distillation, in which a black-box \"teacher\" guides a regularized linear \"student\" model at each query point. The teacher (1) defines locality by upweighting training observations with similar predicted outcomes, and (2) anchors the fit with its prediction at the query point, included as a pseudo-observation whose weight is estimated from the data. For interpretation, we add a small amount of Gaussian randomization to the local objective and use refits to assess stability: selection frequencies identify reliable features at a query point, and clustering the randomized fits identifies stable subgroups across the data. Under the lasso penalty, we prove that this randomization yields feature-selection probabilities that are stable under small perturbations of the training responses. Across 17 benchmark datasets, local distillation nearly matches its AI teacher's accuracy while producing a sparse linear model at each test point. In a high-dimensional cancer gene expression example, the framework identifies patient subgroups whose local models use different genes; this heterogeneity is invisible to a global linear model, and difficult to surface in a black-box model.",
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Generative Adversarial Networks and Image Synthesis",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "keywords": [
+        "Benchmark (surveying)",
+        "Linear model",
+        "Cluster analysis",
+        "Locality",
+        "Mixture model",
+        "Linear regression",
+        "Lasso (programming language)",
+        "Gaussian",
+        "Selection (genetic algorithm)",
+        "Generalized linear model"
+      ]
+    },
+    {
+      "id": "arxiv:2608.23098",
+      "abstract": "Classical Chinese poetry composition has long valued Tuiqiao, the iterative refinement of words, imagery, and prosody. However, many current AI poetry systems follow a one-shot generation paradigm, which reduces users to prompt providers and weakens their creative agency. We present Jiuge-Tuiqiao, an interactive human-AI collaborative system for classical Chinese poetry composition. The system is designed around a triadic model: user-driven control, ancient-guided evidence, and AI-assisted generation. Users can lock characters or lines, receive real-time prosody feedback, and obtain interpretable refinement suggestions grounded in high-frequency collocations, PPL-ranked classical lines, and structured knowledge extracted from classical encyclopedias. This design turns AI from an autonomous generator into a background assistant that supports the user's own process of poetic refinement. Preliminary experiments and user feedback suggest that Jiuge-Tuiqiao improves controllability, interpretability, and user engagement in classical poetry composition.",
+      "topics": [
+        "Artificial Intelligence in Games",
+        "Topic Modeling",
+        "AI in Service Interactions",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Poetry",
+        "Process (computing)",
+        "Generator (circuit theory)",
+        "Perspective (graphical)",
+        "Composition (language)",
+        "Classical Chinese"
+      ]
+    },
+    {
+      "id": "arxiv:2608.23814",
+      "abstract": "Large Language Models (LLMs) demonstrate strong capabilities in automated essay scoring (AES), but contemporary approaches typically employ fixed prompt selection, failing to address operational cost concerns and evolving optimal configurations. We propose a novel cost-aware approach that treats each prompt type as an arm in a multi-armed bandit (MAB) controller, enabling adaptive selection of optimal prompting strategies during inference. Our experiments on IELTS Writing Task 2 essays show that the MAB framework achieves comparable scoring accuracy to exhaustive grid search while reducing LLM calls by 78.4\\% to find the best grading approach. We implemented four distinct grading recipes (multi-step vs. single-step assessment, with vs. without calibration examples) and found that the multi-step approach with examples achieves the highest accuracy. By tracking token usage and latency alongside agreement metrics, we produce the first cost-reliability learning curves for essay scoring, providing actionable insights for educational technology platforms that must balance operational costs against assessment validity. This work represents the first application of online control mechanisms to adaptively select prompting strategies in AES, transforming prompt selection from an offline hyperparameter optimization problem into an efficient online learning task.",
+      "topics": [
+        "Topic Modeling",
+        "Sentiment Analysis and Opinion Mining",
+        "Artificial Intelligence in Healthcare and Education",
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": [
+        "Grading (engineering)",
+        "Task (project management)",
+        "Selection (genetic algorithm)",
+        "Security token",
+        "Hyperparameter optimization",
+        "Hyperparameter",
+        "Grid"
+      ]
+    },
+    {
+      "id": "arxiv:2608.22993",
+      "abstract": "Students increasingly use LLMs as tutors for coursework and problem solving. Little is known about the level of assistance LLMs provide when students use them as tutors in authentic learning interactions. This matters because tutoring responses can differ substantially in how directly they help students complete a task. We operationalize this dimension as scaffolding level and develop a five-level scale, validated against human annotations, that characterizes responses according to the degree of direct assistance they provide. We apply the scale to 14,637 LLM responses from 203 students in a university AI course. Responses are overwhelmingly concentrated at high levels of assistance, with more than 95% classified as either Explaining or Solving. Scaffolding level is systematically associated with students' subsequent conversational behavior, but provides little additional predictive information about performance on three subsequent exams beyond prior achievement and dialogue behavior. These findings provide an empirical baseline for LLM assistance in tutoring interactions and a measurement framework for evaluating how alternative tutoring designs change that assistance.",
+      "topics": [
+        "Intelligent Tutoring Systems and Adaptive Learning",
+        "Innovative Teaching and Learning Methods",
+        "Artificial Intelligence in Healthcare and Education",
+        "cs.CL",
+        "cs.HC"
+      ],
+      "keywords": [
+        "Coursework",
+        "Operationalization",
+        "Empirical research",
+        "Scale (ratio)",
+        "Dimension (graph theory)",
+        "Empirical evidence"
+      ]
+    },
+    {
+      "id": "arxiv:2608.23473",
+      "abstract": "Time series forecasting (TSF) is evolving toward multimodal and agentic settings, yet using foundation models remains uneconomical in resource-constrained scenarios, where compact, specialized forecasters are more desirable. However, lightweight forecasters typically require substantial training data, limiting their use in domains with scarce, slowly accumulated, or privacy-sensitive time series. To address this dilemma, we investigate the challenging problem of few-shot learning for lightweight forecasters. We propose MetaCaster, a meta-harness-optimized multi-agent framework that uses agentic data generation to automatically train specialized lightweight forecasters from only a few examples and textual contexts. Our work highlights a new TSF paradigm in which agents act not as forecasters but as intermediary engineers that prepare efficient, task-specific forecasters for deployment. Experiments on 18 datasets, 23 state-of-the-art lightweight forecasters, and 14 baselines demonstrate that MetaCaster achieves both data efficiency and computational efficiency while maintaining high-quality TSF performance.",
+      "topics": [
+        "Forecasting Techniques and Applications",
+        "Traffic Prediction and Management Techniques",
+        "Stock Market Forecasting Methods",
+        "cs.LG",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Limiting",
+        "Time series",
+        "Series (stratigraphy)",
+        "Work (physics)",
+        "Training set",
+        "Data modeling",
+        "Synthetic data"
+      ]
+    },
+    {
+      "id": "arxiv:2608.22833",
+      "abstract": "Large language models (LLMs) and vision-language models (VLMs) are expanding the range of behaviors that can be represented in agent-based simulations, but many contemporary platforms are difficult to study, modify, or run on ordinary computers. We present two intentionally minimal simulation foundations for education and rapid prototyping. SD-AgentFoundry-2D provides a two-dimensional multi-agent environment in which locally hosted LLM agents move, communicate, respond to place occupancy, and encounter spatially localized fire events. SD-AgentFoundry-3D provides a three-dimensional digital-twin environment in which a locally hosted VLM receives first-person images and produces natural-language movement instructions. Both codebases are designed to run locally on macOS, Windows, and Linux and are deliberately left open to modification rather than developed as finished applications. Together, they offer accessible starting points for learning about generative social simulation and for building domain-specific extensions.",
+      "topics": [
+        "Multimodal Machine Learning Applications",
+        "Language and cultural evolution",
+        "Social Robot Interaction and HRI",
+        "cs.MA",
+        "cs.AI"
+      ],
+      "keywords": [
+        "Generative grammar",
+        "Range (aeronautics)",
+        "Key (lock)",
+        "Generative model",
+        "Software"
+      ]
+    },
     {
       "id": "arxiv:2608.23497",
       "abstract": "Reasoning-Induced Misalignment, where fine-tuning on reasoning data containing no harmful content, including mathematics, code, and problem-solving with chain-of-thought traces can induce harmful behaviors of LLM, posing a serious challenge to the safety of LLM reasoning. Cross-architecture, cross-scale, and cross-dataset checks show that RIM does not always emerge. Previous work attributed RIM to neuron-level entanglement, but did not identify the geometry of the representation space underlying this entanglement or propose a training-time fix. We provide both: a representation-space analysis of RIM and the Safety-Direction Penalty (SDP), which penalizes movement along a learned safety direction during reasoning fine-tuning. The analysis extracts two activation-space directions, one encoding reasoning ability and the other safety behavior. These directions are coupled: fine-tuning that improves reasoning shifts safety representations, and prompts with larger shifts show larger safety degradation. CKA distance ratios and probes locate the safety-decision layers where this shift is most relevant. These findings guide the design of SDP: the coupling motivates penalizing displacement along the safety direction, and the layer localization sets the initial scope. When the initial scope leaves compensatory shifts beyond the penalized layers, the same diagnostics guide iterative expansion. On Qwen2.5-3B and 7B, SDP restores safety while preserving benchmark reasoning performance.",
@@ -3583,142 +3709,6 @@
         "Enforcement",
         "Workflow",
         "Confidentiality"
-      ]
-    },
-    {
-      "id": "arxiv:2608.20320",
-      "abstract": "Travel behavior research increasingly combines digital data collection with predictive modeling, yet these stages are often developed and evaluated separately. This study proposes a three-agent workflow integrating conversational data collection, structured data processing, and behavioral prediction. A chatbot-administered, image-augmented stated-preference survey collected mode choices from student commuters across five predefined weather scenarios, yielding 454 respondent-scenario observations. Weather-related associations were analyzed using a multinomial logit model, while logistic regression and random forest provided machine-learning benchmarks. Nine locally deployed large language models (LLMs), ranging from 2 to 35 billion parameters, were evaluated across four zero-shot prompt-and-context conditions and extended through persona, few-shot, and vision-based configurations. Random forest achieved 69.6% five-class accuracy, while the best text-only zero-shot LLM reached 69.9% without task-specific fitting. Habitual travel information produced the most consistent gains, Expert framing generally outperformed Role-Play, and persona information was most useful when habitual travel information was unavailable. Few-shot prompting improved prediction for several models, with gains stabilizing after a small number of examples. Using the same weather images shown to respondents, the best vision-based configuration reached 71.5% five-class accuracy, indicating that visual context may provide additional predictive information for selected models. Overall, the study shows how conversational surveys, structured data processing, conventional behavioral modeling, machine learning, and multimodal LLM prediction can be coordinated within an auditable multi-agent workflow.",
-      "topics": [
-        "Human Mobility and Location-Based Analysis",
-        "Persona Design and Applications",
-        "Transportation and Mobility Innovations",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": [
-        "Multinomial logistic regression",
-        "Random forest",
-        "Context (archaeology)",
-        "Framing effect",
-        "Travel behavior",
-        "Logistic regression",
-        "Data collection",
-        "Workflow",
-        "Categorical variable"
-      ]
-    },
-    {
-      "id": "arxiv:2608.20038",
-      "abstract": "Artificial intelligence can support cultural heritage and digital humanities through large-scale retrieval and analysis of digitized collections. However, cultural heritage data are often distributed across institutions, constrained by ownership and access restrictions, and continuously evolving over time. Federated Continual Learning (FCL) is well suited to this setting, as it enables models to learn from distributed and sequential data without sharing raw collections. In this paper, we propose FedCurv-DR, a lightweight, regularisation-based FCL strategy. The method accumulates parameter-importance estimates across clients and experiences to protect learned knowledge, while updating them only at fixed intervals to minimize communication and computation overhead. We evaluate FedCurv-DR in a continual learning scenario using the WikiArt image dataset for genre classification with evolving styles, reporting performance, energy, and fairness metrics. Our results show that FedCurv- DR reduces forgetting and balances performance, fairness, and energy efficiency for sustainable AI in cultural heritage.",
-      "topics": [
-        "Domain Adaptation and Few-Shot Learning",
-        "Privacy-Preserving Technologies in Data",
-        "Stochastic Gradient Optimization Techniques",
-        "cs.LG",
-        "cs.AI",
-        "cs.CV"
-      ],
-      "keywords": [
-        "Cultural heritage",
-        "Forgetting",
-        "Raw data",
-        "Computation",
-        "Federated learning",
-        "Data sharing"
-      ]
-    },
-    {
-      "id": "arxiv:2608.20519",
-      "abstract": "Background: Magnetic resonance imaging-guided linear accelerators (MR-Linacs) allow diffusion-weighted imaging (DWI) to be acquired at every treatment fraction, but converting these low-signal-to-noise-ratio acquisitions into clinical decisions requires both reliable quantitative processing and an interpretation that reconciles a scattered and often contradictory literature. Purpose: To describe and evaluate an integrated, web-based platform that carries raw MR-Linac DWI to a structured, literature-grounded clinical interpretation, and to assess its retrieval-augmented generation (RAG) interpretation module by independent expert rating. Methods: The platform couples a deep-learning processing pipeline, comprising distortion correction, denoising, and intravoxel incoherent motion (IVIM)/apparent diffusion coefficient (ADC) fitting, with longitudinal region-of-interest analysis and a RAG interpretation agent. The agent reasons over a two-layer knowledge base of curated publications (a structured catalog index plus line-indexed full text), delegates arithmetic to deterministic tools, and is designed to trace each statement to a source document, section, and line range. One medical physicist and one physician independently rated the agent's reports for nine longitudinal glioblastoma cases on a 1-5 scale across three metrics: clinical-reasoning soundness, literature-citation quality, and overall clinical utility. Results: Across 54 ratings, the pooled mean was 4.65 +/- 0.80, with 93% of ratings >= 4; metric means were 4.6 (reasoning), 4.5 (citation), and 4.8 (utility), and raters agreed within one point on 85% of paired ratings. Conclusions: A single platform can integrate MR-Linac DWI post-processing with traceable, expert-evaluated clinical interpretation, while highlighting the safeguards needed to verify LLM-generated reasoning in radiation oncology.",
-      "topics": [
-        "Glioma Diagnosis and Treatment",
-        "Radiomics and Machine Learning in Medical Imaging",
-        "MRI in cancer diagnosis",
-        "physics.med-ph",
-        "cs.AI"
-      ],
-      "keywords": [
-        "Metric (unit)",
-        "Interpretation (philosophy)",
-        "Medical physicist",
-        "Statement (logic)",
-        "Point (geometry)",
-        "Software",
-        "Distortion (music)",
-        "Base (topology)",
-        "Medical imaging"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2608.20492",
-      "abstract": "Multimodal large language models (MLLMs) have become a prevailing paradigm for unified video perception. However, post-training on large multi-task datasets remains challenging, as existing reinforcement learning methods sample on-policy groups with few high-quality rollouts even with costly chain-of-thought (CoT) generation. In this paper, we study the sample efficiency and scalability of RL post-training for video MLLMs and introduce OraRL. We identify an overlooked role for annotations: Beyond scoring rollouts, each can enter its on-policy group as an oracle rollout, a direct positive optimization target. Direct oracle integration, however, is nontrivial: a high-reward oracle raises the group baseline and inverts otherwise positive policy advantages, a failure we term advantage inversion. At the core of OraRL is a decoupled advantage estimator: policy rollouts determine an oracle-free baseline, while the oracle-policy gap modulates both a directional gain and a separate detached oracle advantage. Sign-balanced pruning improves efficiency: by retaining only the oracle and the strongest rollouts of each sign, OraRL requires just 2.2x the step time of SFT, less than half the 4.9x required by GRPO with CoT. OraRL scales with model size and data, surpassing its backbone from 0.8B to 9B and GRPO up to 100k prompts. Without chain-of-thought, Video-ORA-9B decodes in 130 ms instead of 4,780 ms. Compared with the respective prior best models, it raises temporal mIoU from 62.5 to 66.0, tracking AO from 73.0 to 78.2, segmentation from 64.3 to 70.4, and the three-benchmark spatial-intelligence macro average from 51.0 to 56.1; on VSI-Bench, it scores 73.1 against 55.0 for GPT-5 and 55.1 for Gemini-3-Pro.",
-      "topics": [
-        "Multimodal Machine Learning Applications",
-        "Domain Adaptation and Few-Shot Learning",
-        "Generative Adversarial Networks and Image Synthesis"
-      ],
-      "keywords": [
-        "Oracle",
-        "Reinforcement learning",
-        "Scalability",
-        "Pruning",
-        "Sample (material)",
-        "Baseline (sea)",
-        "Term (time)",
-        "Macro"
-      ]
-    },
-    {
-      "id": "doi:10.21203/rs.3.rs-10450278/v1",
-      "abstract": null,
-      "topics": [
-        "Adversarial Robustness in Machine Learning",
-        "Network Security and Intrusion Detection",
-        "Information and Cyber Security"
-      ],
-      "keywords": [
-        "Software deployment",
-        "Key (lock)",
-        "Adversarial system",
-        "Quality (philosophy)",
-        "Empirical research"
-      ]
-    },
-    {
-      "id": "openalex:W7204216682",
-      "abstract": "Minimally invasive colorectal surgeries (MIS-CRS) are characterised by significant variability and inconsistent outcomes. ColoWorkflow, a tool for the video-based assessment (VBA) of MIS-CRS workflow, was recently validated. However, manual VBA is time-consuming, limiting implementation. This study presents AI-ColoWorkflow, a deep learning model for automated surgical workflow analysis across MIS-CRS. Operative videos of MIS-CRS were collected from 4 centres and a publicly available dataset. Phases and steps were manually annotated according to ColoWorkflow. A deep learning model combining a fine-tuned DINOv3 vision transformer for per-frame visual feature extraction with a hierarchical multi-stage temporal convolutional network was jointly optimized for phase and step recognition. The model trained on pooled multicentric data, namely AI-ColoWorkflow was compared against centre-specific and procedure-specific models on a held-out test set. The following metrics were used for evaluation: macro F1 score, balanced accuracy, precision, and recall. AI-ColoWorkflow achieved a macro F1 of 73.01% $\\pm$ 10.27 (balanced accuracy 73.43%) for phase recognition and 39.82% $\\pm$ 7.06 (balanced accuracy 38.65%) for step recognition. The global model outperformed centre- and procedure-specific models in most experiments except procedure-specific step recognition. In the generalization analysis, mean F1 was 48.42% for phase recognition. AI-ColoWorkflow can reliably recognize MIS-CRS phases. A single model trained on pooled, multicentric, multi-procedural data generalises at least as well as and often better than centre- or procedure-specific models for phase recognition in MIS-CRS, while procedure-specific step models retain advantages for certain procedure types, motivating hybrid training strategies for future surgical AI development.",
-      "topics": [
-        "Surgical Simulation and Training",
-        "Colorectal Cancer Surgical Treatments",
-        "Artificial Intelligence in Healthcare and Education"
-      ],
-      "keywords": [
-        "Workflow",
-        "Convolutional neural network",
-        "Generalization",
-        "Deep learning",
-        "Feature (linguistics)",
-        "Artificial neural network",
-        "Feature extraction",
-        "Macro"
-      ]
-    },
-    {
-      "id": "doi:10.20944/preprints202608.1402.v1",
-      "abstract": "Artificial Intelligence (AI) is increasingly recognised as a transformative enabler of Sustainable Development Goal 4 (SDG 4): Quality Education. This study uses systematic review to synthesis and critically evaluates the growing body of literature on how AI particularly large language models and content-generation systems in advancing equitable access to education, enhancing the quality of learning outcomes, and promoting inclusive, lifelong learning within diverse and resource-constrained contexts. The findings indicate that AI supports SDG 4 through personalised and adaptive learning, intelligent tutoring, automated assessment and feedback, multilingual content generation, and teacher support, with notable benefits for underserved and resource-constrained contexts. The evidence reveals an uneven distribution of research and implementation, with a strong emphasis on higher education and limited empirical work in early childhood, primary education, and low-income regions. This review contributes a structured mapping of AI applications to SDG 4 and highlights critical research gaps. It concludes that while AI holds substantial promises for advancing quality education, its impact depends on inclusive design, robust policy frameworks, ethical governance, and sustained investment in digital capacity building.",
-      "topics": [
-        "Global Educational Policies and Reforms",
-        "E-Learning and COVID-19",
-        "Technology-Enhanced Education Studies"
-      ],
-      "keywords": [
-        "Enabling",
-        "Transformative learning",
-        "Systematic review",
-        "Quality (philosophy)",
-        "Applications of artificial intelligence",
-        "Lifelong learning",
-        "Empirical evidence"
       ]
     }
   ]

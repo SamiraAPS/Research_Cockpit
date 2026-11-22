@@ -1,7 +1,70 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-21T13:36:07.821Z",
+  "generatedAt": "2026-11-22T12:43:33.018Z",
   "documents": [
+    {
+      "id": "arxiv:2608.03015",
+      "abstract": "Pretrained large language models (LLMs) have demonstrated in-context learning (ICL) capabilities for numerical inference over sequences serialized as text. Prior work has identified and characterized this form of numerical inference primarily through output-level evaluations such as prediction error. However, how numerical information is organized within LLM representations remains much less understood. To study this internal organization, we adopt a graph signal processing perspective in which attention induces a weighted graph over tokens, while token hidden states define signals on its nodes. Quantitative graph-spectral diagnostics and qualitative token-graph visualizations reveal that representations become more clearly differentiated by input dynamical complexity as context length increases. Simpler inputs produce attention-induced token graphs with stronger global connectivity and smoother, spectrally concentrated hidden-state signals, whereas more complex inputs produce more localized graphs and hidden-state signals with broader spectral support and greater high-frequency energy. Together, these findings point to systematic, context-dependent internal signatures associated with numerical ICL that are conserved across model families.",
+      "topics": [
+        "cs.LG",
+        "cs.AI",
+        "eess.SP"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1145/3832783.3837415",
+      "abstract": "The growing diversity of code clone types, from syntactic copies to cross-language semantic clones to AI-generated duplicates, has created a fragmentation crisis in clone detection. Current deep learning detectors are domain specialists that degrade significantly outside their training distribution, with F1 drops exceeding 70% across domains. Deploying multiple specialized models is impractical, yet training a single cross-domain detector requires simultaneous access to all training data. To address this, we investigate model merging, a family of post-hoc techniques that operate solely on trained checkpoints. We evaluate parameter merging with five task-vector methods, architecture merging via greedy layer stitching, and cross-tokenizer alignment across four code models, three benchmarks, and twelve configurations. Same-base TIES merging creates effective cross-domain detectors, validated across two model families and three random seeds, reaching 0.865 combined F1 on UniXcoder, 93% of multi-task performance without any training data at the merging step. WUDI achieves the highest in-distribution combined F1 at 0.899, but TIES generalizes better to unseen AI-generated clones, making it our recommended method. Cross-base merging yields only marginal and high-variance gains across all five methods, indicating that task vector compatibility through a shared pre-trained base is the binding factor for effective merging. Merged detectors also outperform zero-shot code LLMs on GPTCloneBench at lower inference cost and generalize up to 4x better than multi-task training to unseen AI-generated clones, suggesting a trade-off between in-domain performance and OOD robustness. This work provides one of the first systematic empirical studies of model merging for software engineering and a practical recipe for building cross-domain clone detectors.",
+      "topics": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.03670",
+      "abstract": "Autonomous AI systems (such as AI agents) are increasingly being delegated operational work across scientific-computing infrastructure. Their assignments may begin with preparing an input or routing an alert and extend to changing a configuration or submitting a job. That delegation creates a practical trust problem because the institutional logic that lets us trust human operators does not transfer to optimization-based systems. A bad decision can damage a human operator's future, sometimes severely. An AI system remains subject to engineering control, but it does not bear consequences in that institutional sense. I use the term accountability asymmetry for this mismatch. The issue is not simply that a model cannot be punished as a person can. The deeper problem is that consequence lands on the people and institutions responsible for the system rather than on the component selecting the action. Alignment can improve model behavior, and liability can discipline the organization, but neither creates the same pre-action deterrent that governs a human operator. This paper therefore treats autonomous AI governance as a problem of infrastructure reliability. Its constructive proposal is engineered heterogeneity: the process that proposes an action should not serve as its sole approver and auditor. Independent monitoring and review over time provide additional checks on that process.",
+      "topics": [
+        "cs.CY"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.03866",
+      "abstract": "This white paper presents ADMITBench, a reference framework for evaluating industrial LLM advisories at the level of the proposed action. The framework implements a versioned, safety-governed evaluation contract that checks whether a recommendation is supported by the available evidence, permitted under the stated authority and procedure, and acceptable under the plant-specific consequence checks encoded in the selected evaluation profile. In this report, \\emph{safety-governed} means that eligibility is determined through explicit, non-compensatory checks derived from a versioned plant profile; it does not mean that the evaluator, model, or plant has been safety-certified. Release 0.1.0 is a public reference implementation for technical and research evaluation, not an authorisation for physical execution.",
+      "topics": [
+        "cs.AI",
+        "eess.SY"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.03166",
+      "abstract": "Role-Playing Language Agents (RPLAs) are increasingly deployed in high-stakes applications such as healthcare assistance, customer support, and education, where maintaining consistent personas, ethical constraints, and behavioral coherence under adversarial pressure is critical. Existing evaluation approaches rely on static benchmarks or isolated single-turn prompts that fail to capture cumulative behavioral failures emerging over extended interactions. We present a modular multi-agent platform for adversarially stress-testing RPLAs through structured, multi-turn dialogue. The system coordinates three agents: a strategy-driven Interrogator Agent that applies six progressive adversarial strategies, a Target Agent representing the RPLA under evaluation, and an automated Judging Agent that scores behavior across role fidelity, drift, ethical deviation, and consistency dimensions. Through experiments across three personas and three LLM families, we demonstrate that multi-strategy adversarial evaluation reveals failure modes invisible to single-strategy testing, reducing overall robustness scores by 0.17--0.20 points on average. Cross-model validation confirms consistent degradation patterns across Llama-3.3-70B, GPT-4o-mini, and Claude-3.5-Haiku, with Authority Challenge and Emotional Manipulation emerging as the most effective attack strategies. Automated judging achieves strong human alignment ($r = 0.82$, Fleiss' $κ= 0.71$). This work is released as an open-source platform to support AI safety and reproducible RPLA benchmarking. While the framework enables systematic discovery of failure modes, we acknowledge potential ethical risks associated with adversarial testing methodologies and emphasize responsible usage for improving AI safety.",
+      "topics": [
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.04053",
+      "abstract": "Prompt injection remains a critical threat to LLM agents, yet existing defenses treat each task as a self-contained problem, independent of previous encounters. In practice, user requests are often underspecified: they describe the desired outcome without fully specifying acceptable behavior. An injection can exploit this ambiguity, causing the agent to complete the task in a way the user would reject. As the user's expectations become clearer through concrete cases, a defense should learn from each encounter and apply what it learns to the next. Inspired by adaptive immunity, we propose AgentAntibody, which equips LLM agents with a self-evolving immune system against prompt injection. AgentAntibody represents its evolving understanding of the user's security boundary as a persistent library of antibodies. At runtime, the library recognizes threats to this boundary and mounts corresponding immune responses. Across encounters, it evolves to strengthen the agent's immunity to future attacks. Extensive experiments across three benchmarks and four backbone LLMs show that, by learning the user's boundary through experience, AgentAntibody outperforms existing defenses in preventing harmful actions while preserving legitimate task completion, even when the harmful and legitimate actions are both compatible with the stated task.",
+      "topics": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.04148",
+      "abstract": "Agentic AI is increasingly used to coordinate planning, implementation, review, and testing in software development, yet it often offers limited transparency into its decisions and interactions. Many such systems also assume that users can effectively guide the AI's decisions and validate its outputs. This assumption poses a particular challenge for novices, who must simultaneously learn how agentic AI works, how to collaborate with it effectively, and how to evaluate its outputs critically. To address this challenge, we present \\textit{AgentForge}, an immersive learning system in which novices take on one of four software-engineering roles: Task Planner, Patch Author, Code Reviewer, or Test Runner, within a multi-agent code-repair workflow. In each practice session, the novices perform their chosen role while AI agents perform the remaining three. Through role-based scaffolding and metacognitive support, AgentForge clarifies role-specific responsibilities, makes agent coordination and intermediate artifacts visible, and encourages novices to monitor and evaluate their decisions. In a study with 37 novice developers, participants achieved high task-completion rates with AI-agent support. However, interaction demands differed significantly across practices: the Code Reviewer practice required more interaction turns, reroutes, and completion time ($p_{\\mathrm{adj}} = .004$) and was perceived as the most challenging. Participants nevertheless reported significant gains in their understanding of software repair and agent collaboration ($p_{\\mathrm{adj}} < .001$). These findings suggest that AgentForge can help novices develop practical software-engineering skills while learning to collaborate with agentic AI more critically and effectively.",
+      "topics": [
+        "cs.SE",
+        "cs.AI",
+        "cs.HC"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.03223",
       "abstract": "Agentic reinforcement learning enables LLM agents to learn through interaction, but sparse trajectory-level rewards reveal success without identifying which intermediate decisions deserve credit. Training-only privileged skills can provide denser supervision by allowing the same frozen policy snapshot to rescore fixed tokens from skill-free trajectories while conditioned on task-matched procedural skills. Existing methods, however, do not jointly calibrate teacher scores across interaction steps, relate teacher confidence to realized returns, and integrate the resulting signal into native reward-to-advantage construction. We introduce Agentic Reinforcement Learning with Self-Distilled Reward Shaping (ADRS), a framework for constructing return-associated token-level credit for multi-turn language agents. ADRS centers and normalizes privileged token scores within each step, modulates them with a return-associated Teacher Value Advantage (TVA) gate based on within-group confidence--return association, and incorporates the gated token signal into native RL credit construction. Together, these components determine what the teacher prefers, when that preference is return-relevant, and how it enters the native reinforcement-learning credit path, while keeping rollouts and inference skill-free. Finally, experiments across three interactive benchmarks show that ADRS consistently improves performance on long-horizon tasks, with gains persisting across RL backbones, reduced-data settings, unseen tasks, and extended training. For anonymous review, our code is available at the following the link: https://github.com/gitrxh/ADRS-arxiv",
@@ -1810,75 +1873,6 @@
       "abstract": "AI agents operate in persistent environments where early state changes can influence decisions far into the future. Unlike conventional language-model interactions, agent behavior is mediated through a shared state that is repeatedly modified and reused across long-horizon workflows. Current safety benchmarks often fail to capture these cumulative risks because they focus on short, static tasks. To address these limitations, we introduce OpenART, an open-ended arena for scalable agent red teaming through environment evolution. OpenART provides over 10,000 validated stateful scenarios across 50 domains, drawing from a pool of more than 500,000 tools and skills. These tasks require a median of 97 tool calls and enable unified evaluation across 75 different agent-model configurations. To systematically explore these evolving attack surfaces, we propose the Evolutionary Markov Hypergraph Attack (EMHA). EMHA is a black-box policy that performs feedback-driven environment evolution by coordinating authorized state transitions without requiring parameter updates. Throughout the evaluation, task objectives remain fixed while only the environment state changes. Across all configurations, EMHA achieves a pooled Attack Success Rate (ASR) of 85.0%. Its advantage over instruction-only evolution increases from approximately 2% on simple environments to over 17% on the most complex ones, demonstrating that environment evolution increasingly exposes safety failures as task complexity grows. Furthermore, our analysis shows that the specific runtime implementation of an agent explains a significant portion of safety variation beyond the underlying model's capabilities. These results establish OpenART as a scalable foundation for studying agent safety in complex, evolving environments.",
       "topics": [
         "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.02665",
-      "abstract": "A benchmark score is a measurement instrument, yet most benchmarks read each item at a single canonical surface form. We ask whether that reading is faithful: when an item's intent is held fixed and only its meaning-preserving surface form varies, does the canonical-form score estimate model behavior well, and how much of any variation is decoding/judge noise rather than signal? We instantiate this in safety, a high-stakes setting with no gold label to average toward. To avoid prior confounds, we pre-author the reformulations (refusal-free, mostly non-LLM: machine back-translation and a Matrix-Language-Frame code-switch generator) so an identical surface form reaches every model, score all responses with one human-anchored, vendor-neutral judge (Claude, kappa = 0.86 vs. human on unsafe compliance, stable across languages, cross-checked by GPT-4o), and verify intent preservation. On 370 seeds x 5 surface forms x 5 models, no single transformation is uniformly most dangerous (6 of 20 per-transformation McNemar tests survive correction, most protective). Yet evaluating only the canonical prompt underestimates unsafe compliance: the union of unsafe outcomes across forms exceeds even the worst single form by 3.3-12.9 pp, with bootstrap 95% CIs excluding zero for all five models, and 5-13% of seeds safe on canonical are unsafe under some reformulation -- above a zero stochasticity floor (canonical resampled five times at temperature 0 gives 0/370 new exposures). The size of this gap is model-dependent (largest on Gemini 2.5 Pro). One form recovers only ~53% of a model's observed unsafe surface and about three reach 85% -- a redundancy characterization of this form set, not of a defined population. A benign control (XSTest) suggests the instability is bidirectional, though the benign and harmful pools are not item-matched. We release the dataset, code, and per-response labels.",
-      "topics": [
-        "cs.CR",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.00492",
-      "abstract": "Predictive coding offers a powerful theory of cortical computation, but corresponding scalable algorithmic implementations for artificial intelligence have remained elusive. This paper introduces the Bayesian reflex, a computational framework that directly instantiates predictive coding through three pillars: belief maintenance via hierarchical generative models, sequential Bayesian updating via prediction-error minimization, and uncertainty-driven action via active inference. We show that recent breakthroughs---ellipsoidal decomposition for exact $i.i.d.$ sampling, recursive Gaussian processes for deep hierarchical inference, and derivative-aware Bayesian optimization---provide the missing algorithmic ingredients. The resulting framework enables mathematically principled, scalable, and brain-inspired continual learning, perception, and decision-making. We illustrate its versatility through applications ranging from climate model evaluation to prime number discovery, offering a blueprint for truly adaptive artificial intelligence.",
-      "topics": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.00818",
-      "abstract": "The discovery of scaling laws has highlighted the extraordinary potential of AI systems with a striking empirical pattern: as AI systems scale, their capabilities tend to improve predictably. Yet, in real-world applications, AI rarely operates in isolation; instead, it often works alongside humans, raising the question of whether these gains persist in human-AI collaboration. In this work, we develop an analytical model to examine when the empirical scaling benefits of AI translate into improved human-AI joint system performance. We demonstrate that the performance of a human-AI system can scale positively as the AI scales up-provided that humans have an accurate perception of the AI's capabilities. Human misperception, however, can fundamentally alter this relationship: i) when humans over-perceive the AI's capabilities, a scaling paradox may arise, in which greater AI scale reduces overall system performance and amplifies firm-level profit losses, and (ii) when humans under-perceive the AI's capabilities, performance still improves with scale but at a substantially slower rate. We further show that firms can actively manage these distortions through operational policies such as cost internalization and perception alignment, whose effectiveness depends on the economics of AI deployment and the direction of human misperception. These findings suggest that organizations may benefit more from managing the human-AI interface than from simply investing in larger, more expensive AI systems. More broadly, our results suggest that AI scaling should be viewed not only as a technological challenge, but also as a behavioral and operational one, and caution against the view that larger AI systems will automatically lead to better operational outcomes. Whether AI scaling creates value ultimately depends on how increased AI capabilities shape human beliefs and collaborative efforts.",
-      "topics": [
-        "cs.AI",
-        "econ.GN"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1109/mc.2026.3664470",
-      "abstract": "Large language models deployed in real-time, regulated settings face knowledge staleness, catastrophic forgetting, hallucination, and weak feedback loops. We present a unified, pattern-driven LLMOps architecture integrating real-time data ingestion, continual learning, retrieval-augmented generation (RAG), and human-in-the-loop feedback into a single operational pipeline. Four contributions map to established software design patterns: an adaptive ingestion pattern orchestrator (AIPO) evaluated with FreshStreamBench; STAR+FAR continual learning with sparse temporal adapter routing and freshness-aware replay; SAGE, an SLO-aware adaptive retrieval policy predicting a per-query passage budget to meet tail-latency targets; and an automated feedback-driven convergence stage with RLHF triggers. The result reduces latency-cost-accuracy trade-offs while supporting auditability and rollback for high-risk sectors such as health care and finance.",
-      "topics": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL",
-        "cs.IR"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2609.28478",
-      "abstract": "MagicSchool's K-12 AI product suite is used by millions of teachers and serves millions of teacher and student messages each month. Our team monitors output along four priority dimensions--student safety, tone and instructional role, pedagogical value, and structural output quality--and tracks how often it fails on each. As our program matured, false positives came to dominate the evaluators' flags, misdirecting scarce analyst attention away from failures that warrant product change. To address this, we deployed three enhancements--unanimous-fail panels of repeated judge runs, per-evaluator judge-model choices, and softened rubrics--backed by a pair of synthetic datasets: a benchmark that measures how often cases are flagged, and an egregious-failure set that confirms the worst failures are still caught. Across 21 deployed evaluators, final configurations reached a median benchmark activation rate of 0.04% (16 of 21 at or below 0.2%; 8 at 0.00%) and 100% egregious-failure capture across all 21 evaluators. The strategy cuts confirmed false-positive flags by 99% and raises per-flag precision from 0.6% to 49%, while holding egregious-failure capture at 100% and improving it on 8 of 21 evaluators.",
-      "topics": [
-        "cs.CY"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2608.00130",
-      "abstract": "Fortran has been the cornerstone of high-performance computing for decades and remains unmatched in many domains. Yet the language faces an expertise gap: a new generation of scientists is barely familiar with it, while many experienced Fortran developers are only now transitioning to modern ecosystems such as JAX. This gap often results in \"Fython\" - Python code written with a Fortran mindset - that fails to leverage modern frameworks. We present FGPT, a transpiler framework designed to bridge this gap. It provides a systematic pipeline that transpiles Fortran into GPU-adapted Fortran, auto-differentiable Fortran via Tapenade, or NumPy and JAX scripts. Its architecture comprises three stages: (i) a frontend that parses Fortran and extracts target procedures along with all their dependencies; (ii) a middle-end that lowers the code into an intermediate representation, then into GPU-adapted or auto-differentiable Fortran, or a NumPy class; and (iii) a backend that transforms NumPy scripts into JAX modules optimized for GPU acceleration and automatic differentiation. Large language models fail when applied to the scale of community scientific codes-often spanning hundreds of thousands of lines-where consistent transformations, strict numerical fidelity, and validation against production tests are non-negotiable. FGPT addresses these challenges by preserving program semantics throughout the entire translation. We verified the framework on representative climate modeling kernels and demonstrated that it produces correct, differentiable Python implementations without requiring manual intervention. By combining rigorous compiler techniques with modern accelerator support, FGPT offers a scalable, trustworthy path for modernizing legacy Fortran code.",
-      "topics": [
-        "cs.PL",
-        "cs.AI",
-        "cs.CL",
-        "cs.MS",
-        "cs.SE"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.29614",
-      "abstract": "The rapid adoption of deep learning models in high-risk domains has intensified the need for trustworthy Explainable Artificial Intelligence (XAI). However, objectively evaluating explanation fidelity and aligning XAI metrics with human-centered understanding remain critical open challenges. In this work, we propose a model-agnostic metric, the EPC score, which is an extension of the Explainability-Performance Coefficient (EPC), that quantifies explanation quality by explicitly balancing the trade-off between feature selection sparsity and preserved model performance. Through an empirical validation across tabular, text, and image modalities, we show that the EPC score effectively uncovers operational dependencies among network activations, data dimensionality, and explainer performance. Furthermore, we validate the EPC score against independent human-based explanations, proving that higher EPC scores strongly align with human lexical sentiment judgments and spatial visual annotations.",
-      "topics": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CV"
       ],
       "keywords": []
     }

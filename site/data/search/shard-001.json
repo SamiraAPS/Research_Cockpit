@@ -1,7 +1,228 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-21T13:36:07.821Z",
+  "generatedAt": "2026-11-22T12:43:33.018Z",
   "documents": [
+    {
+      "id": "doi:10.1145/3842721.3850223",
+      "abstract": "Threat detection in mobile-edge networks requires reliable inference from heterogeneous telemetry whose availability and evidential quality may vary over time. LLM-assisted detectors further introduce uncertainty because prediction confidence may not reflect evidence trustworthiness, while collaborative reasoning can amplify unsupported decisions. This paper proposes C-MoA-XRT, a trust-aware collaborative Mixture-of-Agents framework for resilient mobile-edge threat detection. C-MoA-XRT distributes complementary network evidence across specialized LLM agents and performs event-specific trust routing before collaborative inference. The proposed routing mechanism separates prediction confidence from decision authority by assessing the reliability, consistency, and evidential support of each specialist output. A defensive red-team reasoning stage subsequently examines the fused evidence, while an evidence-anchored decision firewall constrains unstable collaborative reasoning from overriding the calibrated detection outcome. Experiments on NF-UNSW-NB15 show that C-MoA-XRT achieves an F1 score of 0.900 with full attack recall and reduces the false-positive rate by approximately 75% relative to the evaluated single-agent RAG+LLM baseline. Under measurement drift, trust-aware evidence gating improves PR-AUC from 0.694 to 0.917 over confidence-based routing, while maintaining resilience under the evaluated telemetry-dropout and unreliable-specialist conditions. These results demonstrate that explicit control of evidence trust and reasoning authority can improve the robustness of collaborative LLM-based threat detection in mobile-edge networks.",
+      "topics": [
+        "Network Security and Intrusion Detection",
+        "Adversarial Robustness in Machine Learning",
+        "Network Packet Processing and Optimization"
+      ],
+      "keywords": [
+        "mobile edge networks",
+        "network threat detection",
+        "mixture-of-agents",
+        "LLM agents",
+        "collaborative inference",
+        "explainability",
+        "measurement drift",
+        "false positive reduction",
+        "network intrusion detection"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2604.20021",
+      "abstract": "As Large Language Models (LLMs) become increasingly popular, caching responses so that they can be reused by users with semantically similar queries has become a vital strategy for reducing inference costs and latency. Existing caching frameworks have proposed to decide which query responses to cache by assuming a finite, known universe of discrete queries and learning their serving costs and arrival probabilities. As LLMs' pool of users and queries expands, however, such an assumption becomes increasingly untenable: real-world LLM queries reside in an infinite, continuous embedding space. In this paper, we establish the first rigorous theoretical framework for semantic LLM response caching in continuous query space under uncertainty. To bridge the gap between discrete optimization and continuous representation spaces, we introduce dynamic e-net discretization coupled with Kernel Ridge Regression. This design enables the system to formally quantify estimation uncertainty and generalize partial feedback on LLM query costs across continuous semantic query neighborhoods. We develop both offline learning and online adaptive algorithms optimized to reduce switching costs incurred by changing the cached responses. We prove that our online algorithm achieves a sublinear regret bound against an optimal oracle, which reduces to existing bounds for discrete query models. Extensive empirical evaluations demonstrate that our framework approximates the continuous optimal cache well while also reducing computational and switching overhead compared to existing methods.",
+      "topics": [
+        "Caching and Content Delivery",
+        "Information Retrieval and Search Behavior",
+        "Advanced Bandit Algorithms Research"
+      ],
+      "keywords": [
+        "large language model inference",
+        "kernel ridge regression",
+        "estimation uncertainty",
+        "switching costs",
+        "regret bounds",
+        "inference cost reduction"
+      ]
+    },
+    {
+      "id": "doi:10.1145/3842721.3850096",
+      "abstract": "We present an end-to-end mobile system for proactive stress monitoring from wearable signals. The framework is supported by an extensible split federated learning system that enables on-device LoRA fine-tuning of large language models. By analyzing physiological data, the application distinguishes emotional states, summarizes recent trends, and provides brief, actionable suggestions. Upon detecting a negative emotional state, the paired smartwatch or smartphone proactively delivers notifications to users to encourage mindfulness. The on-site demonstration will showcase real-time sensing-inference on smartwatch-phone pairs, alongside a recorded split federated learning process that continuously learns from user private data. Our code has been open-sourced at: https://github.com/HKU-WILL-Lab/Multimodal-Stress-Monitoring-with-Split-Federated-Fine-Tuning-on-Mobile-Devices.",
+      "topics": [
+        "Emotion and Mood Recognition",
+        "Privacy-Preserving Technologies in Data",
+        "Context-Aware Activity Recognition Systems"
+      ],
+      "keywords": [
+        "stress monitoring",
+        "split federated learning",
+        "low-rank adaptation",
+        "large language models",
+        "wearable sensors",
+        "smartwatches",
+        "smartphones",
+        "multimodal physiological data",
+        "emotion recognition",
+        "on-device learning"
+      ]
+    },
+    {
+      "id": "doi:10.1145/3842721.3850091",
+      "abstract": "As mobile devices increasingly operate across heterogeneous access networks and diverse usage contexts, efficient network configuration requires decisions that adapt to both dynamic network conditions and individual user preferences. We demonstrate an on-device communication agent that transforms historical user network-switching behavior into personalized configuration rules. An on-device Large language model (LLM) analyzes switching records offline and generates condition-action rules capturing recurring user preferences. During real-time use, the agent retrieves matched rules locally and executes the corresponding network configuration after user confirmation, without invoking the LLM. Attendees will choose a prepared behavior trace, inspect the rule generated on the phone, and recreate its triggering context to observe an immediate network switch. The demonstration shows how separating deliberation from execution makes personalized mobile network configuration both interpretable and responsive while keeping user data and inference on the device.",
+      "topics": [
+        "IPv6, Mobility, Handover, Networks, Security",
+        "Wireless Networks and Protocols",
+        "Software-Defined Networks and 5G"
+      ],
+      "keywords": [
+        "large language models",
+        "user preference modeling",
+        "condition-action rules",
+        "heterogeneous access networks",
+        "local inference",
+        "interpretable decision rules",
+        "user privacy"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.07081",
+      "abstract": "An electromagnetic (EM) digital twin gives mobile robots wireless situational awareness but depends on material conductivities that change with the environment. Online calibration faces initialization sensitivity and measurement travel costs. We demonstrate a vision-language model (VLM)-guided framework using a Unitree G1 robot and NVIDIA Sionna, with two VLM calls: material classification maps visible materials through ITU-R P.2040 to conductivity priors for Sionna's gradient descent on accumulated received signal strength (RSS) measurements; waypoint planning selects the next measurement location online using residual RSS calibration error and image coverage. In a real indoor scenario, the framework achieves a normalized mean absolute conductivity error of 1.74 × 10-4 within 20 m of travel; random initialization never converges, while random waypoints require over twice the travel.",
+      "topics": [
+        "Indoor and Outdoor Localization Technologies",
+        "Electromagnetic Compatibility and Measurements",
+        "Millimeter-Wave Propagation and Modeling",
+        "Robotics and Sensor-Based Localization",
+        "cs.RO",
+        "cs.AI"
+      ],
+      "keywords": [
+        "online calibration",
+        "vision-language models",
+        "received signal strength",
+        "mobile robots",
+        "waypoint planning",
+        "gradient descent",
+        "image coverage",
+        "Unitree G1"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.07550",
+      "abstract": "Random access (RA) is one of the most foundational medium access control (MAC) layer scheduling schemes for handling unpredictable data traffic from multiple terminals. While multi-agent reinforcement learning (MARL) has been explored to optimize RA-based wireless networks, its reliance on experience-driven, distributed policy learning incurs significant training overhead for each optimization task, limiting its feasibility in real-world applications. In this work, we propose to leverage a foundation model (FM) to improve MARL efficiency across diverse RA network optimization tasks. Specifically, we design an FM-aided actor-critic algorithm within a consensus-based decentralized MARL architecture and provide its convergence analysis under local reward exchanges and nonlinear value function approximations to show that our algorithm achieves the same convergence order as the conventional MARL with critic model exchanges and linear approximations. Our numerical results show that our FM-based approach significantly enhances MARL speed for RA network optimization.",
+      "topics": [
+        "Wireless Networks and Protocols",
+        "Reinforcement Learning in Robotics",
+        "Advanced Wireless Network Optimization"
+      ],
+      "keywords": [
+        "medium access control scheduling",
+        "multi-agent reinforcement learning",
+        "foundation models",
+        "actor-critic",
+        "convergence analysis",
+        "training efficiency"
+      ]
+    },
+    {
+      "id": "doi:10.1145/3842721.3849679",
+      "abstract": "Collaborative fine-tuning of large language models (LLMs) at the network edge enables privacy-preserving and personalized generative intelligence, but is constrained by the limited memory and compute resources of edge devices. Traditional approaches, such as split federated learning (SFL), partition models between devices and a server, requiring iterative exchanges of activations/gradients while the server manages multiple submodels. This leads to substantial communication overhead, high activation storage costs, and severe server-side memory pressure when scaling to massive heterogeneous devices. In this paper, we propose FrozenSFL, a resource-efficient SFL framework for collaborative fine-tuning of LLMs across heterogeneous edge devices. At its core, FrozenSFL strictly freezes device-side submodels to eliminate both deviceside backpropagation and server-to-device gradient transmission, thereby removing on-device activation storage requirements and downlink communication overhead. Building upon this design, we improve the framework in two aspects. First, we design a layerwise LoRA aggregation strategy to handle structural heterogeneity introduced by device-specific model partitioning and enable efficient server-side updates. Second, we introduce a server-side feature caching mechanism that reuses invariant features, allowing subsequent training epochs to proceed offline and reducing redundant computation and communication. We implement the FrozenSFL system as an asynchronous multi-threaded pipeline, which serves as our real-world testbed for evaluation. On the device side, forward computation and data transmission are decoupled via a producer-consumer mechanism. On the server side, a first-in-first-out scheduling strategy serializes fine-tuning tasks across devices. A hybrid memory-disk streaming mechanism further buffers incoming data and ensures stable training under network variability. Extensive evaluations with representative models, including BERT-Base (0.11B), ViT-Large (0.3B), and LLaMA-2-7B (7B), validate the effectiveness of FrozenSFL. In particular, for LLaMA-2-7B, FrozenSFL can reduce device/server VRAM footprint by up to 14%/82.7% with only 1% accuracy loss, while achieving up to 6.7× fine-tuning speedup.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "IoT and Edge/Fog Computing",
+        "Domain Adaptation and Few-Shot Learning"
+      ],
+      "keywords": [
+        "split federated learning",
+        "LLM fine-tuning",
+        "edge computing",
+        "model partitioning",
+        "memory efficiency",
+        "communication cost reduction",
+        "heterogeneous edge devices",
+        "Llama 2"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2609.01457",
+      "abstract": "Large language model (LLM) fine-tuning is increasingly shifting toward data generated on edge devices, where memory, computation, bandwidth, and connectivity constraints make conventional federated learning difficult to sustain. Split federated fine-tuning (SFT) improves client-side efficiency by offloading most model parameters and computation to the server but requires step-by-step bidirectional communication loop across the split interface and forces continuous client involvement throughout training. In this paper, we present L-shaped SFT, a split fine-tuning framework that removes this bidirectional bottleneck. Our key insight is that weight tying in modern LLMs enables server-side hidden activations to be directly supervised using target embeddings, allowing the training loss to be computed on the server without returning server outputs to the client. To further eliminate the need for continuous client participation, based on L-shaped SFT, we introduce one-shot SFT, in which clients upload activations once and then go offline while the server continues optimization over cached representations. We implement our design in a real system testbed with heterogeneous edge clients, including commercial smartphones and NVIDIA developer boards. Experiments demonstrate that our schemes significantly reduce communication costs and client online time compared with existing SFT baselines.",
+      "topics": [
+        "Privacy-Preserving Technologies in Data",
+        "IoT and Edge/Fog Computing",
+        "Domain Adaptation and Few-Shot Learning",
+        "Big Data and Digital Economy"
+      ],
+      "keywords": [
+        "split federated learning",
+        "LLM fine-tuning",
+        "edge devices",
+        "communication efficiency",
+        "weight tying",
+        "Upload",
+        "Testbed",
+        "Enhanced Data Rates for GSM Evolution",
+        "Edge device",
+        "Key (lock)",
+        "Tying",
+        "Cache",
+        "Server",
+        "Interface (matter)"
+      ]
+    },
+    {
+      "id": "doi:10.1145/3842721.3850120",
+      "abstract": "The growing demand for flexible and resilient low-altitude connectivity is driving UAV networks toward increasingly autonomous operation. However, existing approaches often assume known user distributions, fixed network configurations, or treat exploration, access, and backhaul separately, resulting in a gap between user discovery and end-to-end service in initially unknown environments. To address this challenge, we propose a self-organizing heterogeneous UAV networking framework, referred to as Discovery-to-Service (D2S) Network, that supports the complete process from user discovery to end-to-end service provisioning. The framework adopts a dual-timescale coordination mechanism: at the fast timescale, onboard graph reinforcement learning agents perform user exploration and local control, while at the slower timescale, a basestation-hosted LLM reconfigures the access and backhaul infrastructure based on discovered demands and the global network state. Experiments over 42 scenarios show that, compared with a heuristic connectivity-constrained grid-greedy method, the proposed framework improves effective coverage by 23.38 percentage points, terminal throughput by 55.3%, and cumulative throughput by 44.3%, demonstrating its effectiveness for autonomous network formation under unknown demand.",
+      "topics": [
+        "UAV Applications and Optimization",
+        "Mobile Ad Hoc Networks",
+        "Satellite Communication Systems"
+      ],
+      "keywords": [
+        "UAV networks",
+        "self-organizing networks",
+        "large language models",
+        "graph reinforcement learning",
+        "user discovery",
+        "network reconfiguration",
+        "heterogeneous networks"
+      ]
+    },
+    {
+      "id": "doi:10.1145/3842721.3850117",
+      "abstract": "Connected MRI scanners operate as networked medical devices within DICOM-based healthcare Internet of Things (IoT) workflows, but conventional connectivity primarily moves images to a Picture Archiving and Communication System (PACS) rather than adding task-specific reasoning near acquisition. Building on DESH-App 2.0, a preceding machine-learning contribution accepted for oral presentation at SIN Firenze 2026, this paper specifies MIRA (Multimodal Imaging Reasoning and Assessment), a vendor-neutral edge-cloud module for assessing disproportionately enlarged subarachnoid spaces (DESH). A hospital-edge gateway validates and de-identifies 3D T1-weighted DICOM studies, derives ventricular, high-convexity, and Sylvian-fissure masks with SegFormer3D, and converts each volume into a compact evidence package comprising 12 representative slices with overlays, 17 global, zonal, and ratio features, and quality-control tokens. LLaVA-Med-7B and Lingshu-7B are adapted through 4-bit QLoRA to return constrained JSON containing class, confidence, named anatomical evidence, and an abstention or quality warning. The edge-cloud partition keeps raw volumes inside the institutional network; only the compact evidence package may reach an authenticated inference service, while structured outputs return to the PACS workstation. The evaluation protocol jointly covers diagnostic discrimination, calibration, evidence agreement, unsupported claims, abstention, latency, transmitted bytes, memory demand, link-loss recovery, and multi-device interoperability. MIRA is designed to add auditable multimodal reasoning to connected MRI workflows without modifying safety-critical scanner controls.",
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "IoT and Edge/Fog Computing",
+        "Medical Image Segmentation Techniques"
+      ],
+      "keywords": [
+        "DESH",
+        "edge-cloud computing",
+        "multimodal large language models",
+        "3D T1-weighted MRI",
+        "ventricular segmentation",
+        "Sylvian fissure",
+        "DICOM",
+        "Internet of Medical Things",
+        "PACS",
+        "data de-identification",
+        "model calibration",
+        "diagnostic reasoning",
+        "quality control",
+        "networked medical devices"
+      ]
+    },
+    {
+      "id": "doi:10.1145/3842721.3849650",
+      "abstract": "Edge deployment of large language models (LLMs) increasingly relies on libraries of lightweight LoRA adapters, yet GPU/DRAM can keep only a small resident subset at a time. Serving a request through a non-resident adapter requires paging its weights from storage, incurring measurable latency. This creates a two-timescale online control problem: on a slow timescale, the system selects which adapters remain resident in fast memory, while on a fast timescale it routes each request to an adapter whose context-dependent utility is unknown a priori. The two decisions are tightly coupled: the cache determines the cost of exploration, and the router determines which adapters receive informative feedback. We formulate this joint caching-and-routing problem as a two-timescale contextual bandit and propose POLAR (Paging and Online Learning for Adapter Routing). POLAR pairs a cache-aware LinUCB router with an epoch-based cache controller. We study two variants. A fixed-epoch version provides a robust baseline with worst-case regret guarantees under arbitrary contexts. An epoch-doubling version, POLAR+, adds forced exploration and improved cache optimization to achieve O~(dNT+KT) sublinear regret under stochastic regularity and cacheability conditions, where N is the adapter count, K the cache size, d the context dimension, and T the horizon. The routing term matches the standard contextual-bandit rate up to logarithmic factors, showing that the memory hierarchy does not fundamentally slow routing learning. Experiments using 15 real LoRA adapters for Qwen2.5-7B together with measured GPU paging latencies show that adaptive cache control substantially outperforms heuristic caching baselines.",
+      "topics": [
+        "Advanced Bandit Algorithms Research",
+        "IoT and Edge/Fog Computing",
+        "Caching and Content Delivery"
+      ],
+      "keywords": [
+        "LoRA adapters",
+        "online learning",
+        "contextual bandits",
+        "LinUCB",
+        "regret bounds",
+        "memory hierarchy",
+        "Qwen2.5"
+      ]
+    },
     {
       "id": "doi:10.5281/zenodo.24246564",
       "abstract": null,
@@ -2314,130 +2535,6 @@
         "Library Science and Information Literacy",
         "Library Science and Information",
         "Library Science and Administration"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.3389/fmed.2026.1949961",
-      "abstract": "Introduction Continuous glucose monitoring is increasingly marketed to women with polycystic ovary syndrome (PCOS), on the premise that a syndrome rooted in insulin resistance should respond to glucose-guided self-management. This scoping review mapped the extent and nature of the underlying research. Methods Peer-reviewed original studies reporting primary data on continuous glucose monitoring in women with PCOS were eligible, with no restriction on year, language, or setting. MEDLINE, Embase, and Web of Science were searched from inception in March 2024 and updated in January 2026, followed by citation searching. Reporting followed the PRISMA extension for scoping reviews. Two reviewers screened and charted records independently. Each study was appraised with the Joanna Briggs Institute checklist matched to its dominant source of bias, in duplicate by a human reviewer and a supervised large language model, mutually blinded and reconciled by consensus. Trial registries were searched separately for ongoing work. Results Of 4,826 records screened by database and citation searching, six studies published between 2003 and 2025 were included, representing fewer than six independent investigations, of 21 to 90 participants each. All compared glucose measures between women with and without PCOS, or between metabolic subgroups within PCOS. None used monitoring to guide management, and none reported reproductive or gynecological outcomes. Mean glucose and variability measures generally did not differ between groups apart from isolated postprandial signals, and within-PCOS comparisons were inconsistent. Values lay within or near the normoglycemic range, in samples from which overt dysglycemia had largely been excluded. In every study, the domain bearing on the clinical value of monitoring was at high risk of bias, with confounding unadjusted and no adequately powered glucose comparison anywhere. Nine registered trials were identified; in eight, monitoring is a measurement instrument rather than an intervention. Discussion A vigorous commercial market stands against a sparse, dated, methodologically flawed evidence base, silent on the outcomes that matter most. The present evidence does not support routine clinical or consumer use of monitoring in PCOS. Adequately powered studies treating monitoring as an intervention and measuring reproductive and metabolic outcomes are needed; only one such trial is under way.",
-      "topics": [
-        "Ovarian function and disorders",
-        "Diabetes Management and Research",
-        "Diabetes, Cardiovascular Risks, and Lipoproteins"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.4018/427440",
-      "abstract": "Users use AI-based technologies such as conversational AI (chatbots) to access health information and gain healthcare support. This enhances the user-AI technology relationship, thereby addressing the traditional healthcare system. However, there are ethical and technical concerns about the use of …",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "AI in Service Interactions",
-        "Artificial Intelligence in Healthcare"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.24387989",
-      "abstract": "Generative AI is entering translator training without an agreed pedagogical model, while research on parallel corpora in translator education has developed largely apart from research on large language models (LLMs). This paper specifies a three-arm comparative study that tests whether combining the two yields higher technical translation accuracy than either alone. The proposed treatment, corpus-augmented prompting, requires students to retrieve aligned segment pairs and terminology from a domain-specific parallel corpus, supply them to an LLM as examples and constraints, and verify the resulting draft against corpus evidence. Participants are randomly assigned to a corpus-only group, an LLM-only group or the hybrid group; accuracy is assessed through blind, error-based rating, terminology scores and process logs. The argument draws on studies of corpus use in translator education and of in-context and retrieval-augmented prompting. The paper contributes a five-step pedagogical cycle, testable hypotheses, an evaluation protocol and a statement of validity threats. It reports no empirical results; it is a research-design article intended to make the study replicable.",
-      "topics": [
-        "Translation Studies and Practices",
-        "Natural Language Processing Techniques",
-        "Second Language Acquisition and Learning"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.82451/k51393",
-      "abstract": "Point-of-care ultrasonography (POCUS) is an integral diagnostic modality in healthcare settings nationwide. Although POCUS has demonstrated clinical utility across multiple practice settings, a gap in the literature remains regarding its cost-effectiveness and scalability in rural healthcare, a setting where patients may particularly benefit from improved diagnostic access and affordability. This narrative review evaluates evidence on rural POCUS cost-effectiveness and whether AI-assisted ultrasound can address implementation barriers. PubMed, MEDLINE, and CINAHL were searched from January of 2019 through July of 2026 using the search terms POCUS, ultrasound, rural, cost-effectiveness or benefit, barriers, clinical utility, artificial intelligence or AI, and emerging applications. Included studies were peer-reviewed original research, randomized controlled trials, systematic reviews, scoping reviews, and meta-analyses that addressed rural POCUS, economic outcomes, implementation barriers, or AI-assisted ultrasound. Studies were screened for relevance by two reviewers and excluded if they were unrelated to POCUS. Critical appraisal was performed for included studies. The literature consistently demonstrates that POCUS can improve diagnostic efficiency, reduce unnecessary referrals, and generate cost savings for patients and healthcare systems; however, no studies directly report cost savings in rural settings. Rural POCUS implementation barriers include equipment costs, training requirements, and reimbursement limitations. Studies consistently showed that AI-assisted ultrasound supports image acquisition by nonexpert users without compromising diagnostic utility. Studies were limited by certain conditions or structures imaged, rather than broad AI-assisted ultrasound application. AI-assisted POCUS may reduce training requirements to acquire high-quality diagnostic images, addressing a major barrier, but there is insufficient evidence demonstrating cost savings. This review identifies a need for evaluating rural POCUS cost savings and AI-assisted ultrasound-related savings, as direct findings may support broader POCUS adoption. Rural communities are predisposed to health disparities, and if proven to be economically beneficial, the expansion of POCUS may lead to better health outcomes with less financial burden for patients.",
-      "topics": [
-        "Ultrasound in Clinical Applications",
-        "Artificial Intelligence in Healthcare and Education",
-        "Ultrasound Imaging and Elastography"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.36074/logos-20.11.2026.014",
-      "abstract": "This article offers a philosophical reconstruction of the criteria for artistic mastery in the context of the proliferation of digital media and generative artificial intelligence. It challenges the tendency to equate mastery solely with technical proficiency, professional status, or the visual perfection of a work, while conversely reducing amateurism merely to aesthetic inferiority. The methodology integrates a phenomenological analysis of aesthetic experience, the hermeneutics of artistic decision-making, a media-philosophical perspective, and a critical examination of contemporary literature on the philosophy of AI. It is argued that generative technology alters not only the artist’s toolkit but also the modes of form emergence, the distribution of agency, and the processes of perception. The study proposes distinguishing between image generation, its artistic articulation, and the aesthetic event, processes that do not necessarily coincide. The novelty of this research lies in delineating three levels of an artistic work-technical generation, authorial articulation, and the aesthetic event and in conceptualizing mastery as a reflexively responsible capacity to organize the relationships between these levels, rather than as a mere sum of skills or a property of a finished artifact. Conclusions. Based on this, a multidimensional model of mastery is developed, encompassing intentionality, media literacy, reflexive selection, temporal depth, the productivity of aesthetic experience, and responsibility. It is demonstrated that the «human versus machine» dichotomy is less analytically productive than the distinction between the automated reproduction of the recognizable and responsible form-creation. Amateurism is interpreted as an open mode of participation in culture—one capable of evolving into mastery, independent of commercial or institutional legitimation.",
-      "topics": [
-        "Ethics, Aesthetics, and Art",
-        "Art, Technology, and Culture",
-        "Art, Aesthetics, and Perception"
-      ],
-      "keywords": [
-        "artistic mastery",
-        "craftsmanship",
-        "generative AI",
-        "digital media",
-        "amateurism",
-        "aesthetic experience",
-        "artistic decision-making",
-        "image generation",
-        "aesthetic event",
-        "media literacy",
-        "human versus machine",
-        "form creation",
-        "phenomenology of art"
-      ]
-    },
-    {
-      "id": "doi:10.5281/zenodo.24386947",
-      "abstract": "This article examines the use of artificial intelligence technologies to identify and analyse individual errors made by English language learners and to develop personalized learning pathways. The author proposes a methodological model aimed at organizing learners’ recurring errors, identifying their individual learning needs, and developing tailored exercises. The article also discusses the potential of this model to support the development of English grammar, vocabulary, and communicative skills.",
-      "topics": [
-        "Artificial Intelligence in Education",
-        "EFL/ESL Teaching and Learning",
-        "Intelligent Tutoring Systems and Adaptive Learning"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1177/00187267261499126",
-      "abstract": "Do servant leaders shape their followers’ vocational outcomes by the career support they provide or by helping followers find meaning at work? Drawing on self-determination theory, we test these two accounts, examining their competing effects on followers’ thriving at work, career satisfaction, and job search behaviors. Using the critical incident method (Study 1), we found that servant leaders influence vocational outcomes by deepening followers’ meaning at work, but not by providing career support. In a four-wave study (Study 2), both pathways were significant. A field study (Study 3) again supported only the meaning at work pathway, showing that meaning at work was most salient for followers with lower levels of work volition. An internal meta-analysis confirmed that both pathways carry a positive indirect effect in aggregate, but that the pathway through meaning at work is significantly stronger. Taken together, our results indicate that servant leadership is more vocationally consequential through the meaning followers internalize than the career support they receive, particularly among followers whose vocational agency is more constrained.",
-      "topics": [
-        "Job Satisfaction and Organizational Behavior",
-        "Workplace Spirituality and Leadership",
-        "Career Development and Diversity"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.3389/fimmu.2026.1916871",
-      "abstract": "Colorectal cancer (CRC) remains a major cause of cancer-related morbidity and mortality, with therapeutic resistance, tumour heterogeneity, and the limited responsiveness of microsatellite-stable (MSS) disease to immunotherapy continuing to constrain precision treatment. Although CRISPR technologies are widely recognised as genome-editing tools, their expanding applications in functional target discovery, tumour modelling, epigenetic regulation, tumour–immune interactions, and therapeutic engineering are establishing a broader role in functional oncology. This review examines how genome-wide CRISPR screens, engineered organoids, and in vivo models are being used to identify tumour dependencies, interrogate oncogenic signalling networks, and uncover mechanisms of therapeutic resistance in CRC. This review also highlights emerging functional studies in MSS CRC that reveal tumour-intrinsic and microenvironmental mechanisms of immune exclusion and therapeutic resistance beyond the conventional antigen-centric model. We further discuss CRISPR-based epigenome engineering, base and prime editing, engineered immune-cell strategies, and emerging delivery platforms for precision therapeutic development. Integration of CRISPR perturbation with single-cell and spatial profiling, multi-omics technologies, and artificial intelligence provides additional opportunities to resolve tumour heterogeneity, reconstruct functional regulatory networks, and prioritise patient-specific vulnerabilities. Despite these advances, clinical translation remains limited by off-target and genomic safety concerns, tumour-selective delivery, intratumoural heterogeneity, and the complex CRC microenvironment. Collectively, this review positions CRISPR as an integrated functional-oncology platform connecting molecular interrogation, functional validation, and therapeutic engineering, providing a framework for the development of more precise and personalised strategies for CRC.",
-      "topics": [
-        "CRISPR and Genetic Engineering",
-        "Chromatin Remodeling and Cancer",
-        "Cancer Immunotherapy and Biomarkers"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.4018/979-8-2600-5289-1.ch004",
-      "abstract": "Artificial intelligence (AI) has had and will continue to have, an unprecedented impact on higher education. Yet the integration of AI literacy into postsecondary curricula remains rare and inconsistent. Academic librarians, due to their expertise in information literacy and interdisciplinary …",
-      "topics": [
-        "Library Science and Information Literacy",
-        "Educational Strategies and Epistemologies",
-        "Digital literacy in education"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.24389527",
-      "abstract": "The article addresses the conceptual and classificatory foundations required for a comparative study of human and artificial intelligence (AI) translation of Uzbek literary realia into English. Drawing on the Bulgarian–Russian tradition of realia studies, Russian and Uzbek translation theory and Western research on culture-bound references, the paper distinguishes the umbrella notion of the culture-specific unit from realia as one of its subtypes, specifies the differential features of realia and delimits them from terms, proper names, forms of address and phraseological units. The study relies on critical-comparative analysis of definitions, conceptual synthesis and illustrative analysis of Uzbek examples. As a result, a multi-parameter classification framework is proposed that combines the subject, local and temporal divisions of realia with translation-oriented parameters: the degree of transculturality for the English reader, lexicographic status in English and textual function. The framework is intended to serve as an annotation scheme for a parallel corpus of Uzbek literary texts and their human and AI-generated English translations, and three testable hypotheses about the behaviour of AI systems are formulated.",
-      "topics": [
-        "Translation Studies and Practices",
-        "Language and Culture",
-        "linguistics and terminology studies"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.7759/cureus.120002",
-      "abstract": "Debate is an active pedagogical practice in which learners must evaluate evidence, defend positions within a topic, and respond to criticism from the opposing view. Within the postgraduate medical education environment, traditional didactic teaching methods such as lectures have traditionally constituted the principal educational approach despite growing recognition of the value of active and learner-centred educational strategies. Debate-based learning represents an active learning and drives self-directed learning through intrinsic motivation and preparation. In the postgraduate medical education context, debate offers an opportunity for learners to engage with critical thinking and evidence appraisal within a clinical setting. This narrative review critically examines the theoretical foundations, existing evidence base, practical considerations, and limitations of debate-based learning in a postgraduate medical education setting, highlighting the potential of debate as a learner-centred approach to developing critical appraisal, clinical reasoning, and professional communication skills required for a modern clinician.",
-      "topics": [
-        "Innovations in Medical Education",
-        "Problem and Project Based Learning",
-        "Innovative Teaching Methods"
       ],
       "keywords": []
     }

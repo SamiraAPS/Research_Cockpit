@@ -1,7 +1,76 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-21T13:36:07.821Z",
+  "generatedAt": "2026-11-22T12:43:33.018Z",
   "documents": [
+    {
+      "id": "arxiv:2608.02665",
+      "abstract": "A benchmark score is a measurement instrument, yet most benchmarks read each item at a single canonical surface form. We ask whether that reading is faithful: when an item's intent is held fixed and only its meaning-preserving surface form varies, does the canonical-form score estimate model behavior well, and how much of any variation is decoding/judge noise rather than signal? We instantiate this in safety, a high-stakes setting with no gold label to average toward. To avoid prior confounds, we pre-author the reformulations (refusal-free, mostly non-LLM: machine back-translation and a Matrix-Language-Frame code-switch generator) so an identical surface form reaches every model, score all responses with one human-anchored, vendor-neutral judge (Claude, kappa = 0.86 vs. human on unsafe compliance, stable across languages, cross-checked by GPT-4o), and verify intent preservation. On 370 seeds x 5 surface forms x 5 models, no single transformation is uniformly most dangerous (6 of 20 per-transformation McNemar tests survive correction, most protective). Yet evaluating only the canonical prompt underestimates unsafe compliance: the union of unsafe outcomes across forms exceeds even the worst single form by 3.3-12.9 pp, with bootstrap 95% CIs excluding zero for all five models, and 5-13% of seeds safe on canonical are unsafe under some reformulation -- above a zero stochasticity floor (canonical resampled five times at temperature 0 gives 0/370 new exposures). The size of this gap is model-dependent (largest on Gemini 2.5 Pro). One form recovers only ~53% of a model's observed unsafe surface and about three reach 85% -- a redundancy characterization of this form set, not of a defined population. A benign control (XSTest) suggests the instability is bidirectional, though the benign and harmful pools are not item-matched. We release the dataset, code, and per-response labels.",
+      "topics": [
+        "cs.CR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.00492",
+      "abstract": "Predictive coding offers a powerful theory of cortical computation, but corresponding scalable algorithmic implementations for artificial intelligence have remained elusive. This paper introduces the Bayesian reflex, a computational framework that directly instantiates predictive coding through three pillars: belief maintenance via hierarchical generative models, sequential Bayesian updating via prediction-error minimization, and uncertainty-driven action via active inference. We show that recent breakthroughs---ellipsoidal decomposition for exact $i.i.d.$ sampling, recursive Gaussian processes for deep hierarchical inference, and derivative-aware Bayesian optimization---provide the missing algorithmic ingredients. The resulting framework enables mathematically principled, scalable, and brain-inspired continual learning, perception, and decision-making. We illustrate its versatility through applications ranging from climate model evaluation to prime number discovery, offering a blueprint for truly adaptive artificial intelligence.",
+      "topics": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.00818",
+      "abstract": "The discovery of scaling laws has highlighted the extraordinary potential of AI systems with a striking empirical pattern: as AI systems scale, their capabilities tend to improve predictably. Yet, in real-world applications, AI rarely operates in isolation; instead, it often works alongside humans, raising the question of whether these gains persist in human-AI collaboration. In this work, we develop an analytical model to examine when the empirical scaling benefits of AI translate into improved human-AI joint system performance. We demonstrate that the performance of a human-AI system can scale positively as the AI scales up-provided that humans have an accurate perception of the AI's capabilities. Human misperception, however, can fundamentally alter this relationship: i) when humans over-perceive the AI's capabilities, a scaling paradox may arise, in which greater AI scale reduces overall system performance and amplifies firm-level profit losses, and (ii) when humans under-perceive the AI's capabilities, performance still improves with scale but at a substantially slower rate. We further show that firms can actively manage these distortions through operational policies such as cost internalization and perception alignment, whose effectiveness depends on the economics of AI deployment and the direction of human misperception. These findings suggest that organizations may benefit more from managing the human-AI interface than from simply investing in larger, more expensive AI systems. More broadly, our results suggest that AI scaling should be viewed not only as a technological challenge, but also as a behavioral and operational one, and caution against the view that larger AI systems will automatically lead to better operational outcomes. Whether AI scaling creates value ultimately depends on how increased AI capabilities shape human beliefs and collaborative efforts.",
+      "topics": [
+        "cs.AI",
+        "econ.GN"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1109/mc.2026.3664470",
+      "abstract": "Large language models deployed in real-time, regulated settings face knowledge staleness, catastrophic forgetting, hallucination, and weak feedback loops. We present a unified, pattern-driven LLMOps architecture integrating real-time data ingestion, continual learning, retrieval-augmented generation (RAG), and human-in-the-loop feedback into a single operational pipeline. Four contributions map to established software design patterns: an adaptive ingestion pattern orchestrator (AIPO) evaluated with FreshStreamBench; STAR+FAR continual learning with sparse temporal adapter routing and freshness-aware replay; SAGE, an SLO-aware adaptive retrieval policy predicting a per-query passage budget to meet tail-latency targets; and an automated feedback-driven convergence stage with RLHF triggers. The result reduces latency-cost-accuracy trade-offs while supporting auditability and rollback for high-risk sectors such as health care and finance.",
+      "topics": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2609.28478",
+      "abstract": "MagicSchool's K-12 AI product suite is used by millions of teachers and serves millions of teacher and student messages each month. Our team monitors output along four priority dimensions--student safety, tone and instructional role, pedagogical value, and structural output quality--and tracks how often it fails on each. As our program matured, false positives came to dominate the evaluators' flags, misdirecting scarce analyst attention away from failures that warrant product change. To address this, we deployed three enhancements--unanimous-fail panels of repeated judge runs, per-evaluator judge-model choices, and softened rubrics--backed by a pair of synthetic datasets: a benchmark that measures how often cases are flagged, and an egregious-failure set that confirms the worst failures are still caught. Across 21 deployed evaluators, final configurations reached a median benchmark activation rate of 0.04% (16 of 21 at or below 0.2%; 8 at 0.00%) and 100% egregious-failure capture across all 21 evaluators. The strategy cuts confirmed false-positive flags by 99% and raises per-flag precision from 0.6% to 49%, while holding egregious-failure capture at 100% and improving it on 8 of 21 evaluators.",
+      "topics": [
+        "cs.CY"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2608.00130",
+      "abstract": "Fortran has been the cornerstone of high-performance computing for decades and remains unmatched in many domains. Yet the language faces an expertise gap: a new generation of scientists is barely familiar with it, while many experienced Fortran developers are only now transitioning to modern ecosystems such as JAX. This gap often results in \"Fython\" - Python code written with a Fortran mindset - that fails to leverage modern frameworks. We present FGPT, a transpiler framework designed to bridge this gap. It provides a systematic pipeline that transpiles Fortran into GPU-adapted Fortran, auto-differentiable Fortran via Tapenade, or NumPy and JAX scripts. Its architecture comprises three stages: (i) a frontend that parses Fortran and extracts target procedures along with all their dependencies; (ii) a middle-end that lowers the code into an intermediate representation, then into GPU-adapted or auto-differentiable Fortran, or a NumPy class; and (iii) a backend that transforms NumPy scripts into JAX modules optimized for GPU acceleration and automatic differentiation. Large language models fail when applied to the scale of community scientific codes-often spanning hundreds of thousands of lines-where consistent transformations, strict numerical fidelity, and validation against production tests are non-negotiable. FGPT addresses these challenges by preserving program semantics throughout the entire translation. We verified the framework on representative climate modeling kernels and demonstrated that it produces correct, differentiable Python implementations without requiring manual intervention. By combining rigorous compiler techniques with modern accelerator support, FGPT offers a scalable, trustworthy path for modernizing legacy Fortran code.",
+      "topics": [
+        "cs.PL",
+        "cs.AI",
+        "cs.CL",
+        "cs.MS",
+        "cs.SE"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "arxiv:2607.29614",
+      "abstract": "The rapid adoption of deep learning models in high-risk domains has intensified the need for trustworthy Explainable Artificial Intelligence (XAI). However, objectively evaluating explanation fidelity and aligning XAI metrics with human-centered understanding remain critical open challenges. In this work, we propose a model-agnostic metric, the EPC score, which is an extension of the Explainability-Performance Coefficient (EPC), that quantifies explanation quality by explicitly balancing the trade-off between feature selection sparsity and preserved model performance. Through an empirical validation across tabular, text, and image modalities, we show that the EPC score effectively uncovers operational dependencies among network activations, data dimensionality, and explainer performance. Furthermore, we validate the EPC score against independent human-based explanations, proving that higher EPC scores strongly align with human lexical sentiment judgments and spatial visual annotations.",
+      "topics": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "keywords": []
+    },
     {
       "id": "arxiv:2608.00149",
       "abstract": "Polymers synthesized via ring-opening polymerization (ROP) of cyclic monomers represent an important class of materials due to their chemical recyclability and possible insertion in several critical applications. We present a dataset of 1 million synthetically realizable ROP polymer structures generated through a combination of Virtual Forward Synthesis (VFS) and polymer expert language models and qualified by stringent chemical heuristics. VFS is used to generate ROP polymers by applying known reactions to existing monomers. The polymer foundation models polyBART and POLYT5 further enable the generation of ROP candidates, with polyBART exploring its learned latent space and POLYT5 producing candidates via sequence-to-sequence generation. The resulting ROP polymers are subjected to robust filtering criteria to ensure novelty, validity and overall data quality through a combination of automated validation pipelines and a comprehensive set of chemist-informed heuristic rules introduced in this work for the first time. We hope that this dataset will serve as a valuable resource for downstream sustainable applications.",
@@ -1805,92 +1874,6 @@
       "abstract": "Instruction hierarchies are a core safety assumption of language model deployment: higher priority inputs, such as system prompts, should override conflicting lower priority inputs from users or tools. Yet frontier LLMs often violate this hierarchy. We introduce V-Steer, a training-free inference time method that restores privileged influence by editing cached value vectors at prompt positions. Using direct logit attribution on the first next token prediction, V-Steer identifies heads where lower priority spans dominate privileged ones, then boosts privileged spans and suppresses conflicting lower priority spans through in-place multiplicative edits to cached V tensors. Since the method acts only on cached values, it remains compatible with fused attention backends and adds only a one time prefill overhead. Across models from 7B to 70B, this attribution guided intervention raises primary constraint accuracy from under 18% up to 92% on controlled role conflict benchmarks, and on broader instruction hierarchy evaluations substantially outperforms prompt only baselines while matching or exceeding SoTA training based methods on 3 of 4 scales of LLMs, with negligible decoding-speed overhead. The code is available at https://github.com/cindy2000sh/v-steer.",
       "topics": [
         "cs.CL"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.26309",
-      "abstract": "Estimating causal effects of linguistic properties from observational text is difficult because the same document can contain both the treatment of interest and the non-treatment textual attributes needed for adjustment. Existing approaches often learn representations from the full text to capture latent confounding, but when treatment status is itself encoded by words in the text, these representations can directly encode treatment. This creates a confounder trap: richer representations can make treated and control documents separable, inducing overlap violations even when the underlying causal problem satisfies overlap. We study latent text treatments that are encoded through lexicons or other treatment-defining lexical information, and propose masking-based adjustment representations that remove this lexical treatment signal before representation learning. We formalize representation-induced overlap failure, prove that deletion masking preserves overlap for bag-of-words/topic-model representations, and characterize replacement masking as a natural relaxation for large language models that hides treatment-defining tokens while preserving word order and context. Across simulations, masking improves overlap diagnostics, stabilizes treatment effect estimates, and reduces bias relative to adjustment methods that learn from the unmasked text.",
-      "topics": [
-        "stat.ME",
-        "cs.CL",
-        "stat.AP",
-        "stat.ML"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.25425",
-      "abstract": "Capture the Flag (CTF) competitions are among cybersecurity's most effective training grounds, developing practical skill across cryptography, web exploitation, and binary exploitation. Large language models (LLMs) can now solve a growing share of challenges with minimal human input, raising urgent questions about fairness, the validity of rankings, and whether participation still delivers the learning that justifies the effort. This paper reports a mixed-methods study of LLM impact on modern CTFs, combining a synthesis of published benchmarks, including a recent government evaluation, case studies of live competition across three challenge categories, structured observation of the public channels where the community debates AI use, and semi-structured interviews with experienced players and organisers. We map the current human-machine capability boundary by category, showing that easy and intermediate challenges in cryptography, web, and binary exploitation are now reliably automated while narrower sub-categories continue to resist. We find that community disagreement about whether AI should be permitted is downstream of an undeclared prior question: what a competition is for. Against this backdrop we contribute a four-component safeguard framework, combining tiered competition divisions, LLM-resistant challenge design, telemetry used investigatively, and a draft community code of conduct, together with a decision tool that ties the combination of safeguards to a competition's declared purpose. The argument reaches beyond CTFs to any setting in cybersecurity where a demonstrated result is taken as evidence of an underlying ability.",
-      "topics": [
-        "cs.AI",
-        "cs.CR",
-        "cs.CY"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1287/isre.2024.0951",
-      "abstract": "Generative AI disclosure rules aim to protect audiences from deception, preserving human creativity and self-expression. Yet disclosure may change not only how audiences evaluate creative work but also how creators produce it. In two experiments involving collaboration with a text-to-image …",
-      "topics": [
-        "Ethics and Social Impacts of AI",
-        "Artificial Intelligence in Healthcare and Education",
-        "Creativity in Education and Neuroscience"
-      ],
-      "keywords": [
-        "Transparency (behavior)",
-        "Agency (philosophy)",
-        "Mandate",
-        "Affect (linguistics)",
-        "Deception",
-        "Generative grammar",
-        "Self-disclosure",
-        "Reputation"
-      ]
-    },
-    {
-      "id": "doi:10.1080/10447318.2026.2702742",
-      "abstract": "As AI voice assistants (VAs) become integral to service interactions, a robust framework for evaluating their communicative effectiveness is needed. Media richness theory offers a pertinent foundation, yet extant research has largely focused on human-to-human communication via traditional media …",
-      "topics": [
-        "AI in Service Interactions",
-        "Social Robot Interaction and HRI",
-        "Speech and dialogue systems"
-      ],
-      "keywords": [
-        "Scale (ratio)",
-        "Service (business)",
-        "Nomological network",
-        "Extant taxon",
-        "Exploratory research",
-        "Exploratory factor analysis",
-        "Confirmatory factor analysis"
-      ]
-    },
-    {
-      "id": "arxiv:2607.25446",
-      "abstract": "Multi-agent frameworks built on large language models (LLMs) routinely entangle three logically distinct concerns: who is on the team (organization), how members align (coordination), and which algorithm fuses their work (collaboration protocol). IMACS (Intelligent Multi-Agent Collaboration System) separates the three into orthogonal, independently swappable layers. Classic organizational theory (Belbin roles, Mintzberg coordination, RACI accountability) becomes executable, validated configuration, and the framework places six published collaboration algorithms behind a common interface while exposing roles, coordination, and accountability as independently configurable factors. We use this separation to conduct controlled comparisons in which organizational assignments vary while the collaboration protocol is held fixed. It also turns protocol choice into a variable that can be learned: Adaptive Org Routing, a contextual-bandit meta-protocol, selects a protocol per task under an explicit quality-cost tradeoff, outperforms every fixed protocol in a controlled study, and trains online on real benchmark and LLM-judge rewards. The ablations expose a mechanism. Accountability placement changes outcomes exactly when the protocol routes the deliverable through the accountable agent, and the winning placement flips across model families, so organizational design cannot be hard-coded; it must be revalidated, or learned, for each model binding.",
-      "topics": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.25914",
-      "abstract": "Autonomous Network Levels 4-5 require AI agents to invoke tools across vendor boundaries without human oversight, yet existing management standards lack a standardized mechanism for cross-vendor trust visibility. When a tool from Vendor B is compromised, agents from Vendor A continue invoking it -- unaware of the trust degradation -- causing cascading service impact. We present AgentToolMO, a proposed 3GPP NRM information model for agent tool trust management. The model comprises: a formally defined trust state machine with provable graduated enforcement, damped cascade propagation with bounded convergence, cross-vendor trust notifications via existing Management Services (MnS) interfaces, and retroactive impact assessment through NRM dependency graph traversal. Simulation-based evaluation across multi-vendor topologies shows that standardized cross-vendor notifications reduce blast radius from hours-scale undetected propagation to near-real-time containment bounded by MnS notification delivery, with cascade convergence guaranteed in bounded iterations and sub-linear notification scaling across vendor domains. The framework operates within existing 3GPP management infrastructure, leverages existing protocols, and provides a standardization pathway for trustworthy multi-vendor autonomous network management.",
-      "topics": [
-        "cs.AI",
-        "cs.CR",
-        "cs.NI"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "arxiv:2607.26107",
-      "abstract": "Dense vision-language understanding, including object localization, region recognition, and open-vocabulary semantic segmentation, requires associating language concepts with spatially grounded visual regions. CLIP provides a strong foundation for these tasks by learning a shared image-text embedding space from large-scale contrastive pre-training. However, its image-level objective aligns text with a CLS-derived global representation, leaving local vision-language correspondence only indirectly constrained. Existing methods either introduce additional supervision, external models, or task-specific adaptation, while training-free approaches mainly recover dense responses from existing patch features without examining where local semantics become most accessible within CLIP. We introduce TraceCLIP, a training-free framework that recovers latent patch-level semantic evidence by isolating the patch-specific terms written into the CLS attention output. TraceCLIP further converts contribution-derived semantic responses into a semantic-geodesic topology gate that calibrates final-layer patch affinity for dense feature reconstruction. Diagnostic experiments show that these contribution features exhibit strong local semantic discrimination and text-conditioned spatial alignment. On eight zero-shot semantic segmentation benchmarks, TraceCLIP achieves gains of 1.3 to 4.5 points in average mIoU over the strongest prior training-free methods across both backbones and background settings, without additional training, external vision foundation models, or region-level supervision. More broadly, these findings suggest that spatially localized semantics may remain accessible within the internal construction of globally aligned representations.",
-      "topics": [
-        "cs.CV",
-        "cs.AI"
       ],
       "keywords": []
     }

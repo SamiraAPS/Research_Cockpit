@@ -1,7 +1,161 @@
 {
   "schemaVersion": "search-shard-1.0.0",
-  "generatedAt": "2026-11-21T13:36:07.821Z",
+  "generatedAt": "2026-11-22T12:43:33.018Z",
   "documents": [
+    {
+      "id": "doi:10.48550/arxiv.2610.35298",
+      "abstract": "Financial fraud detection increasingly relies on heterogeneous transaction graphs, in which entities such as cards and merchants play distinct business roles and the risk meaning of an attribute depends on the entity's role: a high transaction volume may be routine for a merchant but unusual for a card. Heterogeneous graph neural networks preserve typed entities and relations but typically treat these attributes as role-agnostic inputs and leave their business meaning implicit. Meanwhile, most existing methods integrating large language models (LLMs) with graphs focus on homogeneous graphs or heterogeneous graphs with naturally available textual attributes, leaving their use on transaction graphs with structured attributes underexplored. To address this issue, we propose SemHGT, an LLM-enhanced framework that interprets structured attributes according to entity roles and makes the business semantics explicit in three stages: (1) role-aware prompts elicit risk-related business descriptions from node attributes, and a text encoder maps them to semantic vectors that enrich node representations; (2) semantic similarity guides multi-round sampling of target-specific path instances under transaction-to-transaction schemas; (3) schema-level tokens that combine local path evidence with global neighbor summaries are processed together with the target transaction by a unified transformer. Across three benchmark datasets, SemHGT leads the evaluated baselines on most dataset--metric comparisons. Further analyses provide additional evidence for the effectiveness of SemHGT's design and clarify how its semantic modeling and evidence selection contribute to fraud detection. Code is available at https://anonymous.4open.science/r/SemHGT-528A/.",
+      "topics": [
+        "Advanced Graph Neural Networks",
+        "Privacy-Preserving Technologies in Data",
+        "Complex Network Analysis Techniques"
+      ],
+      "keywords": [
+        "financial fraud detection",
+        "heterogeneous graph neural networks",
+        "large language models",
+        "transaction graphs",
+        "business semantics"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.35150",
+      "abstract": "Long-horizon web search requires LLM-based agents to integrate information across web pages through extended interactions under task-specific constraints. Evaluating this capability is important not only for measuring final answer quality, but also for assessing whether an agent acquires, verifies, and uses evidence reliably over extended interactions. Existing evaluations, however, mainly rely on simulated trajectories or on post-hoc trajectories reconstructed from final answers, rather than on retained real interaction traces, which limits the fidelity of behavioral assessment and weakens support for fine-grained error localization. To address this gap, we introduce LONGSEARCHEVAL, a trajectory-aware agent evaluation framework that combines a unified agent execution protocol with source constrained outcome verification and retrospective failure-node localization. Stage 1 verifies answer groups against agent-cited webpages without human-authored gold answers; Stage 2 audits normalized rounds and links flagged failure nodes to incorrect answer groups. We evaluate 16 models from eight families on 100 tasks, yielding 1,600 retained runs and 6,545 automatically flagged failure nodes. Trajectory collection and evaluation required 1,037 and 318 hours of cumulative runtime, respectively. Human validation yields 94.50% agreement on supplied answer-group labels and 98.11% feature-correspondence precision for audited round-group links. Together, outcome scores and linked trajectory evidence support controlled model comparison and retrospective inspection of answer-related content.",
+      "topics": [
+        "Information Retrieval and Search Behavior",
+        "Topic Modeling",
+        "Web Data Mining and Analysis"
+      ],
+      "keywords": [
+        "LLM agents",
+        "agent evaluation",
+        "evidence verification"
+      ]
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.36386",
+      "abstract": "Low-Rank Adaptation (LoRA) has become a key mechanism for efficiently specializing foundation models into many task- and user-specific variants. Serving many LoRA adapters under a shared resource budget turns post-hoc compression into a two-level allocation problem: rank must be distributed across layers within each adapter and across adapters within the fleet. Although trained LoRAs contain substantial spectral redundancy, spectral reconstruction alone does not determine how much compression an adapter can functionally tolerate. We formulate fleet compression through a functional rank-distortion frontier for each adapter, followed by fleet-level minimax allocation under a shared rank budget. Given exact frontiers, this decomposition is equivalent to joint optimization over all layer ranks. We introduce Functional Rank Allocation (FRA), an unlabeled method for constructing practical frontiers. FRA measures isolated module truncations end to end, uses these measurements as an additive search surrogate solved by dynamic programming, remeasures every complete candidate, and takes the lower-risk envelope with a complementary spectral proposal before exact minimax allocation over the constructed frontiers. Across 78 adapters from three public fleets, FRA improves worst-case and tail utility over uniform spectral compression in constrained-budget regimes. Fixed-budget probes show that isolated costs rank candidates well, but their calibration shifts across proposal shapes; end-to-end verification and the spectral proposal therefore limit functional-search error.",
+      "topics": [
+        "Domain Adaptation and Few-Shot Learning",
+        "Advanced Neural Network Applications",
+        "Topic Modeling"
+      ],
+      "keywords": [
+        "LoRa",
+        "low-rank adaptation",
+        "spectral redundancy",
+        "dynamic programming",
+        "end-to-end verification"
+      ]
+    },
+    {
+      "id": "doi:10.1007/s10462-026-11707-2",
+      "abstract": "The increasing use of machine learning (ML) in privacy-sensitive domains such as healthcare, finance, and user-facing services has intensified the need for techniques that enable data-driven intelligence without exposing sensitive information. Fully Homomorphic Encryption (FHE) offers a cryptographically rigorous approach to privacy-preserving machine learning by allowing computations to be performed directly on encrypted data. While appealing in principle, the integration of FHE into modern ML pipelines introduces substantial challenges that fundamentally affect model design, algorithm selection, and system performance. This survey provides a comprehensive and structured review of machine learning over encrypted data using non-interactive FHE-based approaches. We examine how a wide range of machine learning models, including traditional ML algorithms, deep neural networks, and emerging transformer architectures, are adapted to operate under the arithmetic, precision, and efficiency constraints imposed by FHE. To organize a rapidly growing body of work, we introduce a unifying taxonomy that captures key design dimensions such as encryption schemes, nonlinearity handling strategies, model families, system-level optimizations, and privacy objectives. Using this framework, we synthesize existing approaches, analyze trade-offs between accuracy, efficiency, and security, and highlight recurring design patterns across the literature. Beyond summarizing existing techniques, this survey discusses practical limitations, deployment considerations, and open research challenges that shape the future of privacy-preserving machine learning under encryption. By bridging cryptographic techniques and modern AI system design, this work aims to serve as a reference for researchers and practitioners seeking to develop secure, scalable, and trustworthy machine learning systems.",
+      "topics": [
+        "Cryptography and Data Security",
+        "Privacy-Preserving Technologies in Data",
+        "Cloud Data Security Solutions"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.3389/fonc.2026.1908349",
+      "abstract": "Background Machine learning-based assessment of tumor-infiltrating lymphocytes (TILs) has been proposed to improve the reproducibility and clinical utility of immune-contexture evaluation in breast cancer histopathology. However, existing studies differ substantially in task definition, annotation strategy, model architecture, validation design, and clinical endpoint. This systematic review and evidence-gap analysis aimed to map the translational readiness of TIL-related machine learning studies in breast cancer histopathology and to identify cluster-specific methodological gaps. Methods A systematic search of PubMed, Web of Science, Scopus, ScienceDirect, and Google Scholar was conducted up to 20 April 2026, supplemented by backward citation tracing and a targeted Google search of the 30 most relevant additional results. Eligible studies included breast cancer histopathology-based machine learning, deep learning, artificial intelligence, or computational image-analysis studies evaluating TILs or TIL-related immune-cell features. Studies were grouped by principal application into detection/classification, outcome prognostication, and treatment-response prediction. Extracted variables included data source, specimen type, model family, annotation strategy, validation design, clinical comparator use, calibration, decision-curve analysis, incremental value, reproducibility, and methodological challenges. Because of heterogeneity in endpoints and performance metrics, synthesis was descriptive and evidence-map based. Results The primary evidence map included 51 histopathology-image studies: 19 detection/classification, 18 outcome prognostication, and 14 treatment-response prediction studies. External validation was reported in 31.6% of detection/classification studies, 61.1% of prognostication studies, and 57.1% of treatment-response prediction studies. Clinical comparator reporting increased across the same continuum, from 63.2% to 94.4% and 92.9%, respectively. However, calibration was reported in only one prognostication study (5.6%) and in no detection/classification or treatment-response prediction studies. Decision-curve analysis was similarly limited to one prognostication study. Class imbalance was near-universal (94.7–100% across clusters). Scanner/stain robustness was addressed in a majority of studies (63.2–83.3%), but fairness or subgroup analyses remained inconsistently reported (27.8–57.1%). Conclusions TIL machine learning in breast cancer is technically active but clinically under-validated. Future studies should move beyond model development toward externally validated, calibrated, clinically benchmarked, reproducible, and decision-relevant evidence, using cluster-specific planning standards for detection, prognostication, and treatment-response prediction. Systematic review registration https://www.crd.york.ac.uk/PROSPERO/view/CRD42024574566 , identifier CRD42024574566.",
+      "topics": [
+        "AI in cancer detection",
+        "Radiomics and Machine Learning in Medical Imaging",
+        "Breast Cancer Treatment Studies"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1080/1600910x.2026.2745893",
+      "abstract": "Real-time dashboards were one of the emblematic features of the COVID-19 pandemic. This article analyses dashboards as popular media of situational awareness. After developing an analytics of the popular inspired by systems theory and deconstruction, we highlight three points. First, the proliferation of the dashboard can be understood against the backdrop of a liberal biopolitics of health emergencies. Under liberal conditions, public health officials depend on the cooperation of the population, which is why communicating the situation is a central element of crisis management in pandemics. Second, the dashboard can be understood as a technical solution to the communication challenges associated with lay audiences. From the perspective of those responsible, laypeople have difficulty correctly interpreting scientific data on the pandemic, which is why alternative forms of representation and communication are needed. Finally, we highlight the affective dimension of dashboard inclusion. The aesthetic of the dashboard is observed as an affective tool that is capable of fascinating the public even before any meaning is processed. On the one hand, this fascination fosters inclusion, as it binds the viewer more strongly to the events. However, it also becomes problematic when aesthetic dramatization threatens to undermine the subjectification of a pandemic citizenship.",
+      "topics": [
+        "Communication and COVID-19 Impact",
+        "Global Security and Public Health",
+        "Medical, Sociocultural, and Biopolitical Studies"
+      ],
+      "keywords": [
+        "COVID-19 dashboards",
+        "pandemic communication",
+        "health security",
+        "popular media",
+        "situational awareness",
+        "health emergencies",
+        "crisis management",
+        "lay audiences",
+        "scientific data interpretation",
+        "affect",
+        "public health communication"
+      ]
+    },
+    {
+      "id": "doi:10.21070/ijins.v27i4.2413",
+      "abstract": "General Background Technological advancements mandate hospitals to integrate reliable administration systems for providing accountable healthcare services. Specific Background Hospital Management Information Systems supply crucial data assisting leaders in operational planning and strategic policy formulation. Knowledge Gap Although previous studies correlate system usage with staff performance, research simultaneously integrating information quality, operational capability, and system suitability toward managerial choices remains limited. Aims This study investigates how information quality, user competence, and implementation suitability determine managerial decision-making at RSUD Karangkembang Lamongan. Results Quantitative analysis of 30 employees using multiple linear regression reveals that information quality and user competence partially demonstrate no significant relationship with decision-making. Conversely, implementation suitability displays a positive and significant relationship. Simultaneously, all three variables determine 78.8% of the decision-making variance, establishing implementation suitability as the most dominant determinant. Novelty This research explicitly shifts the analytical focus from general clinical performance to the integration of systemic, human, and organizational factors driving strategic managerial choices. Implications Hospital administrators must prioritize aligning system features with organizational workflows rather than solely focusing on technical training or data availability to ensure optimal strategic planning. Highlights Workflow alignment acts as the dominant determinant for strategic planning operations. Technical competence alone does not directly guarantee better organizational choices without workflow synchronization. Systemic and human factors collectively determine a massive proportion of strategic choice variance. Keywords Hospital Management Information System; Information Quality; User Competence; Implementation Suitability; Managerial Decisions",
+      "topics": [
+        "Decision Support System Applications",
+        "Electronic Health Records Systems",
+        "ERP Systems Implementation and Impact"
+      ],
+      "keywords": [
+        "hospital information systems",
+        "management decision-making",
+        "information quality",
+        "user competence",
+        "strategic planning",
+        "health management"
+      ]
+    },
+    {
+      "id": "doi:10.21764/maeuefd.1989901",
+      "abstract": "Research on institutional change in higher education has grown quickly, but it remains fragmented across disciplines and theoretical traditions. This study maps the thematic structure of this research in educational sciences and traces how it has changed over 34 years. I analysed the titles and abstracts of 2,623 publications indexed in the Web of Science Core Collection (Education & Educational Research, 1992–2025) with BERTopic, an embedding-based topic modelling tool. Placeholder masking kept the names of countries, nationalities and languages from shaping the topics, and key model settings are reported for reproducibility. The model produced 24 interpretable topics covering 1,824 publications. The general Structural Reforms topic fell from 65.6% of topic-assigned publications in 1992–2000 to 12.5% in 2023–2025, while more specific themes such as sustainability, transformational leadership and diversity, equity and inclusion gained weight. In 2023–2025, Digital Transformation became the largest topic (14.8%), and Artificial Intelligence Integration rose from almost zero to 8.1%. Technology-related research developed in successive waves: e-learning, emergency remote teaching during the COVID-19 pandemic, digital transformation and generative artificial intelligence. Each wave reframed digitalisation with new concepts instead of simply continuing the previous one. These results suggest that institutional change in higher education is studied through several parallel pathways rather than a single dominant narrative. For policymakers and institutional leaders, the findings point to the need to build the capacity for change as a lasting institutional capability rather than responding to each technological, sociological and political disruption separately.",
+      "topics": [
+        "Higher Education Governance and Development",
+        "Educational Innovations and Challenges",
+        "University Challenges and Reforms"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1057/s41599-026-08833-1",
+      "abstract": "Abstract Artificial intelligence (AI) offers significant potential to accelerate drug discovery, yet its adoption remains constrained by interdependent technical, organizational, and regulatory barriers. This study applies Fuzzy DEMATEL to analyze twelve challenges and uncover their causal structure using expert judgments expressed as triangular fuzzy numbers. Following normalization and CFCS defuzzification, Resistance to Change, Lack of Standardization, Limited Trust in AI Outputs, Talent Shortage, and Lack of Clinical Validation emerge as the primary causal drivers. These upstream barriers exert strong influence on downstream effects, including Regulatory Barriers, Biological Complexity, Integration with Legacy Systems, and Poor Data Quality. The findings indicate that several constraints commonly viewed as external are, in practice, manifestations of internal organizational and technical shortcomings. By providing a structured causal prioritization of barriers, this study offers actionable guidance for targeting high-leverage interventions in AI-enabled drug discovery. Findings reflect expert judgment within a North Cyprus context and should be interpreted as indicative organizational signals rather than universal prescriptions.",
+      "topics": [
+        "Computational Drug Discovery Methods",
+        "Multi-Criteria Decision Making",
+        "Artificial Intelligence Applications"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.1007/s44273-026-00101-7",
+      "abstract": "Artificial intelligence (AI) has become increasingly important in atmospheric aerosol and particulate-matter (PM) research because it can model nonlinear relationships, integrate heterogeneous observations, and generate high-resolution spatiotemporal information. This study maps the evolution and knowledge structure of AI-based atmospheric aerosol and PM research using 4,872 Web of Science (WoS) publications published through December 31, 2025. Bibliometric and text-mining analyses were used to characterize publication trends, leading countries and institutions, major journals, citation patterns, keyword co-occurrence networks, and abstract-based thematic clusters. In addition, 99 publications indexed in the Korea Citation Index (KCI) were examined separately to provide supplementary context on temporal publication trends in the Korean domestic literature. WoS publication activity increased sharply after 2019, with China contributing the largest publication output and total citation count, while several lower-output countries showed higher mean citations per publication. Keyword-network analysis identified machine learning as a central theme linking PM prediction, deep learning, aerosol optical depth, exposure assessment, and satellite remote sensing. Abstract-based clustering revealed five major thematic domains spanning prediction modeling, PM concentration and exposure, satellite-based aerosol retrieval, emission-related analysis, and aerosol monitoring and environmental applications. The results indicate a shift from model-specific prediction toward multisource integration, spatiotemporal analysis, remote sensing, and exposure-oriented applications. These findings provide a structured overview of the field and highlight the need for more interpretable, uncertainty-aware, and transferable AI approaches.",
+      "topics": [
+        "Air Quality Monitoring and Forecasting",
+        "Atmospheric chemistry and aerosols",
+        "scientometrics and bibliometrics research"
+      ],
+      "keywords": []
+    },
+    {
+      "id": "doi:10.48550/arxiv.2610.36389",
+      "abstract": "Evaluating natural language explanations in recommender systems is essential for fostering user trust, transparency, and engagement. However, existing evaluation approaches like human evaluations, while accurate, are resource-intensive and impractical at the scale required by modern recommendation platforms. Also, automated methods using single-agent LLMs suffer from prompt sensitivity and inconsistent outputs. To address these challenges, we propose MAREval, a structured multi-agent framework for evaluating recommendation explanations using large language models. MAREval orchestrates (i) a planner agent that uses a novel Chain of Debate (CoD) prompting strategy to coordinate agent roles and enforce logically consistent evaluation plans; (ii) a moderator agent that regulates discussions by mitigating prompt drift; and (iii) an arbitrator agent that aggregates outputs from multiple evaluation rounds and (iv) a Monte Carlo sampling method, improving robustness and alignment with human judgment. We conduct comprehensive evaluations on both public (TopicalChat) and proprietary recommendation datasets, demonstrating that MAREval outperforms state-of-the-art baselines. Comprehensive experiments on a public benchmark and a proprietary e-commerce dataset show that MAREval improves alignment with human judgments over strong singleand multi-agent baselines. Stability analyses indicate substantially lower variability across repeated trials. In a large human-annotation gate, MAREval meets production quality thresholds where prior evaluators fall short, and online A/B testing demonstrates statistically significant improvements in engagement and revenue metrics. These results establish MAREval as a scalable and reliable solution for human-aligned evaluation of recommendation explanations in real-world systems",
+      "topics": [
+        "Recommender Systems and Techniques",
+        "Explainable Artificial Intelligence (XAI)",
+        "Information Retrieval and Search Behavior"
+      ],
+      "keywords": [
+        "natural language explanations",
+        "recommender systems",
+        "multi-agent systems",
+        "large language models",
+        "output aggregation",
+        "human judgment alignment",
+        "e-commerce recommendation",
+        "user engagement"
+      ]
+    },
     {
       "id": "doi:10.48550/arxiv.2610.36234",
       "abstract": "Requirements engineering (RE) is foundational to systems engineering (SE), as requirement defects can propagate downstream and adversely affect development outcomes. Although large language models (LLMs) are promising for requirement quality assessment, prior work shows that off-the-shelf models miss a large share of expert-identified defects, perform unevenly across quality criteria, and vary across executions. This study investigates whether infusing expert-derived SE knowledge can improve LLM-based requirement quality evaluation beyond off-the-shelf capability. We present MARQ, a modular, LLM-agnostic prototype that supplements LLMs with a criterion-specific knowledge stack operationalizing INCOSE requirement quality criteria and evaluated against off-the-shelf baselines on an expert-labeled NASA requirement set using Claude Opus 5, GPT-5.6 Sol, and the open-weight Gemma 3 12B, with 100 executions per model. MARQ achieves median F1 scores of 0.80 for Claude Opus 5, 0.62 for GPT-5.6 Sol, and 0.53 for Gemma 3 12B, compared with off-the-shelf baselines of 0.55, 0.52, and 0.18, respectively. However, the nature of these gains is model-dependent. Claude Opus 5 improves defect detection and false-alarm control; GPT-5.6 Sol gains detection and better execution-level consistency at the cost of more false alarms; and Gemma 3 12B reaches the performance of off-the-shelf proprietary models, although it remains highly variable. Criterion-level analysis shows gains concentrated in Correctness and Conformance, trade-offs between misses and false alarms within individual criteria, and model-dependent responses across several criteria. These findings position SE knowledge infusion as a promising model-agnostic pathway for strengthening trustworthy LLM-based RE support while underscoring the need for criterion-specific interventions and human-in-the-loop review.",
@@ -2805,160 +2959,6 @@
         "Diverse Aspects of Tourism Research"
       ],
       "keywords": []
-    },
-    {
-      "id": "doi:10.54437/attadbir.v4i1.3951",
-      "abstract": "The use of artificial intelligence (AI) in Islamic Religious Education (PAI) offers opportunities to develop a variety of teaching materials and strategies, but also presents challenges regarding the accuracy of information, academic integrity and the character development of pupils. This study aims to analyse PAI teachers’ perceptions of the use of AI, its practical application in teaching, and the associated ethical considerations at SMPN 5 Mesuji Raya. The study employs a qualitative approach using a case study design. Data were collected through interviews with one PAI teacher and one pupil. Data analysis followed the model proposed by Miles, Huberman and Saldaña, which includes data condensation, data presentation, and the drawing and verification of conclusions. The results indicate that AI is utilised to assist in the preparation of teaching modules, the creation of interactive quizzes, the development of visual media, and the design of case studies on moral values. The use of varied media is perceived to make learning more engaging. However, teachers’ acceptance of AI is critical and conditional, as the information generated requires verification and the technology cannot replace the teacher’s role as a role model, the shaping of moral character, or spiritual guidance. From an ethical perspective, the study highlights the importance of academic integrity and the application of the values of ṣidq (honesty) and tabayyun (verification of information) to guide the responsible use of AI. This study emphasises that the use of AI in Islamic Education must be accompanied by validation of the material, teacher support and clear rules of use to ensure it is aligned with learning objectives and Islamic values.",
-      "topics": [
-        "Education and Islamic Studies",
-        "Artificial Intelligence in Education",
-        "Education and Character Development"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1038/s41514-026-00524-0",
-      "abstract": "This commentary highlights the age illusion and advocates integrating biological age and artificial intelligence (AI) to enhance clinical precision in health care. By synthesizing geroscience and machine learning, practitioners and scientists can effectively bridge the gap between experimental biomarkers and personalized medicine and longevity care. This contribution is timely as the importance of biological age and predictive analytics offer transformative potential for diagnostics while necessitating a focus on modern medical systems. This article aims to elucidate how AI accelerates the clinical implementation of biological age rather than current chronological age in precision medicine.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Machine Learning in Healthcare",
-        "Genetics, Aging, and Longevity in Model Organisms"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.35451",
-      "abstract": "AI-powered personal assistant frameworks such as OpenClaw combine LLM reasoning, persistent memory, tool invocation, local execution, and web-based workflows. These capabilities enable useful automation, but they also create security risks when untrusted inputs, model reasoning, tools, memory, and deployment configuration interact without explicit trust boundaries. This paper presents an empirical study of reported security concerns in OpenClaw using two complementary data sources: Reddit discussions and security-tagged GitHub issues. We analyze more than 25K Reddit posts from 13 OpenClaw-related subreddits and identify 162 security-relevant posts with 1,787 associated comments. We further collect 358 security-tagged GitHub issues and retain 180 issues describing concrete security concerns. Using qualitative analysis and evidence-grounded CWE mapping, we identify 521 CWE instances across 59 distinct weakness types, concentrated in access-control failures, sensitive-data exposure, injection, and unsafe execution. We also extract 543 practitioner mitigation suggestions and consolidate them into seven recurring strategies. To complement the empirical analysis, we present an evidence-grounded illustrative reconstruction of a representative sensitive-data exposure pathway using dummy secret values. Our findings show that OpenClaw security issues are not isolated implementation bugs; they reflect recurring trust-boundary failures across the agent execution pipeline. We discuss how these weaknesses map to both traditional software-security categories and agent-specific failure mechanisms, and derive implications for safer agentic systems, including explicit trust boundaries, least-privilege tool access, execution containment, runtime oversight, and defense-in-depth deployment.",
-      "topics": [
-        "Web Application Security Vulnerabilities",
-        "Security and Verification in Computing",
-        "Adversarial Robustness in Machine Learning"
-      ],
-      "keywords": [
-        "OpenClaw",
-        "agentic systems",
-        "large language models",
-        "security vulnerabilities",
-        "sensitive data exposure",
-        "injection vulnerabilities",
-        "access control",
-        "trust boundaries",
-        "security mitigation strategies",
-        "GitHub issues",
-        "Reddit discussions",
-        "least privilege"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.34654",
-      "abstract": "Language model agents often abandon correct work when a user challenges it, yet simply telling them to stand firm makes them ignore real mistakes. Once an agent reads a complaint, it tends to discount its own earlier checks in order to agree with the user. We introduce Thinking-in-Bets, a training-free method in which an agent writes a short private record of its main claims, the checks supporting them, and its confidence before reading user feedback. When challenged, the agent consults this Claim Checklist to keep verified work intact while investigating uncertain or newly challenged parts. We evaluate five Gemini models (3.5 Flash-Lite, 3.5 Flash, 3.6 Flash, 3.8 Flash, and 4.0 Argon) across eight benchmarks: SWE-Together, SWE-Interact, and DeepSWE for software engineering, Agents' Last Exam for professional reports, Humanity's Last Exam and SycEval for academic reasoning, Vals Finance for financial analysis, and Terminal-Bench for command-line tasks. Recording claims before criticism nearly eliminates false reversals in patch review and protects passing report drafts under mistaken pushback, whereas writing the same record after reading the complaint recovers very little of the gain. In multi-turn coding, pre-reply claim records substantially reduce unnecessary file edits after mistaken complaints, and gating the record so it is written only when the agent is uncertain lowers token overhead while fixing more real bugs than the baseline. Even in non-interactive tasks without user feedback, listing the key claims in a draft and re-checking the weakest one before submission improves both answer accuracy and confidence estimates across all tested models.",
-      "topics": [
-        "Software Engineering Research",
-        "Topic Modeling",
-        "Natural Language Processing Techniques"
-      ],
-      "keywords": [
-        "language model agents",
-        "user feedback",
-        "confidence estimation",
-        "self-checking",
-        "training-free methods"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.34797",
-      "abstract": "Time series forecasting supports decision-making in web applications such as online retail and network management, where planned actions can reshape future dynamics. World models provide a natural paradigm for predicting such action-dependent changes beyond extrapolating historical patterns. However, existing time series world models (TSWMs) typically rely on fixed, domain-specific covariate schemas that limit flexible intervention specification, while multimodal forecasters treat text primarily as passive predictive context. To investigate these gaps, we introduce TSWM-Bench, a cross-domain benchmark for multimodal TSWMs spanning seven real-world datasets, with textual interventions grounded in recorded action--outcome data. Our evaluation reveals that conventional multimodal forecasters underperform history-only time series foundation models (TSFMs) despite dataset-specific training, whereas simple text-prefix adaptations improve forecasting across all evaluated TSFM backbones. These findings suggest that pretrained TSFMs encode implicit world knowledge of temporal dynamics, offering a strong foundation for action-conditioned modeling beyond conventional multimodal fusion. Building on this insight, we propose TimeWorld, a plug-in framework that adapts pretrained TSFMs through explicit action-response modeling. Specifically, the Prototype-Guided Latent Modulation (PLM) module grounds textual actions in temporal dynamics by composing representative response prototypes to modulate future representations based on the action and historical patterns. The Action Contrastive Learning (ACL) component strengthens action-specific response modeling by contrasting these updates under alternative interventions sharing the same history, distinguishing action types while preserving relative intensity relationships.",
-      "topics": [
-        "Time Series Analysis and Forecasting",
-        "Forecasting Techniques and Applications",
-        "Stock Market Forecasting Methods"
-      ],
-      "keywords": [
-        "time series forecasting",
-        "world models",
-        "time series foundation models"
-      ]
-    },
-    {
-      "id": "doi:10.48550/arxiv.2610.35079",
-      "abstract": "We investigate whether limbic-like signatures of rapid, salience-driven behavior can be identified in high-resolution Counter-Strike 2 telemetry. This exploratory study introduces Ego-Knowledge, a leak-reduced reconstruction of each player's plausible perceptual state, supported by a millisecond-precision visibility engine and a reaction-centered extraction pipeline. Using a neuroscience-motivated 60--120 ms window, we derive coarse fight-or-flight labels from visibility- and damage-triggered events, with back-damage cases enabling constrained reaction-time analysis and manual label checks. We train two telemetry-native models using only information available by the trigger: EMBER (gradient boosting) and ORBIT (a custom transformer). On the full validation set, EMBER achieves 73.5% accuracy and ORBIT 71.2%, versus a 51.5% majority-class baseline, and both generalize to held-out players. The strongest LLM baseline achieves 62.7% on 1,000 validation cases; on these same cases, EMBER (73.6%) and ORBIT (70.9%) perform better (McNemar p=1.3e-9 and 1.5e-6, respectively), with orders-of-magnitude lower inference time and cost, though the comparison is not compute-matched. Including a short post-trigger window changes forecasting into early response recognition, raising accuracy monotonically to 85.15%. We propose this curve as a candidate probe of the transition from rapid to deliberative control, but roughly uniform per-tick gains do not establish that interpretation. The neuroscience framing is hypothesis-generating, not mechanistic: physiological ground truth, suitable control distributions, and reverse-inference limitations remain open. We outline extensions to auditory reconstruction, larger datasets, and telemetry-native foundation models.",
-      "topics": [
-        "Artificial Intelligence in Games",
-        "Digital Games and Media",
-        "Neural and Behavioral Psychology Studies"
-      ],
-      "keywords": [
-        "human reaction time",
-        "Counter-Strike 2",
-        "limbic system",
-        "gradient boosting",
-        "transformer models",
-        "LLM comparison",
-        "inference efficiency"
-      ]
-    },
-    {
-      "id": "doi:10.52965/001c.172700",
-      "abstract": "Purpose of Review Artificial intelligence (AI) is rapidly changing the tasks performed by physicians, raising questions about how graduate medical education should prepare trainees for future practice and whether residency workforce planning should change as AI adoption expands. This brief review examines the implications of AI for residency education and physician workforce planning, using radiology as an early model of technology-driven task transformation while considering broader effects across diagnostic, procedural, and relationship-based specialties. Recent Findings AI is already being used for clinical documentation, image interpretation, predictive analytics, administrative workflows, and large-scale data analysis. AI-assisted scribing has particular relevance to chronic pain and other documentation-intensive specialties, where it may reduce clerical burden and preserve clinician attention for patient care. However, current evidence more strongly supports task redistribution and physician augmentation than complete replacement. Specialties built around standardized digital information may experience earlier automation, whereas procedural skill, complex communication, longitudinal judgment, and responsibility for final clinical decisions remain difficult to substitute. At present, broad reductions in residency positions based only on anticipated AI capabilities seem premature. Summary Residency programs should adapt curricula now by incorporating AI literacy, verification skills, data interpretation, and safeguards against deskilling. Changes in residency position numbers should occur more cautiously and should be based on durable, specialty-specific workforce evidence, including hiring patterns, patient access, workload, productivity, and regional need. The goal should be to train physicians who can safely supervise and integrate AI while preserving the human expertise that remains central to high-quality care.",
-      "topics": [
-        "Artificial Intelligence in Healthcare and Education",
-        "Innovations in Medical Education",
-        "Radiology practices and education"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23659345",
-      "abstract": "Travel Mind AI is an intelligent travel planning system that combines Artificial Intelligence and map-based services to provide a personalized and convenient travel experience. The system assists users who are unsure about their destination by collecting details such as the number of travelers, budget, duration, and preferences, and then uses AI-powered APIs to recommend suitable destinations and travel plans. For users who have already decided on a destination, the system allows them to enter the source and destination locations and generates multiple possible routes using map services, arranging them based on distance with the shortest route displayed first. After selecting a route, the system displays it on an interactive map and identifies important facilities along or near the journey, such as petrol pumps, hotels, restaurants, hospitals, cafés, parking areas, and other points of interest. By integrating AI recommendations, route optimization, interactive maps, and location-based services, Travel Mind AI provides a complete travel planning and journey assistance solution that reduces the time and effort required to plan and manage a trip.",
-      "topics": [
-        "Recommender Systems and Techniques",
-        "Decision Support System Applications",
-        "Mobile and Web Applications"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1098/rsta.2025.0275",
-      "abstract": "Abstract The International Global Atmospheric Chemistry (IGAC) Tropospheric Ozone Assessment Report Phase II (TOAR-II) provides an updated, comprehensive assessment of the global distribution, burden and trends of tropospheric ozone, building on the foundation established by TOAR-I, 2014–2019. Accurate knowledge of tropospheric ozone concentrations remains essential for understanding atmospheric chemistry with far reaching implications for climate radiative forcing, vegetation damage and human health. Here, we present the process and summarize the main conclusions of TOAR-II, 2020–2026. Following TOAR-I, TOAR-II provides updates to trends in ozone concentrations and other metrics and addresses trends in ozone precursor emissions. This was accomplished as a community-driven process by forming Focus Working Groups to continue and expand on TOAR-I topics. Focus Working Group findings were published in a TOAR-II Community Special Issue with 58 review and original research papers. From this Community Special Issue, as well as other relevant literature, seven assessment papers were synthesized and submitted to this issue, along with this overview paper. These papers update the primary themes of TOAR-I: health, vegetation and climate; address unresolved uncertainties and inconsistencies in TOAR-I satellite ozone observations; provide an overdue update on stratosphere–troposphere exchange (STE) and present critical regional assessments for ozone over oceanic and polar regions, and South America. The TOAR-II assessment would not be possible without an extensive data collection and data harmonization effort. TOAR-II data are curated under findable, accessible, interoperable and reusable principles, and the TOAR data repository has been certified by the Core Trust Seal. In addition, TOAR-II developed common statistical analysis guidelines for the assessment papers. Although TOAR-II provides an extensive assessment of the current state of tropospheric ozone, many gaps and scientific challenges remain for future assessments. In particular, there is under-sampling of ozone across Southeast Asia and the Southern Hemisphere, especially Africa and Australia/Oceania. Low-cost sensor data and geostationary satellite data for tropospheric ozone, which still require evaluation, should be included. Ozone produced from wildfires and exacerbated by extreme weather events, and attribution of changes in ozone to pollution regulations on precursor emissions require greater attention in future analyses. These topics will be prioritized in the IGAC TOAR-III effort along with incorporating advances in artificial intelligence (AI) and strengthening collaboration with policy-relevant initiatives. This article is part of the theme issue ‘Tropospheric Ozone Assessment Report II’.",
-      "topics": [
-        "Atmospheric chemistry and aerosols",
-        "Atmospheric Ozone and Climate",
-        "Plant responses to elevated CO2"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.5281/zenodo.23657037",
-      "abstract": "SQUIRL OS RESEARCH DISCLOSURE — READ FIRST: AI-assisted, receipt-first research program (open-book doctrine: audit-and-correction, versioned amendments, append-only public ledger). Errors are disclosed, not erased. This software is a prototype and is provided for educational and research purposes only. It is not intended for production use, commercial deployment, or safety-critical environments. All payloads synthetic or owner-generated; no customer-identifiable data appears in this record (POL-DISC-001). \"Trust Is the Pollutant: Witness Receipts, Content-Addressed Storage, and the Environmental Case Against Redundant Copies.\" Global data centres consumed ~415 TWh in 2024 (~1.5% of world electricity, IEA Energy and AI 2025), projected past 1,000 TWh by 2030 in the Base Case. Not all of that energy buys information; some of it buys reassurance: the same artifact is routinely held hot by many parties because no party can cheaply prove any other party's copy is unaltered. This paper separates storage redundancy into availability-driven duplication (legitimate, retained) and trust-driven duplication (mechanically removable), and reports the measured production cost floor of removing the trust component with chain-witnessed content addressing: a 3,377-file corpus folded to an 80-byte Merkle root (MCR-4, root 38089f07...e8daaa) tri-chain anchored on Bitcoin OP_RETURN, Stellar manage-data, and XRP memo; a three-way fractional ownership transfer (FRACTAL-2, doi:10.5281/zenodo.23655614) witnessed byte-exact on three mainnets for $0.2509 measured ($0.1254 at the 1 sat/vB trough); and ~1.9 cents per receipt amortized via weekly BTC batching (SOV-B1, doi:10.5281/zenodo.23628676). Verification is keyless — any browser, any public explorer, no account, no platform, no custodian. Honest scoping: receipts shrink copies, not bytes; the canonical copy must still exist and be retrievable; retrieval becomes a commodity market (\"who serves this hash cheapest\") and every provider can win. UK/EU resonance: NESO-scoped UK data-centre demand growing from 3.6 TWh/yr (2020) toward 13–35 TWh/yr by 2050, and Great Britain's demand-connection queue rising from 41 GW (Nov 2024) to ~125 GW (June 2025), make connection-efficient dedup a grid resource; witness-verified cold-tiering is a measurable, auditable net-zero reduction whose proof is publicly verifiable rather than self-attested. Scope and honesty: prior art disclosed — content-addressed storage is established (Git, BitTorrent Merkle pieces, IPFS, Venti and deduplicating-archival lineage). NOT claimed: inventing content addressing or dedup, or \"fewer data centres\" as a blanket prediction. Claimed (scoped): the measured cents-per-anchor tri-chain witness cost floor that makes custodian-free cross-party verification cheaper than the first guarded replica it displaces; the chain-as-witness architecture (doi:10.5281/zenodo.23649741) applied to shared-storage trust; the environmental framing of trust-driven duplication as purchased, avoidable energy; and receipts-first disclosure practice. The Section 5 savings illustration is labeled illustrative and scales with the true size of the trust-driven fraction, which this paper does not measure; the cost floor is measured. Dual Mesh Benchmark: MEASURED (scoped) — determinism receipts per doi:10.5281/zenodo.23321637; no LLM in any decision path. Provenance: append-only ledger, github.com/LLong2026/four-horsemen. Two-key curation: drafted and vetted by the system (Gabriel), published on the owner's explicit GO (Leon GO, chat authorization, 2026-10-26 00:34 CT).",
-      "topics": [
-        "Blockchain Technology Applications and Security",
-        "Green IT and Sustainability",
-        "Advanced Data Storage Technologies"
-      ],
-      "keywords": []
-    },
-    {
-      "id": "doi:10.1038/s41562-026-02590-6",
-      "abstract": "As artificial intelligence (AI) becomes increasingly embedded in daily life, ascertaining whether an agent is human is critical. Here we systematically benchmark AI's ability to imitate humans in three language tasks (image captioning, word association and conversation) and three vision tasks (colour estimation, object detection and attention prediction), collecting data from n = 636 humans and 37 AI agents. We also conducted 72,191 Turing-like tests with 1,916 human judges and 10 AI judges. Current AIs are approaching the ability to convincingly impersonate humans and deceive human judges in both language and vision. Even simple AI judges outperformed humans in distinguishing AI from human responses. Imitation ability showed minimal correlation with conventional AI performance metrics, suggesting that passing as human is an important independent evaluation criterion. The large-scale Turing-like datasets and metrics introduced here offer valuable benchmarks for assessing human-likeness in AI and highlight the importance of rigorous, quantitative imitation tests for AI development.",
-      "topics": [
-        "Artificial Intelligence Applications",
-        "Speech and dialogue systems",
-        "Multimodal Machine Learning Applications",
-        "Social Robot Interaction and HRI",
-        "Ethics and Social Impacts of AI"
-      ],
-      "keywords": [
-        "Turing test",
-        "human-likeness",
-        "AI judges",
-        "image captioning",
-        "word association",
-        "conversation",
-        "color estimation",
-        "object detection",
-        "attention prediction",
-        "human-AI distinction"
-      ]
     }
   ]
 }
