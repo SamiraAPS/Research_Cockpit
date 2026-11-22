@@ -50,6 +50,8 @@ const compactTerm = term => `all:${quoted(term)}`;
 
 // arXiv rejects request lines above 4094 bytes ("Request Line is too large").
 export const ARXIV_MAX_REQUEST_LINE = 3800;
+// arXiv answers broad full-text queries slowly; the general 20 s limit cut them off.
+export const ARXIV_MIN_TIMEOUT_MS = 60_000;
 
 function arxivDate(value, endOfDay = false) {
   return `${value.replaceAll("-", "")}${endOfDay ? "2359" : "0000"}`;
@@ -160,7 +162,7 @@ export async function ingestArxiv(options = {}) {
         source: "arXiv",
         fetchImpl: options.fetchImpl,
         sleep: options.sleep,
-        timeoutMs: options.timeoutMs,
+        timeoutMs: Math.max(options.timeoutMs ?? 0, ARXIV_MIN_TIMEOUT_MS),
         maxAttempts: options.maxAttempts,
         baseDelayMs: ARXIV_INTER_PAGE_DELAY_MS,
         init: { headers: { Accept: "application/atom+xml", "User-Agent": "HumanAIResearchRadar/4.0" } }
