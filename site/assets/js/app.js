@@ -659,6 +659,12 @@ function renderAll() {
   renderRadarViews({ radar: state.data.radar, works: state.data.works, calls: state.data.calls, meta: state.data.meta, evidenceLinks, announce, download });
   elements.footer_version.textContent = state.data.meta?.analysisVersion ?? "";
   elements.footer_updated.textContent = `Letzter Abruf ${formatDate(state.data.meta?.lastIngestionAt, true)} · Analyse ${formatDate(state.data.meta?.generatedAt, true)}`;
+  const limit = state.data.meta?.corpusLimit;
+  const corpusNote = document.getElementById("footer-corpus");
+  if (corpusNote) {
+    corpusNote.hidden = !limit;
+    if (limit) corpusNote.textContent = `${limit.keptWorks.toLocaleString("de-CH")} Arbeiten im Korpus: aus den Kernzeitschriften und -konferenzen, mit Zitaten auf die Bibliothek oder inhaltlich nah an ihr. ${limit.excludedWorks.toLocaleString("de-CH")} weiter entfernte Treffer der breiten Suche wurden aussortiert.`;
+  }
 }
 
 async function loadDashboard() {

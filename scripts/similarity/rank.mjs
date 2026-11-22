@@ -138,7 +138,7 @@ export async function embedLibrary(library, embed, batchSize = 32) {
   return { seedVectors, seedProfiles: assignProfiles(library, seedVectors) };
 }
 
-export async function rankLibrarySimilarity({ works, library, embed, cache, model, previous = null, seeds = null, generatedAt = new Date().toISOString(), deadline = Infinity, batchSize = 32, now = () => Date.now() }) {
+export async function rankLibrarySimilarity({ works, library, embed, cache, model, previous = null, seeds = null, referenceScores = [], generatedAt = new Date().toISOString(), deadline = Infinity, batchSize = 32, now = () => Date.now() }) {
   const libraryHash = libraryFingerprint(library, model);
   const { seedVectors, seedProfiles } = seeds ?? await embedLibrary(library, embed, batchSize);
 
@@ -174,7 +174,9 @@ export async function rankLibrarySimilarity({ works, library, embed, cache, mode
       carriedCount += 1;
     }
   }
-  const thresholds = tierThresholds([...entries.values()].map(entry => entry.score));
+  // Works removed by the corpus limit still count for the shares, so "top 20 %"
+  // keeps meaning 20 % of everything collected, not of what was kept.
+  const thresholds = tierThresholds([...[...entries.values()].map(entry => entry.score), ...referenceScores]);
   const scores = {};
   const tierCounts = Object.fromEntries(TIERS.map(tier => [tier.id, 0]));
   for (const [id, entry] of entries) {
