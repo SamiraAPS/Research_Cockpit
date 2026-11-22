@@ -12,15 +12,15 @@ export function renderSeries(container, series, caption) {
   const svg = document.createElementNS(namespace, "svg");
   svg.setAttribute("viewBox", "0 0 760 260"); svg.setAttribute("role", "img"); svg.setAttribute("aria-label", `${caption}. Zahlen in der Tabelle unter dem Diagramm.`);
   const add = (tag, attrs, text) => { const n = document.createElementNS(namespace, tag); for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v); if (text !== undefined) n.textContent = text; svg.append(n); return n; };
-  for (const fraction of [0, 0.5, 1]) { const y = 220 - fraction * 185; add("line", { x1: 52, x2: 750, y1: y, y2: y, stroke: "#d4dedb" }); add("text", { x: 45, y: y + 4, "text-anchor": "end", "font-size": 12, fill: "#475c59" }, Math.round(maximum * fraction)); }
+  for (const fraction of [0, 0.5, 1]) { const y = 220 - fraction * 185; add("line", { x1: 52, x2: 750, y1: y, y2: y, stroke: "#e2dfd6" }); add("text", { x: 45, y: y + 4, "text-anchor": "end", "font-size": 12, fill: "#5d5a52" }, Math.round(maximum * fraction)); }
   const width = 690 / Math.max(1, series.length);
   series.forEach((row, index) => {
     const height = row.count / maximum * 185, preprintHeight = row.preprints / maximum * 185;
-    add("rect", { x: 55 + index * width, y: 220 - height, width: width * 0.72, height, fill: row.partialPeriod ? "#b7cbc5" : "#18776b" });
-    add("rect", { x: 55 + index * width, y: 220 - preprintHeight, width: width * 0.72, height: preprintHeight, fill: "#cd883f" });
-    if (series.length <= 12 || index % 3 === 0) add("text", { x: 55 + index * width, y: 242, "font-size": 11, fill: "#475c59" }, row.period);
+    add("rect", { x: 55 + index * width, y: 220 - height, width: width * 0.72, height, fill: row.partialPeriod ? "#c9cfb9" : "#55633f" });
+    add("rect", { x: 55 + index * width, y: 220 - preprintHeight, width: width * 0.72, height: preprintHeight, fill: "#c08a2e" });
+    if (series.length <= 12 || index % 3 === 0) add("text", { x: 55 + index * width, y: 242, "font-size": 11, fill: "#5d5a52" }, row.period);
   });
-  figure.append(svg, el("figcaption", "muted-copy", `${caption}. Grün: Publikationen; Orange: aktuelle Preprints; hell: laufender Zeitraum. Erfasste Arbeiten, keine weltweiten Gesamtzahlen.`));
+  figure.append(svg, el("figcaption", "muted-copy", `${caption}. Dunkel: Publikationen; Ocker: aktuelle Preprints; hell: laufender Zeitraum. Erfasste Arbeiten, keine weltweiten Gesamtzahlen.`));
   const details = el("details", "quality-details"); details.append(el("summary", null, "Zahlen und Abdeckung anzeigen"));
   const scroll = el("div", "table-scroll"), table = el("table", "data-table");
   const head = el("thead"), tr = el("tr");
@@ -31,8 +31,8 @@ export function renderSeries(container, series, caption) {
 }
 
 export function noteEditor(id, announce) {
-  const wrap = el("div", "note-editor"), label = el("label", null, "Eigene Notiz (nur auf diesem Gerät)");
-  const input = el("textarea"); input.rows = 3; input.maxLength = 10000; input.value = readWorkspace().notes[id] ?? ""; input.setAttribute("aria-label", "Eigene Forschungsnotiz");
+  const wrap = el("div", "note-editor"), label = el("label");
+  const input = el("textarea"); input.rows = 1; input.placeholder = "Eigene Notiz (bleibt auf diesem Gerät) …"; input.maxLength = 10000; input.value = readWorkspace().notes[id] ?? ""; input.setAttribute("aria-label", "Eigene Notiz (nur auf diesem Gerät)");
   input.addEventListener("input", () => { try { const value = readWorkspace(); value.notes[id] = input.value; writeWorkspace(value); } catch { announce("Notiz konnte nicht gespeichert werden. Bitte als Datei sichern."); } });
   label.append(input); wrap.append(label); return wrap;
 }
